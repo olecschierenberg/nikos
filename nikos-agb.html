@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AGB — Allgemeine Geschäftsbedingungen RADACOM GmbH</title>
+<meta name="description" content="Allgemeine Geschäftsbedingungen der RADACOM GmbH. Version 1.2, Stand: August 2025.">
+<meta name="robots" content="noindex">
+
+<style>
+/* Lokale Schriften (DSGVO-konform, kein Google-Fonts-CDN) — OFL, siehe assets/fonts/OFL-Exo2.txt */
+@font-face{font-family:'Source Sans 3';font-style:normal;font-weight:300 700;font-display:swap;src:url('assets/fonts/SourceSans3-VariableFont_wght.ttf') format('truetype-variations');}
+@font-face{font-family:'Source Sans 3';font-style:italic;font-weight:300 700;font-display:swap;src:url('assets/fonts/SourceSans3-Italic-VariableFont_wght.ttf') format('truetype-variations');}
+@font-face{font-family:'Exo 2';font-style:normal;font-weight:400 700;font-display:swap;src:url('assets/fonts/Exo2-VariableFont_wght.ttf') format('truetype-variations');}
+</style>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brand-orange:#FF6600;--brand-orange-dk:#E05500;--brand-dark:#4D4D4D;--brand-mid:#595959;--brand-light:#999999;
+  --white:#FFFFFF;--s2:#F5F5F5;--s3:#EBEBEB;--border:#CCCCCC;--sec-dark:#253341;--surface-footer:#2E3236;
+  --card-border:#D8DCE0;
+  --banner-bar:#1D2F49;
+  --orange:var(--brand-orange);--dark:var(--brand-dark);--mid:var(--brand-mid);--light:var(--brand-light);
+  --font:'Source Sans 3',system-ui,sans-serif;--claim:'Exo 2',system-ui,sans-serif;
+  --r:4px;--r-lg:4px;--r-xl:16px;--max-w:1280px;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--dark);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+[data-de],[data-en]{display:none !important}
+[data-lang="de"] [data-de]{display:revert !important}
+[data-lang="en"] [data-en]{display:revert !important}
+.lang-flag{position:relative;flex-shrink:0}
+.lang-flag__btn{display:flex;align-items:center;gap:5px;padding:5px 8px;border:1px solid var(--border);border-radius:var(--r);background:var(--s2);cursor:pointer;font-family:var(--font);font-size:12px;font-weight:600;color:var(--dark);line-height:1;white-space:nowrap;transition:border-color .15s}
+.lang-flag__btn:hover{border-color:var(--orange)}
+.lang-flag__btn .flag{font-size:16px}.lang-flag__btn .chevron{font-size:9px;color:var(--light);margin-left:1px;transition:transform .2s}
+.lang-flag.is-open .lang-flag__btn .chevron{transform:rotate(180deg)}
+.lang-flag__dropdown{display:none;position:absolute;top:calc(100% + 6px);right:0;background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:0 8px 24px rgba(0,0,0,.12);min-width:140px;overflow:hidden;z-index:200}
+.lang-flag.is-open .lang-flag__dropdown{display:block}
+.lang-flag__option{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;font-size:13px;color:var(--dark);border:none;background:none;width:100%;text-align:left;font-family:var(--font);transition:background .12s}
+.lang-flag__option:hover{background:var(--s2)}.lang-flag__option.active{background:rgba(255,102,0,.06);color:var(--orange);font-weight:600}
+.nk-nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:5px solid var(--orange);box-shadow:0 1px 12px rgba(0,0,0,.06)}
+.nav__inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;gap:16px}
+.nav__logo{height:64px;display:flex;align-items:center;flex-shrink:0;margin-right:32px}.nav__logo svg{height:28px;width:auto;display:block}
+.nav__links{display:flex;align-items:center;gap:20px;list-style:none;flex-wrap:nowrap;min-width:0}
+.nav__links a{font-size:16px;color:var(--mid);text-decoration:none;font-weight:400;transition:color .15s;white-space:nowrap}
+.nav__links a:hover{color:var(--orange)}
+.nav__right{display:flex;align-items:center;gap:8px;flex-shrink:0;margin-left:auto}
+.nav__cta{background:var(--orange) !important;color:#fff !important;padding:6px 14px;border-radius:var(--r);font-weight:600 !important;white-space:nowrap;text-decoration:none;font-size:12px;line-height:1.4}
+.nav__cta:hover{background:var(--brand-orange-dk) !important}
+.nav__burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:4px}
+.nav__burger span{display:block;height:2px;width:24px;background:var(--dark);border-radius:2px;transition:transform .25s,opacity .2s}
+.nav__burger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav__burger.is-open span:nth-child(2){opacity:0}
+.nav__burger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav__mobile{display:none;position:absolute;top:100%;left:0;right:0;background:var(--white);border-top:1px solid var(--s2);box-shadow:0 8px 24px rgba(0,0,0,.10);z-index:99;padding:16px 0 24px}
+.nav__mobile.is-open{display:block}
+.nav__mobile ul{list-style:none;display:flex;flex-direction:column}
+.nav__mobile ul li a{display:block;padding:12px 24px;font-size:15px;color:var(--dark);text-decoration:none;border-left:3px solid transparent;transition:border-color .15s,color .15s}
+.nav__mobile ul li a:hover{color:var(--orange);border-left-color:var(--orange)}
+.nav__mobile ul li a.nav__cta-mobile{margin:8px 24px 0;padding:10px 20px;background:var(--orange);color:#fff !important;border-radius:var(--r);text-align:center;font-weight:600;border-left:none !important;display:none}
+/* Legal content */
+.legal-page{max-width:840px;margin:0 auto;padding:64px clamp(20px,5vw,48px) 96px}
+.legal-page h1{font-family:var(--claim);font-size:clamp(28px,3.5vw,42px);font-weight:700;color:var(--dark);margin-bottom:8px;line-height:1.1}
+.legal-page .meta{font-size:13px;color:var(--light);margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid var(--border)}
+.legal-page h2{font-size:20px;font-weight:700;color:var(--dark);margin:40px 0 12px;padding-top:8px}
+.legal-page h3{font-size:16px;font-weight:700;color:var(--dark);margin:24px 0 8px}
+.legal-page p{font-size:15px;color:var(--mid);margin-bottom:12px;line-height:1.75}
+.legal-page .doc-download{display:inline-flex;align-items:center;gap:8px;margin:24px 0 8px;padding:12px 20px;border:1px solid var(--card-border);border-radius:var(--r);font-size:15px;font-weight:600;color:var(--dark);text-decoration:none;transition:border-color .15s,background .15s}
+.legal-page .doc-download:hover{border-color:var(--orange);background:rgba(255,102,0,.04)}
+.legal-page .doc-download::before{content:"\2193";font-weight:700;color:var(--orange)}
+.legal-page ul{margin:0 0 16px 20px}
+.legal-page ul li{font-size:15px;color:var(--mid);margin-bottom:6px;line-height:1.65}
+.legal-page a{color:var(--orange);text-decoration:none}
+.legal-page a:hover{text-decoration:underline}
+.legal-page hr{border:none;border-top:1px solid var(--border);margin:32px 0}
+.legal-page blockquote{background:var(--s2);border-left:3px solid var(--orange);padding:16px 20px;margin:16px 0;border-radius:0 var(--r-lg) var(--r-lg) 0;font-size:14px;color:var(--mid)}
+.legal-page strong{color:var(--dark);font-weight:600}
+.legal-page table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+.legal-page table td{padding:10px 14px;border:1px solid var(--border);color:var(--mid);vertical-align:top}
+.legal-page table tr:first-child td{background:var(--s2);font-weight:600;color:var(--dark)}
+.toc{background:var(--s2);border-radius:var(--r-xl);padding:24px 28px;margin-bottom:48px}
+.toc h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--light);margin-bottom:12px}
+.toc ol{margin-left:16px}
+.toc ol li{margin-bottom:6px}.toc ol li a{font-size:14px;color:var(--orange);text-decoration:none}
+.toc ol li a:hover{text-decoration:underline}
+/* Footer */
+.nk-footer{background:var(--surface-footer);padding:56px 0 0}
+.nk-footer__inner{max-width:var(--max-w);margin:0 auto;padding:0 clamp(20px,5vw,80px)}
+.nk-footer__grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px}
+.nk-footer__brand-logo{margin-bottom:20px}
+.nk-footer__brand-features{list-style:none;margin-bottom:24px}
+.nk-footer__brand-features li{font-size:13px;color:rgba(255,255,255,.5);padding:3px 0}
+.nk-footer__social{display:flex;gap:12px}
+.nk-footer__social a{color:rgba(255,255,255,.5);transition:color .15s}
+.nk-footer__social a:hover{color:var(--orange)}
+.nk-footer__col-title{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px}
+.nk-footer__links{list-style:none}
+.nk-footer__links li{margin-bottom:10px}
+.nk-footer__links a{font-size:14px;color:rgba(255,255,255,.65);text-decoration:none;transition:color .15s}
+.nk-footer__links a:hover{color:var(--orange)}
+.nk-footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.nk-footer__copy{font-size:13px;color:rgba(255,255,255,.35)}
+.nk-footer__bottom-links{list-style:none;display:flex;gap:20px}
+.nk-footer__bottom-links a{font-size:13px;color:rgba(255,255,255,.35);text-decoration:none}
+.nk-footer__bottom-links a:hover{color:var(--orange)}
+@media(max-width:900px){.nav__links{display:none !important}.nav__burger{display:flex !important}.nk-footer__grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.nk-footer__grid{grid-template-columns:1fr}}
+</style>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="4f48b5b5-93c8-4493-be71-2c1cefc6e440"></script>
+<!-- ═══ KLARO CONSENT MANAGER ═══ -->
+<script defer src="assets/js/klaro-config.js"></script>
+<script defer src="https://cdn.kiprotect.com/klaro/v0.7/klaro.js"></script>
+<style>
+/* Klaro Branding Override — NIKOS */
+:root { --klaro-green: #FF6600; }
+.klaro .cm-btn.cm-btn-accept,
+.klaro .cm-btn.cm-btn-accept-all,
+.klaro .cn-ok .cm-btn.cm-btn-success {
+  background-color: #FF6600 !important;
+  border-color: #FF6600 !important;
+  color: #fff !important;
+}
+.klaro .cm-btn.cm-btn-accept:hover,
+.klaro .cm-btn.cm-btn-accept-all:hover {
+  background-color: #E05500 !important;
+}
+.klaro .cookie-notice,
+.klaro .cookie-modal .cm-modal {
+  border-top: 3px solid #FF6600;
+}
+.klaro .slider { background-color: #FF6600 !important; }
+.klaro input[type=checkbox]:checked + .cm-list-label .slider { background-color: #FF6600 !important; }
+.klaro .cm-link, .klaro a { color: #FF6600 !important; }
+.klaro .cm-btn.cm-btn-decline,
+.klaro .cm-btn.cm-btn-close {
+  background: transparent !important;
+  border: 1px solid #CCCCCC !important;
+  color: #4D4D4D !important;
+}
+.klaro .cm-btn.cm-btn-decline:hover,
+.klaro .cm-btn.cm-btn-close:hover {
+  border-color: #FF6600 !important;
+  color: #FF6600 !important;
+}
+.klaro .cookie-modal .cm-modal { border-radius: 4px; }
+.klaro .cm-btn { border-radius: 4px !important; }
+.klaro .cookie-notice { border-radius: 4px; }
+</style>
+</head>
+<body>
+<nav class="nk-nav" id="mainNav">
+  <div class="nav__inner">
+    <div class="nav__logo"><a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="344.188 -0.500 356.378 66.750" style="height:28px;width:auto;"><path fill="#4D4D4D" d="M344.688,0.688h26.75l32.935,47.026h0.003V0.688h17.313v64.375h-26.75l-32.935-47.026h-0.003v47.026h-17.313V0.688z"/><path fill="#4D4D4D" d="M433.706,0.688h17.313v64.375h-17.313V0.688z"/><path fill="#4D4D4D" d="M463.267,0.688h17.313v23.625h8.248l21.799-23.625h23.516l-30.438,31.399l33.938,32.976h-24.619L488.295,40.25h-7.716v24.813h-17.313V0.688z"/><path fill="#4D4D4D" d="M541.403,42.651v-18.99c0-8.42,1.828-14.462,5.484-18.124C550.567,1.846,556.927,0,565.964,0h28.557c8.834,0,15.117,1.846,18.848,5.537c3.732,3.691,5.598,9.632,5.598,17.821v19.249c-0.127,8.363-2.031,14.318-5.711,17.865c-3.656,3.519-9.836,5.277-18.543,5.277h-28.748c-8.605,0-14.852-1.729-18.734-5.19C543.345,57.07,541.403,51.101,541.403,42.651z M559.278,29.548v6.266c0,5.473,0.711,9.088,2.131,10.844c1.42,1.729,4.197,2.593,8.332,2.593h21.42c4.008,0,6.658-0.922,7.951-2.766c1.318-1.871,1.979-5.299,1.979-10.282v-6.524c0-5.127-0.811-8.598-2.434-10.412c-1.6-1.844-4.377-2.766-8.332-2.766h-20.014c-4.135,0-7.014,0.937-8.637,2.809C560.077,21.182,559.278,24.595,559.278,29.548z"/><path fill="#4D4D4D" d="M646.131,44.313c0.229,2.889,0.748,4.796,1.561,5.72c0.813,0.896,2.805,1.343,5.978,1.343h22.234c4.568,0,6.853-1.805,6.853-5.415c0-2.311-0.901-3.885-2.702-4.723c-1.777-0.866-6.078-1.3-12.904-1.3h-10.658c-8.273,0-14.363-0.533-18.271-1.601c-3.883-1.067-6.472-3.058-7.766-5.972c-1.092-2.394-1.637-6.533-1.637-12.418c0-8.048,1.712-13.385,5.138-16.01C637.407,1.313,643.218,0,651.388,0h24.358c8.551,0,14.336,1.354,17.355,4.063s4.529,7.493,4.529,14.353v2.334h-17.313c0-2.544-0.521-4.235-1.561-5.074c-1.041-0.867-3.376-1.301-7.005-1.301h-18.541c-4.721,0-7.081,1.706-7.081,5.117c0,3.412,1.649,5.189,4.948,5.334c3.324,0.116,6.445,0.174,9.364,0.174h11.762c8.044,0,14.021,0.605,17.929,1.816c3.933,1.212,6.622,3.346,8.069,6.402c1.243,2.625,1.865,6.735,1.865,12.329c0,5.682-0.647,9.85-1.941,12.502c-1.421,2.885-4.009,4.889-7.764,6.013c-3.73,1.125-9.466,1.688-17.204,1.688h-22.646c-8.373,0-14.082-1.268-17.127-3.804c-3.045-2.535-4.567-6.929-4.567-13.182v-4.452H646.131z"/></svg></a></div>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="nikos-system.html" data-de>System</a><a href="nikos-system.html" data-en>System</a></li>
+      <li><a href="nikos-anwendungen.html" data-de>Anwendungen</a><a href="nikos-anwendungen.html" data-en>Applications</a></li>
+      <li><a href="nikos-produkte.html" data-de>Produkte</a><a href="nikos-produkte.html" data-en>Products</a></li>
+      <li><a href="nikos-referenzen.html" data-de>Referenzen</a><a href="nikos-referenzen.html" data-en>References</a></li>
+      <li><a href="nikos-vermietung.html" data-de>Vermietung</a><a href="nikos-vermietung.html" data-en>Rental</a></li>
+      <li><a href="nikos-downloads.html" data-de>Downloads</a><a href="nikos-downloads.html" data-en>Downloads</a></li>
+    </ul>
+    <div class="nav__right">
+      <a href="nikos-kontakt.html" class="nav__cta" data-de>Kontakt</a><a href="nikos-kontakt.html" class="nav__cta" data-en>Contact</a>
+      <div class="lang-flag" id="langFlag">
+        <button class="lang-flag__btn" id="langFlagBtn" aria-haspopup="true" aria-expanded="false"><span class="flag" id="langFlagIcon">🇩🇪</span><span class="chevron">▾</span></button>
+        <div class="lang-flag__dropdown" id="langFlagDropdown" role="listbox">
+          <button class="lang-flag__option active" data-lang-opt="de"><span class="flag">🇩🇪</span> Deutsch</button>
+          <button class="lang-flag__option" data-lang-opt="en"><span class="flag">🇬🇧</span> English</button>
+        </div>
+      </div>
+    </div>
+    <button class="nav__burger" id="navBurger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav__mobile" id="navMobile"><ul>
+    <li><a href="nikos-system.html" data-de>System</a><a href="nikos-system.html" data-en>System</a></li>
+    <li><a href="nikos-anwendungen.html" data-de>Anwendungen</a><a href="nikos-anwendungen.html" data-en>Applications</a></li>
+    <li><a href="nikos-produkte.html" data-de>Produkte</a><a href="nikos-produkte.html" data-en>Products</a></li>
+    <li><a href="nikos-vermietung.html" data-de>Vermietung</a><a href="nikos-vermietung.html" data-en>Rental</a></li>
+    <li><a href="nikos-downloads.html" data-de>Downloads</a><a href="nikos-downloads.html" data-en>Downloads</a></li>
+  </ul></div>
+</nav>
+<div class="legal-page">
+  <div data-de>
+    <h1>Allgemeine Geschäftsbedingungen</h1>
+    <p class="meta">Version 1.2, Stand: 29.08.2025 · <a href="https://www.radacom.de" target="_blank" rel="noopener">www.radacom.de</a></p>
+
+<h2>1. Allgemeines, Gültigkeit</h2>
+<p>a) Diese Allgemeinen Geschäftsbedingungen (AGB) gelten nur für Geschäfte mit Unternehmern im Sinne des §14 BGB, einschließlich Körperschaften, Anstalten und Stiftungen des öffentlichen Rechts. Sie sind fester Bestandteil sämtlicher Angebote und Verträge der RADACOM GmbH, nachfolgend „RADACOM" genannt und finden in der jeweils gültigen Fassung auch für alle künftigen Geschäfte mit RADACOM Anwendung. Für Geschäfte mit Privatpersonen gelten diese AGB im Rahmen der rechtlichen Zulässigkeit der einzelnen Bedingungen.</p>
+<p>b) Für einzelne Geschäftsfälle (z.B. Vermietung) gelten ergänzend hierzu Bedingungen, welche im Falle entgegenstehender Regelungen gegenüber diesen Allgemeinen Geschäftsbedingungen Vorrang haben.</p>
+<p>c) Entgegenstehenden Geschäftsbedingungen des Kunden wird ausdrücklich widersprochen. Sie gelten nur, wenn dies schriftlich vereinbart wird. Erkennt RADACOM im Einzelfall andere Bedingungen an, so gelten für alle dort nicht geregelten Fälle die Allgemeinen Geschäftsbedingungen von RADACOM.</p>
+<p>d) Zum Zwecke der Kreditprüfung behält sich RADACOM vor, im Rahmen der Geschäftsanbahnung Adress- und Bonitätsdaten einschließlich solcher, die auf Basis mathematisch-statistischer Verfahren ermittelt werden, einzuholen. Zur Entscheidung über die Begründung, Durchführung oder Beendigung des Vertragsverhältnisses erhebt oder verwendet RADACOM Wahrscheinlichkeitswerte, in deren Berechnung unter anderem Anschriftendaten einfließen.</p>
+<p>e) Es gilt die zum Zeitpunkt der Auftragserteilung auf der Website von RADACOM veröffentlichte Fassung dieser Bestimmungen.</p>
+
+<h2>2. Angebote, Preise, Termine, Teillieferungen</h2>
+<p>a) Angebote von RADACOM sind freibleibend, sofern sie nicht ausdrücklich als verbindlich gekennzeichnet sind. Der Vertrag mit dem Kunden kommt erst mit der Auftragsbestätigung durch RADACOM oder der Überlassung des Gegenstandes zustande.</p>
+<p>b) Es gelten die am Liefer- oder Leistungstag gültigen allgemeinen Listenpreise von RADACOM, gegebenenfalls zuzüglich Lieferung, Montage, Programmierung und Versicherung.</p>
+<p>c) RADACOM behält sich eine Änderung der dem Kunden, ggf. auch über lange Zeit, eingeräumten Konditionen vor. Eine diesbezügliche Berufung des Kunden auf ein etwaiges Gewohnheitsrecht ist ausgeschlossen. Die neuen Bedingungen gelten für ab dem Tag ihrer Veröffentlichung neu geschlossene Verträge.</p>
+<p>d) RADACOM behält sich das Recht auf zeitlich gestaffelte Teillieferung und Teilleistung vor. Derartige Teillieferungen und Teilleistungen werden gesondert abgewickelt und abgerechnet.</p>
+
+<h2>3. Versand, Verpackung, Versicherung</h2>
+<p>a) Die Gefahr geht mit Übergabe an das Transportunternehmen auf den Kunden über, dies gilt auch bei Wahl des Transportmittels und Transportunternehmens durch RADACOM, sowie auch dann, wenn RADACOM die Transportkosten trägt.</p>
+<p>b) Die Ware wird in geeigneter Verpackung nach Wahl von RADACOM versandt. Sofern nicht anders gekennzeichnet, sind gegebenenfalls anfallende Versandkosten vom Kunden zu tragen.</p>
+<p>c) Der Kunde hat erhaltene Sendungen vor der Quittierung auf Vollständigkeit der Packstücke und äußerliche Versandschäden zu prüfen und die Quittierung gegebenenfalls zu verweigern. Beanstandungen hat der Kunde RADACOM unmittelbar zu melden.</p>
+<p>d) Transport- und sonstige Versicherungen gelten nur als vereinbart, wenn sie explizit schriftlich aufgeführt sind.</p>
+
+<h2>4. Rechnungsstellung, Zahlung, Eigentumsvorbehalt</h2>
+<p>a) Rechnungen von RADACOM sind sofort und ohne Abzug zahlbar, außer es werden von RADACOM ausdrücklich andere Zahlungsbedingungen eingeräumt.</p>
+<p>b) Rechnungen von RADACOM gelten auch dann als Original, wenn sie elektronisch übermittelt oder abgerufen werden.</p>
+<p>c) Werden dem Rechnungsbetrag Finanzierungskosten zugeschlagen, sind diese bei Einhaltung des dort angegebenen Zahlungsziels abzugsfähig.</p>
+<p>d) Für alle Zahlungstermine ist das Datum des Zahlungseingangs bei RADACOM entscheidend. Dies gilt auch für die Gültigkeit von Skonti und anderen terminabhängigen Zahlungskürzungen.</p>
+<p>e) 7 Tage nach Ablauf des angegebenen Zahlungsziels, spätestens jedoch 30 Tage nach Rechnungsstellung tritt automatisch Verzug ein, es sei denn, andere Regelungen sind ausdrücklich schriftlich vereinbart worden. Bei Verzug ist RADACOM berechtigt, je schriftlicher Mahnung eine pauschale Gebühr in Höhe von € 5,- für Bearbeitung und Porto zu berechnen. Verzugszinsen werden mit 8 Prozentpunkten p.a. über dem jeweiligen von der Deutschen Bundesbank im Bundesanzeiger veröffentlichten Basiszinssatz berechnet. Ergänzend zu den gesetzlichen Regelungen ist RADACOM berechtigt, höhere Verzugszinsen anzusetzen, sofern durch RADACOM ein höherer Schaden nachgewiesen werden kann.</p>
+<p>f) Bei Teilzahlungen hat die Tilgung von Nebenforderungen wie z.B. Versandkosten, Mahngebühren oder Verzugszinsen Vorrang vor der Hauptforderung (z.B. Warenwert). Insofern erlischt der Eigentumsvorbehalt erst mit Zahlung des vollen zum Zeitpunkt der Zahlung geschuldeten Betrages.</p>
+<p>g) Im Falle eines Zahlungsverzuges oder sonstiger Handlungen oder Unterlassungen, die den sich aus dem Geschäftsverhältnis ergebenden Verpflichtungen des Kunden entgegenstehen, gelten alle dem Kunden auch auf andere Verträge gewährten Skonti, Boni, Rabatte und sonstigen Zahlungskürzungen als nichtig.</p>
+<p>h) Wurde eine Zahlung per Lastschrifteinzug, Abbuchungsauftrag oder Kreditkarte vereinbart oder kommt der Kunde seiner Zahlungsverpflichtung nicht vollständig oder rechtzeitig nach, ist RADACOM berechtigt, eine entsprechende Buchung ohne gesonderte Bestätigung durch den Kunden zu veranlassen. Der Kunde ist verpflichtet, RADACOM die dafür notwendigen Daten vollständig und wahrheitsgemäß zur Verfügung zu stellen und eine ausreichende Deckung des Kontos sicherzustellen. RADACOM ist berechtigt, diese Daten zu speichern und für alle Vorgänge, die der Begleichung von Zahlungsverpflichtungen, ggf. auch aus anderen Verträgen, durch den Kunden dienen, zu verwenden und zum Zwecke der Vollstreckung an Inkassounternehmen, Gerichtsvollzieher etc. weiterzugeben. Eine sonstige Nutzung oder Weitergabe der Daten an Dritte zu anderen Zwecken erfolgt nicht.</p>
+<p>i) Bei der Verarbeitung von Waren durch den Kunden gilt RADACOM als Hersteller und erwirbt Miteigentum an den neu entstehenden Sachen. Erfolgt die Verarbeitung zusammen mit anderen Materialien, erwirbt RADACOM Miteigentum im Verhältnis des Rechnungswertes der Waren von RADACOM zu dem der anderen Materialien. Ist im Falle der Verbindung oder Vermischung der Waren von RADACOM mit einer Sache des Kunden diese als Hauptsache anzusehen, geht das Miteigentum an der Sache in dem Verhältnis des Rechnungswertes der Waren von RADACOM zum Rechnungs- oder mangels einer solchen, zum Verkehrswert der Hauptsache auf RADACOM über. Der Kunde gilt in diesen Fällen als Verwahrer.</p>
+<p>j) Der Kunde ist berechtigt, über die im Eigentum von RADACOM stehenden Waren im ordentlichen Geschäftsgang zu verfügen, solange er seinen Verpflichtungen aus der Geschäftsverbindung mit RADACOM rechtzeitig nachkommt.</p>
+<p>k) Bei Zahlungsverzug des Kunden ist RADACOM berechtigt, eine Nachfristsetzung zur Zahlung zu setzen und danach die einstweilige Herausgabe der im Eigentum von RADACOM stehenden Waren zu verlangen.</p>
+<p>l) Alle Forderungen aus dem Verkauf oder der Verarbeitung von Waren, an denen RADACOM Eigentumsrechte zustehen, tritt der Kunde schon jetzt im Umfang des Eigentumsanteils von RADACOM verkauften Waren zur Sicherung an RADACOM ab.</p>
+<p>m) Auf Verlangen hat der Kunde RADACOM alle erforderlichen Auskünfte über den Verbleib der noch im Eigentum von RADACOM stehenden Waren und die an RADACOM abgetretenen Forderungen zu geben. Nach Verzugseintritt hat der Kunde seine Abnehmer unverzüglich von der Abtretung in Kenntnis zu setzen.</p>
+<p>n) Übersteigt der Wert der Sicherheiten die Forderungen von RADACOM um mehr als 25%, so wird RADACOM auf Verlangen des Kunden insoweit Sicherheiten nach Wahl von RADACOM freigeben.</p>
+
+<h2>5. Gewährleistung, Schadensersatz, Höhere Gewalt</h2>
+<p>a) Die Funktionstüchtigkeit funktechnischer Geräte und Anlagen hängt immer auch von den Umgebungsbedingungen ab, daher kann RADACOM keine Gewähr übernehmen, dass geliefertes Material zu jeder Zeit und an jedem Ort einsetzbar ist. RADACOM haftet nicht für Störungen oder Unterbrechungen des Funkverkehrs durch elektromagnetische Aussendungen Dritter.</p>
+<p>b) Der Kunde hat Lieferungen und Leistungen von RADACOM unverzüglich nach Empfang, spätestens jedoch innerhalb von acht Tagen einem Funktionstest zu unterziehen und dabei erkennbare Mängel unter genauer Angabe des Mangels schriftlich anzuzeigen.</p>
+<p>c) Bei berechtigten Beanstandungen wird RADACOM nach eigener Wahl die Ware umtauschen, sie zurücknehmen, dem Kunden einen Preisnachlass einräumen und/oder die Ware oder Leistung nachbessern. Erweist sich auch der Umtausch der Ware oder die Nachbesserung der Ware oder Leistung als erfolglos, wird RADACOM dem Kunden das Recht auf Wandlung oder Minderung einräumen.</p>
+<p>d) Mitgelieferte Bedienungsanleitungen, Hinweise und sonstige Dokumentationen sind vor Inbetriebnahme der Ware eingehend zu lesen. Bei Verständnisproblemen sind diese vor Inbetriebnahme mit RADACOM zu klären.</p>
+<p>e) Wird die von RADACOM gelieferte Ware oder erbrachte Leistung auf Verlangen des Kunden von RADACOM oder einem von RADACOM beauftragten Dritten untersucht und zeigt sich hierbei ein von RADACOM zu vertretender Mangel der Ware oder der Leistung nicht, so hat der Kunde RADACOM die hierdurch entstandenen Aufwendungen zu ersetzen. Dies gilt insbesondere dann, wenn das Gerät vom Kunden falsch bedient wurde. Geringfügige Normabweichungen, die die Verwendbarkeit des Gerätes nicht beeinträchtigen, sind von der Gewährleistung ausgeschlossen.</p>
+<p>f) Eine Gewährleistung für nicht rechtzeitig angezeigte Mängel ist ausgeschlossen. Hat der Kunde an dem Lieferungs- oder Leistungsgegenstand Veränderungen vorgenommen oder vornehmen lassen, entfällt insoweit ebenfalls eine Gewährleistung.</p>
+<p>g) Die Schadensersatzhaftung von RADACOM, RADACOMs gesetzlichen Vertretern oder Erfüllungsgehilfen ist auf den vertragstypischen, vorhersehbaren Schaden, welcher üblicherweise dem vertraglich vereinbarten Wert der Lieferung oder Leistung entspricht, begrenzt, es sei denn, es handelt sich um Schäden an Leben, Körper oder Gesundheit.</p>
+<p>h) Beruht die Verpflichtung von RADACOM zu Schadensersatz auf der nur leicht fahrlässigen Verletzung von nicht wesentlichen Nebenpflichten, ist die Schadensersatzhaftung von RADACOM, von RADACOMs gesetzlichen Vertretern oder Erfüllungsgehilfen ausgeschlossen, es sei denn, es handelt sich um Schäden an Leben, Körper oder Gesundheit.</p>
+<p>i) RADACOM haftet nicht für die unmittelbaren und mittelbaren Folgen von Krieg, Terror, Aufruhr, Plünderung, Zusammenrottung von Menschenmengen und dadurch hervorgerufenen Abwehrmaßnahmen, Sabotage, Betriebs- und Verkehrsstörungen, Unfällen, Streik, Aussperrung sowie durch sie hervorgerufene Arbeitsunterbrechungen und deren Folgen, Rohstoff- und Energiemangel, Verfügungen von hoher Hand, Beschädigung durch Tiere und Pflanzen, sonstiger Naturereignisse und Fälle höherer Gewalt, auch wenn diese Ereignisse bei Lieferanten auftreten. Gleiches gilt für jedes sonstige unvorhersehbare oder unvermeidbare Ereignis, das RADACOM an der Erfüllung seiner vertraglichen Pflichten hindert, sofern RADACOM die zur Vermeidung von Schäden und Verlusten erforderliche Sorgfalt nachweislich angewandt hat. Solche Ereignisse befreien RADACOM für die Dauer der Störung und im Umfang ihrer Auswirkungen von der Verpflichtung zur Lieferung und Leistung und erlauben RADACOM von dem Vertrag ganz oder in Teilen zurückzutreten, soweit sie die Durchführung des betroffenen Geschäfts unmöglich oder für RADACOM wirtschaftlich unzumutbar machen.</p>
+
+<h2>6. Rechte Dritter, Nennung von Referenzen, Verwendung von Namen und Zeichen</h2>
+<p>a) RADACOM übernimmt keinerlei Haftung für die Freiheit der von RADACOM im Auftrage des Kunden gefertigten, überlassenen oder im Zusammenwirken mit dem Kunden hergestellten audiovisuellen Programme, Aufzeichnungen von Bild und Ton, schriftlichen oder bildlichen Darstellungen, Fotografien oder sonstigen Werke von irgendwelchen Rechten Dritter. Werden derartige Rechte von Dritten gegen RADACOM geltend gemacht, ist der Kunde verpflichtet, RADACOM von derartigen Ansprüchen Dritter freizustellen.</p>
+<p>b) RADACOM ist berechtigt, Firmennamen, Herstellungs-, Aufführungs- und Einsatzorte sowie Titel der Projekte für die RADACOM mittelbar oder unmittelbar tätig war, in seinen Referenzlisten aufzuführen und über diese Referenzen zu berichten, sofern der Kunde dem nicht ausdrücklich widerspricht oder eine öffentliche Nennung im Einzelfall eindeutig unangebracht wäre.</p>
+<p>c) Der Name RADACOM, der gestaltete Schriftzug und das Logo sind geschützte Marken und dürfen nur mit ausdrücklicher Genehmigung durch RADACOM und nur unverfälscht wiedergegeben werden. Von RADACOM hergestellte Produkte müssen in der Darstellung durch den Kunden als solche erkennbar bleiben und dürfen nicht verfälscht, mit anderen Hersteller- oder Produktnamen versehen oder in irgendeiner Weise in ihrer Erscheinung verändert werden, die dazu geeignet ist, Zweifel über den Ursprung der Geräte zu wecken.</p>
+<p>d) Namen, Vertriebsmarken, Logos und Zeichen von RADACOM, auch solche, die nicht als Marke eingetragen sind, aber eindeutig mit RADACOM in Verbindung gebracht werden können, dürfen, auch im Zusammenhang mit Sponsoringvereinbarungen oder sonstigen Förderungen oder Preisnachlässen, nur mit ausdrücklicher Genehmigung durch RADACOM (z.B. durch Sponsoringvertrag) verwendet werden.</p>
+<p>e) Wird eine Namensnennung oder Wiedergabe des RADACOM-Logos oder anderer Zeichen vereinbart, so darf diese nur auf Basis der von RADACOM zur Verfügung gestellten und vereinbarten Vorlagen oder Dateien und nach den von RADACOM genannten Vorgaben wie Größe, Hintergrund, etc. erfolgen. Die Verwendung von pixelbasierten Dateien als Vorlage ist nur dann erlaubt, wenn eine höchstmögliche Auflösung gewählt und eine vektorbasierte Vorlage aus technischen Gründen nicht verwendet werden kann, nicht zur Verfügung steht oder ein dem Original weniger entsprechendes optisches Ergebnis liefern würde.</p>
+
+<h2>7. Erfüllungsort, Gerichtsstand, Inkrafttreten, Unwirksamkeit</h2>
+<p>a) Erfüllungs- und Zahlungsort für RADACOM und den Kunden sowie ausschließlicher Gerichtsstand einschließlich Mahn- und Vollstreckungsverfahren ist Lippstadt.</p>
+<p>b) Diese Bestimmungen treten mit ihrer Veröffentlichung auf der Website von RADACOM in Kraft und ersetzen damit alle vorherigen Fassungen dieser Bestimmungen.</p>
+<p>c) Sollten einzelne Bestimmungen der vorstehenden Bedingungen unwirksam oder nicht durchführbar sein oder werden, wird dadurch die Wirksamkeit der übrigen Bestimmungen des Vertrages nicht berührt. In diesem Falle ist die unwirksame oder undurchführbare Bestimmung von den Vertragsparteien durch eine wirksame oder durchführbare zu ersetzen, die den verfolgten Regelungszielen am nächsten kommt. Gleiches gilt für die Ausfüllung etwaiger Vertragslücken.</p>
+<p><a class="doc-download" href="assets/dokumente/AGB-RADACOM-GmbH-2025.pdf" target="_blank" rel="noopener">AGB als PDF herunterladen</a></p>
+  </div>
+  <div data-en>
+    <h1>General Terms and Conditions</h1>
+    <p class="meta">Version 1.2, as of: 29 Aug 2025 · <a href="https://www.radacom.de" target="_blank" rel="noopener">www.radacom.de</a></p>
+
+<h2>1. General provisions, applicability</h2>
+<p>a) These General Terms and Conditions (GTC) apply only to business with entrepreneurs within the meaning of § 14 of the German Civil Code (BGB), including corporations, institutions and foundations under public law. They are an integral part of all offers and contracts of RADACOM GmbH, hereinafter referred to as "RADACOM", and apply in their respective valid version to all future business with RADACOM as well. For business with private individuals, these GTC apply to the extent that the individual provisions are legally permissible.</p>
+<p>b) For individual types of business (e.g. rental), supplementary conditions apply which, in the event of conflicting provisions, take precedence over these General Terms and Conditions.</p>
+<p>c) Conflicting terms and conditions of the customer are expressly rejected. They apply only if agreed in writing. If RADACOM recognises other conditions in an individual case, the General Terms and Conditions of RADACOM apply to all matters not regulated therein.</p>
+<p>d) For the purpose of credit assessment, RADACOM reserves the right, in the context of initiating business, to obtain address and creditworthiness data, including data determined on the basis of mathematical-statistical procedures. To decide on the establishment, performance or termination of the contractual relationship, RADACOM collects or uses probability values, the calculation of which includes, among other things, address data.</p>
+<p>e) The version of these provisions published on the RADACOM website at the time the order is placed shall apply.</p>
+
+<h2>2. Offers, prices, deadlines, partial deliveries</h2>
+<p>a) Offers from RADACOM are subject to change unless they are expressly marked as binding. The contract with the customer is only concluded upon order confirmation by RADACOM or upon handover of the item.</p>
+<p>b) The general list prices of RADACOM valid on the day of delivery or performance apply, plus any delivery, installation, programming and insurance where applicable.</p>
+<p>c) RADACOM reserves the right to change the conditions granted to the customer, possibly even over a long period. The customer may not invoke any customary right in this respect. The new conditions apply to contracts newly concluded from the day of their publication.</p>
+<p>d) RADACOM reserves the right to staggered partial delivery and partial performance. Such partial deliveries and partial performances are processed and invoiced separately.</p>
+
+<h2>3. Shipping, packaging, insurance</h2>
+<p>a) The risk passes to the customer upon handover to the transport company; this also applies if RADACOM chooses the means of transport and the transport company, and even if RADACOM bears the transport costs.</p>
+<p>b) The goods are shipped in suitable packaging chosen by RADACOM. Unless otherwise marked, any shipping costs incurred are to be borne by the customer.</p>
+<p>c) Before signing for receipt, the customer must check deliveries for completeness of packages and external transport damage and, where applicable, refuse to sign. The customer must report complaints to RADACOM immediately.</p>
+<p>d) Transport and other insurance are only deemed agreed if they are explicitly listed in writing.</p>
+
+<h2>4. Invoicing, payment, retention of title</h2>
+<p>a) Invoices from RADACOM are payable immediately and without deduction, unless RADACOM expressly grants other payment terms.</p>
+<p>b) Invoices from RADACOM are deemed originals even if they are transmitted or retrieved electronically.</p>
+<p>c) If financing costs are added to the invoice amount, these are deductible if the payment term specified there is met.</p>
+<p>d) The decisive factor for all payment dates is the date of receipt of payment by RADACOM. This also applies to the validity of cash discounts and other date-dependent payment reductions.</p>
+<p>e) 7 days after expiry of the specified payment term, but at the latest 30 days after invoicing, default occurs automatically, unless other provisions have been expressly agreed in writing. In the event of default, RADACOM is entitled to charge a flat fee of € 5 per written reminder for processing and postage. Default interest is charged at 8 percentage points p.a. above the respective base interest rate published by the Deutsche Bundesbank in the Federal Gazette. In addition to the statutory provisions, RADACOM is entitled to charge higher default interest if RADACOM can prove higher damage.</p>
+<p>f) In the case of partial payments, the settlement of ancillary claims such as shipping costs, reminder fees or default interest takes precedence over the principal claim (e.g. value of goods). Accordingly, the retention of title only expires upon payment of the full amount owed at the time of payment.</p>
+<p>g) In the event of default of payment or other acts or omissions that conflict with the customer's obligations arising from the business relationship, all cash discounts, bonuses, rebates and other payment reductions granted to the customer, including those under other contracts, are deemed void.</p>
+<p>h) If payment by direct debit, debit order or credit card has been agreed, or if the customer fails to meet their payment obligation fully or on time, RADACOM is entitled to initiate a corresponding booking without separate confirmation by the customer. The customer is obliged to provide RADACOM with the necessary data completely and truthfully and to ensure sufficient account coverage. RADACOM is entitled to store this data and to use it for all transactions serving the settlement of payment obligations by the customer, possibly also from other contracts, and to pass it on to debt collection companies, bailiffs etc. for the purpose of enforcement. The data is not otherwise used or passed on to third parties for other purposes.</p>
+<p>i) When goods are processed by the customer, RADACOM is deemed the manufacturer and acquires co-ownership of the newly created items. If processing is carried out together with other materials, RADACOM acquires co-ownership in the ratio of the invoice value of RADACOM's goods to that of the other materials. If, in the event of combination or mixing of RADACOM's goods with an item of the customer, the latter is to be regarded as the main item, co-ownership of the item passes to RADACOM in the ratio of the invoice value of RADACOM's goods to the invoice value or, in the absence thereof, to the market value of the main item. In these cases, the customer is deemed the custodian.</p>
+<p>j) The customer is entitled to dispose of the goods owned by RADACOM in the ordinary course of business as long as they meet their obligations from the business relationship with RADACOM on time.</p>
+<p>k) In the event of the customer's default of payment, RADACOM is entitled to set a grace period for payment and thereafter to demand the temporary surrender of the goods owned by RADACOM.</p>
+<p>l) The customer hereby assigns to RADACOM, by way of security, all claims arising from the sale or processing of goods to which RADACOM holds ownership rights, to the extent of RADACOM's ownership share in the goods sold.</p>
+<p>m) Upon request, the customer must provide RADACOM with all necessary information about the whereabouts of the goods still owned by RADACOM and the claims assigned to RADACOM. After default occurs, the customer must immediately inform their customers of the assignment.</p>
+<p>n) If the value of the securities exceeds RADACOM's claims by more than 25%, RADACOM will, at the customer's request, release securities of RADACOM's choice to that extent.</p>
+
+<h2>5. Warranty, liability for damages, force majeure</h2>
+<p>a) The functionality of radio-technology devices and systems always depends in part on the ambient conditions; RADACOM can therefore not guarantee that the material supplied can be used at any time and in any place. RADACOM is not liable for disturbances or interruptions of radio traffic caused by electromagnetic emissions of third parties.</p>
+<p>b) The customer must subject deliveries and services from RADACOM to a function test immediately upon receipt, but at the latest within eight days, and must report any identifiable defects in writing with precise details of the defect.</p>
+<p>c) In the case of justified complaints, RADACOM will, at its own discretion, exchange the goods, take them back, grant the customer a price reduction and/or rectify the goods or service. If the exchange of the goods or the rectification of the goods or service also proves unsuccessful, RADACOM will grant the customer the right to rescission or reduction.</p>
+<p>d) Supplied operating instructions, notes and other documentation must be read thoroughly before commissioning the goods. In the event of comprehension problems, these must be clarified with RADACOM before commissioning.</p>
+<p>e) If the goods supplied or services rendered by RADACOM are examined at the customer's request by RADACOM or a third party commissioned by RADACOM, and no defect of the goods or service attributable to RADACOM is found, the customer must reimburse RADACOM for the expenses incurred. This applies in particular if the device was operated incorrectly by the customer. Minor deviations from standards that do not impair the usability of the device are excluded from the warranty.</p>
+<p>f) A warranty for defects not reported in time is excluded. If the customer has made or had changes made to the delivery or service item, the warranty also lapses in this respect.</p>
+<p>g) The liability for damages of RADACOM, RADACOM's legal representatives or vicarious agents is limited to the contract-typical, foreseeable damage which usually corresponds to the contractually agreed value of the delivery or service, unless the damage relates to life, body or health.</p>
+<p>h) If RADACOM's obligation to pay damages is based on the only slightly negligent breach of non-essential ancillary obligations, the liability for damages of RADACOM, RADACOM's legal representatives or vicarious agents is excluded, unless the damage relates to life, body or health.</p>
+<p>i) RADACOM is not liable for the direct and indirect consequences of war, terror, riot, looting, gathering of crowds and the defensive measures caused thereby, sabotage, operational and traffic disruptions, accidents, strike, lockout and the work stoppages caused by them and their consequences, shortage of raw materials and energy, acts of public authority, damage by animals and plants, other natural events and cases of force majeure, even if these events occur at suppliers. The same applies to any other unforeseeable or unavoidable event that prevents RADACOM from fulfilling its contractual obligations, provided that RADACOM has demonstrably applied the care required to avoid damage and losses. Such events release RADACOM from the obligation to deliver and perform for the duration of the disruption and to the extent of its effects, and allow RADACOM to withdraw from the contract in whole or in part, insofar as they make the execution of the affected business impossible or economically unreasonable for RADACOM.</p>
+
+<h2>6. Third-party rights, naming of references, use of names and marks</h2>
+<p>a) RADACOM assumes no liability whatsoever that the audiovisual programmes, recordings of image and sound, written or pictorial representations, photographs or other works produced, provided or created in cooperation with the customer on the customer's behalf are free from any third-party rights. If such rights are asserted by third parties against RADACOM, the customer is obliged to indemnify RADACOM against such third-party claims.</p>
+<p>b) RADACOM is entitled to list company names, places of production, performance and deployment as well as titles of the projects for which RADACOM was directly or indirectly active in its reference lists and to report on these references, provided that the customer does not expressly object to this or a public mention would clearly be inappropriate in the individual case.</p>
+<p>c) The name RADACOM, the designed lettering and the logo are protected trademarks and may only be reproduced with the express permission of RADACOM and only in unaltered form. Products manufactured by RADACOM must remain recognisable as such in the customer's depiction and may not be altered, provided with other manufacturer or product names, or changed in their appearance in any way that is likely to raise doubts about the origin of the devices.</p>
+<p>d) Names, distribution marks, logos and signs of RADACOM, including those not registered as trademarks but which can clearly be associated with RADACOM, may only be used with the express permission of RADACOM (e.g. through a sponsorship agreement), including in connection with sponsorship agreements or other support or discounts.</p>
+<p>e) If a mention of the name or reproduction of the RADACOM logo or other signs is agreed, this may only be done on the basis of the templates or files provided and agreed by RADACOM and in accordance with the specifications stated by RADACOM such as size, background, etc. The use of pixel-based files as a template is only permitted if the highest possible resolution is chosen and a vector-based template cannot be used for technical reasons, is not available or would provide a visual result that corresponds less to the original.</p>
+
+<h2>7. Place of performance, place of jurisdiction, entry into force, invalidity</h2>
+<p>a) The place of performance and payment for RADACOM and the customer, as well as the exclusive place of jurisdiction including dunning and enforcement proceedings, is Lippstadt.</p>
+<p>b) These provisions enter into force upon their publication on the RADACOM website and thereby replace all previous versions of these provisions.</p>
+<p>c) Should individual provisions of the above conditions be or become invalid or unenforceable, the validity of the remaining provisions of the contract shall not be affected. In this case, the invalid or unenforceable provision shall be replaced by the contracting parties with a valid or enforceable one that comes closest to the intended regulatory objectives. The same applies to filling any gaps in the contract.</p>
+<hr>
+<p style="font-size:13px;color:var(--light);font-style:italic;line-height:1.6;">This English text is a translation provided for convenience only. In the event of any discrepancy or dispute, the German version is solely authoritative and legally binding.</p>
+<p><a class="doc-download" href="assets/dokumente/AGB-RADACOM-GmbH-2025.pdf" target="_blank" rel="noopener">Download GTC (German) as PDF</a></p>
+  </div>
+</div>
+<div id="nk-footer-root"></div>
+<div id="nk-cookiemodal-root"></div>
+<script src="assets/js/nikos-footer.js"></script>
+<script src="assets/js/nikos-config.js"></script>
+<script>
+(function(){
+  var url = (typeof window.NIKOS_CONTACT_URL !== 'undefined') ? window.NIKOS_CONTACT_URL : 'nikos-kontakt.html';
+  document.querySelectorAll('.nav__cta,.nav__cta-mobile').forEach(function(el){
+    el.href = url;
+  });
+})();
+</script>
+</body>
+</html>

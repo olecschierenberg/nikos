@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /nikos-login.html
+Disallow: /partner-karte.html
+
+Sitemap: https://nikos.audio/sitemap.xml

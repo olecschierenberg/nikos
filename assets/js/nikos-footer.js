@@ -1,0 +1,122 @@
+// ═══════════════════════════════════════════════════════════════════
+// nikos-footer.js — Zentraler Footer für alle nikos.audio-Seiten
+// ═══════════════════════════════════════════════════════════════════
+// Änderungen hier wirken sofort auf alle Seiten.
+// Einbindung in jeder HTML-Seite:
+//   <div id="nk-footer-root"></div>
+//   <div id="nk-cookiemodal-root"></div>
+//   <script src="nikos-footer.js"></script>
+// ═══════════════════════════════════════════════════════════════════
+
+(function() {
+  // Footer einsetzen
+  var footerRoot = document.getElementById('nk-footer-root');
+  if (footerRoot) {
+    footerRoot.outerHTML = "<footer class=\"nk-footer\">\n  <div class=\"nk-footer__inner\">\n    <div class=\"nk-footer__grid\" style=\"grid-template-columns:1.2fr 1fr 1fr 1fr;\">\n      <div>\n        <div class=\"nk-footer__brand-logo\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"344.188 -0.500 356.378 66.750\" style=\"height:28px;width:auto;\"><path fill=\"#C8CDD2\" d=\"M344.688,0.688h26.75l32.935,47.026h0.003V0.688h17.313v64.375h-26.75l-32.935-47.026h-0.003v47.026h-17.313V0.688z\"/><path fill=\"#C8CDD2\" d=\"M433.706,0.688h17.313v64.375h-17.313V0.688z\"/><path fill=\"#C8CDD2\" d=\"M463.267,0.688h17.313v23.625h8.248l21.799-23.625h23.516l-30.438,31.399l33.938,32.976h-24.619L488.295,40.25h-7.716v24.813h-17.313V0.688z\"/><path fill=\"#C8CDD2\" d=\"M541.403,42.651v-18.99c0-8.42,1.828-14.462,5.484-18.124C550.567,1.846,556.927,0,565.964,0h28.557c8.834,0,15.117,1.846,18.848,5.537c3.732,3.691,5.598,9.632,5.598,17.821v19.249c-0.127,8.363-2.031,14.318-5.711,17.865c-3.656,3.519-9.836,5.277-18.543,5.277h-28.748c-8.605,0-14.852-1.729-18.734-5.19C543.345,57.07,541.403,51.101,541.403,42.651z M559.278,29.548v6.266c0,5.473,0.711,9.088,2.131,10.844c1.42,1.729,4.197,2.593,8.332,2.593h21.42c4.008,0,6.658-0.922,7.951-2.766c1.318-1.871,1.979-5.299,1.979-10.282v-6.524c0-5.127-0.811-8.598-2.434-10.412c-1.6-1.844-4.377-2.766-8.332-2.766h-20.014c-4.135,0-7.014,0.937-8.637,2.809C560.077,21.182,559.278,24.595,559.278,29.548z\"/><path fill=\"#C8CDD2\" d=\"M646.131,44.313c0.229,2.889,0.748,4.796,1.561,5.72c0.813,0.896,2.805,1.343,5.978,1.343h22.234c4.568,0,6.853-1.805,6.853-5.415c0-2.311-0.901-3.885-2.702-4.723c-1.777-0.866-6.078-1.3-12.904-1.3h-10.658c-8.273,0-14.363-0.533-18.271-1.601c-3.883-1.067-6.472-3.058-7.766-5.972c-1.092-2.394-1.637-6.533-1.637-12.418c0-8.048,1.712-13.385,5.138-16.01C637.407,1.313,643.218,0,651.388,0h24.358c8.551,0,14.336,1.354,17.355,4.063s4.529,7.493,4.529,14.353v2.334h-17.313c0-2.544-0.521-4.235-1.561-5.074c-1.041-0.867-3.376-1.301-7.005-1.301h-18.541c-4.721,0-7.081,1.706-7.081,5.117c0,3.412,1.649,5.189,4.948,5.334c3.324,0.116,6.445,0.174,9.364,0.174h11.762c8.044,0,14.021,0.605,17.929,1.816c3.933,1.212,6.622,3.346,8.069,6.402c1.243,2.625,1.865,6.735,1.865,12.329c0,5.682-0.647,9.85-1.941,12.502c-1.421,2.885-4.009,4.889-7.764,6.013c-3.73,1.125-9.466,1.688-17.204,1.688h-22.646c-8.373,0-14.082-1.268-17.127-3.804c-3.045-2.535-4.567-6.929-4.567-13.182v-4.452H646.131z\"/></svg></div>\n        <ul class=\"nk-footer__brand-features\">\n          <li data-de><span style=\"display:inline-block;width:6px;height:6px;background:var(--brand-orange);margin-right:9px;vertical-align:middle;position:relative;top:-1px;border-radius:50%;\"></span>Mobile Durchsagen</li><li data-en><span style=\"display:inline-block;width:6px;height:6px;background:var(--brand-orange);margin-right:9px;vertical-align:middle;position:relative;top:-1px;border-radius:50%;\"></span>Mobile announcements</li>\n          <li data-de><span style=\"display:inline-block;width:6px;height:6px;background:var(--brand-orange);margin-right:9px;vertical-align:middle;position:relative;top:-1px;border-radius:50%;\"></span>Alarmierung</li><li data-en><span style=\"display:inline-block;width:6px;height:6px;background:var(--brand-orange);margin-right:9px;vertical-align:middle;position:relative;top:-1px;border-radius:50%;\"></span>Alerting</li>\n          <li data-de><span style=\"display:inline-block;width:6px;height:6px;background:var(--brand-orange);margin-right:9px;vertical-align:middle;position:relative;top:-1px;border-radius:50%;\"></span>Signalisierung</li><li data-en><span style=\"display:inline-block;width:6px;height:6px;background:var(--brand-orange);margin-right:9px;vertical-align:middle;position:relative;top:-1px;border-radius:50%;\"></span>Signalling</li>\n          <li data-de><span style=\"display:inline-block;width:6px;height:6px;background:var(--brand-orange);margin-right:9px;vertical-align:middle;position:relative;top:-1px;border-radius:50%;\"></span>Werbung</li><li data-en><span style=\"display:inline-block;width:6px;height:6px;background:var(--brand-orange);margin-right:9px;vertical-align:middle;position:relative;top:-1px;border-radius:50%;\"></span>Advertising</li>\n          <li data-de><span style=\"display:inline-block;width:6px;height:6px;background:var(--brand-orange);margin-right:9px;vertical-align:middle;position:relative;top:-1px;border-radius:50%;\"></span>Hintergrundmusik</li><li data-en><span style=\"display:inline-block;width:6px;height:6px;background:var(--brand-orange);margin-right:9px;vertical-align:middle;position:relative;top:-1px;border-radius:50%;\"></span>Background music</li>\n          <li data-de><span style=\"display:inline-block;width:6px;height:6px;background:var(--brand-orange);margin-right:9px;vertical-align:middle;position:relative;top:-1px;border-radius:50%;\"></span>Fernsteuerung</li><li data-en><span style=\"display:inline-block;width:6px;height:6px;background:var(--brand-orange);margin-right:9px;vertical-align:middle;position:relative;top:-1px;border-radius:50%;\"></span>Remote control</li>\n          <li data-de><span style=\"display:inline-block;width:6px;height:6px;background:var(--brand-orange);margin-right:9px;vertical-align:middle;position:relative;top:-1px;border-radius:50%;\"></span>Monitoring</li><li data-en><span style=\"display:inline-block;width:6px;height:6px;background:var(--brand-orange);margin-right:9px;vertical-align:middle;position:relative;top:-1px;border-radius:50%;\"></span>Monitoring</li>\n          <li data-de><span style=\"display:inline-block;width:6px;height:6px;background:var(--brand-orange);margin-right:9px;vertical-align:middle;position:relative;top:-1px;border-radius:50%;\"></span>Notbeleuchtung</li><li data-en><span style=\"display:inline-block;width:6px;height:6px;background:var(--brand-orange);margin-right:9px;vertical-align:middle;position:relative;top:-1px;border-radius:50%;\"></span>Emergency lighting</li>\n        </ul>\n        <div class=\"nk-footer__social\">\n          <a href=\"https://www.linkedin.com/company/radacom\" target=\"_blank\" rel=\"noopener\" title=\"LinkedIn\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z\"/></svg></a>\n          <a href=\"https://www.instagram.com/radacom.de/\" target=\"_blank\" rel=\"noopener\" title=\"Instagram\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z\"/></svg></a>\n          <a href=\"https://www.facebook.com/radacomberlin/\" target=\"_blank\" rel=\"noopener\" title=\"Facebook\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z\"/></svg></a>\n        </div>\n        </div>\n      <div>\n        <div class=\"nk-footer__col-title\" data-de>Navigation</div><div class=\"nk-footer__col-title\" data-en>Navigation</div>\n        <ul class=\"nk-footer__links\">\n          <li><a href=\"nikos-system.html\" data-de>System</a><a href=\"nikos-system.html\" data-en>System</a></li>\n          <li><a href=\"nikos-anwendungen.html\" data-de>Anwendungen</a><a href=\"nikos-anwendungen.html\" data-en>Applications</a></li>\n          <li><a href=\"nikos-produkte.html\" data-de>Produkte</a><a href=\"nikos-produkte.html\" data-en>Products</a></li>\n          <li><a href=\"nikos-referenzen.html\" data-de>Referenzen</a><a href=\"nikos-referenzen.html\" data-en>References</a></li>\n          <li><a href=\"nikos-vermietung.html\" data-de>Vermietung</a><a href=\"nikos-vermietung.html\" data-en>Rental</a></li>\n          <li><a href=\"nikos-downloads.html\" data-de>Downloads</a><a href=\"nikos-downloads.html\" data-en>Downloads</a></li>\n          <li><a href=\"nikos-kontakt.html\" data-de>Kontakt</a><a href=\"nikos-kontakt.html\" data-en>Contact</a></li>\n        </ul>\n      </div>\n      <div>\n        <div class=\"nk-footer__col-title\" data-de>Anwendungen</div><div class=\"nk-footer__col-title\" data-en>Applications</div>\n        <ul class=\"nk-footer__links\">\n          <li><a href=\"nikos-anwendungen.html\" data-de>Festival</a><a href=\"nikos-anwendungen.html\" data-en>Festival</a></li>\n          <li><a href=\"nikos-anwendungen.html\" data-de>Volksfest</a><a href=\"nikos-anwendungen.html\" data-en>Folk Festival</a></li>\n          <li><a href=\"nikos-anwendungen.html\" data-de>Stadtfest</a><a href=\"nikos-anwendungen.html\" data-en>City Festival</a></li>\n          <li><a href=\"nikos-anwendungen.html\" data-de>Gedenkveranstaltung</a><a href=\"nikos-anwendungen.html\" data-en>Memorial Event</a></li>\n          <li><a href=\"nikos-anwendungen.html\" data-de>Jubil\u00e4umsfeier</a><a href=\"nikos-anwendungen.html\" data-en>Anniversary Celebration</a></li>\n          <li><a href=\"nikos-anwendungen.html\" data-de>Weihnachtsmarkt</a><a href=\"nikos-anwendungen.html\" data-en>Christmas Market</a></li>\n        </ul>\n      </div>\n      <div>\n        <div class=\"nk-footer__col-title\" data-de>&nbsp;</div><div class=\"nk-footer__col-title\" data-en>&nbsp;</div>\n        <ul class=\"nk-footer__links\">\n          <li><a href=\"nikos-anwendungen.html\" data-de>Festumzug</a><a href=\"nikos-anwendungen.html\" data-en>Parade</a></li>\n          <li><a href=\"nikos-anwendungen.html\" data-de>Firmenveranstaltung</a><a href=\"nikos-anwendungen.html\" data-en>Corporate Event</a></li>\n          <li><a href=\"nikos-anwendungen.html\" data-de>Sportevent</a><a href=\"nikos-anwendungen.html\" data-en>Sports Event</a></li>\n          <li><a href=\"nikos-anwendungen.html\" data-de>Parkfest / Gartenschau</a><a href=\"nikos-anwendungen.html\" data-en>Park Festival</a></li>\n          <li><a href=\"nikos-anwendungen.html\" data-de>Baustelle / Industrie</a><a href=\"nikos-anwendungen.html\" data-en>Construction / Industry</a></li>\n          <li><a href=\"nikos-anwendungen.html\" data-de>Krisenlage</a><a href=\"nikos-anwendungen.html\" data-en>Crisis Situation</a></li>\n        </ul>\n      </div>\n    </div>\n\n    <div class=\"nk-footer__bottom\">\n      <span class=\"nk-footer__copy\" data-de>\u00a9 2026 RADACOM GmbH \u00b7 Alle Rechte vorbehalten</span>\n      <span class=\"nk-footer__copy\" data-en>\u00a9 2026 RADACOM GmbH \u00b7 All rights reserved</span>\n            <ul class=\"nk-footer__bottom-links\">\n        <li><a href=\"nikos-agb.html\" data-de>AGB</a><a href=\"nikos-agb.html\" data-en>Terms</a></li>\n        <li><a href=\"nikos-mietbedingungen.html\" data-de>Mietbedingungen</a><a href=\"nikos-mietbedingungen.html\" data-en>Rental terms</a></li>\n        <li><a href=\"nikos-datenschutz.html\" data-de>Datenschutz</a><a href=\"nikos-datenschutz.html\" data-en>Privacy</a></li>\n        <li><a href=\"#\" onclick=\"openCookieSettings();return false;\" data-de>Cookie-Einstellungen</a><a href=\"#\" onclick=\"openCookieSettings();return false;\" data-en>Cookie settings</a></li>\n        <li><a href=\"nikos-impressum.html\" data-de>Impressum</a><a href=\"nikos-impressum.html\" data-en>Legal notice</a></li>\n      </ul>\n    </div>\n  </div>\n</footer>";
+  }
+
+  // Cookie-Modal einsetzen
+  var modalRoot = document.getElementById('nk-cookiemodal-root');
+  if (modalRoot) {
+    modalRoot.outerHTML = "<!-- Cookie Settings Modal -->\n<div id=\"cookieModal\" style=\"display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9999;align-items:center;justify-content:center;padding:20px\">\n  <div style=\"background:#fff;border-radius:4px;padding:40px;max-width:520px;width:100%;box-shadow:0 8px 40px rgba(0,0,0,.2);position:relative\">\n    <button onclick=\"closeCookieSettings()\" style=\"position:absolute;top:16px;right:16px;background:none;border:none;font-size:20px;cursor:pointer;color:#999;line-height:1\">\u2715</button>\n    <h2 style=\"font-size:20px;font-weight:700;color:#4D4D4D;margin-bottom:8px\" data-de>Cookie-Einstellungen</h2>\n    <h2 style=\"font-size:20px;font-weight:700;color:#4D4D4D;margin-bottom:8px\" data-en>Cookie Settings</h2>\n    <p style=\"font-size:14px;color:#595959;margin-bottom:24px;line-height:1.6\" data-de>Wir verwenden Cookies, um unsere Website zu betreiben und zu verbessern. Notwendige Cookies sind immer aktiv.</p>\n    <p style=\"font-size:14px;color:#595959;margin-bottom:24px;line-height:1.6\" data-en>We use cookies to operate and improve our website. Necessary cookies are always active.</p>\n    <div style=\"display:flex;flex-direction:column;gap:16px;margin-bottom:28px\">\n      <div style=\"background:#F5F5F5;border-radius:4px;padding:16px 18px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px\">\n        <div>\n          <div style=\"font-size:14px;font-weight:700;color:#4D4D4D;margin-bottom:4px\" data-de>Notwendig</div>\n          <div style=\"font-size:14px;font-weight:700;color:#4D4D4D;margin-bottom:4px\" data-en>Necessary</div>\n          <div style=\"font-size:13px;color:#595959\" data-de>Technischer Betrieb der Website (Session, Sicherheit)</div>\n          <div style=\"font-size:13px;color:#595959\" data-en>Technical operation of the website (session, security)</div>\n        </div>\n        <div style=\"background:#FF6600;color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:6px;white-space:nowrap;margin-top:2px;flex-shrink:0\" data-de>Immer aktiv</div>\n        <div style=\"background:#FF6600;color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:6px;white-space:nowrap;margin-top:2px;flex-shrink:0\" data-en>Always on</div>\n      </div>\n      <div style=\"background:#F5F5F5;border-radius:4px;padding:16px 18px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px\">\n        <div>\n          <div style=\"font-size:14px;font-weight:700;color:#4D4D4D;margin-bottom:4px\" data-de>Statistik</div>\n          <div style=\"font-size:14px;font-weight:700;color:#4D4D4D;margin-bottom:4px\" data-en>Analytics</div>\n          <div style=\"font-size:13px;color:#595959\" data-de>Analyse des Nutzerverhaltens (nur nach Einwilligung)</div>\n          <div style=\"font-size:13px;color:#595959\" data-en>Analysis of user behaviour (only with consent)</div>\n        </div>\n        <label style=\"display:flex;align-items:center;flex-shrink:0;cursor:pointer;margin-top:2px\">\n          <input type=\"checkbox\" id=\"cookieStats\" style=\"accent-color:#FF6600;width:18px;height:18px\">\n        </label>\n      </div>\n      <div style=\"background:#F5F5F5;border-radius:4px;padding:16px 18px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px\">\n        <div>\n          <div style=\"font-size:14px;font-weight:700;color:#4D4D4D;margin-bottom:4px\" data-de>Marketing</div>\n          <div style=\"font-size:14px;font-weight:700;color:#4D4D4D;margin-bottom:4px\" data-en>Marketing</div>\n          <div style=\"font-size:13px;color:#595959\" data-de>Ausspielung von Anzeigen (ab Q3 2026, nur nach Einwilligung)</div>\n          <div style=\"font-size:13px;color:#595959\" data-en>Serving ads (from Q3 2026, only with consent)</div>\n        </div>\n        <label style=\"display:flex;align-items:center;flex-shrink:0;cursor:pointer;margin-top:2px\">\n          <input type=\"checkbox\" id=\"cookieMarketing\" style=\"accent-color:#FF6600;width:18px;height:18px\">\n        </label>\n      </div>\n    </div>\n    <div style=\"display:flex;gap:10px;flex-wrap:wrap\">\n      <button onclick=\"saveCookieSettings()\" style=\"background:#FF6600;color:#fff;border:none;padding:11px 24px;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;flex:1\" data-de>Einstellungen speichern</button>\n      <button onclick=\"saveCookieSettings()\" style=\"background:#FF6600;color:#fff;border:none;padding:11px 24px;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;flex:1\" data-en>Save settings</button>\n      <button onclick=\"acceptAllCookies()\" style=\"background:#F5F5F5;color:#4D4D4D;border:1px solid #CCCCCC;padding:11px 24px;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit\" data-de>Alle akzeptieren</button>\n      <button onclick=\"acceptAllCookies()\" style=\"background:#F5F5F5;color:#4D4D4D;border:1px solid #CCCCCC;padding:11px 24px;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit\" data-en>Accept all</button>\n    </div>\n    <p style=\"font-size:12px;color:#999;margin-top:16px;line-height:1.5\">\n      <a href=\"nikos-datenschutz.html\" style=\"color:#FF6600;text-decoration:none\" data-de>Datenschutzerkl\u00e4rung</a>\n      <a href=\"nikos-datenschutz.html\" style=\"color:#FF6600;text-decoration:none\" data-en>Privacy policy</a>\n    </p>\n  </div>\n</div>";
+  }
+})();
+
+// ── Cookie-Modal Funktionen ────────────────────────────────────────────────────
+function openCookieSettings() {
+  var m = document.getElementById('cookieModal');
+  if (m) { m.style.display = 'flex'; }
+  var stats = localStorage.getItem('nk-cookie-stats') === '1';
+  var mkt   = localStorage.getItem('nk-cookie-marketing') === '1';
+  var cs = document.getElementById('cookieStats');
+  var cm = document.getElementById('cookieMarketing');
+  if (cs) cs.checked = stats;
+  if (cm) cm.checked = mkt;
+}
+function closeCookieSettings() {
+  var m = document.getElementById('cookieModal');
+  if (m) m.style.display = 'none';
+}
+function saveCookieSettings() {
+  var cs = document.getElementById('cookieStats');
+  var cm = document.getElementById('cookieMarketing');
+  localStorage.setItem('nk-cookie-stats',    cs && cs.checked ? '1' : '0');
+  localStorage.setItem('nk-cookie-marketing', cm && cm.checked ? '1' : '0');
+  closeCookieSettings();
+}
+function acceptAllCookies() {
+  var cs = document.getElementById('cookieStats');
+  var cm = document.getElementById('cookieMarketing');
+  if (cs) cs.checked = true;
+  if (cm) cm.checked = true;
+  saveCookieSettings();
+}
+
+// ── Sprachschalter ────────────────────────────────────────────────────────────
+(function() {
+  function setLang(lang) {
+    document.documentElement.setAttribute('data-lang', lang);
+    localStorage.setItem('nk-lang', lang);
+    // Aktiv-Klasse auf Buttons setzen
+    document.querySelectorAll('[data-lang-opt]').forEach(function(btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-opt') === lang);
+    });
+    // Flag-Button-Text aktualisieren
+    var flagBtn = document.querySelector('.lang-flag__btn .flag');
+    if (flagBtn) flagBtn.textContent = lang === 'en' ? '🇬🇧' : '🇩🇪';
+    var labelEl = document.querySelector('.lang-flag__btn .lang-label');
+    if (labelEl) labelEl.textContent = lang === 'en' ? 'EN' : 'DE';
+    // iframe Sprachsync
+    var iframe = document.getElementById('partnerIframe');
+    if (iframe) {
+      try { iframe.contentWindow.postMessage({type:'nk-lang', lang:lang}, '*'); } catch(e) {}
+    }
+    // Dropdown schließen
+    document.querySelectorAll('.lang-flag').forEach(function(el) {
+      el.classList.remove('is-open');
+    });
+  }
+
+  document.addEventListener('click', function(e) {
+    // Sprachoption geklickt
+    var opt = e.target.closest('[data-lang-opt]');
+    if (opt) { setLang(opt.getAttribute('data-lang-opt')); return; }
+    // Flag-Button: Dropdown toggle
+    var btn = e.target.closest('.lang-flag__btn');
+    if (btn) {
+      var flag = btn.closest('.lang-flag');
+      if (flag) { flag.classList.toggle('is-open'); return; }
+    }
+    // Außerhalb klicken → alle Dropdowns schließen
+    if (!e.target.closest('.lang-flag')) {
+      document.querySelectorAll('.lang-flag').forEach(function(el) {
+        el.classList.remove('is-open');
+      });
+    }
+  });
+
+  // Gespeicherte Sprache wiederherstellen
+  var saved = localStorage.getItem('nk-lang');
+  if (saved && saved !== 'de') setLang(saved);
+})();
+
+// ── Burger-Menü ───────────────────────────────────────────────────────────────
+(function() {
+  document.addEventListener('click', function(e) {
+    var burger = e.target.closest('#navBurger');
+    if (burger) {
+      var mobile = document.getElementById('navMobile');
+      var isOpen = burger.classList.toggle('is-open');
+      if (mobile) mobile.classList.toggle('is-open', isOpen);
+      burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      return;
+    }
+    // Klick außerhalb → schließen
+    if (!e.target.closest('#navMobile') && !e.target.closest('#navBurger')) {
+      var b = document.getElementById('navBurger');
+      var m = document.getElementById('navMobile');
+      if (b) { b.classList.remove('is-open'); b.setAttribute('aria-expanded','false'); }
+      if (m) m.classList.remove('is-open');
+    }
+  });
+})();
