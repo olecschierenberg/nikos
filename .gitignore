@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Backup-/Zwischenstände (nicht auf die Website)
 *.pre*.html
 *.bak
@@ -12,3 +13,11 @@ RADACOM_*.docx
 # Betriebssystem-Müll
 .DS_Store
 Thumbs.db
+=======
+.DS_Store
+Thumbs.db
+*.tmp
+~$*
+*.pre*.html
+*.bak
+>>>>>>> 3270308480db750ab67bcafe08d7aa2026e08edd
