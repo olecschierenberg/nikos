@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mietbedingungen — Allgemeine Mietbedingungen RADACOM GmbH</title>
+<meta name="description" content="Allgemeine Mietbedingungen (AMB) der RADACOM GmbH für die Vermietung von NIKOS-Systemen. Version 1.2, Stand: August 2025.">
+<meta name="robots" content="noindex">
+
+<style>
+/* Lokale Schriften (DSGVO-konform, kein Google-Fonts-CDN) — OFL, siehe assets/fonts/OFL-Exo2.txt */
+@font-face{font-family:'Source Sans 3';font-style:normal;font-weight:300 700;font-display:swap;src:url('assets/fonts/SourceSans3-VariableFont_wght.ttf') format('truetype-variations');}
+@font-face{font-family:'Source Sans 3';font-style:italic;font-weight:300 700;font-display:swap;src:url('assets/fonts/SourceSans3-Italic-VariableFont_wght.ttf') format('truetype-variations');}
+@font-face{font-family:'Exo 2';font-style:normal;font-weight:400 700;font-display:swap;src:url('assets/fonts/Exo2-VariableFont_wght.ttf') format('truetype-variations');}
+</style>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brand-orange:#FF6600;--brand-orange-dk:#E05500;--brand-dark:#4D4D4D;--brand-mid:#595959;--brand-light:#999999;
+  --white:#FFFFFF;--s2:#F5F5F5;--s3:#EBEBEB;--border:#CCCCCC;--sec-dark:#253341;--surface-footer:#2E3236;
+  --card-border:#D8DCE0;
+  --banner-bar:#1D2F49;
+  --orange:var(--brand-orange);--dark:var(--brand-dark);--mid:var(--brand-mid);--light:var(--brand-light);
+  --font:'Source Sans 3',system-ui,sans-serif;--claim:'Exo 2',system-ui,sans-serif;
+  --r:4px;--r-lg:4px;--r-xl:16px;--max-w:1280px;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--dark);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+[data-de],[data-en]{display:none !important}
+[data-lang="de"] [data-de]{display:revert !important}
+[data-lang="en"] [data-en]{display:revert !important}
+.lang-flag{position:relative;flex-shrink:0}
+.lang-flag__btn{display:flex;align-items:center;gap:5px;padding:5px 8px;border:1px solid var(--border);border-radius:var(--r);background:var(--s2);cursor:pointer;font-family:var(--font);font-size:12px;font-weight:600;color:var(--dark);line-height:1;white-space:nowrap;transition:border-color .15s}
+.lang-flag__btn:hover{border-color:var(--orange)}
+.lang-flag__btn .flag{font-size:16px}.lang-flag__btn .chevron{font-size:9px;color:var(--light);margin-left:1px;transition:transform .2s}
+.lang-flag.is-open .lang-flag__btn .chevron{transform:rotate(180deg)}
+.lang-flag__dropdown{display:none;position:absolute;top:calc(100% + 6px);right:0;background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:0 8px 24px rgba(0,0,0,.12);min-width:140px;overflow:hidden;z-index:200}
+.lang-flag.is-open .lang-flag__dropdown{display:block}
+.lang-flag__option{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;font-size:13px;color:var(--dark);border:none;background:none;width:100%;text-align:left;font-family:var(--font);transition:background .12s}
+.lang-flag__option:hover{background:var(--s2)}.lang-flag__option.active{background:rgba(255,102,0,.06);color:var(--orange);font-weight:600}
+.nk-nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:4px solid var(--orange);box-shadow:0 1px 12px rgba(0,0,0,.06)}
+.nav__inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;gap:16px}
+.nav__logo{height:64px;display:flex;align-items:center;flex-shrink:0;margin-right:32px}.nav__logo svg{height:28px;width:auto;display:block}
+.nav__links{display:flex;align-items:center;gap:20px;list-style:none;flex-wrap:nowrap;min-width:0}
+.nav__links a{font-size:16px;color:var(--mid);text-decoration:none;font-weight:400;transition:color .15s;white-space:nowrap}
+.nav__links a:hover{color:var(--orange)}
+.nav__right{display:flex;align-items:center;gap:8px;flex-shrink:0;margin-left:auto}
+.nav__cta{background:var(--orange) !important;color:#fff !important;padding:6px 14px;border-radius:var(--r);font-weight:600 !important;white-space:nowrap;text-decoration:none;font-size:12px;line-height:1.4}
+.nav__cta:hover{background:var(--brand-orange-dk) !important}
+.nav__burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:4px}
+.nav__burger span{display:block;height:2px;width:24px;background:var(--dark);border-radius:2px;transition:transform .25s,opacity .2s}
+.nav__burger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav__burger.is-open span:nth-child(2){opacity:0}
+.nav__burger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav__mobile{display:none;position:absolute;top:100%;left:0;right:0;background:var(--white);border-top:1px solid var(--s2);box-shadow:0 8px 24px rgba(0,0,0,.10);z-index:99;padding:16px 0 24px}
+.nav__mobile.is-open{display:block}
+.nav__mobile ul{list-style:none;display:flex;flex-direction:column}
+.nav__mobile ul li a{display:block;padding:12px 24px;font-size:15px;color:var(--dark);text-decoration:none;border-left:3px solid transparent;transition:border-color .15s,color .15s}
+.nav__mobile ul li a:hover{color:var(--orange);border-left-color:var(--orange)}
+.nav__mobile ul li a.nav__cta-mobile{margin:8px 24px 0;padding:10px 20px;background:var(--orange);color:#fff !important;border-radius:var(--r);text-align:center;font-weight:600;border-left:none !important;display:none}
+/* Legal content */
+.legal-page{max-width:840px;margin:0 auto;padding:64px clamp(20px,5vw,48px) 96px}
+.legal-page h1{font-family:var(--claim);font-size:clamp(28px,3.5vw,42px);font-weight:700;color:var(--dark);margin-bottom:8px;line-height:1.1}
+.legal-page .meta{font-size:13px;color:var(--light);margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid var(--border)}
+.legal-page h2{font-size:20px;font-weight:700;color:var(--dark);margin:40px 0 12px;padding-top:8px}
+.legal-page h3{font-size:16px;font-weight:700;color:var(--dark);margin:24px 0 8px}
+.legal-page p{font-size:15px;color:var(--mid);margin-bottom:12px;line-height:1.75}
+.legal-page .doc-download{display:inline-flex;align-items:center;gap:8px;margin:24px 0 8px;padding:12px 20px;border:1px solid var(--card-border);border-radius:var(--r);font-size:15px;font-weight:600;color:var(--dark);text-decoration:none;transition:border-color .15s,background .15s}
+.legal-page .doc-download:hover{border-color:var(--orange);background:rgba(255,102,0,.04)}
+.legal-page .doc-download::before{content:"\2193";font-weight:700;color:var(--orange)}
+.legal-page ul{margin:0 0 16px 20px}
+.legal-page ul li{font-size:15px;color:var(--mid);margin-bottom:6px;line-height:1.65}
+.legal-page a{color:var(--orange);text-decoration:none}
+.legal-page a:hover{text-decoration:underline}
+.legal-page hr{border:none;border-top:1px solid var(--border);margin:32px 0}
+.legal-page blockquote{background:var(--s2);border-left:3px solid var(--orange);padding:16px 20px;margin:16px 0;border-radius:0 var(--r-lg) var(--r-lg) 0;font-size:14px;color:var(--mid)}
+.legal-page strong{color:var(--dark);font-weight:600}
+.legal-page table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+.legal-page table td{padding:10px 14px;border:1px solid var(--border);color:var(--mid);vertical-align:top}
+.legal-page table tr:first-child td{background:var(--s2);font-weight:600;color:var(--dark)}
+.toc{background:var(--s2);border-radius:var(--r-xl);padding:24px 28px;margin-bottom:48px}
+.toc h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--light);margin-bottom:12px}
+.toc ol{margin-left:16px}
+.toc ol li{margin-bottom:6px}.toc ol li a{font-size:14px;color:var(--orange);text-decoration:none}
+.toc ol li a:hover{text-decoration:underline}
+/* Footer */
+.nk-footer{background:var(--surface-footer);padding:56px 0 0}
+.nk-footer__inner{max-width:var(--max-w);margin:0 auto;padding:0 clamp(20px,5vw,80px)}
+.nk-footer__grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px}
+.nk-footer__brand-logo{margin-bottom:20px}
+.nk-footer__brand-features{list-style:none;margin-bottom:24px}
+.nk-footer__brand-features li{font-size:13px;color:rgba(255,255,255,.5);padding:3px 0}
+.nk-footer__social{display:flex;gap:12px}
+.nk-footer__social a{color:rgba(255,255,255,.5);transition:color .15s}
+.nk-footer__social a:hover{color:var(--orange)}
+.nk-footer__col-title{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px}
+.nk-footer__links{list-style:none}
+.nk-footer__links li{margin-bottom:10px}
+.nk-footer__links a{font-size:14px;color:rgba(255,255,255,.65);text-decoration:none;transition:color .15s}
+.nk-footer__links a:hover{color:var(--orange)}
+.nk-footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.nk-footer__copy{font-size:13px;color:rgba(255,255,255,.35)}
+.nk-footer__bottom-links{list-style:none;display:flex;gap:20px}
+.nk-footer__bottom-links a{font-size:13px;color:rgba(255,255,255,.35);text-decoration:none}
+.nk-footer__bottom-links a:hover{color:var(--orange)}
+@media(max-width:900px){.nav__links{display:none !important}.nav__burger{display:flex !important}.nk-footer__grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.nk-footer__grid{grid-template-columns:1fr}}
+</style>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="4f48b5b5-93c8-4493-be71-2c1cefc6e440"></script>
+<!-- ═══ KLARO CONSENT MANAGER ═══ -->
+<script defer src="assets/js/klaro-config.js"></script>
+<script defer src="https://cdn.kiprotect.com/klaro/v0.7/klaro.js"></script>
+<style>
+/* Klaro Branding Override — NIKOS */
+:root { --klaro-green: #FF6600; }
+.klaro .cm-btn.cm-btn-accept,
+.klaro .cm-btn.cm-btn-accept-all,
+.klaro .cn-ok .cm-btn.cm-btn-success {
+  background-color: #FF6600 !important;
+  border-color: #FF6600 !important;
+  color: #fff !important;
+}
+.klaro .cm-btn.cm-btn-accept:hover,
+.klaro .cm-btn.cm-btn-accept-all:hover {
+  background-color: #E05500 !important;
+}
+.klaro .cookie-notice,
+.klaro .cookie-modal .cm-modal {
+  border-top: 3px solid #FF6600;
+}
+.klaro .slider { background-color: #FF6600 !important; }
+.klaro input[type=checkbox]:checked + .cm-list-label .slider { background-color: #FF6600 !important; }
+.klaro .cm-link, .klaro a { color: #FF6600 !important; }
+.klaro .cm-btn.cm-btn-decline,
+.klaro .cm-btn.cm-btn-close {
+  background: transparent !important;
+  border: 1px solid #CCCCCC !important;
+  color: #4D4D4D !important;
+}
+.klaro .cm-btn.cm-btn-decline:hover,
+.klaro .cm-btn.cm-btn-close:hover {
+  border-color: #FF6600 !important;
+  color: #FF6600 !important;
+}
+.klaro .cookie-modal .cm-modal { border-radius: 4px; }
+.klaro .cm-btn { border-radius: 4px !important; }
+.klaro .cookie-notice { border-radius: 4px; }
+</style>
+</head>
+<body>
+<nav class="nk-nav" id="mainNav">
+  <div class="nav__inner">
+    <div class="nav__logo"><a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="344.188 -0.500 356.378 66.750" style="height:28px;width:auto;"><path fill="#4D4D4D" d="M344.688,0.688h26.75l32.935,47.026h0.003V0.688h17.313v64.375h-26.75l-32.935-47.026h-0.003v47.026h-17.313V0.688z"/><path fill="#4D4D4D" d="M433.706,0.688h17.313v64.375h-17.313V0.688z"/><path fill="#4D4D4D" d="M463.267,0.688h17.313v23.625h8.248l21.799-23.625h23.516l-30.438,31.399l33.938,32.976h-24.619L488.295,40.25h-7.716v24.813h-17.313V0.688z"/><path fill="#4D4D4D" d="M541.403,42.651v-18.99c0-8.42,1.828-14.462,5.484-18.124C550.567,1.846,556.927,0,565.964,0h28.557c8.834,0,15.117,1.846,18.848,5.537c3.732,3.691,5.598,9.632,5.598,17.821v19.249c-0.127,8.363-2.031,14.318-5.711,17.865c-3.656,3.519-9.836,5.277-18.543,5.277h-28.748c-8.605,0-14.852-1.729-18.734-5.19C543.345,57.07,541.403,51.101,541.403,42.651z M559.278,29.548v6.266c0,5.473,0.711,9.088,2.131,10.844c1.42,1.729,4.197,2.593,8.332,2.593h21.42c4.008,0,6.658-0.922,7.951-2.766c1.318-1.871,1.979-5.299,1.979-10.282v-6.524c0-5.127-0.811-8.598-2.434-10.412c-1.6-1.844-4.377-2.766-8.332-2.766h-20.014c-4.135,0-7.014,0.937-8.637,2.809C560.077,21.182,559.278,24.595,559.278,29.548z"/><path fill="#4D4D4D" d="M646.131,44.313c0.229,2.889,0.748,4.796,1.561,5.72c0.813,0.896,2.805,1.343,5.978,1.343h22.234c4.568,0,6.853-1.805,6.853-5.415c0-2.311-0.901-3.885-2.702-4.723c-1.777-0.866-6.078-1.3-12.904-1.3h-10.658c-8.273,0-14.363-0.533-18.271-1.601c-3.883-1.067-6.472-3.058-7.766-5.972c-1.092-2.394-1.637-6.533-1.637-12.418c0-8.048,1.712-13.385,5.138-16.01C637.407,1.313,643.218,0,651.388,0h24.358c8.551,0,14.336,1.354,17.355,4.063s4.529,7.493,4.529,14.353v2.334h-17.313c0-2.544-0.521-4.235-1.561-5.074c-1.041-0.867-3.376-1.301-7.005-1.301h-18.541c-4.721,0-7.081,1.706-7.081,5.117c0,3.412,1.649,5.189,4.948,5.334c3.324,0.116,6.445,0.174,9.364,0.174h11.762c8.044,0,14.021,0.605,17.929,1.816c3.933,1.212,6.622,3.346,8.069,6.402c1.243,2.625,1.865,6.735,1.865,12.329c0,5.682-0.647,9.85-1.941,12.502c-1.421,2.885-4.009,4.889-7.764,6.013c-3.73,1.125-9.466,1.688-17.204,1.688h-22.646c-8.373,0-14.082-1.268-17.127-3.804c-3.045-2.535-4.567-6.929-4.567-13.182v-4.452H646.131z"/></svg></a></div>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="nikos-system.html" data-de>System</a><a href="nikos-system.html" data-en>System</a></li>
+      <li><a href="nikos-anwendungen.html" data-de>Anwendungen</a><a href="nikos-anwendungen.html" data-en>Applications</a></li>
+      <li><a href="nikos-produkte.html" data-de>Produkte</a><a href="nikos-produkte.html" data-en>Products</a></li>
+      <li><a href="nikos-referenzen.html" data-de>Referenzen</a><a href="nikos-referenzen.html" data-en>References</a></li>
+      <li><a href="nikos-vermietung.html" data-de>Vermietung</a><a href="nikos-vermietung.html" data-en>Rental</a></li>
+      <li><a href="nikos-downloads.html" data-de>Downloads</a><a href="nikos-downloads.html" data-en>Downloads</a></li>
+    </ul>
+    <div class="nav__right">
+      <a href="nikos-kontakt.html" class="nav__cta" data-de>Kontakt</a><a href="nikos-kontakt.html" class="nav__cta" data-en>Contact</a>
+      <div class="lang-flag" id="langFlag">
+        <button class="lang-flag__btn" id="langFlagBtn" aria-haspopup="true" aria-expanded="false"><span class="flag" id="langFlagIcon">🇩🇪</span><span class="chevron">▾</span></button>
+        <div class="lang-flag__dropdown" id="langFlagDropdown" role="listbox">
+          <button class="lang-flag__option active" data-lang-opt="de"><span class="flag">🇩🇪</span> Deutsch</button>
+          <button class="lang-flag__option" data-lang-opt="en"><span class="flag">🇬🇧</span> English</button>
+        </div>
+      </div>
+    </div>
+    <button class="nav__burger" id="navBurger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav__mobile" id="navMobile"><ul>
+    <li><a href="nikos-system.html" data-de>System</a><a href="nikos-system.html" data-en>System</a></li>
+    <li><a href="nikos-anwendungen.html" data-de>Anwendungen</a><a href="nikos-anwendungen.html" data-en>Applications</a></li>
+    <li><a href="nikos-produkte.html" data-de>Produkte</a><a href="nikos-produkte.html" data-en>Products</a></li>
+    <li><a href="nikos-vermietung.html" data-de>Vermietung</a><a href="nikos-vermietung.html" data-en>Rental</a></li>
+    <li><a href="nikos-downloads.html" data-de>Downloads</a><a href="nikos-downloads.html" data-en>Downloads</a></li>
+  </ul></div>
+</nav>
+<div class="legal-page">
+  <div data-de>
+    <h1>Allgemeine Mietbedingungen</h1>
+    <p class="meta">Version 1.2, Stand: 29.08.2025 · <a href="https://www.radacom.de" target="_blank" rel="noopener">www.radacom.de</a></p>
+
+<h2>1. Allgemeines, Gültigkeit</h2>
+<p>a) Diese Allgemeinen Mietbedingungen (AMB) gelten nur für Geschäfte mit Unternehmern im Sinne des §14 BGB, einschließlich Körperschaften, Anstalten und Stiftungen des öffentlichen Rechts. Sie sind fester Bestandteil der Mietangebote und Mietverträge der RADACOM GmbH, nachfolgend „RADACOM" genannt, und finden in der jeweils aktuellen Fassung auch für alle künftigen Mietverträge mit RADACOM Anwendung. Für Geschäfte mit Privatpersonen gelten diese AMB im Rahmen der rechtlichen Zulässigkeit der einzelnen Bedingungen.</p>
+<p>b) Diese Bedingungen gelten ergänzend zu den Allgemeinen Geschäftsbedingungen (AGB) von RADACOM in der jeweils aktuellen Fassung, die in den Geschäftsräumen und auf der Internetseite eingesehen werden können. Hier nicht geregelte Punkte ergeben sich aus den AGB. Im Falle entgegenstehender Regelungen in einzelnen Punkten haben diese Allgemeinen Mietbedingungen Vorrang vor den AGB.</p>
+
+<h2>2. Preisbindung, Verfügbarkeit</h2>
+<p>a) Wenn keine andere Frist auf dem Angebot vermerkt ist, hält RADACOM sich 30 Tage ab Angebotsdatum an die angebotenen Preise gebunden.</p>
+<p>b) Mit Abgabe eines Angebots wird das angebotene Material von RADACOM unverbindlich für den angegebenen Zeitraum reserviert. Bis zum Abschluss eines Mietvertrages besteht jedoch kein Anspruch auf das angebotene Material. RADACOM behält sich ausdrücklich eine Zwischenvermietung vor. Eine Erfüllung erfolgt immer nur entsprechend der jeweiligen Verfügbarkeit.</p>
+
+<h2>3. Mietvertrag, Mietgegenstand, Vertragsänderung, Überlassung an Dritte</h2>
+<p>a) Vertragspartner des Mietvertrages mit RADACOM ist die im Briefkopf des Lieferscheins, ersatzweise des Angebots, als Adressat genannte Person oder Firma, nachfolgend „Mieter" genannt. Der Mieter gemäß diesem Vertrag muss nicht identisch sein mit dem Nutzer des Mietgegenstandes.</p>
+<p>b) Ein Mietvertrag kommt erst durch die explizite Bestätigung eines vom Mieter rechtskräftig erteilten Mietauftrages (in der Regel durch datierte Unterschrift und Firmenstempel auf einem von RADACOM gefertigten Angebot, eMail oder sonstige eindeutige schriftliche Willensbekundung) durch RADACOM zustande. Sollte eine schriftliche Bestätigung durch RADACOM vor der Lieferung nicht erfolgt sein, so gilt die Lieferung beauftragter Waren und Dienstleistung durch RADACOM als Auftragsbestätigung.</p>
+<p>c) Gegenstand des Mietvertrages sind die in der Auftragsbestätigung von RADACOM aufgeführten Einzelgeräte inklusive der fest verbundenen oder zum Betrieb notwendigen Zubehörteile (z.B. Kabel, Montagematerial etc.) sowie unentgeltlich überlassene Gegenstände (z.B. Test- oder Reservegeräte). RADACOM behält sich das Recht vor, bei nicht ausreichender Verfügbarkeit angebotene kostenlose Zusatzleistungen (z.B. Reservegeräte, Ersatzakkus) nicht mitzuliefern oder statt der im Angebot genannten Artikel zu gleichen Konditionen andere Artikel zu liefern, die die angebotenen Funktionen in mindestens gleicher Weise erfüllen.</p>
+<p>d) Der Mieter ist berechtigt, den Mietgegenstand Dritten, nachfolgend „Nutzer" genannt, zur Nutzung zu überlassen und innerhalb der EU, Norwegens, Liechtensteins und der Schweiz gewerblich weiter zu vermieten. Eine Verbringung des Mietgegenstandes außerhalb der hier genannten Länder bedarf der ausdrücklichen Genehmigung durch RADACOM. Im Falle einer Überlassung an Dritte haftet der Mieter RADACOM gegenüber jedoch weiterhin für alle Verletzungen der hier beschriebenen vertraglichen Pflichten. Dies gilt auch für jene Vertragsverletzungen, die sich direkt aus der Nutzung des Mietgegenstandes durch den Nutzer ergeben. Die Pflichten des Nutzers sind mit den hier genannten Pflichten des Mieters gleichzusetzen.</p>
+
+<h2>4. Mietzeit, Mietzins, Lieferung, Zahlung von Zusatzleistungen</h2>
+<p>a) Die Mietzeit erstreckt sich über den auf dem Lieferschein, ersatzweise dem Angebot angegebenen Zeitraum. Ist ein Beginn der Mietzeit nicht ausdrücklich angegeben, beginnt die Mietzeit mit der Übergabe des Mietgegenstandes an den Mieter bzw. den Versanddienstleister. Der Mietvertrag endet mit Ablauf der Mietzeit, falls nicht eindeutig angegeben spätestens mit Einstellung der Arbeiten zu dem auf dem Lieferschein angegebenen Einsatz (z.B. Veranstaltungsabbau). Der Leistungszeitraum im steuerlichen Sinne entspricht der hier definierten Mietzeit. Die in der Mietkalkulation angegebenen Berechnungstage können von den realen Nutzungstagen und der Mietzeit abweichen.</p>
+<p>b) Der Mietzins berechnet sich in der Regel bei einer Mietzeit bis zu 30 Tagen nach den Nutzungstagen, bei darüberhinausgehenden Zeiträumen nach der gesamten Mietzeit. Eine Nutzung über die im Mietvertrag vereinbarte Anzahl an Nutzungstagen hinaus ist RADACOM vor der Mehrnutzung mitzuteilen. Eine stillschweigende Mehrnutzung ist untersagt und berechtigt RADACOM zur Berechnung der gesamten Mietzeit als Nutzungszeit oder zur sofortigen Kündigung des Mietvertrages.</p>
+<p>c) Relevant für die Rechnungslegung sind die auf dem Lieferschein aufgeführten Mengen. Von RADACOM geänderte Lieferscheine oder einem Lieferschein gleichzusetzende Belege für die Lieferung oder Nachlieferung von Mietgegenständen durch RADACOM erkennt der Mieter als Berechnungsgrundlage an.</p>
+<p>d) Falls der Mietzins gemäß dem Mietvertrag in einer einzigen Zahlung zu entrichten ist, ist dieser innerhalb von 14 Tagen nach Rechnungsstellung zu zahlen, soweit keine anderen Zahlungsziele angegeben sind. Wird die Mietzeit nach Monaten berechnet bzw. sind Monatsraten als Zahlungsziel vereinbart, sind diese jeweils zum Monatsersten im Voraus zu entrichten.</p>
+<p>e) Sollte ein Mietzins in einem Angebot oder Auftrag nicht genannt sein, so gilt der üblicherweise von RADACOM für den Mietgegenstand berechnete Mietzins (Listenpreis). Bei nachträglich veränderter Mietdauer gilt der entsprechende, ggf. zeitabhängige Staffelrabatt der im Angebot bzw. üblicherweise für diesen Kunden oder diese Kundengruppe angewendeten Rabattliste.</p>
+<p>f) Von RADACOM bereitgestellte Reservegeräte werden wie die anderen Geräte berechnet, sobald sie vom Mieter zusätzlich zu den anderen Geräten genutzt werden. Eine zusätzliche Nutzung wird vermutet, wenn die Verpackung des Reservematerials geöffnet wurde, bzw. sich das Reservematerial nicht mehr in dem gelieferten Zustand befindet (verschmutzt, Akku leer, Kabel verknotet, etc.) und kein Umstand festgestellt werden kann, der eine Nutzung des Reservegerätes anstelle eines anderen Gerätes erkennen lässt.</p>
+<p>g) Gerät RADACOM mit der Lieferung des Mietgegenstandes in Verzug, hat der Mieter RADACOM eine angemessene Nachfrist zu setzen.</p>
+<p>h) Verzögert sich die Übergabe an den Kunden aus Gründen, die in der Verantwortung des Kunden liegen, um mindestens einen Tag, so ist RADACOM berechtigt, bis zum Zeitpunkt der tatsächlichen Übergabe anderweitig über den Mietgegenstand zu verfügen und andere Artikel, die die angebotenen Funktionen in mindestens gleicher Weise erfüllen, zu gleichen Konditionen zu liefern.</p>
+<p>i) Lieferungen und sonstige Zusatzleistungen (z.B. Errichtung und Betreuung von Anlagen, Frequenz- oder Netznutzungsgebühren) werden gesondert berechnet, sofern sie nicht ausdrücklich in Angebot bzw. Auftragsbestätigung enthalten sind.</p>
+<p>j) Muss ein durch RADACOM beauftragter Lieferant bei der Übergabe des Mietgegenstandes durch Verschulden des Mieters mehr als 10 Minuten warten und entstehen RADACOM dadurch Kosten, so ist RADACOM berechtigt, dem Mieter die angefallenen Zusatzkosten, mindestens jedoch je weiterer angefangener 10 Minuten Wartezeit € 5,- zuzüglich Mehrwertsteuer zu berechnen.</p>
+
+<h2>5. Vertragsänderung, Rücktritt, Kündigung</h2>
+<p>a) Die Mietzeit oder der Umfang des Mietgegenstandes kann auf Wunsch des Mieters, vorbehaltlich der Verfügbarkeit, verändert werden.</p>
+<p>b) Ein Rücktritt ist eine nicht im Verhalten des Vertragspartners begründete Auflösung bzw. Einschränkung des Mietvertrages, eine Kündigung ist eine im Verhalten des Vertragspartners begründete Auflösung des Mietvertrages. Rücktritt oder Kündigung müssen schriftlich erfolgen.</p>
+<p>c) Tritt der Mieter später als 7 Tage vor dem vereinbarten Mietbeginn vollständig oder teilweise vom Mietvertrag zurück, ist RADACOM berechtigt, ohne Nachweis eines Schadens, 50 % des vereinbarten Mietzinses für die ersten 14 Tage zu berechnen. Erfolgt der Rücktritt nach Beginn der vereinbarten Mietzeit, ist RADACOM berechtigt, ohne Nachweis eines Schadens, den vollen Mietpreis für die bereits verstrichene Mietzeit sowie 50 % des vereinbarten Mietzinses für die darauffolgenden 7 Miettage zu berechnen.</p>
+<p>d) Ein vollständiger oder anteiliger Rücktritt vom Mietvertrag durch RADACOM ist möglich, wenn durch ein nach Vertragsabschluss eingetretenes, nicht von RADACOM zu vertretendes Ereignis eine vollumfängliche Vertragserfüllung nicht oder nur zu unwirtschaftlichen Bedingungen möglich wäre.</p>
+<p>e) Eine Kündigung des Vertrages durch einen der Vertragspartner ist zulässig, wenn der andere Vertragspartner seinen vertraglichen Hauptpflichten nicht innerhalb der vereinbarten Zeit nachkommt. Das ist insbesondere der Fall, wenn der Mieter seiner Zahlungspflicht nicht oder nicht mehr nachkommt oder den Mietgegenstand unsachgemäß behandelt. Das Recht auf Kündigung aus wichtigem Grund bleibt hiervon unberührt.</p>
+<p>f) Eine nicht durch RADACOM zu verantwortende verspätete Lieferung durch den mit der Lieferung beauftragten Versanddienstleister gilt als Risiko innerhalb der Sphäre des Kunden und berechtigt den Kunden nicht zu einer Kündigung.</p>
+
+<h2>6. Gebrauch, Einsatzdaten, Rückgabe</h2>
+<p>a) RADACOM gestattet dem Mieter die ordnungs- und vertragsgemäße Nutzung der überlassenen Geräte, bei funktechnischen Geräten schließt dies ggf. die Nutzung RADACOM zugeteilter Frequenzen und bei auf öffentlichen Mobilfunknetzen basierenden Kommunikationsmitteln die Nutzung des Netzes in dem vereinbarten Rahmen ein. Dabei sind die entsprechenden gesetzlichen Bestimmungen, insbesondere das auf der Geräteverpackung, der Bedienungsanleitung oder dem Lieferschein angegebene zulässige, ersatzweise das im Rahmen des Auftrages vereinbarte Einsatzgebiet und eventuelle sonstige Nutzungsbeschränkungen, die anerkannten Regeln der Technik sowie die Anweisungen von RADACOM zu beachten. Der maximal zulässige Nutzungsradius um den vom Kunden angegebenen Nutzungsort beträgt maximal 15 Kilometer. In Grenznähe können weitere gesetzliche Einschränkungen gelten. Ist kein konkreter Nutzungsort angegeben, so wird dieser aus dem Kontext der Anfrage geschlossen (z.B. Veranstaltungsgelände). Für Folgen aus unerlaubtem Gebrauch haftet der Mieter.</p>
+<p>b) Werden auf RADACOM zugelassene Frequenzen durch den Mieter genutzt, so ist der Mieter verpflichtet, RADACOM auf Anfrage alle für die Frequenzzulassung relevanten Nutzungsdaten, insbesondere den genauen Ort und die Zeit der Nutzung sowie einen Verantwortlichen für die Funktechnik zu nennen. RADACOM setzt diese Daten nur im Rahmen der Sorgfalts- und Informationspflicht gegenüber der Bundesnetzagentur bzw. anderen zuständigen Behörden ein. Werden RADACOM diese Daten nicht oder nicht vollständig zur Verfügung gestellt, erfolgt die Verwendung der Geräte ohne Gewähr. Eine sonstige Nutzung oder Weitergabe dieser Daten an Dritte erfolgt nicht. Gegebenenfalls sind einprogrammierte Frequenzen nur für das vom Kunden genannte Einsatzgebiet zugelassen. Eine Nutzung anmeldepflichtiger Frequenzen außerhalb dieses Einsatzgebietes bedarf einer gesonderten Genehmigung durch die zuständigen Behörden. Eine Nutzung außerhalb des sich aus den Vertragsunterlagen (Angebot, Auftrag, Lieferschein) ergebenden Einsatzstaates ist vertragswidrig und ggf. gesetzlich nicht zulässig.</p>
+<p>c) Beauftragt der Mieter RADACOM mit der Programmierung der funktechnischen Geräte nach seinen Wünschen, so haftet der Mieter für die Zulässigkeit der Verwendung dieser Parameter.</p>
+<p>d) Beauftragt der Mieter RADACOM mit Installationsarbeiten, so hat der Mieter für angemessene Auf- und Abbauzeiten sowie während der gesamten Installationsdauer einen freien Zugang zum Installationsort Sorge zu tragen. Der Installationsort für stationäre Antennen sollte möglichst zentral liegen, eine Sichtverbindung zu dem zu versorgenden Gebiet haben und mit vorhandenen Mitteln erreichbar sein (z.B. Hochhausdach, Kirchturm). Der Aufstellungsort für eine stationäre Funkanlage sollte nicht weiter als 15 Meter vom Antenneninstallationsort entfernt, wettorgeschützt, belüftet und mit einer haushaltsüblichen Stromversorgung ausgestattet sein. Sind diese Voraussetzungen nicht gegeben, so kann es zu Einschränkungen der Funkversorgung kommen. Kann der Kunde die genannten Voraussetzungen nicht garantieren, so ist RADACOM unverzüglich darüber zu informieren.</p>
+<p>e) Sofern nicht ausdrücklich anders vereinbart, bezieht sich die Nutzung von auf öffentlichen Mobilfunknetzen basierenden Kommunikationsmitteln ausschließlich auf den Austausch von Sprach- und Textnachrichten, Statusinformationen und Steuerbefehlen zwischen den im Mietvertrag aufgeführten Geräten im voreingestellten deutschen Heimatnetz. Eine geplante oder spontan stattfindende Nutzung in Fremdnetzen z.B. außerhalb des auf dem Lieferschein vereinbarten Nutzungsgebietes oder auch im Grenzgebiet (Roaming) bedarf der unverzüglichen Mitteilung durch den Mieter oder Nutzer an RADACOM und wird ggf. im Nachhinein gesondert berechnet. Trotz technischer Vorkehrungen ist eine automatische Einbuchung in Fremdnetze nicht in jedem Falle auszuschließen. Dadurch entstehende Mehrkosten sind vom Mieter zu tragen.</p>
+<p>f) Es ist dem Mieter nicht gestattet ohne ausdrückliche Genehmigung von RADACOM Programme, Bilder oder andere Daten auf gemietete Geräte herunterzuladen, dort zu speichern oder die Geräte in anderer Weise als zum Betrieb des voreingestellten Dienstes inklusive der implementierten Zusatzdienste (z.B. GPS-Tracking) zu nutzen. Der Datentransfer über von RADACOM zur Verfügung gestellte SIM-Karten ist auf das notwendige Maß zu beschränken.</p>
+<p>g) Der Mieter ist verpflichtet, den Mietgegenstand in sorgfältiger Art und Weise zu gebrauchen und im gelieferten Zustand zu erhalten, insbesondere sind die bereitgestellten Bedienungsanleitungen vor Gebrauch zu lesen und diese sowie Gebrauchs- und Pflegehinweise sorgfältig zu beachten. Während der Mietzeit ausfallende oder verbrauchte Verbrauchsmaterialien (z.B. haushaltsübliche Batterien, Leuchtmittel, Klebeband) sind durch den Mieter auf eigene Kosten zu ersetzen. Nach der Rückgabe nicht wieder vermietbare Verbrauchsartikel werden dem Mieter von RADACOM in Rechnung gestellt, sofern der Verbrauch nicht explizit vertraglich eingeschlossen wurde.</p>
+<p>h) Bei Nichtbeachtung der mitgelieferten Hinweise und Anleitungen, die eine Gebrauchswertminderung des Mietgegenstandes oder einen Mehraufwand zur Wiederherstellung des Originalzustandes zur Folge haben, ist RADACOM berechtigt, gewährte Zahlungsnachlässe auf den betroffenen Vertrag mit sofortiger Wirkung zurückzuziehen.</p>
+<p>i) Der Mieter ist verpflichtet, den Mietgegenstand vor starken elektromagnetischen Feldern, wie z.B. bei Gewitter oder in der Nähe von Hochspannungsleitungen, zu schützen. Für Schäden durch starke elektromagnetische Felder haftet der Mieter.</p>
+<p>j) Lithiumbasierte Akkus dürfen nur in den von RADACOM zur Verfügung gestellten Transportverpackungen und nur direkt am Gerät montiert oder in den vorgesehenen Akkufächern oder in einer anderen Verpackung, die die gesetzlichen Vorschriften für den Versand von lithiumbasierten Akkus erfüllt, transportiert werden.</p>
+<p>k) Die an dem Mietgegenstand angebrachten Seriennummern, Hersteller-, Eigentums- und Hinweisschilder oder andere Erkennungszeichen dürfen nicht entfernt, verdeckt oder in irgendeiner Weise entstellt oder unkenntlich gemacht werden.</p>
+<p>l) Zur Vornahme von Veränderungen, Einbauten, Anbauten o. ä. am Mietgegenstand ist der Mieter nur mit der vorherigen Zustimmung von RADACOM berechtigt. Gleiches gilt für das Verbauen des Mietgegenstandes in einer nicht kurzfristig rückgängig zu machenden Weise. Jegliche Änderungen sind fachmännisch und unter Beachtung der geltenden Gesetze und anerkannten Regeln der Technik durchzuführen.</p>
+<p>m) Der Mieter ist verpflichtet, bei Beendigung des Mietvertrages, den früheren Zustand des Mietgegenstandes auf eigene Kosten wiederherzustellen oder auf Grund einer eindeutigen Willensbekundung durch RADACOM den geänderten Zustand beizubehalten. Gibt der Mieter den Mietgegenstand in dem von ihm hergestellten Zustand zurück, so kann der Mieter keinen Ersatz der ihm für Veränderung, Einbau, Ausbau u. ä. an dem Mietgegenstand entstandenen Aufwendungen verlangen. Dies gilt auch, wenn sich der Wert des Mietgegenstandes durch Veränderung, Ein- oder Ausbau durch den Mieter gesteigert hat.</p>
+<p>n) Nach Beendigung des Mietvertrages hat der Mieter den Mietgegenstand auf seine Kosten und Gefahr unverzüglich (in der Regel am nächsten Arbeitstag) in ordnungsgemäßer Weise an RADACOM zurückzugeben bzw. die Rücksendung einzuleiten. Er ist nicht berechtigt, den Mietgegenstand nach Ende der Mietzeit ohne das Einverständnis von RADACOM zurückzubehalten, an Dritte weiterzugeben oder auf andere Weise die Verfügungsgewalt von RADACOM über den Mietgegenstand einzuschränken.</p>
+<p>o) Wird der Mietgegenstand vom Mieter verspätet zurückgegeben, so hat er unbeschadet der weiteren Verpflichtung zum Schadensersatz zumindest den vereinbarten Mietzins entsprechend der Dauer der Verzögerung bis zur Rückgabe des Mietgegenstandes zu entrichten.</p>
+<p>p) Eine Quittierung des Rückerhalts vermieteter Gegenstände durch RADACOM erfolgt nur bezüglich der Menge nicht jedoch bezüglich der Funktionstüchtigkeit. RADACOM behält sich innerhalb von 15 Arbeitstagen nach Rückerhalt Regressforderungen vor, falls Schäden im Zuge einer ausführlichen Überprüfung der Geräte festgestellt werden.</p>
+
+<h2>7. Untergang, Verschlechterung, Schadensmeldung, Versicherung</h2>
+<p>a) Der Mieter hat die nicht durch eine im Rahmen des Mietvertrages mit RADACOM abgeschlossene Versicherung abgedeckten Schäden zu ersetzen, die während der Mietzeit aus dem nicht bedingungsgemäßen Gebrauch des Mietgegenstandes entstehen. Dies beinhaltet auch daraus erwachsende Vermögens- und andere Schäden Dritter.</p>
+<p>b) Während der Mietzeit trägt der Mieter die Gefahr des Untergangs und der Verschlechterung des Mietgegenstandes. Zufällige Ereignisse entbinden den Mieter nicht von der Erfüllung der ihm obliegenden Pflichten. RADACOM ist unverzüglich schriftlich von dem Eintritt eines dieser Ereignisse zu informieren. Die Haftpflicht des Mieters beginnt mit der Übernahme des Mietgegenstandes durch den Mieter, Nutzer, seinen Erfüllungsgehilfen oder den Transportdienstleister und endet mit der vollständigen und zweifelfreien Rückgabe des Mietgegenstandes durch den Mieter oder Transportdienstleister an RADACOM oder einen beauftragten Erfüllungsgehilfen von RADACOM.</p>
+<p>c) Bei einer Verschlechterung des Mietgegenstandes, die das Maß der bei normalem Gebrauch zu erwartenden Abnutzung überschreitet, ist der Mieter verpflichtet, den Mietgegenstand wieder in einen Zustand zu versetzen, der mindestens der Güte zum Zeitpunkt der Übergabe an den Mieter entspricht oder RADACOM Wertersatz für die Instandsetzung oder den Austausch des verschlechterten Gegenstandes zu leisten und für die Dauer einer Instandsetzung oder Wiederbeschaffung den vereinbarten Mietzins zu entrichten.</p>
+<p>d) Vier Wochen nach dem Ende des vereinbarten Mietzeitraumes nicht an RADACOM zurückgegebene oder nachweislich zurückgesandte Mietgegenstände gelten als untergegangen. Für Vermögensschäden auf Seiten von RADACOM durch Nichtverfügbarkeit der Mietgegenstände nach Ablauf des beauftragten Mietzeitraumes haftet der Mieter.</p>
+<p>e) Bei Untergang des Mietgegenstandes ist der Mieter verpflichtet, den Mietgegenstand durch einen anderen gleichwertigen zu ersetzen und an RADACOM zu übereignen oder RADACOM den Wert des untergegangenen oder verschlechterten Mietgegenstandes zu ersetzen. Macht RADACOM vom Wertersatz Gebrauch, wird RADACOM nach Verfügbarkeit dem Mieter einen gleichwertigen Mietgegenstand zur Fortsetzung des Mietverhältnisses überlassen.</p>
+<p>f) RADACOM ist berechtigt, unbeschadet weiterer Reparatur- oder Wartungskosten, für die nachträgliche Entfernung bzw. Wiederanbringung von Klebestreifen und ähnlicher durch den Mieter angebrachten bzw. entfernten Markierungen, für Kabel, die mit einem Radius von weniger als 5cm geknickt, geknotet oder gewickelt, eingeklemmt oder anderen Belastungen bestimmungswidrig ausgesetzt wurden, die das Material sichtbar verändert haben oder geeignet sind, die Gebrauchsdauer des Materials erheblich zu verkürzen oder für Antennen, Transportkoffer und andere Teile, deren Zustand durch Krafteinwirkung verändert wurde sowie für nicht auf normalen Verschleiß zurückzuführende Materialveränderungen (z.B. Farbe, Form, etc.) eine Wartungspauschale von €5,-/netto für jeden dieser Fälle zu berechnen.</p>
+<p>g) Eine Basis-Versicherung für normale Gebrauchsschäden (Abnutzung) wird automatisch mit der Auftragserteilung durch den Mieter abgeschlossen und ist im angegebenen Mietzins enthalten. Eine Premium-Versicherung kann durch explizite, ungestrichene Nennung auf dem Lieferschein bzw. Auftrag eingeschlossen werden.</p>
+<p>h) Die Basis-Versicherung gilt weltweit und übernimmt Reparaturkosten für elektronische und mechanische Defekte, die im Mieteinsatz entstehen sowie ggf. den Austausch des Mietgegenstandes am Übergabeort oder die Ersatzstellung bzw. Serviceleistung am Einsatzort, wenn diese durch RADACOM veranlasst wurde. Ausgenommen sind im Rahmen der Basis-Versicherung die Wiederbeschaffung bei Diebstahl oder sonstigem Untergang des Mietgegenstandes und die Wiederherstellung bei Schäden durch grobe Fahrlässigkeit oder Vorsatz seitens des Mieters sowie jegliche Schäden durch Einwirkung von Feuchtigkeit, Staub, Rauch, Hitze, Kälte und mechanische Schäden an Geräten und Zubehör durch Sturz oder sonstige Krafteinwirkung.</p>
+<p>i) Die Premium-Versicherung haftet bei Einhaltung der Sorgfaltspflicht des Mieters für Schäden oder Verlust innerhalb der EU, Norwegens, Liechtensteins und der Schweiz abzüglich eines Selbstbehaltes je Versicherungsfall von €250,- bei Beschädigung; bzw. bei Verlust über €250,- hinausgehend 25% der Schadenssumme auf Basis des normalen Verkaufspreises. Im Übrigen gelten die Allgemeinen Bedingungen für die Elektronikversicherung sowie die Zusatzklauseln des Versicherers, die in den Geschäftsräumen und auf der Internetseite von RADACOM einzusehen sind.</p>
+<p>j) Ist die Premium-Versicherung nicht im Mietpreis enthalten, wird sie entweder wertanteilig oder nach einheitlichen Tagessätzen gemäß der aktuellen Preisliste berechnet. Für Handgeräte, mietkostenpflichtiges oder einzeln vermietetes Zubehör wird pro Tag jeweils ein einfacher Tagessatz berechnet, Funkstationen (Mobilgeräte) zählen doppelt, Repeater fünffach und Durchsageeinheiten zehnfach. Bei Transporten außerhalb Deutschlands wird für jeden Transport ein Tag zusätzlich berechnet. Nicht verwendete Reservegeräte und mietkostenfreies Zubehör sind kostenlos mitversichert. Kann gemäß diesen Bedingungen vermutet werden, dass ein Reservegerät zusätzlich zu den anderen Geräten verwendet wurde, fällt für dieses Gerät ein Versicherungsbeitrag für den gesamten Berechnungszeitraum an, außer der Mieter kann nachweisen, dass er das Reservegerät nur einen Teil der Zeit genutzt hat.</p>
+<p>k) Voraussetzung für eine Erstattungsfähigkeit durch die Premium-Versicherung ist eine nachvollziehbare schriftliche Dokumentation der Aushändigung der Geräte sowie des Zubehörs an den jeweiligen Nutzer bzw. Verwahrer sowie deren Rückgabe an den Gerätedisponenten.</p>
+<p>l) Jegliche Schäden an dem Mietgegenstand sind RADACOM unverzüglich nach Bekanntwerden unter Angabe des Fehlers bzw. Schadens mitzuteilen und die betroffenen Teile gut sichtbar zu markieren. Falls der Mieter selbst Auftraggeber einer Transportleistung ist, hat er darüber hinaus innerhalb der dafür vorgesehenen besonderen Fristen Transportschäden unmittelbar gegenüber dem Transportunternehmen geltend zu machen.</p>
+<p>m) Schäden oder Verluste sind vom Mieter unverzüglich RADACOM und wenn diese durch Einwirkung Dritter verursacht wurden zusätzlich der zuständigen Polizeibehörde anzuzeigen. Die zur Schadabwicklung notwendigen Daten sind RADACOM innerhalb von fünf Werktagen ab Eintritt des Schadens zur Verfügung zu stellen. Kommt der Mieter dieser Mitwirkungspflicht nicht nach, erlischt ein eventuell vereinbarter Versicherungsschutz (Premium-Versicherung).</p>
+<p>n) Verzichtet der Mieter auf die Premium-Versicherung oder verlässt der Mietgegenstand deren Geltungsbereich so hat der Mieter eine eigene Vollversicherung in ausreichender Höhe abzuschließen. Der Mieter tritt bereits jetzt künftige Ansprüche auf Versicherungsleistungen, die ihm aus abgeschlossenen Versicherungen in dem Falle zustehen, dass der Mietgegenstand aus vom Mieter zu vertretenden Gründen untergeht oder sich verschlechtert, an RADACOM ab.</p>
+
+<h2>8. Störungen, Funktionseinschränkungen, Haftungsbeschränkung, Rechte Dritter</h2>
+<p>a) RADACOM haftet nicht für Störungen oder Unterbrechungen des Funkverkehrs durch elektromagnetische Aussendungen Dritter (Personen oder Maschinen). Treten Störungen auf, so hat der Mieter RADACOM diese unverzüglich anzuzeigen und RADACOM die Möglichkeit einzuräumen, eine alternative technische Lösung, ggf. auch durch telefonische Anleitung bereitzustellen. Die Befreiung vom Mietzins und ein eventueller Schadensersatz ist nur dann gerechtfertigt, wenn die Störung des Funkbetriebs im Verantwortungsbereich von RADACOM liegt und auf die berechneten Tage beschränkt, in denen der Mietgegenstand nachweisbar nicht ordnungsgemäß funktioniert.</p>
+<p>b) Hat der Mieter den Mietgegenstand bearbeitet oder Veränderungen vorgenommen, die nicht in einer durch RADACOM bereitgestellten Bedienungsanleitung beschrieben sind, haftet RADACOM nicht für Funktionseinschränkungen oder Schäden.</p>
+<p>c) Im Rahmen der gesetzlichen Zulässigkeit ist die aus einem Mietvertrag erwachsende Haftpflicht von RADACOM auf die vereinbarte Mietsumme beschränkt.</p>
+<p>d) Der Mieter ist verpflichtet, den Mietgegenstand von sämtlichen, eventuell von Dritten in Bezug auf den Mietgegenstand geltend gemachten, Rechten freizuhalten. Werden derartige Rechte geltend gemacht, hat der Mieter RADACOM hiervon unverzüglich schriftlich unter Beifügung der notwendigen Unterlagen zu unterrichten. Sämtliche Kosten für die Abwehr der Geltendmachung von Rechten Dritter trägt der Mieter.</p>
+<p><a class="doc-download" href="assets/dokumente/AMB-RADACOM-GmbH-2025.pdf" target="_blank" rel="noopener">Mietbedingungen als PDF herunterladen</a></p>
+  </div>
+  <div data-en>
+    <h1>General Rental Terms</h1>
+    <p class="meta">Version 1.2, as of: 29 Aug 2025 · <a href="https://www.radacom.de" target="_blank" rel="noopener">www.radacom.de</a></p>
+
+<h2>1. General provisions, applicability</h2>
+<p>a) These General Rental Terms (GRT) apply only to business with entrepreneurs within the meaning of § 14 of the German Civil Code (BGB), including corporations, institutions and foundations under public law. They are an integral part of the rental offers and rental contracts of RADACOM GmbH, hereinafter referred to as "RADACOM", and apply in their respective current version to all future rental contracts with RADACOM as well. For business with private individuals, these GRT apply to the extent that the individual provisions are legally permissible.</p>
+<p>b) These terms apply in addition to the General Terms and Conditions (GTC) of RADACOM in their respective current version, which can be viewed on the business premises and on the website. Points not regulated here follow from the GTC. In the event of conflicting provisions on individual points, these General Rental Terms take precedence over the GTC.</p>
+
+<h2>2. Price commitment, availability</h2>
+<p>a) Unless another period is noted on the offer, RADACOM is bound to the prices offered for 30 days from the date of the offer.</p>
+<p>b) Upon submission of an offer, the material offered is reserved by RADACOM non-bindingly for the specified period. Until a rental contract is concluded, however, there is no entitlement to the material offered. RADACOM expressly reserves the right to interim rental. Fulfilment is always only carried out according to the respective availability.</p>
+
+<h2>3. Rental contract, rental object, contract amendment, transfer to third parties</h2>
+<p>a) The contracting party of the rental contract with RADACOM is the person or company named as addressee in the letterhead of the delivery note, or alternatively of the offer, hereinafter referred to as "renter". The renter under this contract need not be identical with the user of the rental object.</p>
+<p>b) A rental contract is only concluded upon the explicit confirmation by RADACOM of a legally valid rental order placed by the renter (usually by dated signature and company stamp on an offer prepared by RADACOM, by email or other clear written declaration of intent). If written confirmation by RADACOM has not been given prior to delivery, the delivery of the ordered goods and services by RADACOM is deemed an order confirmation.</p>
+<p>c) The subject of the rental contract is the individual devices listed in RADACOM's order confirmation, including permanently connected accessories or accessories necessary for operation (e.g. cables, mounting material etc.) as well as items provided free of charge (e.g. test or reserve devices). RADACOM reserves the right, in the event of insufficient availability, not to supply offered free additional services (e.g. reserve devices, replacement batteries) or to supply, instead of the items named in the offer and on the same terms, other items that fulfil the offered functions in at least the same way.</p>
+<p>d) The renter is entitled to transfer the rental object to third parties, hereinafter referred to as "user", for use and to commercially sub-let it within the EU, Norway, Liechtenstein and Switzerland. Moving the rental object outside the countries named here requires the express permission of RADACOM. In the event of transfer to third parties, however, the renter remains liable to RADACOM for all breaches of the contractual obligations described here. This also applies to those breaches of contract that arise directly from the use of the rental object by the user. The obligations of the user are equivalent to the obligations of the renter named here.</p>
+
+<h2>4. Rental period, rent, delivery, payment of additional services</h2>
+<p>a) The rental period extends over the period specified on the delivery note, or alternatively the offer. If a start of the rental period is not expressly specified, the rental period begins with the handover of the rental object to the renter or the shipping service provider. The rental contract ends with the expiry of the rental period, and if not clearly specified at the latest with the cessation of work on the deployment specified on the delivery note (e.g. event dismantling). The service period in the fiscal sense corresponds to the rental period defined here. The calculation days specified in the rental calculation may differ from the actual days of use and the rental period.</p>
+<p>b) The rent is usually calculated, for a rental period of up to 30 days, according to the days of use, and for longer periods according to the entire rental period. Use beyond the number of days of use agreed in the rental contract must be reported to RADACOM before the additional use. Tacit additional use is prohibited and entitles RADACOM to charge the entire rental period as time of use or to terminate the rental contract immediately.</p>
+<p>c) Relevant for invoicing are the quantities listed on the delivery note. The renter recognises delivery notes amended by RADACOM, or documents equivalent to a delivery note for the delivery or subsequent delivery of rental objects by RADACOM, as the basis for calculation.</p>
+<p>d) If, according to the rental contract, the rent is to be paid in a single payment, this is to be paid within 14 days of invoicing, unless other payment terms are specified. If the rental period is calculated by months or monthly instalments are agreed as payment terms, these are to be paid in advance on the first of each month.</p>
+<p>e) If a rent is not named in an offer or order, the rent usually charged by RADACOM for the rental object (list price) applies. In the case of a subsequently changed rental duration, the corresponding, possibly time-dependent, graduated discount of the discount list used in the offer or usually applied for this customer or this customer group applies.</p>
+<p>f) Reserve devices provided by RADACOM are charged like the other devices as soon as they are used by the renter in addition to the other devices. Additional use is presumed if the packaging of the reserve material has been opened, or if the reserve material is no longer in the delivered condition (soiled, battery empty, cable knotted, etc.) and no circumstance can be established that indicates use of the reserve device instead of another device.</p>
+<p>g) If RADACOM is in default with the delivery of the rental object, the renter must set RADACOM a reasonable grace period.</p>
+<p>h) If the handover to the customer is delayed by at least one day for reasons within the customer's responsibility, RADACOM is entitled, until the time of actual handover, to dispose of the rental object otherwise and to supply other items that fulfil the offered functions in at least the same way, on the same terms.</p>
+<p>i) Deliveries and other additional services (e.g. installation and support of systems, frequency or network usage fees) are charged separately, unless they are expressly included in the offer or order confirmation.</p>
+<p>j) If a supplier commissioned by RADACOM has to wait more than 10 minutes when handing over the rental object due to the renter's fault and RADACOM incurs costs as a result, RADACOM is entitled to charge the renter the additional costs incurred, but at least € 5 plus VAT for each further started 10 minutes of waiting time.</p>
+
+<h2>5. Contract amendment, withdrawal, termination</h2>
+<p>a) The rental period or the scope of the rental object can be changed at the renter's request, subject to availability.</p>
+<p>b) A withdrawal is a dissolution or restriction of the rental contract not based on the conduct of the contracting party; a termination is a dissolution of the rental contract based on the conduct of the contracting party. Withdrawal or termination must be made in writing.</p>
+<p>c) If the renter withdraws from the rental contract in whole or in part later than 7 days before the agreed start of the rental, RADACOM is entitled, without proof of damage, to charge 50% of the agreed rent for the first 14 days. If the withdrawal occurs after the start of the agreed rental period, RADACOM is entitled, without proof of damage, to charge the full rent for the rental period already elapsed as well as 50% of the agreed rent for the following 7 rental days.</p>
+<p>d) A complete or partial withdrawal from the rental contract by RADACOM is possible if, due to an event occurring after conclusion of the contract and not attributable to RADACOM, full performance of the contract would not be possible or only possible under uneconomical conditions.</p>
+<p>e) Termination of the contract by one of the contracting parties is permissible if the other contracting party fails to fulfil its main contractual obligations within the agreed time. This is the case in particular if the renter no longer meets their payment obligation or treats the rental object improperly. The right to terminate for good cause remains unaffected by this.</p>
+<p>f) A delayed delivery not attributable to RADACOM by the shipping service provider commissioned with the delivery is deemed a risk within the customer's sphere and does not entitle the customer to terminate.</p>
+
+<h2>6. Use, deployment data, return</h2>
+<p>a) RADACOM permits the renter the proper and contractual use of the devices provided; for radio-technology devices this may include the use of frequencies allocated to RADACOM, and for communication means based on public mobile networks the use of the network within the agreed framework. In doing so, the relevant legal provisions must be observed, in particular the permitted deployment area stated on the device packaging, the operating instructions or the delivery note, or alternatively the deployment area agreed in the context of the order, and any other usage restrictions, the recognised rules of technology, as well as RADACOM's instructions. The maximum permitted usage radius around the location specified by the customer is at most 15 kilometres. Additional legal restrictions may apply near borders. If no specific location of use is specified, this is inferred from the context of the request (e.g. event site). The renter is liable for the consequences of unauthorised use.</p>
+<p>b) If frequencies licensed to RADACOM are used by the renter, the renter is obliged to provide RADACOM, on request, with all usage data relevant to the frequency licence, in particular the exact location and time of use as well as a person responsible for the radio technology. RADACOM uses this data only within the scope of its duty of care and information towards the Federal Network Agency or other competent authorities. If this data is not, or not completely, made available to RADACOM, the devices are used without warranty. The data is not otherwise used or passed on to third parties. Where applicable, programmed frequencies are only licensed for the deployment area named by the customer. Use of frequencies subject to registration outside this deployment area requires separate approval by the competent authorities. Use outside the deployment country resulting from the contract documents (offer, order, delivery note) is contrary to the contract and may not be legally permitted.</p>
+<p>c) If the renter commissions RADACOM to program the radio-technology devices according to their wishes, the renter is liable for the permissibility of the use of these parameters.</p>
+<p>d) If the renter commissions RADACOM with installation work, the renter must ensure reasonable setup and dismantling times as well as free access to the installation site throughout the entire installation period. The installation site for stationary antennas should be located as centrally as possible, have a line of sight to the area to be served and be reachable with available means (e.g. high-rise roof, church tower). The installation site for a stationary radio system should be no more than 15 metres from the antenna installation site, weather-protected, ventilated and equipped with a standard household power supply. If these conditions are not met, restrictions to radio coverage may occur. If the customer cannot guarantee the conditions named, RADACOM must be informed immediately.</p>
+<p>e) Unless expressly agreed otherwise, the use of communication means based on public mobile networks refers exclusively to the exchange of voice and text messages, status information and control commands between the devices listed in the rental contract within the preset German home network. Planned or spontaneous use in foreign networks, e.g. outside the usage area agreed on the delivery note or also in the border area (roaming), requires immediate notification by the renter or user to RADACOM and may be charged separately afterwards. Despite technical precautions, automatic registration in foreign networks cannot be excluded in every case. Any additional costs arising from this are to be borne by the renter.</p>
+<p>f) The renter is not permitted, without the express permission of RADACOM, to download programs, images or other data onto rented devices, to store them there, or to use the devices in any way other than for the operation of the preset service including the implemented additional services (e.g. GPS tracking). Data transfer via SIM cards provided by RADACOM is to be limited to the necessary extent.</p>
+<p>g) The renter is obliged to use the rental object carefully and to maintain it in the delivered condition; in particular, the provided operating instructions must be read before use, and these as well as usage and care instructions must be carefully observed. Consumables that fail or are consumed during the rental period (e.g. standard household batteries, lamps, adhesive tape) are to be replaced by the renter at their own expense. Consumable items that can no longer be rented out after return are invoiced to the renter by RADACOM, unless consumption was explicitly included in the contract.</p>
+<p>h) In the event of non-observance of the supplied instructions and manuals, resulting in a reduction in the usable value of the rental object or additional effort to restore the original condition, RADACOM is entitled to withdraw payment discounts granted on the affected contract with immediate effect.</p>
+<p>i) The renter is obliged to protect the rental object from strong electromagnetic fields, such as during thunderstorms or near high-voltage lines. The renter is liable for damage caused by strong electromagnetic fields.</p>
+<p>j) Lithium-based batteries may only be transported in the transport packaging provided by RADACOM and only mounted directly on the device or in the intended battery compartments, or in other packaging that meets the legal requirements for the shipment of lithium-based batteries.</p>
+<p>k) The serial numbers, manufacturer, ownership and information labels or other identification marks attached to the rental object may not be removed, covered or in any way defaced or made illegible.</p>
+<p>l) The renter is only entitled to make changes, installations, attachments etc. to the rental object with the prior consent of RADACOM. The same applies to installing the rental object in a manner that cannot be reversed at short notice. Any changes must be carried out professionally and in compliance with applicable laws and recognised rules of technology.</p>
+<p>m) Upon termination of the rental contract, the renter is obliged to restore the former condition of the rental object at their own expense or, on the basis of a clear declaration of intent by RADACOM, to maintain the changed condition. If the renter returns the rental object in the condition they created, the renter cannot demand reimbursement of the expenses incurred for change, installation, removal etc. of the rental object. This also applies if the value of the rental object has increased due to change, installation or removal by the renter.</p>
+<p>n) Upon termination of the rental contract, the renter must return the rental object to RADACOM, or initiate its return, immediately (usually on the next working day) in proper condition, at their own cost and risk. They are not entitled to retain the rental object after the end of the rental period without RADACOM's consent, to pass it on to third parties or to otherwise restrict RADACOM's power of disposal over the rental object.</p>
+<p>o) If the rental object is returned late by the renter, they must, notwithstanding the further obligation to pay damages, at least pay the agreed rent corresponding to the duration of the delay until the return of the rental object.</p>
+<p>p) RADACOM acknowledges receipt of returned rented items only with regard to quantity, not with regard to functionality. RADACOM reserves the right of recourse within 15 working days of receipt if damage is found during a detailed inspection of the devices.</p>
+
+<h2>7. Loss, deterioration, damage report, insurance</h2>
+<p>a) The renter must compensate for damage not covered by an insurance taken out under the rental contract with RADACOM that arises during the rental period from non-contractual use of the rental object. This also includes resulting financial and other damage to third parties.</p>
+<p>b) During the rental period, the renter bears the risk of loss and deterioration of the rental object. Accidental events do not release the renter from fulfilling their obligations. RADACOM must be informed in writing immediately of the occurrence of one of these events. The renter's liability begins with the takeover of the rental object by the renter, user, their vicarious agent or the transport service provider, and ends with the complete and unambiguous return of the rental object by the renter or transport service provider to RADACOM or a commissioned vicarious agent of RADACOM.</p>
+<p>c) In the event of a deterioration of the rental object that exceeds the level of wear to be expected under normal use, the renter is obliged to restore the rental object to a condition that corresponds at least to the quality at the time of handover to the renter, or to provide RADACOM with compensation for the repair or replacement of the deteriorated object, and to pay the agreed rent for the duration of a repair or replacement procurement.</p>
+<p>d) Rental objects not returned to RADACOM or demonstrably returned within four weeks after the end of the agreed rental period are deemed lost. The renter is liable for financial damage to RADACOM caused by the unavailability of the rental objects after the expiry of the commissioned rental period.</p>
+<p>e) In the event of loss of the rental object, the renter is obliged to replace the rental object with another equivalent one and to transfer ownership to RADACOM, or to compensate RADACOM for the value of the lost or deteriorated rental object. If RADACOM makes use of compensation in value, RADACOM will, subject to availability, provide the renter with an equivalent rental object to continue the rental relationship.</p>
+<p>f) RADACOM is entitled, notwithstanding further repair or maintenance costs, to charge a maintenance flat fee of € 5 net for each of the following cases: the subsequent removal or reattachment of adhesive tape and similar markings applied or removed by the renter; cables that have been bent, knotted or wound with a radius of less than 5 cm, pinched or subjected to other improper loads that have visibly changed the material or are likely to considerably shorten its service life; antennas, transport cases and other parts whose condition has been altered by the application of force; as well as material changes not attributable to normal wear (e.g. colour, shape, etc.).</p>
+<p>g) Basic insurance for normal usage damage (wear) is automatically concluded with the placement of the order by the renter and is included in the stated rent. Premium insurance can be included by explicit, non-struck-out mention on the delivery note or order.</p>
+<p>h) The basic insurance applies worldwide and covers repair costs for electronic and mechanical defects that arise during the rental deployment, as well as, where applicable, the replacement of the rental object at the handover location or the provision of a replacement or service at the place of deployment, if this was arranged by RADACOM. Excluded from the basic insurance are the replacement procurement in the event of theft or other loss of the rental object, and the restoration in the event of damage due to gross negligence or intent on the part of the renter, as well as any damage caused by the effects of moisture, dust, smoke, heat, cold and mechanical damage to devices and accessories due to falls or other application of force.</p>
+<p>i) The premium insurance covers, provided the renter complies with the duty of care, damage or loss within the EU, Norway, Liechtenstein and Switzerland, less an excess per insured event of € 250 in the event of damage; or, in the event of loss exceeding € 250, 25% of the loss amount on the basis of the normal sales price. Otherwise, the General Conditions for Electronics Insurance and the insurer's additional clauses, which can be viewed on RADACOM's business premises and website, apply.</p>
+<p>j) If the premium insurance is not included in the rent, it is charged either pro rata to value or according to uniform daily rates in accordance with the current price list. For handheld devices, accessories subject to rental costs or individually rented accessories, a single daily rate is charged per day; radio stations (mobile devices) count double, repeaters fivefold and announcement units tenfold. For transports outside Germany, one additional day is charged for each transport. Unused reserve devices and rental-cost-free accessories are insured free of charge. If, under these conditions, it can be presumed that a reserve device was used in addition to the other devices, an insurance contribution for the entire calculation period applies to that device, unless the renter can prove that they used the reserve device only part of the time.</p>
+<p>k) A prerequisite for reimbursement by the premium insurance is comprehensible written documentation of the handover of the devices and accessories to the respective user or custodian as well as their return to the device dispatcher.</p>
+<p>l) Any damage to the rental object must be reported to RADACOM immediately upon becoming known, stating the fault or damage, and the affected parts must be clearly marked. If the renter is themselves the client of a transport service, they must additionally assert transport damage directly to the transport company within the special deadlines provided for this.</p>
+<p>m) Damage or losses must be reported by the renter immediately to RADACOM and, if caused by the action of third parties, additionally to the competent police authority. The data necessary for claims processing must be made available to RADACOM within five working days of the occurrence of the damage. If the renter fails to fulfil this duty to cooperate, any agreed insurance cover (premium insurance) lapses.</p>
+<p>n) If the renter waives the premium insurance or the rental object leaves its area of validity, the renter must take out their own full insurance in sufficient amount. The renter hereby assigns to RADACOM future claims to insurance benefits to which they are entitled under insurance policies taken out in the event that the rental object is lost or deteriorates for reasons attributable to the renter.</p>
+
+<h2>8. Disturbances, functional limitations, limitation of liability, third-party rights</h2>
+<p>a) RADACOM is not liable for disturbances or interruptions of radio traffic caused by electromagnetic emissions of third parties (persons or machines). If disturbances occur, the renter must report them to RADACOM immediately and give RADACOM the opportunity to provide an alternative technical solution, where applicable also by telephone instruction. The exemption from rent and any compensation for damages is only justified if the disturbance of radio operation lies within RADACOM's area of responsibility and is limited to the charged days on which the rental object demonstrably did not function properly.</p>
+<p>b) If the renter has worked on the rental object or made changes that are not described in an operating manual provided by RADACOM, RADACOM is not liable for functional limitations or damage.</p>
+<p>c) Within the limits of what is legally permissible, the liability of RADACOM arising from a rental contract is limited to the agreed rental sum.</p>
+<p>d) The renter is obliged to keep the rental object free from all rights possibly asserted by third parties in relation to the rental object. If such rights are asserted, the renter must inform RADACOM immediately in writing, enclosing the necessary documents. The renter bears all costs for defending against the assertion of third-party rights.</p>
+<hr>
+<p style="font-size:13px;color:var(--light);font-style:italic;line-height:1.6;">This English text is a translation provided for convenience only. In the event of any discrepancy or dispute, the German version is solely authoritative and legally binding.</p>
+<p><a class="doc-download" href="assets/dokumente/AMB-RADACOM-GmbH-2025.pdf" target="_blank" rel="noopener">Download rental terms (German) as PDF</a></p>
+  </div>
+</div>
+<div id="nk-footer-root"></div>
+<div id="nk-cookiemodal-root"></div>
+<script src="assets/js/nikos-footer.js"></script>
+<script src="assets/js/nikos-config.js"></script>
+<script>
+(function(){
+  var url = (typeof window.NIKOS_CONTACT_URL !== 'undefined') ? window.NIKOS_CONTACT_URL : 'nikos-kontakt.html';
+  document.querySelectorAll('.nav__cta,.nav__cta-mobile').forEach(function(el){
+    el.href = url;
+  });
+})();
+</script>
+</body>
+</html>

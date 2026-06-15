@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NIKOS Partnerportal — Login</title>
+<meta name="description" content="Zugang zu Schulungsunterlagen, Software und technischen Ressourcen für zertifizierte NIKOS-Partner.">
+<meta name="robots" content="noindex">
+
+<style>
+/* Lokale Schriften (DSGVO-konform, kein Google-Fonts-CDN) — OFL, siehe assets/fonts/OFL-Exo2.txt */
+@font-face{font-family:'Source Sans 3';font-style:normal;font-weight:300 700;font-display:swap;src:url('assets/fonts/SourceSans3-VariableFont_wght.ttf') format('truetype-variations');}
+@font-face{font-family:'Source Sans 3';font-style:italic;font-weight:300 700;font-display:swap;src:url('assets/fonts/SourceSans3-Italic-VariableFont_wght.ttf') format('truetype-variations');}
+@font-face{font-family:'Exo 2';font-style:normal;font-weight:400 700;font-display:swap;src:url('assets/fonts/Exo2-VariableFont_wght.ttf') format('truetype-variations');}
+</style>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brand-orange:#FF6600;--brand-orange-dk:#E05500;--brand-dark:#4D4D4D;--brand-mid:#595959;--brand-light:#999999;
+  --white:#FFFFFF;--s2:#F5F5F5;--s3:#EBEBEB;--border:#CCCCCC;
+  --card-dark:#1E2A35;--card-text:#E0E0E0;--sec-dark:#253341;--surface-footer:#2E3236;
+  --card-border:#D8DCE0;
+  --banner-bar:#1D2F49;
+  --orange:var(--brand-orange);--dark:var(--brand-dark);--mid:var(--brand-mid);--light:var(--brand-light);
+  --font:'Source Sans 3',system-ui,sans-serif;--claim:'Exo 2',system-ui,sans-serif;
+  --r:4px;--r-lg:4px;--r-xl:16px;--max-w:1280px;
+}
+html{font-size:16px;scroll-behavior:smooth;height:100%}
+body{font-family:var(--font);color:var(--dark);background:var(--s2);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+
+[data-de],[data-en]{display:none !important}
+[data-lang="de"] [data-de]{display:revert !important}
+[data-lang="en"] [data-en]{display:revert !important}
+.lang-flag{position:relative;flex-shrink:0}
+.lang-flag__btn{display:flex;align-items:center;gap:5px;padding:5px 8px;border:1px solid var(--border);border-radius:var(--r);background:var(--white);cursor:pointer;font-family:var(--font);font-size:12px;font-weight:600;color:var(--dark);line-height:1;white-space:nowrap;transition:border-color .15s}
+.lang-flag__btn:hover{border-color:var(--orange)}
+.lang-flag__btn .flag{font-size:16px}
+.lang-flag__btn .chevron{font-size:9px;color:var(--light);margin-left:1px;transition:transform .2s}
+.lang-flag.is-open .lang-flag__btn .chevron{transform:rotate(180deg)}
+.lang-flag__dropdown{display:none;position:absolute;top:calc(100% + 6px);right:0;background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:0 8px 24px rgba(0,0,0,.12);min-width:140px;overflow:hidden;z-index:200}
+.lang-flag.is-open .lang-flag__dropdown{display:block}
+.lang-flag__option{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;font-size:13px;color:var(--dark);border:none;background:none;width:100%;text-align:left;font-family:var(--font);transition:background .12s}
+.lang-flag__option:hover{background:var(--s2)}
+.lang-flag__option.active{background:rgba(255,102,0,.06);color:var(--orange);font-weight:600}
+
+/* NAV */
+.nk-nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:5px solid var(--orange);box-shadow:0 1px 12px rgba(0,0,0,.06)}
+.nav__inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;gap:16px}
+.nav__logo{height:60px;display:flex;align-items:center;flex-shrink:0;margin-right:32px}
+.nav__logo svg{height:26px;width:auto;display:block}
+.nav__links{display:flex;align-items:center;gap:16px;list-style:none;flex-wrap:nowrap;min-width:0;flex:1;overflow:hidden}
+.nav__burger{display:none}
+.nav__links a{font-size: 16px;color:var(--mid);text-decoration:none;font-weight: 600;transition:color .15s;white-space:nowrap}
+.nav__links a:hover,.nav__links a.active{color:var(--orange)}
+.nav__right{display:flex;align-items:center;gap:8px;flex-shrink:0;margin-left:auto}
+/* Smaller contact CTA */
+.nav__cta{background:var(--orange)!important;color:#fff!important;padding:6px 14px;border-radius:var(--r);font-weight:600!important;white-space:nowrap;text-decoration:none;font-size:12px;transition:background .15s;line-height:1.4}
+.nav__cta:hover{background:var(--orange-dk)!important}
+/* Flag dropdown */
+.lang-flag{position:relative;flex-shrink:0}
+.lang-flag__btn{
+  display:flex;align-items:center;gap:5px;
+  padding:5px 8px;border:1px solid var(--border);border-radius:var(--r);
+  background:var(--s2);cursor:pointer;font-family:var(--font);
+  font-size:12px;font-weight:600;color:var(--dark);
+  transition:border-color .15s;line-height:1;
+  white-space:nowrap;
+}
+.lang-flag__btn:hover{border-color:var(--orange)}
+.lang-flag__btn .flag{font-size:16px;line-height:1}
+.lang-flag__btn .chevron{font-size:9px;color:var(--light);transition:transform .2s;margin-left:1px}
+.lang-flag.is-open .lang-flag__btn .chevron{transform:rotate(180deg)}
+.lang-flag__dropdown{
+  display:none;position:absolute;top:calc(100% + 6px);right:0;
+  background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);
+  box-shadow:0 8px 24px rgba(0,0,0,.12);
+  min-width:140px;overflow:hidden;z-index:200;
+}
+.lang-flag.is-open .lang-flag__dropdown{display:block}
+.lang-flag__option{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 14px;cursor:pointer;
+  font-size:13px;color:var(--dark);
+  transition:background .12s;
+  border:none;background:none;width:100%;text-align:left;font-family:var(--font);
+}
+.lang-flag__option:hover{background:var(--s2)}
+.lang-flag__option.active{background:rgba(255,102,0,.06);color:var(--orange);font-weight:600}
+.lang-flag__option .flag{font-size:18px}
+/* Burger */
+.nav__burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:4px;flex-shrink:0}
+.nav__burger span{display:block;height:2px;width:22px;background:var(--dark);border-radius:2px;transition:transform .25s,opacity .2s}
+.nav__burger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav__burger.is-open span:nth-child(2){opacity:0}
+.nav__burger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav__mobile{display:none;position:absolute;top:100%;left:0;right:0;background:var(--white);border-top:1px solid var(--s2);box-shadow:0 8px 24px rgba(0,0,0,.10);z-index:99;padding:16px 0 24px}
+.nav__mobile.is-open{display:block}
+.nav__mobile ul{list-style:none;display:flex;flex-direction:column}
+.nav__mobile ul li a{display:block;padding:12px 24px;font-size:15px;color:var(--dark);text-decoration:none;border-left:3px solid transparent;transition:border-color .15s,color .15s}
+.nav__mobile ul li a:hover{color:var(--orange);border-left-color:var(--orange)}
+.nav__mobile ul li a.nav__cta-mobile{margin:8px 24px 0;padding:10px 20px;background:var(--orange);color:#fff!important;border-radius:var(--r);text-align:center;font-weight:600;border-left:none!important;display:none}
+/* Login Layout */
+.login-page{flex:1;display:flex;align-items:center;justify-content:center;padding:48px 20px}
+.login-container{display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:900px;width:100%;align-items:start}
+
+/* Login Card */
+.login-card{background:var(--white);border-radius:var(--r-xl);padding:40px;box-shadow:0 2px 24px rgba(0,0,0,.08)}
+.login-card__logo{margin-bottom:28px}
+.login-card__title{font-family:var(--claim);font-size:24px;font-weight:700;color:var(--dark);margin-bottom:6px}
+.login-card__sub{font-size:15px;color:var(--mid);margin-bottom:28px}
+.form-group{margin-bottom:18px}
+.form-label{display:block;font-size:13px;font-weight:600;color:var(--dark);margin-bottom:5px}
+.form-input{width:100%;padding:11px 14px;border:1px solid var(--border);border-radius:var(--r-lg);font-family:var(--font);font-size:15px;color:var(--dark);outline:none;transition:border-color .15s,box-shadow .15s}
+.form-input:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,102,0,.08)}
+.form-forgot{display:block;text-align:right;font-size:12px;color:var(--light);text-decoration:none;margin-top:-10px;margin-bottom:16px}
+.form-forgot:hover{color:var(--orange)}
+.btn-login{width:100%;background:var(--orange);color:#fff;padding:13px;border-radius:var(--r-lg);font-size:16px;font-weight:600;border:none;cursor:pointer;font-family:var(--font);transition:background .15s}
+.btn-login:hover{background:var(--brand-orange-dk)}
+.login-divider{text-align:center;margin:20px 0;font-size:12px;color:var(--light);position:relative}
+.login-divider::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:var(--s3)}
+.login-divider span{background:var(--white);padding:0 12px;position:relative}
+.login-note{font-size:13px;color:var(--light);text-align:center;line-height:1.5}
+.login-note a{color:var(--orange);text-decoration:none}
+.login-note a:hover{text-decoration:underline}
+
+/* Info Sidebar */
+.login-info{display:flex;flex-direction:column;gap:20px}
+.login-info__title{font-size:18px;font-weight:700;color:var(--dark);margin-bottom:4px}
+.login-info__text{font-size:14px;color:var(--mid);line-height:1.65;margin-bottom:16px}
+.info-box{background:var(--card-dark);border-radius:var(--r-xl);padding:28px}
+.info-box__title{font-size:14px;font-weight:700;color:var(--card-text);margin-bottom:14px;text-transform:uppercase;letter-spacing:.06em;font-size:12px}
+.info-box__list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.info-box__list li{font-size:14px;color:#C8D0D8;display:flex;align-items:flex-start;gap:8px}
+.info-box__list li::before{content:'→';color:var(--orange);font-weight:700;flex-shrink:0}
+.regions-teaser{background:rgba(255,102,0,.06);border:1px solid rgba(255,102,0,.2);border-radius:var(--r-lg);padding:20px 24px}
+.regions-teaser__title{font-size:14px;font-weight:700;color:var(--dark);margin-bottom:8px}
+.regions-teaser__text{font-size:13px;color:var(--mid);line-height:1.6;margin-bottom:14px}
+.btn-partner{display:inline-block;background:var(--orange);color:#fff;padding:10px 20px;border-radius:var(--r);font-size:14px;font-weight:600;text-decoration:none;transition:background .15s}
+.btn-partner:hover{background:var(--brand-orange-dk)}
+
+/* Footer mini */
+.login-footer{background:var(--surface-footer);padding:16px 24px;text-align:center}
+.login-footer p{font-size:12px;color:rgba(255,255,255,.35)}
+.login-footer a{color:rgba(255,255,255,.35);text-decoration:none;margin:0 8px}
+.login-footer a:hover{color:var(--orange)}
+
+@media(max-width:700px){
+  .login-container{grid-template-columns:1fr}
+  .login-info{display:none}
+  .login-page{padding:24px 16px;align-items:flex-start}
+}
+</style>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="4f48b5b5-93c8-4493-be71-2c1cefc6e440"></script>
+<!-- ═══ KLARO CONSENT MANAGER ═══ -->
+<script defer src="assets/js/klaro-config.js"></script>
+<script defer src="https://cdn.kiprotect.com/klaro/v0.7/klaro.js"></script>
+</head>
+<body>
+
+<nav class="nk-nav" id="mainNav">
+  <div class="nav__inner">
+    <div class="nav__logo"><a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="344.188 -0.500 356.378 66.750" style="height:28px;width:auto;"><path fill="#4D4D4D" d="M344.688,0.688h26.75l32.935,47.026h0.003V0.688h17.313v64.375h-26.75l-32.935-47.026h-0.003v47.026h-17.313V0.688z"/><path fill="#4D4D4D" d="M433.706,0.688h17.313v64.375h-17.313V0.688z"/><path fill="#4D4D4D" d="M463.267,0.688h17.313v23.625h8.248l21.799-23.625h23.516l-30.438,31.399l33.938,32.976h-24.619L488.295,40.25h-7.716v24.813h-17.313V0.688z"/><path fill="#4D4D4D" d="M541.403,42.651v-18.99c0-8.42,1.828-14.462,5.484-18.124C550.567,1.846,556.927,0,565.964,0h28.557c8.834,0,15.117,1.846,18.848,5.537c3.732,3.691,5.598,9.632,5.598,17.821v19.249c-0.127,8.363-2.031,14.318-5.711,17.865c-3.656,3.519-9.836,5.277-18.543,5.277h-28.748c-8.605,0-14.852-1.729-18.734-5.19C543.345,57.07,541.403,51.101,541.403,42.651z M559.278,29.548v6.266c0,5.473,0.711,9.088,2.131,10.844c1.42,1.729,4.197,2.593,8.332,2.593h21.42c4.008,0,6.658-0.922,7.951-2.766c1.318-1.871,1.979-5.299,1.979-10.282v-6.524c0-5.127-0.811-8.598-2.434-10.412c-1.6-1.844-4.377-2.766-8.332-2.766h-20.014c-4.135,0-7.014,0.937-8.637,2.809C560.077,21.182,559.278,24.595,559.278,29.548z"/><path fill="#4D4D4D" d="M646.131,44.313c0.229,2.889,0.748,4.796,1.561,5.72c0.813,0.896,2.805,1.343,5.978,1.343h22.234c4.568,0,6.853-1.805,6.853-5.415c0-2.311-0.901-3.885-2.702-4.723c-1.777-0.866-6.078-1.3-12.904-1.3h-10.658c-8.273,0-14.363-0.533-18.271-1.601c-3.883-1.067-6.472-3.058-7.766-5.972c-1.092-2.394-1.637-6.533-1.637-12.418c0-8.048,1.712-13.385,5.138-16.01C637.407,1.313,643.218,0,651.388,0h24.358c8.551,0,14.336,1.354,17.355,4.063s4.529,7.493,4.529,14.353v2.334h-17.313c0-2.544-0.521-4.235-1.561-5.074c-1.041-0.867-3.376-1.301-7.005-1.301h-18.541c-4.721,0-7.081,1.706-7.081,5.117c0,3.412,1.649,5.189,4.948,5.334c3.324,0.116,6.445,0.174,9.364,0.174h11.762c8.044,0,14.021,0.605,17.929,1.816c3.933,1.212,6.622,3.346,8.069,6.402c1.243,2.625,1.865,6.735,1.865,12.329c0,5.682-0.647,9.85-1.941,12.502c-1.421,2.885-4.009,4.889-7.764,6.013c-3.73,1.125-9.466,1.688-17.204,1.688h-22.646c-8.373,0-14.082-1.268-17.127-3.804c-3.045-2.535-4.567-6.929-4.567-13.182v-4.452H646.131z"/></svg></a></div>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="nikos-system.html" data-de>System</a><a href="nikos-system.html" data-en>System</a></li>
+      <li><a href="nikos-anwendungen.html" data-de>Anwendungen</a><a href="nikos-anwendungen.html" data-en>Applications</a></li>
+      <li><a href="nikos-produkte.html" data-de>Produkte</a><a href="nikos-produkte.html" data-en>Products</a></li>
+      <li><a href="nikos-referenzen.html" data-de>Referenzen</a><a href="nikos-referenzen.html" data-en>References</a></li>
+      <li><a href="nikos-vermietung.html" data-de>Vermietung</a><a href="nikos-vermietung.html" data-en>Rental</a></li>
+      <li><a href="nikos-downloads.html" data-de>Downloads</a><a href="nikos-downloads.html" data-en>Downloads</a></li>
+    </ul>
+    <div class="nav__right">
+      <a href="nikos-kontakt.html" class="nav__cta" data-de>Kontakt</a><a href="nikos-kontakt.html" class="nav__cta" data-en>Contact</a>
+      <div class="lang-flag" id="langFlag">
+        <button class="lang-flag__btn" id="langFlagBtn" aria-haspopup="true" aria-expanded="false"><span class="flag" id="langFlagIcon">🇩🇪</span><span class="chevron">▾</span></button>
+        <div class="lang-flag__dropdown" id="langFlagDropdown" role="listbox">
+          <button class="lang-flag__option active" data-lang-opt="de"><span class="flag">🇩🇪</span> Deutsch</button>
+          <button class="lang-flag__option" data-lang-opt="en"><span class="flag">🇬🇧</span> English</button>
+        </div>
+      </div>
+    </div>
+    <button class="nav__burger" id="navBurger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav__mobile" id="navMobile"><ul>
+    <li><a href="nikos-system.html" data-de>System</a><a href="nikos-system.html" data-en>System</a></li>
+    <li><a href="nikos-anwendungen.html" data-de>Anwendungen</a><a href="nikos-anwendungen.html" data-en>Applications</a></li>
+    <li><a href="nikos-produkte.html" data-de>Produkte</a><a href="nikos-produkte.html" data-en>Products</a></li>
+    <li><a href="nikos-vermietung.html" data-de>Vermietung</a><a href="nikos-vermietung.html" data-en>Rental</a></li>
+    <li><a href="nikos-downloads.html" data-de>Downloads</a><a href="nikos-downloads.html" data-en>Downloads</a></li>
+  </ul></div>
+</nav>
+
+<!-- LOGIN PAGE -->
+<div class="login-page">
+  <div class="login-container">
+
+    <!-- Login Card -->
+    <div class="login-card">
+      <div class="login-card__logo">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);border-left:3px solid var(--orange);padding-left:10px;" data-de>Partnerportal</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);border-left:3px solid var(--orange);padding-left:10px;" data-en>Partner portal</span>
+      </div>
+      <div class="login-card__title" data-de>Willkommen zurück</div>
+      <div class="login-card__title" data-en>Welcome back</div>
+      <div class="login-card__sub" data-de>Bitte melden Sie sich mit Ihren Partner-Zugangsdaten an.</div>
+      <div class="login-card__sub" data-en>Please log in with your partner credentials.</div>
+
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="login-email" data-de>E-Mail-Adresse</label>
+          <label class="form-label" for="login-email" data-en>Email address</label>
+          <input class="form-input" id="login-email" type="email" required autocomplete="email" placeholder="partner@firma.de">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="login-pw" data-de>Passwort</label>
+          <label class="form-label" for="login-pw" data-en>Password</label>
+          <input class="form-input" id="login-pw" type="password" required autocomplete="current-password" placeholder="••••••••">
+        </div>
+        <a href="#" class="form-forgot" data-de>Passwort vergessen?</a>
+        <a href="#" class="form-forgot" data-en>Forgot password?</a>
+        <button type="submit" class="btn-login" data-de>Anmelden →</button>
+        <button type="submit" class="btn-login" data-en>Log in →</button>
+      </form>
+
+      <div class="login-divider"><span data-de>Noch kein Zugang?</span><span data-en>No access yet?</span></div>
+      <div class="login-note">
+        <span data-de>Das Partnerportal ist ausschließlich für zertifizierte NIKOS-Partner. <a href="nikos-vermietung-partner-werden.html">Jetzt Partner werden →</a></span>
+        <span data-en>The partner portal is exclusively for certified NIKOS partners. <a href="nikos-vermietung-partner-werden.html">Become a partner now →</a></span>
+      </div>
+    </div>
+
+    <!-- Info Sidebar -->
+    <div class="login-info">
+      <div>
+        <div class="login-info__title" data-de>Exklusiv für NIKOS-Partner</div>
+        <div class="login-info__title" data-en>Exclusively for NIKOS partners</div>
+        <div class="login-info__text" data-de>Im Partnerportal finden Sie alle technischen Ressourcen für den professionellen Einsatz von NIKOS.</div>
+        <div class="login-info__text" data-en>In the partner portal you will find all technical resources for the professional use of NIKOS.</div>
+      </div>
+
+      <div class="info-box">
+        <div class="info-box__title" data-de>Im Portal enthalten</div>
+        <div class="info-box__title" data-en>Included in the portal</div>
+        <ul class="info-box__list">
+          <li data-de>Schulungsunterlagen für Betrieb und Techniker</li>
+          <li data-en>Training materials for operators and technicians</li>
+          <li data-de>Aktuelle Software und Firmware-Updates</li>
+          <li data-en>Latest software and firmware updates</li>
+          <li data-de>Kurz-Bedienungsanleitungen aller NIKOS-Module</li>
+          <li data-en>Quick operating guides for all NIKOS modules</li>
+          <li data-de>Technische Spezifikationen (erweitert)</li>
+          <li data-en>Technical specifications (extended)</li>
+          <li data-de>Direkter Support-Kontakt</li>
+          <li data-en>Direct support contact</li>
+        </ul>
+      </div>
+
+      <div class="regions-teaser">
+        <div class="regions-teaser__title" data-de>Noch kein Partner?</div>
+        <div class="regions-teaser__title" data-en>Not yet a partner?</div>
+        <div class="regions-teaser__text" data-de>Wir suchen aktuell Partner in Norddeutschland, Österreich, BeNeLux, Frankreich, Schweiz, Dänemark, Polen und Tschechien.</div>
+        <div class="regions-teaser__text" data-en>We are currently looking for partners in Northern Germany, Austria, BeNeLux, France, Switzerland, Denmark, Poland and Czech Republic.</div>
+        <a href="nikos-vermietung-partner-werden.html" class="btn-partner" data-de>Jetzt Partner werden →</a>
+        <a href="nikos-vermietung-partner-werden.html" class="btn-partner" data-en>Become a partner →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER MINI -->
+<footer class="login-footer">
+  <p>
+    © 2026 RADACOM GmbH ·
+    <a href="#" data-de>Impressum</a><a href="#" data-en>Legal notice</a>
+    <a href="#" data-de>Datenschutz</a><a href="#" data-en>Privacy</a>
+    <a href="nikos-kontakt.html" data-de>Kontakt</a><a href="nikos-kontakt.html" data-en>Contact</a>
+  </p>
+</footer>
+
+<script>
+(function(){
+  var html=document.documentElement;
+  var stored=localStorage.getItem('nk-lang')||'de';
+  var FLAGS={de:'🇩🇪',en:'🇬🇧'};
+  setLang(stored);
+  var flagWidget=document.getElementById('langFlag');
+  var flagBtn=document.getElementById('langFlagBtn');
+  var flagIcon=document.getElementById('langFlagIcon');
+  if(flagBtn){
+    flagBtn.addEventListener('click',function(e){e.stopPropagation();var open=flagWidget.classList.toggle('is-open');flagBtn.setAttribute('aria-expanded',open)});
+    document.addEventListener('click',function(){if(flagWidget){flagWidget.classList.remove('is-open');flagBtn.setAttribute('aria-expanded','false')}});
+  }
+  document.querySelectorAll('[data-lang-opt]').forEach(function(btn){
+    btn.addEventListener('click',function(e){e.stopPropagation();setLang(btn.getAttribute('data-lang-opt'));if(flagWidget){flagWidget.classList.remove('is-open');flagBtn.setAttribute('aria-expanded','false')}});
+  });
+  function setLang(lang){
+    html.setAttribute('data-lang',lang);html.setAttribute('lang',lang);localStorage.setItem('nk-lang',lang);
+    if(flagIcon)flagIcon.textContent=FLAGS[lang]||'🌐';
+    document.querySelectorAll('[data-lang-opt]').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-lang-opt')===lang)});
+  }
+})();
+</script>
+
+<!-- Cookie Settings Modal -->
+<div id="cookieModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9999;align-items:center;justify-content:center;padding:20px">
+  <div style="background:#fff;border-radius:4px;padding:40px;max-width:520px;width:100%;box-shadow:0 8px 40px rgba(0,0,0,.2);position:relative">
+    <button onclick="closeCookieSettings()" style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:20px;cursor:pointer;color:#999;line-height:1">✕</button>
+    <h2 style="font-size:20px;font-weight:700;color:#4D4D4D;margin-bottom:8px" data-de>Cookie-Einstellungen</h2>
+    <h2 style="font-size:20px;font-weight:700;color:#4D4D4D;margin-bottom:8px" data-en>Cookie Settings</h2>
+    <p style="font-size:14px;color:#595959;margin-bottom:24px;line-height:1.6" data-de>Wir verwenden Cookies, um unsere Website zu betreiben und zu verbessern. Notwendige Cookies sind immer aktiv. <a href="nikos-datenschutz.html" style="color:#FF6600">Datenschutzerklärung</a></p>
+    <p style="font-size:14px;color:#595959;margin-bottom:24px;line-height:1.6" data-en>We use cookies to operate and improve our website. Necessary cookies are always active. <a href="nikos-datenschutz.html" style="color:#FF6600">Privacy policy</a></p>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px">
+      <div style="background:#F5F5F5;border-radius:4px;padding:16px 18px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+        <div><div style="font-size:14px;font-weight:700;color:#4D4D4D;margin-bottom:3px" data-de>Notwendig</div><div style="font-size:14px;font-weight:700;color:#4D4D4D;margin-bottom:3px" data-en>Necessary</div><div style="font-size:13px;color:#595959" data-de>Technischer Betrieb der Website · Art. 6 Abs. 1 lit. f DSGVO</div><div style="font-size:13px;color:#595959" data-en>Technical operation of the website · Art. 6 para. 1 lit. f GDPR</div></div>
+        <span style="background:#FF6600;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;white-space:nowrap;margin-top:2px;flex-shrink:0" data-de>Immer aktiv</span><span style="background:#FF6600;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;white-space:nowrap;margin-top:2px;flex-shrink:0" data-en>Always on</span>
+      </div>
+      <div style="background:#F5F5F5;border-radius:4px;padding:16px 18px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+        <div><div style="font-size:14px;font-weight:700;color:#4D4D4D;margin-bottom:3px" data-de>Statistik</div><div style="font-size:14px;font-weight:700;color:#4D4D4D;margin-bottom:3px" data-en>Analytics</div><div style="font-size:13px;color:#595959" data-de>Analyse des Nutzerverhaltens · Art. 6 Abs. 1 lit. a DSGVO</div><div style="font-size:13px;color:#595959" data-en>User behaviour analysis · Art. 6 para. 1 lit. a GDPR</div></div>
+        <label style="display:flex;align-items:center;flex-shrink:0;cursor:pointer;margin-top:2px"><input type="checkbox" id="cookieStats" style="accent-color:#FF6600;width:18px;height:18px"></label>
+      </div>
+      <div style="background:#F5F5F5;border-radius:4px;padding:16px 18px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+        <div><div style="font-size:14px;font-weight:700;color:#4D4D4D;margin-bottom:3px" data-de>Marketing</div><div style="font-size:14px;font-weight:700;color:#4D4D4D;margin-bottom:3px" data-en>Marketing</div><div style="font-size:13px;color:#595959" data-de>Anzeigen (ab Q3 2026) · Art. 6 Abs. 1 lit. a DSGVO</div><div style="font-size:13px;color:#595959" data-en>Ads (from Q3 2026) · Art. 6 para. 1 lit. a GDPR</div></div>
+        <label style="display:flex;align-items:center;flex-shrink:0;cursor:pointer;margin-top:2px"><input type="checkbox" id="cookieMarketing" style="accent-color:#FF6600;width:18px;height:18px"></label>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button onclick="saveCookieSettings()" style="background:#FF6600;color:#fff;border:none;padding:11px 24px;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;flex:1" data-de>Einstellungen speichern</button>
+      <button onclick="saveCookieSettings()" style="background:#FF6600;color:#fff;border:none;padding:11px 24px;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;flex:1" data-en>Save settings</button>
+      <button onclick="acceptAllCookies()" style="background:#F5F5F5;color:#4D4D4D;border:1px solid #CCCCCC;padding:11px 20px;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit" data-de>Alle akzeptieren</button>
+      <button onclick="acceptAllCookies()" style="background:#F5F5F5;color:#4D4D4D;border:1px solid #CCCCCC;padding:11px 20px;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit" data-en>Accept all</button>
+    </div>
+  </div>
+</div>
+<script>
+function openCookieSettings(){
+  var m=document.getElementById('cookieModal');if(!m)return;m.style.display='flex';
+  var cs=document.getElementById('cookieStats');var cm=document.getElementById('cookieMarketing');
+  if(cs)cs.checked=localStorage.getItem('nk-cookie-stats')==='1';
+  if(cm)cm.checked=localStorage.getItem('nk-cookie-marketing')==='1';
+}
+function closeCookieSettings(){var m=document.getElementById('cookieModal');if(m)m.style.display='none';}
+function saveCookieSettings(){
+  var cs=document.getElementById('cookieStats');var cm=document.getElementById('cookieMarketing');
+  localStorage.setItem('nk-cookie-stats',cs&&cs.checked?'1':'0');
+  localStorage.setItem('nk-cookie-marketing',cm&&cm.checked?'1':'0');
+  closeCookieSettings();
+}
+function acceptAllCookies(){
+  var cs=document.getElementById('cookieStats');var cm=document.getElementById('cookieMarketing');
+  if(cs)cs.checked=true;if(cm)cm.checked=true;saveCookieSettings();
+}
+document.getElementById('cookieModal').addEventListener('click',function(e){if(e.target===this)closeCookieSettings();});
+</script>
+
+<script src="assets/js/nikos-footer.js"></script>
+<script src="assets/js/nikos-config.js"></script>
+<script>
+(function(){
+  var url = (typeof window.NIKOS_CONTACT_URL !== 'undefined') ? window.NIKOS_CONTACT_URL : 'nikos-kontakt.html';
+  document.querySelectorAll('.nav__cta,.nav__cta-mobile').forEach(function(el){
+    el.href = url;
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutzerklärung — RADACOM GmbH / nikos.audio</title>
+<meta name="description" content="Datenschutzerklärung der RADACOM GmbH für nikos.audio und radacom.de — DSGVO-konform, Stand April 2026.">
+<meta name="robots" content="noindex">
+
+<style>
+/* Lokale Schriften (DSGVO-konform, kein Google-Fonts-CDN) — OFL, siehe assets/fonts/OFL-Exo2.txt */
+@font-face{font-family:'Source Sans 3';font-style:normal;font-weight:300 700;font-display:swap;src:url('assets/fonts/SourceSans3-VariableFont_wght.ttf') format('truetype-variations');}
+@font-face{font-family:'Source Sans 3';font-style:italic;font-weight:300 700;font-display:swap;src:url('assets/fonts/SourceSans3-Italic-VariableFont_wght.ttf') format('truetype-variations');}
+@font-face{font-family:'Exo 2';font-style:normal;font-weight:400 700;font-display:swap;src:url('assets/fonts/Exo2-VariableFont_wght.ttf') format('truetype-variations');}
+</style>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brand-orange:#FF6600;--brand-orange-dk:#E05500;--brand-dark:#4D4D4D;--brand-mid:#595959;--brand-light:#999999;
+  --white:#FFFFFF;--s2:#F5F5F5;--s3:#EBEBEB;--border:#CCCCCC;--sec-dark:#253341;--surface-footer:#2E3236;
+  --card-border:#D8DCE0;
+  --banner-bar:#1D2F49;
+  --orange:var(--brand-orange);--dark:var(--brand-dark);--mid:var(--brand-mid);--light:var(--brand-light);
+  --font:'Source Sans 3',system-ui,sans-serif;--claim:'Exo 2',system-ui,sans-serif;
+  --r:4px;--r-lg:4px;--r-xl:16px;--max-w:1280px;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--dark);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+[data-de],[data-en]{display:none !important}
+[data-lang="de"] [data-de]{display:revert !important}
+[data-lang="en"] [data-en]{display:revert !important}
+.lang-flag{position:relative;flex-shrink:0}
+.lang-flag__btn{display:flex;align-items:center;gap:5px;padding:5px 8px;border:1px solid var(--border);border-radius:var(--r);background:var(--s2);cursor:pointer;font-family:var(--font);font-size:12px;font-weight:600;color:var(--dark);line-height:1;white-space:nowrap;transition:border-color .15s}
+.lang-flag__btn:hover{border-color:var(--orange)}
+.lang-flag__btn .flag{font-size:16px}.lang-flag__btn .chevron{font-size:9px;color:var(--light);margin-left:1px;transition:transform .2s}
+.lang-flag.is-open .lang-flag__btn .chevron{transform:rotate(180deg)}
+.lang-flag__dropdown{display:none;position:absolute;top:calc(100% + 6px);right:0;background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:0 8px 24px rgba(0,0,0,.12);min-width:140px;overflow:hidden;z-index:200}
+.lang-flag.is-open .lang-flag__dropdown{display:block}
+.lang-flag__option{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;font-size:13px;color:var(--dark);border:none;background:none;width:100%;text-align:left;font-family:var(--font);transition:background .12s}
+.lang-flag__option:hover{background:var(--s2)}.lang-flag__option.active{background:rgba(255,102,0,.06);color:var(--orange);font-weight:600}
+.nk-nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:4px solid var(--orange);box-shadow:0 1px 12px rgba(0,0,0,.06)}
+.nav__inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;gap:16px}
+.nav__logo{height:64px;display:flex;align-items:center;flex-shrink:0;margin-right:32px}.nav__logo svg{height:28px;width:auto;display:block}
+.nav__links{display:flex;align-items:center;gap:20px;list-style:none;flex-wrap:nowrap;min-width:0}
+.nav__links a{font-size:16px;color:var(--mid);text-decoration:none;font-weight:400;transition:color .15s;white-space:nowrap}
+.nav__links a:hover{color:var(--orange)}
+.nav__right{display:flex;align-items:center;gap:8px;flex-shrink:0;margin-left:auto}
+.nav__cta{background:var(--orange) !important;color:#fff !important;padding:6px 14px;border-radius:var(--r);font-weight:600 !important;white-space:nowrap;text-decoration:none;font-size:12px;line-height:1.4}
+.nav__cta:hover{background:var(--brand-orange-dk) !important}
+.nav__burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:4px}
+.nav__burger span{display:block;height:2px;width:24px;background:var(--dark);border-radius:2px;transition:transform .25s,opacity .2s}
+.nav__burger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav__burger.is-open span:nth-child(2){opacity:0}
+.nav__burger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav__mobile{display:none;position:absolute;top:100%;left:0;right:0;background:var(--white);border-top:1px solid var(--s2);box-shadow:0 8px 24px rgba(0,0,0,.10);z-index:99;padding:16px 0 24px}
+.nav__mobile.is-open{display:block}
+.nav__mobile ul{list-style:none;display:flex;flex-direction:column}
+.nav__mobile ul li a{display:block;padding:12px 24px;font-size:15px;color:var(--dark);text-decoration:none;border-left:3px solid transparent;transition:border-color .15s,color .15s}
+.nav__mobile ul li a:hover{color:var(--orange);border-left-color:var(--orange)}
+.nav__mobile ul li a.nav__cta-mobile{margin:8px 24px 0;padding:10px 20px;background:var(--orange);color:#fff !important;border-radius:var(--r);text-align:center;font-weight:600;border-left:none !important;display:none}
+/* Legal content */
+.legal-page{max-width:840px;margin:0 auto;padding:64px clamp(20px,5vw,48px) 96px}
+.legal-page h1{font-family:var(--claim);font-size:clamp(28px,3.5vw,42px);font-weight:700;color:var(--dark);margin-bottom:8px;line-height:1.1}
+.legal-page .meta{font-size:13px;color:var(--light);margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid var(--border)}
+.legal-page h2{font-size:20px;font-weight:700;color:var(--dark);margin:40px 0 12px;padding-top:8px}
+.legal-page h3{font-size:16px;font-weight:700;color:var(--dark);margin:24px 0 8px}
+.legal-page p{font-size:15px;color:var(--mid);margin-bottom:12px;line-height:1.75}
+.legal-page ul{margin:0 0 16px 20px}
+.legal-page ul li{font-size:15px;color:var(--mid);margin-bottom:6px;line-height:1.65}
+.legal-page a{color:var(--orange);text-decoration:none}
+.legal-page a:hover{text-decoration:underline}
+.legal-page hr{border:none;border-top:1px solid var(--border);margin:32px 0}
+.legal-page blockquote{background:var(--s2);border-left:3px solid var(--orange);padding:16px 20px;margin:16px 0;border-radius:0 var(--r-lg) var(--r-lg) 0;font-size:14px;color:var(--mid)}
+.legal-page strong{color:var(--dark);font-weight:600}
+.legal-page table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+.legal-page table td{padding:10px 14px;border:1px solid var(--border);color:var(--mid);vertical-align:top}
+.legal-page table tr:first-child td{background:var(--s2);font-weight:600;color:var(--dark)}
+.toc{background:var(--s2);border-radius:var(--r-xl);padding:24px 28px;margin-bottom:48px}
+.toc h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--light);margin-bottom:12px}
+.toc ol{margin-left:16px}
+.toc ol li{margin-bottom:6px}.toc ol li a{font-size:14px;color:var(--orange);text-decoration:none}
+.toc ol li a:hover{text-decoration:underline}
+/* Footer */
+.nk-footer{background:var(--surface-footer);padding:56px 0 0}
+.nk-footer__inner{max-width:var(--max-w);margin:0 auto;padding:0 clamp(20px,5vw,80px)}
+.nk-footer__grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px}
+.nk-footer__brand-logo{margin-bottom:20px}
+.nk-footer__brand-features{list-style:none;margin-bottom:24px}
+.nk-footer__brand-features li{font-size:13px;color:rgba(255,255,255,.5);padding:3px 0}
+.nk-footer__social{display:flex;gap:12px}
+.nk-footer__social a{color:rgba(255,255,255,.5);transition:color .15s}
+.nk-footer__social a:hover{color:var(--orange)}
+.nk-footer__col-title{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px}
+.nk-footer__links{list-style:none}
+.nk-footer__links li{margin-bottom:10px}
+.nk-footer__links a{font-size:14px;color:rgba(255,255,255,.65);text-decoration:none;transition:color .15s}
+.nk-footer__links a:hover{color:var(--orange)}
+.nk-footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.nk-footer__copy{font-size:13px;color:rgba(255,255,255,.35)}
+.nk-footer__bottom-links{list-style:none;display:flex;gap:20px}
+.nk-footer__bottom-links a{font-size:13px;color:rgba(255,255,255,.35);text-decoration:none}
+.nk-footer__bottom-links a:hover{color:var(--orange)}
+@media(max-width:900px){.nav__links{display:none !important}.nav__burger{display:flex !important}.nk-footer__grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.nk-footer__grid{grid-template-columns:1fr}}
+</style>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="4f48b5b5-93c8-4493-be71-2c1cefc6e440"></script>
+<!-- ═══ KLARO CONSENT MANAGER ═══ -->
+<script defer src="assets/js/klaro-config.js"></script>
+<script defer src="https://cdn.kiprotect.com/klaro/v0.7/klaro.js"></script>
+<style>
+/* Klaro Branding Override — NIKOS */
+:root { --klaro-green: #FF6600; }
+.klaro .cm-btn.cm-btn-accept,
+.klaro .cm-btn.cm-btn-accept-all,
+.klaro .cn-ok .cm-btn.cm-btn-success {
+  background-color: #FF6600 !important;
+  border-color: #FF6600 !important;
+  color: #fff !important;
+}
+.klaro .cm-btn.cm-btn-accept:hover,
+.klaro .cm-btn.cm-btn-accept-all:hover {
+  background-color: #E05500 !important;
+}
+.klaro .cookie-notice,
+.klaro .cookie-modal .cm-modal {
+  border-top: 3px solid #FF6600;
+}
+.klaro .slider { background-color: #FF6600 !important; }
+.klaro input[type=checkbox]:checked + .cm-list-label .slider { background-color: #FF6600 !important; }
+.klaro .cm-link, .klaro a { color: #FF6600 !important; }
+.klaro .cm-btn.cm-btn-decline,
+.klaro .cm-btn.cm-btn-close {
+  background: transparent !important;
+  border: 1px solid #CCCCCC !important;
+  color: #4D4D4D !important;
+}
+.klaro .cm-btn.cm-btn-decline:hover,
+.klaro .cm-btn.cm-btn-close:hover {
+  border-color: #FF6600 !important;
+  color: #FF6600 !important;
+}
+.klaro .cookie-modal .cm-modal { border-radius: 4px; }
+.klaro .cm-btn { border-radius: 4px !important; }
+.klaro .cookie-notice { border-radius: 4px; }
+</style>
+</head>
+<body>
+<nav class="nk-nav" id="mainNav">
+  <div class="nav__inner">
+    <div class="nav__logo"><a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="344.188 -0.500 356.378 66.750" style="height:28px;width:auto;"><path fill="#4D4D4D" d="M344.688,0.688h26.75l32.935,47.026h0.003V0.688h17.313v64.375h-26.75l-32.935-47.026h-0.003v47.026h-17.313V0.688z"/><path fill="#4D4D4D" d="M433.706,0.688h17.313v64.375h-17.313V0.688z"/><path fill="#4D4D4D" d="M463.267,0.688h17.313v23.625h8.248l21.799-23.625h23.516l-30.438,31.399l33.938,32.976h-24.619L488.295,40.25h-7.716v24.813h-17.313V0.688z"/><path fill="#4D4D4D" d="M541.403,42.651v-18.99c0-8.42,1.828-14.462,5.484-18.124C550.567,1.846,556.927,0,565.964,0h28.557c8.834,0,15.117,1.846,18.848,5.537c3.732,3.691,5.598,9.632,5.598,17.821v19.249c-0.127,8.363-2.031,14.318-5.711,17.865c-3.656,3.519-9.836,5.277-18.543,5.277h-28.748c-8.605,0-14.852-1.729-18.734-5.19C543.345,57.07,541.403,51.101,541.403,42.651z M559.278,29.548v6.266c0,5.473,0.711,9.088,2.131,10.844c1.42,1.729,4.197,2.593,8.332,2.593h21.42c4.008,0,6.658-0.922,7.951-2.766c1.318-1.871,1.979-5.299,1.979-10.282v-6.524c0-5.127-0.811-8.598-2.434-10.412c-1.6-1.844-4.377-2.766-8.332-2.766h-20.014c-4.135,0-7.014,0.937-8.637,2.809C560.077,21.182,559.278,24.595,559.278,29.548z"/><path fill="#4D4D4D" d="M646.131,44.313c0.229,2.889,0.748,4.796,1.561,5.72c0.813,0.896,2.805,1.343,5.978,1.343h22.234c4.568,0,6.853-1.805,6.853-5.415c0-2.311-0.901-3.885-2.702-4.723c-1.777-0.866-6.078-1.3-12.904-1.3h-10.658c-8.273,0-14.363-0.533-18.271-1.601c-3.883-1.067-6.472-3.058-7.766-5.972c-1.092-2.394-1.637-6.533-1.637-12.418c0-8.048,1.712-13.385,5.138-16.01C637.407,1.313,643.218,0,651.388,0h24.358c8.551,0,14.336,1.354,17.355,4.063s4.529,7.493,4.529,14.353v2.334h-17.313c0-2.544-0.521-4.235-1.561-5.074c-1.041-0.867-3.376-1.301-7.005-1.301h-18.541c-4.721,0-7.081,1.706-7.081,5.117c0,3.412,1.649,5.189,4.948,5.334c3.324,0.116,6.445,0.174,9.364,0.174h11.762c8.044,0,14.021,0.605,17.929,1.816c3.933,1.212,6.622,3.346,8.069,6.402c1.243,2.625,1.865,6.735,1.865,12.329c0,5.682-0.647,9.85-1.941,12.502c-1.421,2.885-4.009,4.889-7.764,6.013c-3.73,1.125-9.466,1.688-17.204,1.688h-22.646c-8.373,0-14.082-1.268-17.127-3.804c-3.045-2.535-4.567-6.929-4.567-13.182v-4.452H646.131z"/></svg></a></div>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="nikos-system.html" data-de>System</a><a href="nikos-system.html" data-en>System</a></li>
+      <li><a href="nikos-anwendungen.html" data-de>Anwendungen</a><a href="nikos-anwendungen.html" data-en>Applications</a></li>
+      <li><a href="nikos-produkte.html" data-de>Produkte</a><a href="nikos-produkte.html" data-en>Products</a></li>
+      <li><a href="nikos-referenzen.html" data-de>Referenzen</a><a href="nikos-referenzen.html" data-en>References</a></li>
+      <li><a href="nikos-vermietung.html" data-de>Vermietung</a><a href="nikos-vermietung.html" data-en>Rental</a></li>
+      <li><a href="nikos-downloads.html" data-de>Downloads</a><a href="nikos-downloads.html" data-en>Downloads</a></li>
+    </ul>
+    <div class="nav__right">
+      <a href="nikos-kontakt.html" class="nav__cta" data-de>Kontakt</a><a href="nikos-kontakt.html" class="nav__cta" data-en>Contact</a>
+      <div class="lang-flag" id="langFlag">
+        <button class="lang-flag__btn" id="langFlagBtn" aria-haspopup="true" aria-expanded="false"><span class="flag" id="langFlagIcon">🇩🇪</span><span class="chevron">▾</span></button>
+        <div class="lang-flag__dropdown" id="langFlagDropdown" role="listbox">
+          <button class="lang-flag__option active" data-lang-opt="de"><span class="flag">🇩🇪</span> Deutsch</button>
+          <button class="lang-flag__option" data-lang-opt="en"><span class="flag">🇬🇧</span> English</button>
+        </div>
+      </div>
+    </div>
+    <button class="nav__burger" id="navBurger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav__mobile" id="navMobile"><ul>
+    <li><a href="nikos-system.html" data-de>System</a><a href="nikos-system.html" data-en>System</a></li>
+    <li><a href="nikos-anwendungen.html" data-de>Anwendungen</a><a href="nikos-anwendungen.html" data-en>Applications</a></li>
+    <li><a href="nikos-produkte.html" data-de>Produkte</a><a href="nikos-produkte.html" data-en>Products</a></li>
+    <li><a href="nikos-vermietung.html" data-de>Vermietung</a><a href="nikos-vermietung.html" data-en>Rental</a></li>
+    <li><a href="nikos-downloads.html" data-de>Downloads</a><a href="nikos-downloads.html" data-en>Downloads</a></li>
+  </ul></div>
+</nav>
+<div class="legal-page">
+  <div data-de>
+    <h1>Datenschutzerklärung</h1>
+<hr>
+<h2>1. Überblick
+</h2>
+<h3>Allgemeine Hinweise
+</h3>
+<p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Websites besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
+<h3>Verantwortliche Stelle
+</h3>
+<p>RADACOM GmbH</p>
+<p>Rigaer Straße 3</p>
+<p>59557 Lippstadt</p>
+<p>Telefon: 02941 750 330</p>
+<p>E-Mail: info@radacom.de</p>
+<h3>Welche Daten erfassen wir?
+</h3>
+<ul>
+<li><strong>Technische Daten:</strong> IP-Adresse, Browsertyp, Betriebssystem, Uhrzeit des Seitenaufrufs – automatisch beim Besuch der Website
+</li>
+<li><strong>Kontaktdaten:</strong> Name, E-Mail-Adresse, Telefonnummer – wenn Sie uns kontaktieren oder ein Formular ausfüllen
+</li>
+<li><strong>Download-Daten:</strong> E-Mail-Adresse – wenn Sie einen Lead-Magneten (PDF-Download) anfordern
+</li>
+</ul>
+<h3>Ihre Rechte
+</h3>
+<p>Sie haben jederzeit das Recht auf:</p>
+<ul>
+<li>Auskunft über Ihre gespeicherten Daten (Art. 15 DSGVO)
+</li>
+<li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)
+</li>
+<li>Löschung Ihrer Daten (Art. 17 DSGVO)
+</li>
+<li>Einschränkung der Verarbeitung (Art. 18 DSGVO)
+</li>
+<li>Datenübertragbarkeit (Art. 20 DSGVO)
+</li>
+<li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)
+</li>
+<li>Widerruf einer erteilten Einwilligung (Art. 7 Abs. 3 DSGVO)
+</li>
+<li>Beschwerde bei der zuständigen Aufsichtsbehörde (Art. 77 DSGVO)
+</li>
+</ul>
+<p>Zuständige Aufsichtsbehörde für RADACOM GmbH (Sitz NRW):</p>
+<p>Landesbeauftragte für Datenschutz und Informationsfreiheit NRW</p>
+<p><a href="https://www.ldi.nrw.de" target="_blank" rel="noopener">https://www.ldi.nrw.de</a></p>
+<hr>
+<h2>2. Hosting
+</h2>
+<p>Unsere Websites werden gehostet bei:</p>
+<p><strong>[PLATZHALTER: Hosting-Anbieter eintragen, z. B. DomainFactory / Hostinger / Hetzner / IONOS]</strong></p>
+<p>Mit dem Hosting-Anbieter besteht ein Auftragsverarbeitungsvertrag (AVV) gemäß Art. 28 DSGVO. Der Anbieter verarbeitet Server-Logfiles (IP-Adresse, aufgerufene Seite, Zeitstempel, Browsertyp) auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der technisch fehlerfreien Darstellung der Website).</p>
+<hr>
+<h2>3. SSL/TLS-Verschlüsselung
+</h2>
+<p>Unsere Websites nutzen aus Sicherheitsgründen eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie am „https://" in der Browserzeile. Bei aktivierter Verschlüsselung können Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden.</p>
+<hr>
+<h2>4. Cookies und Einwilligung
+</h2>
+<h3>Cookie-Kategorien
+</h3>
+<p>Wir verwenden Cookies in folgenden Kategorien:</p>
+<table><tbody>
+<tr><td>Kategorie</td><td>Zweck</td><td>Rechtsgrundlage</td><td></td></tr>
+<tr><td>**Notwendig**</td><td>Technischer Betrieb der Website (Session, Sicherheit)</td><td>Art. 6 Abs. 1 lit. f DSGVO</td><td></td></tr>
+<tr><td>**Statistik**</td><td>Analyse des Nutzerverhaltens (nur nach Einwilligung)</td><td>Art. 6 Abs. 1 lit. a DSGVO</td><td></td></tr>
+<tr><td>**Marketing**</td><td>Ausspielung von Anzeigen (nur nach Einwilligung, ab Q3 2026)</td><td>Art. 6 Abs. 1 lit. a DSGVO</td><td></td></tr>
+</tbody></table>
+<h3>Cookie-Consent-Tool
+</h3>
+<p>Unsere Website nutzt <strong>Klaro</strong> (Kiprotect GmbH, Greifswalder Str. 212, 10405 Berlin) zur Einholung und Dokumentation Ihrer Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO i. V. m. § 25 TDDDG. Ihre Einwilligungsentscheidung wird lokal in Ihrem Browser gespeichert (localStorage). Sie können Ihre Einwilligung jederzeit über den Link „Cookie-Einstellungen" im Footer widerrufen. Klaro überträgt keine personenbezogenen Daten an externe Server.</p>
+<hr>
+<h2>5. Datenerfassung auf unseren Websites
+</h2>
+<h3>Kontaktformular
+</h3>
+<p>Wenn Sie uns über das Kontaktformular kontaktieren, werden Ihre Angaben (Name, E-Mail-Adresse, Nachricht) zur Bearbeitung Ihrer Anfrage gespeichert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen). Die Daten werden nach abgeschlossener Bearbeitung gelöscht, soweit keine gesetzlichen Aufbewahrungsfristen entgegenstehen.</p>
+<h3>Kontakt per E-Mail oder Telefon
+</h3>
+<p>Wenn Sie uns per E-Mail oder Telefon kontaktieren, wird Ihre Anfrage inklusive personenbezogener Daten (Name, Kontaktdaten, Anfrageninhalt) gespeichert und verarbeitet. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b oder lit. f DSGVO. Löschung erfolgt nach Wegfall des Verarbeitungszwecks.</p>
+<h3>Widerspruch gegen Werbe-E-Mails
+</h3>
+<p>Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten zur Übersendung nicht ausdrücklich angeforderter Werbung wird hiermit widersprochen.</p>
+<hr>
+<h2>6. Lead-Magneten und Downloads
+</h2>
+<p>Auf radacom.de bieten wir kostenlose PDF-Dokumente zum Download an (z. B. „20 Beispiele, wie NIKOS Kosten spart"). Für den Download ist die Angabe Ihrer E-Mail-Adresse erforderlich.</p>
+<p><strong>Ablauf:</strong></p>
+<p>1. Eingabe der E-Mail-Adresse und aktive Einwilligung (Checkbox)</p>
+<p>2. Zusendung einer Bestätigungs-E-Mail (Double-Opt-in)</p>
+<p>3. Download-Link nach Bestätigung</p>
+<p><strong>Zweck:</strong> Übersendung des angeforderten Dokuments sowie optionaler Kontaktaufnahme zu verwandten Themen, sofern Sie dem zugestimmt haben.</p>
+<p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Die Einwilligung ist jederzeit widerrufbar.</p>
+<p><strong>Speicherdauer:</strong> Bis zum Widerruf der Einwilligung oder auf Anfrage zur Löschung.</p>
+<p><strong>E-Mail-Marketing-Tool:</strong> Wir nutzen <strong>Brevo</strong> (Sendinblue GmbH, Köpenicker Str. 126, 10179 Berlin) für den Versand unseres Newsletters und die Abwicklung des Double-Opt-in-Prozesses. Mit Brevo besteht ein Auftragsverarbeitungsvertrag (AVV). Rechtsgrundlage ist Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO. Brevo verarbeitet Daten auf Servern in der EU. Details: <a href="https://www.brevo.com/de/legal/privacypolicy/" target="_blank" rel="noopener">brevo.com/de/legal/privacypolicy</a></p>
+<p><strong>Partnerkarte (Google Sheets):</strong> Auf der Seite „Vermietung" wird eine interaktive Partnerkarte eingeblendet. Beim Laden der Karte werden Partnerdaten aus <strong>Google Sheets</strong> (Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA) abgerufen. Dabei wird eine Verbindung zu Google-Servern hergestellt, wobei Ihre IP-Adresse an Google übermittelt wird. Google kann diese Daten zur Erstellung von Nutzerprofilen verwenden. Die Datenübertragung in die USA erfolgt auf Grundlage der EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO). Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Bereitstellung aktueller Partnerdaten). Details: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+<hr>
+<h2>7. Planungsportal (nikos.audio)
+</h2>
+<p>Das Planungsportal auf nikos.audio ermöglicht den Download technischer Dokumente (Ausschreibungstexte, Checklisten, Whitepaper). Für Downloads, die eine E-Mail-Adresse erfordern, gelten dieselben Bedingungen wie unter Abschnitt 6 (Lead-Magneten und Downloads).</p>
+<p>Frei zugängliche Dokumente (ohne Registrierung) werden ohne Erhebung personenbezogener Daten bereitgestellt.</p>
+<hr>
+<h2>8. Partnerbereich / Login (nikos.audio)
+</h2>
+<p>Der geschützte Partnerbereich auf nikos.audio erfordert eine Registrierung mit E-Mail-Adresse und Passwort.</p>
+<p><strong>Verarbeitete Daten:</strong> E-Mail-Adresse, Name, Unternehmen, Zertifizierungsstatus, Prüfungsergebnisse.</p>
+<p><strong>Zweck:</strong> Verwaltung der Partnerzertifizierung, Bereitstellung von Schulungsunterlagen und Software-Downloads.</p>
+<p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung / vorvertragliche Maßnahmen).</p>
+<p><strong>Speicherdauer:</strong> Für die Dauer der aktiven Partnerschaft; Löschung auf Anfrage oder nach Beendigung der Partnerschaft.</p>
+<hr>
+<h2>9. Analyse-Tools
+</h2>
+<h3>Umami Analytics</h3>
+<p>Wir nutzen <strong>Umami Analytics</strong> (Umami Software, Inc.) zur datenschutzfreundlichen Auswertung des Nutzerverhaltens auf nikos.audio. Umami setzt keine Cookies und erfasst keine personenbezogenen Daten. Es werden ausschließlich anonyme, aggregierte Statistiken (z. B. Seitenaufrufe, Verweildauer, verwendetes Gerät) erhoben. Eine Identifizierung einzelner Personen ist nicht möglich. Da keine personenbezogenen Daten verarbeitet werden, ist für diesen Dienst keine Einwilligung erforderlich. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Analyse der Website-Nutzung). Details: <a href="https://umami.is/privacy" target="_blank" rel="noopener">umami.is/privacy</a></p>
+<blockquote><strong>Empfehlung:</strong> Plausible Analytics ist cookiefrei, erfordert keine Einwilligung und ist DSGVO-konform ohne weitere Maßnahmen. Serverstandort EU. Falls Google Analytics gewählt wird, ist eine Einwilligung über den Cookie-Banner zwingend erforderlich.
+</blockquote>
+<p><strong>Rechtsgrundlage:</strong> Bei cookiefreien Tools Art. 6 Abs. 1 lit. f DSGVO; bei Cookie-basierten Tools Art. 6 Abs. 1 lit. a DSGVO (Einwilligung erforderlich).</p>
+<hr>
+<h2>10. Paid Advertising (ab Q3 2026)
+</h2>
+<p>Ab Q3 2026 sind gezielte Anzeigenkampagnen auf Google und LinkedIn geplant. Zu diesem Zeitpunkt wird diese Datenschutzerklärung um die entsprechenden Abschnitte (Google Ads, LinkedIn Insight Tag) ergänzt. Diese Dienste werden ausschließlich nach Ihrer Einwilligung über den Cookie-Banner aktiviert.</p>
+<hr>
+<h2>11. Social Media
+</h2>
+<h3>Instagram
+</h3>
+<p>Auf radacom.de sind verlinkungen zu unserem Instagram-Profil vorhanden (einfacher Link, kein eingebettetes Element). Es findet keine Datenübertragung an Instagram statt, solange Sie nicht aktiv auf den Link klicken und Instagram aufrufen.</p>
+<h3>LinkedIn
+</h3>
+<p>Auf radacom.de und nikos.audio sind Verlinkungen zu unserem LinkedIn-Profil vorhanden (einfacher Link). Es findet keine Datenübertragung an LinkedIn statt, solange Sie nicht aktiv auf den Link klicken.</p>
+<blockquote><strong>Hinweis:</strong> Eingebettete Social-Media-Elemente (Buttons, Feeds, Pixel) werden auf keiner der beiden Websites eingesetzt. Verlinkungen führen ausschließlich zu den jeweiligen Plattformen.
+</blockquote>
+<hr>
+<h2>12. Externe Links
+</h2>
+<h3>ETA Electronic (eta-electronic.de)
+</h3>
+<p>Auf radacom.de enthält der Bereich „Mobile Kommunikation" einen externen Link zu <a href="https://www.eta-electronic.de" target="_blank" rel="noopener">www.eta-electronic.de</a>. Beim Klick auf diesen Link verlassen Sie unsere Website. Für die Inhalte und Datenschutzpraktiken dieser externen Website ist allein der jeweilige Anbieter verantwortlich.</p>
+<hr>
+<h2>13. Google Fonts
+</h2>
+<p>Sämtliche Schriftarten werden lokal auf unseren Servern gehostet. Es findet keine Verbindung zu Google-Servern statt.</p>
+<hr>
+<h2>14. Datensicherheit
+</h2>
+<p>Unsere Websites nutzen SSL/TLS-Verschlüsselung. Wir setzen technische und organisatorische Maßnahmen (TOMs) gemäß Art. 32 DSGVO ein, um Ihre Daten gegen unbefugten Zugriff, Verlust oder Manipulation zu schützen.</p>
+<hr>
+<h2>15. Speicherdauer
+</h2>
+<p>Personenbezogene Daten werden gelöscht, sobald der Zweck der Verarbeitung entfallen ist und keine gesetzlichen Aufbewahrungsfristen (insbesondere handels- und steuerrechtliche Fristen von 6–10 Jahren) entgegenstehen.</p>
+<hr>
+<h2>16. Änderungen dieser Datenschutzerklärung
+</h2>
+<p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, wenn sich rechtliche Anforderungen oder unsere Datenverarbeitungsprozesse ändern. Die jeweils aktuelle Fassung ist auf radacom.de und nikos.audio abrufbar. Bei wesentlichen Änderungen werden registrierte Nutzer informiert.</p>
+<hr>
+<p><em>Diese Dokumente wurden auf Basis der aktuellen Anforderungen erstellt und enthalten Platzhalter für Angaben, die vor Go-Live einzutragen sind (Hosting-Anbieter, Consent-Tool, E-Mail-Marketing-Tool, Analyse-Tool). Eine abschließende rechtliche Prüfung durch einen Fachanwalt für IT-Recht wird vor Veröffentlichung empfohlen.</em></p>
+  </div>
+  <div data-en>
+    <h1>Privacy Policy</h1>
+<hr>
+<h2>1. Overview</h2>
+<h3>General information</h3>
+<p>The following information provides a simple overview of what happens to your personal data when you visit our websites. Personal data is any data that can be used to identify you personally.</p>
+<h3>Controller</h3>
+<p>RADACOM GmbH</p>
+<p>Rigaer Straße 3</p>
+<p>59557 Lippstadt, Germany</p>
+<p>Phone: +49 2941 750 330</p>
+<p>Email: info@radacom.de</p>
+<h3>What data do we collect?</h3>
+<ul>
+<li><strong>Technical data:</strong> IP address, browser type, operating system, time of access — collected automatically when you visit the website</li>
+<li><strong>Contact data:</strong> name, email address, telephone number — when you contact us or complete a form</li>
+<li><strong>Download data:</strong> email address — when you request a lead magnet (PDF download)</li>
+</ul>
+<h3>Your rights</h3>
+<p>You have the right at any time to:</p>
+<ul>
+<li>information about your stored data (Art. 15 GDPR)</li>
+<li>rectification of inaccurate data (Art. 16 GDPR)</li>
+<li>erasure of your data (Art. 17 GDPR)</li>
+<li>restriction of processing (Art. 18 GDPR)</li>
+<li>data portability (Art. 20 GDPR)</li>
+<li>object to processing (Art. 21 GDPR)</li>
+<li>withdraw consent given (Art. 7 (3) GDPR)</li>
+<li>lodge a complaint with the competent supervisory authority (Art. 77 GDPR)</li>
+</ul>
+<p>Competent supervisory authority for RADACOM GmbH (registered office in North Rhine-Westphalia):</p>
+<p>State Commissioner for Data Protection and Freedom of Information NRW</p>
+<p><a href="https://www.ldi.nrw.de" target="_blank" rel="noopener">https://www.ldi.nrw.de</a></p>
+<hr>
+<h2>2. Hosting</h2>
+<p>Our websites are hosted by:</p>
+<p><strong>[PLACEHOLDER: enter hosting provider, e.g. DomainFactory / Hostinger / Hetzner / IONOS]</strong></p>
+<p>A data processing agreement (DPA) pursuant to Art. 28 GDPR is in place with the hosting provider. The provider processes server log files (IP address, page accessed, time stamp, browser type) on the basis of Art. 6 (1) (f) GDPR (legitimate interest in the technically error-free presentation of the website).</p>
+<hr>
+<h2>3. SSL/TLS encryption</h2>
+<p>For security reasons, our websites use SSL or TLS encryption. You can recognise an encrypted connection by the "https://" in your browser's address bar. When encryption is active, data you transmit to us cannot be read by third parties.</p>
+<hr>
+<h2>4. Cookies and consent</h2>
+<h3>Cookie categories</h3>
+<p>We use cookies in the following categories:</p>
+<table><tbody>
+<tr><td>Category</td><td>Purpose</td><td>Legal basis</td><td></td></tr>
+<tr><td><strong>Necessary</strong></td><td>Technical operation of the website (session, security)</td><td>Art. 6 (1) (f) GDPR</td><td></td></tr>
+<tr><td><strong>Statistics</strong></td><td>Analysis of user behaviour (only with consent)</td><td>Art. 6 (1) (a) GDPR</td><td></td></tr>
+<tr><td><strong>Marketing</strong></td><td>Delivery of advertisements (only with consent, from Q3 2026)</td><td>Art. 6 (1) (a) GDPR</td><td></td></tr>
+</tbody></table>
+<h3>Cookie consent tool</h3>
+<p>Our website uses <strong>Klaro</strong> (Kiprotect GmbH, Greifswalder Str. 212, 10405 Berlin, Germany) to obtain and document your consent pursuant to Art. 6 (1) (a) GDPR in conjunction with § 25 TDDDG (German Telecommunications Digital Services Data Protection Act). Your consent decision is stored locally in your browser (localStorage). You can withdraw your consent at any time via the "Cookie settings" link in the footer. Klaro does not transmit any personal data to external servers.</p>
+<hr>
+<h2>5. Data collection on our websites</h2>
+<h3>Contact form</h3>
+<p>If you contact us via the contact form, your details (name, email address, message) are stored in order to process your enquiry. The legal basis is Art. 6 (1) (b) GDPR (pre-contractual measures) or Art. 6 (1) (f) GDPR (legitimate interest in responding to enquiries). The data is deleted once your enquiry has been processed, unless statutory retention periods apply.</p>
+<h3>Contact by email or telephone</h3>
+<p>If you contact us by email or telephone, your enquiry including personal data (name, contact details, content of the enquiry) is stored and processed. The legal basis is Art. 6 (1) (b) or (f) GDPR. Deletion takes place once the purpose of processing no longer applies.</p>
+<h3>Objection to advertising emails</h3>
+<p>We hereby object to the use of contact data published as part of our legal-notice obligation for the purpose of sending unsolicited advertising.</p>
+<hr>
+<h2>6. Lead magnets and downloads</h2>
+<p>On radacom.de we offer free PDF documents for download (e.g. "20 examples of how NIKOS saves costs"). Providing your email address is required for the download.</p>
+<p><strong>Process:</strong></p>
+<p>1. Entry of the email address and active consent (checkbox)</p>
+<p>2. Sending of a confirmation email (double opt-in)</p>
+<p>3. Download link after confirmation</p>
+<p><strong>Purpose:</strong> sending the requested document as well as optional contact regarding related topics, provided you have consented to this.</p>
+<p><strong>Legal basis:</strong> Art. 6 (1) (a) GDPR (consent). Consent can be withdrawn at any time.</p>
+<p><strong>Storage period:</strong> until consent is withdrawn or upon request for deletion.</p>
+<p><strong>Email marketing tool:</strong> We use <strong>Brevo</strong> (Sendinblue GmbH, Köpenicker Str. 126, 10179 Berlin, Germany) to send our newsletter and to handle the double opt-in process. A data processing agreement (DPA) is in place with Brevo. The legal basis is your consent pursuant to Art. 6 (1) (a) GDPR. Brevo processes data on servers within the EU. Details: <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank" rel="noopener">brevo.com/legal/privacypolicy</a></p>
+<p><strong>Partner map (Google Sheets):</strong> On the "Rental" page, an interactive partner map is displayed. When the map loads, partner data is retrieved from <strong>Google Sheets</strong> (Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA). This establishes a connection to Google servers, transmitting your IP address to Google. Google may use this data to create user profiles. The data transfer to the USA takes place on the basis of the EU standard contractual clauses (Art. 46 (2) (c) GDPR). Legal basis: Art. 6 (1) (f) GDPR (legitimate interest in providing up-to-date partner data). Details: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+<hr>
+<h2>7. Planning portal (nikos.audio)</h2>
+<p>The planning portal on nikos.audio enables the download of technical documents (tender texts, checklists, white papers). For downloads that require an email address, the same conditions apply as in Section 6 (Lead magnets and downloads).</p>
+<p>Freely accessible documents (without registration) are provided without the collection of personal data.</p>
+<hr>
+<h2>8. Partner area / login (nikos.audio)</h2>
+<p>The protected partner area on nikos.audio requires registration with an email address and password.</p>
+<p><strong>Data processed:</strong> email address, name, company, certification status, examination results.</p>
+<p><strong>Purpose:</strong> management of partner certification, provision of training materials and software downloads.</p>
+<p><strong>Legal basis:</strong> Art. 6 (1) (b) GDPR (performance of a contract / pre-contractual measures).</p>
+<p><strong>Storage period:</strong> for the duration of the active partnership; deletion upon request or after termination of the partnership.</p>
+<hr>
+<h2>9. Analytics tools</h2>
+<h3>Umami Analytics</h3>
+<p>We use <strong>Umami Analytics</strong> (Umami Software, Inc.) for privacy-friendly analysis of user behaviour on nikos.audio. Umami does not set cookies and does not collect any personal data. Only anonymous, aggregated statistics (e.g. page views, time on page, device used) are collected. Identification of individual persons is not possible. As no personal data is processed, no consent is required for this service. The legal basis is Art. 6 (1) (f) GDPR (legitimate interest in analysing website usage). Details: <a href="https://umami.is/privacy" target="_blank" rel="noopener">umami.is/privacy</a></p>
+<blockquote><strong>Recommendation:</strong> Plausible Analytics is cookie-free, requires no consent and is GDPR-compliant without further measures. Server location EU. If Google Analytics is chosen, consent via the cookie banner is mandatory.</blockquote>
+<p><strong>Legal basis:</strong> for cookie-free tools Art. 6 (1) (f) GDPR; for cookie-based tools Art. 6 (1) (a) GDPR (consent required).</p>
+<hr>
+<h2>10. Paid advertising (from Q3 2026)</h2>
+<p>From Q3 2026, targeted advertising campaigns on Google and LinkedIn are planned. At that point, this privacy policy will be supplemented with the corresponding sections (Google Ads, LinkedIn Insight Tag). These services will only be activated after your consent via the cookie banner.</p>
+<hr>
+<h2>11. Social media</h2>
+<h3>Instagram</h3>
+<p>On radacom.de there are links to our Instagram profile (simple link, no embedded element). No data is transmitted to Instagram unless you actively click on the link and open Instagram.</p>
+<h3>LinkedIn</h3>
+<p>On radacom.de and nikos.audio there are links to our LinkedIn profile (simple link). No data is transmitted to LinkedIn unless you actively click on the link.</p>
+<blockquote><strong>Note:</strong> Embedded social media elements (buttons, feeds, pixels) are not used on either website. Links lead exclusively to the respective platforms.</blockquote>
+<hr>
+<h2>12. External links</h2>
+<h3>ETA Electronic (eta-electronic.de)</h3>
+<p>On radacom.de, the "Mobile Communication" section contains an external link to <a href="https://www.eta-electronic.de" target="_blank" rel="noopener">www.eta-electronic.de</a>. When you click on this link, you leave our website. The respective provider is solely responsible for the content and data protection practices of this external website.</p>
+<hr>
+<h2>13. Google Fonts</h2>
+<p>All fonts are hosted locally on our servers. No connection to Google servers takes place.</p>
+<hr>
+<h2>14. Data security</h2>
+<p>Our websites use SSL/TLS encryption. We implement technical and organisational measures (TOMs) pursuant to Art. 32 GDPR to protect your data against unauthorised access, loss or manipulation.</p>
+<hr>
+<h2>15. Storage period</h2>
+<p>Personal data is deleted as soon as the purpose of processing no longer applies and no statutory retention periods (in particular commercial and tax law periods of 6–10 years) prevent this.</p>
+<hr>
+<h2>16. Changes to this privacy policy</h2>
+<p>We reserve the right to amend this privacy policy if legal requirements or our data processing procedures change. The current version is available at radacom.de and nikos.audio. Registered users will be informed of any significant changes.</p>
+<hr>
+<p><em>These documents were created on the basis of current requirements and contain placeholders for details to be entered before go-live (hosting provider, consent tool, email marketing tool, analytics tool). A final legal review by a specialist lawyer for IT law is recommended before publication.</em></p>
+<hr>
+<p style="font-size:13px;color:var(--light);font-style:italic;line-height:1.6;">This English text is a translation provided for convenience only. In the event of any discrepancy or dispute, the German version is solely authoritative and legally binding.</p>
+  </div>
+</div>
+<div id="nk-footer-root"></div>
+<div id="nk-cookiemodal-root"></div>
+<script src="assets/js/nikos-footer.js"></script>
+<script src="assets/js/nikos-config.js"></script>
+<script>
+(function(){
+  var url = (typeof window.NIKOS_CONTACT_URL !== 'undefined') ? window.NIKOS_CONTACT_URL : 'nikos-kontakt.html';
+  document.querySelectorAll('.nav__cta,.nav__cta-mobile').forEach(function(el){
+    el.href = url;
+  });
+})();
+</script>
+</body>
+</html>                                                                                                                                                                                                                                                                                                                       
