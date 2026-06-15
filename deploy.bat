@@ -1,92 +1,106 @@
 @echo off
 REM ============================================================
 REM  NIKOS Website - Ein-Befehl-Deployment auf GitHub
-REM ------------------------------------------------------------
-REM  Nutzung:
-REM     deploy "Beschreibung der Aenderung"
+REM  Nutzung:   deploy "Beschreibung der Aenderung"
 REM
-REM  Was passiert:
-REM     1. Alle Aenderungen werden committed
-REM     2. Eine neue Versionsnummer (v1, v2, v3, ...) wird vergeben
-REM     3. Commit UND Versions-Tag werden zu GitHub gepusht
-REM
-REM  Alte Versionen bleiben als Tags dauerhaft erhalten:
-REM     - ansehen:        git tag
-REM     - wiederherstellen: git checkout vN
+REM  Ablauf: 1) Integritaets-Check (kein abgeschnittenes HTML)
+REM          2) commit  3) Version vN taggen  4) push
 REM ============================================================
-
 setlocal enabledelayedexpansion
 cd /d "%~dp0"
 
-REM --- Commit-Nachricht aus dem Argument (oder Standardtext) ---
 set "MSG=%~1"
 if "%MSG%"=="" set "MSG=Website-Update"
 
-REM --- Pruefen, ob Git-Repo schon eingerichtet ist ---
 if not exist ".git" (
-  echo [Setup] Dieser Ordner ist noch nicht mit GitHub verbunden.
-  set /p REPOURL=Bitte Repo-URL eingeben ^(z.B. https://github.com/USER/REPO.git^):
-  git init
-  git branch -M main
-  git remote add origin "!REPOURL!"
-  echo [Setup] Verbunden mit !REPOURL!
+  echo [Fehler] site\ ist noch kein Git-Repo. Bitte zuerst setup-git-einmalig.bat ausfuehren.
+  goto :ende
 )
 
-REM --- Git-Identitaet pruefen (sonst schlaegt der erste Commit fehl) ---
+REM verwaiste Sperrdateien entfernen
+if exist ".git\index.lock" del /f /q ".git\index.lock"
+
+echo.
+echo === Schritt 1: Integritaets-Check der Live-HTML-Seiten ===
+REM Jede getrackte *.html (ohne .pre/.fixed) MUSS </html> enthalten.
+set "KAPUTT="
+for %%F in (index.html nikos-system.html nikos-produkte.html nikos-anwendungen.html nikos-referenzen.html nikos-vermietung.html nikos-vermietung-partner-werden.html nikos-downloads.html nikos-kontakt.html nikos-login.html nikos-agb.html nikos-mietbedingungen.html nikos-datenschutz.html nikos-impressum.html partner-karte.html) do (
+  if exist "%%F" (
+    findstr /c:"</html>" "%%F" >nul 2>&1
+    if errorlevel 1 (
+      echo   [WARNUNG] %%F endet ohne ^</html^> - moeglicherweise abgeschnitten!
+      set "KAPUTT=1"
+    )
+  )
+)
+if defined KAPUTT (
+  echo.
+  echo [STOPP] Mindestens eine Seite wirkt abgeschnitten. Deployment abgebrochen.
+  echo         Bitte die Datei pruefen/neu speichern, dann erneut deploy ausfuehren.
+  goto :ende
+)
+echo   OK - alle geprueften Seiten enthalten ^</html^>.
+
 git config user.name >nul 2>&1
 if errorlevel 1 (
-  echo [Fehler] Git kennt deine Identitaet noch nicht. Bitte einmalig setzen:
+  echo [Fehler] Git-Identitaet fehlt. Einmalig setzen:
   echo     git config --global user.name "Dein Name"
   echo     git config --global user.email "deine@mail.de"
   goto :ende
 )
 
 echo.
-echo === Aenderungen werden gespeichert ===
+echo === Schritt 2: Aenderungen committen ===
 git add -A
-git commit -m "%MSG%"
-
-REM --- Standardbranch ermitteln (erst NACH dem ersten Commit zuverlaessig) ---
-for /f "delims=" %%b in ('git rev-parse --abbrev-ref HEAD 2^>nul') do set "BRANCH=%%b"
-if "%BRANCH%"=="" set "BRANCH=main"
-if "%BRANCH%"=="HEAD" set "BRANCH=main"
-
-REM --- Sicherstellen, dass mindestens ein Commit existiert ---
-git rev-parse HEAD >nul 2>&1
-if errorlevel 1 (
-  echo [Fehler] Es gibt noch keinen Commit - Abbruch. Bitte Meldung oben pruefen.
-  goto :ende
+git diff --cached --quiet
+if not errorlevel 1 (
+  echo   [Info] Keine Aenderungen zu committen. Nur Push/Pull-Abgleich.
+) else (
+  git commit -m "%MSG%"
 )
 
-REM --- Naechste Versionsnummer ermitteln (hoechstes vN + 1) ---
+echo.
+echo === Schritt 3: Mit GitHub abgleichen (Remote-Aenderungen holen) ===
+git fetch origin
+git rev-parse --abbrev-ref HEAD > "%TEMP%\nk_branch.txt"
+set /p BRANCH=<"%TEMP%\nk_branch.txt"
+if "%BRANCH%"=="" set "BRANCH=main"
+git merge --ff-only origin/%BRANCH% 2>nul
+if errorlevel 1 (
+  echo   [Hinweis] Remote ist abweichend - versuche Rebase ^(nur eigene Commits oben drauf^)...
+  git rebase origin/%BRANCH%
+  if errorlevel 1 (
+    echo.
+    echo [STOPP] Merge-Konflikt. Bitte Claude / einen Entwickler hinzuziehen.
+    echo         Abbrechen mit:  git rebase --abort
+    goto :ende
+  )
+)
+
+echo.
+echo === Schritt 4: Naechste Versionsnummer ermitteln ===
 set "NUM=0"
 for /f "tokens=1 delims= " %%t in ('git tag --list "v*" 2^>nul') do (
   set "T=%%t"
   set "T=!T:v=!"
-  REM nur rein numerische Tags beruecksichtigen
-  echo !T!| findstr /r "^[0-9][0-9]*$" >nul && (
-    if !T! GTR !NUM! set "NUM=!T!"
-  )
+  echo !T!| findstr /r "^[0-9][0-9]*$" >nul && ( if !T! GTR !NUM! set "NUM=!T!" )
 )
 set /a NEXT=NUM+1
 set "VERSION=v!NEXT!"
+git tag -a "!VERSION!" -m "%MSG%"
 
 echo.
-echo === Neue Version: %VERSION% ===
-git tag -a "%VERSION%" -m "%MSG%"
-
-echo.
-echo === Push zu GitHub (Branch %BRANCH% + Tag %VERSION%) ===
+echo === Schritt 5: Push zu GitHub (Branch + Tag) ===
 git push origin "%BRANCH%"
-git push origin "%VERSION%"
+git push origin "!VERSION!"
 
 echo.
 echo ============================================================
-echo  Fertig. Release %VERSION% wurde deployed.
-echo  - Alle Versionen anzeigen:   git tag
-echo  - Version wiederherstellen:  git checkout %VERSION%
-echo  - Zurueck zur aktuellen:     git checkout %BRANCH%
+echo  Fertig. Release !VERSION! ist live.
+echo  Website aktualisiert sich in 1-2 Min:
+echo  https://olecschierenberg.github.io/nikos/
 echo ============================================================
 
 :ende
 endlocal
+pause

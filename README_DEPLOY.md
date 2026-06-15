@@ -1,7 +1,17 @@
 # NIKOS Website – Deployment auf GitHub (mit Versionen)
 
-Dieses Verzeichnis (`nikos/site/`) ist die Arbeitskopie der Website.
+**`nikos/site/` ist DER eine Ordner.** Hier wird editiert, von hier wird gepusht.
+Kein Kopieren mehr nach `nikos-repo/` (dieser Ordner ist stillgelegt → `nikos-repo_ALT/`).
 Mit **einem Befehl** wird eine neue, dauerhaft wiederherstellbare Version auf GitHub veröffentlicht.
+
+---
+
+## Einmalig einrichten (nur 1×)
+
+Doppelklick auf **`setup-git-einmalig.bat`**. Es verbindet `site/` mit dem
+bestehenden GitHub-Repo (`github.com/olecschierenberg/nikos`) und übernimmt die
+komplette Historie inkl. Versions-Tags. Danach `nikos-repo/` in `nikos-repo_ALT/`
+umbenennen. Ab dann nur noch `deploy "..."` verwenden.
 
 ---
 
@@ -21,10 +31,17 @@ deploy "CTA-Abstände korrigiert, Footer aktualisiert"
 
 Das Skript erledigt automatisch:
 
-1. Alle Änderungen werden gespeichert (Commit).
-2. Eine neue Versionsnummer wird vergeben: `v1`, `v2`, `v3`, …
-3. Commit **und** Versions-Tag werden zu GitHub gepusht.
-4. GitHub Pages aktualisiert die Live-Seite automatisch (meist 1–2 Minuten).
+1. **Integritäts-Check** – prüft, dass keine HTML-Seite abgeschnitten ist
+   (fehlt `</html>`, bricht es ab → schützt vor kaputten Uploads, dem Hauptproblem bisher).
+2. Alle Änderungen werden gespeichert (Commit).
+3. Abgleich mit GitHub (holt evtl. Remote-Änderungen, automatischer Fast-Forward/Rebase).
+4. Eine neue Versionsnummer wird vergeben: `v4`, `v5`, …
+5. Commit **und** Versions-Tag werden zu GitHub gepusht.
+6. GitHub Pages aktualisiert die Live-Seite automatisch (meist 1–2 Minuten).
+
+> Meldet `deploy` **„STOPP – abgeschnitten"**: die genannte Datei öffnen, prüfen,
+> neu speichern, dann erneut `deploy`. Bei **„Merge-Konflikt"** nicht raten –
+> `git rebase --abort` und Hilfe holen.
 
 ---
 
@@ -66,31 +83,4 @@ git checkout main       # zurück zur aktuellen Arbeitsversion
 ```
 
 Auf GitHub findest du dieselben Versionen unter **Code → Tags** bzw. **Releases**.
-Dort lässt sich jede Version auch als ZIP herunterladen.
-
-### Eine alte Version wieder live schalten
-Wenn eine frühere Version wieder die aktuelle sein soll:
-
-```bash
-git checkout main
-git revert --no-edit HEAD          # macht die letzte Änderung rückgängig
-deploy "Rollback auf vorherigen Stand"
-```
-
-oder gezielt den Stand eines Tags übernehmen:
-
-```bash
-git checkout main
-git checkout v2 -- .               # Dateien von v2 in den aktuellen Stand holen
-deploy "Stand von v2 wiederhergestellt"
-```
-
----
-
-## Wichtig zu verstehen
-
-- **Live ist immer der `main`-Branch** (das zeigt GitHub Pages an).
-- **Die Tags `v1, v2, …` sind das Versionsarchiv** – sie überschreiben die Live-Seite nicht,
-  sondern markieren feste Stände zum Nachschauen und Wiederherstellen.
-- So entwickelst du in `nikos/site/` weiter und hast nach jedem `deploy`
-  eine saubere, benannte Version, ohne je etwas zu verlieren.
+Dor

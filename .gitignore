@@ -1,14 +1,8 @@
 # Backup-/Zwischenstände (nicht auf die Website)
 *.pre*.html
+*.fixed.html
+*.broken.*
 *.bak
+*-backup.html
 
-# Word-Sperr- und Temporärdateien
-~$*
-
-# Interne Dokumente (Analyse, Brand Identity, Strategie) – nicht öffentlich
-Website-Analyse*.docx
-RADACOM_*.docx
-
-# Betriebssystem-Müll
-.DS_Store
-Thumbs.db
+# Word-S
