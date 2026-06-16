@@ -23,7 +23,8 @@
   var FORMS = [
     { id: 'partnerForm',   type: 'partner-anfrage', successId: 'partnerSuccess' },
     { id: 'form-beratung', type: 'beratung',        successId: 'success-beratung' },
-    { id: 'form-miete',    type: 'mietanfrage',     successId: 'success-miete' }
+    { id: 'form-miete',    type: 'mietanfrage',     successId: 'success-miete' },
+    { id: 'form-newsletter', type: 'newsletter',    successId: 'success-newsletter' }
   ];
 
   // Sammelt alle Felder eines Formulars als Key/Value-Objekt.

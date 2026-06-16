@@ -283,15 +283,15 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
   <div class="nk-banner__img">
     <img src="assets/img/Banner/System3.jpg" alt="NIKOS Partner werden" loading="eager">
     <div class="nk-banner__claim">
-      <h1 data-de>NIKOS-Partner werden</h1>
-      <h1 data-en>Become a NIKOS partner</h1>
+      <h1 data-de>Sie <span style="color:var(--orange)">vermieten</span> Veranstaltungs- oder Sicherheitstechnik?</h1>
+      <h1 data-en>Do you <span style="color:var(--orange)">rent</span> event or security technology?</h1>
     </div>
   </div>
   <div class="nk-banner__bar">
-    <div class="nk-banner__kw" data-de>professionell <span class="dot"></span> flexibel <span class="dot"></span> kollegial</div>
-    <div class="nk-banner__kw" data-en>professional <span class="dot"></span> flexible <span class="dot"></span> collegial</div>
+    <div class="nk-banner__kw" data-de>Zertifiziert <span class="dot"></span> regional <span class="dot"></span> exklusiv</div>
+    <div class="nk-banner__kw" data-en>Certified <span class="dot"></span> regional <span class="dot"></span> exclusive</div>
     <div class="nk-banner__stats">
-      <div class="nk-banner__stat"><span class="nk-banner__stat-val" id="partner-count">13</span><span class="nk-banner__stat-lbl" data-de>Partner</span><span class="nk-banner__stat-lbl" data-en>partners</span></div>
+      <div class="nk-banner__stat"><span class="nk-banner__stat-val">8</span><span class="nk-banner__stat-lbl" data-de>Zielregionen</span><span class="nk-banner__stat-lbl" data-en>target regions</span></div>
     </div>
   </div>
 </div>
@@ -299,9 +299,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
 <!-- ═══ EINFÜHRUNG (S2) ═══ -->
 <section class="intro-s2">
   <div class="intro-s2__inner">
-    <span class="nk-label" data-de>Sie vermieten Veranstaltungs- oder Sicherheitstechnik?</span><span class="nk-label" data-en>Do you rent event or security technology?</span>
-    <h2 class="heading-l" style="margin-top:12px;" data-de>Werden Sie Teil des NIKOS-<span style="color:var(--orange)">Partnernetzwerkes</span></h2>
-    <h2 class="heading-l" style="margin-top:12px;" data-en>Become part of the NIKOS <span style="color:var(--orange)">partner network</span></h2>
+    <span class="nk-label" data-de>Vermietung · Partner werden</span><span class="nk-label" data-en>Rental · Become a partner</span>
     <p class="body-l" style="margin-top:14px;max-width:820px;color:var(--mid);" data-de>NIKOS-Partner sind von RADACOM zertifizierte Fachbetriebe, die das System in ihrer Region anbieten, installieren und betreuen. Wir suchen aktuell weitere Partner in Norddeutschland, Österreich, BeNeLux, Frankreich, Schweiz, Dänemark, Polen und Tschechien.</p>
     <p class="body-l" style="margin-top:14px;max-width:820px;color:var(--mid);" data-en>NIKOS partners are certified specialist companies that offer, install and support the system in their region. We are currently looking for more partners in Northern Germany, Austria, BeNeLux, France, Switzerland, Denmark, Poland and Czech Republic.</p>
   </div>
@@ -414,9 +412,9 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
             <input class="form-input" id="p-email" type="email" required autocomplete="email">
           </div>
           <div class="form-group">
-            <label class="form-label" for="p-phone" data-de>Telefon <span>*</span></label>
-            <label class="form-label" for="p-phone" data-en>Phone <span>*</span></label>
-            <input class="form-input" id="p-phone" type="tel" required autocomplete="tel">
+            <label class="form-label" for="p-phone" data-de>Telefon</label>
+            <label class="form-label" for="p-phone" data-en>Phone</label>
+            <input class="form-input" id="p-phone" type="tel" autocomplete="tel">
           </div>
           <div class="form-group form-group--full">
             <label class="form-label" for="p-address" data-de>Adresse / Region</label>
@@ -445,11 +443,6 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <span class="form-consent-label" data-de>Ich stimme zu, dass meine Daten zur Bearbeitung meiner Anfrage verwendet werden. <a href="#" style="color:var(--orange)">Datenschutzhinweis</a></span>
           <span class="form-consent-label" data-en>I agree that my data will be used to process my inquiry. <a href="#" style="color:var(--orange)">Privacy notice</a></span>
         </label>
-          <label class="form-consent" style="margin-top:10px;">
-            <input type="checkbox" id="p-newsletter">
-            <span class="form-consent-label" data-de>Ja, ich möchte den NIKOS-Newsletter erhalten und über neue Unterlagen informiert werden.</span>
-            <span class="form-consent-label" data-en>Yes, I would like to receive the NIKOS newsletter and be informed about new documents.</span>
-          </label>
         <div class="form-submit-wrap">
           <button type="submit" class="btn-primary" data-de>Partner-Anfrage senden →</button>
           <button type="submit" class="btn-primary" data-en>Send partner inquiry →</button>
@@ -473,42 +466,6 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
 <script src="assets/js/nikos-footer.js"></script>
 <script src="assets/js/nikos-config.js"></script>
 <script src="assets/js/nikos-forms.js"></script>
-<script>
-/* Partnerzahl dynamisch aus Google Sheet "Partnerliste" (Fallback: im HTML stehender Wert).
-   Zählt Einträge mit firma, ohne den Hersteller RADACOM (ist_radacom=TRUE). */
-(function(){
-  var SHEET = 'https://docs.google.com/spreadsheets/d/1_JhSXcyg9IEtrMqBSSx0Pt616emHrLsmUx4kH5_umwQ/gviz/tq?tqx=out:csv&sheet=Partnerliste';
-  function parseCSV(text){
-    var rows=[], row=[], cur='', q=false;
-    for(var i=0;i<text.length;i++){
-      var c=text[i];
-      if(q){ if(c==='"'){ if(text[i+1]==='"'){cur+='"';i++;} else q=false; } else cur+=c; }
-      else { if(c==='"') q=true; else if(c===',') {row.push(cur);cur='';}
-             else if(c==='\n'){row.push(cur);rows.push(row);row=[];cur='';}
-             else if(c!=='\r') cur+=c; }
-    }
-    if(cur!==''||row.length){ row.push(cur); rows.push(row); }
-    return rows;
-  }
-  fetch(SHEET, {redirect:'follow'})
-    .then(function(r){ return r.ok ? r.text() : Promise.reject(r.status); })
-    .then(function(csv){
-      var rows=parseCSV(csv);
-      if(rows.length<2) return;
-      var head=rows[0].map(function(h){return h.trim().toLowerCase();});
-      var iFirma=head.indexOf('firma'), iRad=head.indexOf('ist_radacom');
-      if(iFirma<0) return;
-      var n=0;
-      for(var k=1;k<rows.length;k++){
-        var firma=(rows[k][iFirma]||'').trim();
-        var rad=(iRad>=0?(rows[k][iRad]||''):'').trim().toUpperCase()==='TRUE';
-        if(firma && !rad) n++;
-      }
-      if(n>0){ var el=document.getElementById('partner-count'); if(el) el.textContent=n; }
-    })
-    .catch(function(e){ /* Fallback: HTML-Wert bleibt stehen */ });
-})();
-</script>
 <script>
 (function(){
   var url = (typeof window.NIKOS_CONTACT_URL !== 'undefined') ? window.NIKOS_CONTACT_URL : 'nikos-kontakt.html';

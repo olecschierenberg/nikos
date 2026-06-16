@@ -28,4 +28,4 @@ window.NIKOS_CONTACT_URL = 'nikos-kontakt.html';
 // statt zu senden — so geht keine Anfrage verloren.
 // ═══════════════════════════════════════════════════════════════════
 
-window.NIKOS_FORM_ENDPOINT = ''; // <-- n8n-Webhook-URL hier eintragen
+window.NIKOS_FORM_ENDPOINT = 'https://olec.app.n8n.cloud/webhook-test/nikos-formular'; // TEST-URL (webhook-test). ⚠ Vor Go-Live auf Production-URL umstellen: /webhook/nikos-formular
