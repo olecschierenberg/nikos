@@ -39,7 +39,8 @@
       key = key.replace(/^[a-z]-/, ''); // "p-company" → "company"
 
       if (el.type === 'checkbox') {
-        if (key === 'consent') { data.consent = el.checked; return; }
+        // consent + newsletter immer als echtes true/false senden
+        if (key === 'consent' || key === 'newsletter') { data[key] = el.checked; return; }
         if (el.checked) {
           (data[key] = data[key] || []).push(el.value || true);
         }
