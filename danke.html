@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vielen Dank – NIKOS Newsletter bestätigt</title>
+<meta name="description" content="Ihre Anmeldung zum NIKOS-Newsletter ist bestätigt.">
+<meta name="robots" content="noindex">
+<style>
+@font-face{font-family:'Source Sans 3';font-style:normal;font-weight:300 700;font-display:swap;src:url('assets/fonts/SourceSans3-VariableFont_wght.ttf') format('truetype-variations');}
+@font-face{font-family:'Exo 2';font-style:normal;font-weight:400 700;font-display:swap;src:url('assets/fonts/Exo2-VariableFont_wght.ttf') format('truetype-variations');}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --orange:#FF6600;--orange-dk:#E05500;--dark:#4D4D4D;--mid:#595959;
+  --white:#FFFFFF;--s2:#EBEBEB;--card-border:#D8DCE0;--footer:#2E3236;
+  --font:'Source Sans 3',system-ui,sans-serif;--claim:'Exo 2',system-ui,sans-serif;--r:4px;
+  --shadow:0 1px 3px rgba(30,42,53,.06),0 4px 14px rgba(30,42,53,.08);
+}
+html{font-size:16px}
+body{font-family:var(--font);color:var(--dark);background:var(--s2);line-height:1.6;min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+[data-de],[data-en]{display:none !important}
+[data-lang="de"] [data-de]{display:revert !important}
+[data-lang="en"] [data-en]{display:revert !important}
+.nk-nav{background:var(--white);border-bottom:4px solid var(--orange);box-shadow:0 1px 12px rgba(0,0,0,.06)}
+.nav__inner{max-width:1280px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center}
+.nav__logo{font-family:var(--claim);font-weight:700;font-size:22px;color:var(--dark);text-decoration:none}
+.nav__logo .o{color:var(--orange)}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:48px 24px}
+.card{background:var(--white);border:1px solid var(--card-border);border-radius:var(--r);box-shadow:var(--shadow);max-width:520px;width:100%;padding:48px 40px;text-align:center;position:relative;overflow:hidden}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--orange)}
+.check{width:64px;height:64px;border-radius:50%;background:rgba(255,102,0,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:32px;color:var(--orange)}
+h1{font-family:var(--claim);font-size:clamp(24px,4vw,32px);color:var(--dark);margin-bottom:16px;line-height:1.2}
+h1 .o{color:var(--orange)}
+p{font-size:16px;color:var(--mid);margin-bottom:14px}
+.btn{display:inline-block;margin-top:18px;background:var(--orange);color:#fff;text-decoration:none;font-weight:600;padding:12px 28px;border-radius:var(--r);transition:background .15s}
+.btn:hover{background:var(--orange-dk)}
+footer{background:var(--footer);color:#B0B6BC;text-align:center;padding:20px 24px;font-size:13px}
+footer a{color:#B0B6BC;text-decoration:none}
+footer a:hover{color:#fff}
+</style>
+</head>
+<body>
+<nav class="nk-nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">NIKOS</a>
+  </div>
+</nav>
+<main>
+  <div class="card">
+    <div class="check">✓</div>
+    <h1 data-de>Anmeldung <span class="o">bestätigt</span></h1>
+    <h1 data-en>Subscription <span class="o">confirmed</span></h1>
+    <p data-de>Vielen Dank! Ihre Anmeldung zum NIKOS-Newsletter ist jetzt bestätigt. Sie erhalten künftig Neuigkeiten zu NIKOS – technische Updates, neue Unterlagen und Praxiswissen rund um einsatzkritische Kommunikations- und Sicherheitstechnik.</p>
+    <p data-en>Thank you! Your subscription to the NIKOS newsletter is now confirmed. You will receive news about NIKOS – technical updates, new documents and practical know-how on mission-critical communication and safety technology.</p>
+    <p data-de>Sie können sich jederzeit über den Link in jeder E-Mail wieder abmelden.</p>
+    <p data-en>You can unsubscribe at any time via the link in every email.</p>
+    <a href="index.html" class="btn" data-de>Zur Startseite</a>
+    <a href="index.html" class="btn" data-en>Back to homepage</a>
+  </div>
+</main>
+<footer>
+  <p>RADACOM GmbH · Rigaer Straße 3 · 59557 Lippstadt · <a href="mailto:info@radacom.de">info@radacom.de</a></p>
+</footer>
+</body>
+</html>
