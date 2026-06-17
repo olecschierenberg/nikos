@@ -404,9 +404,9 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
             <input class="form-input" id="p-company" type="text" required autocomplete="organization">
           </div>
           <div class="form-group">
-            <label class="form-label" for="p-contact" data-de>Ansprechpartner <span>*</span></label>
-            <label class="form-label" for="p-contact" data-en>Contact person <span>*</span></label>
-            <input class="form-input" id="p-contact" type="text" required autocomplete="name">
+            <label class="form-label" for="p-name" data-de>Ansprechpartner <span>*</span></label>
+            <label class="form-label" for="p-name" data-en>Contact person <span>*</span></label>
+            <input class="form-input" id="p-name" type="text" required autocomplete="name">
           </div>
           <div class="form-group">
             <label class="form-label" for="p-email" data-de>E-Mail <span>*</span></label>
@@ -418,7 +418,12 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
             <label class="form-label" for="p-phone" data-en>Phone <span>*</span></label>
             <input class="form-input" id="p-phone" type="tel" required autocomplete="tel">
           </div>
-          <div class="form-group form-group--full">
+          <div class="form-group">
+            <label class="form-label" for="p-website" data-de>Website</label>
+            <label class="form-label" for="p-website" data-en>Website</label>
+            <input class="form-input" id="p-website" type="url" placeholder="https://" autocomplete="url">
+          </div>
+          <div class="form-group">
             <label class="form-label" for="p-address" data-de>Adresse / Region</label>
             <label class="form-label" for="p-address" data-en>Address / Region</label>
             <input class="form-input" id="p-address" type="text" autocomplete="address-level2">
