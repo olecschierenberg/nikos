@@ -287,7 +287,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
     <div class="nk-banner__kw" data-de>zertifiziert <span class="dot"></span> regional <span class="dot"></span> erfahren</div>
     <div class="nk-banner__kw" data-en>certified <span class="dot"></span> regional <span class="dot"></span> experienced</div>
     <div class="nk-banner__stats">
-      <div class="nk-banner__stat"><span class="nk-banner__stat-val">EU</span><span class="nk-banner__stat-lbl" data-de>Partnernetz</span><span class="nk-banner__stat-lbl" data-en>partner network</span></div>
+      <div class="nk-banner__stat"><span class="nk-banner__stat-val"><span id="partner-count">12</span>+</span><span class="nk-banner__stat-lbl" data-de>Partner</span><span class="nk-banner__stat-lbl" data-en>partners</span></div>
     </div>
   </div>
 </div>
@@ -448,6 +448,43 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
       iframe.style.height = e.data.height + 'px';
     }
   });
+})();
+</script>
+<script>
+/* Partnerzahl dynamisch aus Google Sheet "Partnerliste" minus 1 (Fallback: HTML-Wert).
+   Zählt Einträge mit firma, ohne den Hersteller RADACOM (ist_radacom=TRUE), dann -1. */
+(function(){
+  var SHEET = 'https://docs.google.com/spreadsheets/d/1_JhSXcyg9IEtrMqBSSx0Pt616emHrLsmUx4kH5_umwQ/gviz/tq?tqx=out:csv&sheet=Partnerliste';
+  function parseCSV(text){
+    var rows=[], row=[], cur='', q=false;
+    for(var i=0;i<text.length;i++){
+      var c=text[i];
+      if(q){ if(c==='"'){ if(text[i+1]==='"'){cur+='"';i++;} else q=false; } else cur+=c; }
+      else { if(c==='"') q=true; else if(c===',') {row.push(cur);cur='';}
+             else if(c==='\n'){row.push(cur);rows.push(row);row=[];cur='';}
+             else if(c!=='\r') cur+=c; }
+    }
+    if(cur!==''||row.length){ row.push(cur); rows.push(row); }
+    return rows;
+  }
+  fetch(SHEET, {redirect:'follow'})
+    .then(function(r){ return r.ok ? r.text() : Promise.reject(r.status); })
+    .then(function(csv){
+      var rows=parseCSV(csv);
+      if(rows.length<2) return;
+      var head=rows[0].map(function(h){return h.trim().toLowerCase();});
+      var iFirma=head.indexOf('firma'), iRad=head.indexOf('ist_radacom');
+      if(iFirma<0) return;
+      var n=0;
+      for(var k=1;k<rows.length;k++){
+        var firma=(rows[k][iFirma]||'').trim();
+        var rad=(iRad>=0?(rows[k][iRad]||''):'').trim().toUpperCase()==='TRUE';
+        if(firma && !rad) n++;
+      }
+      var shown=n-1;
+      if(shown>0){ var el=document.getElementById('partner-count'); if(el) el.textContent=shown; }
+    })
+    .catch(function(e){ /* Fallback: HTML-Wert bleibt stehen */ });
 })();
 </script>
 </body>

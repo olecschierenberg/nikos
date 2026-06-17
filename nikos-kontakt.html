@@ -339,7 +339,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
     <div class="nk-banner__kw" data-de>Beratung <span class="dot"></span> Mietanfrage <span class="dot"></span> Partnerschaft</div>
     <div class="nk-banner__kw" data-en>Consultation <span class="dot"></span> rental inquiry <span class="dot"></span> partnership</div>
     <div class="nk-banner__stats">
-      <div class="nk-banner__stat"><span class="nk-banner__stat-val">1 Tag</span><span class="nk-banner__stat-lbl" data-de>Antwortzeit i.d.R.</span><span class="nk-banner__stat-lbl" data-en>typical response</span></div>
+      <div class="nk-banner__stat"><span class="nk-banner__stat-val"><span id="partner-count">12</span>+</span><span class="nk-banner__stat-lbl" data-de>Partner</span><span class="nk-banner__stat-lbl" data-en>partners</span></div>
     </div>
   </div>
 </div>
@@ -622,7 +622,6 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <span class="form-checkbox-label" data-en>Yes, I would like to receive the NIKOS newsletter. My email address will be processed in accordance with the <a href="nikos-datenschutz.html" style="color:var(--orange);">privacy policy</a>. <span style="color:var(--orange)">*</span></span>
         </label>
       </div>
-      <div class="form-error" style="display:none;color:#c0392b;font-size:14px;margin-bottom:12px;"></div>
       <button type="submit" class="btn-primary" data-de>Jetzt abonnieren →</button>
       <button type="submit" class="btn-primary" data-en>Subscribe now →</button>
       <div class="form-success" id="success-newsletter">
@@ -696,6 +695,43 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
       activate(tab.getAttribute('data-tab'));
     });
   });
+})();
+</script>
+<script>
+/* Partnerzahl dynamisch aus Google Sheet "Partnerliste" minus 1 (Fallback: HTML-Wert).
+   Zählt Einträge mit firma, ohne den Hersteller RADACOM (ist_radacom=TRUE), dann -1. */
+(function(){
+  var SHEET = 'https://docs.google.com/spreadsheets/d/1_JhSXcyg9IEtrMqBSSx0Pt616emHrLsmUx4kH5_umwQ/gviz/tq?tqx=out:csv&sheet=Partnerliste';
+  function parseCSV(text){
+    var rows=[], row=[], cur='', q=false;
+    for(var i=0;i<text.length;i++){
+      var c=text[i];
+      if(q){ if(c==='"'){ if(text[i+1]==='"'){cur+='"';i++;} else q=false; } else cur+=c; }
+      else { if(c==='"') q=true; else if(c===',') {row.push(cur);cur='';}
+             else if(c==='\n'){row.push(cur);rows.push(row);row=[];cur='';}
+             else if(c!=='\r') cur+=c; }
+    }
+    if(cur!==''||row.length){ row.push(cur); rows.push(row); }
+    return rows;
+  }
+  fetch(SHEET, {redirect:'follow'})
+    .then(function(r){ return r.ok ? r.text() : Promise.reject(r.status); })
+    .then(function(csv){
+      var rows=parseCSV(csv);
+      if(rows.length<2) return;
+      var head=rows[0].map(function(h){return h.trim().toLowerCase();});
+      var iFirma=head.indexOf('firma'), iRad=head.indexOf('ist_radacom');
+      if(iFirma<0) return;
+      var n=0;
+      for(var k=1;k<rows.length;k++){
+        var firma=(rows[k][iFirma]||'').trim();
+        var rad=(iRad>=0?(rows[k][iRad]||''):'').trim().toUpperCase()==='TRUE';
+        if(firma && !rad) n++;
+      }
+      var shown=n-1;
+      if(shown>0){ var el=document.getElementById('partner-count'); if(el) el.textContent=shown; }
+    })
+    .catch(function(e){ /* Fallback: HTML-Wert bleibt stehen */ });
 })();
 </script>
 </body>

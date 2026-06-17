@@ -291,7 +291,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
     <div class="nk-banner__kw" data-de>professionell <span class="dot"></span> flexibel <span class="dot"></span> kollegial</div>
     <div class="nk-banner__kw" data-en>professional <span class="dot"></span> flexible <span class="dot"></span> collegial</div>
     <div class="nk-banner__stats">
-      <div class="nk-banner__stat"><span class="nk-banner__stat-val" id="partner-count">13</span><span class="nk-banner__stat-lbl" data-de>Partner</span><span class="nk-banner__stat-lbl" data-en>partners</span></div>
+      <div class="nk-banner__stat"><span class="nk-banner__stat-val"><span id="partner-count">12</span>+</span><span class="nk-banner__stat-lbl" data-de>Partner</span><span class="nk-banner__stat-lbl" data-en>partners</span></div>
     </div>
   </div>
 </div>
@@ -509,7 +509,8 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
         var rad=(iRad>=0?(rows[k][iRad]||''):'').trim().toUpperCase()==='TRUE';
         if(firma && !rad) n++;
       }
-      if(n>0){ var el=document.getElementById('partner-count'); if(el) el.textContent=n; }
+      var shown=n-1;
+      if(shown>0){ var el=document.getElementById('partner-count'); if(el) el.textContent=shown; }
     })
     .catch(function(e){ /* Fallback: HTML-Wert bleibt stehen */ });
 })();
