@@ -60,8 +60,9 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
 .nav__mobile ul li a.nav__cta-mobile{margin:8px 24px 0;padding:10px 20px;background:var(--orange);color:#fff !important;border-radius:var(--r);text-align:center;font-weight:600;border-left:none !important;display:none}
 /* Legal content */
 .legal-page{position:relative;max-width:840px;margin:0 auto;padding:64px clamp(20px,5vw,48px) 96px}
-.legal-page__logo{position:absolute;top:79px;right:clamp(20px,5vw,48px);height:27px;width:auto}
-@media(max-width:600px){.legal-page__logo{height:20px;top:73px}}
+.legal-page__logo-link{position:absolute;top:79px;right:clamp(20px,5vw,48px);display:inline-block;line-height:0}
+.legal-page__logo{height:27px;width:auto;display:block}
+@media(max-width:600px){.legal-page__logo-link{top:73px}.legal-page__logo{height:20px}}
 .legal-page h1{font-family:var(--claim);font-size:clamp(28px,3.5vw,42px);font-weight:700;color:var(--dark);margin-bottom:8px;line-height:1.1}
 .legal-page .meta{font-size:13px;color:var(--light);margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid var(--border)}
 .legal-page h2{font-size:20px;font-weight:700;color:var(--dark);margin:40px 0 12px;padding-top:8px}
@@ -179,7 +180,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
   </ul></div>
 </nav>
 <div class="legal-page">
-  <img class="legal-page__logo" src="assets/logos/SVG/RADACOM.svg" alt="RADACOM">
+  <a class="legal-page__logo-link" href="https://www.radacom.de" target="_blank" rel="noopener" title="radacom.de"><img class="legal-page__logo" src="assets/logos/SVG/RADACOM.svg" alt="RADACOM"></a>
   <div data-de>
     <h1>Impressum</h1>
 <hr>
@@ -192,6 +193,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
 <p><strong>Kontakt:</strong></p>
 <p>Telefon: 02941 750 330</p>
 <p>E-Mail: info@radacom.de</p>
+<p>Website: <a href="https://www.radacom.de" target="_blank" rel="noopener">www.radacom.de</a></p>
 <p><strong>Registereintrag:</strong></p>
 <p>Eintragung im Handelsregister</p>
 <p>Registergericht: Amtsgericht Paderborn</p>
@@ -236,6 +238,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
 <p><strong>Contact:</strong></p>
 <p>Phone: +49 2941 750 330</p>
 <p>Email: info@radacom.de</p>
+<p>Website: <a href="https://www.radacom.de" target="_blank" rel="noopener">www.radacom.de</a></p>
 <p><strong>Register entry:</strong></p>
 <p>Entry in the commercial register</p>
 <p>Registering court: Amtsgericht Paderborn (Local Court of Paderborn)</p>

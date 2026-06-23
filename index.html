@@ -455,10 +455,13 @@ img  { display: block; max-width: 100%; }
   .nav__links { display: none; }
   .nav__burger { display: flex; }
   .pillar-bar__inner { grid-template-columns: 1fr; }
+  /* Gestapelt: kein dangling vertikaler Strich rechts; Trennung per Unterkante */
+  .pillar { border-right: none; border-bottom: 1px solid rgba(255,255,255,.10); }
+  .pillar:last-child { border-bottom: none; }
   .sys-grid, .cta3-grid { grid-template-columns: 1fr; }
   .partner-steps { grid-template-columns: 1fr; }
   .partner-steps::before { display: none; }
-  .refs-grid { grid-template-columns: 1fr; }
+  .refs-grid { grid-template-columns: repeat(2,1fr); }
   .nk-footer__grid { grid-template-columns: 1fr; }
   .video-meta { grid-template-columns: 1fr; }
 }
@@ -481,7 +484,23 @@ img  { display: block; max-width: 100%; }
   .mod-grid, .app-grid { grid-template-columns: 1fr; }
   .nk-section { padding: 56px 0 56px; }
   .hero__visual img { height: 220px; }
-  .hero__trust { flex-wrap: wrap; }
+  .hero__trust { flex-wrap: wrap; gap: 10px 0; }
+  /* Bei Umbruch kein loser vertikaler Strich rechts */
+  .hero__trust-item { border-right: none; padding-right: 0; margin-right: 20px; }
+}
+
+/* ── Schmale Displays (Smartphones): ALLE Karten untereinander, Text umbrechen ── */
+@media (max-width: 640px) {
+  .mod-grid, .app-grid, .sys-grid, .cta3-grid { grid-template-columns: 1fr; gap: 16px; }
+  .refs-grid { grid-template-columns: repeat(2,1fr); gap: 12px; }
+  /* Grid-Kinder dürfen schrumpfen statt rechts überzulaufen */
+  .mod-card, .app-tile, .ref-item, .sys-card { min-width: 0; }
+  /* Lange Wörter/URLs umbrechen statt abschneiden */
+  .mod-card, .app-tile, .ref-item, .sys-card,
+  .app-tile__name, .app-tile__desc, .ref-item__name, .ref-item__note,
+  .mod-card__name, .mod-card__desc, .sys-card__title, .sys-card__desc {
+    overflow-wrap: anywhere; word-break: break-word;
+  }
 }
 
 .nk-section--sec-dark + .nk-section{border-top:4px solid var(--border)}
@@ -772,6 +791,14 @@ img  { display: block; max-width: 100%; }
         <p class="sys-card__desc" data-en>Scalable from a handful of modules at a city festival to 150+ units at Oktoberfest. Redistribution instead of extra costs – more safety on the same budget.</p>
       </div>
     </div>
+
+    <!-- Behördenauflagen / VStättVO -->
+    <div style="margin-top:32px;background:var(--white);border:1.5px solid var(--card-border);border-left:4px solid var(--orange);border-radius:var(--r);padding:24px 28px;box-shadow:var(--shadow)">
+      <div class="nk-label" style="margin-bottom:10px" data-de>Behördliche Auflagen</div>
+      <div class="nk-label" style="margin-bottom:10px" data-en>Regulatory requirements</div>
+      <p style="font-size:17px;line-height:1.6;color:var(--dark);font-weight:600;margin:0" data-de>Erfüllung behördlicher Auflagen nach VStättVO für temporäre Events: NIKOS ermöglicht die geforderte mobile Sicherheitsbeschallung und eine geordnete Entfluchtung – ohne kilometerlange Kabelwege.</p>
+      <p style="font-size:17px;line-height:1.6;color:var(--dark);font-weight:600;margin:0" data-en>Meeting regulatory requirements under the German VStättVO for temporary events: NIKOS delivers the required mobile safety announcement and an orderly evacuation – without kilometres of cabling.</p>
+    </div>
   </div>
 </section>
 
@@ -834,8 +861,12 @@ img  { display: block; max-width: 100%; }
       .ref-mini-card:hover::after { transform:scaleX(1); }
       .ref-mini-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--orange); margin-bottom:6px; }
       .ref-mini-name { font-size:16px; font-weight:700; color:var(--dark); line-height:1.2; }
+      .ref-mini-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:32px; }
+      .ref-mini-card { min-width:0; }
+      @media (max-width:900px) { .ref-mini-grid { grid-template-columns:repeat(2,1fr); } }
+      @media (max-width:640px) { .ref-mini-grid { grid-template-columns:repeat(2,1fr); gap:12px; } }
     </style>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px">
+    <div class="ref-mini-grid">
       <a href="nikos-referenzen.html#oktoberfest" class="ref-mini-card">
         <div class="ref-mini-label" data-de>Volksfest</div>
         <div class="ref-mini-label" data-en>Folk Festival</div>

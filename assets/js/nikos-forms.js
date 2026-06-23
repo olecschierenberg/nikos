@@ -86,15 +86,32 @@
     if (box) box.textContent = '';
   }
 
+  // Honeypot field: visible to bots, hidden from humans. Real users never fill it.
+  function addHoneypot(form) {
+    if (form.querySelector('input[name="website_hp"]')) return;
+    var wrap = document.createElement('div');
+    wrap.setAttribute('aria-hidden', 'true');
+    wrap.style.cssText = 'position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;';
+    wrap.innerHTML = '<label>Website (bitte freilassen)<input type="text" name="website_hp" tabindex="-1" autocomplete="off"></label>';
+    form.appendChild(wrap);
+  }
+
   function wire(cfg) {
     var form = document.getElementById(cfg.id);
     if (!form) return;
     var successEl = document.getElementById(cfg.successId);
     var btns = Array.prototype.slice.call(form.querySelectorAll('button[type="submit"]'));
 
+    addHoneypot(form);
+    var formReadyAt = Date.now(); // for the time-trap (bots submit too fast)
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       clearError(form);
+
+      // Honeypot check (client-side, defense in depth): if filled -> treat as done, send nothing
+      var hp = form.querySelector('input[name="website_hp"]');
+      if (hp && hp.value.trim() !== '') { showSuccess(successEl, btns); return; }
 
       var bad = validate(form);
       if (bad.length) {
@@ -109,6 +126,7 @@
       payload.formType = cfg.type;
       payload.page = location.pathname;
       payload.submittedAt = new Date().toISOString();
+      payload.fill_ms = Date.now() - formReadyAt; // fill duration (time-trap, checked server-side)
 
       // Kein Endpoint konfiguriert → nicht senden, klar melden (keine stille Datenvernichtung).
       if (!endpoint) {

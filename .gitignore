@@ -5,4 +5,9 @@
 *.bak
 *-backup.html
 
-# Word-S
+# Word-S*.preMobileFix-*.js
+*.bak
+*.bak.html
+*-backup*.html
+backups-audit-*
+lp/
