@@ -581,20 +581,13 @@ img  { display: block; max-width: 100%; }
       "inLanguage": ["de", "en"]
     },
     {
-      "@type": "Product",
+      "@type": "Service",
       "name": "NIKOS Kommunikationsplattform",
       "description": "Autarke, kabellose Kommunikationsplattform für Veranstaltungen, Baustellen und Krisenlagen. Funktioniert ohne WLAN, Mobilfunk oder Stromnetz.",
-      "brand": { "@id": "https://nikos.audio/#organization" },
+      "provider": { "@id": "https://nikos.audio/#organization" },
       "url": "https://nikos.audio/",
-      "category": "Kommunikationstechnik",
-      "offers": {
-        "@type": "AggregateOffer",
-        "priceCurrency": "EUR",
-        "availability": "https://schema.org/InStock",
-        "businessFunction": "http://purl.org/goodrelations/v1#LeaseOut",
-        "category": "Event Safety Equipment / B2B Rental",
-        "seller": { "@type": "Organization", "name": "RADACOM GmbH", "url": "https://www.radacom.de" }
-      }
+      "serviceType": "Kommunikationstechnik",
+      "areaServed": { "@type": "Continent", "name": "Europe" }
     }
   ]
 }
