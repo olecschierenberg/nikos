@@ -176,6 +176,20 @@ img{display:block;max-width:100%}
 .zubehoer-card__modul .mod{color:var(--orange)}
 .zubehoer-card__title{font-size:14px;font-weight:600;color:var(--dark);margin-bottom:6px}
 .zubehoer-card__text{font-size:13px;color:var(--mid);line-height:1.55;flex:1;margin-bottom:0}
+/* Produktfoto unten rechts; Text schmaler daneben; Logo/Überschrift über allem */
+.zubehoer-card--photo{min-height:200px}
+.zubehoer-card--photo .zubehoer-card__title,
+.zubehoer-card--photo .zubehoer-card__text{max-width:62%}
+.zubehoer-card__photo{position:absolute;right:14px;bottom:12px;width:42%;max-width:150px;height:auto;pointer-events:none;z-index:1}
+.zubehoer-card__photo img{width:100%;height:auto;display:block;object-fit:contain}
+.zubehoer-card__photo--sm{max-width:120px}
+.zubehoer-card__photo--xs{max-width:90px}
+.zubehoer-card__photo--tall{max-width:108px}
+.zubehoer-card__photo--tall img{max-height:150px;width:auto;margin-left:auto}
+.zubehoer-card--photo .zubehoer-card__modul,
+.zubehoer-card--photo .zubehoer-card__title,
+.zubehoer-card--photo .zubehoer-card__text{position:relative;z-index:2}
+@media(max-width:760px){.zubehoer-card__photo{width:38%;max-width:120px}.zubehoer-card--photo .zubehoer-card__title,.zubehoer-card--photo .zubehoer-card__text{max-width:60%}}
 
 /* Moon specs box */
 .moon-specs{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0}
@@ -568,53 +582,66 @@ img{display:block;max-width:100%}
     <span class="nk-label" data-de>Zubehör &amp; Erweiterungen</span>
     <span class="nk-label" data-en>Accessories &amp; Expansions</span>
     <div class="zubehoer-grid">
-        <a href="nikos-downloads.html#datenblatt-horn" class="zubehoer-card">
+        <a href="nikos-downloads.html#datenblatt-horn" class="zubehoer-card zubehoer-card--photo">
           <div class="zubehoer-card__modul"><img src="assets/logos/nikos/SVG/NIKOS horn.svg" alt="NIKOS [horn]²"></div>
           <div class="zubehoer-card__title" data-de>Aktiver Hornlautsprecher</div>
           <div class="zubehoer-card__title" data-en>Active Horn Speaker</div>
           <div class="zubehoer-card__text" data-de>Hörradius 50–60 m. Bis zu 4 Stück pro NIKOS [audio]².</div>
           <div class="zubehoer-card__text" data-en>Hearing radius 50–60 m. Up to 4 units per NIKOS [audio]².</div>
+                  <div class="zubehoer-card__photo zubehoer-card__photo--sm"><img src="assets/img/produkte/NIKOS-horn.png" alt="NIKOS [horn]² Hornlautsprecher" loading="lazy"></div>
         </a>
-        <a href="nikos-downloads.html#datenblatt-flash" class="zubehoer-card">
+        <a href="nikos-downloads.html#datenblatt-flash" class="zubehoer-card zubehoer-card--photo">
           <div class="zubehoer-card__modul"><img src="assets/logos/nikos/SVG/NIKOS flash.svg" alt="NIKOS [flash]²"></div>
           <div class="zubehoer-card__title" data-de>Blitzleuchte</div>
           <div class="zubehoer-card__title" data-en>Strobe Light</div>
           <div class="zubehoer-card__text" data-de>Wirksame Alarmierung und Signalisierung in lauten Umgebungen.</div>
           <div class="zubehoer-card__text" data-en>Effective alerting and signalling in loud environments.</div>
+                  <div class="zubehoer-card__photo zubehoer-card__photo--xs"><img src="assets/img/produkte/NIKOS-flash.png" alt="NIKOS [flash]² Blitzleuchte" loading="lazy"></div>
         </a>
-        <a href="nikos-downloads.html#datenblatt-relay" class="zubehoer-card">
+        <a href="nikos-downloads.html#datenblatt-relay" class="zubehoer-card zubehoer-card--photo">
           <div class="zubehoer-card__modul"><img class="modul-logo--tall" src="assets/logos/nikos/SVG/NIKOS relay.svg" alt="NIKOS [relay]2"></div>
           <div class="zubehoer-card__title" data-de>Fernschaltmodul</div>
           <div class="zubehoer-card__title" data-en>Remote Switching Module</div>
           <div class="zubehoer-card__text" data-de>Externe Geräte bis 230 V / 10 A schalten.</div>
           <div class="zubehoer-card__text" data-en>Switch external devices up to 230 V / 10 A.</div>
+                  <div class="zubehoer-card__photo zubehoer-card__photo--tall"><img src="assets/img/produkte/NIKOS-relay.png" alt="NIKOS [relay]² Fernschaltmodul" loading="lazy"></div>
         </a>
-        <a href="nikos-downloads.html#datenblatt-clamp" class="zubehoer-card">
+        <a href="nikos-downloads.html#datenblatt-clamp" class="zubehoer-card zubehoer-card--photo">
           <div class="zubehoer-card__modul"><img class="modul-logo--tall" src="assets/logos/nikos/SVG/NIKOS clamp.svg" alt="NIKOS [clamp]2"></div>
           <div class="zubehoer-card__title" data-de>Universelles Befestigungssystem</div>
           <div class="zubehoer-card__title" data-en>Universal Mounting System</div>
           <div class="zubehoer-card__text" data-de>1-Personen-Montage an Masten und Bäumen.</div>
           <div class="zubehoer-card__text" data-en>Single-person mounting on masts and trees.</div>
+                  <div class="zubehoer-card__photo zubehoer-card__photo--tall"><img src="assets/img/produkte/NIKOS-clamp.png" alt="NIKOS [clamp]² Befestigungssystem" loading="lazy"></div>
         </a>
-        <a href="nikos-downloads.html#datenblatt-xlr" class="zubehoer-card">
+        <a href="nikos-downloads.html#datenblatt-xlr" class="zubehoer-card zubehoer-card--photo">
           <div class="zubehoer-card__modul"><img src="assets/logos/nikos/SVG/NIKOS XLR.svg" alt="NIKOS [XLR]²"></div>
           <div class="zubehoer-card__title" data-de>4-Kanal-Erweiterung</div>
           <div class="zubehoer-card__title" data-en>4-Channel Expansion</div>
           <div class="zubehoer-card__text" data-de>Bis zu 14 Audiowege pro Standort.</div>
           <div class="zubehoer-card__text" data-en>Up to 14 audio paths per location.</div>
+                  <div class="zubehoer-card__photo zubehoer-card__photo--tall"><img src="assets/img/produkte/NIKOS-XLR.png" alt="NIKOS [XLR]² 4-Kanal-Erweiterung" loading="lazy"></div>
         </a>
-        <a href="nikos-downloads.html#datenblatt-led" class="zubehoer-card">
+        <a href="nikos-downloads.html#datenblatt-led" class="zubehoer-card zubehoer-card--photo">
           <div class="zubehoer-card__modul"><img src="assets/logos/nikos/SVG/NIKOS LED.svg" alt="NIKOS [LED]2"></div>
           <div class="zubehoer-card__title" data-de>Arbeits- &amp; Notbeleuchtung</div>
           <div class="zubehoer-card__title" data-en>Work &amp; Emergency Lighting</div>
           <div class="zubehoer-card__text" data-de>Fernschaltbare Beleuchtung für Arbeits- und Notlichtszenarien.</div>
           <div class="zubehoer-card__text" data-en>Remotely switchable lighting for work and emergency scenarios.</div>
+                  <div class="zubehoer-card__photo"><img src="assets/img/produkte/NIKOS-LED.png" alt="NIKOS [LED]² Arbeits- und Notbeleuchtung" loading="lazy"></div>
+        </a>
+        <a href="nikos-downloads.html#datenblatt-alarm" class="zubehoer-card">
+          <div class="zubehoer-card__modul"><img src="assets/logos/nikos/SVG/NIKOS alarm.svg" alt="NIKOS [alarm]²"></div>
+          <div class="zubehoer-card__title" data-de>Notfall- &amp; Alarm-Schalter</div>
+          <div class="zubehoer-card__title" data-en>Emergency &amp; Alarm Switch</div>
+          <div class="zubehoer-card__text" data-de>Manueller Auslöser für Hilferuf und Alarmierung – funkbasiert, für Notrufsäulen und sicherheitskritische Punkte.</div>
+          <div class="zubehoer-card__text" data-en>Manual trigger for help requests and alerting – radio-based, for call points and safety-critical locations.</div>
         </a>
     </div>
   </div>
 </section>
 
-<!-- ═══ CTA BAND ═══ -->
+<!-- CTA BAND -->
 <div class="cta-band">
   <div class="cta-band__inner">
     <div class="cta-band__text">
@@ -633,7 +660,7 @@ img{display:block;max-width:100%}
 </div>
 
 <div style="height:6px;background:linear-gradient(to bottom,var(--sec-dark),var(--surface-footer,#333333));"></div>
-<!-- ═══ FOOTER ═══ -->
+<!-- FOOTER -->
 <div id="nk-footer-root"></div>
 <div id="nk-cookiemodal-root"></div>
 <script src="assets/js/nikos-footer.js"></script>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
   <url>
     <loc>https://nikos.audio/</loc>
@@ -8,6 +9,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://nikos.audio/"/>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <video:video>
+      <video:thumbnail_loc>https://nikos.audio/assets/img/Bad-Kissingen-poster.jpg</video:thumbnail_loc>
+      <video:title>NIKOS Sicherheitsdurchsage – Unwetterwarnung beim Rakoczy-Fest Bad Kissingen 2025</video:title>
+      <video:description>Praxiseinsatz der NIKOS-Kommunikationsplattform: Während eines Unwetters beim Rakoczy-Fest in Bad Kissingen 2025 sorgt eine NIKOS-Sicherheitsdurchsage für die geordnete Evakuierung – live im TV.</video:description>
+      <video:content_loc>https://nikos.audio/assets/img/Bad-Kissingen.mp4</video:content_loc>
+      <video:duration>70</video:duration>
+      <video:publication_date>2026-06-15T00:00:00+02:00</video:publication_date>
+    </video:video>
   </url>
 
   <url>
