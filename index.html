@@ -82,6 +82,8 @@
 
 html { font-size: 16px; scroll-behavior: smooth; }
 body { font-family: var(--font); color: var(--dark); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+html, body { overflow-x: hidden; max-width: 100%; }
+*, *::before, *::after { box-sizing: border-box; }
 img  { display: block; max-width: 100%; }
 
 /* ── TYPOGRAPHY ── */
@@ -130,7 +132,7 @@ img  { display: block; max-width: 100%; }
   box-shadow: 0 1px 12px rgba(0,0,0,.06);
 }
 .nav__inner {
-  max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
+  max-width: 100%; margin: 0 auto; padding: 0 24px;
   height: 60px; display: flex; align-items: center; gap: 16px;
 }
 .nav__logo { height: 64px; display: flex; align-items: center; flex-shrink: 0; margin-right: 32px; }
@@ -452,8 +454,11 @@ img  { display: block; max-width: 100%; }
 @media (max-width: 900px) {
   .nav__links { display: none !important; }
   .nav__burger { display: flex !important; }
-  .nav__links { display: none; }
-  .nav__burger { display: flex; }
+  /* Mobile-Nav: Logo links, Burger sicher im sichtbaren Bereich rechts */
+  .nav__inner { padding: 0 16px; gap: 8px; }
+  .nav__logo { margin-right: auto; height: 56px; }
+  .nav__logo svg { height: 24px; }
+  .nav__right { margin-left: 0; }
   .pillar-bar__inner { grid-template-columns: 1fr; }
   /* Gestapelt: kein dangling vertikaler Strich rechts; Trennung per Unterkante */
   .pillar { border-right: none; border-bottom: 1px solid rgba(255,255,255,.10); }
@@ -491,8 +496,10 @@ img  { display: block; max-width: 100%; }
 
 /* ── Schmale Displays (Smartphones): ALLE Karten untereinander, Text umbrechen ── */
 @media (max-width: 640px) {
-  .mod-grid, .app-grid, .sys-grid, .cta3-grid { grid-template-columns: 1fr; gap: 16px; }
-  .refs-grid { grid-template-columns: repeat(2,1fr); gap: 12px; }
+  .mod-grid, .app-grid, .sys-grid, .cta3-grid, .refs-grid, .ref-mini-grid { grid-template-columns: 1fr !important; gap: 16px; }
+  .portal-box { grid-template-columns: 1fr; }
+  .ref-mini-card, .portal-box > div { min-width: 0; }
+  .ref-mini-name, .portal-box__headline, .portal-box__sub { overflow-wrap: anywhere; word-break: break-word; }
   /* Grid-Kinder dürfen schrumpfen statt rechts überzulaufen */
   .mod-card, .app-tile, .ref-item, .sys-card { min-width: 0; }
   /* Lange Wörter/URLs umbrechen statt abschneiden */
@@ -597,7 +604,6 @@ img  { display: block; max-width: 100%; }
       "uploadDate": "2026-06-15",
       "duration": "PT1M10S",
       "contentUrl": "https://nikos.audio/assets/img/Bad-Kissingen.mp4",
-      "embedUrl": "https://nikos.audio/#video",
       "publisher": { "@id": "https://nikos.audio/#organization" }
     }
   ]
