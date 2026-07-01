@@ -15,6 +15,7 @@
     var css = ""
       + "body{overflow-x:hidden;}"
       + ".nk-nav,.nav__inner{max-width:100vw;}"
+      + "@media (max-width:900px){.nav__inner{padding:0 16px;gap:8px;}.nav__logo{margin-right:auto;height:56px;}.nav__logo svg{height:24px;}.nav__right{margin-left:0;}.nav__burger{display:flex !important;}.nav__links{display:none !important;}}"
       + ".nk-footer__grid{grid-template-columns:1.2fr 1fr 1fr 1fr;}"
       + ".nk-footer,.nk-footer *{box-sizing:border-box;}"
       + ".nk-footer__inner{max-width:100%;}"
