@@ -13,6 +13,8 @@
   (function injectFooterStyles() {
     if (document.getElementById('nk-footer-mobile-css')) return;
     var css = ""
+      + "body{overflow-x:hidden;}"
+      + ".nk-nav,.nav__inner{max-width:100vw;}"
       + ".nk-footer__grid{grid-template-columns:1.2fr 1fr 1fr 1fr;}"
       + ".nk-footer,.nk-footer *{box-sizing:border-box;}"
       + ".nk-footer__inner{max-width:100%;}"
