@@ -182,8 +182,10 @@ svg#map{
 @media(max-width:900px){
   body{overflow:auto;height:auto}
   .layout{grid-template-columns:1fr;height:auto;padding:10px;gap:10px}
-  .map-panel{height:min(125vw,560px);min-height:320px;max-height:560px}
+  .map-panel{height:min(125vw,560px);min-height:320px;max-height:560px;padding-top:56px}
   .partner-panel{min-height:200px;max-height:none}
+  /* Hinweistext nach unten, damit er die nördlichen Länder oben nicht verdeckt */
+  .map-left-col{top:auto;bottom:12px}
 }
 @media(min-width:1400px){
   .layout{grid-template-columns:minmax(0,1fr) 380px}
