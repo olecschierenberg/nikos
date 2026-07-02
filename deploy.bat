@@ -78,7 +78,36 @@ if errorlevel 1 (
 )
 
 echo.
-echo === Schritt 4: Naechste Versionsnummer ermitteln ===
+echo === Schritt 4: Push zu GitHub ^(mit Auto-Rebase bei Ablehnung^) ===
+set "PUSH_OK="
+for /L %%i in (1,1,4) do (
+  if not defined PUSH_OK (
+    git push origin "%BRANCH%"
+    if not errorlevel 1 (
+      set "PUSH_OK=1"
+    ) else (
+      echo.
+      echo   [Hinweis] Push abgelehnt - Remote ist voraus ^(vermutlich hat die LP-Maschine gepusht^).
+      echo   Hole Remote-Aenderungen per Rebase und versuche erneut ^(Versuch %%i von 4^)...
+      git pull --rebase origin "%BRANCH%"
+      if errorlevel 1 (
+        echo.
+        echo [STOPP] Konflikt beim Rebase - es wurde NICHTS ueberschrieben.
+        echo         Zuruecksetzen mit:  git rebase --abort
+        echo         Danach Claude / einen Entwickler hinzuziehen.
+        goto :ende
+      )
+    )
+  )
+)
+if not defined PUSH_OK (
+  echo.
+  echo [STOPP] Push nach 4 Versuchen weiterhin abgelehnt. Bitte manuell pruefen.
+  goto :ende
+)
+
+echo.
+echo === Schritt 5: Version taggen und pushen ===
 set "NUM=0"
 for /f "tokens=1 delims= " %%t in ('git tag --list "v*" 2^>nul') do (
   set "T=%%t"
@@ -88,10 +117,6 @@ for /f "tokens=1 delims= " %%t in ('git tag --list "v*" 2^>nul') do (
 set /a NEXT=NUM+1
 set "VERSION=v!NEXT!"
 git tag -a "!VERSION!" -m "%MSG%"
-
-echo.
-echo === Schritt 5: Push zu GitHub (Branch + Tag) ===
-git push origin "%BRANCH%"
 git push origin "!VERSION!"
 
 echo.
