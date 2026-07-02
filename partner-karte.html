@@ -182,11 +182,13 @@ svg#map{
 
 /* ── Responsive ── */
 @media(max-width:900px){
-  body{overflow:auto;height:auto}
-  .layout{grid-template-columns:1fr;height:auto;padding:10px;gap:10px}
+  html,body{overflow-x:hidden}
+  body{overflow-y:auto;height:auto}
+  .layout{grid-template-columns:1fr;height:auto;padding:10px;gap:10px;max-width:100%}
+  .map-panel,.partner-panel{max-width:100%;min-width:0}
   /* Panel folgt dem Seitenverhaeltnis der Karte -> Karte fuellt die Flaeche komplett,
-     nichts wird abgeschnitten, kein Leerraum oben/unten. Buttons liegen oben links ueberm Atlantik. */
-  .map-panel{aspect-ratio:891/916;height:auto;min-height:340px;max-height:600px;padding:0;background:var(--sea)}
+     nichts wird abgeschnitten. Etwas Platz oben (padding-top) fuer den Overlay-Text. */
+  .map-panel{aspect-ratio:891/916;height:auto;min-height:340px;max-height:600px;padding:40px 0 0;background:var(--sea)}
   .partner-panel{min-height:200px;max-height:none}
   .map-left-col{top:12px;bottom:auto}
 }
