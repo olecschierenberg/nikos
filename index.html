@@ -334,22 +334,18 @@ img  { display: block; max-width: 100%; }
 /* Nativer Browser-Play-Button (v.a. iOS/Safari) skaliert nicht mit kleinen Videos -> ausblenden, eigener Button stattdessen */
 .video-player::-webkit-media-controls-start-playback-button { -webkit-appearance: none; display: none !important; }
 .video-player::-webkit-media-controls-overlay-play-button { display: none !important; }
+.video-wrap { cursor: pointer; }
 .video-play-btn {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
   width: clamp(40px, 14cqw, 90px); height: clamp(40px, 14cqw, 90px);
   border-radius: 50%; background: var(--orange); border: none; cursor: pointer;
   display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,.35); transition: transform .15s, background .15s, opacity .2s;
+  box-shadow: 0 4px 20px rgba(0,0,0,.35); transition: transform .15s, background .15s;
   z-index: 2;
 }
 .video-play-btn:hover { background: #e65c00; transform: translate(-50%,-50%) scale(1.06); }
-.video-play-btn svg { width: 68%; height: 68%; fill: #fff; }
-.video-play-btn .vp-play { margin-left: 8%; }
-.video-play-btn .vp-pause { display: none; }
-.video-wrap.is-playing .video-play-btn { opacity: .45; }
-.video-wrap.is-playing .video-play-btn:hover, .video-wrap.is-playing .video-play-btn:active { opacity: 1; }
-.video-wrap.is-playing .video-play-btn .vp-play { display: none; }
-.video-wrap.is-playing .video-play-btn .vp-pause { display: block; }
+.video-play-btn svg { width: 68%; height: 68%; fill: #fff; margin-left: 8%; }
+.video-wrap.is-playing .video-play-btn { display: none; }
 .video-meta { margin-top: 32px; display: grid; grid-template-columns: repeat(3,1fr); gap: 0; }
 .video-meta__item { padding: 20px 24px; border-top: 1px solid var(--border); border-right: 1px solid var(--border); }
 .video-meta__item:last-child { border-right: none; }
@@ -767,14 +763,13 @@ img  { display: block; max-width: 100%; }
       <p class="nk-section__sub" data-en>This is what a NIKOS announcement sounds like when it really matters.</p>
     </div>
     <div class="video-wrap">
-      <video controls preload="metadata" playsinline class="video-player" poster="assets/img/Bad-Kissingen-poster.jpg">
+      <video preload="metadata" playsinline class="video-player" poster="assets/img/Bad-Kissingen-poster.jpg">
         <source src="assets/img/Bad-Kissingen.mp4" type="video/mp4">
         <span data-de>Ihr Browser unterstützt kein HTML5-Video.</span>
         <span data-en>Your browser does not support HTML5 video.</span>
       </video>
-      <button type="button" class="video-play-btn" aria-label="Video abspielen / pausieren">
-        <svg class="vp-play" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-        <svg class="vp-pause" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+      <button type="button" class="video-play-btn" aria-label="Video abspielen">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
       </button>
     </div>
     <div class="video-meta">
@@ -1060,7 +1055,9 @@ img  { display: block; max-width: 100%; }
   var vid = wrap && wrap.querySelector('video.video-player');
   var btn = wrap && wrap.querySelector('.video-play-btn');
   if (!wrap || !vid || !btn) return;
-  btn.addEventListener('click', function(){ if (vid.paused) { vid.play(); } else { vid.pause(); } });
+  function toggleVid(){ if (vid.paused) { vid.play(); } else { vid.pause(); } }
+  btn.addEventListener('click', function(e){ e.stopPropagation(); toggleVid(); });
+  vid.addEventListener('click', toggleVid);
   vid.addEventListener('play', function(){ wrap.classList.add('is-playing'); });
   vid.addEventListener('pause', function(){ wrap.classList.remove('is-playing'); });
   vid.addEventListener('ended', function(){ wrap.classList.remove('is-playing'); });

@@ -182,10 +182,12 @@ svg#map{
 @media(max-width:900px){
   body{overflow:auto;height:auto}
   .layout{grid-template-columns:1fr;height:auto;padding:10px;gap:10px}
-  .map-panel{height:min(140vw,620px);min-height:400px;max-height:620px;padding-top:112px;background:var(--sea)}
+  .map-panel{height:min(135vw,600px);min-height:380px;max-height:600px;padding:112px 0 8px;background:var(--sea)}
   .partner-panel{min-height:200px;max-height:none}
-  /* Karte weiter nach unten geschoben (padding-top); Hinweistext oben im freien Bereich */
+  /* Hinweistext oben im freien Bereich */
   .map-left-col{top:12px;bottom:auto}
+  /* Karte 10px tiefer + ~10% groesser, waechst nach unten, fuellt die Flaeche bis zu den Raendern */
+  svg#map{transform-origin:50% 0;transform:translateY(10px) scale(1.1)}
 }
 @media(min-width:1400px){
   .layout{grid-template-columns:minmax(0,1fr) 380px}
