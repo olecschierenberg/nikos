@@ -182,8 +182,10 @@ svg#map{
 
 /* ── Responsive ── */
 @media(max-width:900px){
-  html,body{overflow-x:hidden}
-  body{overflow-y:auto;height:auto}
+  /* Hoehe wird vom Eltern-iframe an den Inhalt angepasst -> intern kein Scrollbalken noetig.
+     overflow:hidden verhindert den zeitweise auftauchenden Phantom-Scrollbalken. */
+  html,body{overflow:hidden}
+  body{height:auto}
   .layout{grid-template-columns:1fr;height:auto;padding:0;gap:12px;max-width:100%}
   .map-panel,.partner-panel{max-width:100%;min-width:0}
   /* Das SVG selbst bekommt das Karten-Seitenverhaeltnis -> fuellt die Breite exakt,
@@ -559,7 +561,7 @@ function showPartnerCard(entryId) {
 
 // ── Iframe-Höhe an Parent melden ──
 function reportHeight() {
-  var h = document.documentElement.scrollHeight || document.body.scrollHeight;
+  var h = (document.documentElement.scrollHeight || document.body.scrollHeight) + 4;
   try { window.parent.postMessage({type:'nk-iframe-height', height: h}, '*'); } catch(e){}
 }
 // Auf Resize reagieren
