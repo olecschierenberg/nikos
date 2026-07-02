@@ -560,18 +560,22 @@ function showPartnerCard(entryId) {
 }
 
 // ── Iframe-Höhe an Parent melden ──
-// Gegen Aufschaukel-Schleife: Desktop (>900px) meldet 0 -> feste CSS-Hoehe (100vh-Rahmen).
-// Schmal (<=900px): echte .layout-Inhaltshoehe (unabhaengig von iframe-Hoehe), nur bei Aenderung.
+// WICHTIG gegen Aufschaukel-Schleife:
+//  - Im Desktop-Layout (>900px) fuellt die Karte einen festen Rahmen (height:100vh).
+//    Dort KEINE Hoehe melden (height:0) -> Parent nutzt die feste CSS-Hoehe.
+//    Sonst: iframe hoeher -> 100vh hoeher -> naechste Messung hoeher -> endlos.
+//  - Im gestapelten Modus (<=900px) die ECHTE Inhaltshoehe der .layout messen
+//    (haengt NICHT von der iframe-Hoehe ab) und nur bei echter Aenderung senden.
 var nkLastH = -1;
 function reportHeight() {
   var h = 0;
   if (window.innerWidth > 900) {
-    h = 0;
+    h = 0; // Desktop: feste CSS-Hoehe verwenden
   } else {
     var el = document.querySelector('.layout');
     h = el ? Math.ceil(el.getBoundingClientRect().height) : document.body.scrollHeight;
   }
-  if (Math.abs(h - nkLastH) <= 1) return;
+  if (Math.abs(h - nkLastH) <= 1) return; // Jitter/Rueckkopplung stoppen
   nkLastH = h;
   try { window.parent.postMessage({type:'nk-iframe-height', height: h}, '*'); } catch(e){}
 }
@@ -642,23 +646,4 @@ loadSheetData().then(() => {
   });
 
   // entryMeta mit regionDB synchronisieren:
-  // Regionen ohne Partner → selectable=false (ausgegraut)
-  Object.keys(entryMeta).forEach(rid => {
-    const pids = regionDB[rid] || [];
-    if (pids.length === 0 && entryMeta[rid].selectable !== false) {
-      // Kein Partner → ausgegraut markieren
-      entryMeta[rid]._noPartner = true;
-      const el = document.querySelector('[data-entry="' + rid + '"]');
-      if (el) el.classList.add('no-partner');
-      // SVG-Pfad ebenfalls markieren
-      const svgEl = document.querySelector('[data-id="' + rid + '"], [data-entry-id="' + rid + '"]');
-      if (svgEl) { svgEl.style.opacity='0.35'; svgEl.style.cursor='default'; svgEl.style.pointerEvents='none'; }
-    }
-  });
-  showPartnerCard(null);
-});
-
-</script>
-
-</body>
-</html>
+  // Regionen ohne Pa
