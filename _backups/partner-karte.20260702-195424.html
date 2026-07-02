@@ -636,18 +636,4 @@ loadSheetData().then(() => {
     const pids = regionDB[rid] || [];
     if (pids.length === 0 && entryMeta[rid].selectable !== false) {
       // Kein Partner → ausgegraut markieren
-      entryMeta[rid]._noPartner = true;
-      const el = document.querySelector('[data-entry="' + rid + '"]');
-      if (el) el.classList.add('no-partner');
-      // SVG-Pfad ebenfalls markieren
-      const svgEl = document.querySelector('[data-id="' + rid + '"], [data-entry-id="' + rid + '"]');
-      if (svgEl) { svgEl.style.opacity='0.35'; svgEl.style.cursor='default'; svgEl.style.pointerEvents='none'; }
-    }
-  });
-  showPartnerCard(null);
-});
-
-</script>
-
-</body>
-</html>
+      entryMeta[rid

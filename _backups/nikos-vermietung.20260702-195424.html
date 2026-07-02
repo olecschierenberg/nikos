@@ -483,15 +483,4 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
       if(iFirma<0) return;
       var n=0;
       for(var k=1;k<rows.length;k++){
-        var firma=(rows[k][iFirma]||'').trim();
-        var rad=(iRad>=0?(rows[k][iRad]||''):'').trim().toUpperCase()==='TRUE';
-        if(firma && !rad) n++;
-      }
-      var shown=n-1;
-      if(shown>0){ var el=document.getElementById('partner-count'); if(el) el.textContent=shown; }
-    })
-    .catch(function(e){ /* Fallback: HTML-Wert bleibt stehen */ });
-})();
-</script>
-</body>
-</html>
+        var firma=(rows[k][iFirma]|
