@@ -159,7 +159,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
 
 /* Datenblatt list */
 .datenblatt-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.datenblatt-item{background: var(--card-soft);border:1.5px solid var(--border);border-radius:var(--r-lg);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color .15s;overflow:hidden;position:relative}
+.datenblatt-item{background: var(--card-soft);border:1.5px solid var(--border);border-radius:var(--r-lg);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color .15s;overflow:hidden;position:relative;text-decoration:none;color:inherit}
 .datenblatt-item:hover{border-color:var(--orange);transform:translateY(-3px);box-shadow:var(--shadow-lg)}
 .datenblatt-item::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--orange);transform:scaleX(0);transition:transform .25s;transform-origin:left}
 .datenblatt-item:hover::after{transform:scaleX(1)}
@@ -351,7 +351,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
     <h2 class="section__title" data-en>Technical specifications</h2>
 
     <div class="datenblatt-list">
-      <div class="datenblatt-item">
+      <a class="datenblatt-item" href="assets/datenblaetter/NIKOS-dispatcher.pdf" download aria-label="Datenblatt herunterladen">
         <div class="datenblatt-item__info">
           <div class="datenblatt-item__label" data-de>Datenblatt</div>
           <div class="datenblatt-item__label" data-en>Data sheet</div>
@@ -359,9 +359,8 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <div class="datenblatt-item__desc" data-de>Technische Spezifikationen, Anschlüsse, Abmessungen</div>
           <div class="datenblatt-item__desc" data-en>Technical specifications, connections, dimensions</div>
         </div>
-        <a href="assets/datenblaetter/NIKOS-dispatcher.pdf" class="datenblatt-item__dl" download aria-label="Datenblatt herunterladen">&#8595;</a>
-      </div>
-      <div class="datenblatt-item">
+      </a>
+      <a class="datenblatt-item" href="assets/datenblaetter/NIKOS-audio.pdf" download aria-label="Datenblatt herunterladen">
         <div class="datenblatt-item__info">
           <div class="datenblatt-item__label" data-de>Datenblatt</div>
           <div class="datenblatt-item__label" data-en>Data sheet</div>
@@ -369,9 +368,8 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <div class="datenblatt-item__desc" data-de>Reichweite, Akkulaufzeit, Zubehör</div>
           <div class="datenblatt-item__desc" data-en>Range, battery life, accessories</div>
         </div>
-        <a href="assets/datenblaetter/NIKOS-audio.pdf" class="datenblatt-item__dl" download aria-label="Datenblatt herunterladen">&#8595;</a>
-      </div>
-      <div class="datenblatt-item">
+      </a>
+      <a class="datenblatt-item" href="assets/datenblaetter/NIKOS-moon.pdf" download aria-label="Datenblatt herunterladen">
         <div class="datenblatt-item__info">
           <div class="datenblatt-item__label" data-de>Datenblatt</div>
           <div class="datenblatt-item__label" data-en>Data sheet</div>
@@ -379,9 +377,8 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <div class="datenblatt-item__desc" data-de>Lichtleistung, Ladezeiten, Technische Parameter</div>
           <div class="datenblatt-item__desc" data-en>Light output, charging times, technical parameters</div>
         </div>
-        <a href="assets/datenblaetter/NIKOS-moon.pdf" class="datenblatt-item__dl" download aria-label="Datenblatt herunterladen">&#8595;</a>
-      </div>
-      <div class="datenblatt-item">
+      </a>
+      <a class="datenblatt-item" href="assets/datenblaetter/NIKOS-horn.pdf" download aria-label="Datenblatt herunterladen">
         <div class="datenblatt-item__info">
           <div class="datenblatt-item__label" data-de>Datenblatt</div>
           <div class="datenblatt-item__label" data-en>Data sheet</div>
@@ -389,9 +386,8 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <div class="datenblatt-item__desc" data-de>Aktiver Hornlautsprecher, Hörradius, Anschlüsse</div>
           <div class="datenblatt-item__desc" data-en>Active horn speaker, hearing radius, connections</div>
         </div>
-        <a href="assets/datenblaetter/NIKOS-horn.pdf" class="datenblatt-item__dl" download aria-label="Datenblatt herunterladen">&#8595;</a>
-      </div>
-      <div class="datenblatt-item">
+      </a>
+      <a class="datenblatt-item" href="assets/datenblaetter/NIKOS-flash.pdf" download aria-label="Datenblatt herunterladen">
         <div class="datenblatt-item__info">
           <div class="datenblatt-item__label" data-de>Datenblatt</div>
           <div class="datenblatt-item__label" data-en>Data sheet</div>
@@ -399,9 +395,8 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <div class="datenblatt-item__desc" data-de>Blitzleuchte für Alarmierung und Signalisierung</div>
           <div class="datenblatt-item__desc" data-en>Strobe light for alerting and signalling</div>
         </div>
-        <a href="assets/datenblaetter/NIKOS-flash.pdf" class="datenblatt-item__dl" download aria-label="Datenblatt herunterladen">&#8595;</a>
-      </div>
-      <div class="datenblatt-item">
+      </a>
+      <a class="datenblatt-item" href="assets/datenblaetter/NIKOS-relay.pdf" download aria-label="Datenblatt herunterladen">
         <div class="datenblatt-item__info">
           <div class="datenblatt-item__label" data-de>Datenblatt</div>
           <div class="datenblatt-item__label" data-en>Data sheet</div>
@@ -409,9 +404,8 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <div class="datenblatt-item__desc" data-de>Fernschaltmodul 230 V / 10 A</div>
           <div class="datenblatt-item__desc" data-en>Remote switching module 230 V / 10 A</div>
         </div>
-        <a href="assets/datenblaetter/NIKOS-relay.pdf" class="datenblatt-item__dl" download aria-label="Datenblatt herunterladen">&#8595;</a>
-      </div>
-      <div class="datenblatt-item">
+      </a>
+      <a class="datenblatt-item" href="assets/datenblaetter/NIKOS-clamp.pdf" download aria-label="Datenblatt herunterladen">
         <div class="datenblatt-item__info">
           <div class="datenblatt-item__label" data-de>Datenblatt</div>
           <div class="datenblatt-item__label" data-en>Data sheet</div>
@@ -419,9 +413,8 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <div class="datenblatt-item__desc" data-de>Universelles Befestigungssystem für Masten und Bäume</div>
           <div class="datenblatt-item__desc" data-en>Universal mounting system for masts and trees</div>
         </div>
-        <a href="assets/datenblaetter/NIKOS-clamp.pdf" class="datenblatt-item__dl" download aria-label="Datenblatt herunterladen">&#8595;</a>
-      </div>
-      <div class="datenblatt-item">
+      </a>
+      <a class="datenblatt-item" href="assets/datenblaetter/NIKOS-XLR.pdf" download aria-label="Datenblatt herunterladen">
         <div class="datenblatt-item__info">
           <div class="datenblatt-item__label" data-de>Datenblatt</div>
           <div class="datenblatt-item__label" data-en>Data sheet</div>
@@ -429,9 +422,8 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <div class="datenblatt-item__desc" data-de>4-Kanal-Erweiterung und Netzwerkkabel-Adapter</div>
           <div class="datenblatt-item__desc" data-en>4-channel expansion and network cable adapter</div>
         </div>
-        <a href="assets/datenblaetter/NIKOS-XLR.pdf" class="datenblatt-item__dl" download aria-label="Datenblatt herunterladen">&#8595;</a>
-      </div>
-      <div class="datenblatt-item">
+      </a>
+      <a class="datenblatt-item" href="assets/datenblaetter/NIKOS-alarm.pdf" download aria-label="Datenblatt herunterladen">
         <div class="datenblatt-item__info">
           <div class="datenblatt-item__label" data-de>Datenblatt</div>
           <div class="datenblatt-item__label" data-en>Data sheet</div>
@@ -439,9 +431,8 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <div class="datenblatt-item__desc" data-de>Notfall-/Alarm-Schalter für Notrufsäulen und Hilferuf</div>
           <div class="datenblatt-item__desc" data-en>Emergency/alarm switch for call points and help requests</div>
         </div>
-        <a href="assets/datenblaetter/NIKOS-alarm.pdf" class="datenblatt-item__dl" download aria-label="Datenblatt herunterladen">&#8595;</a>
-      </div>
-      <div class="datenblatt-item">
+      </a>
+      <a class="datenblatt-item" href="assets/datenblaetter/NIKOS-LED.pdf" download aria-label="Datenblatt herunterladen">
         <div class="datenblatt-item__info">
           <div class="datenblatt-item__label" data-de>Datenblatt</div>
           <div class="datenblatt-item__label" data-en>Data sheet</div>
@@ -449,8 +440,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <div class="datenblatt-item__desc" data-de>Fernschaltbare Arbeits- und Notbeleuchtung</div>
           <div class="datenblatt-item__desc" data-en>Remotely switchable work and emergency lighting</div>
         </div>
-        <a href="assets/datenblaetter/NIKOS-LED.pdf" class="datenblatt-item__dl" download aria-label="Datenblatt herunterladen">&#8595;</a>
-      </div>
+      </a>
     </div>
   </div>
   <div class="section__inner" style="margin-top:8px;">
