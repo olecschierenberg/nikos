@@ -438,4 +438,17 @@ img{display:block;max-width:100%}
 
 <div style="height:6px;background:linear-gradient(to bottom,var(--sec-dark),var(--surface-footer,#333333));"></div>
 <!-- FOOTER -->
-<d
+<div id="nk-footer-root"></div>
+<div id="nk-cookiemodal-root"></div>
+<script src="assets/js/nikos-footer.js"></script>
+<script src="assets/js/nikos-config.js"></script>
+<script>
+(function(){
+  var url = (typeof window.NIKOS_CONTACT_URL !== 'undefined') ? window.NIKOS_CONTACT_URL : 'nikos-kontakt.html';
+  document.querySelectorAll('.nav__cta,.nav__cta-mobile').forEach(function(el){
+    el.href = url;
+  });
+})();
+</script>
+</body>
+</html>
