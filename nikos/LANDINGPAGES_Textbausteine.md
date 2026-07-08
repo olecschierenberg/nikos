@@ -1,5 +1,5 @@
 # NIKOS Landingpage — Freigegebene Textbausteine
-_Stand: 01.07.2026 (3) — NUR diese Bausteine als inhaltliche Grundlage verwenden._
+_Stand: 09.07.2026 (4) — NUR diese Bausteine als inhaltliche Grundlage verwenden._
 _Erfinde KEINE darüber hinausgehenden Funktionen oder Szenarien._
 
 ---
@@ -20,21 +20,21 @@ ohne dass der Prompt immer größer wird.
 - Beispiele: Crowd Management → „Besucher sicher lenken – per Knopfdruck"; Durchsagesystem → „Durchsagen auf Tastendruck, auch ohne Handynetz"; Perimeterschutz → „Gelände per Funk überwachen"; Besucherinformation → „Alle Zuschauer zuverlässig informieren".
 
 ### Intro (3–4 Sätze, erklärt NIKOS + Fallbezug)
-- „NIKOS ist ein modulares, autarkes Kommunikations- und Sicherheitssystem zur zielgerichteten Ausspielung von Durchsageeinheiten in frei definierbaren Bereichen. Für [EINSATZ] in [REGION] stellt NIKOS die unterbrechungsfreie Informationsübermittlung sicher, auch bei Strom- oder Internetausfall. Komponenten wie NIKOS [audio]² sind extrem robust, wetterfest und besitzen eine interne Notstromversorgung."
+- „NIKOS ist ein modulares, autarkes Kommunikations- und Sicherheitssystem zur zielgerichteten Ausspielung von Durchsagen in frei definierbaren Bereichen. Für Veranstaltungen wie [EINSATZ] in [REGION] stellt NIKOS die unterbrechungsfreie Informationsübermittlung sicher, auch bei Strom- oder Internetausfall. Komponenten wie NIKOS [audio]² sind extrem robust, wetterfest und besitzen eine interne Notstromversorgung."
 
 ### USP (technisch + Kosteneinsparung)
-- „Durch die Kombination von Alarm-, Ansage- und Steuerfunktionen in einer Plattform sinkt der Bedarf an separaten Lautsprecheranlagen, dedizierten Steuergeräten und Fachkräften für mehrere Teilsysteme. Zentrale Steuerung über NIKOS [dispatcher]² und Zusatzfunktionen wie optische Signalisierung über NIKOS [flash]² oder Schaltung von externen Geräten über NIKOS [relay]² ermöglichen eine Erhöhung des Sicherheitsstandards und der Funktionalitäten bei gleichzeitig möglicher Reduzierung der Gesamtkosten."
+- „Durch die Bündelung mehrerer Steuer- und Überwachungsfunktionen in einer Plattform sinkt der Bedarf an separaten Lautsprecheranlagen, dedizierten Steuergeräten und Fachkräften zur Installation und Betreuung unterschiedlicher Teilsysteme. Die zentrale Bedienung über NIKOS [dispatcher]² sowie Zusatzfunktionen wie optische Signalisierung über NIKOS [LED]² oder NIKOS [flash]² und die Schaltung externer Geräte über NIKOS [relay]² ermöglichen eine Erhöhung des Sicherheitsstandards und der Funktionalitäten bei gleichzeitig möglicher Reduzierung der Gesamtkosten."
 
 ### Muster-Bausteine (Wortlaut-Vorgaben, [EINSATZ]/[REGION] einsetzen)
 _Vom Nutzer freigegebene Formulierungen — als Vorlage/Tonfall für ALLE passenden LPs (Perimeterschutz, Event-Sicherheit). Platzhalter durch konkrete Werte ersetzen; Numerus-Regel beachten (der Weihnachtsmarkt in <Stadt <200.000 Einwohner> / Weihnachtsmärkte in <Bundesland>)._
 
 **Intro (Plattform-Bündelung):**
 - „Für [EINSATZ] in [REGION] bündelt NIKOS Alarmierung, Informationsansagen, Hintergrundmusik, Fernsteuerung und Statusmonitoring in einer Plattform."
-- „Das reduziert Material-, Installations- und Betriebsaufwand bei gleichzeitig übersichtlicherer Systemstruktur."
+- „Das reduziert Material-, Installations- sowie Betriebsaufwand und gewährleistet eine übersichtliche Systemarchitektur."
 
 **FAQ – Normkonformität:**
 - Frage: „Entsprechen Durchsagen mit NIKOS den geltenden Normen?"
-- „NIKOS wurde speziell für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen entwickelt und ist technisch für den Einsatz in Alltags- und Notfallsituationen ausgelegt. Für funkbasierte Sprachalarmierungsanlagen ist die DIN EN 50849 (Elektroakustische Notfallwarnsysteme) der maßgebliche Orientierungsrahmen. Die dort genannten Anforderungen werden von NIKOS – im Gegensatz zu mobilfunkbasierten Systemen – voll erfüllt, da keine Abhängigkeit von einem fremden Netz besteht und die Verfügbarkeit dadurch jederzeit sichergestellt werden kann. Auch über [PROBLEM] hinausgehende Kommunikations- und Sicherheitsaufgaben für [EINSATZ] in [REGION] lassen sich mit NIKOS flexibel umsetzen. Das modulare System erlaubt es, die konkrete Funktionalität auf die individuellen Anforderungen des jeweiligen Einsatzfalles anzupassen."
+- „NIKOS wurde speziell für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen entwickelt und ist technisch für den Einsatz in Alltags- und Notfallsituationen ausgelegt. Für elektroakustische Notfallwarnsysteme (ELA-Anlagen) ist die DIN EN 50849 der maßgebliche Orientierungsrahmen. Die dort genannten Anforderungen werden von NIKOS – im Gegensatz zu mobilfunkbasierten Systemen – voll erfüllt, da keine Abhängigkeit von einem fremden Netz besteht. Andere aus der Sicherheitstechnik bekannte Normen wie die DIN EN 54, DIN VDE 0833-4 sowie DIN 14675 (Sprachalarmierungsanlagen) sind auf das Funktionsspektrum von NIKOS nicht anwendbar und daher für eine Genehmigung nicht relevant. NIKOS ist das marktführende Durchsagesystem für temporäre und mobile Anwendungen und seit 2017 vielfach erfolgreich im Einsatz. RADACOM und ihr regionaler NIKOS-Partner beraten Sie gerne zu den vielfältigen Funktionen von NIKOS und unterstützen Sie bei der kostenschonenden Umsetzung der Anforderungen. (WORTGENAU verwenden — compliance-relevant.)"
 
 **FAQ – Kostenvorteile:**
 - Frage: „Wo entstehen beim Einsatz von NIKOS Kostenvorteile?"
@@ -46,7 +46,7 @@ _Vom Nutzer freigegebene Formulierungen — als Vorlage/Tonfall für ALLE passen
 
 **FAQ – Installation / Flexibilität:**
 - Frage: „Ist NIKOS kurzfristig und flexibel einsetzbar?"
-- „NIKOS ist für flexible Außeneinsätze an Orten ohne feste Infrastruktur ausgelegt. Die Module lassen sich von zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus. NIKOS kann unter Umständen ein vorhandenes digitales Funknetz mitnutzen."
+- „NIKOS wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus. NIKOS kann unter Umständen ein vorhandenes digitales Funknetz mitnutzen."
 
 **FAQ – Durchsagen bei lauter (Blas-)Musik:**
 - Frage: „Wie werden Durchsagen bei lauter Blasmusik gehört?"
@@ -123,6 +123,17 @@ _Vom Nutzer wortgenau freigegeben. Für genau diesen Fall EXAKT so verwenden; so
 
 ---
 
+## Terminologie & Wording-Regeln (verbindlich)
+
+- **Durchsagen vs. Ansagen:** Im **Sicherheitskontext** (Notfall, Alarmierung, Warnung, Räumung) IMMER „Durchsagen". „Ansagen" nur für vorgefertigte/redaktionelle Informationen (Programm-/Service-Ansagen).
+- **Kein „Volksfest" für Kirmes-Events:** Jahrmarkt, Kirmes, Rummel und Feste ohne große Festzelte (z. B. Hamburger DOM, Bremer Freimarkt) NICHT „Volksfest" nennen → „Großveranstaltung" oder konkreter Eventtyp. „Volksfest" nur für echte Festzelt-Volksfeste (Oktoberfest, Cannstatter Wasen).
+- **„Für Veranstaltungen wie …":** „Für Veranstaltungen wie [EINSATZ] …" statt „Für [EINSATZ] …" — die LP beschreibt einen MÖGLICHEN Einsatz, NICHT suggerieren, NIKOS sei dort bereits im Einsatz (echte Einsätze nur in den Referenzen).
+- **Headline-Muster mit Doppelpunkt (PFLICHT):** „<Problem> für <Einsatz> [in <Region>]: <konkreter Pain Point>". Der Builder trennt am Doppelpunkt: davor = Banner-Titel (H1, einzeilig), danach = Intro-Überschrift (Label „Herausforderung"). Der Pain Point ist also eine sichtbare Herausforderungs-Headline → prägnant, sachlich, ohne Panikmache.
+- **Feste Struktur (vom Builder gesetzt, NICHT generieren):** Intro-Label „Herausforderung"/„Challenge"; USP-Label „Lösung"/„Solution"; USP-Überschrift „Ein einheitliches Kommunikations- und Steuerungssystem für Alltag und Ernstfall". Hero-Bild, verlinkte Modul-Logos und diese Labels erzeugt der Builder (Feinschliff-Node) automatisch. Das Feld subhead wird nur noch als Fallback genutzt (falls Headline ohne Doppelpunkt).
+- **Event-Kurznamen (Keywordkombinationen):** nur Kurzform — „Kirchentag" (nicht „40. Deutscher Evangelischer Kirchentag 2027"), „BUGA Oberes Mittelrheintal", „CHIO Aachen". Bei jährlichen/regelmäßigen Events KEIN Jahr.
+
+---
+
 ## Verbotene Formulierungen / Regeln
 
 - ❌ „NIKOS ersetzt KEINE Funkgeräte, sondern NUTZT Funk zur Ansprache der Durchsageeinheiten." — ergibt keinen praktischen Sinn, NIE verwenden
@@ -156,3 +167,4 @@ _Vom Nutzer wortgenau freigegeben. Für genau diesen Fall EXAKT so verwenden; so
 | 18.06.2026 | Funk-Satz verboten; FAQ-Redundanz-Regel; Variablen-Regel ergänzt |
 | 01.07.2026 | Generischen Subhead verboten + variable Subhead-Beispiele; Muster-Bausteine mit [EINSATZ]/[REGION]; Numerus-Regel-Hinweis |
 | 01.07.2026 (3) | Referenztexte.md integriert (Goldstandard + Festumzug-FAQ, englische FAQ2 vervollständigt); Muster-Bausteine „Blasmusik/[flash]²" + „Nachtruhe/[dispatcher]²"; Pain Points v2 je Einsatzart eingebettet |
+| 09.07.2026 (4) | Terminologie/Wording-Regeln ergänzt (Durchsagen/Ansagen, kein Volksfest für Kirmes, Veranstaltungen wie …, Headline-Doppelpunkt-Muster, feste Builder-Struktur, Event-Kurznamen); Intro/USP/Norm-FAQ-Bausteine auf neuen Wortlaut aktualisiert (ELA, DIN-Nicht-Anwendbarkeit, marktführend seit 2017) |
