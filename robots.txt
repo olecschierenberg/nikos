@@ -1,5 +1,5 @@
 # ═══════════════════════════════════════════════════════════
-#  nikos.audio – robots.txt
+#  nikos.info – robots.txt
 #  Suchmaschinen und KI-Crawler ausdrücklich willkommen.
 # ═══════════════════════════════════════════════════════════
 
@@ -40,4 +40,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://nikos.audio/sitemap.xml
+Sitemap: https://nikos.info/sitemap.xml

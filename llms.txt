@@ -1,0 +1,48 @@
+# NIKOS
+
+> NIKOS ist eine mobile, autarke Kommunikations- und Sicherheitsbeschallungs-Plattform für Großveranstaltungen, Baustellen und Krisenlagen. Sie ermöglicht Notfall- und Sicherheitsdurchsagen, Alarmierung, Evakuierung, Fernsteuerung und Systemmonitoring per verschlüsseltem DMR-Digitalfunk – ohne WLAN, Mobilfunk, Stromnetz oder feste Verkabelung. NIKOS wird von der RADACOM GmbH entwickelt und über zertifizierte Partner tageweise vermietet.
+
+## Was ist NIKOS
+
+NIKOS ist ein modulares System aus funkvernetzten Geräten, das in unter 10 Minuten einsatzbereit ist. Eine Funkleitstelle steuert alle angeschlossenen Audio-, Licht- und Signaleinheiten. Weil die Verbindung auf autarkem Digitalfunk beruht, funktioniert NIKOS auch dann, wenn Strom, Mobilfunk und Internet ausfallen – als eigenständige Lösung oder als Rückfallebene zu fester Technik.
+
+## Module
+
+- **NIKOS [dispatcher]²** – Funkleitstelle: zentraler Arbeitsplatz für Durchsagen und Fernsteuerung.
+- **NIKOS [audio]²** – mobile Durchsage- & Fernsteuereinheit (Akku bis 16 Std., Solar-Option, IP67).
+- **NIKOS [horn]²** – aktiver Hornlautsprecher, 50–60 m Hörradius.
+- **NIKOS [XLR]²** – 4-Kanal-Audioerweiterung (bis 14 analoge / 28 AES3-Wege pro Standort).
+- **NIKOS [relay]²** – Fernschaltmodul für externe 230-V-Geräte bis 10 A.
+- **NIKOS [flash]²** – Blitzleuchte zur optischen Alarmierung.
+- **NIKOS [LED]²** – fernschaltbare Arbeits- & Notbeleuchtung.
+- **NIKOS [moon]²** – autarke Notbeleuchtung ohne Stromnetz.
+- **NIKOS [clamp]²** – universelles Befestigungssystem.
+- **NIKOS [alarm]²** – manueller Notfall- & Alarm-Schalter.
+
+## Normen & Auflagen
+
+NIKOS unterstützt Betreiber bei der Erfüllung von Sicherheitsauflagen für temporäre Veranstaltungen: Sprachalarmierung in Anlehnung an DIN EN 50849 (elektroakustische Notfallsysteme), Notbeleuchtung nach DIN EN 1838 sowie Auflagen nach Versammlungsstättenverordnung (VStättVO).
+
+## Einsatzbereiche
+
+Festivals, Volks-, Stadt- und Parkfeste, Weihnachtsmärkte, Festumzüge, Sport- und Firmenveranstaltungen, Gedenk- und Jubiläumsfeiern, Baustellen/Industrie sowie Krisenlagen und Bevölkerungswarnung.
+
+## Mietmodell
+
+NIKOS wird nicht verkauft, sondern über ein Netz von der RADACOM GmbH zertifizierter Partner tageweise vermietet – inklusive Beratung, Einweisung und technischem Support.
+
+## Kernseiten
+
+- [Startseite](https://nikos.info/): Überblick und Kurzdefinition.
+- [System](https://nikos.info/nikos-system.html): Funktionsweise und Technik.
+- [Produkte / Module](https://nikos.info/nikos-produkte.html): alle NIKOS-Module im Detail.
+- [Anwendungen](https://nikos.info/nikos-anwendungen.html): Einsatzszenarien nach Veranstaltungstyp.
+- [Vermietung](https://nikos.info/nikos-vermietung.html): Mietmodell und Partner.
+- [Übertragungstechnik im Vergleich](https://nikos.info/nikos-vergleich-uebertragungstechnik.html): NIKOS vs. 100 V, Glasfaser, Mobilfunk, Richtfunk, Satellit.
+- [Referenzen](https://nikos.info/nikos-referenzen.html): reale Einsätze.
+- [Downloads](https://nikos.info/nikos-downloads.html): Datenblätter, Ausschreibungstexte, Checklisten.
+- [Kontakt](https://nikos.info/nikos-kontakt.html): Beratung und Mietanfrage.
+
+## Anbieter
+
+RADACOM GmbH · [radacom.de](https://www.radacom.de)
