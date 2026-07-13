@@ -347,4 +347,15 @@ a{color:inherit}
     document.addEventListener('click',function(){dd.classList.remove('open');});
     dd.addEventListener('click',function(e){
       var opt=e.target.closest('[data-lang-opt]');
-      if(opt){setLang(opt.getAttribute('data-lang-opt'));dd.classList.rem
+      if(opt){setLang(opt.getAttribute('data-lang-opt'));dd.classList.remove('open');}
+    });
+  }
+  var burger=document.getElementById('navBurger');
+  var mob=document.getElementById('navMobile');
+  if(burger&&mob){burger.addEventListener('click',function(){mob.classList.toggle('open');});}
+  var saved;try{saved=localStorage.getItem('nk-lang');}catch(e){}
+  setLang(saved==='en'?'en':'de');
+})();
+</script>
+</body>
+</html>

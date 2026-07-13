@@ -287,6 +287,14 @@ img  { display: block; max-width: 100%; }
   color: #E8EDF2;
   margin: 0;
 }
+.hero-statement__sub {
+  font-family: var(--font);
+  font-size: clamp(15px, 1.4vw, 18px);
+  font-weight: 400;
+  line-height: 1.55;
+  color: #C8D0D8;
+  margin: 10px 0 0;
+}
 
 /* ══ PILLAR BAR ══ */
 .pillar-bar { background: var(--sec-dark); border-bottom: 1px solid rgba(255,255,255,.06); }
@@ -306,7 +314,7 @@ img  { display: block; max-width: 100%; }
 .nk-section__inner { max-width: var(--max-w); margin: 0 auto; padding: 0 32px; }
 .nk-section__header { margin-bottom: 52px; }
 .nk-section__header--center { text-align: center; }
-.nk-section__sub { font-size: 18px; color: var(--mid); max-width:760px; line-height: 1.65; margin-top: 12px; }
+.nk-section__sub { font-size: 18px; color: var(--mid); max-width:none; line-height: 1.65; margin-top: 12px; }
 .nk-section--sec-dark .nk-section__sub { color: #C8D0D8; }
 .nk-section--sec-dark .heading-l,
 .nk-section--sec-dark .heading-m,
@@ -747,8 +755,10 @@ img  { display: block; max-width: 100%; }
 <!-- Statement-Text unter dem dunklen Kennzahlen-Balken -->
 <div class="hero-statement">
   <div class="hero-statement__inner">
-    <h1 class="hero-statement__text" data-de style="display:block">Vermietung von mobilen Durchsageanlagen, Funkfernsteuerungen und Monitoringsystemen für Veranstaltungen, Baustellen und Krisenlagen - funktionieren auch, wenn Strom, Mobilfunk und Internet ausfallen</h1>
-    <h1 class="hero-statement__text" data-en>Rental of mobile PA systems, radio remote controls and monitoring systems for events, construction sites and crisis situations – working even when power, mobile networks and internet fail.</h1>
+    <h1 class="hero-statement__text" data-de style="display:block">Vermietung von mobilen Durchsageanlagen, Funkfernsteuerungen und Monitoringsystemen</h1>
+    <p class="hero-statement__sub" data-de style="display:block">Für Veranstaltungen, Baustellen und Krisenlagen – autark einsatzbereit, auch wenn Strom, Mobilfunk und Internet ausfallen.</p>
+    <h1 class="hero-statement__text" data-en>Rental of mobile PA systems, radio remote controls and monitoring systems</h1>
+    <p class="hero-statement__sub" data-en>For events, construction sites and crisis situations – self-sufficient and ready, even when power, mobile networks and internet fail.</p>
   </div>
 </div>
 
