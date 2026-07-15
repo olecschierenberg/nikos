@@ -26,6 +26,9 @@
 @font-face{font-family:'Source Sans 3';font-style:normal;font-weight:300 700;font-display:swap;src:url('assets/fonts/SourceSans3-VariableFont_wght.ttf') format('truetype-variations');}
 @font-face{font-family:'Source Sans 3';font-style:italic;font-weight:300 700;font-display:swap;src:url('assets/fonts/SourceSans3-Italic-VariableFont_wght.ttf') format('truetype-variations');}
 @font-face{font-family:'Exo 2';font-style:normal;font-weight:400 700;font-display:swap;src:url('assets/fonts/Exo2-VariableFont_wght.ttf') format('truetype-variations');}
+
+/* Absende-Button erst nach Datenschutz-Zustimmung aktiv */
+.btn-primary[disabled]{background:#C8D0D8 !important;border-color:#C8D0D8 !important;color:#fff !important;cursor:not-allowed;opacity:.9}
 </style>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -734,6 +737,20 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
       if(shown>0){ var el=document.getElementById('partner-count'); if(el) el.textContent=shown; }
     })
     .catch(function(e){ /* Fallback: HTML-Wert bleibt stehen */ });
+})();
+</script>
+
+<script>
+/* Absende-Buttons erst aktivieren, wenn die Datenschutz-Checkbox angehakt ist */
+(function(){
+  document.querySelectorAll('form').forEach(function(form){
+    var consent = form.querySelector('input[type="checkbox"][required]');
+    var btns = form.querySelectorAll('button[type="submit"]');
+    if(!consent || !btns.length) return;
+    function sync(){ btns.forEach(function(b){ b.disabled = !consent.checked; }); }
+    consent.addEventListener('change', sync);
+    sync();
+  });
 })();
 </script>
 </body>

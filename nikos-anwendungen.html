@@ -123,18 +123,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
 .app-card__text{font-size:14px;color:var(--mid);line-height:1.6;flex:1}
 .app-card__link{font-size:13px;font-weight:600;color:var(--orange)}
 
-/* App detail expandable */
-.app-detail{margin-top:48px;display:none}
-.app-detail.is-open{display:block}
-.detail-inner{background:var(--s2);border:1px solid var(--card-border);border-radius:var(--r);padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:48px}
-.detail-col__label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);margin-bottom:10px}
-.detail-col__title{font-size:24px;font-weight:700;color:var(--dark);margin-bottom:16px}
-.detail-col__text{font-size:15px;color:var(--mid);line-height:1.7;margin-bottom:16px}
-.detail-col__refs{margin-top:18px;background:var(--card-dark);border-radius:4px;padding:14px 16px}
-.detail-col__refs-label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);margin-bottom:6px}
-.detail-col__refs-names{font-size:16px;font-weight:600;color:var(--card-text-primary);line-height:1.6}
-.detail-close{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--light);cursor:pointer;background:none;border:none;font-family:var(--font);margin-top:24px}
-.detail-close:hover{color:var(--orange)}
+
 
 /* Einsatzfälle-Akkordeon */
 .ec-group{margin-top:40px}
@@ -193,8 +182,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
 @media(max-width:900px){
   .nav__links{display:none}.nav__burger{display:flex}
   .app-grid{grid-template-columns:repeat(2,1fr)}
-  .detail-inner{grid-template-columns:1fr}
-  .cta-band__inner{flex-direction:column;align-items:flex-start}
+    .cta-band__inner{flex-direction:column;align-items:flex-start}
   .nk-footer__grid{grid-template-columns:1fr 1fr}
   .section,.section--alt{padding: 56px 0 56px}
 }
@@ -362,7 +350,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
       <div class="app-group__label" data-en>Events</div>
       <div class="app-grid">
 
-        <a class="app-card" href="nikos-anwendung-festival.html" data-app="festival">
+        <a class="app-card" href="nikos-anwendung-festival.html">
           <div class="app-card__icon">🎸</div>
           <div class="app-card__title" data-de>Festival</div>
           <div class="app-card__title" data-en>Music Festival</div>
@@ -372,7 +360,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <div class="app-card__link" data-en>View details</div>
         </a>
 
-        <a class="app-card" href="nikos-anwendung-volksfest.html" data-app="volksfest">
+        <a class="app-card" href="nikos-anwendung-volksfest.html">
           <div class="app-card__icon">🍺</div>
           <div class="app-card__title" data-de>Volksfest</div>
           <div class="app-card__title" data-en>Folk Festival / Fun Fair</div>
@@ -382,7 +370,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <div class="app-card__link" data-en>View details</div>
         </a>
 
-        <a class="app-card" href="nikos-anwendung-stadtfest.html" data-app="stadtfest">
+        <a class="app-card" href="nikos-anwendung-stadtfest.html">
           <div class="app-card__icon">🎪</div>
           <div class="app-card__title" data-de>Stadtfest</div>
           <div class="app-card__title" data-en>City Festival</div>
@@ -392,7 +380,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <div class="app-card__link" data-en>View details</div>
         </a>
 
-        <a class="app-card" href="nikos-anwendung-weihnachtsmarkt.html" data-app="weihnachtsmarkt">
+        <a class="app-card" href="nikos-anwendung-weihnachtsmarkt.html">
           <div class="app-card__icon">🎄</div>
           <div class="app-card__title" data-de>Weihnachtsmarkt</div>
           <div class="app-card__title" data-en>Christmas Market</div>
@@ -402,7 +390,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <div class="app-card__link" data-en>View details</div>
         </a>
 
-        <a class="app-card" href="nikos-anwendung-gedenkveranstaltung.html" data-app="gedenkveranstaltung">
+        <a class="app-card" href="nikos-anwendung-gedenkveranstaltung.html">
           <div class="app-card__icon">🕯️</div>
           <div class="app-card__title" data-de>Gedenkveranstaltung</div>
           <div class="app-card__title" data-en>Memorial Event</div>
@@ -412,7 +400,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <div class="app-card__link" data-en>View details</div>
         </a>
 
-        <a class="app-card" href="nikos-anwendung-jubilaeumsfeier.html" data-app="jubilaeumsfeier">
+        <a class="app-card" href="nikos-anwendung-jubilaeumsfeier.html">
           <div class="app-card__icon">🎉</div>
           <div class="app-card__title" data-de>Jubiläumsfeier</div>
           <div class="app-card__title" data-en>Anniversary Celebration</div>
@@ -422,7 +410,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <div class="app-card__link" data-en>View details</div>
         </a>
 
-        <a class="app-card" href="nikos-anwendung-festumzug.html" data-app="festumzug">
+        <a class="app-card" href="nikos-anwendung-festumzug.html">
           <div class="app-card__icon">🥁</div>
           <div class="app-card__title" data-de>Festumzug</div>
           <div class="app-card__title" data-en>Parade</div>
@@ -432,7 +420,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <div class="app-card__link" data-en>View details</div>
         </a>
 
-        <a class="app-card" href="nikos-anwendung-firmenveranstaltung.html" data-app="firmenveranstaltung">
+        <a class="app-card" href="nikos-anwendung-firmenveranstaltung.html">
           <div class="app-card__icon">🏭</div>
           <div class="app-card__title" data-de>Firmenveranstaltung</div>
           <div class="app-card__title" data-en>Corporate Event</div>
@@ -442,7 +430,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <div class="app-card__link" data-en>View details</div>
         </a>
 
-        <a class="app-card" href="nikos-anwendung-sportevent.html" data-app="sportevent">
+        <a class="app-card" href="nikos-anwendung-sportevent.html">
           <div class="app-card__icon">🏃</div>
           <div class="app-card__title" data-de>Sportevent</div>
           <div class="app-card__title" data-en>Sports Event</div>
@@ -452,7 +440,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <div class="app-card__link" data-en>View details</div>
         </a>
 
-        <a class="app-card" href="nikos-anwendung-parkfest.html" data-app="parkfest">
+        <a class="app-card" href="nikos-anwendung-parkfest.html">
           <div class="app-card__icon">🌳</div>
           <div class="app-card__title" data-de>Parkfest / Gartenschau</div>
           <div class="app-card__title" data-en>Park Festival</div>
@@ -471,7 +459,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
       <div class="app-group__label" data-en>Critical Infrastructure &amp; Continuous Operation</div>
       <div class="app-grid">
 
-        <a class="app-card" href="nikos-anwendung-baustelle.html" data-app="baustelle">
+        <a class="app-card" href="nikos-anwendung-baustelle.html">
           <div class="app-card__icon">🏗️</div>
           <div class="app-card__title" data-de>Baustelle / Industrie</div>
           <div class="app-card__title" data-en>Construction / Industry</div>
@@ -481,7 +469,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <div class="app-card__link" data-en>View details</div>
         </a>
 
-        <a class="app-card" href="nikos-anwendung-krisenlage.html" data-app="krisenlage">
+        <a class="app-card" href="nikos-anwendung-krisenlage.html">
           <div class="app-card__icon">🚨</div>
           <div class="app-card__title" data-de>Krisenlage</div>
           <div class="app-card__title" data-en>Crisis Situation</div>
@@ -495,239 +483,23 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
     </div>
 
     <!-- Detail panels -->
-    <div id="detail-festival" class="app-detail">
-      <div class="detail-inner">
-        <div class="detail-col">
-          <div class="detail-col__label" data-de>Festival · Herausforderung</div>
-          <div class="detail-col__label" data-en>Music Festival · Challenge</div>
-          <div class="detail-col__title" data-de>Weitläufiges Gelände ohne feste Infrastruktur</div>
-          <div class="detail-col__title" data-en>Extensive site without fixed infrastructure</div>
-          <div class="detail-col__text" data-de>Große Festivalflächen, hohe Besucherdichte, schlechte Mobilfunkabdeckung. Informations- und Sicherheitsdurchsagen müssen schnell und ortsspezifisch ausgelöst werden. Weit entfernte Lichtmasten, Pumpen und andere Geräte sollen ferngesteuert und gegen Diebstahl geschützt werden.</div>
-          <div class="detail-col__text" data-en>Large festival areas, high visitor density, poor mobile network coverage. Information and safety announcements must be triggered quickly and location-specifically. Distant light masts, pumps and other devices need to be remotely controlled and protected against theft.</div>
-          <div class="detail-col__refs" data-de><span class="detail-col__refs-label">Referenzen</span><span class="detail-col__refs-names">Ikarus Festival <span class="ref-sep">·</span> Feel Festival <span class="ref-sep">·</span> Brass Wiesn <span class="ref-sep">·</span> Puls Festival <span class="ref-sep">·</span> Jazz in allen Gassen <span class="ref-sep">·</span> Zamanand <span class="ref-sep">·</span> Keine Musik</span></div>
-          <div class="detail-col__refs" data-en><span class="detail-col__refs-label">References</span><span class="detail-col__refs-names">Ikarus Festival <span class="ref-sep">·</span> Feel Festival <span class="ref-sep">·</span> Brass Wiesn <span class="ref-sep">·</span> Puls Festival <span class="ref-sep">·</span> Jazz in allen Gassen <span class="ref-sep">·</span> Zamanand <span class="ref-sep">·</span> Keine Musik</span></div>
-        </div>
-        <div class="detail-col">
-          <div class="detail-col__label" data-de>Lösung mit NIKOS</div>
-          <div class="detail-col__label" data-en>Solution with NIKOS</div>
-          <div class="detail-col__text" data-de>NIKOS arbeitet komplett unabhängig von anderen Kommunikationsnetzen. Besucher können über NIKOS [audio]² innerhalb von Sekunden gezielt oder auf dem ganzen Gelände informiert werden. Bei Bedarf kann das Programm der Bühnen unterbrochen und für einheitliche Durchsagen genutzt werden. Mithilfe von NIKOS [relay]² können 230-V-Geräte zentral geschaltet werden. Mit NIKOS [moon]² können Wege zur Camping Area kostengünstig beleuchtet werden.</div>
-          <div class="detail-col__text" data-en>NIKOS works completely independently of other communication networks. Visitors can be informed via NIKOS [audio]² within seconds, either specifically or across the entire site. If needed, stage programmes can be interrupted for unified announcements. Via NIKOS [relay]², 230V devices can be centrally switched. With NIKOS [moon]², paths to the camping area can be illuminated cost-effectively.</div>
-          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
-            <a href="nikos-kontakt.html" class="btn-primary" data-de>Beratung anfragen</a>
-            <a href="nikos-kontakt.html" class="btn-primary" data-en>Request consultation</a>
-            <a href="nikos-referenzen.html" class="btn-secondary" data-de>Referenzen</a>
-            <a href="nikos-referenzen.html" class="btn-secondary" data-en>References</a>
-          </div>
-        </div>
-      </div>
-      <button class="detail-close" data-close>✕ <span data-de>Schließen</span><span data-en>Close</span></button>
-    </div>
 
-    <div id="detail-volksfest" class="app-detail">
-      <div class="detail-inner">
-        <div class="detail-col">
-          <div class="detail-col__label" data-de>Volksfest · Herausforderung</div>
-          <div class="detail-col__label" data-en>Folk Festival / Fun Fair · Challenge</div>
-          <div class="detail-col__title" data-de>Laut, eng, voll</div>
-          <div class="detail-col__title" data-en>Loud, tight, full</div>
-          <div class="detail-col__text" data-de>Viele Bühnen, Zelte, Stände und Fahrgeschäfte, keine zentrale Ablauforganisation. Der Besucherstrom muss gesteuert und der Einlass bei Bedarf schnell gestoppt werden. Gastronomiestände schließen ihre Geräte unkoordiniert an Baustromverteiler an, so dass es zu Phasenüberlastungen kommen kann.</div>
-          <div class="detail-col__text" data-en>Many stages, tents, stalls and fairground rides, no central operations management. Visitor flow must be controlled and entry stopped quickly when needed. Catering stalls connect their equipment to construction power distributors uncoordinatedly, which can lead to phase overloads.</div>
-          <div class="detail-col__refs" data-de><span class="detail-col__refs-label">Referenzen</span><span class="detail-col__refs-names">Oktoberfest München <span class="ref-sep">·</span> Gillamoos Abensberg <span class="ref-sep">·</span> Barthelmarkt Manching <span class="ref-sep">·</span> Stoppelmarkt Vechta</span></div>
-          <div class="detail-col__refs" data-en><span class="detail-col__refs-label">References</span><span class="detail-col__refs-names">Oktoberfest Munich <span class="ref-sep">·</span> Gillamoos Abensberg <span class="ref-sep">·</span> Barthelmarkt Manching <span class="ref-sep">·</span> Stoppelmarkt Vechta</span></div>
-        </div>
-        <div class="detail-col">
-          <div class="detail-col__label" data-de>Lösung mit NIKOS</div>
-          <div class="detail-col__label" data-en>Solution with NIKOS</div>
-          <div class="detail-col__text" data-de>NIKOS kann mit Personenzählsystemen gekoppelt werden, so dass bei Überfüllung automatisch eine Signalisierung an den Eingängen aktiviert wird, z. B. durch Einschalten einer NIKOS [flash]² Blitzleuchte. Mit NIKOS [energy]² lassen sich alle wichtigen Last- und Verbrauchsdaten an Baustromverteilern messen. Im NIKOS [dispatcher]² können Info-Ansagen definiert werden, die automatisch in regelmäßigen Abständen ausgespielt werden.</div>
-          <div class="detail-col__text" data-en>NIKOS can be coupled with people-counting systems so that when overcrowding occurs, signalling at the entrances is activated automatically, e.g. by switching on a NIKOS [flash]² strobe light. With NIKOS [energy]², all important load and consumption data at construction power distributors can be measured. In the NIKOS [dispatcher]², info announcements can be defined that play out automatically at regular intervals.</div>
-          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
-            <a href="nikos-kontakt.html" class="btn-primary" data-de>Beratung anfragen</a>
-            <a href="nikos-kontakt.html" class="btn-primary" data-en>Request consultation</a>
-          </div>
-        </div>
-      </div>
-      <button class="detail-close" data-close>✕ <span data-de>Schließen</span><span data-en>Close</span></button>
-    </div>
 
-    <div id="detail-stadtfest" class="app-detail">
-      <div class="detail-inner">
-        <div class="detail-col">
-          <div class="detail-col__label" data-de>Stadtfest · Herausforderung</div>
-          <div class="detail-col__label" data-en>City Festival · Challenge</div>
-          <div class="detail-col__title" data-de>Mehrere Bühnen, enge Straßen, lange Wege</div>
-          <div class="detail-col__title" data-en>Multiple stages, narrow streets, long distances</div>
-          <div class="detail-col__text" data-de>Über die Innenstadt verteilte Bühnen, erhöhter Besucherstrom durch enge Straßenzüge, Gäste ohne ausreichende Ortskenntnis, oft längere Wege zwischen den Veranstaltungsbereichen, Information der Besucher bei Überfüllungssituationen, Koordination der Shuttlebusse.</div>
-          <div class="detail-col__text" data-en>Stages spread across the city centre, increased visitor flow through narrow streets, guests without sufficient local knowledge, often longer distances between event areas, informing visitors in overcrowding situations, coordinating shuttle buses.</div>
-          <div class="detail-col__refs" data-de><span class="detail-col__refs-label">Referenzen</span><span class="detail-col__refs-names">Bürgerfest Regensburg <span class="ref-sep">·</span> ISF Sindelfingen <span class="ref-sep">·</span> Theatrium Wiesbaden <span class="ref-sep">·</span> Altstadtfest Fürstenfeldbruck <span class="ref-sep">·</span> Stadtfest Kufstein <span class="ref-sep">·</span> Rakoczy-Fest Bad Kissingen</span></div>
-          <div class="detail-col__refs" data-en><span class="detail-col__refs-label">References</span><span class="detail-col__refs-names">Bürgerfest Regensburg <span class="ref-sep">·</span> ISF Sindelfingen <span class="ref-sep">·</span> Theatrium Wiesbaden <span class="ref-sep">·</span> Altstadtfest Fürstenfeldbruck <span class="ref-sep">·</span> Stadtfest Kufstein <span class="ref-sep">·</span> Rakoczy-Fest Bad Kissingen</span></div>
-        </div>
-        <div class="detail-col">
-          <div class="detail-col__label" data-de>Lösung mit NIKOS</div>
-          <div class="detail-col__label" data-en>Solution with NIKOS</div>
-          <div class="detail-col__text" data-de>Besucher werden bei Überfüllung einzelner Bereiche frühzeitig über Alternativen informiert, so dass Gefahren durch Staus und Gegenstromsituationen vermieden werden. Shuttlebusfahrer bekommen ein Funkgerät mit GPS-Empfänger, so dass auf dem NIKOS [dispatcher]² jederzeit die Position der einzelnen Busse zu sehen ist.</div>
-          <div class="detail-col__text" data-en>Visitors are informed early about alternatives when individual areas are overcrowded, avoiding dangers from congestion and counter-flow situations. Shuttle bus drivers receive a radio with GPS receiver, so that the position of each bus is always visible on the NIKOS [dispatcher]².</div>
-          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
-            <a href="nikos-kontakt.html" class="btn-primary" data-de>Beratung anfragen</a>
-            <a href="nikos-kontakt.html" class="btn-primary" data-en>Request consultation</a>
-          </div>
-        </div>
-      </div>
-      <button class="detail-close" data-close>✕ <span data-de>Schließen</span><span data-en>Close</span></button>
-    </div>
 
-    <div id="detail-weihnachtsmarkt" class="app-detail">
-      <div class="detail-inner">
-        <div class="detail-col">
-          <div class="detail-col__label" data-de>Weihnachtsmarkt · Herausforderung</div>
-          <div class="detail-col__label" data-en>Christmas Market · Challenge</div>
-          <div class="detail-col__title" data-de>Schutz, Information und Unterhaltung</div>
-          <div class="detail-col__title" data-en>Protection, information and entertainment</div>
-          <div class="detail-col__text" data-de>Perimeterschutz gegen Terrorangriffe, Zutritts- und Überfüllungskontrolle, Besucherinformation, Hintergrundmusik, ggf. Werbeeinspielungen zur Co-Finanzierung der Veranstaltung.</div>
-          <div class="detail-col__text" data-en>Perimeter protection against terrorist attacks, access and overcrowding control, visitor information, background music, and potentially advertising spots for co-financing the event.</div>
-          <div class="detail-col__refs" data-de><span class="detail-col__refs-label">Referenzen</span><span class="detail-col__refs-names">Düsseldorf <span class="ref-sep">·</span> ChocolArt Tübingen</span></div>
-          <div class="detail-col__refs" data-en><span class="detail-col__refs-label">References</span><span class="detail-col__refs-names">Düsseldorf <span class="ref-sep">·</span> ChocolArt Tübingen</span></div>
-        </div>
-        <div class="detail-col">
-          <div class="detail-col__label" data-de>Lösung mit NIKOS</div>
-          <div class="detail-col__label" data-en>Solution with NIKOS</div>
-          <div class="detail-col__text" data-de>Die Notfallfunktion von NIKOS [audio]² ermöglicht eine automatische optische und akustische Alarmierung an anderen Durchsage-Standorten, wenn an einem Standort über einen Sensor ein Alarm ausgelöst wurde. Über den internen Audio-Player können in regelmäßigen Abständen Informations- und Warndurchsagen sowie Hintergrundmusik und Werbung in jeweils unterschiedlicher Lautstärke abgespielt werden.</div>
-          <div class="detail-col__text" data-en>The emergency function of NIKOS [audio]² enables automatic visual and acoustic alerting at other announcement locations when an alarm is triggered at one location via a sensor. Via the internal audio player, information and warning announcements as well as background music and advertising can be played at regular intervals at different volume levels.</div>
-          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
-            <a href="nikos-kontakt.html" class="btn-primary" data-de>Beratung anfragen</a>
-            <a href="nikos-kontakt.html" class="btn-primary" data-en>Request consultation</a>
-          </div>
-        </div>
-      </div>
-      <button class="detail-close" data-close>✕ <span data-de>Schließen</span><span data-en>Close</span></button>
-    </div>
 
-    <div id="detail-festumzug" class="app-detail">
-      <div class="detail-inner">
-        <div class="detail-col">
-          <div class="detail-col__label" data-de>Festumzug · Herausforderung</div>
-          <div class="detail-col__label" data-en>Parade · Challenge</div>
-          <div class="detail-col__title" data-de>Crowd Management &amp; Zugmonitoring</div>
-          <div class="detail-col__title" data-en>Crowd Management &amp; Procession Monitoring</div>
-          <div class="detail-col__text" data-de>Keine Möglichkeit für verkabelte Durchsagen über die Wagen. Großer Besucherandrang, enge Straßen, laute Umgebung, ortsunkundige Besucher. Zur Koordination eines gleichmäßigen Zugverlaufes ist es extrem hilfreich, die jeweiligen Positionen der einzelnen Wagen zu kennen.</div>
-          <div class="detail-col__text" data-en>No possibility for wired announcements across the floats. Large crowds, narrow streets, loud environment, visitors unfamiliar with the area. Knowing the positions of individual floats is extremely helpful for coordinating a smooth procession flow.</div>
-          <div class="detail-col__refs" data-de><span class="detail-col__refs-label">Referenzen</span><span class="detail-col__refs-names">Karneval der Kulturen Berlin <span class="ref-sep">·</span> Christopher Street Day Berlin</span></div>
-          <div class="detail-col__refs" data-en><span class="detail-col__refs-label">References</span><span class="detail-col__refs-names">Karneval der Kulturen Berlin <span class="ref-sep">·</span> Christopher Street Day Berlin</span></div>
-        </div>
-        <div class="detail-col">
-          <div class="detail-col__label" data-de>Lösung mit NIKOS</div>
-          <div class="detail-col__label" data-en>Solution with NIKOS</div>
-          <div class="detail-col__text" data-de>Direkt in die Beschallungsanlagen der Wagen integrierte NIKOS [audio]²-Einheiten erzeugen mit dem Zug wandernde Durchsagebereiche. Dadurch ist immer dort eine Information der Besucher gewährleistet, wo der Zug gerade ist. Beschallungsanlagen von Umzugsgruppen, die sich nicht an Regeln halten, können über den NIKOS [dispatcher]² abgeschaltet werden.</div>
-          <div class="detail-col__text" data-en>NIKOS [audio]² units integrated directly into the PA systems of the floats create announcement zones that move with the procession. This ensures visitor information is always available where the procession currently is. PA systems of parade groups that don't follow rules can be switched off via the NIKOS [dispatcher]².</div>
-          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
-            <a href="nikos-kontakt.html" class="btn-primary" data-de>Beratung anfragen</a>
-            <a href="nikos-kontakt.html" class="btn-primary" data-en>Request consultation</a>
-          </div>
-        </div>
-      </div>
-      <button class="detail-close" data-close>✕ <span data-de>Schließen</span><span data-en>Close</span></button>
-    </div>
 
-    <div id="detail-firmenveranstaltung" class="app-detail">
-      <div class="detail-inner">
-        <div class="detail-col">
-          <div class="detail-col__label" data-de>Firmenevent · Herausforderung</div>
-          <div class="detail-col__label" data-en>Corporate Event · Challenge</div>
-          <div class="detail-col__title" data-de>Kontrollierter Zugang, sichere Kommunikation</div>
-          <div class="detail-col__title" data-en>Controlled access, secure communication</div>
-          <div class="detail-col__text" data-de>Zutrittskontrolle für halböffentliches Gelände, Besucherinformation, Strommonitoring, Kommunikation für betriebsinterne und externe Veranstaltungsmitarbeiter.</div>
-          <div class="detail-col__text" data-en>Access control for semi-public sites, visitor information, power monitoring, communication for internal and external event staff.</div>
-          <div class="detail-col__refs" data-de><span class="detail-col__refs-label">Referenzen</span><span class="detail-col__refs-names">BMW <span class="ref-sep">·</span> Mercedes-Benz <span class="ref-sep">·</span> VW <span class="ref-sep">·</span> Miele <span class="ref-sep">·</span> AMG</span></div>
-          <div class="detail-col__refs" data-en><span class="detail-col__refs-label">References</span><span class="detail-col__refs-names">BMW <span class="ref-sep">·</span> Mercedes-Benz <span class="ref-sep">·</span> VW <span class="ref-sep">·</span> Miele <span class="ref-sep">·</span> AMG</span></div>
-        </div>
-        <div class="detail-col">
-          <div class="detail-col__label" data-de>Lösung mit NIKOS</div>
-          <div class="detail-col__label" data-en>Solution with NIKOS</div>
-          <div class="detail-col__text" data-de>NIKOS [audio]² informiert die Besucher, NIKOS [flash]² signalisiert Überfüllungen, NIKOS [energy]² überwacht Baustromverteiler, NIKOS [audio]² meldet Stromausfälle, Handfunkgeräte für Organisation, Security und Techniker – NIKOS [dispatcher]² koordiniert alles und hat die Positionen der Endgeräte im Blick.</div>
-          <div class="detail-col__text" data-en>NIKOS [audio]² informs visitors, NIKOS [flash]² signals overcrowding, NIKOS [energy]² monitors construction power distributors, NIKOS [audio]² reports power failures, handheld radios for organisation, security and technicians – NIKOS [dispatcher]² coordinates everything and monitors device positions.</div>
-          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
-            <a href="nikos-kontakt.html" class="btn-primary" data-de>Beratung anfragen</a>
-            <a href="nikos-kontakt.html" class="btn-primary" data-en>Request consultation</a>
-          </div>
-        </div>
-      </div>
-      <button class="detail-close" data-close>✕ <span data-de>Schließen</span><span data-en>Close</span></button>
-    </div>
 
-    <div id="detail-sportevent" class="app-detail">
-      <div class="detail-inner">
-        <div class="detail-col">
-          <div class="detail-col__label" data-de>Sportereignis · Herausforderung</div>
-          <div class="detail-col__label" data-en>Sports Event · Challenge</div>
-          <div class="detail-col__title" data-de>Besucherinformation und -sicherheit im öffentlichen Bereich</div>
-          <div class="detail-col__title" data-en>Visitor information and safety in public spaces</div>
-          <div class="detail-col__text" data-de>Zielgerichtete und globale Information über ein großes Gelände, Kommunikation innerhalb der Veranstaltungsorganisation, direkte Ansprache der Besucher durch Platzmanager, Freigabe und Sperrung von Bereichen und Strecken über Telemetrie.</div>
-          <div class="detail-col__text" data-en>Targeted and global information across a large site, communication within the event organisation, direct addressing of visitors by area managers, release and closure of areas and routes via telemetry.</div>
-          <div class="detail-col__refs" data-de><span class="detail-col__refs-label">Referenzen</span><span class="detail-col__refs-names">Fußball-Europameisterschaft 2024 Fanmeile Berlin <span class="ref-sep">·</span> Sail Bremerhaven</span></div>
-          <div class="detail-col__refs" data-en><span class="detail-col__refs-label">References</span><span class="detail-col__refs-names">Football European Championship 2024 Fan Mile Berlin <span class="ref-sep">·</span> Sail Bremerhaven</span></div>
-        </div>
-        <div class="detail-col">
-          <div class="detail-col__label" data-de>Lösung mit NIKOS</div>
-          <div class="detail-col__label" data-en>Solution with NIKOS</div>
-          <div class="detail-col__text" data-de>Definition von Durchsagebereichen im NIKOS [dispatcher]², Durchsagen über NIKOS [audio]², Integration in eine übergeordnete Kommunikationsinfrastruktur. Megafon-Funktion von NIKOS [audio]² nutzen, indem Platzmanager direkt in ihrem jeweiligen Bereich Durchsagen machen können. Einsparung einzelner Security-Positionen durch technische Maßnahmen.</div>
-          <div class="detail-col__text" data-en>Definition of announcement zones in NIKOS [dispatcher]², announcements via NIKOS [audio]², integration into a higher-level communication infrastructure. Using the megaphone function of NIKOS [audio]² so area managers can make announcements directly in their area. Saving individual security positions through technical measures.</div>
-          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
-            <a href="nikos-kontakt.html" class="btn-primary" data-de>Beratung anfragen</a>
-            <a href="nikos-kontakt.html" class="btn-primary" data-en>Request consultation</a>
-          </div>
-        </div>
-      </div>
-      <button class="detail-close" data-close>✕ <span data-de>Schließen</span><span data-en>Close</span></button>
-    </div>
 
-    <div id="detail-baustelle" class="app-detail">
-      <div class="detail-inner">
-        <div class="detail-col">
-          <div class="detail-col__label" data-de>Baustelle / Industrie · Herausforderung</div>
-          <div class="detail-col__label" data-en>Construction / Industry · Challenge</div>
-          <div class="detail-col__title" data-de>Perimeterschutz, Systemüberwachung &amp; Personensicherheit</div>
-          <div class="detail-col__title" data-en>Perimeter protection, system monitoring &amp; personnel safety</div>
-          <div class="detail-col__text" data-de>Geländesicherung gegen unbefugtes Betreten, Diebstahl und Vandalismus. Schnelle Alarmierung bei Unfällen und Gefahren. Betriebsstundenzählung und Funktionsüberwachung von Maschinen, Diebstahlschutz von einzelnen Maschinen und Fahrzeugen.</div>
-          <div class="detail-col__text" data-en>Site security against unauthorised access, theft and vandalism. Quick alerting in case of accidents and hazards. Operating hour counting and functional monitoring of machinery, theft protection for individual machines and vehicles.</div>
-        </div>
-        <div class="detail-col">
-          <div class="detail-col__label" data-de>Lösung mit NIKOS</div>
-          <div class="detail-col__label" data-en>Solution with NIKOS</div>
-          <div class="detail-col__text" data-de>Überwachung von Zäunen und Toren, Durchsagen und Alarmierung bei Gefahren, Stromausfall und Zaunöffnung mit NIKOS [audio]² + NIKOS [horn]² – völlig autark. NIKOS [sensor]² meldet Stromausfall und überwacht Betriebszustand, Position, Lage und Vibration von Geräten und Bauelementen.</div>
-          <div class="detail-col__text" data-en>Monitoring of fences and gates, announcements and alerting in case of hazards, power failure and gate opening with NIKOS [audio]² + NIKOS [horn]² – completely autonomous. NIKOS [sensor]² reports power failure and monitors operating state, position, orientation and vibration of devices and components.</div>
-          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
-            <a href="nikos-kontakt.html" class="btn-primary" data-de>Beratung anfragen</a>
-            <a href="nikos-kontakt.html" class="btn-primary" data-en>Request consultation</a>
-          </div>
-        </div>
-      </div>
-      <button class="detail-close" data-close>✕ <span data-de>Schließen</span><span data-en>Close</span></button>
-    </div>
 
-    <div id="detail-krisenlage" class="app-detail">
-      <div class="detail-inner" style="border-left:4px solid var(--orange);">
-        <div class="detail-col">
-          <div class="detail-col__label" data-de>Krisenlage · Herausforderung</div>
-          <div class="detail-col__label" data-en>Crisis Situation · Challenge</div>
-          <div class="detail-col__title" data-de>NIKOS läuft weiter, wenn alle anderen Systeme versagen</div>
-          <div class="detail-col__title" data-en>NIKOS keeps running when all other systems fail</div>
-          <div class="detail-col__text" data-de>Ausfall von Mobilfunk, Stromnetz, Internet – genau dann muss Notfall-Kommunikation funktionieren. Lagebeurteilung durch Rückmeldung wichtiger Geräte- und Umweltdaten. Information und Wegelenkung von Betroffenen und Helfern.</div>
-          <div class="detail-col__text" data-en>Failure of mobile networks, power grid, internet – exactly then emergency communication must work. Situation assessment through feedback of important device and environmental data. Information and routing of affected persons and helpers.</div>
-        </div>
-        <div class="detail-col">
-          <div class="detail-col__label" data-de>Lösung mit NIKOS</div>
-          <div class="detail-col__label" data-en>Solution with NIKOS</div>
-          <div class="detail-col__text" data-de>NIKOS ist die Rückfallebene wenn öffentliche Netze ausfallen. Vollständig autarker, unterbrechungsfreier Betrieb für 16 Stunden, optional dauerhaft. Kein externer Anbieter, keine Cloud, keine Abhängigkeit. Alarmierung von Helfern und Betroffenen, Durchsagen und Crowd Management mit NIKOS [audio]², zentrale Steuerung mit NIKOS [dispatcher]².</div>
-          <div class="detail-col__text" data-en>NIKOS is the fallback when public networks fail. Completely autonomous, uninterrupted operation for 16 hours, optionally permanent. No external provider, no cloud, no dependency. Alerting helpers and affected persons, announcements and crowd management with NIKOS [audio]², central control with NIKOS [dispatcher]².</div>
-          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
-            <a href="nikos-kontakt.html" class="btn-primary" data-de>Beratung anfragen</a>
-            <a href="nikos-kontakt.html" class="btn-primary" data-en>Request consultation</a>
-            <a href="nikos-system.html" class="btn-secondary" data-de>System ansehen</a>
-            <a href="nikos-system.html" class="btn-secondary" data-en>View system</a>
-          </div>
-        </div>
-      </div>
-      <button class="detail-close" data-close>✕ <span data-de>Schließen</span><span data-en>Close</span></button>
-    </div>
+
+
+
+
+
+
+
+
+
 
   </div>
 </section>
