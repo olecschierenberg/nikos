@@ -261,4 +261,25 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://nikos.info/loesungen/besucherinformation-bremer-freimarkt-bremen/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/besucherinformation-bremer-freimarkt-bremen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/besucherinformation-bremer-freimarkt-bremen/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/besucherlenkung-katholikentag-paderborn/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/besucherlenkung-katholikentag-paderborn/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/besucherlenkung-katholikentag-paderborn/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/notfalldurchsage-hamburger-dom-hamburg/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/notfalldurchsage-hamburger-dom-hamburg/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/notfalldurchsage-hamburger-dom-hamburg/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
