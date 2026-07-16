@@ -19,18 +19,24 @@ ohne dass der Prompt immer größer wird.
 - ⚠ „Krisensichere Durchsage- und Alarmierungsinfrastruktur bei Strom- und Netzausfall" nur verwenden, wenn keine anderen Headlines passen (zu generisch, überall gleich).
 - Beispiele: Crowd Management → „Besucher sicher lenken – per Knopfdruck"; Durchsagesystem → „Durchsagen auf Tastendruck, auch ohne Handynetz"; Perimeterschutz → „Gelände per Funk überwachen"; Besucherinformation → „Alle Zuschauer zuverlässig informieren".
 
-### Intro (3–4 Sätze, erklärt NIKOS + Fallbezug)
-- „NIKOS ist ein modulares, autarkes Kommunikations- und Sicherheitssystem zur zielgerichteten Ausspielung von Durchsagen in frei definierbaren Bereichen. Für Veranstaltungen wie [EINSATZ] in [REGION] stellt NIKOS die unterbrechungsfreie Informationsübermittlung sicher, auch bei Strom- oder Internetausfall. Komponenten wie NIKOS [audio]² sind extrem robust, wetterfest und besitzen eine interne Notstromversorgung."
+### Intro / Herausforderung (3–4 Sätze, NUR die Herausforderung)
+- Beschreibt AUSSCHLIESSLICH die Herausforderung/den Pain Point des Einsatzes — konkret und etwas ausführlicher (die Situation und warum sie schwierig oder riskant ist). KEINE NIKOS-Lösung, KEINE Produktnennung, KEINE Funktionsaufzählung hier — das gehört in den Lösungsabschnitt.
+- Beispiel Volksfest/Jahrmarkt (z. B. Hamburger DOM): „Auf einem Volksfest wie dem Hamburger DOM drängen sich sehr viele Besucher auf einer zusammenhängenden Fläche, während Fahrgeschäfte und Schaustellerbetriebe eine hohe, dauerhafte Geräuschkulisse erzeugen. In einer Gefahrenlage müssen Warnungen und Handlungsanweisungen trotz Lärm und Gedränge alle Besucher klar verständlich erreichen. Bei dieser Besucherdichte ist zudem das Mobilfunknetz schnell überlastet, sodass mobilfunkgestützte Systeme für den Krisenfall ungeeignet sind."
+- Eventtyp-Hinweis: Getrennte Veranstaltungsbereiche/Bühnen mit dazwischenliegenden Strecken sind ein Merkmal von STADTFESTEN (dort ist die bereichsübergreifende, gleichzeitige Alarmierung die Herausforderung), NICHT von Volksfesten/Jahrmärkten (zusammenhängende Fläche → Herausforderung = Geräuschkulisse der Schausteller, Gedränge, Mobilfunküberlastung).
 
 ### USP (technisch + Kosteneinsparung)
-- „Durch die Bündelung mehrerer Steuer- und Überwachungsfunktionen in einer Plattform sinkt der Bedarf an separaten Lautsprecheranlagen, dedizierten Steuergeräten und Fachkräften zur Installation und Betreuung unterschiedlicher Teilsysteme. Die zentrale Bedienung über NIKOS [dispatcher]² sowie Zusatzfunktionen wie optische Signalisierung über NIKOS [LED]² oder NIKOS [flash]² und die Schaltung externer Geräte über NIKOS [relay]² ermöglichen eine Erhöhung des Sicherheitsstandards und der Funktionalitäten bei gleichzeitig möglicher Reduzierung der Gesamtkosten."
+- „Durch die Bündelung mehrerer Steuer- und Überwachungsfunktionen in einer Plattform sinkt der Bedarf an separaten Lautsprecheranlagen, dedizierten Steuergeräten und Fachkräften zur Installation und Betreuung unterschiedlicher Teilsysteme. Die zentrale Bedienung über NIKOS [dispatcher]² sowie Zusatzfunktionen wie optische Signalisierung über die Blitzleuchte NIKOS [flash]² und Notbeleuchtung über den LED-Scheinwerfer NIKOS [LED]² und die Schaltung externer Geräte über NIKOS [relay]² ermöglichen eine Erhöhung des Sicherheitsstandards und der Funktionalitäten bei gleichzeitig möglicher Reduzierung der Gesamtkosten."
 
 ### Muster-Bausteine (Wortlaut-Vorgaben, [EINSATZ]/[REGION] einsetzen)
 _Vom Nutzer freigegebene Formulierungen — als Vorlage/Tonfall für ALLE passenden LPs (Perimeterschutz, Event-Sicherheit). Platzhalter durch konkrete Werte ersetzen; Numerus-Regel beachten (der Weihnachtsmarkt in <Stadt <200.000 Einwohner> / Weihnachtsmärkte in <Bundesland>)._
 
-**Intro (Plattform-Bündelung):**
-- „Für [EINSATZ] in [REGION] bündelt NIKOS Alarmierung, Informationsansagen, Hintergrundmusik, Fernsteuerung und Statusmonitoring in einer Plattform."
+**Lösung – Einleitung (Plattform-Bündelung):** _(leitet den LÖSUNGS-Abschnitt ein, NICHT das Intro)_
+- „Für Veranstaltungen wie [EINSATZ] in [REGION] bündelt NIKOS Durchsagen, Alarmierung, Informationsansagen, Fernsteuerung und Statusmonitoring in einer Plattform. Das System stellt die Informationsübermittlung auch bei Stromausfall oder Störungen öffentlicher Kommunikationsnetze sicher."
 - „Das reduziert Material-, Installations- sowie Betriebsaufwand und gewährleistet eine übersichtliche Systemarchitektur."
+
+**Lösung – Volksfest/Jahrmarkt (Störschall & Autarkie):**
+- „NIKOS [audio]² kann die Musik der Schaustelleranlagen für die Dauer einer Durchsage unterbrechen. Das senkt den Störschall und verbessert die Verständlichkeit der Durchsagen deutlich. Bei Bedarf lassen sich die vorhandenen Schaustelleranlagen sogar für die Durchsagen mitnutzen, sodass keine gesonderte Durchsagebeschallung aufgebaut werden muss."
+- „Da NIKOS nicht auf das Mobilfunknetz angewiesen ist, sondern ein eigenes, autarkes Funknetz nutzt, bleibt die Alarmierung auch dann funktionsfähig, wenn die Funkzellen durch die hohe Besucherdichte überlastet sind."
 
 **FAQ – Normkonformität:**
 - Frage: „Entsprechen Durchsagen mit NIKOS den geltenden Normen?"
@@ -140,6 +146,8 @@ _Vom Nutzer wortgenau freigegeben. Für genau diesen Fall EXAKT so verwenden; so
 - ❌ Logging, Protokollierung, Dokumentationsfunktion, Verlaufsaufzeichnung behaupten — NIKOS hat das NICHT
 - ❌ Weichmacher: „möglich", „könnte", „kann ggf." — NIKOS funktioniert definitiv
 - ❌ Inhalte aus intro/subhead in FAQ wiederholen — FAQ bringt NEUEN Mehrwert
+- ❌ KEINE Lösungs-/NIKOS-Inhalte im Intro/Herausforderungs-Abschnitt. Der Abschnitt „Herausforderung" beschreibt NUR das Problem/den Pain Point (konkret, etwas ausführlicher). Alles, was NIKOS leistet, bündelt oder sicherstellt (Produkt-/Funktionsnennungen), gehört in den Abschnitt „Lösung" — dessen Einleitung ist der Plattform-Bündelungs-Baustein. Herausforderung und Lösung STRIKT trennen.
+- ⚠ NIKOS [LED]² = kleiner LED-Scheinwerfer für NOTBELEUCHTUNG. Für „optische Signalisierung" IMMER die Blitzleuchte NIKOS [flash]² verwenden, NICHT [LED]².
 - ❌ Funktionen erfinden, die nicht aus der nikos.audio-Website hervorgehen
 - ❌ n8n-Variablen wie {{ $json.Einsatz }} als Text ausgeben — immer das echte Wort einsetzen
 

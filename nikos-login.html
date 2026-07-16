@@ -112,8 +112,6 @@ body{font-family:var(--font);color:var(--dark);background:var(--s2);line-height:
 .form-label{display:block;font-size:13px;font-weight:600;color:var(--dark);margin-bottom:5px}
 .form-input{width:100%;padding:11px 14px;border:1px solid var(--border);border-radius:var(--r-lg);font-family:var(--font);font-size:15px;color:var(--dark);outline:none;transition:border-color .15s,box-shadow .15s}
 .form-input:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,102,0,.08)}
-.form-forgot{display:block;text-align:right;font-size:12px;color:var(--light);text-decoration:none;margin-top:-10px;margin-bottom:16px}
-.form-forgot:hover{color:var(--orange)}
 .btn-login{width:100%;background:var(--orange);color:#fff;padding:13px;border-radius:var(--r-lg);font-size:16px;font-weight:600;border:none;cursor:pointer;font-family:var(--font);transition:background .15s}
 .btn-login:hover{background:var(--brand-orange-dk)}
 .login-divider{text-align:center;margin:20px 0;font-size:12px;color:var(--light);position:relative}
@@ -203,8 +201,8 @@ body{font-family:var(--font);color:var(--dark);background:var(--s2);line-height:
       </div>
       <h1 class="login-card__title" data-de>Willkommen zurück</h1>
       <h1 class="login-card__title" data-en>Welcome back</h1>
-      <div class="login-card__sub" data-de>Bitte melden Sie sich mit Ihren Partner-Zugangsdaten an.</div>
-      <div class="login-card__sub" data-en>Please log in with your partner credentials.</div>
+      <div class="login-card__sub" data-de>Geben Sie Ihre E-Mail-Adresse ein – Sie erhalten einen persönlichen Anmeldelink per E-Mail. Ein Passwort ist nicht erforderlich.</div>
+      <div class="login-card__sub" data-en>Enter your email address – you will receive a personal login link by email. No password required.</div>
 
       <form id="loginForm" novalidate>
         <div class="form-group">
@@ -212,16 +210,21 @@ body{font-family:var(--font);color:var(--dark);background:var(--s2);line-height:
           <label class="form-label" for="login-email" data-en>Email address</label>
           <input class="form-input" id="login-email" type="email" required autocomplete="email" placeholder="partner@firma.de">
         </div>
-        <div class="form-group">
-          <label class="form-label" for="login-pw" data-de>Passwort</label>
-          <label class="form-label" for="login-pw" data-en>Password</label>
-          <input class="form-input" id="login-pw" type="password" required autocomplete="current-password" placeholder="••••••••">
-        </div>
-        <a href="#" class="form-forgot" data-de>Passwort vergessen?</a>
-        <a href="#" class="form-forgot" data-en>Forgot password?</a>
-        <button type="submit" class="btn-login" data-de>Anmelden</button>
-        <button type="submit" class="btn-login" data-en>Log in</button>
+        <button type="submit" class="btn-login" data-de>Anmeldelink anfordern</button>
+        <button type="submit" class="btn-login" data-en>Request login link</button>
+        <div id="loginMsg" style="display:none;margin-top:16px;font-size:14px;line-height:1.55;border-radius:4px;padding:12px 14px;"></div>
       </form>
+
+      <div id="portalView" style="display:none;">
+        <div style="background:#F0F7F0;border:1px solid #BBD9BB;border-radius:4px;padding:14px 16px;font-size:14px;color:#1a5c1a;margin-bottom:20px;">
+          <span data-de>✓ Angemeldet als <b id="portalEmailDe"></b> (<span id="portalKatDe"></span>)</span>
+          <span data-en>✓ Logged in as <b id="portalEmailEn"></b> (<span id="portalKatEn"></span>)</span>
+        </div>
+        <p style="font-size:15px;color:var(--mid);line-height:1.6;" data-de>Der geschützte Bereich mit Schulungsunterlagen, Software und Techniker-Wiki wird derzeit aufgebaut. Sie werden per E-Mail informiert, sobald die ersten Inhalte verfügbar sind.</p>
+        <p style="font-size:15px;color:var(--mid);line-height:1.6;" data-en>The protected area with training materials, software and the technician wiki is currently being set up. You will be notified by email as soon as the first content is available.</p>
+        <button type="button" id="portalLogout" class="btn-login" style="margin-top:20px;background:transparent;color:var(--dark);border:1px solid var(--border);" data-de>Abmelden</button>
+        <button type="button" id="portalLogout2" class="btn-login" style="margin-top:20px;background:transparent;color:var(--dark);border:1px solid var(--border);" data-en>Log out</button>
+      </div>
 
       <div class="login-divider"><span data-de>Noch kein Zugang?</span><span data-en>No access yet?</span></div>
       <div class="login-note">
@@ -359,6 +362,73 @@ document.getElementById('cookieModal').addEventListener('click',function(e){if(e
   var url = (typeof window.NIKOS_CONTACT_URL !== 'undefined') ? window.NIKOS_CONTACT_URL : 'nikos-kontakt.html';
   document.querySelectorAll('.nav__cta,.nav__cta-mobile').forEach(function(el){
     el.href = url;
+  });
+})();
+</script>
+
+<script>
+/* Magic-Link-Login: Link anfordern + Sitzung aus #nk=Token übernehmen */
+(function(){
+  var ENDPOINT='https://olec.app.n8n.cloud/webhook/nikos-login-request';
+  var form=document.getElementById('loginForm');
+  var portal=document.getElementById('portalView');
+  var msg=document.getElementById('loginMsg');
+  function isEN(){return document.documentElement.getAttribute('data-lang')==='en';}
+  function t(de,en){return isEN()?en:de;}
+  function decode(tok){
+    try{
+      var p=JSON.parse(atob(tok.split('.')[0].replace(/-/g,'+').replace(/_/g,'/')));
+      if(p&&p.x&&Date.now()<Number(p.x))return p;
+    }catch(e){}
+    return null;
+  }
+  var m=(location.hash||'').match(/#nk=([A-Za-z0-9_\-\.]+)/);
+  if(m&&decode(m[1])){
+    localStorage.setItem('nk-portal',m[1]);
+    history.replaceState(null,'',location.pathname+location.search);
+  }
+  var tok=localStorage.getItem('nk-portal');
+  var sess=tok?decode(tok):null;
+  if(!sess&&tok)localStorage.removeItem('nk-portal');
+  if(sess&&form&&portal){
+    form.style.display='none';portal.style.display='block';
+    var kat={Partner:['Partner','partner'],Techniker:['Techniker','technician'],Mitarbeiter:['Mitarbeiter','employee']}[sess.k]||[sess.k,sess.k];
+    [['portalEmailDe',sess.e],['portalEmailEn',sess.e],['portalKatDe',kat[0]],['portalKatEn',kat[1]]].forEach(function(a){var el=document.getElementById(a[0]);if(el)el.textContent=a[1];});
+    ['portalLogout','portalLogout2'].forEach(function(id){
+      var btn=document.getElementById(id);
+      if(btn)btn.addEventListener('click',function(){localStorage.removeItem('nk-portal');location.reload();});
+    });
+    return;
+  }
+  if(!form)return;
+  var hpWrap=document.createElement('div');
+  hpWrap.setAttribute('aria-hidden','true');
+  hpWrap.style.cssText='position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;';
+  hpWrap.innerHTML='<label>Website (bitte freilassen)<input type="text" name="website_hp" tabindex="-1" autocomplete="off"></label>';
+  form.appendChild(hpWrap);
+  function show(text,ok){
+    msg.style.display='block';
+    msg.style.background=ok?'#F0F7F0':'#FDF0F0';
+    msg.style.border=ok?'1px solid #BBD9BB':'1px solid #E5B8B8';
+    msg.style.color=ok?'#1a5c1a':'#b00020';
+    msg.textContent=text;
+  }
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var email=(document.getElementById('login-email').value||'').trim();
+    if(!email){show(t('Bitte geben Sie Ihre E-Mail-Adresse ein.','Please enter your email address.'),false);return;}
+    var hp=form.querySelector('input[name="website_hp"]');
+    var btns=form.querySelectorAll('button[type="submit"]');
+    btns.forEach(function(b){b.disabled=true;});
+    fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,website_hp:hp?hp.value:''})})
+    .then(function(r){if(!r.ok)throw 0;
+      show(t('Wenn Ihre E-Mail-Adresse für den geschützten Bereich freigeschaltet ist, erhalten Sie in wenigen Minuten Ihren Anmeldelink per E-Mail (24 Stunden gültig). Bitte prüfen Sie auch den Spam-Ordner.',
+             'If your email address is authorised for the protected area, you will receive your login link by email within a few minutes (valid for 24 hours). Please also check your spam folder.'),true);
+    })
+    .catch(function(){btns.forEach(function(b){b.disabled=false;});
+      show(t('Anfrage fehlgeschlagen. Bitte versuchen Sie es später erneut oder schreiben Sie an info@radacom.de.',
+             'Request failed. Please try again later or email info@radacom.de.'),false);
+    });
   });
 })();
 </script>
