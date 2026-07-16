@@ -447,20 +447,20 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
                 <input class="form-input" id="m-email" type="email" required autocomplete="email">
               </div>
             </div>
+            <div class="form-group">
+              <label class="form-label" for="m-company" data-de>Unternehmen <span>*</span></label>
+              <label class="form-label" for="m-company" data-en>Company <span>*</span></label>
+              <input class="form-input" id="m-company" type="text" required autocomplete="organization">
+            </div>
               <div class="form-group">
                 <label class="form-label" for="m-phone" data-de>Telefon <span>*</span></label>
                 <label class="form-label" for="m-phone" data-en>Phone <span>*</span></label>
                 <input class="form-input" id="m-phone" type="tel" required autocomplete="tel">
               </div>
             <div class="form-group">
-              <label class="form-label" for="m-company" data-de>Firma <span>*</span></label>
-              <label class="form-label" for="m-company" data-en>Company <span>*</span></label>
-              <input class="form-input" id="m-company" type="text" required autocomplete="organization">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="m-type" data-de>Veranstaltungstyp</label>
-              <label class="form-label" for="m-type" data-en>Event type</label>
-              <select class="form-select" id="m-type">
+              <label class="form-label" for="m-type" data-de>Veranstaltungstyp <span>*</span></label>
+              <label class="form-label" for="m-type" data-en>Event type <span>*</span></label>
+              <select class="form-select" id="m-type" required>
                 <option value="" data-de>Bitte wählen...</option>
                 <option value="" data-en>Please select...</option>
                 <option value="festival" data-de>Festival</option>
@@ -503,15 +503,15 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
                 </select>
               </div>
               <div class="form-group">
-                <label class="form-label" for="m-period" data-de>Einsatzzeitraum</label>
-                <label class="form-label" for="m-period" data-en>Deployment period</label>
-                <input class="form-input" id="m-period" type="text" data-de-placeholder="z.B. 15.–18. August 2026" data-en-placeholder="e.g. August 15–18, 2026">
+                <label class="form-label" for="m-period" data-de>Einsatzzeitraum <span>*</span></label>
+                <label class="form-label" for="m-period" data-en>Deployment period <span>*</span></label>
+                <input class="form-input" id="m-period" type="text" required data-de-placeholder="z.B. 15.–18. August 2026" data-en-placeholder="e.g. August 15–18, 2026">
               </div>
             </div>
             <div class="form-group">
-              <label class="form-label" for="m-location" data-de>Einsatzort</label>
-              <label class="form-label" for="m-location" data-en>Deployment location</label>
-              <input class="form-input" id="m-location" type="text" autocomplete="address-level2">
+              <label class="form-label" for="m-location" data-de>Einsatzort <span>*</span></label>
+              <label class="form-label" for="m-location" data-en>Deployment location <span>*</span></label>
+              <input class="form-input" id="m-location" type="text" required autocomplete="address-level2">
             </div>
             <div class="form-group">
               <label class="form-label" for="m-message" data-de>Weitere Informationen</label>
