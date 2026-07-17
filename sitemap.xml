@@ -282,4 +282,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://nikos.info/loesungen/elektroakustisches-notfallwarnsystem-buga-oberes-mittelrheintal-2029-koblen/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/elektroakustisches-notfallwarnsystem-buga-oberes-mittelrheintal-2029-koblen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/elektroakustisches-notfallwarnsystem-buga-oberes-mittelrheintal-2029-koblen/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
