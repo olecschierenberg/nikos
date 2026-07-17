@@ -455,8 +455,11 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           <span class="form-consent-label" data-de>Ich stimme zu, dass meine Daten zur Bearbeitung meiner Anfrage verwendet werden. <a href="#" style="color:var(--orange)">Datenschutzhinweis</a></span>
           <span class="form-consent-label" data-en>I agree that my data will be used to process my inquiry. <a href="#" style="color:var(--orange)">Privacy notice</a></span>
         </label>
-          <!-- Newsletter fuer Partner obligatorisch: kein sichtbares Opt-in, Flag immer gesetzt -->
-          <input type="hidden" id="p-newsletter" value="true">
+          <label class="form-consent" style="margin-top:10px;">
+            <input type="checkbox" id="p-newsletter">
+            <span class="form-consent-label" data-de>Ja, ich will NIKOS Praxiswissen &amp; Einsatzbeispiele erhalten und über neue Unterlagen informiert werden.</span>
+            <span class="form-consent-label" data-en>Yes, I want to receive NIKOS practical know-how &amp; real-world examples and be informed about new documents.</span>
+          </label>
         <div class="form-submit-wrap">
           <button type="submit" class="btn-primary" data-de>Partner-Anfrage senden</button>
           <button type="submit" class="btn-primary" data-en>Send partner inquiry</button>
