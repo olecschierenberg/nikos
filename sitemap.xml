@@ -289,4 +289,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://nikos.info/loesungen/perimeterschutz-weihnachtsmarkt-magdeburg/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/perimeterschutz-weihnachtsmarkt-magdeburg/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/perimeterschutz-weihnachtsmarkt-magdeburg/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
