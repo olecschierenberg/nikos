@@ -156,7 +156,7 @@ _Vom Nutzer wortgenau freigegeben. Für genau diesen Fall EXAKT so verwenden; so
 ## Verbotene Formulierungen / Regeln
 
 - ❌ „NIKOS ersetzt KEINE Funkgeräte, sondern NUTZT Funk zur Ansprache der Durchsageeinheiten." — ergibt keinen praktischen Sinn, NIE verwenden
-- ❌ Logging, Protokollierung, Dokumentationsfunktion, Verlaufsaufzeichnung behaupten — NIKOS hat das NICHT
+- ❌ Logging, Protokollierung, Dokumentationsfunktion, Verlaufsaufzeichnung behaupten — NIKOS hat das NICHT. Das Thema aber auch NIEMALS explizit VERNEINEN (z. B. „Eine Verlaufsaufzeichnung, Protokollierung oder Dokumentationsfunktion ist nicht Bestandteil des Systems." o. ä.) — das Fehlen NICHT thematisieren, das Thema einfach GAR NICHT ansprechen.
 - ❌ Weichmacher: „möglich", „könnte", „kann ggf." — NIKOS funktioniert definitiv
 - ❌ Inhalte aus intro/subhead/usp in FAQ wiederholen — jede FAQ bringt NEUEN Mehrwert und wiederholt keine Aussage aus dem Fließtext (auch nicht sinngemäß umformuliert)
 - ✅ FAQ am Pain Point ausrichten: Die 4 FAQ greifen die im jeweiligen Kontext (Einsatz + Region + Problem) relevantesten Pain Points auf und beantworten die Fragen, die Planer/Veranstalter dort tatsächlich am ehesten stellen — nicht vier generische Standardfragen

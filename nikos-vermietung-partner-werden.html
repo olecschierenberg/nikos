@@ -429,9 +429,24 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
             <input class="form-input" id="p-website" type="url" placeholder="https://" autocomplete="url">
           </div>
           <div class="form-group">
-            <label class="form-label" for="p-address" data-de>Adresse / Region</label>
-            <label class="form-label" for="p-address" data-en>Address / Region</label>
-            <input class="form-input" id="p-address" type="text" autocomplete="address-level2">
+            <label class="form-label" for="p-strasse" data-de>Straße &amp; Hausnummer</label>
+            <label class="form-label" for="p-strasse" data-en>Street &amp; number</label>
+            <input class="form-input" id="p-strasse" type="text" autocomplete="street-address">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="p-plz" data-de>PLZ</label>
+            <label class="form-label" for="p-plz" data-en>Postal code</label>
+            <input class="form-input" id="p-plz" type="text" autocomplete="postal-code">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="p-ort" data-de>Ort</label>
+            <label class="form-label" for="p-ort" data-en>City</label>
+            <input class="form-input" id="p-ort" type="text" autocomplete="address-level2">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="p-land" data-de>Land</label>
+            <label class="form-label" for="p-land" data-en>Country</label>
+            <input class="form-input" id="p-land" type="text" autocomplete="country-name">
           </div>
           <div class="form-group form-group--full">
             <div class="form-label" data-de>Geschäftsfeld (Mehrfachauswahl möglich)</div>
