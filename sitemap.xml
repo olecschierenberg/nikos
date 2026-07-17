@@ -352,4 +352,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://nikos.info/loesungen/raeumungsdurchsage-kirchentag-2027-duesseldorf/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/raeumungsdurchsage-kirchentag-2027-duesseldorf/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/raeumungsdurchsage-kirchentag-2027-duesseldorf/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/sprachalarmierung-nrw-tag-duesseldorf/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/sprachalarmierung-nrw-tag-duesseldorf/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/sprachalarmierung-nrw-tag-duesseldorf/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
