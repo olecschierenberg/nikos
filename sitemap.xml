@@ -520,4 +520,39 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://nikos.info/loesungen/notfalldurchsage-nrw-tag-2026-muenster/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/notfalldurchsage-nrw-tag-2026-muenster/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/notfalldurchsage-nrw-tag-2026-muenster/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/sprachalarmierung-oktoberfest-muenchen/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/sprachalarmierung-oktoberfest-muenchen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/sprachalarmierung-oktoberfest-muenchen/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/notfallkommunikationssystem-oktoberfest-muenchen/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/notfallkommunikationssystem-oktoberfest-muenchen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/notfallkommunikationssystem-oktoberfest-muenchen/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/crowd-management-open-air-konzert-hamburg/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/crowd-management-open-air-konzert-hamburg/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/crowd-management-open-air-konzert-hamburg/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/raeumungsdurchsage-open-air-konzert/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/raeumungsdurchsage-open-air-konzert/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/raeumungsdurchsage-open-air-konzert/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
