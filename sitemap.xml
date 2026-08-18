@@ -555,4 +555,39 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://nikos.info/loesungen/elektroakustisches-notfallwarnsystem-open-air-konzert/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/elektroakustisches-notfallwarnsystem-open-air-konzert/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/elektroakustisches-notfallwarnsystem-open-air-konzert/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/krisenkommunikation-stadtlauf/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/krisenkommunikation-stadtlauf/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/krisenkommunikation-stadtlauf/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/mobiles-notfallkommunikationssystem-veranstaltung/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/mobiles-notfallkommunikationssystem-veranstaltung/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/mobiles-notfallkommunikationssystem-veranstaltung/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/besucherinformation-altstadtfest-fuerstenfeldbruck/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/besucherinformation-altstadtfest-fuerstenfeldbruck/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/besucherinformation-altstadtfest-fuerstenfeldbruck/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/unwetterwarnung-altstadtfest-fuerstenfeldbruck/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/unwetterwarnung-altstadtfest-fuerstenfeldbruck/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/unwetterwarnung-altstadtfest-fuerstenfeldbruck/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
