@@ -485,4 +485,39 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://nikos.info/loesungen/crowd-management-hamburg-triathlon-hamburg/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/crowd-management-hamburg-triathlon-hamburg/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/crowd-management-hamburg-triathlon-hamburg/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/crowd-management-katholikentag-2028-paderborn/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/crowd-management-katholikentag-2028-paderborn/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/crowd-management-katholikentag-2028-paderborn/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/besuchersicherheit-kirchentag-2027-duesseldorf/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/besuchersicherheit-kirchentag-2027-duesseldorf/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/besuchersicherheit-kirchentag-2027-duesseldorf/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/besuchersicherheit-leipziger-stadtfest-leipzig/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/besuchersicherheit-leipziger-stadtfest-leipzig/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/besuchersicherheit-leipziger-stadtfest-leipzig/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/krisenkommunikation-leipziger-triathlon-leipzig/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/krisenkommunikation-leipziger-triathlon-leipzig/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/krisenkommunikation-leipziger-triathlon-leipzig/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
