@@ -1,87 +1,251 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/x-icon" href="https://nikos.info/assets/logos/A.ico">
-<title>Alle Einsatzbeispiele | NIKOS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="https://nikos.info/">
+<link rel="icon" type="image/x-icon" href="assets/logos/A.ico">
+<title>Alle Einsatzbeispiele – NIKOS</title>
 <meta name="description" content="Verzeichnis aller NIKOS-Einsatzbeispiel-Seiten: mobile Durchsage-, Alarmierungs- und Crowd-Management-Loesungen fuer Veranstaltungen, Baustellen und Staedte.">
 <link rel="canonical" href="https://nikos.info/loesungen/">
 <meta name="robots" content="index, follow">
+
 <style>
-  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:#1a1a1a;background:#fff;line-height:1.6}
-  .wrap{max-width:56rem;margin:0 auto;padding:2.5rem 1.25rem 4rem}
-  h1{font-size:1.35rem;margin:0 0 .3rem;color:#1a1a1a}
-  p.intro{color:#595959;font-size:.92rem;margin:0 0 .4rem;max-width:44rem}
-  ul{list-style:none;margin:2rem 0 0;padding:0;columns:2;column-gap:2.5rem}
-  li{break-inside:avoid;margin-bottom:.6rem;font-size:.88rem;line-height:1.45}
-  a{color:#0b6cb7;text-decoration:none}
-  a:hover{text-decoration:underline}
-  .foot{margin-top:3rem;font-size:.78rem;color:#999}
-  .foot a{color:#999}
-  @media (max-width:640px){ul{columns:1}}
+/* Lokale Schriften (DSGVO-konform, kein Google-Fonts-CDN) — OFL, siehe assets/fonts/OFL-Exo2.txt */
+@font-face{font-family:'Source Sans 3';font-style:normal;font-weight:300 700;font-display:swap;src:url('assets/fonts/SourceSans3-VariableFont_wght.ttf') format('truetype-variations');}
+@font-face{font-family:'Source Sans 3';font-style:italic;font-weight:300 700;font-display:swap;src:url('assets/fonts/SourceSans3-Italic-VariableFont_wght.ttf') format('truetype-variations');}
+@font-face{font-family:'Exo 2';font-style:normal;font-weight:400 700;font-display:swap;src:url('assets/fonts/Exo2-VariableFont_wght.ttf') format('truetype-variations');}
 </style>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brand-orange:#FF6600;--brand-orange-dk:#E05500;--brand-dark:#4D4D4D;--brand-mid:#595959;--brand-light:#999999;
+  --white:#FFFFFF;--s2:#F5F5F5;--s3:#EBEBEB;--border:#CCCCCC;--sec-dark:#253341;--surface-footer:#2E3236;
+  --card-border:#D8DCE0;
+  --banner-bar:#1D2F49;
+  --orange:var(--brand-orange);--dark:var(--brand-dark);--mid:var(--brand-mid);--light:var(--brand-light);
+  --font:'Source Sans 3',system-ui,sans-serif;--claim:'Exo 2',system-ui,sans-serif;
+  --r:4px;--r-lg:4px;--r-xl:16px;--max-w:1280px;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--dark);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+[data-de],[data-en]{display:none !important}
+[data-lang="de"] [data-de]{display:revert !important}
+[data-lang="en"] [data-en]{display:revert !important}
+.lang-flag{position:relative;flex-shrink:0}
+.lang-flag__btn{display:flex;align-items:center;gap:5px;padding:5px 8px;border:1px solid var(--border);border-radius:var(--r);background:var(--s2);cursor:pointer;font-family:var(--font);font-size:12px;font-weight:600;color:var(--dark);line-height:1;white-space:nowrap;transition:border-color .15s}
+.lang-flag__btn:hover{border-color:var(--orange)}
+.lang-flag__btn .flag{font-size:16px}.lang-flag__btn .chevron{font-size:9px;color:var(--light);margin-left:1px;transition:transform .2s}
+.lang-flag.is-open .lang-flag__btn .chevron{transform:rotate(180deg)}
+.lang-flag__dropdown{display:none;position:absolute;top:calc(100% + 6px);right:0;background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:0 8px 24px rgba(0,0,0,.12);min-width:140px;overflow:hidden;z-index:200}
+.lang-flag.is-open .lang-flag__dropdown{display:block}
+.lang-flag__option{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;font-size:13px;color:var(--dark);border:none;background:none;width:100%;text-align:left;font-family:var(--font);transition:background .12s}
+.lang-flag__option:hover{background:var(--s2)}.lang-flag__option.active{background:rgba(255,102,0,.06);color:var(--orange);font-weight:600}
+.nk-nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:4px solid var(--orange);box-shadow:0 1px 12px rgba(0,0,0,.06)}
+.nav__inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;gap:16px}
+.nav__logo{height:64px;display:flex;align-items:center;flex-shrink:0;margin-right:32px}.nav__logo svg{height:28px;width:auto;display:block}
+.nav__links{display:flex;align-items:center;gap:20px;list-style:none;flex-wrap:nowrap;min-width:0}
+.nav__links a{font-size:16px;color:var(--mid);text-decoration:none;font-weight:400;transition:color .15s;white-space:nowrap}
+.nav__links a:hover{color:var(--orange)}
+.nav__right{display:flex;align-items:center;gap:8px;flex-shrink:0;margin-left:auto}
+.nav__cta{background:var(--orange) !important;color:#fff !important;padding:6px 14px;border-radius:var(--r);font-weight:600 !important;white-space:nowrap;text-decoration:none;font-size:12px;line-height:1.4}
+.nav__cta:hover{background:var(--brand-orange-dk) !important}
+.nav__burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:4px}
+.nav__burger span{display:block;height:2px;width:24px;background:var(--dark);border-radius:2px;transition:transform .25s,opacity .2s}
+.nav__burger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav__burger.is-open span:nth-child(2){opacity:0}
+.nav__burger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav__mobile{display:none;position:absolute;top:100%;left:0;right:0;background:var(--white);border-top:1px solid var(--s2);box-shadow:0 8px 24px rgba(0,0,0,.10);z-index:99;padding:16px 0 24px}
+.nav__mobile.is-open{display:block}
+.nav__mobile ul{list-style:none;display:flex;flex-direction:column}
+.nav__mobile ul li a{display:block;padding:12px 24px;font-size:15px;color:var(--dark);text-decoration:none;border-left:3px solid transparent;transition:border-color .15s,color .15s}
+.nav__mobile ul li a:hover{color:var(--orange);border-left-color:var(--orange)}
+.nav__mobile ul li a.nav__cta-mobile{margin:8px 24px 0;padding:10px 20px;background:var(--orange);color:#fff !important;border-radius:var(--r);text-align:center;font-weight:600;border-left:none !important;display:none}
+/* Content */
+.legal-page{max-width:840px;margin:0 auto;padding:64px clamp(20px,5vw,48px) 96px}
+.legal-page h1{font-family:var(--claim);font-size:clamp(28px,3.5vw,42px);font-weight:700;color:var(--dark);margin-bottom:8px;line-height:1.1}
+.legal-page .meta{font-size:13px;color:var(--light);margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid var(--border)}
+.legal-page p{font-size:15px;color:var(--mid);margin-bottom:12px;line-height:1.75}
+.legal-page a{color:var(--orange);text-decoration:none}
+.legal-page a:hover{text-decoration:underline}
+.loesungen-list{list-style:none;margin:32px 0 0;padding:0;columns:2;column-gap:2.5rem}
+.loesungen-list li{break-inside:avoid;margin-bottom:12px;font-size:14px;line-height:1.5}
+.loesungen-list a{color:var(--orange);text-decoration:none}
+.loesungen-list a:hover{text-decoration:underline}
+@media(max-width:700px){.loesungen-list{columns:1}}
+/* Footer */
+.nk-footer{background:var(--surface-footer);padding:56px 0 0}
+.nk-footer__inner{max-width:var(--max-w);margin:0 auto;padding:0 clamp(20px,5vw,80px)}
+.nk-footer__grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px}
+.nk-footer__brand-logo{margin-bottom:20px}
+.nk-footer__brand-features{list-style:none;margin-bottom:24px}
+.nk-footer__brand-features li{font-size:13px;color:rgba(255,255,255,.5);padding:3px 0}
+.nk-footer__social{display:flex;gap:12px}
+.nk-footer__social a{color:rgba(255,255,255,.5);transition:color .15s}
+.nk-footer__social a:hover{color:var(--orange)}
+.nk-footer__col-title{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px}
+.nk-footer__links{list-style:none}
+.nk-footer__links li{margin-bottom:10px}
+.nk-footer__links a{font-size:14px;color:rgba(255,255,255,.65);text-decoration:none;transition:color .15s}
+.nk-footer__links a:hover{color:var(--orange)}
+.nk-footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.nk-footer__copy{font-size:13px;color:rgba(255,255,255,.35)}
+.nk-footer__bottom-links{list-style:none;display:flex;gap:20px}
+.nk-footer__bottom-links a{font-size:13px;color:rgba(255,255,255,.35);text-decoration:none}
+.nk-footer__bottom-links a:hover{color:var(--orange)}
+@media(max-width:900px){.nav__links{display:none !important}.nav__burger{display:flex !important}.nk-footer__grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.nk-footer__grid{grid-template-columns:1fr}}
+</style>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="4f48b5b5-93c8-4493-be71-2c1cefc6e440"></script>
+<!-- ═══ KLARO CONSENT MANAGER ═══ -->
+<script defer src="assets/js/klaro-config.js"></script>
+<script defer src="https://cdn.kiprotect.com/klaro/v0.7/klaro.js"></script>
+<style>
+/* Klaro Branding Override — NIKOS */
+:root { --klaro-green: #FF6600; }
+.klaro .cm-btn.cm-btn-accept,
+.klaro .cm-btn.cm-btn-accept-all,
+.klaro .cn-ok .cm-btn.cm-btn-success {
+  background-color: #FF6600 !important;
+  border-color: #FF6600 !important;
+  color: #fff !important;
+}
+.klaro .cm-btn.cm-btn-accept:hover,
+.klaro .cm-btn.cm-btn-accept-all:hover {
+  background-color: #E05500 !important;
+}
+.klaro .cookie-notice,
+.klaro .cookie-modal .cm-modal {
+  border-top: 3px solid #FF6600;
+}
+.klaro .slider { background-color: #FF6600 !important; }
+.klaro input[type=checkbox]:checked + .cm-list-label .slider { background-color: #FF6600 !important; }
+.klaro .cm-link, .klaro a { color: #FF6600 !important; }
+.klaro .cm-btn.cm-btn-decline,
+.klaro .cm-btn.cm-btn-close {
+  background: transparent !important;
+  border: 1px solid #CCCCCC !important;
+  color: #4D4D4D !important;
+}
+.klaro .cm-btn.cm-btn-decline:hover,
+.klaro .cm-btn.cm-btn-close:hover {
+  border-color: #FF6600 !important;
+  color: #FF6600 !important;
+}
+.klaro .cookie-modal .cm-modal { border-radius: 4px; }
+.klaro .cm-btn { border-radius: 4px !important; }
+.klaro .cookie-notice { border-radius: 4px; }
+</style>
+<style id="btn-sec-contrast">.btn-secondary{background:var(--s2);border-color:var(--s2)}.btn-secondary:hover{background:var(--s2);border-color:var(--orange);color:var(--orange)}.nk-section--surface .btn-secondary,.section--alt .btn-secondary{background:var(--white);border-color:var(--white)}.nk-section--surface .btn-secondary:hover,.section--alt .btn-secondary:hover{background:var(--white);border-color:var(--orange);color:var(--orange)}</style>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="QPBi7D5b8OKPmyaZADAAiA" async></script>
 </head>
 <body>
-<div class="wrap">
-<h1>Alle Einsatzbeispiele</h1>
-<p class="intro" lang="de">Verzeichnis aller NIKOS-Einsatzbeispiel-Seiten fuer Veranstaltungen, Baustellen und Staedte. Diese Seite dient vor allem der Navigation und Auffindbarkeit.</p>
-<p class="intro" lang="en">Directory of all NIKOS use-case pages for events, construction sites and cities. This page mainly serves navigation and discoverability.</p>
-<ul>
-  <li><a href="https://nikos.info/loesungen/besucherinformation-altstadtfest-fuerstenfeldbruck/">Besucherinformation für das Altstadtfest in Fürstenfeldbruck: Verteilte Bühnen und Stände koordiniert erreichen</a></li>
-  <li><a href="https://nikos.info/loesungen/besucherinformation-augsburger-plaerrer-augsburg/">Besucherinformation für den Augsburger Plärrer: Durchsagen müssen sich gegen Schaustellermusik und Gedränge durchsetzen</a></li>
-  <li><a href="https://nikos.info/loesungen/besucherinformation-bremer-freimarkt-bremen/">Besucherinformation für den Bremer Freimarkt: Klare Hinweise trotz Schaustellerlärm und Gedränge</a></li>
-  <li><a href="https://nikos.info/loesungen/besucherlenkung-katholikentag-2028-paderborn/">Besucherlenkung für Katholikentag 2028 in Paderborn: Unterschiedliche Veranstaltungsorte brauchen eine gemeinsame Kommunikations- und Alarmierungsebene</a></li>
-  <li><a href="https://nikos.info/loesungen/besucherlenkung-katholikentag-paderborn/">Besucherlenkung für den Katholikentag in Paderborn: Gemeinsame Kommunikation über dezentrale Veranstaltungsorte</a></li>
-  <li><a href="https://nikos.info/loesungen/besuchersicherheit-kirchentag-2027-duesseldorf/">Besuchersicherheit für den Kirchentag 2027 in Düsseldorf: Gemeinsame Warn- und Durchsageebene für verteilte Veranstaltungsorte</a></li>
-  <li><a href="https://nikos.info/loesungen/besuchersicherheit-leipziger-stadtfest-leipzig/">Besuchersicherheit für das Leipziger Stadtfest: Bühnen und Besucherbereiche gleichzeitig erreichen</a></li>
-  <li><a href="https://nikos.info/loesungen/crowd-management-augsburger-plaerrer-augsburg/">Crowd Management für den Augsburger Plärrer: Dichte Besucherströme brauchen klare Durchsagen trotz Fahrgeschäftlärm</a></li>
-  <li><a href="https://nikos.info/loesungen/crowd-management-bremer-freimarkt-bremen/">Crowd Management für den Bremer Freimarkt: Besucherströme bei Gedränge und hoher Geräuschkulisse gezielt lenken</a></li>
-  <li><a href="https://nikos.info/loesungen/crowd-management-christopher-street-day-hamburg/">Crowd Management für den Christopher-Street-Day in Hamburg: Besucherströme entlang der Umzugsstrecke gezielt lenken</a></li>
-  <li><a href="https://nikos.info/loesungen/crowd-management-hamburg-stadtlauf-hamburg/">Crowd Management für den Hamburg Stadtlauf: Zuschauer an Start, Ziel und Strecke gezielt lenken</a></li>
-  <li><a href="https://nikos.info/loesungen/crowd-management-hamburg-triathlon-hamburg/">Crowd Management für den Hamburg Triathlon: Besucherströme entlang der Strecke und in Wechselzonen gezielt lenken</a></li>
-  <li><a href="https://nikos.info/loesungen/crowd-management-katholikentag-2028-paderborn/">Crowd Management für den Katholikentag 2028 in Paderborn: Gemeinsame Warn- und Lenkungsebene für verteilte Veranstaltungsorte</a></li>
-  <li><a href="https://nikos.info/loesungen/crowd-management-open-air-konzert-hamburg/">Crowd Management für die Open-Air-Konzerte in Hamburg: Besucher bei Überfüllung schnell und gezielt lenken</a></li>
-  <li><a href="https://nikos.info/loesungen/diebstahlschutz-baustelle/">Diebstahlschutz für Baustellen: Wertvolle Maschinen und abgezäunte Bereiche ohne aufwändige Verkabelung überwachen</a></li>
-  <li><a href="https://nikos.info/loesungen/elektroakustisches-notfallwarnsystem-buga-oberes-mittelrheintal-2029-koblen/">Elektroakustisches Notfallwarnsystem für die BUGA Oberes Mittelrheintal 2029: Warnungen über weitläufige Grünflächen ohne lange Kabelwege</a></li>
-  <li><a href="https://nikos.info/loesungen/elektroakustisches-notfallwarnsystem-open-air-konzert/">Elektroakustisches Notfallwarnsystem für das Open-Air-Konzert: Notfalldurchsagen trotz Bühnenlärm verständlich ausgeben</a></li>
-  <li><a href="https://nikos.info/loesungen/evakuierung-open-air-konzert-hamburg/">Evakuierung für Open-Air-Konzerte in Hamburg: Räumungsdurchsagen trotz Bühnenlärm verständlich ausgeben</a></li>
-  <li><a href="https://nikos.info/loesungen/evakuierungsansage-katholikentag-2028-paderborn/">Räumungsdurchsage für Katholikentag 2028 in Paderborn: Unterschiedliche Veranstaltungsorte gleichzeitig sicher erreichen</a></li>
-  <li><a href="https://nikos.info/loesungen/evakuierungsbeschallung-schuetzenfest-hannover/">Evakuierungsbeschallung für das Schützenfest Hannover: Durchsagen müssen Festumzug und Festzeltbetrieb zugleich erreichen</a></li>
-  <li><a href="https://nikos.info/loesungen/krisenkommunikation-christopher-street-day-hamburg/">Krisenkommunikation für den Christopher-Street-Day in Hamburg: Warnungen müssen die Umzugsstrecke trotz Gedränge und Musik erreichen</a></li>
-  <li><a href="https://nikos.info/loesungen/krisenkommunikation-leipziger-triathlon-leipzig/">Krisenkommunikation für den Leipziger Triathlon: Strecke, Wechselzone und Zielbereich gleichzeitig erreichbar halten</a></li>
-  <li><a href="https://nikos.info/loesungen/krisenkommunikation-stadtlauf/">Krisenkommunikation für den Stadtlauf: Lange Streckenabschnitte sofort erreichbar halten</a></li>
-  <li><a href="https://nikos.info/loesungen/krisenkommunikation-wehlheider-kirmes-kassel/">Krisenkommunikation für die Wehlheider Kirmes in Kassel: Sicherheitsdurchsagen trotz Lärm und Gedränge zuverlässig vermitteln</a></li>
-  <li><a href="https://nikos.info/loesungen/mobile-sicherheitstechnik-katholikentag-2028-paderborn/">Mobile Sicherheitstechnik für den Katholikentag 2028 in Paderborn: Unterschiedliche Veranstaltungsorte brauchen eine gemeinsame Kommunikations- und Alarmierungsebene</a></li>
-  <li><a href="https://nikos.info/loesungen/mobiles-durchsagesystem-duesseldorfer-karneval-duesseldorf/">Mobiles Durchsagesystem für den Düsseldorfer Karneval: Dichtes Gedränge erfordert schnelle Warnung und Lenkung</a></li>
-  <li><a href="https://nikos.info/loesungen/mobiles-durchsagesystem-hamburger-dom-hamburg/">Mobiles Durchsagesystem für den Hamburger DOM: Verständliche Warnungen trotz Schaustellerlärm und Gedränge</a></li>
-  <li><a href="https://nikos.info/loesungen/mobiles-durchsagesystem-stadtlauf-hamburg/">Mobiles Durchsagesystem für Stadtläufe in Hamburg: Verständliche Durchsagen entlang langer innerstädtischer Strecken</a></li>
-  <li><a href="https://nikos.info/loesungen/mobiles-notfallkommunikationssystem-veranstaltung/">Mobiles Notfallkommunikationssystem für die Veranstaltung: Kommunikation muss ohne feste Infrastruktur sofort stehen</a></li>
-  <li><a href="https://nikos.info/loesungen/notfalldurchsage-altstadtfest-fuerstenfeldbruck/">Notfalldurchsage für das Altstadtfest in Fürstenfeldbruck: Verteilte Bühnen ohne durchgängige Warnmöglichkeit</a></li>
-  <li><a href="https://nikos.info/loesungen/notfalldurchsage-hamburger-dom-hamburg/">Notfalldurchsage für den Hamburger DOM: Verständliche Warnungen trotz Schaustellerlärm und Gedränge</a></li>
-  <li><a href="https://nikos.info/loesungen/notfalldurchsage-nrw-tag-2026-muenster/">Notfalldurchsage für den NRW-Tag 2026 in Münster: Koordinierte Warnungen über verteilte Bühnen und Bereiche</a></li>
-  <li><a href="https://nikos.info/loesungen/notfalldurchsage-weihnachtsmarkt-bremen/">Notfalldurchsagen für Weihnachtsmärkte in Bremen: Automatische Alarmierung nach Durchbrechen von Zufahrtssperren und Zäunen</a></li>
-  <li><a href="https://nikos.info/loesungen/notfallkommunikationssystem-oktoberfest-muenchen/">Notfallkommunikationssystem für das Oktoberfest in München: Sicherheitsdurchsagen müssen volle Festzelte trotz Lärm erreichen</a></li>
-  <li><a href="https://nikos.info/loesungen/notfallkommunikationssystem-tag-der-deutschen-einheit-2026-bremen/">Notfallkommunikationssystem für den Tag der Deutschen Einheit 2026 in Bremen</a></li>
-  <li><a href="https://nikos.info/loesungen/notfallkommunikationssystem-tag-der-deutschen-einheit-hamburg/">Notfallkommunikationssystem für die zentrale Feier zum Tag der Deutschen Einheit in Hamburg: Sekunden zählen bei hohem Schutzbedarf und dichter Besuchermenge</a></li>
-  <li><a href="https://nikos.info/loesungen/perimeterschutz-weihnachtsmarkt-magdeburg/">Perimeterschutz für den Weihnachtsmarkt in Magdeburg: Warnen und Alarmieren bei durchbrochenen Zufahrtssperren und Zäunen</a></li>
-  <li><a href="https://nikos.info/loesungen/raeumungsdurchsage-kirchentag-2027-duesseldorf/">Räumungsdurchsage für den Kirchentag 2027 in Düsseldorf: Unterschiedliche Veranstaltungsorte gleichzeitig warnen und lenken</a></li>
-  <li><a href="https://nikos.info/loesungen/raeumungsdurchsage-open-air-konzert/">Räumungsdurchsage für das Open-Air-Konzert: Warnungen müssen trotz Bühnenlärm sofort verständlich sein</a></li>
-  <li><a href="https://nikos.info/loesungen/raeumungsdurchsage-stadtlauf-dortmund/">Räumungsdurchsage für Stadtläufe in Dortmund: Start-, Ziel- und Streckenbereiche koordiniert räumen</a></li>
-  <li><a href="https://nikos.info/loesungen/sprachalarmierung-augsburger-plaerrer-augsburg/">Sprachalarmierung für den Augsburger Plärrer: Sicherheitsdurchsagen müssen Lärm und Gedränge zuverlässig überbrücken</a></li>
-  <li><a href="https://nikos.info/loesungen/sprachalarmierung-hamburg-triathlon-hamburg/">Sprachalarmierung für den Hamburg Triathlon: Lange Streckenabschnitte ohne Mobilfunkabhängigkeit erreichen</a></li>
-  <li><a href="https://nikos.info/loesungen/sprachalarmierung-internationales-strassenfest-sindelfingen/">Sprachalarmierung für das Internationale Straßenfest in Sindelfingen: Verteilte Bühnen und Stände ohne durchgängige Beschallung</a></li>
-  <li><a href="https://nikos.info/loesungen/sprachalarmierung-nrw-tag-duesseldorf/">Sprachalarmierung für den NRW-Tag in Düsseldorf: Verteilte Bühnen und Besucherbereiche gleichzeitig erreichen</a></li>
-  <li><a href="https://nikos.info/loesungen/sprachalarmierung-oktoberfest-muenchen/">Sprachalarmierung für das Oktoberfest in München: Sicherheitsdurchsagen müssen Festzelte und Schaustellerbereiche trotz Lärm erreichen</a></li>
-  <li><a href="https://nikos.info/loesungen/sprachalarmierung-schuetzenfest-hannover/">Sprachalarmierung für das Schützenfest Hannover: Durchsagen erreichen Umzug und Festzeltbetrieb parallel</a></li>
-  <li><a href="https://nikos.info/loesungen/sprachalarmierung-weihnachtsmarkt-hamburg/">Sprachalarmierung für Weihnachtsmärkte in Hamburg: Sofortige Durchsagen bei Durchbrechen von Zufahrtssperren und Zäunen</a></li>
-  <li><a href="https://nikos.info/loesungen/statusmonitoring-grossveranstaltung-dresden/">Statusmonitoring für Großveranstaltungen in Dresden: Fehlende Übersicht über Bereiche und Rückmeldungen verzögert Entscheidungen</a></li>
-  <li><a href="https://nikos.info/loesungen/unwetterwarnung-altstadtfest-fuerstenfeldbruck/">Unwetterwarnung für das Altstadtfest in Fürstenfeldbruck: Verteilte Besucherbereiche gleichzeitig verständlich erreichen</a></li>
-  <li><a href="https://nikos.info/loesungen/unwetterwarnung-augsburger-plaerrer-augsburg/">Unwetterwarnung für den Augsburger Plärrer: Durchsagen müssen trotz Fahrgeschäftlärm und Gedränge verständlich ankommen</a></li>
-  <li><a href="https://nikos.info/loesungen/unwetterwarnung-iga-ruhrgebiet-2027-essen/">Unwetterwarnung für die IGA Ruhrgebiet 2027 in Essen: Warnungen müssen bei begrenztem Wetterschutz sofort alle Besucherbereiche erreichen</a></li>
-  <li><a href="https://nikos.info/loesungen/zuschauerinformation-chio-aachen-aachen/">Zuschauerinformation für den CHIO Aachen: Programm- und Servicehinweise müssen unterschiedliche Besucherbereiche sicher erreichen</a></li>
-</ul>
-<p class="foot"><a href="https://nikos.info/index.html">Startseite</a> &middot; <a href="https://nikos.info/nikos-impressum.html">Impressum</a> &middot; <a href="https://nikos.info/nikos-datenschutz.html">Datenschutz</a></p>
+<nav class="nk-nav" id="mainNav">
+  <div class="nav__inner">
+    <div class="nav__logo"><a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="344.188 -0.500 356.378 66.750" style="height:28px;width:auto;"><path fill="#4D4D4D" d="M344.688,0.688h26.75l32.935,47.026h0.003V0.688h17.313v64.375h-26.75l-32.935-47.026h-0.003v47.026h-17.313V0.688z"/><path fill="#4D4D4D" d="M433.706,0.688h17.313v64.375h-17.313V0.688z"/><path fill="#4D4D4D" d="M463.267,0.688h17.313v23.625h8.248l21.799-23.625h23.516l-30.438,31.399l33.938,32.976h-24.619L488.295,40.25h-7.716v24.813h-17.313V0.688z"/><path fill="#4D4D4D" d="M541.403,42.651v-18.99c0-8.42,1.828-14.462,5.484-18.124C550.567,1.846,556.927,0,565.964,0h28.557c8.834,0,15.117,1.846,18.848,5.537c3.732,3.691,5.598,9.632,5.598,17.821v19.249c-0.127,8.363-2.031,14.318-5.711,17.865c-3.656,3.519-9.836,5.277-18.543,5.277h-28.748c-8.605,0-14.852-1.729-18.734-5.19C543.345,57.07,541.403,51.101,541.403,42.651z M559.278,29.548v6.266c0,5.473,0.711,9.088,2.131,10.844c1.42,1.729,4.197,2.593,8.332,2.593h21.42c4.008,0,6.658-0.922,7.951-2.766c1.318-1.871,1.979-5.299,1.979-10.282v-6.524c0-5.127-0.811-8.598-2.434-10.412c-1.6-1.844-4.377-2.766-8.332-2.766h-20.014c-4.135,0-7.014,0.937-8.637,2.809C560.077,21.182,559.278,24.595,559.278,29.548z"/><path fill="#4D4D4D" d="M646.131,44.313c0.229,2.889,0.748,4.796,1.561,5.72c0.813,0.896,2.805,1.343,5.978,1.343h22.234c4.568,0,6.853-1.805,6.853-5.415c0-2.311-0.901-3.885-2.702-4.723c-1.777-0.866-6.078-1.3-12.904-1.3h-10.658c-8.273,0-14.363-0.533-18.271-1.601c-3.883-1.067-6.472-3.058-7.766-5.972c-1.092-2.394-1.637-6.533-1.637-12.418c0-8.048,1.712-13.385,5.138-16.01C637.407,1.313,643.218,0,651.388,0h24.358c8.551,0,14.336,1.354,17.355,4.063s4.529,7.493,4.529,14.353v2.334h-17.313c0-2.544-0.521-4.235-1.561-5.074c-1.041-0.867-3.376-1.301-7.005-1.301h-18.541c-4.721,0-7.081,1.706-7.081,5.117c0,3.412,1.649,5.189,4.948,5.334c3.324,0.116,6.445,0.174,9.364,0.174h11.762c8.044,0,14.021,0.605,17.929,1.816c3.933,1.212,6.622,3.346,8.069,6.402c1.243,2.625,1.865,6.735,1.865,12.329c0,5.682-0.647,9.85-1.941,12.502c-1.421,2.885-4.009,4.889-7.764,6.013c-3.73,1.125-9.466,1.688-17.204,1.688h-22.646c-8.373,0-14.082-1.268-17.127-3.804c-3.045-2.535-4.567-6.929-4.567-13.182v-4.452H646.131z"/></svg></a></div>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="nikos-system.html" data-de>System</a><a href="nikos-system.html" data-en>System</a></li>
+      <li><a href="nikos-anwendungen.html" data-de>Anwendungen</a><a href="nikos-anwendungen.html" data-en>Applications</a></li>
+      <li><a href="nikos-produkte.html" data-de>Produkte</a><a href="nikos-produkte.html" data-en>Products</a></li>
+      <li><a href="nikos-referenzen.html" data-de>Referenzen</a><a href="nikos-referenzen.html" data-en>References</a></li>
+      <li><a href="nikos-vermietung.html" data-de>Vermietung</a><a href="nikos-vermietung.html" data-en>Rental</a></li>
+      <li><a href="nikos-downloads.html" data-de>Wissen</a><a href="nikos-downloads.html" data-en>Insights</a></li>
+    </ul>
+    <div class="nav__right">
+      <a href="nikos-kontakt.html" class="nav__cta" data-de>Kontakt</a><a href="nikos-kontakt.html" class="nav__cta" data-en>Contact</a>
+      <div class="lang-flag" id="langFlag">
+        <button class="lang-flag__btn" id="langFlagBtn" aria-haspopup="true" aria-expanded="false"><span class="flag" id="langFlagIcon">🇩🇪</span><span class="chevron">▾</span></button>
+        <div class="lang-flag__dropdown" id="langFlagDropdown" role="listbox">
+          <button class="lang-flag__option active" data-lang-opt="de"><span class="flag">🇩🇪</span> Deutsch</button>
+          <button class="lang-flag__option" data-lang-opt="en"><span class="flag">🇬🇧</span> English</button>
+        </div>
+      </div>
+    </div>
+    <button class="nav__burger" id="navBurger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav__mobile" id="navMobile"><ul>
+    <li><a href="nikos-system.html" data-de>System</a><a href="nikos-system.html" data-en>System</a></li>
+    <li><a href="nikos-anwendungen.html" data-de>Anwendungen</a><a href="nikos-anwendungen.html" data-en>Applications</a></li>
+    <li><a href="nikos-produkte.html" data-de>Produkte</a><a href="nikos-produkte.html" data-en>Products</a></li>
+    <li><a href="nikos-vermietung.html" data-de>Vermietung</a><a href="nikos-vermietung.html" data-en>Rental</a></li>
+    <li><a href="nikos-downloads.html" data-de>Wissen</a><a href="nikos-downloads.html" data-en>Insights</a></li>
+  </ul></div>
+</nav>
+<div class="legal-page">
+  <div data-de>
+    <h1>Alle Einsatzbeispiele</h1>
+    <p>Verzeichnis aller NIKOS-Einsatzbeispiel-Seiten für Veranstaltungen, Baustellen und Städte. Jede Seite beschreibt eine konkrete Anwendungssituation für mobile Durchsage-, Alarmierungs- und Crowd-Management-Lösungen.</p>
+  </div>
+  <div data-en>
+    <h1>All Use Cases</h1>
+    <p>Directory of all NIKOS use-case pages for events, construction sites and cities. Each page describes a concrete application scenario for mobile announcement, alerting and crowd-management solutions.</p>
+  </div>
+  <ul class="loesungen-list">
+      <li><a href="https://nikos.info/loesungen/besucherinformation-altstadtfest-fuerstenfeldbruck/">Besucherinformation für das Altstadtfest in Fürstenfeldbruck: Verteilte Bühnen und Stände koordiniert erreichen</a></li>
+      <li><a href="https://nikos.info/loesungen/besucherinformation-augsburger-plaerrer-augsburg/">Besucherinformation für den Augsburger Plärrer: Durchsagen müssen sich gegen Schaustellermusik und Gedränge durchsetzen</a></li>
+      <li><a href="https://nikos.info/loesungen/besucherinformation-bremer-freimarkt-bremen/">Besucherinformation für den Bremer Freimarkt: Klare Hinweise trotz Schaustellerlärm und Gedränge</a></li>
+      <li><a href="https://nikos.info/loesungen/besucherlenkung-katholikentag-2028-paderborn/">Besucherlenkung für Katholikentag 2028 in Paderborn: Unterschiedliche Veranstaltungsorte brauchen eine gemeinsame Kommunikations- und Alarmierungsebene</a></li>
+      <li><a href="https://nikos.info/loesungen/besucherlenkung-katholikentag-paderborn/">Besucherlenkung für den Katholikentag in Paderborn: Gemeinsame Kommunikation über dezentrale Veranstaltungsorte</a></li>
+      <li><a href="https://nikos.info/loesungen/besuchersicherheit-kirchentag-2027-duesseldorf/">Besuchersicherheit für den Kirchentag 2027 in Düsseldorf: Gemeinsame Warn- und Durchsageebene für verteilte Veranstaltungsorte</a></li>
+      <li><a href="https://nikos.info/loesungen/besuchersicherheit-leipziger-stadtfest-leipzig/">Besuchersicherheit für das Leipziger Stadtfest: Bühnen und Besucherbereiche gleichzeitig erreichen</a></li>
+      <li><a href="https://nikos.info/loesungen/crowd-management-augsburger-plaerrer-augsburg/">Crowd Management für den Augsburger Plärrer: Dichte Besucherströme brauchen klare Durchsagen trotz Fahrgeschäftlärm</a></li>
+      <li><a href="https://nikos.info/loesungen/crowd-management-bremer-freimarkt-bremen/">Crowd Management für den Bremer Freimarkt: Besucherströme bei Gedränge und hoher Geräuschkulisse gezielt lenken</a></li>
+      <li><a href="https://nikos.info/loesungen/crowd-management-christopher-street-day-hamburg/">Crowd Management für den Christopher-Street-Day in Hamburg: Besucherströme entlang der Umzugsstrecke gezielt lenken</a></li>
+      <li><a href="https://nikos.info/loesungen/crowd-management-hamburg-stadtlauf-hamburg/">Crowd Management für den Hamburg Stadtlauf: Zuschauer an Start, Ziel und Strecke gezielt lenken</a></li>
+      <li><a href="https://nikos.info/loesungen/crowd-management-hamburg-triathlon-hamburg/">Crowd Management für den Hamburg Triathlon: Besucherströme entlang der Strecke und in Wechselzonen gezielt lenken</a></li>
+      <li><a href="https://nikos.info/loesungen/crowd-management-katholikentag-2028-paderborn/">Crowd Management für den Katholikentag 2028 in Paderborn: Gemeinsame Warn- und Lenkungsebene für verteilte Veranstaltungsorte</a></li>
+      <li><a href="https://nikos.info/loesungen/crowd-management-open-air-konzert-hamburg/">Crowd Management für die Open-Air-Konzerte in Hamburg: Besucher bei Überfüllung schnell und gezielt lenken</a></li>
+      <li><a href="https://nikos.info/loesungen/diebstahlschutz-baustelle/">Diebstahlschutz für Baustellen: Wertvolle Maschinen und abgezäunte Bereiche ohne aufwändige Verkabelung überwachen</a></li>
+      <li><a href="https://nikos.info/loesungen/elektroakustisches-notfallwarnsystem-buga-oberes-mittelrheintal-2029-koblen/">Elektroakustisches Notfallwarnsystem für die BUGA Oberes Mittelrheintal 2029: Warnungen über weitläufige Grünflächen ohne lange Kabelwege</a></li>
+      <li><a href="https://nikos.info/loesungen/elektroakustisches-notfallwarnsystem-open-air-konzert/">Elektroakustisches Notfallwarnsystem für das Open-Air-Konzert: Notfalldurchsagen trotz Bühnenlärm verständlich ausgeben</a></li>
+      <li><a href="https://nikos.info/loesungen/evakuierung-open-air-konzert-hamburg/">Evakuierung für Open-Air-Konzerte in Hamburg: Räumungsdurchsagen trotz Bühnenlärm verständlich ausgeben</a></li>
+      <li><a href="https://nikos.info/loesungen/evakuierungsansage-katholikentag-2028-paderborn/">Räumungsdurchsage für Katholikentag 2028 in Paderborn: Unterschiedliche Veranstaltungsorte gleichzeitig sicher erreichen</a></li>
+      <li><a href="https://nikos.info/loesungen/evakuierungsbeschallung-schuetzenfest-hannover/">Evakuierungsbeschallung für das Schützenfest Hannover: Durchsagen müssen Festumzug und Festzeltbetrieb zugleich erreichen</a></li>
+      <li><a href="https://nikos.info/loesungen/krisenkommunikation-christopher-street-day-hamburg/">Krisenkommunikation für den Christopher-Street-Day in Hamburg: Warnungen müssen die Umzugsstrecke trotz Gedränge und Musik erreichen</a></li>
+      <li><a href="https://nikos.info/loesungen/krisenkommunikation-leipziger-triathlon-leipzig/">Krisenkommunikation für den Leipziger Triathlon: Strecke, Wechselzone und Zielbereich gleichzeitig erreichbar halten</a></li>
+      <li><a href="https://nikos.info/loesungen/krisenkommunikation-stadtlauf/">Krisenkommunikation für den Stadtlauf: Lange Streckenabschnitte sofort erreichbar halten</a></li>
+      <li><a href="https://nikos.info/loesungen/krisenkommunikation-wehlheider-kirmes-kassel/">Krisenkommunikation für die Wehlheider Kirmes in Kassel: Sicherheitsdurchsagen trotz Lärm und Gedränge zuverlässig vermitteln</a></li>
+      <li><a href="https://nikos.info/loesungen/mobile-sicherheitstechnik-katholikentag-2028-paderborn/">Mobile Sicherheitstechnik für den Katholikentag 2028 in Paderborn: Unterschiedliche Veranstaltungsorte brauchen eine gemeinsame Kommunikations- und Alarmierungsebene</a></li>
+      <li><a href="https://nikos.info/loesungen/mobiles-durchsagesystem-duesseldorfer-karneval-duesseldorf/">Mobiles Durchsagesystem für den Düsseldorfer Karneval: Dichtes Gedränge erfordert schnelle Warnung und Lenkung</a></li>
+      <li><a href="https://nikos.info/loesungen/mobiles-durchsagesystem-hamburger-dom-hamburg/">Mobiles Durchsagesystem für den Hamburger DOM: Verständliche Warnungen trotz Schaustellerlärm und Gedränge</a></li>
+      <li><a href="https://nikos.info/loesungen/mobiles-durchsagesystem-stadtlauf-hamburg/">Mobiles Durchsagesystem für Stadtläufe in Hamburg: Verständliche Durchsagen entlang langer innerstädtischer Strecken</a></li>
+      <li><a href="https://nikos.info/loesungen/mobiles-notfallkommunikationssystem-veranstaltung/">Mobiles Notfallkommunikationssystem für die Veranstaltung: Kommunikation muss ohne feste Infrastruktur sofort stehen</a></li>
+      <li><a href="https://nikos.info/loesungen/notfalldurchsage-altstadtfest-fuerstenfeldbruck/">Notfalldurchsage für das Altstadtfest in Fürstenfeldbruck: Verteilte Bühnen ohne durchgängige Warnmöglichkeit</a></li>
+      <li><a href="https://nikos.info/loesungen/notfalldurchsage-hamburger-dom-hamburg/">Notfalldurchsage für den Hamburger DOM: Verständliche Warnungen trotz Schaustellerlärm und Gedränge</a></li>
+      <li><a href="https://nikos.info/loesungen/notfalldurchsage-nrw-tag-2026-muenster/">Notfalldurchsage für den NRW-Tag 2026 in Münster: Koordinierte Warnungen über verteilte Bühnen und Bereiche</a></li>
+      <li><a href="https://nikos.info/loesungen/notfalldurchsage-weihnachtsmarkt-bremen/">Notfalldurchsagen für Weihnachtsmärkte in Bremen: Automatische Alarmierung nach Durchbrechen von Zufahrtssperren und Zäunen</a></li>
+      <li><a href="https://nikos.info/loesungen/notfallkommunikationssystem-oktoberfest-muenchen/">Notfallkommunikationssystem für das Oktoberfest in München: Sicherheitsdurchsagen müssen volle Festzelte trotz Lärm erreichen</a></li>
+      <li><a href="https://nikos.info/loesungen/notfallkommunikationssystem-tag-der-deutschen-einheit-2026-bremen/">Notfallkommunikationssystem für den Tag der Deutschen Einheit 2026 in Bremen</a></li>
+      <li><a href="https://nikos.info/loesungen/notfallkommunikationssystem-tag-der-deutschen-einheit-hamburg/">Notfallkommunikationssystem für die zentrale Feier zum Tag der Deutschen Einheit in Hamburg: Sekunden zählen bei hohem Schutzbedarf und dichter Besuchermenge</a></li>
+      <li><a href="https://nikos.info/loesungen/perimeterschutz-weihnachtsmarkt-magdeburg/">Perimeterschutz für den Weihnachtsmarkt in Magdeburg: Warnen und Alarmieren bei durchbrochenen Zufahrtssperren und Zäunen</a></li>
+      <li><a href="https://nikos.info/loesungen/raeumungsdurchsage-kirchentag-2027-duesseldorf/">Räumungsdurchsage für den Kirchentag 2027 in Düsseldorf: Unterschiedliche Veranstaltungsorte gleichzeitig warnen und lenken</a></li>
+      <li><a href="https://nikos.info/loesungen/raeumungsdurchsage-open-air-konzert/">Räumungsdurchsage für das Open-Air-Konzert: Warnungen müssen trotz Bühnenlärm sofort verständlich sein</a></li>
+      <li><a href="https://nikos.info/loesungen/raeumungsdurchsage-stadtlauf-dortmund/">Räumungsdurchsage für Stadtläufe in Dortmund: Start-, Ziel- und Streckenbereiche koordiniert räumen</a></li>
+      <li><a href="https://nikos.info/loesungen/sprachalarmierung-augsburger-plaerrer-augsburg/">Sprachalarmierung für den Augsburger Plärrer: Sicherheitsdurchsagen müssen Lärm und Gedränge zuverlässig überbrücken</a></li>
+      <li><a href="https://nikos.info/loesungen/sprachalarmierung-hamburg-triathlon-hamburg/">Sprachalarmierung für den Hamburg Triathlon: Lange Streckenabschnitte ohne Mobilfunkabhängigkeit erreichen</a></li>
+      <li><a href="https://nikos.info/loesungen/sprachalarmierung-internationales-strassenfest-sindelfingen/">Sprachalarmierung für das Internationale Straßenfest in Sindelfingen: Verteilte Bühnen und Stände ohne durchgängige Beschallung</a></li>
+      <li><a href="https://nikos.info/loesungen/sprachalarmierung-nrw-tag-duesseldorf/">Sprachalarmierung für den NRW-Tag in Düsseldorf: Verteilte Bühnen und Besucherbereiche gleichzeitig erreichen</a></li>
+      <li><a href="https://nikos.info/loesungen/sprachalarmierung-oktoberfest-muenchen/">Sprachalarmierung für das Oktoberfest in München: Sicherheitsdurchsagen müssen Festzelte und Schaustellerbereiche trotz Lärm erreichen</a></li>
+      <li><a href="https://nikos.info/loesungen/sprachalarmierung-schuetzenfest-hannover/">Sprachalarmierung für das Schützenfest Hannover: Durchsagen erreichen Umzug und Festzeltbetrieb parallel</a></li>
+      <li><a href="https://nikos.info/loesungen/sprachalarmierung-weihnachtsmarkt-hamburg/">Sprachalarmierung für Weihnachtsmärkte in Hamburg: Sofortige Durchsagen bei Durchbrechen von Zufahrtssperren und Zäunen</a></li>
+      <li><a href="https://nikos.info/loesungen/statusmonitoring-grossveranstaltung-dresden/">Statusmonitoring für Großveranstaltungen in Dresden: Fehlende Übersicht über Bereiche und Rückmeldungen verzögert Entscheidungen</a></li>
+      <li><a href="https://nikos.info/loesungen/unwetterwarnung-altstadtfest-fuerstenfeldbruck/">Unwetterwarnung für das Altstadtfest in Fürstenfeldbruck: Verteilte Besucherbereiche gleichzeitig verständlich erreichen</a></li>
+      <li><a href="https://nikos.info/loesungen/unwetterwarnung-augsburger-plaerrer-augsburg/">Unwetterwarnung für den Augsburger Plärrer: Durchsagen müssen trotz Fahrgeschäftlärm und Gedränge verständlich ankommen</a></li>
+      <li><a href="https://nikos.info/loesungen/unwetterwarnung-iga-ruhrgebiet-2027-essen/">Unwetterwarnung für die IGA Ruhrgebiet 2027 in Essen: Warnungen müssen bei begrenztem Wetterschutz sofort alle Besucherbereiche erreichen</a></li>
+      <li><a href="https://nikos.info/loesungen/zuschauerinformation-chio-aachen-aachen/">Zuschauerinformation für den CHIO Aachen: Programm- und Servicehinweise müssen unterschiedliche Besucherbereiche sicher erreichen</a></li>
+  </ul>
 </div>
+<div id="nk-footer-root"></div>
+<div id="nk-cookiemodal-root"></div>
+<script src="assets/js/nikos-footer.js"></script>
+<script src="assets/js/nikos-config.js"></script>
+<script>
+(function(){
+  var url = (typeof window.NIKOS_CONTACT_URL !== 'undefined') ? window.NIKOS_CONTACT_URL : 'nikos-kontakt.html';
+  document.querySelectorAll('.nav__cta,.nav__cta-mobile').forEach(function(el){
+    el.href = url;
+  });
+})();
+</script>
 </body>
 </html>
