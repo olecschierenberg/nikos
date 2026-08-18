@@ -793,4 +793,39 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://nikos.info/loesungen/notfallwarnsystem-basel-tattoo-basel/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/notfallwarnsystem-basel-tattoo-basel/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/notfallwarnsystem-basel-tattoo-basel/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/unwetterwarnung-basel-tattoo-basel/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/unwetterwarnung-basel-tattoo-basel/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/unwetterwarnung-basel-tattoo-basel/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/sprachalarmierung-basel-tattoo-basel/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/sprachalarmierung-basel-tattoo-basel/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/sprachalarmierung-basel-tattoo-basel/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/crowd-management-basel-tattoo-basel/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/crowd-management-basel-tattoo-basel/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/crowd-management-basel-tattoo-basel/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/evakuierungsansage-basel-tattoo-basel/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/evakuierungsansage-basel-tattoo-basel/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/evakuierungsansage-basel-tattoo-basel/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
