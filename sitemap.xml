@@ -688,4 +688,39 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://nikos.info/loesungen/evakuierung-tomorrowland-winter-alpe-d-huez/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/evakuierung-tomorrowland-winter-alpe-d-huez/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/evakuierung-tomorrowland-winter-alpe-d-huez/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/mobile-sicherheitstechnik-sachsen-anhalt-tag-2028-aschersleben/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/mobile-sicherheitstechnik-sachsen-anhalt-tag-2028-aschersleben/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/mobile-sicherheitstechnik-sachsen-anhalt-tag-2028-aschersleben/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/besucherinformation-iga-ruhrgebiet-2027-dortmund/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/besucherinformation-iga-ruhrgebiet-2027-dortmund/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/besucherinformation-iga-ruhrgebiet-2027-dortmund/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/crowd-management-40-deutscher-evangelischer-kirchentag-2027-duesseldorf/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/crowd-management-40-deutscher-evangelischer-kirchentag-2027-duesseldorf/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/crowd-management-40-deutscher-evangelischer-kirchentag-2027-duesseldorf/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/alarmierung-sachsen-anhalt-tag-2028-aschersleben/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/alarmierung-sachsen-anhalt-tag-2028-aschersleben/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/alarmierung-sachsen-anhalt-tag-2028-aschersleben/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
