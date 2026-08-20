@@ -180,7 +180,8 @@ def apply_metadata(html: str, lang: str, page: dict) -> str:
             stem = source_name.removesuffix('.html')
             variants = [source_name, f'/{source_name}', stem, f'/{stem}']
         for variant in sorted(variants, key=len, reverse=True):
-            html = html.replace(f'href="{variant}', f'href="{target}')
+            pattern = rf'(href=["\']){re.escape(variant)}((?:[?#][^"\']*)?["\'])'
+            html = re.sub(pattern, rf'\g<1>{target}\g<2>', html)
 
     insertion = (
         f'  <base href="/">\n'
