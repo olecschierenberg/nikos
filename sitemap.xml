@@ -1031,4 +1031,39 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://nikos.info/loesungen/evakuierung-wacken-open-air-wacken/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/evakuierung-wacken-open-air-wacken/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/evakuierung-wacken-open-air-wacken/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/durchsageanlage-wacken-open-air-wacken/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/durchsageanlage-wacken-open-air-wacken/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/durchsageanlage-wacken-open-air-wacken/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/crowd-management-sail-bremerhaven-bremerhaven/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/crowd-management-sail-bremerhaven-bremerhaven/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/crowd-management-sail-bremerhaven-bremerhaven/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/besuchersicherheit-karnevalsumzug-koeln/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/besuchersicherheit-karnevalsumzug-koeln/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/besuchersicherheit-karnevalsumzug-koeln/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/besuchersicherheit-basel-tattoo-basel/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/besuchersicherheit-basel-tattoo-basel/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/besuchersicherheit-basel-tattoo-basel/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
