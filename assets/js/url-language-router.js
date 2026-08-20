@@ -8,6 +8,11 @@
   var language = html.getAttribute('data-url-lang');
   if (language !== 'de' && language !== 'en') return;
 
+  // Dieser Router wird nach dem bestehenden Footer geladen und setzt die URL-Sprache
+  // deshalb verbindlich, unabhängig von einer früher gespeicherten Browserauswahl.
+  html.setAttribute('data-lang', language);
+  try { localStorage.setItem('nk-lang', language); } catch (error) {}
+
   var paths = {
     '': { de: '/de/', en: '/en/' },
     'index.html': { de: '/de/', en: '/en/' },

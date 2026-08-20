@@ -15,3 +15,11 @@ Der Wechsel über die sichtbare Sprachumschaltung führte von `/de/system/` auf 
 ## Statische Navigationsprüfung
 
 Alle 16 neuen Sprachseiten wurden lokal mit HTTP 200 geprüft. Jede Seite enthält die vorgesehenen `hreflang`-Signale, die URL-gebundene Sprachkennung und den Schutzstatus `noindex,follow`. Die Kernnavigation ist bereits im statisch ausgelieferten HTML sprachspezifisch: Deutsche Seiten führen ausschließlich zu `/de/…`, englische Seiten ausschließlich zu `/en/…`. Es verbleiben keine direkten Kernnavigationslinks auf die bisherigen `nikos-*.html`-Seiten. Die aktuellen Altseiten und eine repräsentative Landingpage unter `/loesungen/` lieferten in der lokalen Vorschau weiterhin HTTP 200.
+
+## Live-Bereitstellung
+
+Nach dem Push des Commit `6fbc98a` am 20.08.2026 wurde `https://nikos.info/de/system/` geprüft. Zu diesem Zeitpunkt antwortete die vorgelagerte Netlify-Auslieferung noch mit einer 404-Seite. Die Repository-Änderung ist damit korrekt versioniert und gepusht, aber der aktive Deployment-Webhook beziehungsweise die Veröffentlichungsschicht hat den neuen Stand noch nicht ausgeliefert. **Altseiten und Landingpages bleiben unverändert verfügbar; es wurden keine Redirects aktiviert.** Vor einer Redirect-Freigabe muss die Live-Auslieferung der neuen Pfade ausdrücklich bestätigt werden.
+
+## Live-Nachprüfung und Korrekturbedarf
+
+Der GitHub-Pages-Build des Commit `6fbc98a` ist abgeschlossen und die neue Live-URL `https://nikos.info/de/system/` ist erreichbar. Bei der Nachprüfung wurde jedoch festgestellt, dass eine zuvor gespeicherte englische Browser-Sprache die sichtbare deutsche URL-Fassung noch überschreibt. Die URL selbst, Titel und interne Zielpfade sind korrekt; vor der Redirect-Freigabe wird die Sprachlogik so korrigiert, dass `/de/…` und `/en/…` die jeweilige Sprache verbindlich bestimmen.
