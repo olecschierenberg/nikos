@@ -191,10 +191,10 @@ def apply_metadata(html: str, lang: str, page: dict) -> str:
     contact_page = next(item for item in PAGES if item["key"] == "contact")
     override = (
         f'\n<script>window.NIKOS_CONTACT_URL = "{path_for(lang, contact_page)}";</script>'
-        f'\n<script src="assets/js/url-language-router.js"></script>\n'
+        f'\n<script src="assets/js/url-language-router.js?v=2"></script>\n'
     )
     html = html.replace('</body>', override + '</body>', 1)
-    return html
+    return re.sub(r'[ \t]+(?=\n)', '', html)
 
 
 def write_page(lang: str, page: dict) -> None:
@@ -209,7 +209,7 @@ def write_mapping() -> None:
     migration_dir = ROOT / "migration"
     migration_dir.mkdir(exist_ok=True)
     with (migration_dir / "url-mapping.csv").open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.writer(handle)
+        writer = csv.writer(handle, lineterminator="\n")
         writer.writerow(["old_url", "new_de_url", "new_en_url", "status", "redirect_status", "notes"])
         for page in PAGES:
             writer.writerow([
