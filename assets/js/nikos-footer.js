@@ -128,8 +128,9 @@ function acceptAllCookies() {
   });
 
   // Gespeicherte Sprache wiederherstellen
-  var saved = localStorage.getItem('nk-lang');
-  if (saved && saved !== 'de') setLang(saved);
+  var forcedUrlLanguage = document.documentElement.getAttribute('data-url-lang');
+  var saved = forcedUrlLanguage || localStorage.getItem('nk-lang');
+  if (saved === 'de' || saved === 'en') setLang(saved);
 })();
 
 // ── Burger-Menü ───────────────────────────────────────────────────────────────

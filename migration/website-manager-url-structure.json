@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "migrationStatus": "parallel_test",
+  "redirectStatus": "not_configured",
+  "landingpagePolicy": {
+    "sourceDirectories": [
+      "loesungen/",
+      "lp-preview/v2/"
+    ],
+    "preserveExistingUrls": true,
+    "updateOnlyAfterLandingpageReview": true,
+    "description": "Landingpage-Maßnahmen werden im Website-Manager verknüpft, ohne bestehende V1- oder parallele V2-Dateien zu überschreiben."
+  },
+  "pages": [
+    {
+      "pageKey": "home",
+      "sourcePath": "index.html",
+      "oldUrl": "/",
+      "languages": {
+        "de": {
+          "url": "/de/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/"
+        },
+        "en": {
+          "url": "/en/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "system",
+      "sourcePath": "nikos-system.html",
+      "oldUrl": "/nikos-system.html",
+      "languages": {
+        "de": {
+          "url": "/de/system/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/system/"
+        },
+        "en": {
+          "url": "/en/system/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/system/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "applications",
+      "sourcePath": "nikos-anwendungen.html",
+      "oldUrl": "/nikos-anwendungen.html",
+      "languages": {
+        "de": {
+          "url": "/de/anwendungen/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/anwendungen/"
+        },
+        "en": {
+          "url": "/en/applications/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/applications/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "products",
+      "sourcePath": "nikos-produkte.html",
+      "oldUrl": "/nikos-produkte.html",
+      "languages": {
+        "de": {
+          "url": "/de/produkte/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/produkte/"
+        },
+        "en": {
+          "url": "/en/products/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/products/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "references",
+      "sourcePath": "nikos-referenzen.html",
+      "oldUrl": "/nikos-referenzen.html",
+      "languages": {
+        "de": {
+          "url": "/de/referenzen/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/referenzen/"
+        },
+        "en": {
+          "url": "/en/references/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/references/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "rental",
+      "sourcePath": "nikos-vermietung.html",
+      "oldUrl": "/nikos-vermietung.html",
+      "languages": {
+        "de": {
+          "url": "/de/vermietung/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/vermietung/"
+        },
+        "en": {
+          "url": "/en/rental/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/rental/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "insights",
+      "sourcePath": "nikos-downloads.html",
+      "oldUrl": "/nikos-downloads.html",
+      "languages": {
+        "de": {
+          "url": "/de/wissen/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/wissen/"
+        },
+        "en": {
+          "url": "/en/insights/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/insights/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "contact",
+      "sourcePath": "nikos-kontakt.html",
+      "oldUrl": "/nikos-kontakt.html",
+      "languages": {
+        "de": {
+          "url": "/de/kontakt/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/kontakt/"
+        },
+        "en": {
+          "url": "/en/contact/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/contact/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    }
+  ]
+}
