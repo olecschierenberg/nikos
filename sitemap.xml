@@ -1136,4 +1136,39 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://nikos.info/loesungen/veranstaltungssicherheit-christopher-street-day-berlin/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/veranstaltungssicherheit-christopher-street-day-berlin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/veranstaltungssicherheit-christopher-street-day-berlin/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/unwetterwarnung-lollapalooza-berlin-berlin/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/unwetterwarnung-lollapalooza-berlin-berlin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/unwetterwarnung-lollapalooza-berlin-berlin/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/unwetterwarnung-hessentag-2027-idstein/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/unwetterwarnung-hessentag-2027-idstein/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/unwetterwarnung-hessentag-2027-idstein/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/text-to-speech-durchsage-koeln-marathon-koeln/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/text-to-speech-durchsage-koeln-marathon-koeln/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/text-to-speech-durchsage-koeln-marathon-koeln/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/notfallkommunikationssystem-sail-bremerhaven-bremerhaven/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/notfallkommunikationssystem-sail-bremerhaven-bremerhaven/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/notfallkommunikationssystem-sail-bremerhaven-bremerhaven/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
