@@ -1171,4 +1171,39 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://nikos.info/loesungen/terrorwarnung-fressgassfest-frankfurt/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/terrorwarnung-fressgassfest-frankfurt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/terrorwarnung-fressgassfest-frankfurt/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/notfalldurchsage-wacken-open-air-wacken/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/notfalldurchsage-wacken-open-air-wacken/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/notfalldurchsage-wacken-open-air-wacken/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/notfalldurchsage-volksfest-bayern/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/notfalldurchsage-volksfest-bayern/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/notfalldurchsage-volksfest-bayern/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/notfalldurchsage-tag-der-bundeswehr-jagel/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/notfalldurchsage-tag-der-bundeswehr-jagel/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/notfalldurchsage-tag-der-bundeswehr-jagel/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/notfalldurchsage-lange-nacht-der-museen-berlin/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/notfalldurchsage-lange-nacht-der-museen-berlin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/notfalldurchsage-lange-nacht-der-museen-berlin/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
