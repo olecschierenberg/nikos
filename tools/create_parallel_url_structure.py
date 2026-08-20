@@ -191,7 +191,7 @@ def apply_metadata(html: str, lang: str, page: dict) -> str:
     contact_page = next(item for item in PAGES if item["key"] == "contact")
     override = (
         f'\n<script>window.NIKOS_CONTACT_URL = "{path_for(lang, contact_page)}";</script>'
-        f'\n<script src="assets/js/url-language-router.js?v=2"></script>\n'
+        f'\n<script src="assets/js/url-language-router.js?v=3"></script>\n'
     )
     html = html.replace('</body>', override + '</body>', 1)
     return re.sub(r'[ \t]+(?=\n)', '', html)

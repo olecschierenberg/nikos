@@ -12,6 +12,13 @@
   // deshalb verbindlich, unabhängig von einer früher gespeicherten Browserauswahl.
   html.setAttribute('data-lang', language);
   try { localStorage.setItem('nk-lang', language); } catch (error) {}
+  document.querySelectorAll('[data-lang-opt]').forEach(function (option) {
+    option.classList.toggle('active', option.getAttribute('data-lang-opt') === language);
+  });
+  var flag = document.querySelector('.lang-flag__btn .flag');
+  if (flag) flag.textContent = language === 'en' ? '🇬🇧' : '🇩🇪';
+  var label = document.querySelector('.lang-flag__btn .lang-label');
+  if (label) label.textContent = language === 'en' ? 'EN' : 'DE';
 
   var paths = {
     '': { de: '/de/', en: '/en/' },

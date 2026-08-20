@@ -23,3 +23,7 @@ Nach dem Push des Commit `6fbc98a` am 20.08.2026 wurde `https://nikos.info/de/sy
 ## Live-Nachprüfung und Korrekturbedarf
 
 Der GitHub-Pages-Build des Commit `6fbc98a` ist abgeschlossen und die neue Live-URL `https://nikos.info/de/system/` ist erreichbar. Bei der Nachprüfung wurde jedoch festgestellt, dass eine zuvor gespeicherte englische Browser-Sprache die sichtbare deutsche URL-Fassung noch überschreibt. Die URL selbst, Titel und interne Zielpfade sind korrekt; vor der Redirect-Freigabe wird die Sprachlogik so korrigiert, dass `/de/…` und `/en/…` die jeweilige Sprache verbindlich bestimmen.
+
+## Veröffentlichungsstand der Sprachkorrektur
+
+Die cachefeste Router-Version wurde mit Commit `0024a22` in das Repository übertragen. Der anschließende GitHub-Pages-Build war bei der letzten Abfrage noch im Status `building`; daher erfolgt die abschließende Bestätigung der sichtbaren Sprachbindung erst nach Abschluss dieses Builds. Es wurden weiterhin keine Weiterleitungsregeln, Sitemap-Einträge oder Änderungen an bestehenden Landingpages aktiviert.
