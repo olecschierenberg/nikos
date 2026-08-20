@@ -1101,4 +1101,39 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://nikos.info/loesungen/besucherlenkung-christopher-street-day-berlin/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/besucherlenkung-christopher-street-day-berlin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/besucherlenkung-christopher-street-day-berlin/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/besucherinformation-tag-der-niedersachsen-hannover/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/besucherinformation-tag-der-niedersachsen-hannover/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/besucherinformation-tag-der-niedersachsen-hannover/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/besucherinformation-lollapalooza-berlin-berlin/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/besucherinformation-lollapalooza-berlin-berlin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/besucherinformation-lollapalooza-berlin-berlin/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/besucherinformation-lange-nacht-der-museen-berlin/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/besucherinformation-lange-nacht-der-museen-berlin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/besucherinformation-lange-nacht-der-museen-berlin/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/alarmierung-tag-der-deutschen-einheit-2027-duesseldorf/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/alarmierung-tag-der-deutschen-einheit-2027-duesseldorf/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/alarmierung-tag-der-deutschen-einheit-2027-duesseldorf/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
