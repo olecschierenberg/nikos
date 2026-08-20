@@ -870,4 +870,39 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://nikos.info/loesungen/sprachalarmierung-hessentag-hessen/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/sprachalarmierung-hessentag-hessen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/sprachalarmierung-hessentag-hessen/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/raeumungsdurchsage-wacken-open-air-wacken/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/raeumungsdurchsage-wacken-open-air-wacken/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/raeumungsdurchsage-wacken-open-air-wacken/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/raeumungsdurchsage-tag-der-deutschen-einheit-2026-bremen/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/raeumungsdurchsage-tag-der-deutschen-einheit-2026-bremen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/raeumungsdurchsage-tag-der-deutschen-einheit-2026-bremen/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/raeumungsdurchsage-hessentag-darmstadt/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/raeumungsdurchsage-hessentag-darmstadt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/raeumungsdurchsage-hessentag-darmstadt/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/raeumungsdurchsage-hamburger-dom-hamburg/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/raeumungsdurchsage-hamburger-dom-hamburg/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/raeumungsdurchsage-hamburger-dom-hamburg/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
