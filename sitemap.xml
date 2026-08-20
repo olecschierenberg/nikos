@@ -996,4 +996,39 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://nikos.info/loesungen/crowd-management-lollapalooza-berlin-berlin/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/crowd-management-lollapalooza-berlin-berlin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/crowd-management-lollapalooza-berlin-berlin/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/crowd-management-lange-nacht-der-museen-berlin/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/crowd-management-lange-nacht-der-museen-berlin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/crowd-management-lange-nacht-der-museen-berlin/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/crowd-management-fussball-em-fanmeile-berlin/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/crowd-management-fussball-em-fanmeile-berlin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/crowd-management-fussball-em-fanmeile-berlin/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/crowd-management-berlin-marathon-berlin/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/crowd-management-berlin-marathon-berlin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/crowd-management-berlin-marathon-berlin/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/besuchersicherheit-lange-nacht-der-museen-berlin/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/besuchersicherheit-lange-nacht-der-museen-berlin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/besuchersicherheit-lange-nacht-der-museen-berlin/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
