@@ -27,3 +27,9 @@ Der GitHub-Pages-Build des Commit `6fbc98a` ist abgeschlossen und die neue Live-
 ## Veröffentlichungsstand der Sprachkorrektur
 
 Die cachefeste Router-Version wurde mit Commit `0024a22` in das Repository übertragen. Der anschließende GitHub-Pages-Build war bei der letzten Abfrage noch im Status `building`; daher erfolgt die abschließende Bestätigung der sichtbaren Sprachbindung erst nach Abschluss dieses Builds. Es wurden weiterhin keine Weiterleitungsregeln, Sitemap-Einträge oder Änderungen an bestehenden Landingpages aktiviert.
+
+## Erfolgreiche Live-Abnahme
+
+Die finale Live-Prüfung der deutschen Seite `https://nikos.info/de/system/` bestätigte die deutsche sichtbare Fassung, die deutsche Sprachmarkierung und korrekte interne Kernlinks, einschließlich des Startseitenlinks `/de/`. Anschließend führte die Sprachumschaltung sichtbar und ohne Umweg auf `https://nikos.info/en/system/`; dort wurden die englische Fassung, die englische Sprachmarkierung und englische Navigationsziele wie `/en/applications/`, `/en/products/` und `/en/contact/` bestätigt.
+
+Die neue Struktur ist damit parallel funktionsfähig. Die 16 Seiten behalten bis zur formalen SEO- und Go-live-Freigabe `noindex,follow` und sind nicht in die Sitemap aufgenommen. Die bisherigen URLs sowie alle Landingpages unter `loesungen/` und `lp-preview/` wurden weder verändert noch weitergeleitet.
