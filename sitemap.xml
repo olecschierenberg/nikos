@@ -1206,4 +1206,39 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://nikos.info/loesungen/notfalldurchsage-basel-tattoo-basel/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/notfalldurchsage-basel-tattoo-basel/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/notfalldurchsage-basel-tattoo-basel/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/mobiles-durchsagesystem-christopher-street-day-berlin/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/mobiles-durchsagesystem-christopher-street-day-berlin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/mobiles-durchsagesystem-christopher-street-day-berlin/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/notfalldurchsage-fressgassfest-frankfurt/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/notfalldurchsage-fressgassfest-frankfurt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/notfalldurchsage-fressgassfest-frankfurt/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/mobile-sicherheitstechnik-fressgassfest-frankfurt/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/mobile-sicherheitstechnik-fressgassfest-frankfurt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/mobile-sicherheitstechnik-fressgassfest-frankfurt/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/notbeleuchtung-grossveranstaltung-dresden/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/notbeleuchtung-grossveranstaltung-dresden/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/notbeleuchtung-grossveranstaltung-dresden/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
