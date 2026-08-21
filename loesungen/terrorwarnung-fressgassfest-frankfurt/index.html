@@ -366,6 +366,7 @@ a{color:inherit}
       _pref = DEFAULT_BUCKET;
     }
   }
+  if(!IS_DUAL && _pref==='en'){_pref=DEFAULT_BUCKET;}
   setLang(_pref);
   if(IS_DUAL){document.addEventListener('click',function(e){var a=e.target.closest('a[href*="nikos.info"]');if(a){try{localStorage.setItem('nk-lang','en');}catch(err){}}});}
 })();
