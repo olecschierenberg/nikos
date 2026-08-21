@@ -1,0 +1,52 @@
+name: Sitemap aktualisieren
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nikos-sitemap-main
+  cancel-in-progress: false
+
+jobs:
+  regenerate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Websitebestand mit Historie auschecken
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sitemap aus indexierbaren Dateien erzeugen
+        id: sitemap
+        uses: cicirello/generate-sitemap@v1
+        with:
+          base-url-path: https://nikos.info/
+          include-pdf: false
+          exclude-paths: >
+            /lp-preview
+            /backups
+            /migration
+          date-only: true
+
+      - name: Aktualisierte Sitemap zurückschreiben
+        run: |
+          if git diff --quiet -- sitemap.xml; then
+            echo "Sitemap ist aktuell; kein weiterer Commit erforderlich."
+            exit 0
+          fi
+          git config user.name "nikos-sitemap-bot"
+          git config user.email "nikos-sitemap-bot@users.noreply.github.com"
+          git add sitemap.xml
+          git commit -m "chore: Sitemap aus indexierbaren Seiten aktualisieren [skip ci]"
+          git push
+
+      - name: Sitemap-Statistik protokollieren
+        run: |
+          echo "Indexierbare URLs: ${{ steps.sitemap.outputs.url-count }}"
+          echo "Ausgeschlossene URLs: ${{ steps.sitemap.outputs.excluded-count }}"

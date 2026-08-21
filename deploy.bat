@@ -4,7 +4,8 @@ REM  NIKOS Website - Ein-Befehl-Deployment auf GitHub
 REM  Nutzung:   deploy "Beschreibung der Aenderung"
 REM
 REM  Ablauf: 1) Integritaets-Check (kein abgeschnittenes HTML)
-REM          2) commit  3) Version vN taggen  4) push
+REM          2) commit  3) push  4) Sitemap-Aktualisierung via GitHub Actions
+REM          5) Version vN taggen
 REM ============================================================
 setlocal enabledelayedexpansion
 cd /d "%~dp0"
@@ -118,6 +119,12 @@ set /a NEXT=NUM+1
 set "VERSION=v!NEXT!"
 git tag -a "!VERSION!" -m "%MSG%"
 git push origin "!VERSION!"
+
+echo.
+echo === Sitemap ===
+echo   Die GitHub-Aktion "Sitemap aktualisieren" wird bei jedem Push auf main gestartet.
+echo   Sie nimmt nur indexierbare HTML-Seiten auf und schliesst /lp-preview/ sowie noindex-Seiten aus.
+echo   Die Sitemap wird als nachvollziehbarer Folge-Commit aktualisiert.
 
 echo.
 echo ============================================================
