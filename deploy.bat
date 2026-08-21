@@ -22,6 +22,23 @@ REM verwaiste Sperrdateien entfernen
 if exist ".git\index.lock" del /f /q ".git\index.lock"
 
 echo.
+echo === Vorbereitung: Sitemap mit aktuellen Landingpages abgleichen ===
+REM Ergaenzt sitemap.xml automatisch um alle site\loesungen\<slug>\ , die
+REM live sind (kein noindex, kein Redirect-Stub) aber noch fehlen. Zusaetzliches
+REM Sicherheitsnetz zur n8n-"Sitemap-Automatik" - blockiert den Deploy nie,
+REM meldet nur eine Warnung, falls etwas nicht passt.
+set "PY_CMD="
+where python >nul 2>&1 && set "PY_CMD=python"
+if not defined PY_CMD (
+  where py >nul 2>&1 && set "PY_CMD=py"
+)
+if defined PY_CMD (
+  !PY_CMD! "tools\sync_sitemap.py"
+) else (
+  echo   [Hinweis] Kein Python gefunden - Sitemap-Abgleich uebersprungen. Landingpages muessten dann manuell in sitemap.xml ergaenzt werden.
+)
+
+echo.
 echo === Schritt 1: Integritaets-Check der Live-HTML-Seiten ===
 REM Jede getrackte *.html (ohne .pre/.fixed) MUSS </html> enthalten.
 set "KAPUTT="
