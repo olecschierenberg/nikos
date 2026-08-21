@@ -34,6 +34,9 @@ jobs:
             /migration
           date-only: true
 
+      - name: Sitemap auf verwaiste oder nicht indexierbare URLs prüfen
+        run: node scripts/verify-sitemap.mjs sitemap.xml
+
       - name: Aktualisierte Sitemap zurückschreiben
         run: |
           if git diff --quiet -- sitemap.xml; then
