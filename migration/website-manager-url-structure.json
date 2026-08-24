@@ -97,6 +97,111 @@
       }
     },
     {
+      "pageKey": "product-horn",
+      "sourcePath": "nikos-produkt-horn.html",
+      "oldUrl": "/nikos-produkt-horn.html",
+      "languages": {
+        "de": {
+          "url": "/de/produkte/horn/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/produkte/horn/"
+        },
+        "en": {
+          "url": "/en/products/horn/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/products/horn/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "product-flash",
+      "sourcePath": "nikos-produkt-flash.html",
+      "oldUrl": "/nikos-produkt-flash.html",
+      "languages": {
+        "de": {
+          "url": "/de/produkte/flash/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/produkte/flash/"
+        },
+        "en": {
+          "url": "/en/products/flash/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/products/flash/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "product-relay",
+      "sourcePath": "nikos-produkt-relay.html",
+      "oldUrl": "/nikos-produkt-relay.html",
+      "languages": {
+        "de": {
+          "url": "/de/produkte/relay/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/produkte/relay/"
+        },
+        "en": {
+          "url": "/en/products/relay/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/products/relay/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "product-clamp",
+      "sourcePath": "nikos-produkt-clamp.html",
+      "oldUrl": "/nikos-produkt-clamp.html",
+      "languages": {
+        "de": {
+          "url": "/de/produkte/clamp/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/produkte/clamp/"
+        },
+        "en": {
+          "url": "/en/products/clamp/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/products/clamp/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "product-xlr",
+      "sourcePath": "nikos-produkt-xlr.html",
+      "oldUrl": "/nikos-produkt-xlr.html",
+      "languages": {
+        "de": {
+          "url": "/de/produkte/xlr/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/produkte/xlr/"
+        },
+        "en": {
+          "url": "/en/products/xlr/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/products/xlr/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
       "pageKey": "references",
       "sourcePath": "nikos-referenzen.html",
       "oldUrl": "/nikos-referenzen.html",

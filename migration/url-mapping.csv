@@ -7,3 +7,8 @@ old_url,new_de_url,new_en_url,status,redirect_status,notes
 /nikos-vermietung.html,/de/vermietung/,/en/rental/,parallel_test,not_configured,Alt-URL bleibt bis zur expliziten Redirect-Freigabe unverändert aktiv.
 /nikos-downloads.html,/de/wissen/,/en/insights/,parallel_test,not_configured,Alt-URL bleibt bis zur expliziten Redirect-Freigabe unverändert aktiv.
 /nikos-kontakt.html,/de/kontakt/,/en/contact/,parallel_test,not_configured,Alt-URL bleibt bis zur expliziten Redirect-Freigabe unverändert aktiv.
+/nikos-produkt-horn.html,/de/produkte/horn/,/en/products/horn/,parallel_test,not_configured,Alt-URL bleibt bis zur expliziten Redirect-Freigabe unverändert aktiv.
+/nikos-produkt-flash.html,/de/produkte/flash/,/en/products/flash/,parallel_test,not_configured,Alt-URL bleibt bis zur expliziten Redirect-Freigabe unverändert aktiv.
+/nikos-produkt-relay.html,/de/produkte/relay/,/en/products/relay/,parallel_test,not_configured,Alt-URL bleibt bis zur expliziten Redirect-Freigabe unverändert aktiv.
+/nikos-produkt-clamp.html,/de/produkte/clamp/,/en/products/clamp/,parallel_test,not_configured,Alt-URL bleibt bis zur expliziten Redirect-Freigabe unverändert aktiv.
+/nikos-produkt-xlr.html,/de/produkte/xlr/,/en/products/xlr/,parallel_test,not_configured,Alt-URL bleibt bis zur expliziten Redirect-Freigabe unverändert aktiv.

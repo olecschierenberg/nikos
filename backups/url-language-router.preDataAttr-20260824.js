@@ -20,10 +20,6 @@
   var label = document.querySelector('.lang-flag__btn .lang-label');
   if (label) label.textContent = language === 'en' ? 'EN' : 'DE';
 
-  // Bestehende zentrale Tabelle (Bestand: 8 Kernseiten). Bleibt unverändert als
-  // Fallback bestehen, siehe Umsetzungsplan_Sprachstruktur_2026-08-24.md, Verbesserung 1:
-  // neue Seiten sollen künftig per data-href-<lang>-Attribut direkt am Link auf ihr
-  // Sprach-Gegenstück verweisen, statt diese Tabelle weiter wachsen zu lassen.
   var paths = {
     '': { de: '/de/', en: '/en/' },
     'index.html': { de: '/de/', en: '/en/' },
@@ -57,18 +53,8 @@
     return paths[candidate][language] + parts.suffix;
   }
 
-  // Verbesserung 1 (Umsetzungsplan_Sprachstruktur_2026-08-24.md, Abschnitt 4, Schritt 1):
-  // neue Seiten tragen ihr Sprach-Gegenstück direkt am Link, z. B.
-  // <a href="/de/produkte/" data-href-en="/en/products/">. Hat ein Link ein
-  // data-href-<aktuelleSprache>-Attribut, hat es Vorrang vor der zentralen Tabelle.
-  // Fehlt es (alle 8 bestehenden Seiten), greift unverändert die bisherige Logik.
-  function attributeHref(link) {
-    var value = link.getAttribute('data-href-' + language);
-    return value || null;
-  }
-
   document.querySelectorAll('a[href]').forEach(function (link) {
-    var next = attributeHref(link) || mappedHref(link.getAttribute('href'));
+    var next = mappedHref(link.getAttribute('href'));
     if (next) link.setAttribute('href', next);
   });
 
