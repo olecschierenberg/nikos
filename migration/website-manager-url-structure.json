@@ -202,6 +202,363 @@
       }
     },
     {
+      "pageKey": "product-alarm",
+      "sourcePath": "nikos-produkt-alarm.html",
+      "oldUrl": "/nikos-produkt-alarm.html",
+      "languages": {
+        "de": {
+          "url": "/de/produkte/alarm/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/produkte/alarm/"
+        },
+        "en": {
+          "url": "/en/products/alarm/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/products/alarm/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "product-audio",
+      "sourcePath": "nikos-produkt-audio.html",
+      "oldUrl": "/nikos-produkt-audio.html",
+      "languages": {
+        "de": {
+          "url": "/de/produkte/audio/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/produkte/audio/"
+        },
+        "en": {
+          "url": "/en/products/audio/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/products/audio/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "product-dispatcher",
+      "sourcePath": "nikos-produkt-dispatcher.html",
+      "oldUrl": "/nikos-produkt-dispatcher.html",
+      "languages": {
+        "de": {
+          "url": "/de/produkte/dispatcher/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/produkte/dispatcher/"
+        },
+        "en": {
+          "url": "/en/products/dispatcher/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/products/dispatcher/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "product-led",
+      "sourcePath": "nikos-produkt-led.html",
+      "oldUrl": "/nikos-produkt-led.html",
+      "languages": {
+        "de": {
+          "url": "/de/produkte/led/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/produkte/led/"
+        },
+        "en": {
+          "url": "/en/products/led/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/products/led/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "product-moon",
+      "sourcePath": "nikos-produkt-moon.html",
+      "oldUrl": "/nikos-produkt-moon.html",
+      "languages": {
+        "de": {
+          "url": "/de/produkte/moon/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/produkte/moon/"
+        },
+        "en": {
+          "url": "/en/products/moon/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/products/moon/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "application-festival",
+      "sourcePath": "nikos-anwendung-festival.html",
+      "oldUrl": "/nikos-anwendung-festival.html",
+      "languages": {
+        "de": {
+          "url": "/de/anwendungen/festival/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/anwendungen/festival/"
+        },
+        "en": {
+          "url": "/en/applications/festival/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/applications/festival/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "application-volksfest",
+      "sourcePath": "nikos-anwendung-volksfest.html",
+      "oldUrl": "/nikos-anwendung-volksfest.html",
+      "languages": {
+        "de": {
+          "url": "/de/anwendungen/volksfest/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/anwendungen/volksfest/"
+        },
+        "en": {
+          "url": "/en/applications/funfair/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/applications/funfair/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "application-stadtfest",
+      "sourcePath": "nikos-anwendung-stadtfest.html",
+      "oldUrl": "/nikos-anwendung-stadtfest.html",
+      "languages": {
+        "de": {
+          "url": "/de/anwendungen/stadtfest/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/anwendungen/stadtfest/"
+        },
+        "en": {
+          "url": "/en/applications/city-festival/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/applications/city-festival/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "application-weihnachtsmarkt",
+      "sourcePath": "nikos-anwendung-weihnachtsmarkt.html",
+      "oldUrl": "/nikos-anwendung-weihnachtsmarkt.html",
+      "languages": {
+        "de": {
+          "url": "/de/anwendungen/weihnachtsmarkt/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/anwendungen/weihnachtsmarkt/"
+        },
+        "en": {
+          "url": "/en/applications/christmas-market/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/applications/christmas-market/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "application-gedenkveranstaltung",
+      "sourcePath": "nikos-anwendung-gedenkveranstaltung.html",
+      "oldUrl": "/nikos-anwendung-gedenkveranstaltung.html",
+      "languages": {
+        "de": {
+          "url": "/de/anwendungen/gedenkveranstaltung/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/anwendungen/gedenkveranstaltung/"
+        },
+        "en": {
+          "url": "/en/applications/memorial-event/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/applications/memorial-event/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "application-jubilaeumsfeier",
+      "sourcePath": "nikos-anwendung-jubilaeumsfeier.html",
+      "oldUrl": "/nikos-anwendung-jubilaeumsfeier.html",
+      "languages": {
+        "de": {
+          "url": "/de/anwendungen/jubilaeumsfeier/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/anwendungen/jubilaeumsfeier/"
+        },
+        "en": {
+          "url": "/en/applications/anniversary-celebration/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/applications/anniversary-celebration/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "application-festumzug",
+      "sourcePath": "nikos-anwendung-festumzug.html",
+      "oldUrl": "/nikos-anwendung-festumzug.html",
+      "languages": {
+        "de": {
+          "url": "/de/anwendungen/festumzug/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/anwendungen/festumzug/"
+        },
+        "en": {
+          "url": "/en/applications/parade/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/applications/parade/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "application-firmenveranstaltung",
+      "sourcePath": "nikos-anwendung-firmenveranstaltung.html",
+      "oldUrl": "/nikos-anwendung-firmenveranstaltung.html",
+      "languages": {
+        "de": {
+          "url": "/de/anwendungen/firmenveranstaltung/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/anwendungen/firmenveranstaltung/"
+        },
+        "en": {
+          "url": "/en/applications/corporate-event/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/applications/corporate-event/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "application-sportevent",
+      "sourcePath": "nikos-anwendung-sportevent.html",
+      "oldUrl": "/nikos-anwendung-sportevent.html",
+      "languages": {
+        "de": {
+          "url": "/de/anwendungen/sportevent/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/anwendungen/sportevent/"
+        },
+        "en": {
+          "url": "/en/applications/sports-event/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/applications/sports-event/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "application-parkfest",
+      "sourcePath": "nikos-anwendung-parkfest.html",
+      "oldUrl": "/nikos-anwendung-parkfest.html",
+      "languages": {
+        "de": {
+          "url": "/de/anwendungen/parkfest/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/anwendungen/parkfest/"
+        },
+        "en": {
+          "url": "/en/applications/park-festival/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/applications/park-festival/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "application-baustelle",
+      "sourcePath": "nikos-anwendung-baustelle.html",
+      "oldUrl": "/nikos-anwendung-baustelle.html",
+      "languages": {
+        "de": {
+          "url": "/de/anwendungen/baustelle/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/anwendungen/baustelle/"
+        },
+        "en": {
+          "url": "/en/applications/construction-site/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/applications/construction-site/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
+      "pageKey": "application-krisenlage",
+      "sourcePath": "nikos-anwendung-krisenlage.html",
+      "oldUrl": "/nikos-anwendung-krisenlage.html",
+      "languages": {
+        "de": {
+          "url": "/de/anwendungen/krisenlage/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/anwendungen/krisenlage/"
+        },
+        "en": {
+          "url": "/en/applications/crisis-situation/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/applications/crisis-situation/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": "/loesungen/"
+      }
+    },
+    {
       "pageKey": "references",
       "sourcePath": "nikos-referenzen.html",
       "oldUrl": "/nikos-referenzen.html",
