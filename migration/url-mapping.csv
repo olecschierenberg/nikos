@@ -29,3 +29,11 @@ old_url,new_de_url,new_en_url,status,redirect_status,notes
 /nikos-anwendung-parkfest.html,/de/anwendungen/parkfest/,/en/applications/park-festival/,parallel_test,not_configured,Alt-URL bleibt bis zur expliziten Redirect-Freigabe unverändert aktiv.
 /nikos-anwendung-baustelle.html,/de/anwendungen/baustelle/,/en/applications/construction-site/,parallel_test,not_configured,Alt-URL bleibt bis zur expliziten Redirect-Freigabe unverändert aktiv.
 /nikos-anwendung-krisenlage.html,/de/anwendungen/krisenlage/,/en/applications/crisis-situation/,parallel_test,not_configured,Alt-URL bleibt bis zur expliziten Redirect-Freigabe unverändert aktiv.
+/nikos-agb.html,/de/agb/,/en/terms/,parallel_test,not_configured,Alt-URL bleibt bis zur expliziten Redirect-Freigabe unverändert aktiv.
+/nikos-datenschutz.html,/de/datenschutz/,/en/privacy/,parallel_test,not_configured,Alt-URL bleibt bis zur expliziten Redirect-Freigabe unverändert aktiv.
+/nikos-impressum.html,/de/impressum/,/en/imprint/,parallel_test,not_configured,Alt-URL bleibt bis zur expliziten Redirect-Freigabe unverändert aktiv.
+/nikos-mietbedingungen.html,/de/mietbedingungen/,/en/rental-terms/,parallel_test,not_configured,Alt-URL bleibt bis zur expliziten Redirect-Freigabe unverändert aktiv.
+/nikos-vermietung-partner-werden.html,/de/vermietung/partner-werden/,/en/rental/become-partner/,parallel_test,not_configured,Alt-URL bleibt bis zur expliziten Redirect-Freigabe unverändert aktiv.
+/nikos-login.html,/de/login/,/en/login/,parallel_test,not_configured,Alt-URL bleibt bis zur expliziten Redirect-Freigabe unverändert aktiv.
+/nikos-vergleich-uebertragungstechnik.html,/de/vergleich-uebertragungstechnik/,/en/transmission-technology-comparison/,parallel_test,not_configured,Alt-URL bleibt bis zur expliziten Redirect-Freigabe unverändert aktiv.
+/danke.html,/de/danke/,/en/thank-you/,parallel_test,not_configured,Alt-URL bleibt bis zur expliziten Redirect-Freigabe unverändert aktiv.

@@ -129,3 +129,65 @@ Anwendungsunterseiten 30 von ~30 Hauptseiten migriert. Offen: restliche
 Rechts-/Infoseiten (letzte Tranche laut Plan Abschnitt 4, Schritt 2) sowie
 Schritt 3 (GitHub-Pages-Stichprobe je Tranche, noch für keine Tranche
 durchgeführt).
+
+## Tranche 4 (24.08.2026) — letzte 8 Hauptseiten migriert (AGB, Datenschutz, Impressum,
+Mietbedingungen, Vermietung-Partner-werden, Login, Vergleich-Übertragungstechnik, Danke)
+
+Nutzerentscheidung (Rückfrage gestellt, da diese 8 Seiten im Umsetzungsplan nicht namentlich
+aufgeführt waren – die Schätzung "~22 restliche Hauptseiten" war mit 10 Produkt- + 12
+Anwendungsunterseiten bereits vollständig erreicht): **alle 8 Seiten migrieren**, nicht nur die
+beiden indexierbaren.
+
+Drei Kopf-Varianten je nach Ausgangslage: (1) "legal" – AGB, Datenschutz, Impressum,
+Mietbedingungen, Login: nur title/description/robots im Original, kein canonical/hreflang/og
+vorhanden → neu ergänzt (canonical, hreflang de/en/x-default, robots auf noindex,follow
+vereinheitlicht – inhaltlich identisch zum ursprünglichen bloßen "noindex", da beide Werte für
+Crawler "folgen erlaubt" bedeuten). (2) "full" – Vermietung-Partner-werden und
+Vergleich-Übertragungstechnik: hatten bereits den vollen 17-zeiligen Metablock wie die
+Produktseiten, og:title unabhängig von title übersetzt. (3) "danke" – Sonderfall ohne
+Footer/Navigation und mit abweichendem Seitenende (`</main></body></html>` statt des
+sonst üblichen Footer-Skript-Endes); Router-Skript zusätzlich eingefügt, da die Seite zuvor
+keines lud.
+
+Neue Slugs (deutsch/englisch übersetzt wie im Plan gefordert): agb→terms, datenschutz→privacy,
+impressum→imprint, mietbedingungen→rental-terms, danke→thank-you,
+vergleich-uebertragungstechnik→transmission-technology-comparison (Slug unverändert lang,
+Keyword-Konsistenz). vermietung-partner-werden als Unterseite von vermietung eingeordnet:
+/de/vermietung/partner-werden/ und /en/rental/become-partner/ (konsistent mit der bereits
+etablierten Verschachtelung bei Produkt- und Anwendungsunterseiten).
+
+Besonderheit login.html: verlinkt auf datenschutz.html (Cookie-Hinweis) und
+vermietung-partner-werden.html (Partner-CTA) – beide Ziele werden in DERSELBEN Tranche migriert,
+daher direkte Ersetzung auf die neuen Ziel-URLs statt Verbleib bei den alten Dateinamen.
+
+**Footer-Fix (wichtig, über die 8 Seiten hinaus):** `nikos-footer.js` wird von JEDER Seite der
+Website geladen und injiziert Nav/Footer per JS-String – die 4 Rechtsseiten-Links (AGB,
+Mietbedingungen, Datenschutz [2×: Footer-Zeile + Cookie-Modal], Impressum) waren dort hart auf
+die alten Dateinamen kodiert und damit von der Migration dieser Einzelseiten gar nicht betroffen.
+Da dieselbe Footer-HTML für DE und EN identisch injiziert wird, wurden dort – anders als bei den
+Hub-Karten – **beide** `data-href-de` UND `data-href-en` auf denselben 4 Links ergänzt; der Router
+liest je nach Seite die passende Sprache. Damit zeigen die Footer-Links auf allen 38 migrierten
+Seiten jetzt korrekt auf die neue Struktur, ohne dass alte, unmigrierte Seiten beeinträchtigt
+werden (dort läuft der Router nicht, `href` bleibt unverändert wirksam). Backup:
+`site/backups/nikos-footer.preLegalLinksTranche4-20260824.js`, Byte-Vergleich nach dem Schreiben
+bestätigt, `node --check` bestanden.
+
+website-manager-url-structure.json jetzt 38 Einträge (30 + 8), url-mapping.csv +8 Zeilen.
+`landingpageIntegration.hubUrl` bei diesen 8 Einträgen auf `null` gesetzt (keine Hub-Zuordnung,
+da Rechts-/Funktionsseiten).
+
+**Prüfung:** gleiches Verfahren wie Tranche 1–3 – Byte-Vergleich nach dem Schreiben (alle 16
+Unterseiten + nikos-footer.js identisch), keine NUL-Bytes, `</html>`-Abschluss ok (auch bei der
+abweichenden Danke-Struktur), `<div>`-Bilanz je Datei unverändert (delta 0 bei allen 16 Dateien),
+`data-de`-Anzahl je Seite unverändert, keine alten `nikos-*.html`-Linkziele übrig, Python
+`html.parser` ohne Fehler bei allen 16 Dateien, `node --check` für nikos-footer.js bestanden.
+CRLF/LF wurde je Datei einzeln erkannt und erhalten (gemischte Kodierung: agb/impressum/
+mietbedingungen/vergleich/danke = LF, datenschutz/vermietung-partner-werden/login = CRLF).
+
+Damit sind alle ~38 identifizierten Hauptseiten migriert (8 Kernseiten + 10 Produkt- + 12
+Anwendungs- + 8 restliche Haupt-/Rechtsseiten). Bewusst ausgeschlossen: `partner-embed.html` und
+`partner-karte.html` (riesige, live per Google-Sheets-CSV gespeiste Kartendaten-Dateien, laut
+project_memory.md ausdrücklich "NICHT einlesen"). Offen bleiben weiterhin: echter Klicktest im
+Browser und die GitHub-Pages-Stichprobe (Verbesserung 3) für alle Tranchen – beides erst sinnvoll
+nach dem nächsten `deploy.bat`-Lauf des Nutzers. Schritt 4 (Go-Live/Redirect-Aktivierung) bleibt
+laut Plan ein separater, noch nicht angefragter Schritt.

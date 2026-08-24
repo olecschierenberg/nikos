@@ -641,6 +641,174 @@
         "status": "pending_review",
         "hubUrl": "/loesungen/"
       }
+    },
+    {
+      "pageKey": "legal-agb",
+      "sourcePath": "nikos-agb.html",
+      "oldUrl": "/nikos-agb.html",
+      "languages": {
+        "de": {
+          "url": "/de/agb/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/agb/"
+        },
+        "en": {
+          "url": "/en/terms/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/terms/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": null
+      }
+    },
+    {
+      "pageKey": "legal-datenschutz",
+      "sourcePath": "nikos-datenschutz.html",
+      "oldUrl": "/nikos-datenschutz.html",
+      "languages": {
+        "de": {
+          "url": "/de/datenschutz/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/datenschutz/"
+        },
+        "en": {
+          "url": "/en/privacy/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/privacy/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": null
+      }
+    },
+    {
+      "pageKey": "legal-impressum",
+      "sourcePath": "nikos-impressum.html",
+      "oldUrl": "/nikos-impressum.html",
+      "languages": {
+        "de": {
+          "url": "/de/impressum/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/impressum/"
+        },
+        "en": {
+          "url": "/en/imprint/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/imprint/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": null
+      }
+    },
+    {
+      "pageKey": "legal-mietbedingungen",
+      "sourcePath": "nikos-mietbedingungen.html",
+      "oldUrl": "/nikos-mietbedingungen.html",
+      "languages": {
+        "de": {
+          "url": "/de/mietbedingungen/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/mietbedingungen/"
+        },
+        "en": {
+          "url": "/en/rental-terms/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/rental-terms/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": null
+      }
+    },
+    {
+      "pageKey": "rental-partner-werden",
+      "sourcePath": "nikos-vermietung-partner-werden.html",
+      "oldUrl": "/nikos-vermietung-partner-werden.html",
+      "languages": {
+        "de": {
+          "url": "/de/vermietung/partner-werden/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/vermietung/partner-werden/"
+        },
+        "en": {
+          "url": "/en/rental/become-partner/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/rental/become-partner/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": null
+      }
+    },
+    {
+      "pageKey": "login",
+      "sourcePath": "nikos-login.html",
+      "oldUrl": "/nikos-login.html",
+      "languages": {
+        "de": {
+          "url": "/de/login/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/login/"
+        },
+        "en": {
+          "url": "/en/login/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/login/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": null
+      }
+    },
+    {
+      "pageKey": "transmission-technology-comparison",
+      "sourcePath": "nikos-vergleich-uebertragungstechnik.html",
+      "oldUrl": "/nikos-vergleich-uebertragungstechnik.html",
+      "languages": {
+        "de": {
+          "url": "/de/vergleich-uebertragungstechnik/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/vergleich-uebertragungstechnik/"
+        },
+        "en": {
+          "url": "/en/transmission-technology-comparison/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/transmission-technology-comparison/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": null
+      }
+    },
+    {
+      "pageKey": "thank-you",
+      "sourcePath": "danke.html",
+      "oldUrl": "/danke.html",
+      "languages": {
+        "de": {
+          "url": "/de/danke/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/de/danke/"
+        },
+        "en": {
+          "url": "/en/thank-you/",
+          "status": "parallel_test",
+          "canonical": "https://nikos.info/en/thank-you/"
+        }
+      },
+      "landingpageIntegration": {
+        "status": "pending_review",
+        "hubUrl": null
+      }
     }
   ]
 }
