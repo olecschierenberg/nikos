@@ -992,4 +992,32 @@
 <loc>https://nikos.info/en/rental/become-partner/</loc>
 <lastmod>2026-08-27</lastmod>
 </url>
+  <url>
+    <loc>https://nikos.info/loesungen/notfallkommunikationssystem-iga-ruhrgebiet-2027-essen/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/notfallkommunikationssystem-iga-ruhrgebiet-2027-essen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/notfallkommunikationssystem-iga-ruhrgebiet-2027-essen/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/stromausfallueberwachung-iga-ruhrgebiet-2027-essen/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/stromausfallueberwachung-iga-ruhrgebiet-2027-essen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/stromausfallueberwachung-iga-ruhrgebiet-2027-essen/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/unwetterwarnung-chio-aachen-aachen/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/unwetterwarnung-chio-aachen-aachen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/unwetterwarnung-chio-aachen-aachen/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/lichtmasten-fernsteuern-hamburger-hafengeburtstag-hamburg/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/lichtmasten-fernsteuern-hamburger-hafengeburtstag-hamburg/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/lichtmasten-fernsteuern-hamburger-hafengeburtstag-hamburg/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
