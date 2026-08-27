@@ -573,6 +573,10 @@
 <lastmod>2026-08-28</lastmod>
 </url>
 <url>
+<loc>https://nikos.info/loesungen/nodvarsling-bergenfest-bergen/</loc>
+<lastmod>2026-08-28</lastmod>
+</url>
+<url>
 <loc>https://nikos.info/loesungen/notbeleuchtung-grossveranstaltung-dresden/</loc>
 <lastmod>2026-08-28</lastmod>
 </url>
@@ -674,6 +678,10 @@
 </url>
 <url>
 <loc>https://nikos.info/loesungen/notfallwarnsystem-weihnachtsmarkt-luebeck/</loc>
+<lastmod>2026-08-28</lastmod>
+</url>
+<url>
+<loc>https://nikos.info/loesungen/notfallwarnsystem-weihnachtsmarkt-magdeburg/</loc>
 <lastmod>2026-08-28</lastmod>
 </url>
 <url>
@@ -1020,18 +1028,4 @@
 <loc>https://nikos.info/en/rental/become-partner/</loc>
 <lastmod>2026-08-27</lastmod>
 </url>
-  <url>
-    <loc>https://nikos.info/loesungen/nodvarsling-bergenfest-bergen/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/nodvarsling-bergenfest-bergen/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/nodvarsling-bergenfest-bergen/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://nikos.info/loesungen/notfallwarnsystem-weihnachtsmarkt-magdeburg/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/notfallwarnsystem-weihnachtsmarkt-magdeburg/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/notfallwarnsystem-weihnachtsmarkt-magdeburg/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 </urlset>
