@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "migrationStatus": "parallel_test",
-  "redirectStatus": "not_configured",
+  "migrationStatus": "live",
+  "redirectStatus": "client_side_active",
   "landingpagePolicy": {
     "sourceDirectories": [
       "loesungen/",
@@ -19,12 +19,12 @@
       "languages": {
         "de": {
           "url": "/de/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/"
         },
         "en": {
           "url": "/en/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/"
         }
       },
@@ -40,12 +40,12 @@
       "languages": {
         "de": {
           "url": "/de/system/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/system/"
         },
         "en": {
           "url": "/en/system/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/system/"
         }
       },
@@ -61,12 +61,12 @@
       "languages": {
         "de": {
           "url": "/de/anwendungen/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/anwendungen/"
         },
         "en": {
           "url": "/en/applications/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/applications/"
         }
       },
@@ -82,12 +82,12 @@
       "languages": {
         "de": {
           "url": "/de/produkte/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/produkte/"
         },
         "en": {
           "url": "/en/products/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/products/"
         }
       },
@@ -103,12 +103,12 @@
       "languages": {
         "de": {
           "url": "/de/produkte/horn/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/produkte/horn/"
         },
         "en": {
           "url": "/en/products/horn/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/products/horn/"
         }
       },
@@ -124,12 +124,12 @@
       "languages": {
         "de": {
           "url": "/de/produkte/flash/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/produkte/flash/"
         },
         "en": {
           "url": "/en/products/flash/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/products/flash/"
         }
       },
@@ -145,12 +145,12 @@
       "languages": {
         "de": {
           "url": "/de/produkte/relay/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/produkte/relay/"
         },
         "en": {
           "url": "/en/products/relay/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/products/relay/"
         }
       },
@@ -166,12 +166,12 @@
       "languages": {
         "de": {
           "url": "/de/produkte/clamp/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/produkte/clamp/"
         },
         "en": {
           "url": "/en/products/clamp/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/products/clamp/"
         }
       },
@@ -187,12 +187,12 @@
       "languages": {
         "de": {
           "url": "/de/produkte/xlr/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/produkte/xlr/"
         },
         "en": {
           "url": "/en/products/xlr/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/products/xlr/"
         }
       },
@@ -208,12 +208,12 @@
       "languages": {
         "de": {
           "url": "/de/produkte/alarm/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/produkte/alarm/"
         },
         "en": {
           "url": "/en/products/alarm/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/products/alarm/"
         }
       },
@@ -229,12 +229,12 @@
       "languages": {
         "de": {
           "url": "/de/produkte/audio/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/produkte/audio/"
         },
         "en": {
           "url": "/en/products/audio/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/products/audio/"
         }
       },
@@ -250,12 +250,12 @@
       "languages": {
         "de": {
           "url": "/de/produkte/dispatcher/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/produkte/dispatcher/"
         },
         "en": {
           "url": "/en/products/dispatcher/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/products/dispatcher/"
         }
       },
@@ -271,12 +271,12 @@
       "languages": {
         "de": {
           "url": "/de/produkte/led/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/produkte/led/"
         },
         "en": {
           "url": "/en/products/led/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/products/led/"
         }
       },
@@ -292,12 +292,12 @@
       "languages": {
         "de": {
           "url": "/de/produkte/moon/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/produkte/moon/"
         },
         "en": {
           "url": "/en/products/moon/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/products/moon/"
         }
       },
@@ -313,12 +313,12 @@
       "languages": {
         "de": {
           "url": "/de/anwendungen/festival/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/anwendungen/festival/"
         },
         "en": {
           "url": "/en/applications/festival/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/applications/festival/"
         }
       },
@@ -334,12 +334,12 @@
       "languages": {
         "de": {
           "url": "/de/anwendungen/volksfest/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/anwendungen/volksfest/"
         },
         "en": {
           "url": "/en/applications/funfair/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/applications/funfair/"
         }
       },
@@ -355,12 +355,12 @@
       "languages": {
         "de": {
           "url": "/de/anwendungen/stadtfest/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/anwendungen/stadtfest/"
         },
         "en": {
           "url": "/en/applications/city-festival/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/applications/city-festival/"
         }
       },
@@ -376,12 +376,12 @@
       "languages": {
         "de": {
           "url": "/de/anwendungen/weihnachtsmarkt/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/anwendungen/weihnachtsmarkt/"
         },
         "en": {
           "url": "/en/applications/christmas-market/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/applications/christmas-market/"
         }
       },
@@ -397,12 +397,12 @@
       "languages": {
         "de": {
           "url": "/de/anwendungen/gedenkveranstaltung/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/anwendungen/gedenkveranstaltung/"
         },
         "en": {
           "url": "/en/applications/memorial-event/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/applications/memorial-event/"
         }
       },
@@ -418,12 +418,12 @@
       "languages": {
         "de": {
           "url": "/de/anwendungen/jubilaeumsfeier/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/anwendungen/jubilaeumsfeier/"
         },
         "en": {
           "url": "/en/applications/anniversary-celebration/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/applications/anniversary-celebration/"
         }
       },
@@ -439,12 +439,12 @@
       "languages": {
         "de": {
           "url": "/de/anwendungen/festumzug/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/anwendungen/festumzug/"
         },
         "en": {
           "url": "/en/applications/parade/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/applications/parade/"
         }
       },
@@ -460,12 +460,12 @@
       "languages": {
         "de": {
           "url": "/de/anwendungen/firmenveranstaltung/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/anwendungen/firmenveranstaltung/"
         },
         "en": {
           "url": "/en/applications/corporate-event/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/applications/corporate-event/"
         }
       },
@@ -481,12 +481,12 @@
       "languages": {
         "de": {
           "url": "/de/anwendungen/sportevent/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/anwendungen/sportevent/"
         },
         "en": {
           "url": "/en/applications/sports-event/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/applications/sports-event/"
         }
       },
@@ -502,12 +502,12 @@
       "languages": {
         "de": {
           "url": "/de/anwendungen/parkfest/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/anwendungen/parkfest/"
         },
         "en": {
           "url": "/en/applications/park-festival/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/applications/park-festival/"
         }
       },
@@ -523,12 +523,12 @@
       "languages": {
         "de": {
           "url": "/de/anwendungen/baustelle/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/anwendungen/baustelle/"
         },
         "en": {
           "url": "/en/applications/construction-site/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/applications/construction-site/"
         }
       },
@@ -544,12 +544,12 @@
       "languages": {
         "de": {
           "url": "/de/anwendungen/krisenlage/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/anwendungen/krisenlage/"
         },
         "en": {
           "url": "/en/applications/crisis-situation/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/applications/crisis-situation/"
         }
       },
@@ -565,12 +565,12 @@
       "languages": {
         "de": {
           "url": "/de/referenzen/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/referenzen/"
         },
         "en": {
           "url": "/en/references/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/references/"
         }
       },
@@ -586,12 +586,12 @@
       "languages": {
         "de": {
           "url": "/de/vermietung/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/vermietung/"
         },
         "en": {
           "url": "/en/rental/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/rental/"
         }
       },
@@ -607,12 +607,12 @@
       "languages": {
         "de": {
           "url": "/de/wissen/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/wissen/"
         },
         "en": {
           "url": "/en/insights/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/insights/"
         }
       },
@@ -628,12 +628,12 @@
       "languages": {
         "de": {
           "url": "/de/kontakt/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/kontakt/"
         },
         "en": {
           "url": "/en/contact/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/contact/"
         }
       },
@@ -649,12 +649,12 @@
       "languages": {
         "de": {
           "url": "/de/agb/",
-          "status": "parallel_test",
+          "status": "live_noindex",
           "canonical": "https://nikos.info/de/agb/"
         },
         "en": {
           "url": "/en/terms/",
-          "status": "parallel_test",
+          "status": "live_noindex",
           "canonical": "https://nikos.info/en/terms/"
         }
       },
@@ -670,12 +670,12 @@
       "languages": {
         "de": {
           "url": "/de/datenschutz/",
-          "status": "parallel_test",
+          "status": "live_noindex",
           "canonical": "https://nikos.info/de/datenschutz/"
         },
         "en": {
           "url": "/en/privacy/",
-          "status": "parallel_test",
+          "status": "live_noindex",
           "canonical": "https://nikos.info/en/privacy/"
         }
       },
@@ -691,12 +691,12 @@
       "languages": {
         "de": {
           "url": "/de/impressum/",
-          "status": "parallel_test",
+          "status": "live_noindex",
           "canonical": "https://nikos.info/de/impressum/"
         },
         "en": {
           "url": "/en/imprint/",
-          "status": "parallel_test",
+          "status": "live_noindex",
           "canonical": "https://nikos.info/en/imprint/"
         }
       },
@@ -712,12 +712,12 @@
       "languages": {
         "de": {
           "url": "/de/mietbedingungen/",
-          "status": "parallel_test",
+          "status": "live_noindex",
           "canonical": "https://nikos.info/de/mietbedingungen/"
         },
         "en": {
           "url": "/en/rental-terms/",
-          "status": "parallel_test",
+          "status": "live_noindex",
           "canonical": "https://nikos.info/en/rental-terms/"
         }
       },
@@ -733,12 +733,12 @@
       "languages": {
         "de": {
           "url": "/de/vermietung/partner-werden/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/vermietung/partner-werden/"
         },
         "en": {
           "url": "/en/rental/become-partner/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/rental/become-partner/"
         }
       },
@@ -754,12 +754,12 @@
       "languages": {
         "de": {
           "url": "/de/login/",
-          "status": "parallel_test",
+          "status": "live_noindex",
           "canonical": "https://nikos.info/de/login/"
         },
         "en": {
           "url": "/en/login/",
-          "status": "parallel_test",
+          "status": "live_noindex",
           "canonical": "https://nikos.info/en/login/"
         }
       },
@@ -775,12 +775,12 @@
       "languages": {
         "de": {
           "url": "/de/vergleich-uebertragungstechnik/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/de/vergleich-uebertragungstechnik/"
         },
         "en": {
           "url": "/en/transmission-technology-comparison/",
-          "status": "parallel_test",
+          "status": "live",
           "canonical": "https://nikos.info/en/transmission-technology-comparison/"
         }
       },
@@ -796,12 +796,12 @@
       "languages": {
         "de": {
           "url": "/de/danke/",
-          "status": "parallel_test",
+          "status": "live_noindex",
           "canonical": "https://nikos.info/de/danke/"
         },
         "en": {
           "url": "/en/thank-you/",
-          "status": "parallel_test",
+          "status": "live_noindex",
           "canonical": "https://nikos.info/en/thank-you/"
         }
       },

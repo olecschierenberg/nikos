@@ -6,6 +6,8 @@
 User-agent: *
 Allow: /
 Disallow: /nikos-login.html
+Disallow: /de/login/
+Disallow: /en/login/
 Disallow: /partner-karte.html
 Disallow: /partner-embed.html
 
