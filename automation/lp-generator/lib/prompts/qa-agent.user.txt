@@ -1,0 +1,17 @@
+Pruefe und korrigiere folgendes Landingpage-JSON nach den Regeln. Gib das vollstaendige, korrigierte JSON zurueck.
+
+WICHTIGER KONTEXT (diese konkreten Begriffe MUESSEN im Text erhalten bleiben):
+Region: {{ $('Filter + Relevanz-Ranking').item.json.Region }}
+Einsatz: {{ $('Filter + Relevanz-Ranking').item.json.Einsatz }}
+Problem: {{ $('Filter + Relevanz-Ranking').item.json.Problem }}
+Einwohnerzahl Region (fuer NUMERUS-Regel 11 bei generischen Einsaetzen, leer = unbekannt/ueberregional): {{ $('Filter + Relevanz-Ranking').item.json._einwohner }}
+Regionstyp (fuer NUMERUS-Regel 11: "Bundesland" oder "Land" = Grossregion mit vielen Orten -> bei generischen Einsaetzen IMMER Plural ohne Artikel, unabhaengig von der Einwohnerzahl; "Stadt"/"Festivalort"/leer = einzelner Ort -> Einwohnerzahl-Schwelle gilt): {{ $('Filter + Relevanz-Ranking').item.json._regionstyp }}
+ZIELSPRACHE-Modus (siehe Regel SPRACHINTEGRITAET/MEHRSPRACHIGKEIT): {{ $('Filter + Relevanz-Ranking').item.json._lang_mode === 'dual' ? ('ZWEISPRACHIG -- lokaler Slot (_de-Felder) = ' + $('Filter + Relevanz-Ranking').item.json._lang_label + ' (ISO ' + $('Filter + Relevanz-Ranking').item.json._lang + '), _en-Felder = Englisch, BEIDE muessen befuellt sein') : ($('Filter + Relevanz-Ranking').item.json._lang_mode === 'single-en' ? 'ENGLISCH -- nur _en befuellt' : 'DEUTSCH -- nur _de befuellt') }}
+
+Zu pruefendes JSON:
+{{ JSON.stringify($('AI Texte (DE+EN)').item.json) }}
+
+Freigegebene Textbausteine/Regeln als Referenz (kontextreduziert):
+{{ $('Kontext trimmen').item.json.data }}
+
+ZUSAETZLICH: Fuege dem zurueckgegebenen JSON ein Feld "_maengel" hinzu — ein Array kurzer Stichpunkte NUR zu SUBSTANZIELLEN Regelverstoessen, die du korrigiert hast (falsche Fakten/Zahlen, Modul-Schreibweise, erfundene Funktionen, Redundanz, Weichmacher, Normkonformitaet). REIN STILISTISCHE Sprachglaettungen (Regel 9) wendest du inline an, listest sie aber NICHT in _maengel. Leeres Array [] wenn keine substanziellen Verstoesse vorliegen (auch wenn du sprachlich geglaettet hast). Aendere die uebrige Feldstruktur nicht.

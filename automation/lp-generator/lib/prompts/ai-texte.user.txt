@@ -1,0 +1,11 @@
+Erstelle die Landingpage-Texte fuer folgenden Anwendungsfall:
+Region: {{ $('Filter + Relevanz-Ranking').item.json.Region }}
+Einsatz: {{ $('Filter + Relevanz-Ranking').item.json.Einsatz }}
+Problem: {{ $('Filter + Relevanz-Ranking').item.json.Problem }}
+Einwohnerzahl Region (fuer NUMERUS-Regel bei generischen Einsaetzen, leer = unbekannt/ueberregional): {{ $('Filter + Relevanz-Ranking').item.json._einwohner }}
+Regionstyp (fuer NUMERUS-Regel: "Bundesland" oder "Land" = Grossregion mit vielen Orten -> generische Gattungsbegriffe wie Volksfest/Weinfest/Stadtfest OHNE Eigennamen IMMER im PLURAL OHNE Artikel formulieren, z. B. "Volksfeste in Bayern", NIEMALS "das Volksfest in Bayern" — unabhaengig von der Einwohnerzahl; "Stadt"/"Festivalort"/leer = einzelner Ort -> Einwohnerzahl-Schwelle gilt): {{ $('Filter + Relevanz-Ranking').item.json._regionstyp }}
+ZIELSPRACHE: {{ $('Filter + Relevanz-Ranking').item.json._lang_mode === 'single-en' ? 'ENGLISCH (en) — erzeuge NUR die _en-Felder, _de leer.' : ($('Filter + Relevanz-Ranking').item.json._lang_mode === 'dual' ? ('ZWEISPRACHIG — erzeuge BEIDE Sprachslots vollstaendig: _de-Felder auf ' + $('Filter + Relevanz-Ranking').item.json._lang_label + ' (ISO ' + $('Filter + Relevanz-Ranking').item.json._lang + ', der Landessprache dieser Region — NICHT auf Deutsch!), UND _en-Felder als eigenstaendige englische Fassung. Beide inhaltlich deckungsgleich, keine leeren Felder.') : 'DEUTSCH (de) — erzeuge NUR die _de-Felder, _en leer.') }}
+
+Nutze folgende freigegebene Textbausteine, Regeln und Stilreferenzen als Grundlage:
+{{ $('Kontext trimmen').item.json.data }}
+Setze Region, Einsatz und Problem als konkrete Woerter in den Text ein. Beachte die NUMERUS-Regel (siehe Regionstyp oben) durchgaengig in Headline, Subhead, Intro, USP und FAQ — nicht nur in der Headline. Gib NIEMALS Template-Platzhalter oder Variablennamen wie $json.Region, $json.Einsatz oder $json.Problem aus. Erzeuge die Texte gemaess der oben genannten ZIELSPRACHE-Anweisung (bei DEUTSCH/ENGLISCH bleiben die Felder der jeweils anderen Sprache leer; bei ZWEISPRACHIG werden beide Sprachslots vollstaendig befuellt). NIKOS und alle Modulnamen (z. B. NIKOS [audio]²) werden in JEDER Sprache unveraendert uebernommen, niemals uebersetzt. Antworte nur als JSON.

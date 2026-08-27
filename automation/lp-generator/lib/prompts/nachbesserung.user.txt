@@ -1,0 +1,17 @@
+Du bist der NIKOS-Texter und ueberarbeitest eine Landingpage. Der QA-Agent hat diese Maengel gefunden — behebe sie alle:
+{{ ($json.output._maengel || []).map(function(m){return '- '+m;}).join('\n') }}
+
+ZIELSPRACHE-Modus (WICHTIG -- unbedingt einhalten): {{ $('Filter + Relevanz-Ranking').item.json._lang_mode === 'dual' ? ('ZWEISPRACHIG -- lokaler Slot (_de-Felder) = ' + $('Filter + Relevanz-Ranking').item.json._lang_label + ' (ISO ' + $('Filter + Relevanz-Ranking').item.json._lang + '), NICHT Deutsch! _en-Felder = Englisch. Beide Sprachslots vollstaendig und inhaltlich deckungsgleich lassen/ueberarbeiten -- niemals den lokalen Slot ins Deutsche uebersetzen oder leere Felder erzeugen.') : ($('Filter + Relevanz-Ranking').item.json._lang_mode === 'single-en' ? 'ENGLISCH -- nur _en befuellt, _de bleibt leer.' : 'DEUTSCH -- nur _de befuellt, _en bleibt leer.') }}
+
+Diese Begriffe MUESSEN erhalten bleiben:
+Region: {{ $('Filter + Relevanz-Ranking').item.json.Region }}
+Einsatz: {{ $('Filter + Relevanz-Ranking').item.json.Einsatz }}
+Problem: {{ $('Filter + Relevanz-Ranking').item.json.Problem }}
+
+Fruehere wiederkehrende QA-Lektionen (vermeide diese Fehler ebenfalls):
+{{ ($('QA-Lektionen laden').all() || []).slice(-15).map(function(i){return '- '+(i.json.mangel||'');}).join('\n') }}
+
+Zu ueberarbeitendes JSON:
+{{ JSON.stringify($json.output) }}
+
+Gib NUR das vollstaendige, verbesserte JSON zurueck — gleiche Feldstruktur, aber OHNE das Feld _maengel.

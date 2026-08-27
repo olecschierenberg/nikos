@@ -12,3 +12,6 @@
 backups-audit-*
 lp/
 
+
+# Temp/Scratch (Claude-Sitzungen)
+_to_delete/
