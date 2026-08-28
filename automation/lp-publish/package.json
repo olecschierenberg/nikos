@@ -1,0 +1,21 @@
+{
+  "name": "nikos-lp-publish",
+  "version": "0.1.0",
+  "private": true,
+  "description": "GitHub-Actions-Portierung der n8n-Landingpage-Veröffentlichung (siehe README.md).",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "live": "node index.js --live",
+    "ablauf": "node ablauf.js",
+    "ablauf-live": "node ablauf.js --live",
+    "dry-run": "node test/dry-run.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "googleapis": "^144.0.0",
+    "luxon": "^3.7.2"
+  }
+}

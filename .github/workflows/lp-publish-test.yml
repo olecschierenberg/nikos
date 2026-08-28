@@ -1,0 +1,60 @@
+name: Landingpage-Veröffentlichung (Test, ohne n8n)
+
+# Manueller Test-Workflow für die neue, n8n-freie Landingpage-Veröffentlichung.
+# Läuft komplett getrennt vom laufenden n8n-Betrieb:
+#  - liest die Warteschlange NUR lesend (kein Sheet-Update)
+#  - liest die ECHTE Vorschau aus lp-preview/<slug>/, löscht sie aber NICHT
+#  - schreibt AUSSCHLIESSLICH nach loesungen/_ghtest-<slug>/index.html,
+#    niemals in den produktiven loesungen/<slug>/-Pfad
+#  - aktualisiert NICHT den Lösungen-Hub, pingt NICHT IndexNow
+#  - der n8n-Workflow "Landingpages veröffentlichen" bleibt unberührt
+# Details: /nikos/Migrationsplan_Keywordkombis-und-Veroeffentlichung_ohne-n8n_2026-08-28.md
+#
+# Manuell auslösen: GitHub -> Actions -> "Landingpage-Veröffentlichung (Test, ohne n8n)" -> Run workflow.
+
+on:
+  workflow_dispatch: {}
+
+concurrency:
+  group: lp-publish-test
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  publish-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: automation/lp-publish/package-lock.json
+
+      - name: Abhängigkeiten installieren
+        working-directory: automation/lp-publish
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Test-Veröffentlichung erzeugen (kein Sheet-/Hub-/IndexNow-Schreibzugriff)
+        working-directory: automation/lp-publish
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: node index.js
+
+      - name: Ergebnis committen (nur Test-Ausgabe)
+        run: |
+          git config user.name "nikos-lp-publish[bot]"
+          git config user.email "actions@github.com"
+          git add "loesungen/_ghtest-*" 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen (z. B. weil keine deploy=x-Zeile mit gültiger Vorschau da war) — nichts zu committen."
+          else
+            git commit -m "Test-Veröffentlichung (GitHub-Actions-Publisher, ohne n8n)"
+            git push
+          fi

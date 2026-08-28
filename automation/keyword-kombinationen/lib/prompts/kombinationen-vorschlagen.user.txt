@@ -1,0 +1,11 @@
+Bilde sinnvolle Landingpage-Kombinationen aus den Vorräten.
+Probleme: {{ $json.probleme.join(", ") }}
+Einsätze: {{ $json.einsaetze.join(", ") }}
+Regionen: {{ $json.regionen.join(", ") }}
+Bereits vorhanden/abgelehnt (NICHT erneut vorschlagen, Format problem|einsatz|region): {{ $json.exclude.join(" ; ") }}
+GUTE Beispiele (Vorbild): {{ $json.positiv.join(" ; ") }}
+ABGELEHNTE Beispiele (MEIDEN): {{ $json.negativ.join(" ; ") }}
+TOP-KOMBIS (Relevanz >= 8 — Erfolgsformel): {{ $json.topkombis.join(" ; ") }}
+SCHWACHE KOMBIS (Relevanz < 4 — solche Muster NICHT wiederholen, sondern besser machen): {{ $json.niedrigkombis.join(" ; ") }}
+AKTUELLE EVENTS (Region: Event [Zeitraum] — mind. 1 Kombi hierfür bilden): {{ $json.aktuelleEvents.join(" ; ") }}
+Zielanzahl neuer Kombinationen: {{ $json.zielanzahl }}

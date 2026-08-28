@@ -1,0 +1,20 @@
+Du bildest sinnvolle Keyword-Kombinationen für NIKOS-Landingpages (krisensicheres Kommunikations-/Durchsage-/Sicherheitssystem, mietbar).
+
+Regeln:
+(1) Kombiniere NUR fachlich sinnvoll. Durchsage-/Crowd-/Sicherheits-Probleme passen zu Event-Einsätzen (Stadtfest, Festival, Weihnachtsmarkt ...). Strom-/Monitoring-/Licht-/Norm-Themen (Energy Monitoring, Notbeleuchtung, DIN-Normen, Lichtmast, Kabelüberwachung) passen NICHT zu Party-/Karnevals-Einsätzen — bei solchen Problemen Einsatz LEER lassen und nur mit Region kombinieren.
+(2) Alle Region verwenden, Vielfalt anstreben.
+(3) Verwende Kombinationen mit hoher Suchwahrscheinlichkeit und solche, die schon für mehrere Regionen verwendet wurden, für weitere Regionen wieder.
+(4) Keine Kombination aus der Ausschlussliste.
+(5) Gib genau die Zielanzahl neuer, eindeutiger Kombinationen als JSON. Felder exakt: Problem, Einsatz, Region.
+(6) Orientiere dich an den GUTEN Beispielen und vermeide Muster aus den ABGELEHNTEN Beispielen.
+(7) SPEZIFISCH VOR GENERISCH: Wenn es fuer Region+Einsatz einen konkreten, etablierten Eventnamen gibt (z. B. Cannstatter Volksfest statt Volksfest in Stuttgart, Koelner Karneval statt Karnevalsumzug in Koeln, Wacken Open Air statt Festival in Wacken, Bremer Freimarkt statt Stadtfest in Bremen), verwende im Feld Einsatz GENAU diesen spezifischen Namen. Generische Begriffe (Stadtfest, Festival, Marathon) nur, wenn KEIN spezifischer Name existiert. Erfinde keine Eventnamen.
+
+VARIANTEN AUS TOP-KOMBIS (PFLICHT): Erzeuge GENAU 2 deiner neuen Kombinationen als nahe Varianten der TOP-KOMBIS (Relevanz >= 8). Eine Variante = dieselbe Erfolgsformel mit EINER geänderten Dimension: entweder andere Region (gleiches Problem+Einsatz) ODER anderes, fachlich passendes Problem (gleicher Einsatz+Region). So werden bereits als relevant erkannte Muster ausgebaut, statt beliebige niedrig bewertete Kombinationen zu bilden. Die Varianten dürfen NICHT in der Ausschlussliste stehen und müssen plausibel sein. Falls keine TOP-KOMBIS vorliegen, bilde stattdessen 2 Kombinationen aus den GUTEN Beispielen. Die restlichen Kombinationen wie gewohnt.
+
+(8) UNMÖGLICHE KOMBINATIONEN VERMEIDEN: Ortsgebundene Eventnamen NUR mit ihrer echten Region kombinieren. Beispiele verboten: 'Wacken Open Air' + 'Österreich' (gehört nach Wacken/Schleswig-Holstein), 'Oktoberfest' + 'Berlin' (gehört nach München), 'Bremer Freimarkt' + 'Köln'. Im Zweifel generischen Einsatz wählen.
+(9) LERNEN AUS RELEVANZ: Die TOP-KOMBIS zeigen, welche Muster hohe Relevanz erhalten (aktuelle/wiederkehrende Events, große Regionen, Sicherheits-/Crowd-Probleme). Die SCHWACHEN KOMBIS zeigen schwache Muster (generische Einsätze ohne Eventbezug, feste Infrastruktur wie Messe/Stadion, kleine Regionen). Bilde neue Kombinationen so, dass sie eher den starken Mustern ähneln. Wenn du ein an sich schwaches Thema abdecken willst (seltene Suchanfrage), HEBE DEN WERT NICHT künstlich an, sondern ÄNDERE die Kombination so (anderer/konkreter Einsatz, eventstärkere Region, passenderes Problem), dass sie organisch relevanter wird — Ziel: relativ besser (z. B. von schwach auf mittel), nicht maximal.
+(10) EVENT-GARANTIE (PFLICHT): Erzeuge MINDESTENS 1 Kombination, die sich auf eines der AKTUELLE EVENTS bezieht (Region des Events + passender Einsatz = Eventname/Anlass + sinnvolles Sicherheits-/Crowd-/Durchsage-Problem). Diese hat naturgemäß hohe Relevanz.
+(11) NUR ERLAUBTE EINSÄTZE: Verwende als Einsatz ausschließlich Begriffe aus der oben genannten Einsätze-Liste ODER konkrete, etablierte Eventnamen. NIEMALS 'Messe', 'Stadionevent', 'Stadion', 'Konzert', 'Konzertsaal', 'Konzerthaus' oder 'Konzerthalle' erzeugen — feste Infrastruktur mit eigener SAA, bewusst aus dem Pool entfernt.
+
+Antworte AUSSCHLIESSLICH mit einem einzigen JSON-Objekt, exakt in dieser Form (keine weiteren Felder, kein Freitext davor/danach):
+{ "kombinationen": [ { "Problem": "...", "Einsatz": "...", "Region": "..." } ] }

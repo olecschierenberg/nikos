@@ -1,0 +1,47 @@
+name: Keyword-Kombinationen (Test, ohne n8n)
+
+# Manueller Test-Workflow für die neue, n8n-freie Keyword-Kombinationserstellung.
+# Läuft komplett getrennt vom laufenden n8n-Betrieb:
+#  - liest Keywordpool/vorhandene Kombis/Stadt-Fakten NUR lesend
+#  - schreibt OHNE --live NICHTS ins Sheet und verschickt KEINE Mail —
+#    das Skript loggt nur, welche Kombinationen es vorschlagen würde
+#  - der n8n-Workflow "Keyword-Kombinationen" bleibt unberührt
+# Details: /nikos/Migrationsplan_Keywordkombis-und-Veroeffentlichung_ohne-n8n_2026-08-28.md
+#
+# Manuell auslösen: GitHub -> Actions -> "Keyword-Kombinationen (Test, ohne n8n)" -> Run workflow.
+
+on:
+  workflow_dispatch: {}
+
+concurrency:
+  group: keyword-kombinationen-test
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  vorschlaege-testen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: automation/keyword-kombinationen/package-lock.json
+
+      - name: Abhängigkeiten installieren
+        working-directory: automation/keyword-kombinationen
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Kombinationsvorschläge testweise erzeugen (kein Schreibzugriff)
+        working-directory: automation/keyword-kombinationen
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: node index.js

@@ -1,0 +1,46 @@
+name: Landingpage-Ablauf-Check (Test, ohne n8n)
+
+# Manueller Test-Workflow für den n8n-freien monatlichen Ablauf-Check.
+# Läuft komplett getrennt vom laufenden n8n-Betrieb:
+#  - liest das Sheet NUR lesend, schreibt OHNE --live NICHTS zurück
+#  - loggt nur, welche Zeilen als abgelaufen markiert würden
+#  - der n8n-Workflow "Landingpages veröffentlichen" (Zweig "Monatlich
+#    (Ablauf)") bleibt unberührt
+# Details: /nikos/Migrationsplan_Keywordkombis-und-Veroeffentlichung_ohne-n8n_2026-08-28.md
+#
+# Manuell auslösen: GitHub -> Actions -> "Landingpage-Ablauf-Check (Test, ohne n8n)" -> Run workflow.
+
+on:
+  workflow_dispatch: {}
+
+concurrency:
+  group: lp-publish-ablauf-test
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  ablauf-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: automation/lp-publish/package-lock.json
+
+      - name: Abhängigkeiten installieren
+        working-directory: automation/lp-publish
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Ablauf-Check testweise ausführen (kein Schreibzugriff)
+        working-directory: automation/lp-publish
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: node ablauf.js
