@@ -140,6 +140,13 @@ body{font-family:var(--font);color:var(--dark);background:var(--s2);line-height:
 .btn-partner{display:inline-block;background:var(--orange);color:#fff;padding:10px 20px;border-radius:var(--r);font-size:14px;font-weight:600;text-decoration:none;transition:background .15s}
 .btn-partner:hover{background:var(--brand-orange-dk)}
 
+.portal-section{margin-bottom:18px;padding:16px 18px;background:var(--s2);border-radius:var(--r-lg);border:1px solid var(--s3)}
+.portal-section__title{font-size:12px;font-weight:700;color:var(--dark);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+.portal-section__list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.portal-section__list li{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13px;color:var(--mid)}
+.portal-section__list li em{font-style:normal;font-size:10px;font-weight:700;color:var(--light);background:var(--white);border:1px solid var(--border);border-radius:20px;padding:2px 9px;white-space:nowrap;flex-shrink:0}
+.portal-section__text{font-size:13px;color:var(--mid);line-height:1.6}
+
 /* Footer mini */
 .login-footer{background:var(--surface-footer);padding:16px 24px;text-align:center}
 .login-footer p{font-size:12px;color:rgba(255,255,255,.35)}
@@ -226,8 +233,38 @@ body{font-family:var(--font);color:var(--dark);background:var(--s2);line-height:
           <span data-de>✓ Angemeldet als <b id="portalEmailDe"></b> (<span id="portalKatDe"></span>)</span>
           <span data-en>✓ Logged in as <b id="portalEmailEn"></b> (<span id="portalKatEn"></span>)</span>
         </div>
-        <p style="font-size:15px;color:var(--mid);line-height:1.6;" data-de>Der geschützte Bereich mit Schulungsunterlagen, Software und Techniker-Wiki wird derzeit aufgebaut. Sie werden per E-Mail informiert, sobald die ersten Inhalte verfügbar sind.</p>
-        <p style="font-size:15px;color:var(--mid);line-height:1.6;" data-en>The protected area with training materials, software and the technician wiki is currently being set up. You will be notified by email as soon as the first content is available.</p>
+        <div class="portal-section" data-portal-cat="technik">
+          <div class="portal-section__title" data-de>Technik-Bereich</div>
+          <div class="portal-section__title" data-en>Technical area</div>
+          <ul class="portal-section__list">
+            <li data-de><span>Schulungsunterlagen für Betrieb und Techniker</span><em>folgt in Kürze</em></li>
+            <li data-en><span>Training materials for operators and technicians</span><em>coming soon</em></li>
+            <li data-de><span>Software- und Firmware-Updates</span><em>folgt in Kürze</em></li>
+            <li data-en><span>Software and firmware updates</span><em>coming soon</em></li>
+            <li data-de><span>Techniker-Wiki</span><em>folgt in Kürze</em></li>
+            <li data-en><span>Technician wiki</span><em>coming soon</em></li>
+            <li data-de><span>Technische Spezifikationen (erweitert)</span><em>folgt in Kürze</em></li>
+            <li data-en><span>Technical specifications (extended)</span><em>coming soon</em></li>
+          </ul>
+        </div>
+        <div class="portal-section" data-portal-cat="marketing">
+          <div class="portal-section__title" data-de>Marketing-Bereich</div>
+          <div class="portal-section__title" data-en>Marketing area</div>
+          <ul class="portal-section__list">
+            <li data-de><span>Partner-Verkaufsunterlagen</span><em>folgt in Kürze</em></li>
+            <li data-en><span>Partner sales materials</span><em>coming soon</em></li>
+            <li data-de><span>Preislisten und Konditionen</span><em>folgt in Kürze</em></li>
+            <li data-en><span>Price lists and terms</span><em>coming soon</em></li>
+          </ul>
+        </div>
+        <div class="portal-section" data-portal-cat="chat">
+          <div class="portal-section__title" data-de>Support-Chat</div>
+          <div class="portal-section__title" data-en>Support chat</div>
+          <p class="portal-section__text" data-de>Technischer Chat-Assistent für Rückfragen – wird derzeit aufgebaut, danach für alle angemeldeten Nutzer verfügbar.</p>
+          <p class="portal-section__text" data-en>Technical chat assistant for questions – currently being built, then available to all logged-in users.</p>
+        </div>
+        <p style="font-size:12px;color:var(--light);line-height:1.5;margin-top:-4px;" data-de>Sie werden per E-Mail informiert, sobald erste Inhalte verfügbar sind.</p>
+        <p style="font-size:12px;color:var(--light);line-height:1.5;margin-top:-4px;" data-en>You will be notified by email as soon as the first content becomes available.</p>
         <button type="button" id="portalLogout" class="btn-login" style="margin-top:20px;background:transparent;color:var(--dark);border:1px solid var(--border);" data-de>Abmelden</button>
         <button type="button" id="portalLogout2" class="btn-login" style="margin-top:20px;background:transparent;color:var(--dark);border:1px solid var(--border);" data-en>Log out</button>
       </div>
@@ -376,6 +413,7 @@ document.getElementById('cookieModal').addEventListener('click',function(e){if(e
 /* Magic-Link-Login: Link anfordern + Sitzung aus #nk=Token übernehmen */
 (function(){
   var ENDPOINT='https://olec.app.n8n.cloud/webhook/nikos-login-request';
+  var CHECK_ENDPOINT='https://olec.app.n8n.cloud/webhook/nikos-login-check';
   var form=document.getElementById('loginForm');
   var portal=document.getElementById('portalView');
   var msg=document.getElementById('loginMsg');
@@ -387,6 +425,15 @@ document.getElementById('cookieModal').addEventListener('click',function(e){if(e
       if(p&&p.x&&Date.now()<Number(p.x))return p;
     }catch(e){}
     return null;
+  }
+  var ACCESS={Techniker:['technik','chat'],Partner:['technik','marketing','chat'],Mitarbeiter:['technik','marketing','chat']};
+  function applyAccess(kat){
+    var allowAll=(kat==='Mitarbeiter');
+    var allowed=ACCESS[kat]||['chat'];
+    document.querySelectorAll('[data-portal-cat]').forEach(function(sec){
+      var cat=sec.getAttribute('data-portal-cat');
+      sec.style.display=(allowAll||allowed.indexOf(cat)!==-1)?'':'none';
+    });
   }
   var m=(location.hash||'').match(/#nk=([A-Za-z0-9_\-\.]+)/);
   if(m&&decode(m[1])){
@@ -404,6 +451,14 @@ document.getElementById('cookieModal').addEventListener('click',function(e){if(e
       var btn=document.getElementById(id);
       if(btn)btn.addEventListener('click',function(){localStorage.removeItem('nk-portal');location.reload();});
     });
+    applyAccess(sess.k);
+    fetch(CHECK_ENDPOINT+'?token='+encodeURIComponent(tok))
+      .then(function(r){return r.json();})
+      .then(function(d){
+        if(!d||!d.valid){localStorage.removeItem('nk-portal');location.reload();return;}
+        applyAccess(d.kategorie);
+      })
+      .catch(function(){/* Netzwerkfehler: optimistische clientseitige Ansicht bleibt bestehen */});
     return;
   }
   if(!form)return;
