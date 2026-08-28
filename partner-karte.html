@@ -250,7 +250,7 @@ svg#map{
     <div class="partner-panel__empty" id="partnerEmpty">
       <div class="partner-panel__empty-header">
         <div class="partner-panel__empty-header-label">NIKOS</div>
-        <div class="partner-panel__empty-header-title">Regionale NIKOS-Partner</div>
+        <div class="partner-panel__empty-header-title" id="partnerPanelEmptyTitle">Regionale NIKOS-Partner</div>
       </div>
     </div>
   </aside>
@@ -455,6 +455,27 @@ function updatePartnerWerdenLang(lang) {
   partnerWerdenBtn.querySelector('.pw-en').style.display = lang === 'en' ? '' : 'none';
 }
 
+// ── Land-Bezeichnung je nach Sprache (EN-Seite zeigte bisher immer deutsche Laendernamen) ──
+const NIKOS_LAND_EN = {
+  'Deutschland': 'Germany',
+  'Österreich': 'Austria',
+  'Schweiz': 'Switzerland',
+  'Frankreich': 'France',
+  'Niederlande': 'Netherlands',
+  'Belgien': 'Belgium',
+  'Luxemburg': 'Luxembourg',
+  'Polen': 'Poland',
+  'Italien': 'Italy',
+  'Dänemark': 'Denmark',
+  'Tschechien': 'Czechia',
+  'Liechtenstein': 'Liechtenstein'
+};
+function nkLandLabel(land) {
+  const lang = document.documentElement.getAttribute('data-lang') || 'de';
+  if (lang !== 'en') return land;
+  return NIKOS_LAND_EN[land] || land;
+}
+
 // ── Mehrere Partner: Card zeigt Liste ──
 function renderPartnerList(pids, entryId) {
   if (!pids || pids.length === 0) {
@@ -504,7 +525,7 @@ function renderPartnerList(pids, entryId) {
 
     // Adresse
     if (addrBlock) {
-      const parts = [pd.strasse, (pd.plz||pd.ort) ? (pd.plz+' '+pd.ort).trim() : '', pd.land].filter(Boolean);
+      const parts = [pd.strasse, (pd.plz||pd.ort) ? (pd.plz+' '+pd.ort).trim() : '', nkLandLabel(pd.land)].filter(Boolean);
       addrBlock.textContent = parts.join(', ');
       addrBlock.style.display = parts.length ? '' : 'none';
     }
@@ -532,7 +553,7 @@ function renderPartnerList(pids, entryId) {
       cardFirm.innerHTML = pids.map(pid => {
         const pd = partnerDB[pid];
         if (!pd) return '';
-        const addrParts = [pd.strasse, (pd.plz||pd.ort) ? (pd.plz+' '+pd.ort).trim() : '', pd.land].filter(Boolean);
+        const addrParts = [pd.strasse, (pd.plz||pd.ort) ? (pd.plz+' '+pd.ort).trim() : '', nkLandLabel(pd.land)].filter(Boolean);
         const addrStr   = addrParts.join(', ');
         const isFirst = pids.indexOf(pid) === 0;
         return '<div style="' + (isFirst ? '' : 'border-top:1px solid var(--border);margin-top:12px;padding-top:12px;') + '">'
@@ -593,6 +614,9 @@ window.addEventListener('message', function(e) {
     const lang = e.data.lang || 'de';
     document.documentElement.setAttribute('data-lang', lang);
     updatePartnerWerdenLang(lang);
+    const _titleEl = document.getElementById('partnerPanelEmptyTitle');
+    if (_titleEl) _titleEl.textContent = lang === 'en' ? 'Regional NIKOS partners' : 'Regionale NIKOS-Partner';
+    if (typeof activeEntry !== 'undefined' && activeEntry && typeof showPartnerCard === 'function') showPartnerCard(activeEntry);
   }
 });
 document.documentElement.setAttribute('data-lang', 'de');
