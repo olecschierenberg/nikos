@@ -1,0 +1,65 @@
+name: LP-Generator
+
+# Produktiv-Workflow: ersetzt die deaktivierten n8n-Workflows "Landingpages erzeugen --
+# Orchestrator" und "... Worker stabilisiert". Laeuft automatisch stuendlich und erzeugt
+# bei Bedarf GENAU 1 neue Landingpage LIVE (echter Pfad lp-preview/<slug>/, echtes
+# Sheet-Update in Keywordkombinationen) -- sofern freigegebene Kombinationen
+# (erstellen=x) in der Warteschlange vorhanden sind (MAX=1 in lib/nodes/limit.js).
+# "Landingpages veroeffentlichen" (separater n8n-Workflow, promotet preview->live)
+# bleibt unveraendert aktiv.
+# Der Test-Workflow "lp-generate-test.yml" bleibt unveraendert fuer manuelle
+# Probelaeufe nach _ghtest-* erhalten.
+# Details: /nikos/Migrationsplan_Landingpage-Generator_ohne-n8n_2026-08-27.md
+#
+# Zeitplan: stuendlich um :15 (nicht :00, siehe GitHub-Empfehlung gegen Lastspitzen).
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '15 * * * *'
+
+concurrency:
+  group: lp-generate-live
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  generate-page:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: automation/lp-generator/package-lock.json
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation/lp-generator
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Landingpage generieren (LIVE)
+        working-directory: automation/lp-generator
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: node index.js --live
+
+      - name: Ergebnis committen (Vorschau + QA-Lektionen, ohne _ghtest-*)
+        run: |
+          git config user.name "nikos-lp-generator[bot]"
+          git config user.email "actions@github.com"
+          git add "lp-preview" "automation/lp-generator/data/qa-lektionen.json" 2>/dev/null || true
+          git reset -- "lp-preview/_ghtest-*" 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Keine Aenderungen (z. B. weil die Warteschlange leer war) -- nichts zu committen."
+          else
+            git commit -m "Neue LP (GitHub-Actions-Generator, ohne n8n)"
+            git push
+          fi

@@ -1,0 +1,18 @@
+{
+  "name": "nikos-aktuelle-events",
+  "version": "0.1.0",
+  "private": true,
+  "description": "GitHub-Actions-Portierung des n8n-Workflows \"Aktuelle Events\" (Recherche aktueller Grossevents via OpenAI-Websuche, aktualisiert Stadt-Fakten).",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "live": "node index.js --live"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "googleapis": "^144.0.0",
+    "luxon": "^3.7.2"
+  }
+}

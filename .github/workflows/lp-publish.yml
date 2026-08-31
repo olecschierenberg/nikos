@@ -1,0 +1,66 @@
+name: Landingpage-Veroeffentlichung
+
+# Produktiv-Workflow: ersetzt den Live-Deploy-Zweig des deaktivierten n8n-
+# Workflows "Landingpages veroeffentlichen". Laeuft automatisch stuendlich,
+# promotet LP-Vorschauen mit deploy=x (weiterhin MANUELL im Sheet gesetzt --
+# diese inhaltliche Pruefung bleibt bewusst bestehen, siehe README.md) zu
+# live und markiert nebenbei abgelaufene Kombinationen (ablauf.js).
+# Die Test-Workflows "lp-publish-test.yml" / "lp-publish-ablauf-test.yml"
+# bleiben unveraendert fuer manuelle Probelaeufe erhalten.
+# Details: automation/lp-publish/README.md
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '45 * * * *'
+
+concurrency:
+  group: lp-publish-live
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: automation/lp-publish/package-lock.json
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation/lp-publish
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Faellige Vorschauen live schalten (LIVE)
+        working-directory: automation/lp-publish
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: node index.js --live
+
+      - name: Ergebnis committen (loesungen/ + Vorschau-Loeschung, ohne _ghtest-*)
+        run: |
+          git config user.name "nikos-lp-publish[bot]"
+          git config user.email "actions@github.com"
+          git add "lp-preview" "loesungen" 2>/dev/null || true
+          git reset -- "loesungen/_ghtest-*" 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Keine Aenderungen (z. B. weil keine deploy=x-Zeile mit gueltiger Vorschau da war) -- nichts zu committen."
+          else
+            git commit -m "Landingpage(s) veroeffentlicht (GitHub-Actions-Publisher, ohne n8n)"
+            git push
+          fi
+
+      - name: Abgelaufene Kombinationen markieren (LIVE)
+        working-directory: automation/lp-publish
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: node ablauf.js --live

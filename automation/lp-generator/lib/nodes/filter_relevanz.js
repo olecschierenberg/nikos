@@ -22,6 +22,9 @@ for (const r of sfItems) {
 }
 const sf = reg => SF[low(reg)] || null;
 const ja = v => low(v) === 'ja';
+// istAusland: Regionstyp enthaelt 'Ausland' -> fuer Auslands-Diversitaets-Bonus in relevanzBerechnen()
+// (Pendant zur gleichnamigen Logik in automation/keyword-kombinationen/lib/nodes/relevanz_berechnen.js).
+const istAusland = reg => { const r = sf(reg); return r ? low(r.Regionstyp || '').includes('ausland') : false; };
 
 // ---- Sprache je Region: deutschsprachiger Raum -> 'de'; erkannte Auslandsregionen -> Landessprache; unbekannt -> 'en' ----
 // REGION_LANG: Region/Land (lowercase) -> ISO-Sprachcode der Landessprache. Bewusst mehrsprachig-
@@ -191,6 +194,10 @@ function relevanzBerechnen(problem, einsatz, reg, pe) {
   score += groesseZuschlag(reg, einsatz);
   if (logistik(reg) >= 2) score += 1;
   if (logistik(reg) === 0) score -= 1;
+  // AUSLAND-DIVERSITAETS-BONUS (2026-08-31): siehe Pendant in keyword-kombinationen/relevanz_berechnen.js —
+  // aktuelle/wiederkehrende Auslands-Events sollen bei der LP-Auswahl nicht benachteiligt, sondern
+  // bevorzugt werden (groessere geografische Diversitaet der generierten Landingpages).
+  if ((aktuell || wiederk) && istAusland(reg)) score += 1;
   if (SECURITY_PROBLEM.includes(low(problem))) score += 1;
   if (FIXED_INFRA.includes(low(einsatz))) return Math.max(1, Math.min(score - 4, 4));
   return Math.max(lo, Math.min(score, hi));

@@ -30,10 +30,17 @@ const topkombis = existing.filter(r => relOf(r) >= 8 && label(r))
 const niedrigkombis = existing.filter(r => { const v = relOf(r); return v >= 1 && v < 4 && label(r); })
   .sort((a,b) => relOf(a) - relOf(b)).map(r => label(r) + ' (Relevanz ' + relOf(r) + ')');
 
-// NEU: Aktuelle Events aus Stadt-Fakten (Region mit Aktuell gefüllt) -> für Event-Garantie
+// NEU: Aktuelle Events aus Stadt-Fakten (Region mit Aktuell gefüllt) -> für Event-Garantie.
+// Ausländische Regionen (Regionstyp enthaelt 'Ausland') werden mit [Ausland] markiert, damit die KI
+// laut Prompt-Regel (10b) ausländische Events bei der Kombinationserstellung bevorzugt beruecksichtigen
+// kann (Diversitaets-Vorgabe, 2026-08-31).
 const aktuelleEvents = sf.filter(r => (r.Aktuell||'').toString().trim())
-  .map(r => (r.Region||'').toString().trim() + ': ' + (r.Aktuell||'').toString().trim()
-    + ((r.Zeitraum||'').toString().trim() ? ' [' + (r.Zeitraum||'').toString().trim() + ']' : ''))
+  .map(r => {
+    const auslandTag = (r.Regionstyp||'').toString().trim().toLowerCase().includes('ausland') ? ' [Ausland]' : '';
+    return (r.Region||'').toString().trim() + ': ' + (r.Aktuell||'').toString().trim()
+      + ((r.Zeitraum||'').toString().trim() ? ' [' + (r.Zeitraum||'').toString().trim() + ']' : '')
+      + auslandTag;
+  })
   .filter(Boolean);
 
 const lastN = (arr, n) => arr.slice(-n);

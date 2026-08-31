@@ -1,0 +1,53 @@
+name: Keyword-Kombinationen
+
+# Produktiv-Workflow: ersetzt den deaktivierten n8n-Workflow "Keyword-Kombinationen"
+# (Stufe A). Laeuft taeglich automatisch, schreibt LIVE ins gemeinsame Google Sheet
+# und legt neue Kombinationen AUTOMATISCH FREIGEGEBEN an (erstellen='x') -- keine
+# manuelle Freigabe mehr noetig (Umstellung 2026-08-31).
+# Der Test-Workflow "keyword-kombinationen-test.yml" bleibt unveraendert fuer
+# manuelle Probelaeufe ohne Seiteneffekte erhalten.
+# Details: /nikos/Migrationsplan_Keywordkombis-und-Veroeffentlichung_ohne-n8n_2026-08-28.md
+#
+# Zeitplan: taeglich 03:00 UTC (nachts, vor dem ersten stuendlichen LP-Lauf des Tages
+# und zeitlich getrennt vom biwoechentlichen "Aktuelle Events"-n8n-Workflow um 07:00 UTC
+# am 1./15.). Erzeugt mindestens 5 neue Kombinationen pro Lauf (zielanzahl in
+# vorrat_ausschluss.js). Manuell auch ueber "Run workflow" ausloesbar.
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 3 * * *'
+
+concurrency:
+  group: keyword-kombinationen-live
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  vorschlaege-erzeugen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: automation/keyword-kombinationen/package-lock.json
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation/keyword-kombinationen
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Kombinationsvorschlaege erzeugen und automatisch freigeben (LIVE)
+        working-directory: automation/keyword-kombinationen
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+        run: node index.js --live

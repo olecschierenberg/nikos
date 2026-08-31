@@ -131,6 +131,11 @@ function relevanz(problem, einsatz, reg){
   let score=base + groesseZuschlag(reg,einsatz);
   if(logistik(reg)>=2) score+=1;
   if(logistik(reg)===0) score-=1;
+  // AUSLAND-DIVERSITAETS-BONUS (2026-08-31): aktuelle/wiederkehrende Events in echtem Ausland
+  // (Regionstyp='Ausland') bekommen +1, um den Logistik-Abzug fuer 'fernes Ausland' auszugleichen
+  // und 'nahes Ausland' einen kleinen Vorsprung vor gleichwertigen Inlands-Kombis zu geben — auf
+  // ausdruecklichen Wunsch, auslaendische Events bei Erstellung und Relevanz zu priorisieren.
+  if((aktuell||wiederk) && istAusland(reg)) score+=1;
   if(SECURITY_PROBLEM.includes(low(problem))) score+=1;
   if(FIXED_INFRA.includes(low(einsatz))) return Math.max(1,Math.min(score-4,4));
   return Math.max(lo,Math.min(score,hi));

@@ -4,6 +4,16 @@ on:
   push:
     branches:
       - main
+  # NEU (2026-08-31): Fallback-Zeitplan, seit die neuen GitHub-Actions-
+  # Automatisierungen (LP-Generator/-Publisher) per GITHUB_TOKEN pushen --
+  # dieser Actor ist github-actions[bot], und der Guard unten
+  # (github.actor != 'github-actions[bot]') ueberspringt solche Pushes
+  # bewusst (verhindert Trigger-Ketten durch andere Bots). Ohne diesen
+  # Schedule wuerde sitemap.xml nie mehr automatisch aktualisiert, sobald
+  # ausschliesslich Bot-Commits passieren. Alle 6 Stunden reicht als
+  # Sicherheitsnetz; der Job committet ohnehin nur bei echter Aenderung.
+  schedule:
+    - cron: '0 */6 * * *'
 
 permissions:
   contents: write

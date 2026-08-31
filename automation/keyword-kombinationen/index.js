@@ -112,7 +112,7 @@ async function main() {
     Problem: it.json.Problem,
     Einsatz: it.json.Einsatz,
     Region: it.json.Region,
-    erstellen: '',
+    erstellen: 'x', // Auto-Freigabe (2026-08-31): keine manuelle Freigabe mehr noetig
     Relevanz: it.json.Relevanz,
     Ende: it.json.Ende,
   }));
@@ -125,7 +125,7 @@ async function main() {
 
   // ---- 7) Vorschlags-Mail (Brevo) ----
   if (LIVE) {
-    await sendVorschlagsMail({ apiKey: process.env.BREVO_API_KEY, sheetUrl: SHEET_URL });
+    await sendVorschlagsMail({ apiKey: process.env.BREVO_API_KEY, sheetUrl: SHEET_URL, count: rowsToAppend.length });
     log('  Vorschlags-Mail an o.schierenberg@radacom.de verschickt.');
   } else {
     log('  TEST-Modus: Brevo-Mail übersprungen.');

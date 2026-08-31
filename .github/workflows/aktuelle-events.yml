@@ -1,0 +1,62 @@
+name: Aktuelle Events
+
+# Produktiv-Workflow: ersetzt den deaktivierten n8n-Workflow "Aktuelle
+# Events" (Recherche kommender Grossveranstaltungen via OpenAI-Websuche,
+# aktualisiert Stadt-Fakten "Aktuell"/"Events"). Neu (Absprache 2026-08-31,
+# "mehr Auslandsevents finden"): woechentliche statt biwoechentliche
+# Laeufe, dabei rotierend durch kleine Laendergruppen statt einer einzigen
+# breiten Anfrage -- siehe Kommentar am Anfang von automation/aktuelle-
+# events/index.js fuer die genaue Begruendung.
+#
+# Zeitplan: montags = DE+AT (Kernmaerkte), donnerstags = eine rotierende
+# Auslandsgruppe (~6 Laender). Manueller Testlauf ohne Zeitplan-Kontext
+# nutzt den sicheren Default "core" (siehe --scope-Input).
+
+on:
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: "Suchbereich fuer diesen manuellen Lauf"
+        required: false
+        default: core
+        type: choice
+        options:
+          - core
+          - foreign
+  schedule:
+    - cron: '0 6 * * 1'
+    - cron: '0 6 * * 4'
+
+concurrency:
+  group: aktuelle-events-live
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  recherche:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: automation/aktuelle-events/package-lock.json
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation/aktuelle-events
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Aktuelle Grossevents recherchieren und Stadt-Fakten aktualisieren (LIVE)
+        working-directory: automation/aktuelle-events
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          GITHUB_EVENT_SCHEDULE: ${{ github.event.schedule }}
+        run: node index.js --live ${{ inputs.scope && format('--scope={0}', inputs.scope) || '' }}
