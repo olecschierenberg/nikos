@@ -26,5 +26,12 @@
     "einsatz": "IGA Ruhrgebiet 2027",
     "problem": "Sprachalarmierung",
     "mangel": "Redundante FAQ zur Nutzung eines vorhandenen digitalen Funknetzes durch eine FAQ zu Kostenvorteilen ersetzt."
+  },
+  {
+    "datum": "31.08.2026",
+    "region": "Dortmund",
+    "einsatz": "IGA Ruhrgebiet 2027",
+    "problem": "Crowd Management",
+    "mangel": "Weichmacher in Intro, FAQ1 und FAQ3 entfernt bzw. eindeutig formuliert | Sprachlich holprige Formulierungen im Intro und in FAQ2 geglättet"
   }
 ]
