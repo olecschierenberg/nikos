@@ -1032,4 +1032,32 @@
 <loc>https://nikos.info/en/rental/become-partner/</loc>
 <lastmod>2026-08-28</lastmod>
 </url>
+  <url>
+    <loc>https://nikos.info/loesungen/crowd-management-oktoberfest-muenchen/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/crowd-management-oktoberfest-muenchen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/crowd-management-oktoberfest-muenchen/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/crowd-management-duesseldorfer-karneval-duesseldorf/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/crowd-management-duesseldorfer-karneval-duesseldorf/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/crowd-management-duesseldorfer-karneval-duesseldorf/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/besuchersicherheit-cannstatter-wasen-stuttgart/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/besuchersicherheit-cannstatter-wasen-stuttgart/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/besuchersicherheit-cannstatter-wasen-stuttgart/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://nikos.info/loesungen/besucherlenkung-rheinland-pfalz-tag-mainz/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/besucherlenkung-rheinland-pfalz-tag-mainz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/besucherlenkung-rheinland-pfalz-tag-mainz/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
