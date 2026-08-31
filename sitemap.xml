@@ -1156,4 +1156,11 @@
 <loc>https://nikos.info/en/rental/become-partner/</loc>
 <lastmod>2026-08-28</lastmod>
 </url>
+  <url>
+    <loc>https://nikos.info/loesungen/statusmonitoring-iaa-mobility-muenchen/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/statusmonitoring-iaa-mobility-muenchen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/statusmonitoring-iaa-mobility-muenchen/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
