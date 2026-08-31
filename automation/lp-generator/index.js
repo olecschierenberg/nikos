@@ -105,6 +105,12 @@ async function main() {
   const textbausteineContent = fs.readFileSync(TEXTBAUSTEINE_PATH, 'utf8');
   nodeOutputs.set('Textbausteine laden', [{ json: { data: textbausteineContent } }]);
 
+  // ---- 6b) QA-Lektionen laden (Ersatz fuer n8n Data Table "QA-Lektionen", siehe lib/qaLektionen.js) ----
+  // BUGFIX: fehlte im urspruenglichen Port -- lib/prompts/nachbesserung.user.txt referenziert
+  // $('QA-Lektionen laden'), aber dieser Node-Output wurde nie in nodeOutputs eingetragen, wodurch
+  // der Nachbesserung-Zweig mit "Node-Referenz ... nicht verfuegbar" abbrach.
+  nodeOutputs.set('QA-Lektionen laden', qaLektionen.loadAsItems());
+
   // ---- 7) Kontext trimmen ----
   const kontextResult = runAllItems('kontext_trimmen.js', {
     items: [lockedItem], nodeOutputs, staticData, executionId,
