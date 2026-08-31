@@ -158,7 +158,7 @@
 </url>
 <url>
 <loc>https://nikos.info/loesungen/</loc>
-<lastmod>2026-08-28</lastmod>
+<lastmod>2026-08-31</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/de/anwendungen/</loc>
@@ -245,6 +245,14 @@
 <lastmod>2026-08-28</lastmod>
 </url>
 <url>
+<loc>https://nikos.info/loesungen/besucherinformation-buergerfest-regensburg/</loc>
+<lastmod>2026-08-31</lastmod>
+</url>
+<url>
+<loc>https://nikos.info/loesungen/besucherinformation-firmenveranstaltung/</loc>
+<lastmod>2026-08-31</lastmod>
+</url>
+<url>
 <loc>https://nikos.info/loesungen/besucherinformation-gillamoos-abensberg/</loc>
 <lastmod>2026-08-28</lastmod>
 </url>
@@ -265,12 +273,28 @@
 <lastmod>2026-08-28</lastmod>
 </url>
 <url>
+<loc>https://nikos.info/loesungen/besucherinformation-tag-der-bundeswehr/</loc>
+<lastmod>2026-08-31</lastmod>
+</url>
+<url>
 <loc>https://nikos.info/loesungen/besucherinformation-tag-der-niedersachsen-hannover/</loc>
 <lastmod>2026-08-28</lastmod>
 </url>
 <url>
+<loc>https://nikos.info/loesungen/besucherinformation-weinfest-rheinland-pfalz/</loc>
+<lastmod>2026-08-31</lastmod>
+</url>
+<url>
 <loc>https://nikos.info/loesungen/besucherlenkung-basel-tattoo-basel/</loc>
 <lastmod>2026-08-28</lastmod>
+</url>
+<url>
+<loc>https://nikos.info/loesungen/besucherlenkung-buergerfest-regensburg/</loc>
+<lastmod>2026-08-31</lastmod>
+</url>
+<url>
+<loc>https://nikos.info/loesungen/besucherlenkung-chio-aachen-aachen/</loc>
+<lastmod>2026-08-31</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/loesungen/besucherlenkung-christopher-street-day-berlin/</loc>
@@ -301,12 +325,24 @@
 <lastmod>2026-08-28</lastmod>
 </url>
 <url>
+<loc>https://nikos.info/loesungen/besucherlenkung-oktoberfest-muenchen/</loc>
+<lastmod>2026-08-31</lastmod>
+</url>
+<url>
+<loc>https://nikos.info/loesungen/besucherlenkung-rheinland-pfalz-tag-mainz/</loc>
+<lastmod>2026-08-31</lastmod>
+</url>
+<url>
 <loc>https://nikos.info/loesungen/besucherlenkung-sachsen-anhalt-tag-2028-aschersleben/</loc>
 <lastmod>2026-08-28</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/loesungen/besuchersicherheit-basel-tattoo-basel/</loc>
 <lastmod>2026-08-28</lastmod>
+</url>
+<url>
+<loc>https://nikos.info/loesungen/besuchersicherheit-cannstatter-wasen-stuttgart/</loc>
+<lastmod>2026-08-31</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/loesungen/besuchersicherheit-chio-aachen-aachen/</loc>
@@ -369,6 +405,10 @@
 <lastmod>2026-08-28</lastmod>
 </url>
 <url>
+<loc>https://nikos.info/loesungen/crowd-management-duesseldorfer-karneval-duesseldorf/</loc>
+<lastmod>2026-08-31</lastmod>
+</url>
+<url>
 <loc>https://nikos.info/loesungen/crowd-management-fussball-em-fanmeile-berlin/</loc>
 <lastmod>2026-08-28</lastmod>
 </url>
@@ -415,6 +455,10 @@
 <url>
 <loc>https://nikos.info/loesungen/crowd-management-lollapalooza-berlin-berlin/</loc>
 <lastmod>2026-08-28</lastmod>
+</url>
+<url>
+<loc>https://nikos.info/loesungen/crowd-management-oktoberfest-muenchen/</loc>
+<lastmod>2026-08-31</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/loesungen/crowd-management-open-air-konzert-hamburg/</loc>
@@ -1032,60 +1076,4 @@
 <loc>https://nikos.info/en/rental/become-partner/</loc>
 <lastmod>2026-08-28</lastmod>
 </url>
-  <url>
-    <loc>https://nikos.info/loesungen/crowd-management-oktoberfest-muenchen/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/crowd-management-oktoberfest-muenchen/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/crowd-management-oktoberfest-muenchen/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://nikos.info/loesungen/crowd-management-duesseldorfer-karneval-duesseldorf/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/crowd-management-duesseldorfer-karneval-duesseldorf/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/crowd-management-duesseldorfer-karneval-duesseldorf/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://nikos.info/loesungen/besuchersicherheit-cannstatter-wasen-stuttgart/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/besuchersicherheit-cannstatter-wasen-stuttgart/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/besuchersicherheit-cannstatter-wasen-stuttgart/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://nikos.info/loesungen/besucherlenkung-rheinland-pfalz-tag-mainz/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/besucherlenkung-rheinland-pfalz-tag-mainz/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/besucherlenkung-rheinland-pfalz-tag-mainz/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://nikos.info/loesungen/besucherlenkung-oktoberfest-muenchen/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/besucherlenkung-oktoberfest-muenchen/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/besucherlenkung-oktoberfest-muenchen/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://nikos.info/loesungen/besucherlenkung-chio-aachen-aachen/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/besucherlenkung-chio-aachen-aachen/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/besucherlenkung-chio-aachen-aachen/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://nikos.info/loesungen/besucherlenkung-buergerfest-regensburg/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/besucherlenkung-buergerfest-regensburg/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/besucherlenkung-buergerfest-regensburg/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://nikos.info/loesungen/besucherinformation-weinfest-rheinland-pfalz/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/besucherinformation-weinfest-rheinland-pfalz/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/besucherinformation-weinfest-rheinland-pfalz/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 </urlset>
