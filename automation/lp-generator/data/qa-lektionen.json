@@ -5,5 +5,12 @@
     "einsatz": "IGA Ruhrgebiet 2027",
     "problem": "Sprachalarmierung",
     "mangel": "Nicht freigegebenes Modul NIKOS [flash]² entfernt. | Weichmacher „unter Umständen“ und die damit verbundene unbelegte Funktion eines vorhandenen digitalen Funknetzes entfernt."
+  },
+  {
+    "datum": "31.08.2026",
+    "region": "Dortmund",
+    "einsatz": "IGA Ruhrgebiet 2027",
+    "problem": "Crowd Management",
+    "mangel": "Weichmacher in der Beschreibung der Mobilfunknetze und der Normkonformität entfernt bzw. eindeutig formuliert"
   }
 ]
