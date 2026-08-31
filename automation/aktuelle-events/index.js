@@ -50,7 +50,7 @@ const PROMPTS_DIR = path.join(__dirname, 'lib', 'prompts');
 const LIVE = process.argv.includes('--live');
 const STADT_FAKTEN_TAB = 'Stadt-Fakten';
 const REGIONEN_SHEET_ID = '1_JhSXcyg9IEtrMqBSSx0Pt616emHrLsmUx4kH5_umwQ';
-const REGIONEN_TAB = '1498711867'; // gid des Tabs "Erlaubte Regionen" (per ID referenziert, wie im n8n-Original)
+const REGIONEN_TAB_GID = 1498711867; // gid des Tabs "Erlaubte Regionen" (wie im n8n-Original per ID referenziert)
 const GROUP_SIZE = 6;
 const CORE_CRON = '0 6 * * 1';
 const FOREIGN_CRON = '0 6 * * 4';
@@ -243,13 +243,20 @@ async function regionenSheetItems() {
   // Landingpagedaten -- lib/sheets.js ist fest auf SPREADSHEET_ID der
   // Landingpagedaten-Tabelle verdrahtet (wie in allen automation/*-Skripten),
   // daher hier ein eigener, minimaler direkter Google-Sheets-Read.
+  // Die Sheets-API braucht fuer values.get() den Tab-NAMEN, nicht die gid
+  // (anders als n8n's eigener Google-Sheets-Node, der "mode: id" kann) --
+  // deshalb hier zuerst per spreadsheets.get() den Namen zur bekannten gid
+  // (1498711867) aufloesen, statt ihn hart zu kodieren.
   const { google } = require('googleapis');
   const raw = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
   if (!raw) throw new Error('GOOGLE_SERVICE_ACCOUNT_JSON fehlt.');
   const creds = JSON.parse(raw);
   const auth = new google.auth.JWT(creds.client_email, null, creds.private_key, ['https://www.googleapis.com/auth/spreadsheets']);
   const client = google.sheets({ version: 'v4', auth });
-  const res = await client.spreadsheets.values.get({ spreadsheetId: REGIONEN_SHEET_ID, range: REGIONEN_TAB });
+  const meta = await client.spreadsheets.get({ spreadsheetId: REGIONEN_SHEET_ID, fields: 'sheets.properties' });
+  const sheetProps = (meta.data.sheets || []).map((s) => s.properties).find((p) => p.sheetId === REGIONEN_TAB_GID);
+  if (!sheetProps) throw new Error(`regionenSheetItems: kein Tab mit gid ${REGIONEN_TAB_GID} in Spreadsheet ${REGIONEN_SHEET_ID} gefunden.`);
+  const res = await client.spreadsheets.values.get({ spreadsheetId: REGIONEN_SHEET_ID, range: sheetProps.title });
   const rows = res.data.values || [];
   if (rows.length < 1) return [];
   const header = rows[0];
