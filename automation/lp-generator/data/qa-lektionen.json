@@ -47,5 +47,12 @@
     "einsatz": "Aalst Carnaval",
     "problem": "Crowd Management",
     "mangel": "Weichmacher in intro, USP, FAQ 3 und FAQ 4 entfernt bzw. eindeutig formuliert | Redundanz und sprachliche Unklarheiten in den Norm- und Funktionsbeschreibungen reduziert"
+  },
+  {
+    "datum": "01.09.2026",
+    "region": "Aalst",
+    "einsatz": "Aalst Carnaval",
+    "problem": "Notfalldurchsage",
+    "mangel": "Ungültige Modulbezeichnung [flash]² in FAQ3 durch NIKOS [audio]² ersetzt | Weichmacher „unter bestimmten Umständen“ in FAQ4 entfernt | Nicht belegte Aussage zur projektspezifischen offiziellen Genehmigung entfernt"
   }
 ]
