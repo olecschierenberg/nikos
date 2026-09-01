@@ -54,5 +54,12 @@
     "einsatz": "Aalst Carnaval",
     "problem": "Notfalldurchsage",
     "mangel": "Ungültige Modulbezeichnung [flash]² in FAQ3 durch NIKOS [audio]² ersetzt | Weichmacher „unter bestimmten Umständen“ in FAQ4 entfernt | Nicht belegte Aussage zur projektspezifischen offiziellen Genehmigung entfernt"
+  },
+  {
+    "datum": "01.09.2026",
+    "region": "Dortmund",
+    "einsatz": "IGA Ruhrgebiet 2027",
+    "problem": "Besucherlenkung",
+    "mangel": "Weichmacher in der Normen-FAQ korrigiert | Weichmacher in der Flexibilitäts-FAQ korrigiert"
   }
 ]
