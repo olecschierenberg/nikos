@@ -52,7 +52,7 @@ Er schreibt zu keinem Zeitpunkt auf die Website oder nach GitHub.
 
 - **Nur lesend** auf dem gemeinsamen Google Sheet ("Landingpagedaten"),
   solange nicht `--live` übergeben wird.
-- Ohne `--live`: kein Sheet-Append, keine Sortierung, keine Brevo-Mail —
+- Ohne `--live`: kein Sheet-Append, keine Sortierung —
   das Skript loggt nur, was es tun *würde*.
 - Ausführung nur manuell per Klick (`workflow_dispatch`), kein Zeitplan.
 - Selbst im `--live`-Modus ist der Blast-Radius klein: es werden nur
@@ -63,7 +63,7 @@ Erst wenn über mehrere Testläufe hinweg die Ergebnisse nachweislich
 plausibel/gleichwertig zum n8n-Ergebnis sind, wird ein echter Zeitplan
 (täglich, wie aktuell in n8n) der nächste Schritt.
 
-## Was du noch einrichten musst (3 Secrets)
+## Was du noch einrichten musst (2 Secrets)
 
 ### 1. `OPENAI_API_KEY`
 Kann derselbe wie beim LP-Generator sein (`automation/lp-generator`).
@@ -74,11 +74,12 @@ eingerichtet — er braucht ohnehin Zugriff auf dasselbe Sheet
 "Landingpagedaten". Siehe `automation/lp-generator/README.md`, Abschnitt
 "Was du noch einrichten musst", Punkt 2, für die Einrichtung von Grund auf.
 
-### 3. `BREVO_API_KEY`
-Der Brevo-API-Key, mit dem `info@radacom.de` E-Mails versendet (dieselbe
-Quelle wie das n8n-Credential für den HTTP-Request-Node "Vorschlags-Mail
-(Brevo)"). In Brevo unter **Einstellungen → SMTP & API → API-Keys** zu
-finden bzw. neu zu erzeugen.
+**Hinweis Fehler-Benachrichtigung:** Diese Automatisierung verschickt keine
+E-Mail mehr bei neuen Kombinationen. Stattdessen sendet die GitHub-Action-
+Datei `keyword-kombinationen.yml` bei einem fehlgeschlagenen Lauf automatisch
+eine Telegram-Nachricht (Secrets `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID`,
+gemeinsam mit den anderen drei Automatisierungen genutzt, siehe
+`/nikos/project_memory.md`).
 
 ### Secrets hinterlegen (GitHub-Weboberfläche)
 
@@ -101,9 +102,8 @@ Mit echten Secrets lokal (z. B. zum Debuggen):
 ```bash
 export OPENAI_API_KEY=...
 export GOOGLE_SERVICE_ACCOUNT_JSON="$(cat pfad/zum/service-account.json)"
-export BREVO_API_KEY=...
 node index.js          # Test-Modus (Standard, kein Schreibzugriff)
-node index.js --live   # schreibt wirklich ins Sheet + verschickt die Mail
+node index.js --live   # schreibt wirklich ins Sheet
 ```
 
 ## Struktur
@@ -114,7 +114,6 @@ lib/runCodeNode.js                 n8n-Kompatibilitäts-Shim ($input/$json/$('No
 lib/expr.js                        Rendert n8n-{{ }}-Ausdrücke (User-Prompt)
 lib/openai.js                      Strukturierter OpenAI-Aufruf (ersetzt LangChain-Agent+Parser)
 lib/sheets.js                      Google-Sheets-Zugriff (lesen/anhängen/sortieren)
-lib/brevo.js                       Direkter Brevo-API-Aufruf (ersetzt HTTP-Request-Node)
 lib/nodes/vorrat_ausschluss.js      UNVERÄNDERTE Kopie des n8n-Code-Node-Inhalts
 lib/nodes/relevanz_berechnen.js     UNVERÄNDERTE Kopie des n8n-Code-Node-Inhalts
 lib/prompts/*.txt                   System-/User-Prompt (Regeln unverändert aus n8n)

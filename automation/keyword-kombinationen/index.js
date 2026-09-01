@@ -9,17 +9,18 @@
  *   Stadt-Fakten lesen A -> Keywordpool lesen -> Vorhandene Kombis lesen
  *   -> Vorrat + Ausschluss aufbereiten (Code) -> Kombinationen vorschlagen
  *   (KI) -> In Zeilen aufteilen -> Relevanz berechnen (Code)
- *   -> Vorschläge ins Sheet -> Vorschlags-Mail (Brevo) -> Blatt sortieren.
+ *   -> Vorschläge ins Sheet -> Blatt sortieren.
  *
  * Details/Migrationsplan: /nikos/Migrationsplan_Keywordkombis-und-
  * Veroeffentlichung_ohne-n8n_2026-08-28.md
  *
  * SICHERHEITSDESIGN (siehe README.md):
  *  - Dieser Workflow schreibt NIE auf die Website oder nach GitHub — nur
- *    unfreigegebene Vorschlagszeilen ins gemeinsame Google Sheet + eine
- *    Info-Mail. Trotzdem: Standardmäßig TEST-MODUS (kein Sheet-Write, keine
- *    Mail) — erst mit --live werden Zeilen wirklich angehängt/sortiert und
- *    die Mail verschickt.
+ *    unfreigegebene Vorschlagszeilen ins gemeinsame Google Sheet.
+ *    Trotzdem: Standardmäßig TEST-MODUS (kein Sheet-Write) — erst mit
+ *    --live werden Zeilen wirklich angehängt/sortiert. Schlaegt der Lauf
+ *    fehl, verschickt die GitHub-Action-Workflow-Datei
+ *    (keyword-kombinationen.yml) automatisch eine Telegram-Nachricht.
  */
 
 const path = require('path');
@@ -28,7 +29,6 @@ const { DateTime } = require('luxon');
 const { runAllItems, buildNodeRef } = require('./lib/runCodeNode');
 const { renderExpr } = require('./lib/expr');
 const { chatCompletionJson } = require('./lib/openai');
-const { sendVorschlagsMail } = require('./lib/brevo');
 const sheets = require('./lib/sheets');
 
 const PROMPTS_DIR = path.join(__dirname, 'lib', 'prompts');
@@ -36,7 +36,6 @@ const fs = require('fs');
 const LIVE = process.argv.includes('--live');
 const executionId = process.env.GITHUB_RUN_ID ? `gha-${process.env.GITHUB_RUN_ID}` : `local-${Date.now()}`;
 const SHEET_TAB = 'Keywordkombinationen';
-const SHEET_URL = `https://docs.google.com/spreadsheets/d/${sheets.SPREADSHEET_ID}/edit`;
 
 function log(msg) {
   console.log(`[keyword-kombinationen] ${msg}`);
@@ -53,7 +52,6 @@ function readPrompt(name) {
 async function main() {
   log(`Start (${LIVE ? 'LIVE' : 'TEST'}-Modus), executionId=${executionId}`);
   if (!process.env.OPENAI_API_KEY) abort('OPENAI_API_KEY fehlt (GitHub Secret setzen, siehe README.md).');
-  if (LIVE && !process.env.BREVO_API_KEY) abort('BREVO_API_KEY fehlt (für --live nötig, siehe README.md).');
 
   const nodeOutputs = new Map();
   const staticData = {};
@@ -123,15 +121,7 @@ async function main() {
     log(`  TEST-Modus: Sheet-Append übersprungen (würde ${rowsToAppend.length} Zeile(n) anhängen).`);
   }
 
-  // ---- 7) Vorschlags-Mail (Brevo) ----
-  if (LIVE) {
-    await sendVorschlagsMail({ apiKey: process.env.BREVO_API_KEY, sheetUrl: SHEET_URL, count: rowsToAppend.length });
-    log('  Vorschlags-Mail an o.schierenberg@radacom.de verschickt.');
-  } else {
-    log('  TEST-Modus: Brevo-Mail übersprungen.');
-  }
-
-  // ---- 8) Blatt sortieren (Relevanz), absteigend — Spalte J = Index 9, A:K = 11 Spalten, 1:1 aus n8n ----
+  // ---- 7) Blatt sortieren (Relevanz), absteigend — Spalte J = Index 9, A:K = 11 Spalten, 1:1 aus n8n ----
   if (LIVE) {
     await sheets.sortByRelevanceDesc(SHEET_TAB, 9, 11);
     log('  Sheet nach Relevanz absteigend sortiert.');
