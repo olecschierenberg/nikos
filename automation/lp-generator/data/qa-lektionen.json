@@ -61,5 +61,12 @@
     "einsatz": "IGA Ruhrgebiet 2027",
     "problem": "Besucherlenkung",
     "mangel": "Weichmacher in der Normen-FAQ korrigiert | Weichmacher in der Flexibilitäts-FAQ korrigiert"
+  },
+  {
+    "datum": "02.09.2026",
+    "region": "Dortmund",
+    "einsatz": "IGA Ruhrgebiet 2027",
+    "problem": "Crowd Management",
+    "mangel": "Lösungs- und Produktbeschreibung aus dem Intro entfernt, da das Intro ausschließlich die Herausforderung beschreiben darf. | Verbotene sinngleiche Formulierung zur Nutzung eines eigenen Funknetzes überarbeitet. | Weichmacher in der Normen-FAQ entfernt."
   }
 ]
