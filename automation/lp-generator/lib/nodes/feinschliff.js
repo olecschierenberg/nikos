@@ -60,8 +60,6 @@ html=html.replace(/<h1 data-de>([\s\S]*?)<\/h1>/,function(m,t){var s=splitCo(t);
 html=html.replace(/<h1 data-en>([\s\S]*?)<\/h1>/,function(m,t){var s=splitCo(t);pEn=s[1];return '<h1 data-en>'+s[0]+'</h1>';});
 if(pDe){html=html.replace(/(<h2 class="heading-l" style="margin-top:12px;" data-de>)[\s\S]*?(<\/h2>)/,function(m,a,z){return a+pDe+z;});}
 if(pEn){html=html.replace(/(<h2 class="heading-l" style="margin-top:12px;" data-en>)[\s\S]*?(<\/h2>)/,function(m,a,z){return a+pEn+z;});}
-if(region){html=html.split('<span class="nk-label" data-de>'+region+'</span><span class="nk-label" data-en>'+region+'</span>').join('<span class="nk-label" data-de>Herausforderung</span><span class="nk-label" data-en>Challenge</span>');}
-html=html.replace('<span class="nk-label" data-de>Warum NIKOS</span><span class="nk-label" data-en>Why NIKOS</span>','<span class="nk-label" data-de>Lösung</span><span class="nk-label" data-en>Solution</span>');
 html=html.replace('data-de>Eine einheitliche Lösung für Alltag und Ernstfall</h2>','data-de>'+USPHEAD[0]+'</h2>');
 html=html.replace('data-en>One unified solution for everyday use and emergencies</h2>','data-en>'+USPHEAD[1]+'</h2>');
 html=html.split('finden Sie hier.</div>').join('finden Sie <a href="https://nikos.info/nikos-anwendungen.html#wirtschaftlichkeit">hier</a>.</div>');
