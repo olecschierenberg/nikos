@@ -38,52 +38,10 @@ jobs:
         with:
           base-url-path: https://nikos.info/
           include-pdf: false
-          # 2026-09-02: die 37 alten Flat-Redirect-Stubs (nikos-*.html, index.html,
-          # danke.html) haben KEIN noindex (Soft-Redirect via canonical, siehe
-          # scripts/verify-sitemap.mjs) und wurden deshalb bei jedem Lauf wieder in
-          # die Sitemap aufgenommen (Ahrefs: 'Nicht-kanonische Seite in Sitemap').
-          # Explizit ausschliessen, da ihr canonical auf /de/ bzw. /en/ zeigt.
           exclude-paths: >
             /lp-preview
             /backups
             /migration
-            /danke.html
-            /index.html
-            /nikos-agb.html
-            /nikos-anwendung-baustelle.html
-            /nikos-anwendung-festival.html
-            /nikos-anwendung-festumzug.html
-            /nikos-anwendung-firmenveranstaltung.html
-            /nikos-anwendung-gedenkveranstaltung.html
-            /nikos-anwendung-jubilaeumsfeier.html
-            /nikos-anwendung-krisenlage.html
-            /nikos-anwendung-parkfest.html
-            /nikos-anwendung-sportevent.html
-            /nikos-anwendung-stadtfest.html
-            /nikos-anwendung-volksfest.html
-            /nikos-anwendung-weihnachtsmarkt.html
-            /nikos-anwendungen.html
-            /nikos-datenschutz.html
-            /nikos-downloads.html
-            /nikos-impressum.html
-            /nikos-kontakt.html
-            /nikos-mietbedingungen.html
-            /nikos-produkt-alarm.html
-            /nikos-produkt-audio.html
-            /nikos-produkt-clamp.html
-            /nikos-produkt-dispatcher.html
-            /nikos-produkt-flash.html
-            /nikos-produkt-horn.html
-            /nikos-produkt-led.html
-            /nikos-produkt-moon.html
-            /nikos-produkt-relay.html
-            /nikos-produkt-xlr.html
-            /nikos-produkte.html
-            /nikos-referenzen.html
-            /nikos-system.html
-            /nikos-vergleich-uebertragungstechnik.html
-            /nikos-vermietung-partner-werden.html
-            /nikos-vermietung.html
           date-only: true
 
       - name: Sitemap auf verwaiste oder nicht indexierbare URLs prüfen
