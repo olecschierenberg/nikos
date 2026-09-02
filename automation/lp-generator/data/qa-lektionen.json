@@ -68,5 +68,12 @@
     "einsatz": "IGA Ruhrgebiet 2027",
     "problem": "Crowd Management",
     "mangel": "Lösungs- und Produktbeschreibung aus dem Intro entfernt, da das Intro ausschließlich die Herausforderung beschreiben darf. | Verbotene sinngleiche Formulierung zur Nutzung eines eigenen Funknetzes überarbeitet. | Weichmacher in der Normen-FAQ entfernt."
+  },
+  {
+    "datum": "02.09.2026",
+    "region": "Dortmund",
+    "einsatz": "IGA Ruhrgebiet 2027",
+    "problem": "Crowd Management",
+    "mangel": "Weichmacher „unter Umständen“ in FAQ2 entfernt und die Aussage eindeutig formuliert."
   }
 ]
