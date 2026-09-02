@@ -76,7 +76,7 @@ async function main() {
   const fakeAiJson = {
     headline_de: 'Besucherlenkung für das Stadtfest in Musterstadt: Sofortige Durchsagen bei Engpässen',
     headline_en: '', subhead_de: 'Besucher sicher lenken – per Knopfdruck', subhead_en: '',
-    intro_de: 'Beim Stadtfest in Musterstadt sorgt NIKOS für gezielte Besucherlenkung auch bei Stromausfall. NIKOS ist ein modulares, autarkes System.',
+    intro_de: 'Beim Stadtfest in Musterstadt sorgt NIKOS für gezielte Besucherlenkung auch bei Stromausfall. NIKOS ist ein modulares, autarkes Kommunikationssystem.',
     intro_en: '', usp_de: 'Gezielte Durchsagen ersetzen zusätzliches Personal an neuralgischen Punkten.', usp_en: '',
     faq1_q_de: 'Ist NIKOS normkonform?', faq1_a_de: 'NIKOS ist technisch nach DIN EN 50849 ausgelegt.', faq1_q_en: '', faq1_a_en: '',
     faq2_q_de: 'Wie unabhängig ist NIKOS?', faq2_a_de: 'NIKOS funkt autark, NIKOS [audio]² hat bis zu 16 h Akkulaufzeit.', faq2_q_en: '', faq2_a_en: '',
@@ -115,6 +115,31 @@ async function main() {
   const seoResult = runEachItem('seo_gate.js', { item: feinschliffResult, nodeOutputs, staticData, executionId });
   assert.ok(seoResult.json.seo_gate === 'pass' || seoResult.json.seo_gate === 'warning', 'SEO-Gate sollte pass/warning liefern, nicht blockieren');
   log(`SEO-Gate: ${seoResult.json.seo_gate}${seoResult.json.seo_warnings.length ? ' (' + seoResult.json.seo_warnings.join(', ') + ')' : ''}`);
+  assert.ok(seoResult.json.canonical_url && seoResult.json.canonical_url.startsWith('https://nikos.info/'), 'SEO-Gate sollte eine gueltige canonical_url liefern');
+
+  // ---- Regressionstest: Titel-/Meta-Laengenpruefung muss jetzt HART blockieren (nicht mehr nur warnen) ----
+  // Hintergrund: am 02.09.2026 gingen mehrfach zu lange bzw. mitten im Satz abgeschnittene
+  // Title-/Description-Tags live (Ahrefs-Fehler). seo_gate.js wirft seitdem bei Laengen ausserhalb
+  // 45-60 (Title) bzw. 140-155 (Description) Zeichen einen SEO_GATE_BLOCKED-Fehler, bevor die Seite
+  // ueberhaupt nach lp-preview/ geschrieben wird (siehe index.js, Schritt 16 vor Schritt 17).
+  const zuLangerTitel = 'Dies ist ein bewusst viel zu langer Titel, der die sechzig Zeichen fuer eine SEO-optimierte Seite deutlich ueberschreitet – NIKOS';
+  const htmlMitLangemTitel = feinschliffResult.json.previewHtml.replace(/<title>[\s\S]*?<\/title>/, `<title>${zuLangerTitel}</title>`);
+  assert.throws(
+    () => runEachItem('seo_gate.js', { item: { json: Object.assign({}, feinschliffResult.json, { html: htmlMitLangemTitel, previewHtml: htmlMitLangemTitel }) }, nodeOutputs, staticData, executionId }),
+    /SEO_GATE_BLOCKED:.*TITLE_LENGTH_OUTSIDE_45_60/,
+    'SEO-Gate sollte einen zu langen Title (>60 Zeichen) hart blockieren'
+  );
+  log('SEO-Gate-Regressionstest: zu langer Title wird korrekt blockiert (SEO_GATE_BLOCKED).');
+
+  const zuKurzeDesc = 'Kurzbeschreibung.';
+  const htmlMitKurzerDesc = feinschliffResult.json.previewHtml.replace(/(<meta name="description" content=")[^"]*(")/, `$1${zuKurzeDesc}$2`);
+  assert.throws(
+    () => runEachItem('seo_gate.js', { item: { json: Object.assign({}, feinschliffResult.json, { html: htmlMitKurzerDesc, previewHtml: htmlMitKurzerDesc }) }, nodeOutputs, staticData, executionId }),
+    /SEO_GATE_BLOCKED:.*META_DESCRIPTION_LENGTH_OUTSIDE_140_155/,
+    'SEO-Gate sollte eine zu kurze Meta-Description (<140 Zeichen) hart blockieren'
+  );
+  log('SEO-Gate-Regressionstest: zu kurze Meta-Description wird korrekt blockiert (SEO_GATE_BLOCKED).');
+
 
   runEachItem('lock_freigeben.js', { item: { json: { error: false } }, nodeOutputs, staticData, executionId });
 
