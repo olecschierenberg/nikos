@@ -40,6 +40,7 @@ const path = require('path');
 
 const { runAllItems, runEachItem } = require('./lib/runCodeNode');
 const sheets = require('./lib/sheets');
+const { extractCategory, extractTitle } = require('./lib/relatedLinksUtil');
 
 const REPO_ROOT = path.join(__dirname, '..', '..'); // .../site
 const LIVE = process.argv.includes('--live');
@@ -165,6 +166,62 @@ async function pingIndexNow(entries) {
   }
 }
 
+// NEU (02.09.2026, kein n8n-Vorbild): thematische LP-zu-LP-Verlinkung nach
+// Einsatz-Kategorie (siehe lib/nodes/verwandte_verlinken.js fuer Hintergrund
+// und Auftrag). Laeuft bei JEDEM Live-Lauf unabhaengig davon, ob in diesem
+// Batch neue Seiten dazugekommen sind -- so bleibt die Verlinkung immer
+// konsistent mit dem tatsaechlichen aktuellen Bestand, und der einmalige
+// Nachtrag fuer die bereits bestehenden Landingpages passiert automatisch
+// beim naechsten Lauf (kein separates Backfill-Skript noetig).
+async function updateRelatedLinks() {
+  const loesungenDir = path.join(REPO_ROOT, 'loesungen');
+  let dirs;
+  try {
+    dirs = fs.readdirSync(loesungenDir, { withFileTypes: true })
+      .filter((d) => d.isDirectory() && !d.name.startsWith('_ghtest-'))
+      .map((d) => d.name);
+  } catch (err) {
+    log(`  Verwandte Verlinkung: loesungen/ nicht lesbar (${err.message}) -- uebersprungen.`);
+    return;
+  }
+
+  const pages = [];
+  const htmlBySlug = new Map();
+  for (const slug of dirs) {
+    const file = path.join(loesungenDir, slug, 'index.html');
+    if (!fs.existsSync(file)) continue;
+    const html = fs.readFileSync(file, 'utf8');
+    htmlBySlug.set(slug, html);
+    pages.push({ slug, title: extractTitle(html), category: extractCategory(html) });
+  }
+
+  const { blocks } = runAllItems('verwandte_verlinken.js', {
+    items: [{ json: { pages } }], nodeOutputs: new Map(), staticData: {}, executionId,
+  })[0].json;
+
+  let updated = 0;
+  let failed = 0;
+  for (const slug of dirs) {
+    const html = htmlBySlug.get(slug);
+    if (html === undefined) continue;
+    const blockHtml = blocks[slug] || null;
+    const result = runEachItem('verwandte_einfuegen.js', {
+      item: { json: { html, blockHtml } }, nodeOutputs: new Map(), staticData: {}, executionId,
+    }).json;
+    if (!result.changed) continue;
+    const file = path.join(loesungenDir, slug, 'index.html');
+    fs.writeFileSync(file, result.newHtml, 'utf8');
+    const readBack = fs.readFileSync(file, 'utf8');
+    if (readBack !== result.newHtml) {
+      log(`  WARNUNG: Integritaetspruefung fehlgeschlagen bei loesungen/${slug}/index.html (verwandte Verlinkung) -- Datei ggf. inkonsistent, bitte pruefen.`);
+      failed++;
+      continue;
+    }
+    updated++;
+  }
+  log(`  Verwandte Verlinkung: ${updated} von ${dirs.length} Landingpage(s) aktualisiert${failed ? `, ${failed} Integritaetsfehler` : ''}.`);
+}
+
 async function main() {
   log(`Start (${LIVE ? 'LIVE' : 'TEST'}-Modus), executionId=${executionId}`);
   if (!process.env.GOOGLE_SERVICE_ACCOUNT_JSON) {
@@ -199,6 +256,12 @@ async function main() {
       // Test-Modus keinen zusätzlichen Erkenntnisgewinn).
       break;
     }
+  }
+
+  if (LIVE) {
+    await updateRelatedLinks();
+  } else {
+    log('  TEST-Modus: verwandte Verlinkung uebersprungen (aendert nur echte Live-Dateien).');
   }
 
   log(`FERTIG (${LIVE ? 'LIVE' : 'TEST'}): ${totalPublished} Landingpage(s) verarbeitet.`);

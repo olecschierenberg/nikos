@@ -88,6 +88,56 @@ async function main() {
   assert.strictEqual(abgelaufen[0].json.aktiv, 'abgelaufen');
   log(`Ablauf prüfen: ${abgelaufen.length} Zeile(n) markiert (Referenzschutz + Dauerfall korrekt übersprungen).`);
 
+  // ---- Verwandte Verlinkung: Kategorie-Clustering (verwandte_verlinken.js) ----
+  const relPages = [
+    { slug: 'fest-a', title: 'Festival A', category: 'Festival' },
+    { slug: 'fest-b', title: 'Festival B', category: 'Festival' },
+    { slug: 'fest-c', title: 'Festival C', category: 'Festival' },
+    { slug: 'baustelle-solo', title: 'Baustelle Solo', category: 'Baustelle' }, // allein in Kategorie -> kein Block
+    { slug: 'unbekannt', title: 'Ohne Kategorie', category: null }, // keine Kategorie -> kein Block
+  ];
+  const relResult = runAllItems('verwandte_verlinken.js', {
+    items: [{ json: { pages: relPages } }], nodeOutputs, staticData, executionId,
+  })[0].json;
+  assert.ok(relResult.blocks['fest-a'] && relResult.blocks['fest-a'].includes('fest-b') && relResult.blocks['fest-a'].includes('fest-c'), 'fest-a sollte auf fest-b und fest-c verlinken');
+  assert.ok(!relResult.blocks['fest-a'].includes('>Festival A<'), 'fest-a sollte nicht auf sich selbst verlinken');
+  assert.strictEqual(relResult.blocks['baustelle-solo'], null, 'Allein in der Kategorie -> kein Block');
+  assert.strictEqual(relResult.blocks['unbekannt'], null, 'Ohne Kategorie -> kein Block');
+  log('Verwandte Verlinkung (Clustering): OK (Kategorie-Gruppierung, Solo-/Unbekannt-Faelle korrekt uebersprungen).');
+
+  // ---- Verwandte Verlinkung: Einfuegen/Ersetzen/Entfernen (verwandte_einfuegen.js) ----
+  const seiteOhneBlock = '<html><body><p>Inhalt</p><footer>Footer</footer></body></html>';
+  const eingefuegt = runEachItem('verwandte_einfuegen.js', {
+    item: { json: { html: seiteOhneBlock, blockHtml: relResult.blocks['fest-a'] } }, nodeOutputs, staticData, executionId,
+  }).json;
+  assert.ok(eingefuegt.changed, 'Erstes Einfuegen sollte eine Aenderung melden');
+  assert.ok(eingefuegt.newHtml.indexOf('fest-b') < eingefuegt.newHtml.indexOf('<footer>'), 'Block muss vor <footer> stehen');
+
+  const andererBlock = relResult.blocks['fest-b']; // simuliert: Kategorie hat sich seit dem letzten Lauf geaendert
+  const ersetzt = runEachItem('verwandte_einfuegen.js', {
+    item: { json: { html: eingefuegt.newHtml, blockHtml: andererBlock } }, nodeOutputs, staticData, executionId,
+  }).json;
+  assert.ok(ersetzt.changed, 'Ersetzen eines geaenderten Blocks sollte eine Aenderung melden');
+  assert.strictEqual((ersetzt.newHtml.match(/VERWANDTE-ANWENDUNGSBEISPIELE:START/g) || []).length, 1, 'Es darf nach dem Ersetzen nur EIN Block vorhanden sein (kein Duplikat)');
+  assert.ok(ersetzt.newHtml.includes('fest-a') && ersetzt.newHtml.includes('fest-c'), 'Ersetzter Block sollte den neuen Inhalt (fest-b -> fest-a/fest-c) enthalten');
+
+  const entfernt2 = runEachItem('verwandte_einfuegen.js', {
+    item: { json: { html: ersetzt.newHtml, blockHtml: null } }, nodeOutputs, staticData, executionId,
+  }).json;
+  assert.ok(entfernt2.changed, 'Entfernen eines vorhandenen Blocks sollte eine Aenderung melden');
+  assert.ok(!entfernt2.newHtml.includes('VERWANDTE-ANWENDUNGSBEISPIELE'), 'Block sollte vollstaendig entfernt sein');
+  assert.strictEqual(entfernt2.newHtml, seiteOhneBlock, 'Nach Entfernen sollte wieder das Original-HTML herauskommen');
+  log('Verwandte Verlinkung (Einfuegen/Ersetzen/Entfernen): OK (idempotent, keine Duplikate, sauberes Entfernen).');
+
+  // ---- Extraktions-Hilfsfunktionen (lib/relatedLinksUtil.js) ----
+  const { extractCategory, extractTitle } = require('../lib/relatedLinksUtil');
+  assert.strictEqual(extractCategory('<img src="https://nikos.info/assets/img/Banner/Festival.jpg">'), 'Festival');
+  assert.strictEqual(extractCategory('<img src="assets/img/Banner/Jahrmarkt.jpg">'), 'Jahrmarkt');
+  assert.strictEqual(extractCategory('<p>kein Banner hier</p>'), null);
+  assert.strictEqual(extractTitle('<title>Besucherlenkung f\u00fcr das Stadtfest \u2013 NIKOS</title>'), 'Besucherlenkung f\u00fcr das Stadtfest');
+  assert.strictEqual(extractTitle('<title>Visitor guidance - NIKOS</title>'), 'Visitor guidance');
+  log('Extraktions-Hilfsfunktionen (Kategorie/Titel): OK.');
+
   console.log('\n[dry-run] ALLE PRÜFUNGEN BESTANDEN — die portierte JS-Logik (Limit, Vorschau-Guard, noindex-Entfernung, Hub-Merge, Ablauf-Check) läuft fehlerfrei.');
 }
 
