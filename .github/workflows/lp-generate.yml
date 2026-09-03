@@ -11,12 +11,12 @@ name: LP-Generator
 # Probelaeufe nach _ghtest-* erhalten.
 # Details: /nikos/Migrationsplan_Landingpage-Generator_ohne-n8n_2026-08-27.md
 #
-# Zeitplan: stuendlich um :15 (nicht :00, siehe GitHub-Empfehlung gegen Lastspitzen).
+# Zeitplan: alle 30 Minuten, um :15 und :45 (nicht :00/:30, siehe GitHub-Empfehlung gegen Lastspitzen). Grund fuer die Verdopplung (2026-09-03): GitHubs eigener Scheduler ueberspringt zeitgesteuerte Laeufe offenbar recht haeufig (beobachtet: mehrstuendige Luecken trotz stuendlichem Zeitplan, bei mehreren Workflows in diesem Repo) -- durch den doppelten Slot pro Stunde steigt die Chance, dass an jeder vollen Stunde mindestens 1 Lauf tatsaechlich stattfindet.
 
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '15 * * * *'
+    - cron: '15,45 * * * *'
 
 concurrency:
   group: lp-generate-live
