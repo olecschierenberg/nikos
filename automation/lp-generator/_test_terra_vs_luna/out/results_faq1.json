@@ -1,0 +1,438 @@
+{
+  "source": {
+    "problem": "Evakuierungsanlage ohne Kabelverlegung",
+    "einsatz": "Festival",
+    "region": "",
+    "fields": {
+      "headline": "Evakuierungsanlagen ohne Kabelverlegung für Festivals",
+      "subhead": "autark, zuverlässig, kostengünstig",
+      "intro": "Bei Festivals stellt eine Evakuierungsanlage ohne Kabelverlegung durch Gedränge, laute Umgebung und fremdsprachige Besucher eine besondere Herausforderung dar. Warnungen und Handlungsanweisungen müssen in einer Gefahrenlage trotz Bühnenlautstärke und hoher Besucherdichte klar verständlich sein. Die große Zahl gleichzeitig anwesender Besucher belastet Mobilfunknetze bis zur Überlastung.",
+      "usp_intro": "NIKOS bündelt Durchsagen, Alarmierung, Besucherinformation und Steuerung in einer einzigen, netzunabhängigen Plattform.",
+      "usp": "Für Festivals werden Evakuierungsanlagen ohne Kabelverlegung mit NIKOS bedarfsgerecht aufgebaut und zentral über NIKOS [dispatcher]² bedient. Das reduziert den Verkabelungsaufwand, vermeidet Kabelbrücken und senkt den Bedarf an getrennten Steuer- und Kommunikationslösungen.",
+      "faq1_q": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
+      "faq1_a": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 (Elektroakustische Notfallwarnsysteme). NIKOS wurde speziell für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen entwickelt und ist technisch für den Einsatz in Alltags- und Notfallsituationen ausgelegt. Für elektroakustische Notfallwarnsysteme (ELA-Anlagen) ist die DIN EN 50849 der maßgebliche Orientierungsrahmen. Die dort genannten Anforderungen werden von NIKOS – im Gegensatz zu mobilfunkbasierten Systemen – voll erfüllt, da keine Abhängigkeit von einem fremden Netz besteht und somit jederzeit eine sofortige Nutzbarkeit gewährleistet werden kann. Andere aus der Sicherheitstechnik bekannte Normen wie die DIN EN 54, DIN VDE 0833-4 sowie DIN 14675 (Sprachalarmierungsanlagen) sind auf das Einsatzgebiet und Funktionsspektrum von NIKOS nicht anwendbar und daher für eine Genehmigung nicht relevant. NIKOS ist das marktführende Durchsagesystem für temporäre und mobile Anwendungen und seit 2017 vielfach erfolgreich für die Umsetzung einsatzkritischer Kommunikationsaufgaben im Einsatz. RADACOM und Ihr regionaler NIKOS-Partner beraten Sie gerne zu den vielfältigen Funktionen von NIKOS und unterstützen Sie bei der kostenschonenden Umsetzung der Anforderungen.",
+      "faq2_q": "Ist NIKOS krisensicher?",
+      "faq2_a": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz und unabhängig von öffentlichen Kommunikationsnetzen. Die Verbindung stellt sich nach einer Unterbrechung selbstständig wieder her. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. NIKOS bleibt bei einer Überlastung des Handynetzes, bei Störungen des Internetproviders und bei Ausfall der Stromversorgung funktionsfähig. Evakuierungsanlagen ohne Kabelverlegung für Festivals bleiben damit auch bei Störungen öffentlicher Kommunikationsnetze zuverlässig einsatzbereit.",
+      "faq3_q": "Ist NIKOS kurzfristig und flexibel einsetzbar?",
+      "faq3_a": "Ja. NIKOS wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Ein bis zwei Personen montieren die Module innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen und konfigurieren sie individuell. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus. NIKOS nutzt ein vorhandenes digitales Funknetz mit.",
+      "faq4_q": "Wo entstehen beim Einsatz von NIKOS Kostenvorteile?",
+      "faq4_a": "NIKOS bündelt sicherheitsrelevante Funktionen auf einer einheitlichen Kommunikationsplattform. Dadurch entfallen für Evakuierungsanlagen ohne Kabelverlegung getrennte Lautsprecher-, Steuer- und Kommunikationslösungen. Das reduziert Materialbedarf, Verkabelungsaufwand und die Stolpergefahr durch Kabelbrücken. Zentrale Durchsagen, Fernsteuerung und Statusüberwachung ersetzen Aufgaben, die sonst mehrere über das Gelände verteilte Ordnungs-, Melde- oder Bedienposten übernehmen. Personal wird dadurch eingespart oder an sicherheitskritischen Punkten eingesetzt. Bei umzäunten Veranstaltungen wie Festivals überwacht NIKOS Notausgangstore technisch. Wachposten an Notausgängen entfallen oder werden an anderer Stelle eingesetzt. Die Einsparungen bei Personal und zusätzlicher Technik kompensieren Miet- und Installationskosten. Bei temporären Veranstaltungen sinken die Kosten für Planung, Aufbau und Betrieb der Sicherheitstechnik.",
+      "slug_kw": ""
+    }
+  },
+  "models": [
+    "gpt-5.6-terra"
+  ],
+  "langs": [
+    "en",
+    "fr",
+    "it",
+    "es",
+    "nl",
+    "da",
+    "pl"
+  ],
+  "results": {
+    "gpt-5.6-terra": {
+      "en": {
+        "ok": true,
+        "parsed": {
+          "headline": "Evacuation systems without cabling for festivals",
+          "subhead": "autonomous, reliable, cost-effective",
+          "intro": "At festivals, evacuation systems without cabling present a particular challenge due to crowds, loud surroundings and visitors who speak different languages. In a hazardous situation, warnings and instructions must remain clearly understandable despite stage volume and high visitor density. The large number of visitors present at the same time can place a strain on mobile networks to the point of overload.",
+          "usp_intro": "NIKOS combines announcements, alerting, visitor information and control in a single platform that operates independently of external networks.",
+          "usp": "For festivals, evacuation systems without cabling can be configured as required with NIKOS and operated centrally via NIKOS [dispatcher]². This reduces cabling requirements, avoids cable ramps and lowers the need for separate control and communication solutions.",
+          "faq1_q": "Do announcements made with NIKOS comply with the applicable standards?",
+          "faq1_a": "Yes. NIKOS meets the requirements of DIN EN 50849 (electroacoustic emergency warning systems). NIKOS was developed specifically for safety-relevant public address and alerting applications and is technically designed for use in both everyday and emergency situations. For electroacoustic emergency warning systems, DIN EN 50849 is the relevant reference framework. Unlike mobile network-based systems, NIKOS fully meets the requirements specified therein, as it does not depend on an external network and can therefore be used immediately at any time. Other standards known from safety technology, such as DIN EN 54, DIN VDE 0833-4 and DIN 14675 (voice alarm systems), do not apply to the field of use and functional scope of NIKOS and are therefore not relevant for approval. NIKOS is the market-leading public address system for temporary and mobile applications and has been successfully deployed in numerous mission-critical communication tasks since 2017. RADACOM and your regional NIKOS partner will be happy to advise you on the wide range of NIKOS functions and support you in implementing the requirements cost-effectively.",
+          "faq2_q": "Is NIKOS resilient in a crisis?",
+          "faq2_a": "Yes. NIKOS operates via its own autonomous radio network and independently of public communication networks. The connection is automatically re-established after an interruption. NIKOS [audio]² has an internal battery with a runtime of up to 16 hours and also supplies connected accessory modules. NIKOS remains operational when the mobile network is overloaded, in the event of internet provider disruptions and during power outages. This means that evacuation systems without cabling for festivals remain reliably ready for use even when public communication networks are disrupted.",
+          "faq3_q": "Can NIKOS be deployed quickly and flexibly?",
+          "faq3_a": "Yes. NIKOS was developed specifically for flexible outdoor deployments without fixed infrastructure. One or two people can mount the modules on a range of structures, such as lamp posts, stages, trees, booths or decorations, and configure them individually within just a few minutes. A standard Schuko power connection is sufficient for continuous operation. NIKOS can also use an existing digital radio network.",
+          "faq4_q": "Where does the use of NIKOS offer cost advantages?",
+          "faq4_a": "NIKOS combines safety-relevant functions on a single communication platform. This eliminates the need for separate loudspeaker, control and communication solutions for evacuation systems without cabling. It reduces material requirements, cabling effort and the tripping hazard caused by cable ramps. Central announcements, remote control and status monitoring replace tasks that would otherwise require several security, reporting or operating posts distributed across the site. This reduces staffing requirements or allows personnel to be deployed at safety-critical points. At fenced events such as festivals, NIKOS technically monitors emergency exit gates. Security posts at emergency exits are no longer required or can be deployed elsewhere. Savings in personnel and additional equipment offset rental and installation costs. At temporary events, the costs of planning, setup and operating safety technology are reduced.",
+          "slug_kw": "wireless evacuation festival"
+        },
+        "check": {
+          "ok": true,
+          "issues": [],
+          "translated": {
+            "headline": "Evacuation systems without cabling for festivals",
+            "subhead": "autonomous, reliable, cost-effective",
+            "intro": "At festivals, evacuation systems without cabling present a particular challenge due to crowds, loud surroundings and visitors who speak different languages. In a hazardous situation, warnings and instructions must remain clearly understandable despite stage volume and high visitor density. The large number of visitors present at the same time can place a strain on mobile networks to the point of overload.",
+            "usp_intro": "NIKOS combines announcements, alerting, visitor information and control in a single platform that operates independently of external networks.",
+            "usp": "For festivals, evacuation systems without cabling can be configured as required with NIKOS and operated centrally via NIKOS [dispatcher]². This reduces cabling requirements, avoids cable ramps and lowers the need for separate control and communication solutions.",
+            "faq1_q": "Do announcements made with NIKOS comply with the applicable standards?",
+            "faq1_a": "Yes. NIKOS meets the requirements of DIN EN 50849 (electroacoustic emergency warning systems). NIKOS was developed specifically for safety-relevant public address and alerting applications and is technically designed for use in both everyday and emergency situations. For electroacoustic emergency warning systems, DIN EN 50849 is the relevant reference framework. Unlike mobile network-based systems, NIKOS fully meets the requirements specified therein, as it does not depend on an external network and can therefore be used immediately at any time. Other standards known from safety technology, such as DIN EN 54, DIN VDE 0833-4 and DIN 14675 (voice alarm systems), do not apply to the field of use and functional scope of NIKOS and are therefore not relevant for approval. NIKOS is the market-leading public address system for temporary and mobile applications and has been successfully deployed in numerous mission-critical communication tasks since 2017. RADACOM and your regional NIKOS partner will be happy to advise you on the wide range of NIKOS functions and support you in implementing the requirements cost-effectively.",
+            "faq2_q": "Is NIKOS resilient in a crisis?",
+            "faq2_a": "Yes. NIKOS operates via its own autonomous radio network and independently of public communication networks. The connection is automatically re-established after an interruption. NIKOS [audio]² has an internal battery with a runtime of up to 16 hours and also supplies connected accessory modules. NIKOS remains operational when the mobile network is overloaded, in the event of internet provider disruptions and during power outages. This means that evacuation systems without cabling for festivals remain reliably ready for use even when public communication networks are disrupted.",
+            "faq3_q": "Can NIKOS be deployed quickly and flexibly?",
+            "faq3_a": "Yes. NIKOS was developed specifically for flexible outdoor deployments without fixed infrastructure. One or two people can mount the modules on a range of structures, such as lamp posts, stages, trees, booths or decorations, and configure them individually within just a few minutes. A standard Schuko power connection is sufficient for continuous operation. NIKOS can also use an existing digital radio network.",
+            "faq4_q": "Where does the use of NIKOS offer cost advantages?",
+            "faq4_a": "NIKOS combines safety-relevant functions on a single communication platform. This eliminates the need for separate loudspeaker, control and communication solutions for evacuation systems without cabling. It reduces material requirements, cabling effort and the tripping hazard caused by cable ramps. Central announcements, remote control and status monitoring replace tasks that would otherwise require several security, reporting or operating posts distributed across the site. This reduces staffing requirements or allows personnel to be deployed at safety-critical points. At fenced events such as festivals, NIKOS technically monitors emergency exit gates. Security posts at emergency exits are no longer required or can be deployed elsewhere. Savings in personnel and additional equipment offset rental and installation costs. At temporary events, the costs of planning, setup and operating safety technology are reduced.",
+            "slug_kw": "wireless evacuation festival"
+          },
+          "lang": "en"
+        },
+        "elapsedMs": 19234,
+        "usage": {
+          "prompt_tokens": 2456,
+          "completion_tokens": 1187,
+          "total_tokens": 3643,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2453,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 356,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "fr": {
+        "ok": true,
+        "parsed": {
+          "headline": "Systèmes d’évacuation sans câblage pour les festivals",
+          "subhead": "autonomes, fiables, économiques",
+          "intro": "Lors de festivals, un système d’évacuation sans câblage représente un défi particulier en raison de la foule, de l’environnement bruyant et des visiteurs étrangers. En cas de danger, les avertissements et les consignes doivent rester clairement compréhensibles malgré le volume sonore des scènes et la forte densité de visiteurs. Le grand nombre de visiteurs présents simultanément peut surcharger les réseaux de téléphonie mobile jusqu’à saturation.",
+          "usp_intro": "NIKOS regroupe les annonces, l’alerte, l’information des visiteurs et la commande au sein d’une plateforme unique, indépendante des réseaux.",
+          "usp": "Pour les festivals, les systèmes d’évacuation sans câblage sont configurés selon les besoins avec NIKOS et commandés de manière centralisée via NIKOS [dispatcher]². Cela réduit les besoins en câblage, évite les passages de câbles et diminue le recours à des solutions de commande et de communication distinctes.",
+          "faq1_q": "Les annonces diffusées avec NIKOS sont-elles conformes aux normes en vigueur ?",
+          "faq1_a": "Oui. NIKOS satisfait aux exigences de la norme DIN EN 50849 (systèmes électroacoustiques d’alerte d’urgence). NIKOS a été spécialement développé pour les applications d’annonces et d’alerte liées à la sécurité, et est techniquement conçu pour une utilisation dans des situations courantes comme dans des situations d’urgence. Pour les systèmes électroacoustiques d’alerte d’urgence (installations ELA), la norme DIN EN 50849 constitue le cadre de référence déterminant. Contrairement aux systèmes reposant sur les réseaux mobiles, NIKOS répond intégralement aux exigences qui y sont mentionnées, car il ne dépend d’aucun réseau tiers et peut ainsi garantir une disponibilité immédiate à tout moment. D’autres normes connues dans le domaine de la sécurité, telles que DIN EN 54, DIN VDE 0833-4 et DIN 14675 (systèmes d’alarme vocale), ne sont pas applicables au domaine d’utilisation ni au périmètre fonctionnel de NIKOS et ne sont donc pas pertinentes pour une autorisation. NIKOS est le système d’annonces leader du marché pour les applications temporaires et mobiles, et est utilisé avec succès depuis 2017 pour la mise en œuvre de nombreuses missions de communication critiques. RADACOM et votre partenaire NIKOS régional se tiennent volontiers à votre disposition pour vous conseiller sur les nombreuses fonctions de NIKOS et vous accompagner dans la mise en œuvre économique de vos exigences.",
+          "faq2_q": "NIKOS est-il résilient en cas de crise ?",
+          "faq2_a": "Oui. NIKOS fonctionne via son propre réseau radio autonome, indépendamment des réseaux de communication publics. La connexion se rétablit automatiquement après une interruption. NIKOS [audio]² dispose d’une batterie interne offrant jusqu’à 16 heures d’autonomie et alimente également les modules accessoires raccordés. NIKOS reste opérationnel en cas de saturation du réseau mobile, de perturbations chez le fournisseur d’accès à Internet et de panne de courant. Les systèmes d’évacuation sans câblage pour les festivals restent ainsi fiables et opérationnels, même en cas de perturbation des réseaux de communication publics.",
+          "faq3_q": "NIKOS peut-il être utilisé rapidement et avec flexibilité ?",
+          "faq3_a": "Oui. NIKOS a été spécialement développé pour des utilisations flexibles en extérieur, sans infrastructure fixe. Une ou deux personnes installent les modules en quelques minutes sur différentes structures telles que des lampadaires, des scènes, des arbres, des stands ou des décorations, puis les configurent individuellement. Une prise de courant Schuko standard suffit pour un fonctionnement continu. NIKOS utilise également un réseau radio numérique existant.",
+          "faq4_q": "Dans quels domaines l’utilisation de NIKOS permet-elle de réduire les coûts ?",
+          "faq4_a": "NIKOS regroupe les fonctions liées à la sécurité sur une plateforme de communication unique. Les systèmes d’évacuation sans câblage ne nécessitent ainsi plus de solutions distinctes pour les haut-parleurs, la commande et la communication. Cela réduit les besoins en matériel, les travaux de câblage et les risques de trébuchement liés aux passages de câbles. Les annonces centralisées, la commande à distance et la surveillance des états remplacent des tâches qui seraient autrement assurées par plusieurs postes de surveillance, de signalement ou de commande répartis sur le site. Le personnel est ainsi réduit ou affecté à des points critiques pour la sécurité. Lors d’événements clôturés tels que les festivals, NIKOS assure la surveillance technique des portails de sortie de secours. Les postes de garde aux sorties de secours sont supprimés ou affectés à d’autres endroits. Les économies réalisées sur le personnel et les équipements supplémentaires compensent les coûts de location et d’installation. Pour les événements temporaires, les coûts de planification, d’installation et d’exploitation des équipements de sécurité diminuent.",
+          "slug_kw": "évacuation sans câblage festival"
+        },
+        "check": {
+          "ok": true,
+          "issues": [],
+          "translated": {
+            "headline": "Systèmes d’évacuation sans câblage pour les festivals",
+            "subhead": "autonomes, fiables, économiques",
+            "intro": "Lors de festivals, un système d’évacuation sans câblage représente un défi particulier en raison de la foule, de l’environnement bruyant et des visiteurs étrangers. En cas de danger, les avertissements et les consignes doivent rester clairement compréhensibles malgré le volume sonore des scènes et la forte densité de visiteurs. Le grand nombre de visiteurs présents simultanément peut surcharger les réseaux de téléphonie mobile jusqu’à saturation.",
+            "usp_intro": "NIKOS regroupe les annonces, l’alerte, l’information des visiteurs et la commande au sein d’une plateforme unique, indépendante des réseaux.",
+            "usp": "Pour les festivals, les systèmes d’évacuation sans câblage sont configurés selon les besoins avec NIKOS et commandés de manière centralisée via NIKOS [dispatcher]². Cela réduit les besoins en câblage, évite les passages de câbles et diminue le recours à des solutions de commande et de communication distinctes.",
+            "faq1_q": "Les annonces diffusées avec NIKOS sont-elles conformes aux normes en vigueur ?",
+            "faq1_a": "Oui. NIKOS satisfait aux exigences de la norme DIN EN 50849 (systèmes électroacoustiques d’alerte d’urgence). NIKOS a été spécialement développé pour les applications d’annonces et d’alerte liées à la sécurité, et est techniquement conçu pour une utilisation dans des situations courantes comme dans des situations d’urgence. Pour les systèmes électroacoustiques d’alerte d’urgence (installations ELA), la norme DIN EN 50849 constitue le cadre de référence déterminant. Contrairement aux systèmes reposant sur les réseaux mobiles, NIKOS répond intégralement aux exigences qui y sont mentionnées, car il ne dépend d’aucun réseau tiers et peut ainsi garantir une disponibilité immédiate à tout moment. D’autres normes connues dans le domaine de la sécurité, telles que DIN EN 54, DIN VDE 0833-4 et DIN 14675 (systèmes d’alarme vocale), ne sont pas applicables au domaine d’utilisation ni au périmètre fonctionnel de NIKOS et ne sont donc pas pertinentes pour une autorisation. NIKOS est le système d’annonces leader du marché pour les applications temporaires et mobiles, et est utilisé avec succès depuis 2017 pour la mise en œuvre de nombreuses missions de communication critiques. RADACOM et votre partenaire NIKOS régional se tiennent volontiers à votre disposition pour vous conseiller sur les nombreuses fonctions de NIKOS et vous accompagner dans la mise en œuvre économique de vos exigences.",
+            "faq2_q": "NIKOS est-il résilient en cas de crise ?",
+            "faq2_a": "Oui. NIKOS fonctionne via son propre réseau radio autonome, indépendamment des réseaux de communication publics. La connexion se rétablit automatiquement après une interruption. NIKOS [audio]² dispose d’une batterie interne offrant jusqu’à 16 heures d’autonomie et alimente également les modules accessoires raccordés. NIKOS reste opérationnel en cas de saturation du réseau mobile, de perturbations chez le fournisseur d’accès à Internet et de panne de courant. Les systèmes d’évacuation sans câblage pour les festivals restent ainsi fiables et opérationnels, même en cas de perturbation des réseaux de communication publics.",
+            "faq3_q": "NIKOS peut-il être utilisé rapidement et avec flexibilité ?",
+            "faq3_a": "Oui. NIKOS a été spécialement développé pour des utilisations flexibles en extérieur, sans infrastructure fixe. Une ou deux personnes installent les modules en quelques minutes sur différentes structures telles que des lampadaires, des scènes, des arbres, des stands ou des décorations, puis les configurent individuellement. Une prise de courant Schuko standard suffit pour un fonctionnement continu. NIKOS utilise également un réseau radio numérique existant.",
+            "faq4_q": "Dans quels domaines l’utilisation de NIKOS permet-elle de réduire les coûts ?",
+            "faq4_a": "NIKOS regroupe les fonctions liées à la sécurité sur une plateforme de communication unique. Les systèmes d’évacuation sans câblage ne nécessitent ainsi plus de solutions distinctes pour les haut-parleurs, la commande et la communication. Cela réduit les besoins en matériel, les travaux de câblage et les risques de trébuchement liés aux passages de câbles. Les annonces centralisées, la commande à distance et la surveillance des états remplacent des tâches qui seraient autrement assurées par plusieurs postes de surveillance, de signalement ou de commande répartis sur le site. Le personnel est ainsi réduit ou affecté à des points critiques pour la sécurité. Lors d’événements clôturés tels que les festivals, NIKOS assure la surveillance technique des portails de sortie de secours. Les postes de garde aux sorties de secours sont supprimés ou affectés à d’autres endroits. Les économies réalisées sur le personnel et les équipements supplémentaires compensent les coûts de location et d’installation. Pour les événements temporaires, les coûts de planification, d’installation et d’exploitation des équipements de sécurité diminuent.",
+            "slug_kw": "évacuation sans câblage festival"
+          },
+          "lang": "fr"
+        },
+        "elapsedMs": 23920,
+        "usage": {
+          "prompt_tokens": 2456,
+          "completion_tokens": 1375,
+          "total_tokens": 3831,
+          "prompt_tokens_details": {
+            "cached_tokens": 1309,
+            "cache_write_tokens": 1144,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 278,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "it": {
+        "ok": true,
+        "parsed": {
+          "headline": "Impianti di evacuazione senza posa di cavi per festival",
+          "subhead": "autonomi, affidabili, convenienti",
+          "intro": "Nei festival, un impianto di evacuazione senza posa di cavi rappresenta una sfida particolare a causa della folla, dell'ambiente rumoroso e dei visitatori di lingua straniera. In una situazione di pericolo, gli avvisi e le istruzioni operative devono essere chiaramente comprensibili nonostante il volume del palco e l'elevata densità di pubblico. Il gran numero di visitatori presenti contemporaneamente può sovraccaricare le reti di telefonia mobile.",
+          "usp_intro": "NIKOS riunisce annunci, allertamento, informazione ai visitatori e controllo in un'unica piattaforma indipendente dalla rete.",
+          "usp": "Per i festival, gli impianti di evacuazione senza posa di cavi vengono realizzati in base alle necessità con NIKOS e gestiti centralmente tramite NIKOS [dispatcher]². Ciò riduce l'impegno di cablaggio, evita i passacavi e diminuisce la necessità di soluzioni separate per il controllo e la comunicazione.",
+          "faq1_q": "Gli annunci effettuati con NIKOS sono conformi alle norme vigenti?",
+          "faq1_a": "Sì. NIKOS soddisfa i requisiti della DIN EN 50849 (sistemi elettroacustici di allarme di emergenza). NIKOS è stato sviluppato specificamente per applicazioni di annunci e allertamento rilevanti per la sicurezza ed è tecnicamente progettato per l'impiego in situazioni ordinarie e di emergenza. Per i sistemi elettroacustici di allarme di emergenza (impianti ELA), la DIN EN 50849 costituisce il principale quadro di riferimento. I requisiti ivi indicati sono pienamente soddisfatti da NIKOS, a differenza dei sistemi basati sulla telefonia mobile, poiché non vi è alcuna dipendenza da una rete esterna e può quindi essere garantita l'utilizzabilità immediata in qualsiasi momento. Altre norme note nell'ambito della tecnologia di sicurezza, quali DIN EN 54, DIN VDE 0833-4 e DIN 14675 (impianti di allarme vocale), non sono applicabili al campo d'impiego e alla gamma di funzioni di NIKOS e non sono pertanto rilevanti ai fini dell'autorizzazione. NIKOS è il sistema di diffusione sonora leader di mercato per applicazioni temporanee e mobili e dal 2017 viene impiegato con successo in numerose occasioni per realizzare compiti di comunicazione critici per le operazioni. RADACOM e il vostro partner NIKOS regionale saranno lieti di consigliarvi sulle molteplici funzioni di NIKOS e di supportarvi nella realizzazione dei requisiti contenendo i costi.",
+          "faq2_q": "NIKOS è sicuro in caso di crisi?",
+          "faq2_a": "Sì. NIKOS opera attraverso una propria rete radio autonoma e indipendentemente dalle reti di comunicazione pubbliche. Dopo un'interruzione, la connessione viene ristabilita automaticamente. NIKOS [audio]² dispone di una batteria interna con un'autonomia fino a 16 ore, che alimenta anche i moduli accessori collegati. NIKOS rimane operativo in caso di sovraccarico della rete di telefonia mobile, di problemi con il provider Internet e di interruzione dell'alimentazione elettrica. Gli impianti di evacuazione senza posa di cavi per festival restano quindi affidabilmente pronti all'uso anche in caso di malfunzionamenti delle reti di comunicazione pubbliche.",
+          "faq3_q": "NIKOS può essere impiegato con breve preavviso e in modo flessibile?",
+          "faq3_a": "Sì. NIKOS è stato sviluppato specificamente per impieghi esterni flessibili senza infrastrutture fisse. Da una a due persone installano i moduli in pochi minuti su strutture diverse, quali lampioni, palchi, alberi, stand o decorazioni, e li configurano individualmente. Per il funzionamento continuo è sufficiente una normale presa di corrente Schuko. NIKOS utilizza anche una rete radio digitale già disponibile.",
+          "faq4_q": "In quali aspetti l'impiego di NIKOS offre vantaggi in termini di costi?",
+          "faq4_a": "NIKOS riunisce funzioni rilevanti per la sicurezza in un'unica piattaforma di comunicazione. In questo modo, per gli impianti di evacuazione senza posa di cavi non sono necessarie soluzioni separate per altoparlanti, controllo e comunicazione. Ciò riduce il fabbisogno di materiale, l'impegno di cablaggio e il rischio di inciampo causato dai passacavi. Gli annunci centralizzati, il controllo remoto e il monitoraggio dello stato sostituiscono compiti che altrimenti sarebbero svolti da più postazioni di sorveglianza, segnalazione o comando distribuite nell'area. Il personale viene così ridotto oppure impiegato in punti critici per la sicurezza. In eventi recintati come i festival, NIKOS monitora tecnicamente i cancelli delle uscite di emergenza. Le postazioni di guardia presso le uscite di emergenza non sono più necessarie oppure vengono impiegate altrove. I risparmi su personale e tecnologia aggiuntiva compensano i costi di noleggio e installazione. Per gli eventi temporanei diminuiscono i costi di progettazione, allestimento e gestione della tecnologia di sicurezza.",
+          "slug_kw": "evacuazione senza cavi festival"
+        },
+        "check": {
+          "ok": true,
+          "issues": [],
+          "translated": {
+            "headline": "Impianti di evacuazione senza posa di cavi per festival",
+            "subhead": "autonomi, affidabili, convenienti",
+            "intro": "Nei festival, un impianto di evacuazione senza posa di cavi rappresenta una sfida particolare a causa della folla, dell'ambiente rumoroso e dei visitatori di lingua straniera. In una situazione di pericolo, gli avvisi e le istruzioni operative devono essere chiaramente comprensibili nonostante il volume del palco e l'elevata densità di pubblico. Il gran numero di visitatori presenti contemporaneamente può sovraccaricare le reti di telefonia mobile.",
+            "usp_intro": "NIKOS riunisce annunci, allertamento, informazione ai visitatori e controllo in un'unica piattaforma indipendente dalla rete.",
+            "usp": "Per i festival, gli impianti di evacuazione senza posa di cavi vengono realizzati in base alle necessità con NIKOS e gestiti centralmente tramite NIKOS [dispatcher]². Ciò riduce l'impegno di cablaggio, evita i passacavi e diminuisce la necessità di soluzioni separate per il controllo e la comunicazione.",
+            "faq1_q": "Gli annunci effettuati con NIKOS sono conformi alle norme vigenti?",
+            "faq1_a": "Sì. NIKOS soddisfa i requisiti della DIN EN 50849 (sistemi elettroacustici di allarme di emergenza). NIKOS è stato sviluppato specificamente per applicazioni di annunci e allertamento rilevanti per la sicurezza ed è tecnicamente progettato per l'impiego in situazioni ordinarie e di emergenza. Per i sistemi elettroacustici di allarme di emergenza (impianti ELA), la DIN EN 50849 costituisce il principale quadro di riferimento. I requisiti ivi indicati sono pienamente soddisfatti da NIKOS, a differenza dei sistemi basati sulla telefonia mobile, poiché non vi è alcuna dipendenza da una rete esterna e può quindi essere garantita l'utilizzabilità immediata in qualsiasi momento. Altre norme note nell'ambito della tecnologia di sicurezza, quali DIN EN 54, DIN VDE 0833-4 e DIN 14675 (impianti di allarme vocale), non sono applicabili al campo d'impiego e alla gamma di funzioni di NIKOS e non sono pertanto rilevanti ai fini dell'autorizzazione. NIKOS è il sistema di diffusione sonora leader di mercato per applicazioni temporanee e mobili e dal 2017 viene impiegato con successo in numerose occasioni per realizzare compiti di comunicazione critici per le operazioni. RADACOM e il vostro partner NIKOS regionale saranno lieti di consigliarvi sulle molteplici funzioni di NIKOS e di supportarvi nella realizzazione dei requisiti contenendo i costi.",
+            "faq2_q": "NIKOS è sicuro in caso di crisi?",
+            "faq2_a": "Sì. NIKOS opera attraverso una propria rete radio autonoma e indipendentemente dalle reti di comunicazione pubbliche. Dopo un'interruzione, la connessione viene ristabilita automaticamente. NIKOS [audio]² dispone di una batteria interna con un'autonomia fino a 16 ore, che alimenta anche i moduli accessori collegati. NIKOS rimane operativo in caso di sovraccarico della rete di telefonia mobile, di problemi con il provider Internet e di interruzione dell'alimentazione elettrica. Gli impianti di evacuazione senza posa di cavi per festival restano quindi affidabilmente pronti all'uso anche in caso di malfunzionamenti delle reti di comunicazione pubbliche.",
+            "faq3_q": "NIKOS può essere impiegato con breve preavviso e in modo flessibile?",
+            "faq3_a": "Sì. NIKOS è stato sviluppato specificamente per impieghi esterni flessibili senza infrastrutture fisse. Da una a due persone installano i moduli in pochi minuti su strutture diverse, quali lampioni, palchi, alberi, stand o decorazioni, e li configurano individualmente. Per il funzionamento continuo è sufficiente una normale presa di corrente Schuko. NIKOS utilizza anche una rete radio digitale già disponibile.",
+            "faq4_q": "In quali aspetti l'impiego di NIKOS offre vantaggi in termini di costi?",
+            "faq4_a": "NIKOS riunisce funzioni rilevanti per la sicurezza in un'unica piattaforma di comunicazione. In questo modo, per gli impianti di evacuazione senza posa di cavi non sono necessarie soluzioni separate per altoparlanti, controllo e comunicazione. Ciò riduce il fabbisogno di materiale, l'impegno di cablaggio e il rischio di inciampo causato dai passacavi. Gli annunci centralizzati, il controllo remoto e il monitoraggio dello stato sostituiscono compiti che altrimenti sarebbero svolti da più postazioni di sorveglianza, segnalazione o comando distribuite nell'area. Il personale viene così ridotto oppure impiegato in punti critici per la sicurezza. In eventi recintati come i festival, NIKOS monitora tecnicamente i cancelli delle uscite di emergenza. Le postazioni di guardia presso le uscite di emergenza non sono più necessarie oppure vengono impiegate altrove. I risparmi su personale e tecnologia aggiuntiva compensano i costi di noleggio e installazione. Per gli eventi temporanei diminuiscono i costi di progettazione, allestimento e gestione della tecnologia di sicurezza.",
+            "slug_kw": "evacuazione senza cavi festival"
+          },
+          "lang": "it"
+        },
+        "elapsedMs": 26120,
+        "usage": {
+          "prompt_tokens": 2456,
+          "completion_tokens": 1738,
+          "total_tokens": 4194,
+          "prompt_tokens_details": {
+            "cached_tokens": 1309,
+            "cache_write_tokens": 1144,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 512,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "es": {
+        "ok": true,
+        "parsed": {
+          "headline": "Sistemas de evacuación sin tendido de cable para festivales",
+          "subhead": "autónomo, fiable y económico",
+          "intro": "En los festivales, un sistema de evacuación sin tendido de cable plantea un reto particular debido a las aglomeraciones, el entorno ruidoso y los visitantes de habla extranjera. En una situación de peligro, las advertencias y las instrucciones de actuación deben ser claramente comprensibles a pesar del volumen del escenario y de la alta densidad de visitantes. El gran número de visitantes presentes simultáneamente puede sobrecargar las redes móviles.",
+          "usp_intro": "NIKOS reúne avisos, alertas, información para visitantes y control en una única plataforma independiente de las redes públicas.",
+          "usp": "Para festivales, los sistemas de evacuación sin tendido de cable se configuran según las necesidades con NIKOS y se manejan de forma centralizada mediante NIKOS [dispatcher]². Esto reduce el esfuerzo de cableado, evita los tendidos de cables y disminuye la necesidad de soluciones independientes de control y comunicación.",
+          "faq1_q": "¿Los avisos emitidos con NIKOS cumplen las normas vigentes?",
+          "faq1_a": "Sí. NIKOS cumple los requisitos de la DIN EN 50849 (sistemas electroacústicos de alerta de emergencia). NIKOS se ha desarrollado específicamente para aplicaciones de avisos y alertas relevantes para la seguridad y está diseñado técnicamente para su uso en situaciones cotidianas y de emergencia. Para los sistemas electroacústicos de alerta de emergencia (instalaciones ELA), la DIN EN 50849 constituye el marco de referencia determinante. A diferencia de los sistemas basados en redes móviles, NIKOS cumple íntegramente los requisitos indicados en esta norma, ya que no depende de una red externa y, por tanto, puede garantizarse su disponibilidad inmediata en todo momento. Otras normas conocidas en el ámbito de la tecnología de seguridad, como DIN EN 54, DIN VDE 0833-4 y DIN 14675 (sistemas de alarma por voz), no son aplicables al ámbito de uso ni al espectro funcional de NIKOS y, por lo tanto, no son relevantes a efectos de autorización. NIKOS es el sistema de megafonía líder del mercado para aplicaciones temporales y móviles, y desde 2017 se utiliza con éxito en numerosas ocasiones para llevar a cabo tareas de comunicación críticas para la operación. RADACOM y su socio regional de NIKOS estarán encantados de asesorarle sobre las múltiples funciones de NIKOS y de ayudarle a implementar los requisitos de forma rentable.",
+          "faq2_q": "¿NIKOS es seguro en situaciones de crisis?",
+          "faq2_a": "Sí. NIKOS funciona a través de una red de radio propia y autónoma, con independencia de las redes públicas de comunicación. La conexión se restablece automáticamente después de una interrupción. NIKOS [audio]² dispone de una batería interna con una autonomía de hasta 16 horas, que también alimenta los módulos accesorios conectados. NIKOS sigue operativo en caso de sobrecarga de la red móvil, de incidencias del proveedor de Internet y de interrupción del suministro eléctrico. De este modo, los sistemas de evacuación sin tendido de cable para festivales permanecen operativos de forma fiable incluso ante fallos de las redes públicas de comunicación.",
+          "faq3_q": "¿NIKOS puede utilizarse con poca antelación y de forma flexible?",
+          "faq3_a": "Sí. NIKOS se ha desarrollado específicamente para usos flexibles en exteriores sin infraestructura fija. Una o dos personas instalan los módulos en pocos minutos en distintas estructuras, como farolas, escenarios, árboles, casetas o elementos decorativos, y los configuran individualmente. Para el funcionamiento continuo basta con una toma de corriente Schuko convencional. NIKOS utiliza también una red de radio digital existente.",
+          "faq4_q": "¿En qué aspectos ofrece NIKOS ventajas de coste?",
+          "faq4_a": "NIKOS reúne funciones relevantes para la seguridad en una plataforma de comunicación unificada. De este modo, para los sistemas de evacuación sin tendido de cable dejan de ser necesarias soluciones independientes de altavoces, control y comunicación. Esto reduce la necesidad de material, el esfuerzo de cableado y el riesgo de tropiezos provocado por tendidos de cables. Los avisos centralizados, el control remoto y la supervisión del estado sustituyen tareas que, de otro modo, requerirían varios puestos de seguridad, comunicación u operación distribuidos por el recinto. Así se reduce la necesidad de personal o se destina a puntos críticos para la seguridad. En eventos vallados como los festivales, NIKOS supervisa técnicamente las puertas de salida de emergencia. Los puestos de vigilancia en las salidas de emergencia dejan de ser necesarios o se destinan a otras ubicaciones. El ahorro en personal y tecnología adicional compensa los costes de alquiler e instalación. En los eventos temporales se reducen los costes de planificación, montaje y operación de la tecnología de seguridad.",
+          "slug_kw": "evacuacion sin cable festivales"
+        },
+        "check": {
+          "ok": true,
+          "issues": [],
+          "translated": {
+            "headline": "Sistemas de evacuación sin tendido de cable para festivales",
+            "subhead": "autónomo, fiable y económico",
+            "intro": "En los festivales, un sistema de evacuación sin tendido de cable plantea un reto particular debido a las aglomeraciones, el entorno ruidoso y los visitantes de habla extranjera. En una situación de peligro, las advertencias y las instrucciones de actuación deben ser claramente comprensibles a pesar del volumen del escenario y de la alta densidad de visitantes. El gran número de visitantes presentes simultáneamente puede sobrecargar las redes móviles.",
+            "usp_intro": "NIKOS reúne avisos, alertas, información para visitantes y control en una única plataforma independiente de las redes públicas.",
+            "usp": "Para festivales, los sistemas de evacuación sin tendido de cable se configuran según las necesidades con NIKOS y se manejan de forma centralizada mediante NIKOS [dispatcher]². Esto reduce el esfuerzo de cableado, evita los tendidos de cables y disminuye la necesidad de soluciones independientes de control y comunicación.",
+            "faq1_q": "¿Los avisos emitidos con NIKOS cumplen las normas vigentes?",
+            "faq1_a": "Sí. NIKOS cumple los requisitos de la DIN EN 50849 (sistemas electroacústicos de alerta de emergencia). NIKOS se ha desarrollado específicamente para aplicaciones de avisos y alertas relevantes para la seguridad y está diseñado técnicamente para su uso en situaciones cotidianas y de emergencia. Para los sistemas electroacústicos de alerta de emergencia (instalaciones ELA), la DIN EN 50849 constituye el marco de referencia determinante. A diferencia de los sistemas basados en redes móviles, NIKOS cumple íntegramente los requisitos indicados en esta norma, ya que no depende de una red externa y, por tanto, puede garantizarse su disponibilidad inmediata en todo momento. Otras normas conocidas en el ámbito de la tecnología de seguridad, como DIN EN 54, DIN VDE 0833-4 y DIN 14675 (sistemas de alarma por voz), no son aplicables al ámbito de uso ni al espectro funcional de NIKOS y, por lo tanto, no son relevantes a efectos de autorización. NIKOS es el sistema de megafonía líder del mercado para aplicaciones temporales y móviles, y desde 2017 se utiliza con éxito en numerosas ocasiones para llevar a cabo tareas de comunicación críticas para la operación. RADACOM y su socio regional de NIKOS estarán encantados de asesorarle sobre las múltiples funciones de NIKOS y de ayudarle a implementar los requisitos de forma rentable.",
+            "faq2_q": "¿NIKOS es seguro en situaciones de crisis?",
+            "faq2_a": "Sí. NIKOS funciona a través de una red de radio propia y autónoma, con independencia de las redes públicas de comunicación. La conexión se restablece automáticamente después de una interrupción. NIKOS [audio]² dispone de una batería interna con una autonomía de hasta 16 horas, que también alimenta los módulos accesorios conectados. NIKOS sigue operativo en caso de sobrecarga de la red móvil, de incidencias del proveedor de Internet y de interrupción del suministro eléctrico. De este modo, los sistemas de evacuación sin tendido de cable para festivales permanecen operativos de forma fiable incluso ante fallos de las redes públicas de comunicación.",
+            "faq3_q": "¿NIKOS puede utilizarse con poca antelación y de forma flexible?",
+            "faq3_a": "Sí. NIKOS se ha desarrollado específicamente para usos flexibles en exteriores sin infraestructura fija. Una o dos personas instalan los módulos en pocos minutos en distintas estructuras, como farolas, escenarios, árboles, casetas o elementos decorativos, y los configuran individualmente. Para el funcionamiento continuo basta con una toma de corriente Schuko convencional. NIKOS utiliza también una red de radio digital existente.",
+            "faq4_q": "¿En qué aspectos ofrece NIKOS ventajas de coste?",
+            "faq4_a": "NIKOS reúne funciones relevantes para la seguridad en una plataforma de comunicación unificada. De este modo, para los sistemas de evacuación sin tendido de cable dejan de ser necesarias soluciones independientes de altavoces, control y comunicación. Esto reduce la necesidad de material, el esfuerzo de cableado y el riesgo de tropiezos provocado por tendidos de cables. Los avisos centralizados, el control remoto y la supervisión del estado sustituyen tareas que, de otro modo, requerirían varios puestos de seguridad, comunicación u operación distribuidos por el recinto. Así se reduce la necesidad de personal o se destina a puntos críticos para la seguridad. En eventos vallados como los festivales, NIKOS supervisa técnicamente las puertas de salida de emergencia. Los puestos de vigilancia en las salidas de emergencia dejan de ser necesarios o se destinan a otras ubicaciones. El ahorro en personal y tecnología adicional compensa los costes de alquiler e instalación. En los eventos temporales se reducen los costes de planificación, montaje y operación de la tecnología de seguridad.",
+            "slug_kw": "evacuacion sin cable festivales"
+          },
+          "lang": "es"
+        },
+        "elapsedMs": 25942,
+        "usage": {
+          "prompt_tokens": 2456,
+          "completion_tokens": 1527,
+          "total_tokens": 3983,
+          "prompt_tokens_details": {
+            "cached_tokens": 1309,
+            "cache_write_tokens": 1144,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 464,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "nl": {
+        "ok": true,
+        "parsed": {
+          "headline": "Ontruimingsinstallaties zonder bekabeling voor festivals",
+          "subhead": "autonoom, betrouwbaar, kostenefficiënt",
+          "intro": "Bij festivals vormt een ontruimingsinstallatie zonder bekabeling een bijzondere uitdaging door de drukte, de luide omgeving en anderstalige bezoekers. Waarschuwingen en handelingsinstructies moeten in een gevarensituatie ondanks het volume van de podia en de hoge bezoekersdichtheid duidelijk begrijpelijk zijn. Het grote aantal gelijktijdig aanwezige bezoekers belast mobiele netwerken tot aan overbelasting.",
+          "usp_intro": "NIKOS bundelt omroepberichten, alarmering, bezoekersinformatie en besturing in één enkel, netonafhankelijk platform.",
+          "usp": "Voor festivals worden ontruimingsinstallaties zonder bekabeling met NIKOS naar behoefte opgebouwd en centraal bediend via NIKOS [dispatcher]². Dit vermindert de benodigde bekabeling, voorkomt kabelbruggen en verlaagt de behoefte aan afzonderlijke besturings- en communicatieoplossingen.",
+          "faq1_q": "Voldoen omroepberichten met NIKOS aan de geldende normen?",
+          "faq1_a": "Ja. NIKOS voldoet aan de eisen van DIN EN 50849 (elektro-akoestische noodwaarschuwingssystemen). NIKOS is speciaal ontwikkeld voor veiligheidsrelevante omroep- en alarmeringstoepassingen en technisch ontworpen voor gebruik in alledaagse en noodsituaties. Voor elektro-akoestische noodwaarschuwingssystemen (ELA-installaties) is DIN EN 50849 het bepalende referentiekader. De daarin genoemde eisen worden door NIKOS – in tegenstelling tot systemen op basis van mobiele netwerken – volledig vervuld, omdat er geen afhankelijkheid van een extern netwerk bestaat en daardoor te allen tijde onmiddellijk gebruik kan worden gegarandeerd. Andere uit de veiligheidstechniek bekende normen, zoals DIN EN 54, DIN VDE 0833-4 en DIN 14675 (spraakalarminstallaties), zijn niet van toepassing op het toepassingsgebied en het functiespectrum van NIKOS en daarom niet relevant voor een vergunning. NIKOS is het marktleidende omroepsysteem voor tijdelijke en mobiele toepassingen en wordt sinds 2017 vele malen met succes ingezet voor de uitvoering van inzetkritische communicatietaken. RADACOM en uw regionale NIKOS-partner adviseren u graag over de veelzijdige functies van NIKOS en ondersteunen u bij een kostenefficiënte uitvoering van de eisen.",
+          "faq2_q": "Is NIKOS crisisbestendig?",
+          "faq2_a": "Ja. NIKOS werkt via een eigen, autonoom radionetwerk en onafhankelijk van openbare communicatienetwerken. Na een onderbreking wordt de verbinding automatisch hersteld. NIKOS [audio]² beschikt over een interne accu met een gebruiksduur van maximaal 16 uur en voedt daarmee ook aangesloten accessoiremodules. NIKOS blijft functioneren bij overbelasting van het mobiele netwerk, storingen bij de internetprovider en uitval van de stroomvoorziening. Ontruimingsinstallaties zonder bekabeling voor festivals blijven daardoor ook bij storingen in openbare communicatienetwerken betrouwbaar inzetbaar.",
+          "faq3_q": "Kan NIKOS op korte termijn en flexibel worden ingezet?",
+          "faq3_a": "Ja. NIKOS is speciaal ontwikkeld voor flexibele inzet buitenshuis zonder vaste infrastructuur. Een tot twee personen monteren de modules binnen enkele minuten op verschillende constructies, zoals lantaarnpalen, podia, bomen, kramen of decoraties, en configureren deze individueel. Een normale Schuko-stroomaansluiting is voldoende voor continu gebruik. NIKOS maakt gebruik van een bestaand digitaal radionetwerk.",
+          "faq4_q": "Waar levert de inzet van NIKOS kostenvoordelen op?",
+          "faq4_a": "NIKOS bundelt veiligheidsrelevante functies op één uniform communicatieplatform. Hierdoor zijn voor ontruimingsinstallaties zonder bekabeling geen afzonderlijke luidspreker-, besturings- en communicatieoplossingen nodig. Dit vermindert de materiaalbehoefte, de benodigde bekabeling en het struikelgevaar door kabelbruggen. Centrale omroepberichten, afstandsbediening en statusbewaking vervangen taken die anders door meerdere over het terrein verspreide bewakings-, meldings- of bedieningsposten worden uitgevoerd. Daardoor is minder personeel nodig of kan personeel op veiligheidskritieke punten worden ingezet. Bij omheinde evenementen zoals festivals bewaakt NIKOS nooduitgangspoorten technisch. Bewakingsposten bij nooduitgangen vervallen of worden elders ingezet. De besparingen op personeel en aanvullende techniek compenseren de huur- en installatiekosten. Bij tijdelijke evenementen dalen de kosten voor planning, opbouw en exploitatie van de veiligheidstechniek.",
+          "slug_kw": "ontruiming zonder bekabeling festival"
+        },
+        "check": {
+          "ok": true,
+          "issues": [],
+          "translated": {
+            "headline": "Ontruimingsinstallaties zonder bekabeling voor festivals",
+            "subhead": "autonoom, betrouwbaar, kostenefficiënt",
+            "intro": "Bij festivals vormt een ontruimingsinstallatie zonder bekabeling een bijzondere uitdaging door de drukte, de luide omgeving en anderstalige bezoekers. Waarschuwingen en handelingsinstructies moeten in een gevarensituatie ondanks het volume van de podia en de hoge bezoekersdichtheid duidelijk begrijpelijk zijn. Het grote aantal gelijktijdig aanwezige bezoekers belast mobiele netwerken tot aan overbelasting.",
+            "usp_intro": "NIKOS bundelt omroepberichten, alarmering, bezoekersinformatie en besturing in één enkel, netonafhankelijk platform.",
+            "usp": "Voor festivals worden ontruimingsinstallaties zonder bekabeling met NIKOS naar behoefte opgebouwd en centraal bediend via NIKOS [dispatcher]². Dit vermindert de benodigde bekabeling, voorkomt kabelbruggen en verlaagt de behoefte aan afzonderlijke besturings- en communicatieoplossingen.",
+            "faq1_q": "Voldoen omroepberichten met NIKOS aan de geldende normen?",
+            "faq1_a": "Ja. NIKOS voldoet aan de eisen van DIN EN 50849 (elektro-akoestische noodwaarschuwingssystemen). NIKOS is speciaal ontwikkeld voor veiligheidsrelevante omroep- en alarmeringstoepassingen en technisch ontworpen voor gebruik in alledaagse en noodsituaties. Voor elektro-akoestische noodwaarschuwingssystemen (ELA-installaties) is DIN EN 50849 het bepalende referentiekader. De daarin genoemde eisen worden door NIKOS – in tegenstelling tot systemen op basis van mobiele netwerken – volledig vervuld, omdat er geen afhankelijkheid van een extern netwerk bestaat en daardoor te allen tijde onmiddellijk gebruik kan worden gegarandeerd. Andere uit de veiligheidstechniek bekende normen, zoals DIN EN 54, DIN VDE 0833-4 en DIN 14675 (spraakalarminstallaties), zijn niet van toepassing op het toepassingsgebied en het functiespectrum van NIKOS en daarom niet relevant voor een vergunning. NIKOS is het marktleidende omroepsysteem voor tijdelijke en mobiele toepassingen en wordt sinds 2017 vele malen met succes ingezet voor de uitvoering van inzetkritische communicatietaken. RADACOM en uw regionale NIKOS-partner adviseren u graag over de veelzijdige functies van NIKOS en ondersteunen u bij een kostenefficiënte uitvoering van de eisen.",
+            "faq2_q": "Is NIKOS crisisbestendig?",
+            "faq2_a": "Ja. NIKOS werkt via een eigen, autonoom radionetwerk en onafhankelijk van openbare communicatienetwerken. Na een onderbreking wordt de verbinding automatisch hersteld. NIKOS [audio]² beschikt over een interne accu met een gebruiksduur van maximaal 16 uur en voedt daarmee ook aangesloten accessoiremodules. NIKOS blijft functioneren bij overbelasting van het mobiele netwerk, storingen bij de internetprovider en uitval van de stroomvoorziening. Ontruimingsinstallaties zonder bekabeling voor festivals blijven daardoor ook bij storingen in openbare communicatienetwerken betrouwbaar inzetbaar.",
+            "faq3_q": "Kan NIKOS op korte termijn en flexibel worden ingezet?",
+            "faq3_a": "Ja. NIKOS is speciaal ontwikkeld voor flexibele inzet buitenshuis zonder vaste infrastructuur. Een tot twee personen monteren de modules binnen enkele minuten op verschillende constructies, zoals lantaarnpalen, podia, bomen, kramen of decoraties, en configureren deze individueel. Een normale Schuko-stroomaansluiting is voldoende voor continu gebruik. NIKOS maakt gebruik van een bestaand digitaal radionetwerk.",
+            "faq4_q": "Waar levert de inzet van NIKOS kostenvoordelen op?",
+            "faq4_a": "NIKOS bundelt veiligheidsrelevante functies op één uniform communicatieplatform. Hierdoor zijn voor ontruimingsinstallaties zonder bekabeling geen afzonderlijke luidspreker-, besturings- en communicatieoplossingen nodig. Dit vermindert de materiaalbehoefte, de benodigde bekabeling en het struikelgevaar door kabelbruggen. Centrale omroepberichten, afstandsbediening en statusbewaking vervangen taken die anders door meerdere over het terrein verspreide bewakings-, meldings- of bedieningsposten worden uitgevoerd. Daardoor is minder personeel nodig of kan personeel op veiligheidskritieke punten worden ingezet. Bij omheinde evenementen zoals festivals bewaakt NIKOS nooduitgangspoorten technisch. Bewakingsposten bij nooduitgangen vervallen of worden elders ingezet. De besparingen op personeel en aanvullende techniek compenseren de huur- en installatiekosten. Bij tijdelijke evenementen dalen de kosten voor planning, opbouw en exploitatie van de veiligheidstechniek.",
+            "slug_kw": "ontruiming zonder bekabeling festival"
+          },
+          "lang": "nl"
+        },
+        "elapsedMs": 30360,
+        "usage": {
+          "prompt_tokens": 2456,
+          "completion_tokens": 1619,
+          "total_tokens": 4075,
+          "prompt_tokens_details": {
+            "cached_tokens": 1309,
+            "cache_write_tokens": 1144,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 582,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "da": {
+        "ok": true,
+        "parsed": {
+          "headline": "Evakueringsanlæg uden kabelføring til festivaler",
+          "subhead": "selvforsynende, pålideligt, omkostningseffektivt",
+          "intro": "På festivaler udgør et evakueringsanlæg uden kabelføring en særlig udfordring på grund af trængsel, støjende omgivelser og besøgende med forskellige sprog. I en faresituation skal advarsler og handlingsanvisninger være tydeligt forståelige på trods af scenelyd og høj besøgstæthed. Det store antal samtidige besøgende belaster mobilnettene, indtil de overbelastes.",
+          "usp_intro": "NIKOS samler meddelelser, alarmering, besøgsinformation og styring i én samlet, netuafhængig platform.",
+          "usp": "Til festivaler etableres evakueringsanlæg uden kabelføring med NIKOS efter behov og betjenes centralt via NIKOS [dispatcher]². Det reducerer behovet for kabelføring, undgår kabelbroer og mindsker behovet for separate styrings- og kommunikationsløsninger.",
+          "faq1_q": "Opfylder meddelelser med NIKOS de gældende standarder?",
+          "faq1_a": "Ja. NIKOS opfylder kravene i DIN EN 50849 (elektroakustiske nødvarslingssystemer). NIKOS er udviklet specifikt til sikkerhedskritiske meddelelses- og alarmeringsanvendelser og er teknisk designet til brug i både hverdags- og nødsituationer. For elektroakustiske nødvarslingssystemer (ELA-anlæg) er DIN EN 50849 den afgørende referenceramme. Kravene heri opfyldes fuldt ud af NIKOS – i modsætning til mobilnetbaserede systemer – da der ikke er afhængighed af et eksternt net, og øjeblikkelig anvendelighed dermed kan sikres til enhver tid. Andre standarder, der kendes fra sikkerhedsteknikken, såsom DIN EN 54, DIN VDE 0833-4 og DIN 14675 (talevarslingsanlæg), er ikke anvendelige på NIKOS' anvendelsesområde og funktionsomfang og er derfor ikke relevante for en godkendelse. NIKOS er det markedsførende meddelelsessystem til midlertidige og mobile anvendelser og har siden 2017 været anvendt med succes til udførelse af indsatskritiske kommunikationsopgaver. RADACOM og din regionale NIKOS-partner rådgiver gerne om NIKOS' mange funktioner og hjælper dig med en omkostningseffektiv implementering af kravene.",
+          "faq2_q": "Er NIKOS krisesikkert?",
+          "faq2_a": "Ja. NIKOS fungerer via sit eget, selvforsynende radionet og uafhængigt af offentlige kommunikationsnet. Forbindelsen genetableres automatisk efter en afbrydelse. NIKOS [audio]² har et internt batteri med en driftstid på op til 16 timer og forsyner også tilsluttede tilbehørsmoduler. NIKOS forbliver funktionsdygtigt ved overbelastning af mobilnettet, forstyrrelser hos internetudbyderen og strømsvigt. Evakueringsanlæg uden kabelføring til festivaler forbliver dermed pålideligt klar til brug, også ved forstyrrelser i offentlige kommunikationsnet.",
+          "faq3_q": "Kan NIKOS anvendes fleksibelt med kort varsel?",
+          "faq3_a": "Ja. NIKOS er udviklet specifikt til fleksibel udendørs brug uden fast infrastruktur. En til to personer monterer modulerne på få minutter på forskellige konstruktioner såsom lygtepæle, scener, træer, boder eller dekorationer og konfigurerer dem individuelt. En almindelig Schuko-strømtilslutning er tilstrækkelig til kontinuerlig drift. NIKOS benytter også et eksisterende digitalt radionet.",
+          "faq4_q": "Hvor opstår der omkostningsfordele ved brug af NIKOS?",
+          "faq4_a": "NIKOS samler sikkerhedsrelevante funktioner på en ensartet kommunikationsplatform. Dermed bortfalder separate højttaler-, styrings- og kommunikationsløsninger til evakueringsanlæg uden kabelføring. Det reducerer materialebehovet, omfanget af kabelføring og risikoen for at snuble over kabelbroer. Centrale meddelelser, fjernstyring og statusovervågning erstatter opgaver, som ellers skulle varetages af flere vagt-, melde- eller betjeningsposter fordelt over området. Det sparer personale eller frigør personale til indsats på sikkerhedskritiske steder. Ved indhegnede arrangementer som festivaler overvåger NIKOS nødudgangsporte teknisk. Vagter ved nødudgange bortfalder eller kan anvendes andre steder. Besparelserne på personale og ekstra teknik opvejer leje- og installationsomkostningerne. Ved midlertidige arrangementer falder omkostningerne til planlægning, opsætning og drift af sikkerhedsteknikken.",
+          "slug_kw": "evakuering uden kabler festival"
+        },
+        "check": {
+          "ok": true,
+          "issues": [],
+          "translated": {
+            "headline": "Evakueringsanlæg uden kabelføring til festivaler",
+            "subhead": "selvforsynende, pålideligt, omkostningseffektivt",
+            "intro": "På festivaler udgør et evakueringsanlæg uden kabelføring en særlig udfordring på grund af trængsel, støjende omgivelser og besøgende med forskellige sprog. I en faresituation skal advarsler og handlingsanvisninger være tydeligt forståelige på trods af scenelyd og høj besøgstæthed. Det store antal samtidige besøgende belaster mobilnettene, indtil de overbelastes.",
+            "usp_intro": "NIKOS samler meddelelser, alarmering, besøgsinformation og styring i én samlet, netuafhængig platform.",
+            "usp": "Til festivaler etableres evakueringsanlæg uden kabelføring med NIKOS efter behov og betjenes centralt via NIKOS [dispatcher]². Det reducerer behovet for kabelføring, undgår kabelbroer og mindsker behovet for separate styrings- og kommunikationsløsninger.",
+            "faq1_q": "Opfylder meddelelser med NIKOS de gældende standarder?",
+            "faq1_a": "Ja. NIKOS opfylder kravene i DIN EN 50849 (elektroakustiske nødvarslingssystemer). NIKOS er udviklet specifikt til sikkerhedskritiske meddelelses- og alarmeringsanvendelser og er teknisk designet til brug i både hverdags- og nødsituationer. For elektroakustiske nødvarslingssystemer (ELA-anlæg) er DIN EN 50849 den afgørende referenceramme. Kravene heri opfyldes fuldt ud af NIKOS – i modsætning til mobilnetbaserede systemer – da der ikke er afhængighed af et eksternt net, og øjeblikkelig anvendelighed dermed kan sikres til enhver tid. Andre standarder, der kendes fra sikkerhedsteknikken, såsom DIN EN 54, DIN VDE 0833-4 og DIN 14675 (talevarslingsanlæg), er ikke anvendelige på NIKOS' anvendelsesområde og funktionsomfang og er derfor ikke relevante for en godkendelse. NIKOS er det markedsførende meddelelsessystem til midlertidige og mobile anvendelser og har siden 2017 været anvendt med succes til udførelse af indsatskritiske kommunikationsopgaver. RADACOM og din regionale NIKOS-partner rådgiver gerne om NIKOS' mange funktioner og hjælper dig med en omkostningseffektiv implementering af kravene.",
+            "faq2_q": "Er NIKOS krisesikkert?",
+            "faq2_a": "Ja. NIKOS fungerer via sit eget, selvforsynende radionet og uafhængigt af offentlige kommunikationsnet. Forbindelsen genetableres automatisk efter en afbrydelse. NIKOS [audio]² har et internt batteri med en driftstid på op til 16 timer og forsyner også tilsluttede tilbehørsmoduler. NIKOS forbliver funktionsdygtigt ved overbelastning af mobilnettet, forstyrrelser hos internetudbyderen og strømsvigt. Evakueringsanlæg uden kabelføring til festivaler forbliver dermed pålideligt klar til brug, også ved forstyrrelser i offentlige kommunikationsnet.",
+            "faq3_q": "Kan NIKOS anvendes fleksibelt med kort varsel?",
+            "faq3_a": "Ja. NIKOS er udviklet specifikt til fleksibel udendørs brug uden fast infrastruktur. En til to personer monterer modulerne på få minutter på forskellige konstruktioner såsom lygtepæle, scener, træer, boder eller dekorationer og konfigurerer dem individuelt. En almindelig Schuko-strømtilslutning er tilstrækkelig til kontinuerlig drift. NIKOS benytter også et eksisterende digitalt radionet.",
+            "faq4_q": "Hvor opstår der omkostningsfordele ved brug af NIKOS?",
+            "faq4_a": "NIKOS samler sikkerhedsrelevante funktioner på en ensartet kommunikationsplatform. Dermed bortfalder separate højttaler-, styrings- og kommunikationsløsninger til evakueringsanlæg uden kabelføring. Det reducerer materialebehovet, omfanget af kabelføring og risikoen for at snuble over kabelbroer. Centrale meddelelser, fjernstyring og statusovervågning erstatter opgaver, som ellers skulle varetages af flere vagt-, melde- eller betjeningsposter fordelt over området. Det sparer personale eller frigør personale til indsats på sikkerhedskritiske steder. Ved indhegnede arrangementer som festivaler overvåger NIKOS nødudgangsporte teknisk. Vagter ved nødudgange bortfalder eller kan anvendes andre steder. Besparelserne på personale og ekstra teknik opvejer leje- og installationsomkostningerne. Ved midlertidige arrangementer falder omkostningerne til planlægning, opsætning og drift af sikkerhedsteknikken.",
+            "slug_kw": "evakuering uden kabler festival"
+          },
+          "lang": "da"
+        },
+        "elapsedMs": 26040,
+        "usage": {
+          "prompt_tokens": 2456,
+          "completion_tokens": 1421,
+          "total_tokens": 3877,
+          "prompt_tokens_details": {
+            "cached_tokens": 1309,
+            "cache_write_tokens": 1144,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 202,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "pl": {
+        "ok": true,
+        "parsed": {
+          "headline": "Systemy ewakuacyjne bez układania kabli dla festiwali",
+          "subhead": "autonomiczne, niezawodne, ekonomiczne",
+          "intro": "Podczas festiwali system ewakuacyjny bez układania kabli stanowi szczególne wyzwanie ze względu na tłum, hałaśliwe otoczenie i gości posługujących się różnymi językami. W sytuacji zagrożenia ostrzeżenia i instrukcje postępowania muszą być wyraźnie zrozumiałe mimo głośności scen i dużego zagęszczenia uczestników. Duża liczba osób obecnych jednocześnie obciąża sieci telefonii komórkowej aż do ich przeciążenia.",
+          "usp_intro": "NIKOS łączy komunikaty, alarmowanie, informowanie odwiedzających i sterowanie w jednej, niezależnej od sieci platformie.",
+          "usp": "Na potrzeby festiwali systemy ewakuacyjne bez układania kabli są budowane z NIKOS zgodnie z potrzebami i obsługiwane centralnie za pomocą NIKOS [dispatcher]². Ogranicza to nakłady na okablowanie, eliminuje konieczność stosowania przepustów kablowych oraz zmniejsza zapotrzebowanie na odrębne rozwiązania do sterowania i komunikacji.",
+          "faq1_q": "Czy komunikaty nadawane za pomocą NIKOS są zgodne z obowiązującymi normami?",
+          "faq1_a": "Tak. NIKOS spełnia wymagania normy DIN EN 50849 (elektroakustyczne systemy ostrzegania w sytuacjach awaryjnych). NIKOS został opracowany specjalnie do zastosowań związanych z komunikatami i alarmowaniem istotnymi dla bezpieczeństwa oraz jest technicznie przystosowany do użytkowania w sytuacjach codziennych i awaryjnych. W przypadku elektroakustycznych systemów ostrzegania w sytuacjach awaryjnych (instalacji ELA) DIN EN 50849 stanowi kluczowe ramy odniesienia. Wymagania w niej określone są w pełni spełniane przez NIKOS – w przeciwieństwie do systemów opartych na telefonii komórkowej – ponieważ nie występuje zależność od zewnętrznej sieci, co pozwala zapewnić natychmiastową gotowość do użycia w każdej chwili. Inne normy znane z techniki bezpieczeństwa, takie jak DIN EN 54, DIN VDE 0833-4 oraz DIN 14675 (systemy alarmowania głosowego), nie mają zastosowania do obszaru zastosowań i zakresu funkcji NIKOS, dlatego nie są istotne dla uzyskania zezwolenia. NIKOS jest wiodącym na rynku systemem komunikatów do zastosowań tymczasowych i mobilnych, a od 2017 roku był wielokrotnie z powodzeniem wykorzystywany do realizacji zadań komunikacyjnych o krytycznym znaczeniu operacyjnym. RADACOM oraz regionalny partner NIKOS chętnie doradzą Państwu w zakresie różnorodnych funkcji NIKOS i wesprą w ekonomicznej realizacji wymagań.",
+          "faq2_q": "Czy NIKOS jest odporny na sytuacje kryzysowe?",
+          "faq2_a": "Tak. NIKOS działa za pośrednictwem własnej, autonomicznej sieci radiowej i niezależnie od publicznych sieci komunikacyjnych. Po przerwaniu połączenie zostaje przywrócone automatycznie. NIKOS [audio]² jest wyposażony w wewnętrzny akumulator zapewniający do 16 godzin pracy, który zasila również podłączone moduły akcesoryjne. NIKOS pozostaje sprawny w przypadku przeciążenia sieci telefonii komórkowej, zakłóceń po stronie dostawcy internetu oraz awarii zasilania. Dzięki temu systemy ewakuacyjne bez układania kabli dla festiwali pozostają niezawodnie gotowe do działania również w razie zakłóceń publicznych sieci komunikacyjnych.",
+          "faq3_q": "Czy NIKOS można zastosować elastycznie i w krótkim czasie?",
+          "faq3_a": "Tak. NIKOS został opracowany specjalnie do elastycznych zastosowań zewnętrznych bez stałej infrastruktury. Jedna lub dwie osoby montują moduły w ciągu kilku minut na różnych konstrukcjach, takich jak latarnie, sceny, drzewa, stoiska lub dekoracje, a następnie konfigurują je indywidualnie. Do pracy ciągłej wystarczy standardowe przyłącze zasilania Schuko. NIKOS korzysta również z dostępnej cyfrowej sieci radiowej.",
+          "faq4_q": "W jakich obszarach zastosowanie NIKOS przynosi korzyści kosztowe?",
+          "faq4_a": "NIKOS łączy funkcje istotne dla bezpieczeństwa na jednej, jednolitej platformie komunikacyjnej. Dzięki temu w przypadku systemów ewakuacyjnych bez układania kabli nie są potrzebne odrębne rozwiązania głośnikowe, sterujące i komunikacyjne. Zmniejsza to zapotrzebowanie na materiały, nakłady na okablowanie oraz ryzyko potknięcia się o przepusty kablowe. Centralne komunikaty, zdalne sterowanie i monitorowanie statusu zastępują zadania, które w przeciwnym razie wykonywałoby kilka rozmieszczonych na terenie stanowisk porządkowych, zgłoszeniowych lub operatorskich. Pozwala to zaoszczędzić personel lub skierować go do punktów o krytycznym znaczeniu dla bezpieczeństwa. Podczas ogrodzonych wydarzeń, takich jak festiwale, NIKOS monitoruje technicznie bramy wyjść ewakuacyjnych. Posterunki ochrony przy wyjściach ewakuacyjnych stają się zbędne lub mogą zostać wykorzystane w innym miejscu. Oszczędności na personelu i dodatkowej technologii rekompensują koszty wynajmu i instalacji. W przypadku wydarzeń tymczasowych spadają koszty planowania, montażu i eksploatacji techniki bezpieczeństwa.",
+          "slug_kw": "ewakuacja bez kabli festiwal"
+        },
+        "check": {
+          "ok": true,
+          "issues": [],
+          "translated": {
+            "headline": "Systemy ewakuacyjne bez układania kabli dla festiwali",
+            "subhead": "autonomiczne, niezawodne, ekonomiczne",
+            "intro": "Podczas festiwali system ewakuacyjny bez układania kabli stanowi szczególne wyzwanie ze względu na tłum, hałaśliwe otoczenie i gości posługujących się różnymi językami. W sytuacji zagrożenia ostrzeżenia i instrukcje postępowania muszą być wyraźnie zrozumiałe mimo głośności scen i dużego zagęszczenia uczestników. Duża liczba osób obecnych jednocześnie obciąża sieci telefonii komórkowej aż do ich przeciążenia.",
+            "usp_intro": "NIKOS łączy komunikaty, alarmowanie, informowanie odwiedzających i sterowanie w jednej, niezależnej od sieci platformie.",
+            "usp": "Na potrzeby festiwali systemy ewakuacyjne bez układania kabli są budowane z NIKOS zgodnie z potrzebami i obsługiwane centralnie za pomocą NIKOS [dispatcher]². Ogranicza to nakłady na okablowanie, eliminuje konieczność stosowania przepustów kablowych oraz zmniejsza zapotrzebowanie na odrębne rozwiązania do sterowania i komunikacji.",
+            "faq1_q": "Czy komunikaty nadawane za pomocą NIKOS są zgodne z obowiązującymi normami?",
+            "faq1_a": "Tak. NIKOS spełnia wymagania normy DIN EN 50849 (elektroakustyczne systemy ostrzegania w sytuacjach awaryjnych). NIKOS został opracowany specjalnie do zastosowań związanych z komunikatami i alarmowaniem istotnymi dla bezpieczeństwa oraz jest technicznie przystosowany do użytkowania w sytuacjach codziennych i awaryjnych. W przypadku elektroakustycznych systemów ostrzegania w sytuacjach awaryjnych (instalacji ELA) DIN EN 50849 stanowi kluczowe ramy odniesienia. Wymagania w niej określone są w pełni spełniane przez NIKOS – w przeciwieństwie do systemów opartych na telefonii komórkowej – ponieważ nie występuje zależność od zewnętrznej sieci, co pozwala zapewnić natychmiastową gotowość do użycia w każdej chwili. Inne normy znane z techniki bezpieczeństwa, takie jak DIN EN 54, DIN VDE 0833-4 oraz DIN 14675 (systemy alarmowania głosowego), nie mają zastosowania do obszaru zastosowań i zakresu funkcji NIKOS, dlatego nie są istotne dla uzyskania zezwolenia. NIKOS jest wiodącym na rynku systemem komunikatów do zastosowań tymczasowych i mobilnych, a od 2017 roku był wielokrotnie z powodzeniem wykorzystywany do realizacji zadań komunikacyjnych o krytycznym znaczeniu operacyjnym. RADACOM oraz regionalny partner NIKOS chętnie doradzą Państwu w zakresie różnorodnych funkcji NIKOS i wesprą w ekonomicznej realizacji wymagań.",
+            "faq2_q": "Czy NIKOS jest odporny na sytuacje kryzysowe?",
+            "faq2_a": "Tak. NIKOS działa za pośrednictwem własnej, autonomicznej sieci radiowej i niezależnie od publicznych sieci komunikacyjnych. Po przerwaniu połączenie zostaje przywrócone automatycznie. NIKOS [audio]² jest wyposażony w wewnętrzny akumulator zapewniający do 16 godzin pracy, który zasila również podłączone moduły akcesoryjne. NIKOS pozostaje sprawny w przypadku przeciążenia sieci telefonii komórkowej, zakłóceń po stronie dostawcy internetu oraz awarii zasilania. Dzięki temu systemy ewakuacyjne bez układania kabli dla festiwali pozostają niezawodnie gotowe do działania również w razie zakłóceń publicznych sieci komunikacyjnych.",
+            "faq3_q": "Czy NIKOS można zastosować elastycznie i w krótkim czasie?",
+            "faq3_a": "Tak. NIKOS został opracowany specjalnie do elastycznych zastosowań zewnętrznych bez stałej infrastruktury. Jedna lub dwie osoby montują moduły w ciągu kilku minut na różnych konstrukcjach, takich jak latarnie, sceny, drzewa, stoiska lub dekoracje, a następnie konfigurują je indywidualnie. Do pracy ciągłej wystarczy standardowe przyłącze zasilania Schuko. NIKOS korzysta również z dostępnej cyfrowej sieci radiowej.",
+            "faq4_q": "W jakich obszarach zastosowanie NIKOS przynosi korzyści kosztowe?",
+            "faq4_a": "NIKOS łączy funkcje istotne dla bezpieczeństwa na jednej, jednolitej platformie komunikacyjnej. Dzięki temu w przypadku systemów ewakuacyjnych bez układania kabli nie są potrzebne odrębne rozwiązania głośnikowe, sterujące i komunikacyjne. Zmniejsza to zapotrzebowanie na materiały, nakłady na okablowanie oraz ryzyko potknięcia się o przepusty kablowe. Centralne komunikaty, zdalne sterowanie i monitorowanie statusu zastępują zadania, które w przeciwnym razie wykonywałoby kilka rozmieszczonych na terenie stanowisk porządkowych, zgłoszeniowych lub operatorskich. Pozwala to zaoszczędzić personel lub skierować go do punktów o krytycznym znaczeniu dla bezpieczeństwa. Podczas ogrodzonych wydarzeń, takich jak festiwale, NIKOS monitoruje technicznie bramy wyjść ewakuacyjnych. Posterunki ochrony przy wyjściach ewakuacyjnych stają się zbędne lub mogą zostać wykorzystane w innym miejscu. Oszczędności na personelu i dodatkowej technologii rekompensują koszty wynajmu i instalacji. W przypadku wydarzeń tymczasowych spadają koszty planowania, montażu i eksploatacji techniki bezpieczeństwa.",
+            "slug_kw": "ewakuacja bez kabli festiwal"
+          },
+          "lang": "pl"
+        },
+        "elapsedMs": 21901,
+        "usage": {
+          "prompt_tokens": 2456,
+          "completion_tokens": 1535,
+          "total_tokens": 3991,
+          "prompt_tokens_details": {
+            "cached_tokens": 2453,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 112,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    }
+  }
+}

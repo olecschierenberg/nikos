@@ -64,15 +64,108 @@ function filterDeployReady(items) {
   });
 }
 
+// NEU (2026-09-03): erkennt, ob lp-preview/<slug>/ das neue Multi-Sprach-
+// Layout ist (Unterordner je Sprachcode mit eigener index.html + meta.json,
+// siehe lp-generator/index.js runMultiLangBranch) statt der flachen
+// Alt-Struktur lp-preview/<slug>/index.html. Rein additive Erkennung -- eine
+// Zeile mit dem Alt-Layout ist hiervon nicht betroffen.
+function findMultiLangDirs(slug) {
+  const groupDir = path.join(REPO_ROOT, 'lp-preview', slug);
+  let entries;
+  try { entries = fs.readdirSync(groupDir, { withFileTypes: true }); } catch (err) { return null; }
+  const langDirs = entries
+    .filter((d) => d.isDirectory() && /^[a-z]{2}$/.test(d.name))
+    .map((d) => d.name)
+    .filter((lang) => fs.existsSync(path.join(groupDir, lang, 'index.html')));
+  return langDirs.length ? langDirs : null;
+}
+
+// NEU (2026-09-03): promotet eine Zeile im neuen Multi-Sprach-URL-Schema
+// (nikos.info/<lang>/lp/<slug>/) -- Pendant zum bestehenden Alt-Pfad weiter
+// unten in processBatch() (dort unveraendert fuer /loesungen/<slug>/-Seiten).
+async function processMultiLangItem(item, langDirs, nodeOutputs, staticData, liveEntries) {
+  const groupSlug = item.json.slug;
+  const groupDir = path.join(REPO_ROOT, 'lp-preview', groupSlug);
+  const writtenUrls = [];
+  let primaryEntry = null;
+
+  for (const lang of langDirs) {
+    const langDir = path.join(groupDir, lang);
+    const previewFile = path.join(langDir, 'index.html');
+    const metaFile = path.join(langDir, 'meta.json');
+    let meta;
+    try { meta = JSON.parse(fs.readFileSync(metaFile, 'utf8')); } catch (err) {
+      log(`  [${lang}] ÜBERSPRUNGEN (${groupSlug}): meta.json fehlt/ungueltig.`); continue;
+    }
+    const previewHtml = fs.readFileSync(previewFile, 'utf8');
+
+    const gueltigResult = runAllItems('vorschau_gueltig.js', {
+      items: [{ json: { row_number: item.json.row_number, slug: meta.slug, previewHtml } }],
+      nodeOutputs, staticData, executionId,
+    });
+    if (!gueltigResult.length) {
+      log(`  [${lang}] ÜBERSPRUNGEN (${groupSlug}): Vorschau nicht plausibel (leer/kaputt).`);
+      continue;
+    }
+
+    const entfernt = runEachItem('noindex_entfernen_ml.js', {
+      item: { json: { lang, slug: meta.slug, url: meta.url, previewHtml } },
+      nodeOutputs, staticData, executionId,
+    }).json;
+
+    const langSlugDir = LIVE ? meta.slug : `_ghtest-${meta.slug}`;
+    const targetDir = path.join(REPO_ROOT, lang, 'lp', langSlugDir);
+    const targetFile = path.join(targetDir, 'index.html');
+    fs.mkdirSync(targetDir, { recursive: true });
+    fs.writeFileSync(targetFile, entfernt.liveHtml, 'utf8');
+    const readBack = fs.readFileSync(targetFile, 'utf8');
+    if (readBack !== entfernt.liveHtml) {
+      log(`  [${lang}] ABBRUCH (${groupSlug}): Integritätsprüfung beim Schreiben fehlgeschlagen.`);
+      continue;
+    }
+    log(`  ${LIVE ? 'LIVE' : 'TEST'}: ${lang}/lp/${langSlugDir}/index.html geschrieben (${entfernt.liveHtml.length} Zeichen).`);
+    writtenUrls.push(entfernt.liveUrl);
+    if (lang === 'de') primaryEntry = { slug: meta.slug, liveUrl: entfernt.liveUrl, title: entfernt.linkTitle };
+  }
+
+  if (!writtenUrls.length) {
+    log(`  ÜBERSPRUNGEN (${groupSlug}): keine Sprachversion konnte veröffentlicht werden.`);
+    return;
+  }
+  // Fallback: falls DE ausnahmsweise fehlschlaegt (sollte durch lp-generator's
+  // eigenen Abbruch bei fehlender DE-Version praktisch nie vorkommen), nimm
+  // die erste erfolgreich geschriebene Sprache fuer Hub/Sheet-Verlinkung.
+  if (!primaryEntry) {
+    primaryEntry = { slug: groupSlug, liveUrl: writtenUrls[0], title: groupSlug };
+  }
+
+  if (LIVE) {
+    fs.rmSync(groupDir, { recursive: true, force: true });
+    await sheets.updateRowByRowNumber(SHEET_TAB, item.json.row_number, {
+      aktiv: 'x',
+      pfad: primaryEntry.liveUrl,
+    });
+    log(`  Sheet "${SHEET_TAB}" Zeile ${item.json.row_number}: aktiv=x, pfad=${primaryEntry.liveUrl} (${writtenUrls.length} Sprachversion(en)).`);
+    liveEntries.push({ slug: primaryEntry.slug, href: primaryEntry.liveUrl, liveUrl: primaryEntry.liveUrl, title: primaryEntry.title, siblingUrls: writtenUrls });
+  } else {
+    log(`  TEST-Modus: Vorschau NICHT gelöscht, Sheet NICHT aktualisiert (${writtenUrls.length} Sprachversion(en) geprüft).`);
+  }
+}
+
 async function processBatch(batch, staticData) {
   const nodeOutputs = new Map();
-  const liveEntries = []; // { slug, liveUrl, linkTitle } — für Hub + IndexNow dieses Batches
+  const liveEntries = []; // { slug, liveUrl, linkTitle, href? } — für Hub + IndexNow dieses Batches
 
   for (const item of batch) {
     const slug = item.json.slug;
     const previewFile = path.join(REPO_ROOT, 'lp-preview', slug, 'index.html');
     if (!fs.existsSync(previewFile)) {
-      log(`  ÜBERSPRUNGEN (${slug}): keine Vorschaudatei lp-preview/${slug}/index.html gefunden.`);
+      const langDirs = findMultiLangDirs(slug);
+      if (langDirs) {
+        await processMultiLangItem(item, langDirs, nodeOutputs, staticData, liveEntries);
+      } else {
+        log(`  ÜBERSPRUNGEN (${slug}): keine Vorschaudatei lp-preview/${slug}/index.html gefunden.`);
+      }
       continue;
     }
     const previewHtml = fs.readFileSync(previewFile, 'utf8');
@@ -152,7 +245,10 @@ async function updateHub(entries) {
 }
 
 async function pingIndexNow(entries) {
-  const urls = [...new Set(entries.map((e) => e.liveUrl.replace(/index\.html$/, '')))];
+  // siblingUrls (NEU, Multi-Sprach-Eintraege): alle Sprachversionen mitmelden,
+  // nicht nur die primaere (DE) URL, die fuer Hub-Verlinkung/liveUrl steht.
+  const all = entries.flatMap((e) => (e.siblingUrls && e.siblingUrls.length ? e.siblingUrls : [e.liveUrl]));
+  const urls = [...new Set(all.map((u) => u.replace(/index\.html$/, '')))];
   if (!urls.length) return;
   try {
     const res = await fetch('https://api.indexnow.org/indexnow', {

@@ -24,6 +24,10 @@ for(const item of $input.all()){
   }
 function codeFix(t){ if(!t) return t; t=String(t);
   t=t.replace(/\[(audio|dispatcher|horn|flash|relay|clamp|LED|XLR|moon)\]2\b/g,'[$1]²');
+  // NEU (2026-09-03, Nutzer-Vorgabe): Marke "RADACOM" unabhaengig von der
+  // aktuellen Rechtsform verwenden -- ein evtl. ergaenztes "GmbH" wird hart
+  // entfernt (siehe uebersetzung_json.js fuer Hintergrund).
+  t=t.replace(/\bRadacom\b(\s+GmbH\b)?/gi,'RADACOM');
   t=t.replace(/\{\{[^}]*\}\}/g,'');
   t=t.replace(/\$json\.[A-Za-z_]+/g,'');
   return t.replace(/\s{2,}/g,' ').replace(/\s+([.,;:])/g,'$1').trim();

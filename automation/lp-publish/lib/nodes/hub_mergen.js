@@ -21,7 +21,10 @@ const esc = s => (s||'').toString().replace(/&/g,'&amp;').replace(/</g,'&lt;').r
 let added = 0;
 let insertion = '';
 for (const e of entries) {
-  const href = 'https://nikos.info/loesungen/' + e.slug + '/';
+  // NEU (2026-09-03): Multi-Sprach-Eintraege (neues URL-Schema nikos.info/<lang>/lp/<slug>/)
+  // liefern ihr href bereits fertig mit (siehe lp-publish/index.js) -- Alt-Schema-Eintraege
+  // (kein e.href) bauen es weiterhin wie bisher aus e.slug.
+  const href = e.href || ('https://nikos.info/loesungen/' + e.slug + '/');
   if (html.includes('href="' + href + '"')) continue;
   const text = esc(e.title || e.slug);
   insertion += '      <li><a href="' + href + '">' + text + '</a></li>\n';

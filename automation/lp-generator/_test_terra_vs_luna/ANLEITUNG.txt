@@ -1,0 +1,38 @@
+Terra-vs-Luna-Modellvergleich für die Übersetzung (Testlauf)
+==============================================================
+
+WARUM DIESER UMWEG?
+Ich habe versucht, diesen Vergleich direkt für dich laufen zu lassen, aber
+sowohl meine Cloud-Umgebung als auch die Linux-Verbindung zu deinem Rechner
+(über die Ordnerfreigabe) haben eine Netzwerk-Sperre, die api.openai.com
+blockiert (nur bestimmte Adressen sind freigegeben). Dein normaler
+Windows-Rechner hat diese Sperre nicht – deshalb bitte ich dich, das Skript
+einmal selbst in einem ganz normalen Terminal (PowerShell oder CMD, NICHT
+über Claude) laufen zu lassen. Es ist derselbe Code wie in der echten
+Pipeline (1:1 kopiert), läuft aber komplett isoliert: es rührt NICHT das
+Google Sheet an, schreibt NICHT nach lp-preview/ oder loesungen/ und macht
+NICHTS live. Es ruft nur 14x die Übersetzungs-API auf (7 Sprachen x 2
+Modelle) und speichert die Antworten in eine Datei.
+
+SO GEHT'S (ca. 2 Minuten):
+1. PowerShell oder CMD öffnen (Windows-Taste, "PowerShell" eingeben, Enter).
+2. In den Ordner wechseln:
+   cd "C:\Users\skira\Documents\Claude\Projects\Radacom-Marketing\nikos\site\automation\lp-generator\_test_terra_vs_luna"
+3. Deinen OpenAI-Key einmalig für dieses Fenster setzen (PowerShell):
+   $env:OPENAI_API_KEY = "dein-key-hier"
+   (in CMD stattdessen: set OPENAI_API_KEY=dein-key-hier)
+4. Skript starten:
+   node run_compare.js
+5. Warten, bis "FERTIG -> out/results.json" erscheint (läuft nacheinander
+   durch alle 14 Kombinationen, dauert je nach API-Antwortzeit 1-3 Minuten).
+6. Fertig – die Datei out\results.json liegt jetzt in diesem Ordner. Du
+   musst mir nichts schicken, ich lese sie direkt von deinem Rechner und
+   baue daraus das Vergleichsdokument.
+
+Danach kannst du diesen ganzen _test_terra_vs_luna-Ordner löschen (oder mich
+das für dich erledigen lassen) – er wird nicht für den Produktivbetrieb
+gebraucht und sollte nicht mit deployt werden.
+
+Falls "node" nicht gefunden wird: Node.js ist bei dir schon installiert
+(die Pipeline nutzt es auch), es müsste also nur ein neues Terminalfenster
+sein, das die PATH-Variable frisch geladen hat.

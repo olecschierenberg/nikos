@@ -1,0 +1,21 @@
+{
+  "problem": "Evakuierungsanlage ohne Kabelverlegung",
+  "einsatz": "Festival",
+  "region": "",
+  "fields": {
+    "headline": "Evakuierungsanlagen ohne Kabelverlegung für Festivals",
+    "subhead": "autark, zuverlässig, kostengünstig",
+    "intro": "Bei Festivals stellt eine Evakuierungsanlage ohne Kabelverlegung durch Gedränge, laute Umgebung und fremdsprachige Besucher eine besondere Herausforderung dar. Warnungen und Handlungsanweisungen müssen in einer Gefahrenlage trotz Bühnenlautstärke und hoher Besucherdichte klar verständlich sein. Die große Zahl gleichzeitig anwesender Besucher belastet Mobilfunknetze bis zur Überlastung.",
+    "usp_intro": "NIKOS bündelt Durchsagen, Alarmierung, Besucherinformation und Steuerung in einer einzigen, netzunabhängigen Plattform.",
+    "usp": "Für Festivals werden Evakuierungsanlagen ohne Kabelverlegung mit NIKOS bedarfsgerecht aufgebaut und zentral über NIKOS [dispatcher]² bedient. Das reduziert den Verkabelungsaufwand, vermeidet Kabelbrücken und senkt den Bedarf an getrennten Steuer- und Kommunikationslösungen.",
+    "faq1_q": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
+    "faq1_a": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 für elektroakustische Notfallwarnsysteme. NIKOS wurde speziell für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen entwickelt und ist für den Einsatz in Alltags- und Notfallsituationen ausgelegt. Die DIN EN 50849 ist der maßgebliche Orientierungsrahmen für elektroakustische Notfallwarnsysteme. NIKOS erfüllt die dort genannten Anforderungen vollständig, da keine Abhängigkeit von einem fremden Netz besteht und die sofortige Nutzbarkeit jederzeit gewährleistet ist. Die DIN EN 54, DIN VDE 0833-4 und DIN 14675 für Sprachalarmierungsanlagen sind auf das Einsatzgebiet und Funktionsspektrum von NIKOS nicht anwendbar und für die Genehmigung nicht relevant. NIKOS ist seit 2017 vielfach für die Umsetzung einsatzkritischer Kommunikationsaufgaben im Einsatz. RADACOM und Ihr regionaler NIKOS-Partner beraten Sie zu den Funktionen von NIKOS und unterstützen Sie bei der kostenschonenden Umsetzung Ihrer Anforderungen.",
+    "faq2_q": "Ist NIKOS krisensicher?",
+    "faq2_a": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz und unabhängig von öffentlichen Kommunikationsnetzen. Die Verbindung stellt sich nach einer Unterbrechung selbstständig wieder her. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. NIKOS bleibt bei einer Überlastung des Handynetzes, bei Störungen des Internetproviders und bei Ausfall der Stromversorgung funktionsfähig. Evakuierungsanlagen ohne Kabelverlegung für Festivals bleiben damit auch bei Störungen öffentlicher Kommunikationsnetze zuverlässig einsatzbereit.",
+    "faq3_q": "Ist NIKOS kurzfristig und flexibel einsetzbar?",
+    "faq3_a": "Ja. NIKOS wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Ein bis zwei Personen montieren die Module innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen und konfigurieren sie individuell. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus. NIKOS nutzt ein vorhandenes digitales Funknetz mit.",
+    "faq4_q": "Wo entstehen beim Einsatz von NIKOS Kostenvorteile?",
+    "faq4_a": "NIKOS bündelt sicherheitsrelevante Funktionen auf einer einheitlichen Kommunikationsplattform. Dadurch entfallen für Evakuierungsanlagen ohne Kabelverlegung getrennte Lautsprecher-, Steuer- und Kommunikationslösungen. Das reduziert Materialbedarf, Verkabelungsaufwand und die Stolpergefahr durch Kabelbrücken. Zentrale Durchsagen, Fernsteuerung und Statusüberwachung ersetzen Aufgaben, die sonst mehrere über das Gelände verteilte Ordnungs-, Melde- oder Bedienposten übernehmen. Personal wird dadurch eingespart oder an sicherheitskritischen Punkten eingesetzt. Bei umzäunten Veranstaltungen wie Festivals überwacht NIKOS Notausgangstore technisch. Wachposten an Notausgängen entfallen oder werden an anderer Stelle eingesetzt. Die Einsparungen bei Personal und zusätzlicher Technik kompensieren Miet- und Installationskosten. Bei temporären Veranstaltungen sinken die Kosten für Planung, Aufbau und Betrieb der Sicherheitstechnik.",
+    "slug_kw": ""
+  }
+}

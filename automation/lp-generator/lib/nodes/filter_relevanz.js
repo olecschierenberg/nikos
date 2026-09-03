@@ -76,6 +76,15 @@ const LANG_META = {
 };
 function langFor(region){ const r = low(region); return REGION_LANG[r] || 'de'; } // unbekannte/nicht gelistete Regionen -> 'de' (bestehendes Verhalten)
 
+// BASELINE_LANGS (NEU 2026-09-03, Konzept Mehrsprachige LPs Schritt 2): einheitliche
+// 8-Sprachen-Zielliste fuer alle regionslosen LPs (und spaeter alle Nicht-Deutschland-
+// Regions-LPs, siehe Konzept_Mehrsprachige-LPs_2026-09-03_v2.md). Bewusst als Array
+// hier definiert (nicht importiert -- lib/nodes/*.js laufen ohne require(), siehe
+// lib/runCodeNode.js), damit spaetere Ausbaustufen (alle 24 EU-Sprachen) nur diese
+// eine Zeile aendern muessen. index.js haelt zusaetzlich lib/i18n.js mit denselben
+// 8 Codes synchron (dortige Quelle fuer UI_L10N-Chrome-Texte im neuen Multi-Sprach-Pfad).
+const BASELINE_LANGS = ['de','en','fr','it','es','nl','da','pl'];
+
 
 // ---- Anlass-Klassen ----
 const FIXED_INFRA = ['messe','stadionevent','konzertsaal','konzerthaus','konzerthalle']; // feste SAA -> NIKOS unwahrscheinlich. 'Konzert' NICHT pauschal (kann Open-Air sein).
@@ -243,7 +252,11 @@ for (const it of items) {
   const _lc = langFor(region);
   const _lm = LANG_META[_lc] || LANG_META.en;
   const _lmode = _lc === 'de' ? 'single-de' : (_lc === 'en' ? 'single-en' : 'dual');
-  out.push({ json: { ...j, _relevanz: rel, _grenzfall: grenzfall, _lang: _lc, _lang_label: _lm.label, _lang_flag: _lm.flag, _lang_locale: _lm.locale, _lang_mode: _lmode, _einwohner: einwohner, _regionstyp: regionstyp, _grossregion: _grossregion } });
+  // _ml/_target_langs (NEU 2026-09-03): regionslose Kombinationen (Region leer) gehen ab
+  // sofort ueber den neuen Multi-Sprach-Pfad (siehe index.js) mit der 8er-Baseline. Rein
+  // additiv -- Kombinationen MIT Region behalten exakt das bisherige Verhalten (index.js
+  // prueft _ml und faellt sonst unveraendert auf den bestehenden Single-/Dual-Pfad zurueck).
+  out.push({ json: { ...j, _relevanz: rel, _grenzfall: grenzfall, _lang: _lc, _lang_label: _lm.label, _lang_flag: _lm.flag, _lang_locale: _lm.locale, _lang_mode: _lmode, _einwohner: einwohner, _regionstyp: regionstyp, _grossregion: _grossregion, _ml: !region, _target_langs: !region ? BASELINE_LANGS.slice() : null } });
 }
 
 // Sortierung: höchste Relevanz zuerst (10 -> 1)

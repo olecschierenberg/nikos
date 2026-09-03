@@ -1,0 +1,8 @@
+Übersetze die folgenden fertigen deutschen Landingpage-Texte ins {{ $json.zielsprache_label }} (ISO-Code: {{ $json.zielsprache_code }}).
+
+Kontext (nur zur Einordnung, nicht selbst übersetzen): Problem = {{ $json.problem }} | Einsatz = {{ $json.einsatz }} | Region = {{ $json.region_oder_ueberregional }}
+
+Deutsche Ausgangstexte (JSON):
+{{ $json.quelltext_json }}
+
+Gib die Übersetzung als JSON mit den Schlüsseln headline, subhead, intro, usp_intro, usp, faq1_q, faq1_a, faq2_q, faq2_a, faq3_q, faq3_a, faq4_q, faq4_a, slug_kw zurück — vollständig, natürlich, grammatikalisch korrekt, wie in der System-Anweisung beschrieben. Nur JSON, kein Markdown, kein zusätzlicher Text.
