@@ -189,6 +189,11 @@ img{display:block;max-width:100%}
 .zubehoer-card--photo .zubehoer-card__modul,
 .zubehoer-card--photo .zubehoer-card__title,
 .zubehoer-card--photo .zubehoer-card__text{position:relative;z-index:2}
+.zubehoer-card--stack .zubehoer-card__title,
+.zubehoer-card--stack .zubehoer-card__text{max-width:100%}
+.zubehoer-card--stack .zubehoer-card__photo{position:static;width:100%;max-width:none;right:auto;bottom:auto;margin:16px auto 0}
+.zubehoer-card--stack .zubehoer-card__photo img{display:block;margin:0 auto;width:auto;max-width:100%;max-height:130px}
+.zubehoer-card--stack .zubehoer-card__photo--big img{max-height:230px}
 @media(max-width:760px){.zubehoer-card__photo{width:38%;max-width:120px}.zubehoer-card--photo .zubehoer-card__title,.zubehoer-card--photo .zubehoer-card__text{max-width:60%}}
 
 /* Moon specs box */
@@ -444,7 +449,7 @@ img{display:block;max-width:100%}
         <div class="zubehoer-card__title" data-en>Work &amp; Emergency Lighting</div>
         <div class="zubehoer-card__text" data-de>Automatisch oder manuell fernschaltbare 10 W Mini-LED-Leuchte.</div>
         <div class="zubehoer-card__text" data-en>Automatically or manually remotely switchable 10 W mini LED light.</div>
-        <div class="zubehoer-card__photo" style="width:62%;max-width:225px"><img src="assets/img/produkte/NIKOS-LED.png" alt="NIKOS [LED]² Arbeits- und Notbeleuchtung" loading="lazy"></div>
+        <div class="zubehoer-card__photo" style="width:62%;max-width:225px"><img src="assets/img/produkte/NIKOS-LED.png" alt="NIKOS [LED]² Arbeits- und Notbeleuchtung" style="max-height:150px" loading="lazy"></div>
       </a>
       <a href="/de/produkte/alarm/" data-href-en="/en/products/alarm/" class="zubehoer-card zubehoer-card--photo">
         <div class="zubehoer-card__modul"><img src="assets/logos/nikos/SVG/NIKOS alarm.svg" alt="NIKOS [alarm]²"></div>
