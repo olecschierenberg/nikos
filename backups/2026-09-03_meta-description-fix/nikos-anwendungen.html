@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NIKOS</title>
+<link rel="canonical" href="https://nikos.info/de/anwendungen/">
+<link rel="alternate" hreflang="de" href="https://nikos.info/de/anwendungen/">
+<link rel="alternate" hreflang="en" href="https://nikos.info/en/applications/">
+<link rel="alternate" hreflang="x-default" href="https://nikos.info/de/anwendungen/">
+<noscript><meta http-equiv="refresh" content="0; url=https://nikos.info/de/anwendungen/"></noscript>
+<script>
+(function () {
+  var target = "https://nikos.info/de/anwendungen/";
+  try {
+    var saved = localStorage.getItem('nk-lang');
+    if (saved === 'en') {
+      target = "https://nikos.info/en/applications/";
+    } else if (saved !== 'de') {
+      var bl = ((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
+      if (bl.indexOf('en') === 0) { target = "https://nikos.info/en/applications/"; }
+    }
+  } catch (e) {}
+  window.location.replace(target);
+})();
+</script>
+</head>
+<body>
+<p>Diese Seite ist umgezogen. / This page has moved.<br>
+<a href="https://nikos.info/de/anwendungen/">Deutsch</a> &middot; <a href="https://nikos.info/en/applications/">English</a></p>
+</body>
+</html>
