@@ -44,7 +44,7 @@ const OBJPOS=(hf[0]==='Hafen.jpg'||hf[0]==='Stage.jpg')?' style="object-position
 const NKMOD='.nk-mod{display:inline-block;vertical-align:baseline}\n.nk-mod img{height:0.95em;width:auto;max-width:none;display:inline-block;vertical-align:-0.23em;transition:opacity .15s}\n.nk-mod:hover img{opacity:.6}\n.intro-s2__inner .heading-l,.nk-section__inner .heading-l,.nk-section__inner .heading-m{max-width:860px}\n.nk-nav .nav__links{flex:0 1 auto;overflow:visible}\n.nk-nav .lang-flag__btn .flag{font-size:16px;line-height:1}\n.nk-nav .lang-flag__option{gap:10px;padding:10px 14px;font-size:13px}\n.nk-nav .lang-flag__option .flag{font-size:18px}\n.nk-nav .lang-flag__dropdown{box-shadow:0 8px 24px rgba(0,0,0,.12)}\n.nk-nav .nav__burger span{width:24px;border-radius:2px}\n';
 function esc(s){return s==null?'':String(s);}
 function splitCo(s){s=esc(s);var i=s.indexOf(': ');return i>=0?[s.slice(0,i),s.slice(i+2)]:[s,''];}
-function modLogos(x){return x.replace(/NIKOS \[([A-Za-z0-9]+)\](?:²|&sup2;)/g,function(m,name){var a=(name==='audio'||name==='dispatcher'||name==='moon')?name:'zubehoer';return '<a class="nk-mod" href="https://nikos.info/nikos-produkte.html#'+a+'"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS '+name+'.svg" alt="NIKOS ['+name+']²" loading="lazy"></a>';});}
+function modLogos(x){return x.replace(/NIKOS \[([A-Za-z0-9]+)\](?:²|&sup2;)/g,function(m,name){var a=(name==='audio'||name==='dispatcher'||name==='moon')?name:'zubehoer';return '<a class="nk-mod" href="https://nikos.info/de/produkte/#'+a+'"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS '+name+'.svg" alt="NIKOS ['+name+']²" loading="lazy"></a>';});}
 var NIKOSLOGO='<a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>';
 function nkWordInner(inner){var st=[];inner=inner.replace(/<a class="nk-mod[^>]*>[\s\S]*?<\/a>/g,function(mm){st.push(mm);return '%%NKM'+(st.length-1)+'%%';});inner=inner.replace(/NIKOS(?!-|[A-Za-z0-9²]| \[)/g,NIKOSLOGO);inner=inner.replace(/%%NKM(\d+)%%/g,function(mm,i){return st[+i];});return inner;}
 function nikosWord(x){x=x.replace(/<div class="faq-item__body"([^>]*)>([\s\S]*?)<\/div>/g,function(m,a,inner){return '<div class="faq-item__body"'+a+'>'+nkWordInner(inner)+'</div>';});x=x.replace(/<p class="body-l"([^>]*)>([\s\S]*?)<\/p>/g,function(m,a,inner){return '<p class="body-l"'+a+'>'+nkWordInner(inner)+'</p>';});return x;}
@@ -62,7 +62,7 @@ if(pDe){html=html.replace(/(<h2 class="heading-l" style="margin-top:12px;" data-
 if(pEn){html=html.replace(/(<h2 class="heading-l" style="margin-top:12px;" data-en>)[\s\S]*?(<\/h2>)/,function(m,a,z){return a+pEn+z;});}
 html=html.replace('data-de>Eine einheitliche Lösung für Alltag und Ernstfall</h2>','data-de>'+USPHEAD[0]+'</h2>');
 html=html.replace('data-en>One unified solution for everyday use and emergencies</h2>','data-en>'+USPHEAD[1]+'</h2>');
-html=html.split('finden Sie hier.</div>').join('finden Sie <a href="https://nikos.info/nikos-anwendungen.html#wirtschaftlichkeit">hier</a>.</div>');
+html=html.split('finden Sie hier.</div>').join('finden Sie <a href="https://nikos.info/de/anwendungen/#wirtschaftlichkeit">hier</a>.</div>');
 var bi=html.indexOf('<body>'); if(bi>=0){html=html.slice(0,bi)+nikosWord(modLogos(html.slice(bi)));}
 return html;
 }

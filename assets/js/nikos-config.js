@@ -5,16 +5,16 @@
 // KONTAKT-BUTTON UMLEITUNG
 // ─────────────────────────
 // Standard (Kontaktseite):
-//   window.NIKOS_CONTACT_URL = 'nikos-kontakt.html';
+//   window.NIKOS_CONTACT_URL = '/de/kontakt/';
 //
 // Umstellen auf Vermietung (wenn Kundenkommunikation über Partner läuft):
-//   window.NIKOS_CONTACT_URL = 'nikos-vermietung.html';
+//   window.NIKOS_CONTACT_URL = '/de/vermietung/';
 //
 // Einfach die gewünschte Zeile aktivieren (die andere auskommentieren).
 // ═══════════════════════════════════════════════════════════════════
 
-window.NIKOS_CONTACT_URL = 'nikos-kontakt.html';
-// window.NIKOS_CONTACT_URL = 'nikos-vermietung.html';
+window.NIKOS_CONTACT_URL = '/de/kontakt/';
+// window.NIKOS_CONTACT_URL = '/de/vermietung/';
 
 // ═══════════════════════════════════════════════════════════════════
 // FORMULAR-VERSAND (n8n-Webhook)
