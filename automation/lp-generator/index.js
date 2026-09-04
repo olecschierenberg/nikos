@@ -55,6 +55,47 @@ function readPrompt(name) {
   return fs.readFileSync(path.join(PROMPTS_DIR, name), 'utf8');
 }
 
+// NEU (2026-09-04, Fix fuer den "Kein JSON"-Abbruch): Manche OpenAI-Antworten
+// sind trotz erfolgreichem HTTP-Request kein valides JSON (leer,
+// abgeschnitten, mit Kommentartext drumherum o. Ae.) -- bisher brach ein
+// einzelner missglueckter Aufruf sofort den ganzen Lauf ab, an wechselnden
+// Stellen (AI-Texte/QA-Agent/Nachbesserung), je nachdem wo es gerade traf.
+// callOpenAiAndParseJson() buendelt OpenAI-Aufruf + JSON-Parse zu einer
+// Einheit und wiederholt BEIDES (nicht nur den HTTP-Request) bei einem
+// Parse-Fehler -- analog zum bereits bestehenden Retry-Muster fuer
+// Uebersetzungen (siehe translateToLanguage() unten).
+async function callOpenAiAndParseJson({
+  nodeFile, model, system, user, maxTokens, timeoutMs, maxRetries,
+  nodeOutputs, staticData, executionId, label, maxAttempts,
+}) {
+  const attempts = Math.max(1, maxAttempts || 2);
+  let lastErr;
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    let result;
+    try {
+      result = await chatCompletion({
+        apiKey: process.env.OPENAI_API_KEY, model, system, user, maxTokens, timeoutMs, maxRetries,
+      });
+    } catch (err) {
+      lastErr = err;
+      log(`  ${label}: OpenAI-Aufruf fehlgeschlagen (Versuch ${attempt}/${attempts}): ${err.message}`);
+      if (attempt < attempts) { await new Promise((r) => setTimeout(r, 2000 * attempt)); continue; }
+      throw new Error(`${label}: OpenAI-Aufruf nach ${attempts} Versuch(en) fehlgeschlagen: ${lastErr.message}`);
+    }
+    try {
+      const parsed = runAllItems(nodeFile, { items: [result], nodeOutputs, staticData, executionId });
+      if (attempt > 1) log(`  ${label}: JSON-Parse nach Wiederholung erfolgreich (Versuch ${attempt}).`);
+      return { result, parsed };
+    } catch (err) {
+      lastErr = err;
+      const snippet = String((result && result.json && result.json.text) || '').slice(0, 300).replace(/\s+/g, ' ').trim();
+      log(`  ${label}: Antwort war kein gueltiges JSON (Versuch ${attempt}/${attempts}): ${err.message} -- Rohtext-Ausschnitt: "${snippet}"`);
+      if (attempt < attempts) { await new Promise((r) => setTimeout(r, 2000 * attempt)); continue; }
+      throw new Error(`${label}: nach ${attempts} Versuch(en) weiterhin kein gueltiges JSON (${err.message}). Letzter Rohtext-Ausschnitt: "${snippet}"`);
+    }
+  }
+}
+
 // ══════════════════════════════════════════════════════════════════════════
 // NEU (2026-09-03, kein n8n-Vorbild): Multi-Sprach-Pfad fuer regionslose LPs
 // (Schritt 2, Konzept_Mehrsprachige-LPs_2026-09-03_v2.md). Rein additiv --
@@ -348,16 +389,14 @@ async function main() {
   log('Rufe OpenAI (gpt-5.6-terra) für AI-Texte auf …');
   const aiTexteSystem = readPrompt('ai-texte.system.txt');
   const aiTexteUser = render(readPrompt('ai-texte.user.txt'), undefined);
-  const aiTexteResult = await chatCompletion({
-    apiKey: process.env.OPENAI_API_KEY, model: 'gpt-5.6-terra',
-    system: aiTexteSystem, user: aiTexteUser, maxTokens: 2600, timeoutMs: 180000, maxRetries: 1,
+  const { result: aiTexteResult, parsed: texteJsonResult } = await callOpenAiAndParseJson({
+    nodeFile: 'texte_json.js', model: 'gpt-5.6-terra', system: aiTexteSystem, user: aiTexteUser,
+    maxTokens: 2600, timeoutMs: 180000, maxRetries: 1, nodeOutputs, staticData, executionId,
+    label: 'AI Texte (DE+EN)', maxAttempts: 2,
   });
   nodeOutputs.set('AI Texte (DE+EN)', [aiTexteResult]);
 
   // ---- 9) Texte JSON ----
-  const texteJsonResult = runAllItems('texte_json.js', {
-    items: [aiTexteResult], nodeOutputs, staticData, executionId,
-  });
   nodeOutputs.set('Texte JSON', texteJsonResult);
 
   // ---- 10) "Texte ok?" Gate ----
@@ -370,14 +409,14 @@ async function main() {
   log('Rufe OpenAI (gpt-5.6-luna) für QA-Prüfung auf …');
   const qaAgentSystem = readPrompt('qa-agent.system.txt');
   const qaAgentUser = render(readPrompt('qa-agent.user.txt'), undefined);
-  const qaAgentResult = await chatCompletion({
-    apiKey: process.env.OPENAI_API_KEY, model: 'gpt-5.6-luna',
-    system: qaAgentSystem, user: qaAgentUser, maxTokens: 2600, timeoutMs: 180000, maxRetries: 1,
+  const { result: qaAgentResult, parsed: qaJsonResult } = await callOpenAiAndParseJson({
+    nodeFile: 'qa_json.js', model: 'gpt-5.6-luna', system: qaAgentSystem, user: qaAgentUser,
+    maxTokens: 2600, timeoutMs: 180000, maxRetries: 1, nodeOutputs, staticData, executionId,
+    label: 'QA-Agent', maxAttempts: 2,
   });
   nodeOutputs.set('QA-Agent', [qaAgentResult]);
 
   // ---- 12) QA JSON ----
-  const qaJsonResult = runAllItems('qa_json.js', { items: [qaAgentResult], nodeOutputs, staticData, executionId });
   nodeOutputs.set('QA JSON', qaJsonResult);
 
   // ---- 13) "Nachbessern?" Gate ----
@@ -395,16 +434,13 @@ async function main() {
 
     log('Rufe OpenAI (gpt-5.6-terra) für Nachbesserung auf …');
     const nachbesserungUser = render(readPrompt('nachbesserung.user.txt'), qaJsonResult[0].json);
-    const nachbesserungResult = await chatCompletion({
-      apiKey: process.env.OPENAI_API_KEY, model: 'gpt-5.6-terra',
+    const { result: nachbesserungResult, parsed: nachbesserungJsonResult } = await callOpenAiAndParseJson({
+      nodeFile: 'nachbesserung_json.js', model: 'gpt-5.6-terra',
       system: undefined, // Original-Node hat keine eigene System-Message konfiguriert
       user: nachbesserungUser, maxTokens: 2600, timeoutMs: 180000, maxRetries: 2,
+      nodeOutputs, staticData, executionId, label: 'Nachbesserung', maxAttempts: 2,
     });
     nodeOutputs.set('Nachbesserung', [nachbesserungResult]);
-
-    const nachbesserungJsonResult = runAllItems('nachbesserung_json.js', {
-      items: [nachbesserungResult], nodeOutputs, staticData, executionId,
-    });
     nodeOutputs.set('Nachbesserung JSON', nachbesserungJsonResult);
     htmlBauenInput = nachbesserungJsonResult[0];
   } else {
