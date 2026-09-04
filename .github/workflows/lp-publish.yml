@@ -12,7 +12,7 @@ name: Landingpage-Veroeffentlichung
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '45 * * * *'
+    - cron: '51 * * * *'
 
 concurrency:
   group: lp-publish-live
