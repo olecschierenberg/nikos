@@ -61,8 +61,8 @@ jobs:
           GITHUB_EVENT_SCHEDULE: ${{ github.event.schedule }}
         run: node index.js --live ${{ inputs.scope && format('--scope={0}', inputs.scope) || '' }}
 
-      - name: Telegram-Fehlermeldung senden
-        if: failure()
+      - name: Telegram-Erfolgsmeldung senden
+        if: success()
         continue-on-error: true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -70,5 +70,5 @@ jobs:
         run: |
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d chat_id="${TELEGRAM_CHAT_ID}" \
-            --data-urlencode text="⚠️ NIKOS-Automation fehlgeschlagen: Aktuelle Events
+            --data-urlencode text="✅ NIKOS-Automation erfolgreich: Aktuelle Events
           Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"

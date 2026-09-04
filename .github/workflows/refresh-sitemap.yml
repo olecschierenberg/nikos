@@ -99,7 +99,23 @@ jobs:
           git config user.email "nikos-sitemap-bot@users.noreply.github.com"
           git add sitemap.xml
           git commit -m "chore: Sitemap aus indexierbaren Seiten aktualisieren [skip ci]"
-          git push
+          attempt=1
+          until git push; do
+            if [ "$attempt" -ge 5 ]; then
+              echo "Push nach $attempt Versuchen weiterhin fehlgeschlagen (vermutlich andauernde Race-Situation) -- Abbruch."
+              exit 1
+            fi
+            echo "Push fehlgeschlagen (Versuch $attempt) -- vermutlich Race mit einem parallelen Workflow-Lauf. Rebase gegen origin/main und erneut versuchen …"
+            git fetch origin main
+            if ! git rebase origin/main; then
+              echo "Rebase fehlgeschlagen -- Abbruch."
+              git rebase --abort || true
+              exit 1
+            fi
+            sleep $(( (RANDOM % 10) + attempt * 3 ))
+            attempt=$((attempt + 1))
+          done
+          echo "Push erfolgreich (Versuch $attempt)."
 
       - name: Sitemap-Statistik protokollieren
         run: |

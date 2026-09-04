@@ -51,8 +51,8 @@ jobs:
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
         run: node index.js --live
 
-      - name: Telegram-Fehlermeldung senden
-        if: failure()
+      - name: Telegram-Erfolgsmeldung senden
+        if: success()
         continue-on-error: true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -60,5 +60,5 @@ jobs:
         run: |
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d chat_id="${TELEGRAM_CHAT_ID}" \
-            --data-urlencode text="⚠️ NIKOS-Automation fehlgeschlagen: Keyword-Kombinationen
+            --data-urlencode text="✅ NIKOS-Automation erfolgreich: Keyword-Kombinationen
           Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"

@@ -28,6 +28,8 @@ jobs:
     steps:
       - name: Repo auschecken
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Node.js einrichten
         uses: actions/setup-node@v4
@@ -54,10 +56,26 @@ jobs:
           git reset -- "loesungen/_ghtest-*" 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "Keine Aenderungen (z. B. weil keine deploy=x-Zeile mit gueltiger Vorschau da war) -- nichts zu committen."
-          else
-            git commit -m "Landingpage(s) veroeffentlicht (GitHub-Actions-Publisher, ohne n8n)"
-            git push
+            exit 0
           fi
+          git commit -m "Landingpage(s) veroeffentlicht (GitHub-Actions-Publisher, ohne n8n)"
+          attempt=1
+          until git push; do
+            if [ "$attempt" -ge 5 ]; then
+              echo "Push nach $attempt Versuchen weiterhin fehlgeschlagen (vermutlich andauernde Race-Situation) -- Abbruch."
+              exit 1
+            fi
+            echo "Push fehlgeschlagen (Versuch $attempt) -- vermutlich Race mit einem parallelen Workflow-Lauf. Rebase gegen origin/main und erneut versuchen …"
+            git fetch origin main
+            if ! git rebase origin/main; then
+              echo "Rebase fehlgeschlagen -- Abbruch."
+              git rebase --abort || true
+              exit 1
+            fi
+            sleep $(( (RANDOM % 10) + attempt * 3 ))
+            attempt=$((attempt + 1))
+          done
+          echo "Push erfolgreich (Versuch $attempt)."
 
       - name: Abgelaufene Kombinationen markieren (LIVE)
         working-directory: automation/lp-publish
@@ -65,8 +83,8 @@ jobs:
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
         run: node ablauf.js --live
 
-      - name: Telegram-Fehlermeldung senden
-        if: failure()
+      - name: Telegram-Erfolgsmeldung senden
+        if: success()
         continue-on-error: true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -74,5 +92,5 @@ jobs:
         run: |
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d chat_id="${TELEGRAM_CHAT_ID}" \
-            --data-urlencode text="⚠️ NIKOS-Automation fehlgeschlagen: Landingpage-Veroeffentlichung
+            --data-urlencode text="✅ NIKOS-Automation erfolgreich: Landingpage-Veroeffentlichung
           Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
