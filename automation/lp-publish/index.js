@@ -125,7 +125,10 @@ async function processMultiLangItem(item, langDirs, nodeOutputs, staticData, liv
     }
     log(`  ${LIVE ? 'LIVE' : 'TEST'}: ${lang}/lp/${langSlugDir}/index.html geschrieben (${entfernt.liveHtml.length} Zeichen).`);
     writtenUrls.push(entfernt.liveUrl);
-    if (lang === 'de') primaryEntry = { slug: meta.slug, liveUrl: entfernt.liveUrl, title: entfernt.linkTitle };
+    // meta.primary (NEU 2026-09-04, Schritt 3): lp-generator markiert die tatsaechliche
+    // Primaersprache dieser Gruppe (de bei regionslos, en bei Nicht-Deutschland-Region) --
+    // vorher hart auf 'de' geprueft, was bei EN-primaeren Auslandsseiten nie zugetroffen haette.
+    if (meta.primary === true || (meta.primary === undefined && primaryEntry === null && lang === 'de')) primaryEntry = { slug: meta.slug, liveUrl: entfernt.liveUrl, title: entfernt.linkTitle };
   }
 
   if (!writtenUrls.length) {

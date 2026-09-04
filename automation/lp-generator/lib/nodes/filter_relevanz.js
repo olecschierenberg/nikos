@@ -84,6 +84,142 @@ function langFor(region){ const r = low(region); return REGION_LANG[r] || 'de'; 
 // eine Zeile aendern muessen. index.js haelt zusaetzlich lib/i18n.js mit denselben
 // 8 Codes synchron (dortige Quelle fuer UI_L10N-Chrome-Texte im neuen Multi-Sprach-Pfad).
 const BASELINE_LANGS = ['de','en','fr','it','es','nl','da','pl'];
+// NON_DE_REGIONS (NEU 2026-09-04, Konzept Mehrsprachige LPs Schritt 3): Regionen, deren LAND
+// nicht Deutschland ist (aus Stadt-Fakten_Land-Spalte_2026-09-03.csv, Land != 'Deutschland').
+// Massgeblich ist das LAND, nicht die dort gesprochene Sprache (z.B. Basel/Bern/Wien sprechen
+// deutsch, liegen aber nicht in Deutschland -> hier trotzdem gelistet). Bewusst als Set direkt im
+// Code (wie REGION_LANG oben) statt einer Spalte im geteilten Produktiv-Sheet.
+const NON_DE_REGIONS = new Set([
+  'aalst',
+  'aarhus',
+  'alpe d\'huez',
+  'amsterdam',
+  'bad ischl',
+  'barcelona',
+  'basel',
+  'belgien',
+  'belgrad',
+  'benicàssim',
+  'bergen',
+  'bern',
+  'beuningen',
+  'biddinghuizen',
+  'bilbao',
+  'binche',
+  'boom',
+  'bourges',
+  'bregenz',
+  'brünn',
+  'brüssel',
+  'budapest',
+  'budva',
+  'buñol',
+  'cluj-napoca',
+  'cortina d\'ampezzo',
+  'dessel',
+  'dänemark',
+  'eupen',
+  'frankreich',
+  'frauenfeld',
+  'gdynia',
+  'genf',
+  'gent',
+  'glastonbury',
+  'graz',
+  'grossbritannien',
+  'göteborg',
+  'hasselt',
+  'helsinki',
+  'hilvarenbeek',
+  'hradec králové',
+  'imola',
+  'innsbruck',
+  'irland',
+  'istanbul',
+  'italien',
+  'karlovy vary',
+  'kiruna',
+  'kopenhagen',
+  'kostrzyn',
+  'krakau',
+  'landgraaf',
+  'liechtenstein',
+  'liepāja',
+  'lille',
+  'linz',
+  'lissabon',
+  'lublin',
+  'luxemburg',
+  'luxemburg (stadt)',
+  'luzern',
+  'lyon',
+  'maastricht',
+  'madrid',
+  'mailand',
+  'marseille',
+  'miskolc',
+  'montreux',
+  'nickelsdorf',
+  'niederlande',
+  'nijmegen',
+  'nizza',
+  'norrköping',
+  'novi sad',
+  'nyon',
+  'odense',
+  'oslo',
+  'ostende',
+  'ostrava',
+  'oulu',
+  'perth (schottland)',
+  'pilton',
+  'polen',
+  'porto',
+  'portugal',
+  'poznań',
+  'prag',
+  'pula',
+  'roskilde',
+  'rotterdam',
+  'salzburg',
+  'san fermín/pamplona',
+  'schweiz',
+  'seinäjoki',
+  'sevilla',
+  'siena',
+  'skanderborg',
+  'skopje',
+  'sopron',
+  'spanien',
+  'split',
+  'st. gallen',
+  'stavern',
+  'stockholm',
+  'straßburg',
+  'thessaloniki',
+  'tilburg',
+  'tisno',
+  'trenčín',
+  'tschechien',
+  'turku',
+  'ungarn',
+  'valencia',
+  'venedig',
+  'verona',
+  'viareggio',
+  'warschau',
+  'werchter',
+  'wien',
+  'wiltz',
+  'wrocław',
+  'zamárdi',
+  'zürich',
+  'évora',
+  'österreich',
+  'české budějovice'
+]);
+function isNonGermanyRegion(region) { return !!region && NON_DE_REGIONS.has(low(region)); }
+
 
 
 // ---- Anlass-Klassen ----
@@ -256,7 +392,25 @@ for (const it of items) {
   // sofort ueber den neuen Multi-Sprach-Pfad (siehe index.js) mit der 8er-Baseline. Rein
   // additiv -- Kombinationen MIT Region behalten exakt das bisherige Verhalten (index.js
   // prueft _ml und faellt sonst unveraendert auf den bestehenden Single-/Dual-Pfad zurueck).
-  out.push({ json: { ...j, _relevanz: rel, _grenzfall: grenzfall, _lang: _lc, _lang_label: _lm.label, _lang_flag: _lm.flag, _lang_locale: _lm.locale, _lang_mode: _lmode, _einwohner: einwohner, _regionstyp: regionstyp, _grossregion: _grossregion, _ml: !region, _target_langs: !region ? BASELINE_LANGS.slice() : null } });
+  // _ml/_target_langs/_primary_lang (NEU 2026-09-03, erweitert 2026-09-04 Schritt 3):
+// regionslose Kombinationen (Region leer) UND Kombinationen mit einer Region ausserhalb
+// Deutschlands gehen ueber den Multi-Sprach-Pfad (siehe index.js/runMultiLangBranch).
+// Regionslos -> primaer Deutsch, Ziel = Baseline. Nicht-Deutschland-Region -> primaer
+// Englisch, Ziel = Baseline + Landessprache (falls nicht schon in der Baseline).
+const _isForeignRegion = isNonGermanyRegion(region);
+const _mlActive = !region || _isForeignRegion;
+let _targetLangs = null;
+let _primaryLang = null;
+if (!region) {
+  _targetLangs = BASELINE_LANGS.slice();
+  _primaryLang = 'de';
+} else if (_isForeignRegion) {
+  const _targetSet = new Set(BASELINE_LANGS);
+  if (_lc) _targetSet.add(_lc);
+  _targetLangs = Array.from(_targetSet);
+  _primaryLang = 'en';
+}
+out.push({ json: { ...j, _relevanz: rel, _grenzfall: grenzfall, _lang: _lc, _lang_label: _lm.label, _lang_flag: _lm.flag, _lang_locale: _lm.locale, _lang_mode: _lmode, _einwohner: einwohner, _regionstyp: regionstyp, _grossregion: _grossregion, _ml: _mlActive, _target_langs: _targetLangs, _primary_lang: _primaryLang } });
 }
 
 // Sortierung: höchste Relevanz zuerst (10 -> 1)

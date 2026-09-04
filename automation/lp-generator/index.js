@@ -138,6 +138,21 @@ function toGenericFieldsDe(o) {
   return out;
 }
 
+// NEU (2026-09-04, Schritt 3): analoges Pendant zu toGenericFieldsDe() fuer Regionen
+// ausserhalb Deutschlands (primaer Englisch statt Deutsch, siehe Konzept Abschnitt 3b).
+// Liest die _en-Felder derselben AI-Texte-Antwort (die bestehende ai-texte.system.txt
+// befuellt bei einer Auslandsregion bereits headline_en/subhead_en/... vollstaendig,
+// siehe 'Modus ENGLISCH'/'Modus ZWEISPRACHIG') und nutzt die bereits geprueften
+// englischen Textbausteine fuer usp_intro/faq1 (lib/textbausteine.js).
+function toGenericFieldsEn(o) {
+  const out = { usp_intro: USP_INTRO_TRANSLATIONS.en, slug_kw: '', faq1_q: FAQ1_Q_TRANSLATIONS.en, faq1_a: FAQ1_A_TRANSLATIONS.en };
+  for (const k of GENERIC_KEYS) {
+    if (k === 'usp_intro' || k === 'slug_kw' || k === 'faq1_q' || k === 'faq1_a') continue;
+    out[k] = o['' + k + '_en'] || '';
+  }
+  return out;
+}
+
 function trimSlugMl(s) {
   s = (s || '').toString().toLowerCase().trim()
     .replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss')
@@ -165,7 +180,7 @@ async function callTranslation({ lang, deFields, problem, einsatz, region, rende
     quelltext_json: JSON.stringify(deFields) + (correctionNote ? ('\n\nHINWEIS (WICHTIG, unbedingt beachten): ' + correctionNote) : ''),
   });
   const result = await chatCompletion({
-    apiKey: process.env.OPENAI_API_KEY, model: 'gpt-5.6-terra',
+    apiKey: process.env.OPENAI_API_KEY, model: 'gpt-5.6-luna',
     system: readPrompt('uebersetzung.system.txt'), user: userPrompt,
     maxTokens: 1800, timeoutMs: 180000, maxRetries: 1,
   });
@@ -228,31 +243,30 @@ async function translateToLanguage(initialArgs) {
   return null;
 }
 
-async function runMultiLangBranch({ filterItem, deFieldsRaw, render, nodeOutputs, staticData, executionId, LIVE, REPO_ROOT }) {
+async function runMultiLangBranch({ filterItem, primaryFields, primaryLang, render, nodeOutputs, staticData, executionId, LIVE, REPO_ROOT }) {
   const problem = filterItem.json.Problem || '';
   const einsatz = filterItem.json.Einsatz || '';
-  const region = filterItem.json.Region || ''; // regionslos -> immer leer in diesem Zweig
-  const targetLangs = (filterItem.json._target_langs || ['de']).slice();
-  const deFields = toGenericFieldsDe(deFieldsRaw);
-  const slugDe = trimSlugMl(problem + ' ' + einsatz);
+  const region = filterItem.json.Region || ''; // regionslos -> leer; Nicht-Deutschland-Region (Schritt 3) -> gefuellt
+  const targetLangs = (filterItem.json._target_langs || [primaryLang]).slice();
+  const slugPrimary = trimSlugMl(problem + ' ' + einsatz);
 
-  log(`  Multi-Sprach-Pfad (regionslos): Ziel-Sprachen = ${targetLangs.join(', ')}, Primaer-Slug (DE) = "${slugDe}"`);
+  log(`  Multi-Sprach-Pfad (${region ? 'Region "' + region + '", primaer ' + primaryLang.toUpperCase() : 'regionslos'}): Ziel-Sprachen = ${targetLangs.join(', ')}, Primaer-Slug = "${slugPrimary}"`);
 
-  // ---- Uebersetzungen fuer alle Sprachen außer DE ----
-  const fieldsByLang = { de: deFields };
-  const slugByLang = { de: slugDe };
+  // ---- Uebersetzungen fuer alle Sprachen ausser der Primaersprache ----
+  const fieldsByLang = { [primaryLang]: primaryFields };
+  const slugByLang = { [primaryLang]: slugPrimary };
   for (const lang of targetLangs) {
-    if (lang === 'de') continue;
-    log(`  Uebersetze nach ${lang} (gpt-5.6-terra) …`);
+    if (lang === primaryLang) continue;
+    log(`  Uebersetze nach ${lang} (gpt-5.6-luna) …`);
     const translated = await translateToLanguage({
-      lang, deFields, problem, einsatz, region, render, nodeOutputs, staticData, executionId,
+      lang, deFields: primaryFields, problem, einsatz, region, render, nodeOutputs, staticData, executionId,
     });
     if (!translated) { log(`    [${lang}] uebersprungen (Uebersetzung/Check fehlgeschlagen).`); continue; }
     fieldsByLang[lang] = translated;
-    slugByLang[lang] = trimSlugMl(translated.slug_kw) || (slugDe + '-' + lang);
+    slugByLang[lang] = trimSlugMl(translated.slug_kw) || (slugPrimary + '-' + lang);
   }
 
-  const okLangs = Object.keys(fieldsByLang); // enthaelt mindestens 'de'
+  const okLangs = Object.keys(fieldsByLang); // enthaelt mindestens primaryLang
   log(`  Erfolgreich: ${okLangs.length}/${targetLangs.length} Sprachversion(en) (${okLangs.join(', ')}).`);
 
   // ---- Siblings-Liste (fuer hreflang + Sprachumschalter) ----
@@ -261,14 +275,14 @@ async function runMultiLangBranch({ filterItem, deFieldsRaw, render, nodeOutputs
   }));
 
   // ---- Je Sprache: HTML bauen + SEO-Gate (ML) + Datei schreiben ----
-  const groupDir = LIVE ? slugDe : `_ghtest-${slugDe}`;
+  const groupDir = LIVE ? slugPrimary : `_ghtest-${slugPrimary}`;
   const writtenLangs = [];
   for (const lang of okLangs) {
     const built = runAllItems('html_bauen_ml.js', {
       items: [{ json: {
-        lang, isPrimary: lang === 'de', fields: fieldsByLang[lang], region, einsatz, problem,
+        lang, isPrimary: lang === primaryLang, fields: fieldsByLang[lang], region, einsatz, problem,
         uiL10n: UI_L10N[lang] || UI_L10N.en, langMeta: LANG_META[lang] || { label: lang, flag: '🏳️', locale: lang },
-        siblings, defaultLang: 'de', robots: '<meta name="robots" content="noindex,nofollow">',
+        siblings, defaultLang: primaryLang, robots: '<meta name="robots" content="noindex,nofollow">',
       } }],
       nodeOutputs, staticData, executionId,
     })[0];
@@ -291,33 +305,34 @@ async function runMultiLangBranch({ filterItem, deFieldsRaw, render, nodeOutputs
       log(`    [${lang}] Integritaetspruefung fehlgeschlagen bei ${htmlFile} -- Sprachversion uebersprungen.`);
       continue;
     }
-    // meta.json: Sidecar mit dem sprachspezifischen Slug, damit lp-publish
-    // beim Promoten den korrekten Live-Pfad je Sprache kennt (Slugs
-    // unterscheiden sich je Sprache -- siehe uebersetzung.system.txt slug_kw).
-    fs.writeFileSync(path.join(langDir, 'meta.json'), JSON.stringify({ slug: slugByLang[lang], url: built.json.url }, null, 2), 'utf8');
+    // meta.json: Sidecar mit dem sprachspezifischen Slug + primary-Flag, damit lp-publish
+    // beim Promoten den korrekten Live-Pfad je Sprache UND die Primaersprache dieser Gruppe
+    // kennt (Primaersprache ist 'de' bei regionslos, 'en' bei Nicht-Deutschland-Region -- siehe
+    // filter_relevanz.js _primary_lang, Schritt 3).
+    fs.writeFileSync(path.join(langDir, 'meta.json'), JSON.stringify({ slug: slugByLang[lang], url: built.json.url, primary: lang === primaryLang }, null, 2), 'utf8');
     writtenLangs.push(lang);
     log(`    [${lang}] geschrieben: lp-preview/${groupDir}/${lang}/index.html (Slug "${slugByLang[lang]}").`);
   }
 
-  if (!writtenLangs.includes('de')) {
-    abort('Multi-Sprach-Pfad: Primaersprache DE konnte nicht geschrieben werden (SEO-Gate/Integritaet) -- Lauf abgebrochen.');
+  if (!writtenLangs.includes(primaryLang)) {
+    abort(`Multi-Sprach-Pfad: Primaersprache ${primaryLang.toUpperCase()} konnte nicht geschrieben werden (SEO-Gate/Integritaet) -- Lauf abgebrochen.`);
   }
 
-  // ---- Sheet aktualisieren (nur --live): slug = Gruppenordner (DE-Slug), pfad = primaere Live-URL ----
+  // ---- Sheet aktualisieren (nur --live): slug = Gruppenordner (Primaersprachen-Slug), pfad = primaere Live-URL ----
   if (LIVE) {
     await sheets.updateRowByRowNumber('Keywordkombinationen', filterItem.json.row_number, {
       Relevanz: filterItem.json._relevanz,
-      slug: slugDe,
-      pfad: `https://nikos.info/de/lp/${slugDe}/`,
+      slug: slugPrimary,
+      pfad: `https://nikos.info/${primaryLang}/lp/${slugPrimary}/`,
       erstellt_am: DateTime.now().toFormat('dd.MM.yyyy'),
       Problem: problem, Einsatz: einsatz, Region: region,
     });
-    log(`  Sheet "Keywordkombinationen" aktualisiert (Zeile ${filterItem.json.row_number}), slug="${slugDe}".`);
+    log(`  Sheet "Keywordkombinationen" aktualisiert (Zeile ${filterItem.json.row_number}), slug="${slugPrimary}".`);
   } else {
-    log(`  TEST-Modus: Sheet-Update uebersprungen (würde Zeile ${filterItem.json.row_number} mit slug="${slugDe}" als erledigt markieren).`);
+    log(`  TEST-Modus: Sheet-Update uebersprungen (würde Zeile ${filterItem.json.row_number} mit slug="${slugPrimary}" als erledigt markieren).`);
   }
 
-  log(`FERTIG (${LIVE ? 'LIVE' : 'TEST'}, Multi-Sprach): ${writtenLangs.length} Sprachversion(en) unter lp-preview/${groupDir}/<lang>/index.html`);
+  log(`FERTIG (${LIVE ? 'LIVE' : 'TEST'}, Multi-Sprach, primaer ${primaryLang.toUpperCase()}): ${writtenLangs.length} Sprachversion(en) unter lp-preview/${groupDir}/<lang>/index.html`);
 }
 
 async function main() {
@@ -454,8 +469,11 @@ async function main() {
   // neuen, additiven Pfad (mehrere Sprachdateien statt einer); alle anderen
   // Kombinationen durchlaufen unveraendert die bestehenden Schritte 14-19.
   if (filterItem.json._ml) {
+    const primaryLang = filterItem.json._primary_lang || 'de';
+    const rawOutput = htmlBauenInput.json.output || {};
+    const primaryFields = primaryLang === 'en' ? toGenericFieldsEn(rawOutput) : toGenericFieldsDe(rawOutput);
     await runMultiLangBranch({
-      filterItem, deFieldsRaw: htmlBauenInput.json.output || {}, render, nodeOutputs, staticData, executionId, LIVE, REPO_ROOT,
+      filterItem, primaryFields, primaryLang, render, nodeOutputs, staticData, executionId, LIVE, REPO_ROOT,
     });
     runEachItem('lock_freigeben.js', { item: { json: { error: false } }, nodeOutputs, staticData, executionId });
     return;
