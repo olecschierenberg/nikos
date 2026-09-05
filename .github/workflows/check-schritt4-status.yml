@@ -1,0 +1,37 @@
+name: Schritt-4-Status-Check (rein lesend)
+
+# Rein lesender Hilfs-Workflow: prueft nur den aktuellen Sheet-Stand der 15 per
+# Schritt-4-Reset (2026-09-05) zurueckgesetzten Zeilen und ob eine neu erzeugte
+# Seite unter dem neuen Schema bereits live ist. Schreibt NIE ins Sheet.
+# Siehe automation/lp-generator/scripts/check-schritt4-status.js.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  status:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: automation/lp-generator/package-lock.json
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation/lp-generator
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Status pruefen
+        working-directory: automation/lp-generator
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: node scripts/check-schritt4-status.js
