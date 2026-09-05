@@ -56,6 +56,17 @@ const PREVIEW_ONLY_SLUGS = [
 
 const ALL_TARGET_SLUGS = new Set([...LIVE_LEGACY_SLUGS, ...PREVIEW_ONLY_SLUGS]);
 
+// Diagnose-Stichwort je erwartetem Slug (fuer den Fall, dass der exakte Slug nicht
+// gefunden wird -- z. B. weil die Zeile im Sheet unter einer leicht anderen
+// Schreibweise steht). Wird NUR zum Suchen/Anzeigen benutzt, nie zum Aendern.
+const DIAGNOSE_KEYWORD = {
+  'evakueringsvarsling-bergenfest-bergen': 'bergen',
+  'emergency-warning-system-glastonbury-festival-glastonbury': 'glastonbury',
+  'bezoekerssturing-carnaval-aalst': 'aalst',
+  'bezoekersveiligheid-stadsfeesten-gent': 'gent',
+  'latogatoi-tajekoztatas-fesztival-budapest': 'budapest',
+};
+
 // Sicherheitsnetz: NICHT anfassen, wenn "pfad" bereits nach neuem Schema aussieht
 // (".../<lang>/lp/..."), z. B. falls das Skript versehentlich 2x laeuft, nachdem
 // eine Zeile schon neu erzeugt wurde.
@@ -108,6 +119,25 @@ async function main() {
   if (notFound.length) {
     console.log(`ACHTUNG -- ${notFound.length} erwartete(r) Slug(s) NICHT im Sheet gefunden (Tippfehler? bereits anders benannt?):`);
     for (const s of notFound) console.log(`    - ${s}`);
+
+    console.log('\n---- Diagnose fuer nicht gefundene Slugs (nur Anzeige, keine Aenderung) ----');
+    for (const s of notFound) {
+      const keyword = DIAGNOSE_KEYWORD[s];
+      if (!keyword) { console.log(`  [${s}] kein Diagnose-Stichwort hinterlegt.`); continue; }
+      const kw = keyword.toLowerCase();
+      const matches = rows.filter((row) => {
+        const j = row.json;
+        return [j.slug, j.pfad, j.Einsatz, j.Region].some((v) => String(v || '').toLowerCase().includes(kw));
+      });
+      if (!matches.length) {
+        console.log(`  [${s}] kein Treffer fuer Stichwort "${keyword}" in slug/pfad/Einsatz/Region -- Zeile existiert vermutlich nicht (mehr) im Sheet.`);
+        continue;
+      }
+      console.log(`  [${s}] ${matches.length} Kandidat(en) fuer Stichwort "${keyword}":`);
+      for (const row of matches.slice(0, 5)) {
+        console.log(`      Zeile ${row.json.row_number}: Einsatz="${row.json.Einsatz}", Region="${row.json.Region}", slug="${row.json.slug}", pfad="${row.json.pfad}"`);
+      }
+    }
   } else {
     console.log('Alle erwarteten Slugs wurden im Sheet gefunden.');
   }
