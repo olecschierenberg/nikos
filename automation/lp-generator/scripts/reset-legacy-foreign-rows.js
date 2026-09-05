@@ -35,10 +35,20 @@ const LIVE_LEGACY_SLUGS = [
   'notfallwarnsystem-basel-tattoo-basel',
   'sprachalarmierung-basel-tattoo-basel',
   'unwetterwarnung-basel-tattoo-basel',
-  'evakueringsvarsling-bergenfest-bergen',
+  // korrigiert (war Tippfehler): echte Sheet-Zeile 146 hat diesen Slug, nicht
+  // "evakueringsvarsling-bergenfest-bergen" (Diagnose-Dry-Run vom 2026-09-05):
+  'evakuierungsbeschallung-bergenfest-bergen',
   'nodvarsling-bergenfest-bergen',
   'evakuierung-tomorrowland-winter-alpe-d-huez',
-  'emergency-warning-system-glastonbury-festival-glastonbury',
+  // korrigiert: die alte, per Sheet erzeugte Zeile hiess
+  // "notfallwarnsystem-glastonbury-festival-glastonbury" (Datei am 2026-08-20
+  // manuell durch eine Version mit englischem Slug + DE-Uebersetzung + Sprach-
+  // schalter ERSETZT, siehe Commits cba9fa6/969404b/0eb19f8 -- die alte Datei
+  // existiert nicht mehr auf der Platte). "emergency-warning-system-..." hat
+  // KEINE zugehoerige Sheet-Zeile und wird hier bewusst NICHT aufgenommen --
+  // das ist eine manuell gepflegte Seite, kein automatisch generierter Alt-
+  // Schema-Fall. Reset betrifft nur die Sheet-Zeile mit dem alten Slug:
+  'notfallwarnsystem-glastonbury-festival-glastonbury',
   'crowdmanagement-carnaval-bezoekerssturing-aalst',
   'nooddoorgave-carnaval-aalst',
   'crowdmanagement-gentse-feesten-gent',
@@ -48,11 +58,13 @@ const LIVE_LEGACY_SLUGS = [
 // ---- Gruppe B: nur als Vorschau in lp-preview/ liegengeblieben (nie veroeffentlicht,
 // unter dem alten Ein-Sprachen-Schema erzeugt, vor dem Schritt-3-Fix). Kein Redirect
 // noetig -- die stehengebliebene Vorschau-Datei wird separat aufgeraeumt. ----
-const PREVIEW_ONLY_SLUGS = [
-  'bezoekerssturing-carnaval-aalst',
-  'bezoekersveiligheid-stadsfeesten-gent',
-  'latogatoi-tajekoztatas-fesztival-budapest',
-];
+// Alle 3 urspruenglich hier vermuteten Slugs entsprachen (Diagnose-Dry-Run
+// 2026-09-05) Sheet-Zeilen, deren slug/pfad noch NIE ausgefuellt wurde --
+// diese Zeilen sind also schon jetzt "erstellen=x & slug leer" und werden
+// vom naechsten normalen Generator-Lauf automatisch aufgegriffen. Die
+// verwaisten Vorschau-Dateien wurden bereits separat aufgeraeumt (nach
+// _to_delete/ verschoben). Kein Sheet-Reset noetig -- Gruppe bleibt leer.
+const PREVIEW_ONLY_SLUGS = [];
 
 const ALL_TARGET_SLUGS = new Set([...LIVE_LEGACY_SLUGS, ...PREVIEW_ONLY_SLUGS]);
 
@@ -60,11 +72,7 @@ const ALL_TARGET_SLUGS = new Set([...LIVE_LEGACY_SLUGS, ...PREVIEW_ONLY_SLUGS]);
 // gefunden wird -- z. B. weil die Zeile im Sheet unter einer leicht anderen
 // Schreibweise steht). Wird NUR zum Suchen/Anzeigen benutzt, nie zum Aendern.
 const DIAGNOSE_KEYWORD = {
-  'evakueringsvarsling-bergenfest-bergen': 'bergen',
-  'emergency-warning-system-glastonbury-festival-glastonbury': 'glastonbury',
-  'bezoekerssturing-carnaval-aalst': 'aalst',
-  'bezoekersveiligheid-stadsfeesten-gent': 'gent',
-  'latogatoi-tajekoztatas-fesztival-budapest': 'budapest',
+  'notfallwarnsystem-glastonbury-festival-glastonbury': 'glastonbury',
 };
 
 // Sicherheitsnetz: NICHT anfassen, wenn "pfad" bereits nach neuem Schema aussieht
