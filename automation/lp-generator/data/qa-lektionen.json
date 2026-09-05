@@ -96,5 +96,12 @@
     "einsatz": "IGA Ruhrgebiet 2027",
     "problem": "Besucherinformation",
     "mangel": "Weichmacher in FAQ1, FAQ2 und FAQ4 entfernt bzw. in klare Aussagen umformuliert."
+  },
+  {
+    "datum": "05.09.2026",
+    "region": "Essen",
+    "einsatz": "IGA Ruhrgebiet 2027",
+    "problem": "Besucherinformation",
+    "mangel": "Weichmacher „unter Umständen“ in FAQ3 entfernt | Redundante Beschreibung der Bereichssteuerung zwischen USP und FAQ4 reduziert"
   }
 ]
