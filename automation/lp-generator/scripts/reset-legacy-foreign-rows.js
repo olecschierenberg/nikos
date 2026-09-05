@@ -40,15 +40,19 @@ const LIVE_LEGACY_SLUGS = [
   'evakuierungsbeschallung-bergenfest-bergen',
   'nodvarsling-bergenfest-bergen',
   'evakuierung-tomorrowland-winter-alpe-d-huez',
-  // korrigiert: die alte, per Sheet erzeugte Zeile hiess
-  // "notfallwarnsystem-glastonbury-festival-glastonbury" (Datei am 2026-08-20
-  // manuell durch eine Version mit englischem Slug + DE-Uebersetzung + Sprach-
-  // schalter ERSETZT, siehe Commits cba9fa6/969404b/0eb19f8 -- die alte Datei
-  // existiert nicht mehr auf der Platte). "emergency-warning-system-..." hat
-  // KEINE zugehoerige Sheet-Zeile und wird hier bewusst NICHT aufgenommen --
-  // das ist eine manuell gepflegte Seite, kein automatisch generierter Alt-
-  // Schema-Fall. Reset betrifft nur die Sheet-Zeile mit dem alten Slug:
-  'notfallwarnsystem-glastonbury-festival-glastonbury',
+  // Glastonbury bewusst NICHT in dieser Liste: weder der alte Slug
+  // ("notfallwarnsystem-glastonbury-festival-glastonbury", Datei am
+  // 2026-08-20 manuell durch eine Version mit englischem Slug + DE-
+  // Uebersetzung + Sprachschalter ersetzt, siehe Commits
+  // cba9fa6/969404b/0eb19f8) noch der neue ("emergency-warning-system-...")
+  // hat aktuell eine ausgefuellte Sheet-Zeile (Diagnose-Dry-Run 2026-09-05:
+  // 6 Kandidatenzeilen "Glastonbury Festival"/"Glastonbury", alle mit
+  // slug/pfad noch leer). Diese Zeilen sind also schon "erstellen=x & slug
+  // leer" und werden vom naechsten Generator-Lauf automatisch neu erzeugt --
+  // kein Sheet-Reset noetig. Die aktuell live liegende, manuell gepflegte
+  // Seite (loesungen/emergency-warning-system-glastonbury-festival-
+  // glastonbury/) braucht dann spaeter separat einen Redirect-Stub, sobald
+  // eine der neuen Zeilen ueber die Multi-Sprach-Pipeline live geht.
   'crowdmanagement-carnaval-bezoekerssturing-aalst',
   'nooddoorgave-carnaval-aalst',
   'crowdmanagement-gentse-feesten-gent',
@@ -71,9 +75,7 @@ const ALL_TARGET_SLUGS = new Set([...LIVE_LEGACY_SLUGS, ...PREVIEW_ONLY_SLUGS]);
 // Diagnose-Stichwort je erwartetem Slug (fuer den Fall, dass der exakte Slug nicht
 // gefunden wird -- z. B. weil die Zeile im Sheet unter einer leicht anderen
 // Schreibweise steht). Wird NUR zum Suchen/Anzeigen benutzt, nie zum Aendern.
-const DIAGNOSE_KEYWORD = {
-  'notfallwarnsystem-glastonbury-festival-glastonbury': 'glastonbury',
-};
+const DIAGNOSE_KEYWORD = {};
 
 // Sicherheitsnetz: NICHT anfassen, wenn "pfad" bereits nach neuem Schema aussieht
 // (".../<lang>/lp/..."), z. B. falls das Skript versehentlich 2x laeuft, nachdem
