@@ -1,0 +1,53 @@
+name: Schritt-4-Migration (Sheet-Reset Alt-Schema-Fremdlaender-LPs)
+
+# EINMAL-WORKFLOW (nicht zeitgesteuert, nur manuell ueber "Run workflow"): setzt fuer die
+# bekannten Alt-Schema-Fremdlaender-Zeilen in Tab "Keywordkombinationen" die Felder
+# erstellt_am/slug/pfad zurueck auf leer, damit der normale LP-Generator (index.js, mit
+# Schritt-3-Fix) sie ueber den Multi-Sprach-Pfad neu erzeugt. Siehe
+# automation/lp-generator/scripts/reset-legacy-foreign-rows.js fuer die genaue Liste
+# und Begruendung.
+#
+# Ablauf Nutzer: 1) einmal OHNE Haken bei "live" laufen lassen (Dry-Run, Log pruefen),
+# 2) danach erneut MIT Haken bei "live" laufen lassen (schreibt wirklich ins Sheet).
+# Nach erfolgreichem Live-Lauf kann dieser Workflow wieder entfernt werden.
+
+on:
+  workflow_dispatch:
+    inputs:
+      live:
+        description: 'Wirklich schreiben (sonst nur Dry-Run/Vorschau im Log)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  reset-rows:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: automation/lp-generator/package-lock.json
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation/lp-generator
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Sheet-Reset ausfuehren
+        working-directory: automation/lp-generator
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          if [ "${{ inputs.live }}" = "true" ]; then
+            node scripts/reset-legacy-foreign-rows.js --live
+          else
+            node scripts/reset-legacy-foreign-rows.js
+          fi
