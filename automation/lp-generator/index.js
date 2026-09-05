@@ -243,6 +243,23 @@ async function translateToLanguage(initialArgs) {
   return null;
 }
 
+async function buildAndGateCheck({ lang, isPrimary, fields, region, einsatz, problem, siblings, defaultLang, nodeOutputs, staticData, executionId }) {
+  const built = runAllItems('html_bauen_ml.js', {
+    items: [{ json: {
+      lang, isPrimary, fields, region, einsatz, problem,
+      uiL10n: UI_L10N[lang] || UI_L10N.en, langMeta: LANG_META[lang] || { label: lang, flag: '🏳️', locale: lang },
+      siblings, defaultLang, robots: '<meta name="robots" content="noindex,nofollow">',
+    } }],
+    nodeOutputs, staticData, executionId,
+  })[0];
+  try {
+    runEachItem('seo_gate_ml.js', { item: built, nodeOutputs, staticData, executionId });
+    return { ok: true, built };
+  } catch (err) {
+    return { ok: false, reason: err.message, built };
+  }
+}
+
 async function runMultiLangBranch({ filterItem, primaryFields, primaryLang, render, nodeOutputs, staticData, executionId, LIVE, REPO_ROOT }) {
   const problem = filterItem.json.Problem || '';
   const einsatz = filterItem.json.Einsatz || '';
@@ -252,49 +269,102 @@ async function runMultiLangBranch({ filterItem, primaryFields, primaryLang, rend
 
   log(`  Multi-Sprach-Pfad (${region ? 'Region "' + region + '", primaer ' + primaryLang.toUpperCase() : 'regionslos'}): Ziel-Sprachen = ${targetLangs.join(', ')}, Primaer-Slug = "${slugPrimary}"`);
 
-  // ---- Uebersetzungen fuer alle Sprachen ausser der Primaersprache ----
   const fieldsByLang = { [primaryLang]: primaryFields };
   const slugByLang = { [primaryLang]: slugPrimary };
-  for (const lang of targetLangs) {
-    if (lang === primaryLang) continue;
+
+  async function translateOnce(lang) {
     log(`  Uebersetze nach ${lang} (gpt-5.6-luna) …`);
-    const translated = await translateToLanguage({
+    return translateToLanguage({
       lang, deFields: primaryFields, problem, einsatz, region, render, nodeOutputs, staticData, executionId,
     });
-    if (!translated) { log(`    [${lang}] uebersprungen (Uebersetzung/Check fehlgeschlagen).`); continue; }
+  }
+
+  // ---- Phase 1: Uebersetzen (mit 1 sofortigem Wiederholungsversuch bei Uebersetzungsfehler) ----
+  for (const lang of targetLangs) {
+    if (lang === primaryLang) continue;
+    let translated = await translateOnce(lang);
+    if (!translated) {
+      log(`    [${lang}] Uebersetzung fehlgeschlagen -- sofortiger 2. Versuch …`);
+      translated = await translateOnce(lang);
+    }
+    if (!translated) { log(`    [${lang}] uebersprungen (Uebersetzung nach 2 Versuchen fehlgeschlagen).`); continue; }
     fieldsByLang[lang] = translated;
     slugByLang[lang] = trimSlugMl(translated.slug_kw) || (slugPrimary + '-' + lang);
   }
 
-  const okLangs = Object.keys(fieldsByLang); // enthaelt mindestens primaryLang
-  log(`  Erfolgreich: ${okLangs.length}/${targetLangs.length} Sprachversion(en) (${okLangs.join(', ')}).`);
+  // ---- Phase 2: Bauen + SEO-Gate (ML), mit 1 sofortigem Wiederholungsversuch (neue Uebersetzung) bei Gate-Ablehnung ----
+  // Vorlaeufige Sibling-Liste NUR fuer den Gate-Check -- das Gate prueft ausschliesslich eigene Meta-Werte
+  // (z. B. Meta-Beschreibungslaenge), keine hreflang-Konsistenz, daher unschaedlich als Zwischenstand.
+  let provisionalSiblings = Object.keys(fieldsByLang).map((lang) => ({
+    lang, slug: slugByLang[lang], url: `https://nikos.info/${lang}/lp/${slugByLang[lang]}/`, meta: LANG_META[lang],
+  }));
 
-  // ---- Siblings-Liste (fuer hreflang + Sprachumschalter) ----
+  const gateOkLangs = new Set();
+  for (const lang of Object.keys(fieldsByLang)) {
+    let result = await buildAndGateCheck({
+      lang, isPrimary: lang === primaryLang, fields: fieldsByLang[lang], region, einsatz, problem,
+      siblings: provisionalSiblings, defaultLang: primaryLang, nodeOutputs, staticData, executionId,
+    });
+    if (!result.ok && lang !== primaryLang) {
+      log(`    [${lang}] SEO-Gate (ML) blockiert: ${result.reason} -- sofortiger 2. Versuch (neue Uebersetzung) …`);
+      const retried = await translateOnce(lang);
+      if (retried) {
+        fieldsByLang[lang] = retried; // Slug bleibt unveraendert (bereits in provisionalSiblings referenziert)
+        result = await buildAndGateCheck({
+          lang, isPrimary: false, fields: retried, region, einsatz, problem,
+          siblings: provisionalSiblings, defaultLang: primaryLang, nodeOutputs, staticData, executionId,
+        });
+      }
+      if (!result.ok) {
+        log(`    [${lang}] SEO-Gate (ML) weiterhin blockiert (2. Versuch): ${result.reason} -- Kandidat fuer Schlussphase.`);
+      }
+    }
+    if (result.ok) gateOkLangs.add(lang);
+  }
+
+  // ---- Phase 3: Schlussphase -- am Ende des gesamten Laufs fehlende Sprachen noch einmal komplett versuchen ----
+  // Zweck (Nutzer-Vorgabe 2026-09-05): moeglichst immer alle Sprachen vorhanden -- UND die Wartezeit bis hierhin
+  // (alle bisherigen Uebersetzungen/Builds) plus eine zusaetzliche kurze Pause wirken als natuerliche Verzoegerung
+  // fuer den Fall einer kurzfristigen Server-Ueberlastung, bevor der letzte Versuch startet.
+  const stillMissing = targetLangs.filter((lang) => lang !== primaryLang && !gateOkLangs.has(lang));
+  if (stillMissing.length > 0) {
+    log(`  Schlussphase: ${stillMissing.length} Sprache(n) fehlen noch (${stillMissing.join(', ')}) -- warte 30s, dann letzter Versuch …`);
+    await new Promise((resolve) => setTimeout(resolve, 30000));
+    for (const lang of stillMissing) {
+      const translated = await translateOnce(lang);
+      if (!translated) { log(`    [${lang}] Schlussphase: Uebersetzung erneut fehlgeschlagen -- endgueltig uebersprungen.`); continue; }
+      fieldsByLang[lang] = translated;
+      if (!slugByLang[lang]) slugByLang[lang] = trimSlugMl(translated.slug_kw) || (slugPrimary + '-' + lang);
+      const result = await buildAndGateCheck({
+        lang, isPrimary: false, fields: translated, region, einsatz, problem,
+        siblings: provisionalSiblings, defaultLang: primaryLang, nodeOutputs, staticData, executionId,
+      });
+      if (result.ok) { gateOkLangs.add(lang); log(`    [${lang}] Schlussphase erfolgreich.`); }
+      else { log(`    [${lang}] Schlussphase: SEO-Gate weiterhin blockiert (${result.reason}) -- endgueltig uebersprungen.`); }
+    }
+  }
+
+  // ---- Finale Sibling-Liste NUR aus tatsaechlich erfolgreichen Sprachen ----
+  // (behebt Bug: vorher konnten hreflang-Verweise auf Sprachen zeigen, die am Gate scheiterten und nie
+  // geschrieben wurden -- kaputte hreflang-Links auf 404-Seiten.)
+  const okLangs = Object.keys(fieldsByLang).filter((lang) => gateOkLangs.has(lang));
   const siblings = okLangs.map((lang) => ({
     lang, slug: slugByLang[lang], url: `https://nikos.info/${lang}/lp/${slugByLang[lang]}/`, meta: LANG_META[lang],
   }));
 
-  // ---- Je Sprache: HTML bauen + SEO-Gate (ML) + Datei schreiben ----
+  // ---- Alle finalen Seiten mit der VOLLSTAENDIGEN Sibling-Liste bauen (billig, keine erneuten KI-Aufrufe) und schreiben ----
   const groupDir = LIVE ? slugPrimary : `_ghtest-${slugPrimary}`;
   const writtenLangs = [];
   for (const lang of okLangs) {
-    const built = runAllItems('html_bauen_ml.js', {
-      items: [{ json: {
-        lang, isPrimary: lang === primaryLang, fields: fieldsByLang[lang], region, einsatz, problem,
-        uiL10n: UI_L10N[lang] || UI_L10N.en, langMeta: LANG_META[lang] || { label: lang, flag: '🏳️', locale: lang },
-        siblings, defaultLang: primaryLang, robots: '<meta name="robots" content="noindex,nofollow">',
-      } }],
-      nodeOutputs, staticData, executionId,
-    })[0];
-
-    let seoOk = true;
-    try {
-      runEachItem('seo_gate_ml.js', { item: built, nodeOutputs, staticData, executionId });
-    } catch (err) {
-      log(`    [${lang}] SEO-Gate (ML) blockiert: ${err.message} -- diese Sprachversion wird in diesem Lauf uebersprungen.`);
-      seoOk = false;
+    const finalResult = await buildAndGateCheck({
+      lang, isPrimary: lang === primaryLang, fields: fieldsByLang[lang], region, einsatz, problem,
+      siblings, defaultLang: primaryLang, nodeOutputs, staticData, executionId,
+    });
+    if (!finalResult.ok) {
+      log(`    [${lang}] Unerwarteter Gate-Fehler beim Endbau (${finalResult.reason}) -- Sprachversion uebersprungen.`);
+      continue;
     }
-    if (!seoOk) continue;
+    const built = finalResult.built;
 
     const langDir = path.join(REPO_ROOT, 'lp-preview', groupDir, lang);
     fs.mkdirSync(langDir, { recursive: true });
@@ -313,6 +383,8 @@ async function runMultiLangBranch({ filterItem, primaryFields, primaryLang, rend
     writtenLangs.push(lang);
     log(`    [${lang}] geschrieben: lp-preview/${groupDir}/${lang}/index.html (Slug "${slugByLang[lang]}").`);
   }
+
+  log(`  Erfolgreich: ${writtenLangs.length}/${targetLangs.length} Sprachversion(en) (${writtenLangs.join(', ')}).`);
 
   if (!writtenLangs.includes(primaryLang)) {
     abort(`Multi-Sprach-Pfad: Primaersprache ${primaryLang.toUpperCase()} konnte nicht geschrieben werden (SEO-Gate/Integritaet) -- Lauf abgebrochen.`);
