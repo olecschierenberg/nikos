@@ -103,5 +103,12 @@
     "einsatz": "IGA Ruhrgebiet 2027",
     "problem": "Besucherinformation",
     "mangel": "Weichmacher „unter Umständen“ in FAQ3 entfernt | Redundante Beschreibung der Bereichssteuerung zwischen USP und FAQ4 reduziert"
+  },
+  {
+    "datum": "07.09.2026",
+    "region": "Aachen",
+    "einsatz": "CHIO Aachen",
+    "problem": "Besucherinformation",
+    "mangel": "Weichmacher „unter Umständen“ in der Aussage zur Nutzung eines digitalen Funknetzes entfernt."
   }
 ]
