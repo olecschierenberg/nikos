@@ -1,0 +1,18 @@
+name: Schritt-4-Korrektursuche (rein lesend)
+
+# Rein lesender Hilfs-Workflow (Ergaenzung zu check-schritt4-status.yml):
+# der taegliche "Keyword-Kombinationen"-Workflow sortiert das Sheet nach
+# jedem Lauf komplett neu nach Relevanz (sheets.sortByRelevanceDesc) --
+# Zeilennummern sind damit NICHT stabil ueber mehrere Tage. Dieser Workflow
+# sucht deshalb inhaltlich nach allen aktuell offenen (erstellen=x, slug/
+# pfad leer) Zeilen, damit sich die 15 per Schritt-4-Reset (2026-09-05)
+# zurueckgesetzten Zeilen anhand von Problem/Einsatz/Region wiederfinden
+# lassen. Schreibt NIE ins Sheet. Absichtlich im YAML-Flow-Stil geschrieben
+# (statt Block-Einrueckung), um Editor-Autoindent-Probleme zu vermeiden.
+# Siehe automation/lp-generator/scripts/find-legacy-foreign-rows.js.
+
+on: {workflow_dispatch: {}}
+
+permissions: {contents: read}
+
+jobs: {suche: {runs-on: ubuntu-latest, timeout-minutes: 5, steps: [{name: "Repo auschecken", uses: "actions/checkout@v4"}, {name: "Node.js einrichten", uses: "actions/setup-node@v4", with: {node-version: "22", cache: "npm", cache-dependency-path: "automation/lp-generator/package-lock.json"}}, {name: "Abhaengigkeiten installieren", working-directory: "automation/lp-generator", run: "npm install --omit=dev --no-audit --no-fund"}, {name: "Offene Zeilen inhaltlich suchen", working-directory: "automation/lp-generator", env: {GOOGLE_SERVICE_ACCOUNT_JSON: "${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}"}, run: "node scripts/find-legacy-foreign-rows.js"}]}}
