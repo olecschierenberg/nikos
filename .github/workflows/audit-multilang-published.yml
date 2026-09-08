@@ -1,4 +1,4 @@
-name: Schritt-4-Audit: veroeffentlichte Mehrsprachen-LPs (rein lesend)
+name: "Schritt-4-Audit: veroeffentlichte Mehrsprachen-LPs (rein lesend)"
 
 # Prueft ALLE Sheet-Zeilen mit pfad im neuen Schema (nikos.info/<lang>/lp/
 # <slug>/) per HTTP, ob die Seite wirklich live ist. Hintergrund: bis zum
