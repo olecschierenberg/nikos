@@ -17,7 +17,7 @@
  * veroeffentlichte Seite wurde dadurch im Sheet als fertig gefuehrt, ist
  * aber nie tatsaechlich live gegangen. Fix (bereits lokal committet,
  * Commit a677ef3, wartet auf deploy.bat): .gitignore-Regel entfernt +
- * git add um "*/lp" ergaenzt.
+  * git add um das Muster "*(Slash)lp" ergaenzt.
    *
    * Aufruf: node audit-multilang-published.js
  */
