@@ -10,7 +10,6 @@
 *.bak.html
 *-backup*.html
 backups-audit-*
-lp/
 
 
 # Temp/Scratch (Claude-Sitzungen)

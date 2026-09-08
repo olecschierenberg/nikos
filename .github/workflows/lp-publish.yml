@@ -52,8 +52,8 @@ jobs:
         run: |
           git config user.name "nikos-lp-publish[bot]"
           git config user.email "actions@github.com"
-          git add "lp-preview" "loesungen" 2>/dev/null || true
-          git reset -- "loesungen/_ghtest-*" 2>/dev/null || true
+          git add "lp-preview" "loesungen" */lp 2>/dev/null || true
+          git reset -- "loesungen/_ghtest-*" "*/lp/_ghtest-*" 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "Keine Aenderungen (z. B. weil keine deploy=x-Zeile mit gueltiger Vorschau da war) -- nichts zu committen."
             exit 0
