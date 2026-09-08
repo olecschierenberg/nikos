@@ -145,7 +145,7 @@ function toGenericFieldsDe(o) {
 // siehe 'Modus ENGLISCH'/'Modus ZWEISPRACHIG') und nutzt die bereits geprueften
 // englischen Textbausteine fuer usp_intro/faq1 (lib/textbausteine.js).
 function toGenericFieldsEn(o) {
-  const out = { usp_intro: USP_INTRO_TRANSLATIONS.en, slug_kw: '', faq1_q: FAQ1_Q_TRANSLATIONS.en, faq1_a: FAQ1_A_TRANSLATIONS.en };
+  const out = { usp_intro: USP_INTRO_TRANSLATIONS.en, slug_kw: o.slug_kw || '', faq1_q: FAQ1_Q_TRANSLATIONS.en, faq1_a: FAQ1_A_TRANSLATIONS.en };
   for (const k of GENERIC_KEYS) {
     if (k === 'usp_intro' || k === 'slug_kw' || k === 'faq1_q' || k === 'faq1_a') continue;
     out[k] = o['' + k + '_en'] || '';
@@ -265,7 +265,7 @@ async function runMultiLangBranch({ filterItem, primaryFields, primaryLang, rend
   const einsatz = filterItem.json.Einsatz || '';
   const region = filterItem.json.Region || ''; // regionslos -> leer; Nicht-Deutschland-Region (Schritt 3) -> gefuellt
   const targetLangs = (filterItem.json._target_langs || [primaryLang]).slice();
-  const slugPrimary = trimSlugMl(problem + ' ' + einsatz);
+  const slugPrimary = primaryLang === 'de' ? trimSlugMl(problem + ' ' + einsatz) : (trimSlugMl(primaryFields.slug_kw) || trimSlugMl(problem + ' ' + einsatz));
 
   log(`  Multi-Sprach-Pfad (${region ? 'Region "' + region + '", primaer ' + primaryLang.toUpperCase() : 'regionslos'}): Ziel-Sprachen = ${targetLangs.join(', ')}, Primaer-Slug = "${slugPrimary}"`);
 
