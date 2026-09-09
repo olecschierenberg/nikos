@@ -1,0 +1,74 @@
+name: "Fix: EN-Redirect-Stubs loeschen (2026-09-09)"
+
+# EINMAL-WORKFLOW (nicht zeitgesteuert, nur manuell ueber "Run workflow"):
+# siehe automation/lp-generator/scripts/delete-en-redirect-stubs.js fuer
+# Hintergrund (Nutzer-Auftrag: letzte 4 Redirect-Stubs jetzt entfernen,
+# nachdem serverseitige Cloudflare-Umleitungsregeln fuer alle 4 alten
+# URLs angelegt und verifiziert wurden). Feste Liste von 4 Verzeichnissen,
+# jede einzeln per Canonical-URL-Check abgesichert, bevor sie geloescht wird.
+#
+# Ablauf: 1) ohne Haken bei "live" laufen lassen (Dry-Run, Log pruefen),
+# 2) danach mit Haken bei "live" laufen lassen.
+
+on:
+  workflow_dispatch:
+    inputs:
+      live:
+        description: 'Wirklich loeschen (sonst nur Dry-Run/Vorschau im Log)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  delete:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Loeschung durchfuehren
+        working-directory: automation/lp-generator
+        run: |
+          if [ "${{ inputs.live }}" = "true" ]; then
+            node scripts/delete-en-redirect-stubs.js --live
+          else
+            node scripts/delete-en-redirect-stubs.js
+          fi
+
+      - name: Geloeschte Seiten committen
+        run: |
+          git config user.name "nikos-lp-fix[bot]"
+          git config user.email "actions@github.com"
+          git add -A -- "en/lp"
+          if git diff --cached --quiet; then
+            echo "Keine Aenderungen -- nichts zu committen."
+            exit 0
+          fi
+          git commit -m "EN-Redirect-Stubs entfernt (4 Verzeichnisse, Cloudflare-Umleitungsregeln aktiv)"
+          attempt=1
+          until git push; do
+            if [ "$attempt" -ge 5 ]; then
+              echo "Push nach $attempt Versuchen weiterhin fehlgeschlagen -- Abbruch."
+              exit 1
+            fi
+            echo "Push fehlgeschlagen (Versuch $attempt) -- rebase gegen origin/main und erneut versuchen ..."
+            git fetch origin main
+            if ! git rebase origin/main; then
+              echo "Rebase fehlgeschlagen -- Abbruch."
+              git rebase --abort || true
+              exit 1
+            fi
+            sleep $(( (RANDOM % 10) + attempt * 3 ))
+            attempt=$((attempt + 1))
+          done
+          echo "Push erfolgreich (Versuch $attempt)."
