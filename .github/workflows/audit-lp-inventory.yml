@@ -1,0 +1,41 @@
+name: "Audit: LP-Bestand vs. Sheet (Dateileichen/Duplikate) (2026-09-09)"
+
+# EINMAL-WORKFLOW (nicht zeitgesteuert, nur manuell ueber "Run workflow"):
+# REIN LESEND, aendert weder Dateien noch das Sheet. Siehe
+# automation/lp-generator/scripts/audit-lp-inventory.js fuer Hintergrund und
+# genaue Logik. Ergebnis im Log unter "Retrofit durchfuehren" -> Schritt
+# aufklappen bzw. "View raw logs" fuer den vollstaendigen, unabgeschnittenen
+# Text.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: automation/lp-generator/package-lock.json
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation/lp-generator
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Audit durchfuehren
+        working-directory: automation/lp-generator
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: node scripts/audit-lp-inventory.js
