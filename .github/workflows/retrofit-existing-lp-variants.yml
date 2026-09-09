@@ -1,0 +1,92 @@
+name: "Fix: bestehende LPs auf Text-Varianz umstellen (2026-09-09)"
+
+# EINMAL-WORKFLOW (nicht zeitgesteuert, nur manuell ueber "Run workflow"):
+# siehe automation/lp-generator/scripts/retrofit-existing-lp-variants.js fuer
+# Hintergrund. Ersetzt bei bereits veroeffentlichten LPs (loesungen/*/ und
+# */lp/*/) den alten fixen USP-Intro-/FAQ1-Text durch die passende, aus
+# Problem+Einsatz+Region deterministisch gewaehlte Variante -- OHNE neue
+# KI-Aufrufe, rein Text-Ersetzung.
+#
+# WICHTIG: das Skript aendert NUR Dateien, bei denen der erwartete alte Text/
+# die erwartete Struktur eindeutig gefunden wird -- alles andere wird
+# uebersprungen und im Log als NICHT_GEFUNDEN/MEHRDEUTIG/OHNE Sheet-Zuordnung
+# ausgewiesen. Vor dem Live-Lauf unbedingt den vollstaendigen Dry-Run-Log
+# pruefen (Actions-Log, Schritt "Retrofit durchfuehren" -> anklicken zum
+# Aufklappen).
+#
+# Ablauf Nutzer: 1) einmal OHNE Haken bei "live" laufen lassen (Dry-Run, Log
+# vollstaendig pruefen -- Anzahl "wuerden geaendert" sowie NICHT_GEFUNDEN/
+# MEHRDEUTIG-Listen kontrollieren), 2) danach erneut MIT Haken bei "live"
+# laufen lassen. Nach erfolgreichem Live-Lauf kann dieser Workflow wieder
+# entfernt werden.
+
+on:
+  workflow_dispatch:
+    inputs:
+      live:
+        description: 'Wirklich schreiben (sonst nur Dry-Run/Vorschau im Log)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  retrofit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: automation/lp-generator/package-lock.json
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation/lp-generator
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Retrofit durchfuehren
+        working-directory: automation/lp-generator
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          if [ "${{ inputs.live }}" = "true" ]; then
+            node scripts/retrofit-existing-lp-variants.js --live
+          else
+            node scripts/retrofit-existing-lp-variants.js
+          fi
+
+      - name: Geaenderte Seiten committen
+        run: |
+          git config user.name "nikos-lp-fix[bot]"
+          git config user.email "actions@github.com"
+          git add -A -- "loesungen" "de/lp" "en/lp" "fr/lp" "it/lp" "es/lp" "nl/lp" "da/lp" "pl/lp"
+          if git diff --cached --quiet; then
+            echo "Keine Aenderungen -- nichts zu committen."
+            exit 0
+          fi
+          git commit -m "Bestehende LPs auf Text-Varianz (USP-Intro/FAQ1) umgestellt"
+          attempt=1
+          until git push; do
+            if [ "$attempt" -ge 5 ]; then
+              echo "Push nach $attempt Versuchen weiterhin fehlgeschlagen -- Abbruch."
+              exit 1
+            fi
+            echo "Push fehlgeschlagen (Versuch $attempt) -- rebase gegen origin/main und erneut versuchen ..."
+            git fetch origin main
+            if ! git rebase origin/main; then
+              echo "Rebase fehlgeschlagen -- Abbruch."
+              git rebase --abort || true
+              exit 1
+            fi
+            sleep $(( (RANDOM % 10) + attempt * 3 ))
+            attempt=$((attempt + 1))
+          done
+          echo "Push erfolgreich (Versuch $attempt)."
