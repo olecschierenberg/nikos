@@ -29,9 +29,21 @@
  *        TEMPLATE), NICHT Exact-Match -- FAQ1 war auf diesem Pfad vor dem
  *        13c-Fix nie hart eingefroren, der Text variiert schon heute frei
  *        pro Seite.
- *  - Mehrsprachiger Pfad (<lang>/lp/<slug>/index.html): usp_intro UND FAQ1
- *    (Frage+Antwort) beide EXAKTER Text-Ersatz (hartes Override griff hier
- *    von Anfang an durchgehend, siehe toGenericFieldsForLang()).
+ *  - Mehrsprachiger Pfad (<lang>/lp/<slug>/index.html): usp_intro bleibt
+ *    NUR exakter Text-Ersatz (uspFull = usp_intro + ' ' + usp im selben
+ *    <p>-Tag -- wie beim klassischen Pfad legitime freie Fortsetzung, siehe
+ *    html_bauen_ml.js, daher NICHT strukturell ueberschreibbar). FAQ1
+ *    (NACHTRAG 2026-09-09, Nutzer-Vorgabe "im Zweifelsfall umruesten"):
+ *    erst EXAKTER Ersatz versuchen, bei GENAU 0 Treffern automatisch
+ *    STRUKTURELLER Fallback (erster <span class="faq-q">/<div
+ *    class="faq-item__body">-Block, ohne data-de/-en da ML-Seiten
+ *    einsprachig sind) -- FAQ1 ist wie im klassischen Pfad ein in sich
+ *    abgeschlossener Block ohne legitime freie Fortsetzung, darf also blind
+ *    ueberschrieben werden. Deckt insbesondere Sekundaersprachen-Seiten ab,
+ *    deren FAQ1 durch den Primaersprache-Bugfix (siehe Memory) VOR dem Fix
+ *    nie mit dem gepoolten Text ueberschrieben wurde, sondern freie/nicht
+ *    freigegebene KI-Uebersetzung trug. Bei >1 exakten Treffern (MEHRDEUTIG)
+ *    weiterhin KEIN Fallback, sondern manuelle Pruefung.
  *
  * NIKOS-Wort-Verlinkung: alte wie neue Textbausteine werden vor dem
  * Vergleichen/Ersetzen durch dieselbe Verlinkungs-Logik wie feinschliff.js /
@@ -129,6 +141,29 @@ function replaceFirstTagContent(content, openTagRe, closeTag, newInner, label, s
   return { content: content.slice(0, openEnd) + newInner + content.slice(closeIdx), changed: true };
 }
 
+// FAQ1 auf dem ML-Pfad (NACHTRAG 2026-09-09, Nutzer-Vorgabe "im Zweifelsfall
+// umruesten"): erst Exact-Match versuchen (praezise "schon Variante 0"-
+// Erkennung, schneller/sichererer Pfad). Bei GENAU 0 Treffern faellt die
+// Funktion automatisch auf strukturellen Ersatz (erster FAQ-Block) zurueck --
+// anders als usp_intro hat FAQ1 KEINE legitime freie Fortsetzung im selben
+// Tag (siehe html_bauen.js/html_bauen_ml.js: FAQ1 ist ein in sich
+// abgeschlossener Block), darf also blind ueberschrieben werden. Der
+// haeufigste 0-Treffer-Fall: Sekundaersprachen-Seiten, deren FAQ1 vor dem
+// Primaersprache-Bugfix (siehe Memory) NIE mit dem gepoolten Text
+// ueberschrieben wurde, sondern freie (nicht freigegebene) KI-Uebersetzung
+// trug -- genau diese Faelle SOLLEN retroaktiv auf den freigegebenen Pool
+// umgestellt werden. Bei >1 Treffern (MEHRDEUTIG) bewusst NICHT
+// zurueckfallen, sondern wie gehabt zur manuellen Pruefung loggen.
+function replaceFaq1FieldMl(content, oldExact, newExact, openTagRe, closeTag, newInner, label, stats) {
+  const n = countOccurrences(content, oldExact);
+  if (n === 1) {
+    if (oldExact === newExact) { stats.alreadyVariant0.push(label); return { content, changed: false }; }
+    return { content: content.split(oldExact).join(newExact), changed: true };
+  }
+  if (n > 1) { stats.ambiguous.push(label); return { content, changed: false }; }
+  return replaceFirstTagContent(content, openTagRe, closeTag, newInner, label + ' (strukturell -- nie exakt eingefroren gewesen)', stats);
+}
+
 function writeVerified(file, content) {
   fs.writeFileSync(file, content, 'utf8');
   const back = fs.readFileSync(file, 'utf8');
@@ -215,11 +250,11 @@ async function main() {
         content = res.content; changedAny = changedAny || res.changed;
       }
       {
-        const res = replaceExactlyOnce(content, faq1QFor(lang, 0), faq1QFor(lang, faqIdx), `${lang}/lp/${slug} faq1_q`, stats);
+        const res = replaceFaq1FieldMl(content, faq1QFor(lang, 0), faq1QFor(lang, faqIdx), /<span class="faq-q">/, '</span>', faq1QFor(lang, faqIdx), `${lang}/lp/${slug} faq1_q`, stats);
         content = res.content; changedAny = changedAny || res.changed;
       }
       {
-        const res = replaceExactlyOnce(content, faq1AFor(lang, 0), faq1AFor(lang, faqIdx), `${lang}/lp/${slug} faq1_a`, stats);
+        const res = replaceFaq1FieldMl(content, faq1AFor(lang, 0), faq1AFor(lang, faqIdx), /<div class="faq-item__body">/, '</div>', faq1AFor(lang, faqIdx), `${lang}/lp/${slug} faq1_a`, stats);
         content = res.content; changedAny = changedAny || res.changed;
       }
 
