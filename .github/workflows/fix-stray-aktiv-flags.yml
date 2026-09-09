@@ -1,0 +1,53 @@
+name: "Fix: verwaiste aktiv=x Flags (12 Zeilen, 2026-09-09)"
+
+# EINMAL-WORKFLOW (nicht zeitgesteuert, nur manuell ueber "Run workflow"):
+# siehe automation/lp-generator/scripts/fix-stray-aktiv-flags.js fuer
+# Hintergrund. Leert NUR die Spalte "aktiv" bei den 12 per Diagnose
+# (diagnose-sheet-states.js, Lauf 34337400854) gefundenen Zeilen mit
+# erstellen=x & deploy=x & aktiv=x bei leerem slug/pfad/erstellt_am.
+#
+# Ablauf Nutzer: 1) einmal OHNE Haken bei "live" laufen lassen (Dry-Run,
+# Log pruefen: sollten genau 12 Zeilen sein), 2) danach erneut MIT Haken
+# bei "live" laufen lassen. Nach erfolgreichem Live-Lauf kann dieser
+# Workflow wieder entfernt werden.
+
+on:
+  workflow_dispatch:
+    inputs:
+      live:
+        description: 'Wirklich schreiben (sonst nur Dry-Run/Vorschau im Log)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: automation/lp-generator/package-lock.json
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation/lp-generator
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Verwaiste aktiv-Flags reparieren
+        working-directory: automation/lp-generator
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          if [ "${{ inputs.live }}" = "true" ]; then
+            node scripts/fix-stray-aktiv-flags.js --live
+          else
+            node scripts/fix-stray-aktiv-flags.js
+          fi
