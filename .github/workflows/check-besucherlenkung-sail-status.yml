@@ -1,0 +1,38 @@
+name: "Check: Sail Amsterdam 2030 Sheet-Status (2026-09-09)"
+
+# EINMAL-DIAGNOSE-WORKFLOW (nicht zeitgesteuert, nur manuell ueber "Run
+# workflow"): rein lesend, siehe automation/lp-generator/scripts/
+# check-besucherlenkung-sail-status.js. Teil des autonomen Monitorings
+# fuer den Sail-Amsterdam-Slug-Bug (Details: Memory-Datei
+# nikos-landingpages-seo.md). Kann nach Auswertung wieder entfernt werden.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: automation/lp-generator/package-lock.json
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation/lp-generator
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Status pruefen
+        working-directory: automation/lp-generator
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: node scripts/check-besucherlenkung-sail-status.js
