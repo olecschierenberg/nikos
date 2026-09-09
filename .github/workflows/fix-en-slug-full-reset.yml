@@ -15,6 +15,10 @@ on:
         description: 'Wirklich schreiben (sonst nur Dry-Run/Vorschau im Log)'
         type: boolean
         default: false
+      force:
+        description: 'aktiv-Sicherheitscheck ueberspringen (noetig, weil die Seite bereits unter dem falschen Slug live ist)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -45,11 +49,14 @@ jobs:
         env:
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
         run: |
+          ARGS=""
           if [ "${{ inputs.live }}" = "true" ]; then
-            node scripts/fix-en-slug-full-reset.js --live
-          else
-            node scripts/fix-en-slug-full-reset.js
+            ARGS="$ARGS --live"
           fi
+          if [ "${{ inputs.force }}" = "true" ]; then
+            ARGS="$ARGS --force"
+          fi
+          node scripts/fix-en-slug-full-reset.js $ARGS
 
       - name: Geloeschte Vorschau committen
         run: |
