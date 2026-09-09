@@ -58,7 +58,14 @@ const REGION_LANG = {
   'nijmegen':'nl','tilburg':'nl','brüssel':'en','bruessel':'en',
   'luxemburg (stadt)':'fr',
   'poznań':'pl','poznan':'pl','wrocław':'pl','wroclaw':'pl','warschau':'pl',
-  'prag':'cs','hradec králové':'cs','hradec kralove':'cs','karlovy vary':'cs'
+  'prag':'cs','hradec králové':'cs','hradec kralove':'cs','karlovy vary':'cs',
+  // NEU (2026-09-09, Luecken-Fix im Rahmen der Primaersprache-Umstellung, siehe
+  // unten _primaryLang): diese drei NON_DE_REGIONS-Eintraege hatten bisher KEINEN
+  // REGION_LANG-Eintrag und fielen daher auf den 'de'-Default zurueck -- fuer
+  // Lublin (Polen) und die beiden belgisch-flaemischen Staedte Hasselt/Ostende
+  // ist das sprachlich falsch (anders als beim ebenfalls per Default auf 'de'
+  // fallenden DACH-Cluster, wo der Default korrekt ist, siehe Kommentar oben).
+  'lublin':'pl','hasselt':'nl','ostende':'nl'
 };
 // LANG_META: ISO-Code -> Anzeigename (Landessprache), Flagge, og:locale. Fuer HTML-Ausgabe (Toggle/SEO).
 const LANG_META = {
@@ -408,7 +415,21 @@ if (!region) {
   const _targetSet = new Set(BASELINE_LANGS);
   if (_lc) _targetSet.add(_lc);
   _targetLangs = Array.from(_targetSet);
-  _primaryLang = 'en';
+  // GEAENDERT (2026-09-09, Nutzer-Auftrag "Primaersprache auf die tatsaechliche
+  // Landessprache umstellen"): bisher war die Primaersprache bei Auslandsregionen
+  // immer hart 'en'. Jetzt: die tatsaechliche Landessprache (_lc, z.B. 'fr' fuer
+  // Frankreich, 'de' fuer Basel/Wien/Bern), SOFERN sie zum geprueften
+  // Baseline-Pool gehoert (lib/textbausteine.js haelt dafuer freigegebene
+  // USP-Intro-/FAQ1-Uebersetzungen vor -- der compliance-relevante FAQ1-Text
+  // darf NICHT ungeprueft in einer Sprache ohne freigegebene Uebersetzung
+  // stehen, siehe dortiger Kommentar). Fuer Landessprachen ausserhalb der
+  // aktuellen 8er-Baseline (z.B. 'cs','hu','ro','pt','sv','fi','tr','lv','hr',
+  // 'sr','mk','el','sk','no') bleibt Englisch primaer, bis die Baseline um
+  // diese Sprachen erweitert wird -- sie werden weiterhin als zusaetzliche
+  // Sprachversion (targetLangs) erzeugt, nur eben nicht als Primaersprache/
+  // Hub-Eintrag. 'en' selbst ist immer im Baseline-Pool, daher aendert sich
+  // fuer echte oder mehrdeutige englischsprachige Regionen nichts.
+  _primaryLang = BASELINE_LANGS.includes(_lc) ? _lc : 'en';
 }
 out.push({ json: { ...j, _relevanz: rel, _grenzfall: grenzfall, _lang: _lc, _lang_label: _lm.label, _lang_flag: _lm.flag, _lang_locale: _lm.locale, _lang_mode: _lmode, _einwohner: einwohner, _regionstyp: regionstyp, _grossregion: _grossregion, _ml: _mlActive, _target_langs: _targetLangs, _primary_lang: _primaryLang } });
 }

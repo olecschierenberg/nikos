@@ -16,6 +16,12 @@ const j = $json;
 const t = j.translated || {};
 const s = j.source || {};
 const lang = j.lang || '?';
+// sourceLang (NEU 2026-09-09, Primaersprache-Umstellung): frueher war die
+// Quelle IMMER Deutsch, daher genuegte "lang !== 'de'" fuer den
+// Unveraendert-Check unten. Jetzt kann die Quelle jede Baseline-Sprache sein
+// (z.B. Franzoesisch primaer -> Deutsch als Zielsprache) -- Default 'de' fuer
+// Rueckwaertskompatibilitaet, falls sourceLang (noch) nicht mitgegeben wird.
+const sourceLang = j.sourceLang || 'de';
 const issues = [];
 
 // 1) Alle Felder vorhanden und nicht leer
@@ -49,9 +55,13 @@ for (const k of REQUIRED_KEYS) {
   }
 }
 
-// 6) Kein 1:1-Kopieren des deutschen Originals (Non-Op-Uebersetzung), ausser
-//    bei sehr kurzen/technischen Feldern wo Ueberschneidung normal ist.
-if (lang !== 'de') {
+// 6) Kein 1:1-Kopieren des Originals (Non-Op-Uebersetzung), ausser bei sehr
+//    kurzen/technischen Feldern wo Ueberschneidung normal ist. Vergleich
+//    gegen die tatsaechliche Ausgangssprache (sourceLang), nicht hart gegen
+//    'de' -- sonst wuerde dieser Check bei einer Uebersetzung NACH Deutsch
+//    (moeglich, seit die Primaersprache auch Franzoesisch/Italienisch/... sein
+//    kann) faelschlich uebersprungen.
+if (lang !== sourceLang) {
   for (const k of ['headline','subhead','intro','usp']) {
     const sv = String(s[k] || '').trim();
     const tv = String(t[k] || '').trim();
