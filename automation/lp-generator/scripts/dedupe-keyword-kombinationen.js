@@ -110,17 +110,36 @@ async function main() {
 
     const label = `"${g[0].json.Problem}" | "${g[0].json.Einsatz}" | "${g[0].json.Region}"`;
 
+    // NEU: mehrere Zeilen mit Score 100 (aktiv=x) sind NUR dann ein echter,
+    // nicht automatisch aufloesbarer Konflikt, wenn sie auf UNTERSCHIEDLICHE
+    // pfad/slug zeigen (zwei tatsaechlich verschiedene Live-Seiten fuer
+    // denselben Themenkomplex). Zeigen alle auf denselben pfad, ist es nur
+    // eine doppelte Sheet-Buchung derselben einen Live-Seite -- unbedenklich
+    // automatisch aufloesbar (aelteste erstellt_am, sonst niedrigste
+    // row_number gewinnt).
     if (maxScore >= 100 && winners.length > 1) {
-      conflictCount++;
-      log(`\n!!! KONFLIKT (Score ${maxScore} bei ${winners.length} Zeilen, KEINE automatische Aufloesung) ${label}`);
-      for (const x of scored) {
-        const j = x.r.json;
-        log(`    Zeile ${j.row_number}: Score=${x.s} erstellen="${j.erstellen}" deploy="${j.deploy}" aktiv="${j.aktiv}" slug="${j.slug}" pfad="${j.pfad}" erstellt_am="${j.erstellt_am}"`);
+      const distinctUrls = new Set(winners.map((x) => norm(x.r.json.pfad) + '|' + norm(x.r.json.slug)));
+      if (distinctUrls.size > 1) {
+        conflictCount++;
+        log(`\n!!! KONFLIKT (Score ${maxScore} bei ${winners.length} Zeilen, UNTERSCHIEDLICHE Live-URLs, KEINE automatische Aufloesung) ${label}`);
+        for (const x of scored) {
+          const j = x.r.json;
+          log(`    Zeile ${j.row_number}: Score=${x.s} erstellen="${j.erstellen}" deploy="${j.deploy}" aktiv="${j.aktiv}" slug="${j.slug}" pfad="${j.pfad}" erstellt_am="${j.erstellt_am}"`);
+        }
+        continue;
       }
-      continue;
+      log(`\nHinweis: ${winners.length} Zeilen mit Score 100 in Gruppe ${label}, aber IDENTISCHE Live-URL (${[...distinctUrls][0]}) -- keine zwei verschiedenen Live-Seiten, nur doppelte Sheet-Buchung derselben Seite. Wird automatisch aufgeloest.`);
     }
 
-    winners.sort((a, b) => a.r.json.row_number - b.r.json.row_number);
+    function parseDate(s) {
+      const m = norm(s).match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+      return m ? `${m[3]}-${m[2]}-${m[1]}` : '9999-99-99'; // leer/unparsbar -> ans Ende
+    }
+    winners.sort((a, b) => {
+      const da = parseDate(a.r.json.erstellt_am), db = parseDate(b.r.json.erstellt_am);
+      if (da !== db) return da < db ? -1 : 1;
+      return a.r.json.row_number - b.r.json.row_number;
+    });
     const winner = winners[0];
     const losers = scored.filter((x) => x !== winner);
 
