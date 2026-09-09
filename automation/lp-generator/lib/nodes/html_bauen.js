@@ -59,8 +59,52 @@ const esc = s => (s==null?'':String(s));
 const jsonld = {'@context':'https://schema.org','@type':'FAQPage','about':{'@type':'Place','name':region},'mainEntity':[1,2,3,4].map(n=>({'@type':'Question','name':esc(d['faq'+n+'_q_'+L]),'acceptedAnswer':{'@type':'Answer','text':esc(d['faq'+n+'_a_'+L])}}))};
 const jsonldStr = '<script type="application/ld+json">\n'+JSON.stringify(jsonld,null,2)+'\n<' + '/script>';
 function clampDesc(t,max){return clampByBoundary(t,max,60);}
-const OPEN_DE='NIKOS bündelt Durchsagen, Alarmierung, Besucherinformation und Steuerung in einer einzigen, netzunabhängigen Plattform. ';
-const OPEN_EN='NIKOS combines announcements, alerting, visitor information and control in a single, network-independent platform. ';
+// GEAENDERT (2026-09-09, Nutzer-Freigabe FAQ-Textvarianten_Entwurf_2026-09-09.md):
+// aus dem frueheren EINEN festen usp_intro-Satz wurden 6 geprueft-freigegebene
+// Varianten (Rotation mit Synonymen der 4 Kernbegriffe, z. B. Alarmierung <->
+// Systemmonitoring, Besucherinformation <-> Crowd Management/Besucherlenkung
+// -- Ziel: weniger Duplicate-Content-Risiko ueber ~200 Seiten hinweg). Diese
+// Datei laeuft in einer new Function()-Sandbox OHNE require() (siehe
+// runCodeNode.js) -- deshalb bewusst eine EIGENSTAENDIGE, duplizierte Kopie
+// der Varianten + der Auswahllogik (identisch zu lib/textbausteine.js
+// USP_INTRO_DE_VARIANTS/USP_INTRO_TRANSLATIONS.en/pickUspIndex). Aendert sich
+// eine der beiden Kopien inhaltlich, MUSS die andere manuell nachgezogen
+// werden (wie schon vorher bei OPEN_DE/FIXED_USP_INTRO_DE in index.js).
+const OPEN_DE_VARIANTS=[
+  'NIKOS bündelt Durchsagen, Alarmierung, Besucherinformation und Steuerung in einer einzigen, netzunabhängigen Plattform. ',
+  'Mit NIKOS laufen Durchsagen, Systemmonitoring, Besucherinformation und Gerätesteuerung auf einer einzigen Plattform zusammen — vollständig unabhängig vom öffentlichen Netz. ',
+  'Eine Plattform für alles: NIKOS vereint Besucherinformation, Alarmierung, Crowd Management und Steuerung netzunabhängig in einem System. ',
+  'NIKOS führt Durchsagen, Alarmierung, Besucherlenkung und Gerätesteuerung in einer netzunabhängigen Plattform zusammen. ',
+  'Statt mehrerer Einzellösungen: NIKOS vereint Besucherinformation, Systemmonitoring, Besucherlenkung und Steuerung in einer netzunabhängigen Plattform. ',
+  'Durchsagen, Systemmonitoring, Crowd Management und Gerätesteuerung laufen bei NIKOS in einer einzigen, vom öffentlichen Netz unabhängigen Plattform zusammen. ',
+];
+const OPEN_EN_VARIANTS=[
+  'NIKOS combines announcements, alerting, visitor information and control in a single, network-independent platform. ',
+  'With NIKOS, announcements, system monitoring, visitor information and device control come together on a single platform — fully independent of the public network. ',
+  'One platform for everything: NIKOS unites visitor information, alerting, crowd management and control in a single, network-independent system. ',
+  'NIKOS brings together announcements, alerting, visitor guidance and device control in a single network-independent platform. ',
+  'Instead of multiple separate solutions: NIKOS unites visitor information, system monitoring, visitor guidance and control in a single network-independent platform. ',
+  'Announcements, system monitoring, crowd management and device control come together with NIKOS in a single platform independent of the public network. ',
+];
+function _hashSeed(str){var h=0;var s=String(str||'');for(var i=0;i<s.length;i++){h=(h*31+s.charCodeAt(i))>>>0;}return h;}
+var _uspSeed=[problem,einsatz,region].map(function(v){return String(v||'').trim().toLowerCase();}).join('|');
+var _uspText=(problem||'')+' '+(einsatz||'');
+var _uspHints=[
+  {re:/crowd[\s-]?management/i,idxs:[2,5]},
+  {re:/besucherlenkung|visitor guidance/i,idxs:[3,4]},
+  {re:/systemmonitoring|system monitoring|statusmonitoring/i,idxs:[1,4,5]},
+  {re:/geräte(steuerung)?|device control/i,idxs:[1,3,5]},
+];
+var _uspIdx=null;
+for(var _hi=0;_hi<_uspHints.length;_hi++){
+  if(_uspHints[_hi].re.test(_uspText)){
+    var _cands=_uspHints[_hi].idxs.filter(function(i){return i<OPEN_DE_VARIANTS.length;});
+    if(_cands.length){_uspIdx=_cands[_hashSeed(_uspSeed)%_cands.length];break;}
+  }
+}
+if(_uspIdx===null)_uspIdx=_hashSeed(_uspSeed)%OPEN_DE_VARIANTS.length;
+const OPEN_DE=OPEN_DE_VARIANTS[_uspIdx];
+const OPEN_EN=OPEN_EN_VARIANTS[_uspIdx];
 const h1BlockHtml = IS_DUAL ? ('<h1 data-de>'+esc(d.headline_de)+'</h1>\n      <h1 data-en>'+esc(d.headline_en)+'</h1>') : ('<h1 data-'+L+'>'+esc(d['headline_'+L])+'</h1>');
 const base = {TITLE_DE:buildTitle(splitCo(d['headline_'+L])),TITLE_EN:buildTitle(splitCo(d['headline_'+L])),H1_BLOCK:h1BlockHtml,HEADLINE_DE:d.headline_de,HEADLINE_EN:d.headline_en,SUBHEAD_DE:d.subhead_de,SUBHEAD_EN:d.subhead_en,INTRO_DE:d.intro_de,INTRO_EN:d.intro_en,USP_DE:(d.usp_de?((IS_DUAL?'':OPEN_DE)+d.usp_de):''),USP_EN:(d.usp_en?(OPEN_EN+d.usp_en):''),REGION:region,JSON_LD:jsonldStr,META_DESC:clampDesc(d['intro_'+L],155),HTML_LANG:HTML_LANG,OG_LOCALE:OG_LOCALE,LOCAL_FLAG:LOCAL_FLAG,LOCAL_LABEL:LOCAL_LABEL,DEFAULT_BUCKET:DEFAULT_BUCKET,IS_DUAL:IS_DUAL,NAV_SYSTEM:LOC.NAV_SYSTEM,NAV_APPS:LOC.NAV_APPS,NAV_PRODUCTS:LOC.NAV_PRODUCTS,NAV_REFS:LOC.NAV_REFS,NAV_RENTAL:LOC.NAV_RENTAL,NAV_INSIGHTS:LOC.NAV_INSIGHTS,NAV_RENTNOW:LOC.NAV_RENTNOW,NAV_CONTACT:LOC.NAV_CONTACT,BANNER_KW:LOC.BANNER_KW,EYEBROW_WHY:LOC.EYEBROW_WHY,EYEBROW_CHALLENGE:LOC.EYEBROW_CHALLENGE,EYEBROW_SOLUTION:LOC.EYEBROW_SOLUTION,USP_HEADING:LOC.USP_HEADING,EYEBROW_FAQ:LOC.EYEBROW_FAQ,FAQ_HEADING:LOC.FAQ_HEADING,CTA_HEADING:LOC.CTA_HEADING,CTA_BODY:LOC.CTA_BODY,CTA_BUTTON:LOC.CTA_BUTTON,FOOTER_COPY:LOC.FOOTER_COPY,FOOTER_HOME:LOC.FOOTER_HOME,FOOTER_TERMS:LOC.FOOTER_TERMS,FOOTER_RENTALTERMS:LOC.FOOTER_RENTALTERMS,FOOTER_PRIVACY:LOC.FOOTER_PRIVACY,FOOTER_LEGAL:LOC.FOOTER_LEGAL,FOOTER_ALLCASES:LOC.FOOTER_ALLCASES};
 for(const n of [1,2,3,4]){base['FAQ'+n+'_Q_DE']=d['faq'+n+'_q_de'];base['FAQ'+n+'_A_DE']=d['faq'+n+'_a_de'];base['FAQ'+n+'_Q_EN']=d['faq'+n+'_q_en'];base['FAQ'+n+'_A_EN']=d['faq'+n+'_a_en'];}
