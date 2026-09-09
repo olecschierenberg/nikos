@@ -89,6 +89,44 @@ async function updateRowByRowNumber(sheetName, rowNumber, columns) {
   });
 }
 
+// Liefert die numerische sheetId (gid) eines Tabs anhand seines Namens --
+// wird für deleteDimension-Requests benötigt (die arbeiten mit sheetId, nicht
+// mit dem Tab-Namen).
+async function getSheetIdByName(sheetName) {
+  const sheets = sheetsClient();
+  const res = await sheets.spreadsheets.get({ spreadsheetId: SPREADSHEET_ID });
+  const sheet = (res.data.sheets || []).find((s) => s.properties && s.properties.title === sheetName);
+  if (!sheet) throw new Error(`Tab "${sheetName}" nicht gefunden.`);
+  return sheet.properties.sheetId;
+}
+
+// Löscht die angegebenen Zeilen (1-basierte row_number, Header = Zeile 1)
+// physisch aus dem Sheet. WICHTIG: sortiert intern absteigend und baut die
+// deleteDimension-Requests in dieser Reihenfolge, damit das Löschen einer
+// Zeile die row_number der noch zu löschenden (niedrigeren) Zeilen in
+// DEMSELBEN batchUpdate-Aufruf nicht verschiebt (die Sheets-API wendet die
+// requests eines batchUpdate sequenziell an).
+async function deleteRowsByRowNumbers(sheetName, rowNumbers) {
+  if (!rowNumbers.length) return;
+  const sheetId = await getSheetIdByName(sheetName);
+  const sorted = [...new Set(rowNumbers)].sort((a, b) => b - a); // absteigend
+  const requests = sorted.map((rn) => ({
+    deleteDimension: {
+      range: {
+        sheetId,
+        dimension: 'ROWS',
+        startIndex: rn - 1, // 0-basiert
+        endIndex: rn,
+      },
+    },
+  }));
+  const sheets = sheetsClient();
+  await sheets.spreadsheets.batchUpdate({
+    spreadsheetId: SPREADSHEET_ID,
+    requestBody: { requests },
+  });
+}
+
 function columnLetter(index) {
   let n = index + 1;
   let s = '';
@@ -100,4 +138,4 @@ function columnLetter(index) {
   return s;
 }
 
-module.exports = { readSheetAsItems, updateRowByRowNumber, SPREADSHEET_ID };
+module.exports = { readSheetAsItems, updateRowByRowNumber, getSheetIdByName, deleteRowsByRowNumbers, SPREADSHEET_ID };
