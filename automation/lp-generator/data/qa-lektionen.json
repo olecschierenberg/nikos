@@ -117,5 +117,12 @@
     "einsatz": "Gentse Feesten",
     "problem": "Besuchersicherheit",
     "mangel": "Weichmacher in der Installations-FAQ entfernt."
+  },
+  {
+    "datum": "09.09.2026",
+    "region": "Hamburg",
+    "einsatz": "Weihnachtsmarkt",
+    "problem": "Besucherinformation",
+    "mangel": "Weichmacher „unter Umständen“ in FAQ3 entfernt und die Aussage eindeutig formuliert. | Redundanz zwischen USP und FAQ4 beseitigt, indem der USP auf die Plattformbündelung ausgerichtet wurde."
   }
 ]
