@@ -1,0 +1,72 @@
+name: "EN-Slug-Fix Batch-Umbenennung: 4 Auslands-LPs (2026-09-09)"
+
+# EINMAL-WORKFLOW (nicht zeitgesteuert, nur manuell ueber "Run workflow"): siehe
+# automation/lp-generator/scripts/fix-en-slugs-batch-rename.js fuer Hintergrund.
+#
+# Ablauf Nutzer: 1) einmal OHNE Haken bei "live" laufen lassen (Dry-Run, Log pruefen),
+# 2) danach erneut MIT Haken bei "live" laufen lassen (benennt die 4 betroffenen
+# en/lp/-Seiten auf einen korrekten englischen Slug um, legt an der alten URL
+# einen Redirect-Stub an und korrigiert hreflang/Sprachumschalter/sitemap/Hub-Seite
+# repo-weit). Nach erfolgreichem Live-Lauf kann dieser Workflow wieder entfernt werden.
+
+on:
+  workflow_dispatch:
+    inputs:
+      live:
+        description: 'Wirklich schreiben (sonst nur Dry-Run/Vorschau im Log)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  batch-rename:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Batch-Umbenennung durchfuehren
+        run: |
+          if [ "${{ inputs.live }}" = "true" ]; then
+            node automation/lp-generator/scripts/fix-en-slugs-batch-rename.js --live
+          else
+            node automation/lp-generator/scripts/fix-en-slugs-batch-rename.js
+          fi
+
+      - name: Aenderungen committen
+        run: |
+          git config user.name "nikos-lp-fix[bot]"
+          git config user.email "actions@github.com"
+          git add -A -- "en/lp" "da/lp" "de/lp" "es/lp" "fr/lp" "it/lp" "nl/lp" "pl/lp" "sitemap.xml" "loesungen/index.html"
+          if git diff --cached --quiet; then
+            echo "Keine Aenderungen -- nichts zu committen."
+            exit 0
+          fi
+          git commit -m "EN-Slug-Fix: 4 Auslands-LPs auf englischen Slug umbenannt + Redirects + hreflang/sitemap/Hub-Seite korrigiert"
+          attempt=1
+          until git push; do
+            if [ "$attempt" -ge 5 ]; then
+              echo "Push nach $attempt Versuchen weiterhin fehlgeschlagen -- Abbruch."
+              exit 1
+            fi
+            echo "Push fehlgeschlagen (Versuch $attempt) -- rebase gegen origin/main und erneut versuchen ..."
+            git fetch origin main
+            if ! git rebase origin/main; then
+              echo "Rebase fehlgeschlagen -- Abbruch."
+              git rebase --abort || true
+              exit 1
+            fi
+            sleep $(( (RANDOM % 10) + attempt * 3 ))
+            attempt=$((attempt + 1))
+          done
+          echo "Push erfolgreich (Versuch $attempt)."
