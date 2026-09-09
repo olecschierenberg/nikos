@@ -1,0 +1,55 @@
+name: "Fix: geleerte Duplikat-Zeilen physisch loeschen (2026-09-09)"
+
+# EINMAL-WORKFLOW (nicht zeitgesteuert, nur manuell ueber "Run workflow"):
+# siehe automation/lp-generator/scripts/delete-cleared-duplicate-rows.js
+# fuer Hintergrund. Loescht die von dedupe-keyword-kombinationen.js bereits
+# geleerten Verlierer-Zeilen physisch aus dem Sheet.
+#
+# WICHTIG: NICHT kurz vor/nach 03:00 UTC ausfuehren (Race Condition mit dem
+# taeglichen Sortier-Workflow "keyword-kombinationen").
+#
+# Ablauf Nutzer: 1) einmal OHNE Haken bei "live" laufen lassen (Dry-Run, Log
+# pruefen: sollten 7 Zeilen sein), 2) danach erneut MIT Haken bei "live"
+# laufen lassen. Nach erfolgreichem Live-Lauf kann dieser Workflow wieder
+# entfernt werden.
+
+on:
+  workflow_dispatch:
+    inputs:
+      live:
+        description: 'Wirklich loeschen (sonst nur Dry-Run/Vorschau im Log)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  delete-rows:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: automation/lp-generator/package-lock.json
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation/lp-generator
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Geleerte Duplikat-Zeilen loeschen
+        working-directory: automation/lp-generator
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          if [ "${{ inputs.live }}" = "true" ]; then
+            node scripts/delete-cleared-duplicate-rows.js --live
+          else
+            node scripts/delete-cleared-duplicate-rows.js
+          fi
