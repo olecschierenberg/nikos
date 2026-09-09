@@ -140,41 +140,53 @@ const GENERIC_KEYS = ['headline','subhead','intro','usp_intro','usp',
 // fliessen aber nicht in den Text selbst ein (weiterhin ein kleiner,
 // geprueften Varianten-Pool ohne Per-Seite-Anpassung, wie am 2026-09-03
 // festgelegt).
-function toGenericFieldsDe(o, problem, einsatz, region) {
+// GEAENDERT (2026-09-09, Nutzer-Auftrag "Primaersprache auf die tatsaechliche
+// Landessprache umstellen"): ersetzt die bisherigen ZWEI Funktionen
+// toGenericFieldsDe()/toGenericFieldsEn() durch EINE, fuer jede Baseline-
+// Sprache verwendbare Funktion. filter_relevanz.js liefert jetzt _primary_lang
+// = 'de' | 'en' | 'fr' | 'it' | 'es' | 'nl' | 'da' | 'pl' (siehe dortiger
+// Kommentar -- immer eine Sprache aus BASELINE_LANGS, damit lib/textbausteine.js
+// garantiert eine freigegebene usp_intro/faq1-Uebersetzung dafuer hat).
+//
+// WICHTIG (Rohfeld-Suffix): ai-texte.system.txt liefert JE NACH ZIELSPRACHE-
+// Modus (siehe lib/nodes/filter_relevanz.js _lang_mode) unterschiedliche
+// Inhalte in den immer gleich benannten Feldern *_de/*_en:
+//  - Modus DEUTSCH (_lang_mode='single-de', primaerLang='de'): *_de = echtes
+//    Deutsch.
+//  - Modus ENGLISCH (_lang_mode='single-en', primaerLang='en'): *_en = echtes
+//    Englisch.
+//  - Modus ZWEISPRACHIG (_lang_mode='dual', primaerLang = tatsaechliche
+//    Landessprache, z.B. 'fr'): der *_de-Slot ist HIER trotz des Namens NICHT
+//    Deutsch, sondern die eigenstaendig verfasste Landessprache (siehe
+//    ai-texte.user.txt ZIELSPRACHE-Zeile: "_de-Felder auf ... der
+//    Landessprache dieser Region — NICHT auf Deutsch!"); *_en enthaelt eine
+//    unabhaengig formulierte englische Fassung.
+// D.h. der Rohfeld-Suffix ist NICHT primaryLang selbst, sondern nur davon
+// abgeleitet: '_en' ausschliesslich wenn primaryLang==='en', sonst IMMER
+// '_de' (das deckt sowohl 'single-de' als auch 'dual' ab).
+function toGenericFieldsForLang(o, problem, einsatz, region, lang) {
   const uspIdx = pickUspIndex(problem, einsatz, region);
   const faqIdx = pickFaqIndex(problem, einsatz, region);
+  const suffix = lang === 'en' ? '_en' : '_de';
+  const isDe = lang === 'de';
+  const uspIntro = isDe ? USP_INTRO_DE_VARIANTS[uspIdx] : USP_INTRO_TRANSLATIONS[lang][uspIdx];
+  const faq1Q = isDe ? FAQ1_Q_DE_VARIANTS[faqIdx] : FAQ1_Q_TRANSLATIONS[lang][faqIdx];
+  const faq1AClosing = isDe ? FAQ1_A_CLOSING_DE : (FAQ1_A_CLOSING_TRANSLATIONS[lang] || FAQ1_A_CLOSING_DE);
+  const faq1A = (isDe ? FAQ1_A_DE_VARIANTS[faqIdx] : FAQ1_A_TRANSLATIONS[lang][faqIdx]) + ' ' + faq1AClosing;
   const out = {
-    usp_intro: USP_INTRO_DE_VARIANTS[uspIdx],
-    slug_kw: '',
-    faq1_q: FAQ1_Q_DE_VARIANTS[faqIdx],
-    faq1_a: FAQ1_A_DE_VARIANTS[faqIdx] + ' ' + FAQ1_A_CLOSING_DE,
+    usp_intro: uspIntro,
+    // slug_kw: nur bei 'de' leer (die alte Problem+Einsatz-Slug-Logik greift
+    // dort weiterhin, siehe runMultiLangBranch/trimSlugMl) -- bei jeder
+    // anderen Baseline-Sprache liefert die AI-Texte-Antwort bereits ein
+    // passendes slug_kw in genau dieser Sprache (siehe ai-texte.system.txt
+    // SLUG_KW-Regel, gilt fuer Modus ENGLISCH UND ZWEISPRACHIG gleichermassen).
+    slug_kw: isDe ? '' : (o.slug_kw || ''),
+    faq1_q: faq1Q,
+    faq1_a: faq1A,
   };
   for (const k of GENERIC_KEYS) {
     if (k === 'usp_intro' || k === 'slug_kw' || k === 'faq1_q' || k === 'faq1_a') continue;
-    out[k] = o['' + k + '_de'] || '';
-  }
-  return out;
-}
-
-// NEU (2026-09-04, Schritt 3): analoges Pendant zu toGenericFieldsDe() fuer Regionen
-// ausserhalb Deutschlands (primaer Englisch statt Deutsch, siehe Konzept Abschnitt 3b).
-// Liest die _en-Felder derselben AI-Texte-Antwort (die bestehende ai-texte.system.txt
-// befuellt bei einer Auslandsregion bereits headline_en/subhead_en/... vollstaendig,
-// siehe 'Modus ENGLISCH'/'Modus ZWEISPRACHIG') und nutzt die bereits geprueften
-// englischen Textbausteine fuer usp_intro/faq1 (lib/textbausteine.js), mit
-// derselben Varianten-Auswahl wie toGenericFieldsDe() (gleicher Seed).
-function toGenericFieldsEn(o, problem, einsatz, region) {
-  const uspIdx = pickUspIndex(problem, einsatz, region);
-  const faqIdx = pickFaqIndex(problem, einsatz, region);
-  const out = {
-    usp_intro: USP_INTRO_TRANSLATIONS.en[uspIdx],
-    slug_kw: o.slug_kw || '',
-    faq1_q: FAQ1_Q_TRANSLATIONS.en[faqIdx],
-    faq1_a: FAQ1_A_TRANSLATIONS.en[faqIdx] + ' ' + FAQ1_A_CLOSING_TRANSLATIONS.en,
-  };
-  for (const k of GENERIC_KEYS) {
-    if (k === 'usp_intro' || k === 'slug_kw' || k === 'faq1_q' || k === 'faq1_a') continue;
-    out[k] = o['' + k + '_en'] || '';
+    out[k] = o['' + k + suffix] || '';
   }
   return out;
 }
@@ -198,16 +210,33 @@ function trimSlugMl(s) {
 // Sprache wird dann fuer diesen Lauf uebersprungen, statt den ganzen Lauf
 // abzubrechen -- Konzept: "minimaler automatischer Check", kein harter Gate
 // wie beim primaeren QA-Agent).
-async function callTranslation({ lang, deFields, problem, einsatz, region, render, nodeOutputs, staticData, executionId, correctionNote }) {
+async function callTranslation({ lang, deFields, sourceLang, problem, einsatz, region, render, nodeOutputs, staticData, executionId, correctionNote }) {
   const lm = LANG_META[lang] || { label: lang };
+  // GEAENDERT (2026-09-09, Primaersprache-Umstellung): deFields ist trotz des
+  // Namens (historisch: fruehe immer Deutsch) jetzt die tatsaechliche
+  // Ausgangssprache sourceLang (Standard 'de' fuer Rueckwaertskompatibilitaet,
+  // z.B. wenn kein sourceLang uebergeben wird). uebersetzung.user.txt/-system.txt
+  // gingen bisher hart von deutschen Ausgangstexten aus -- quellsprache_label/
+  // -code machen den User-Prompt sprachunabhaengig; fuer den (statischen)
+  // System-Prompt wird bei einer Nicht-Deutsch-Quelle ein kurzer Hinweis
+  // vorangestellt, der die dortigen "deutschen Ausgangstext"-Passagen korrekt
+  // auf die tatsaechliche Quellsprache umlenkt, ohne die restliche, weiterhin
+  // gueltige System-Anweisung neu schreiben zu muessen.
+  const srcLang = sourceLang || 'de';
+  const srcLm = LANG_META[srcLang] || { label: srcLang };
   const userPrompt = render(readPrompt('uebersetzung.user.txt'), {
     zielsprache_label: lm.label, zielsprache_code: lang,
+    quellsprache_label: srcLm.label, quellsprache_code: srcLang,
     problem, einsatz, region_oder_ueberregional: region || 'ueberregional/kein fester Ort',
     quelltext_json: JSON.stringify(deFields) + (correctionNote ? ('\n\nHINWEIS (WICHTIG, unbedingt beachten): ' + correctionNote) : ''),
   });
+  let systemPrompt = readPrompt('uebersetzung.system.txt');
+  if (srcLang !== 'de') {
+    systemPrompt = `HINWEIS: Die als "deutsche Ausgangstexte"/"deutschen Ausgangstext" bezeichneten Quelltexte in der folgenden Anweisung sind in diesem Fall NICHT auf Deutsch, sondern bereits fertig auf ${srcLm.label} (ISO ${srcLang}) verfasst -- behandle ueberall dort, wo unten von "Deutsch"/"deutsch" als Ausgangssprache die Rede ist, stattdessen ${srcLm.label} als Ausgangssprache. Alle uebrigen Anweisungen (Stil, Vollstaendigkeit, Modulnamen-Regeln, Format) gelten unveraendert.\n\n${systemPrompt}`;
+  }
   const result = await chatCompletion({
     apiKey: process.env.OPENAI_API_KEY, model: 'gpt-5.6-luna',
-    system: readPrompt('uebersetzung.system.txt'), user: userPrompt,
+    system: systemPrompt, user: userPrompt,
     maxTokens: 1800, timeoutMs: 180000, maxRetries: 1,
   });
   const parsed = runAllItems('uebersetzung_json.js', { items: [result], nodeOutputs, staticData, executionId })[0].json.output;
@@ -219,27 +248,43 @@ async function callTranslation({ lang, deFields, problem, einsatz, region, rende
   // unabhaengig davon, was das gerade produktive Modell fuer dieses eine
   // Feld geliefert haette. WICHTIG: pickUspIndex/pickFaqIndex sind reine
   // Funktionen von problem/einsatz/region (kein Zufall) -- derselbe Index
-  // wie in toGenericFieldsDe()/toGenericFieldsEn() fuer dieselbe LP, damit
-  // die Uebersetzung hier zur tatsaechlich als Quelltext verschickten
-  // deutschen Variante (deFields.usp_intro/faq1_q/faq1_a) passt. Faellt eine
-  // Sprache (noch) nicht in die Liste, bleibt die frische Modell-Uebersetzung
-  // fuer das jeweilige Feld unveraendert bestehen.
+  // wie in toGenericFieldsForLang() fuer dieselbe LP, damit die Uebersetzung
+  // hier zur tatsaechlich als Quelltext verschickten Variante
+  // (deFields.usp_intro/faq1_q/faq1_a, in der Ausgangssprache sourceLang)
+  // passt. Faellt eine Sprache (noch) nicht in die Liste, bleibt die frische
+  // Modell-Uebersetzung fuer das jeweilige Feld unveraendert bestehen.
   const _uspIdx = pickUspIndex(problem, einsatz, region);
   const _faqIdx = pickFaqIndex(problem, einsatz, region);
-  if (USP_INTRO_TRANSLATIONS[lang]) parsed.usp_intro = USP_INTRO_TRANSLATIONS[lang][_uspIdx];
+  // WICHTIG (Fix 2026-09-09, Primaersprache-Umstellung): 'de' ist jetzt auch
+  // als UEBERSETZUNGSZIEL erreichbar (z.B. Franzoesisch primaer -> Deutsch als
+  // Sibling), nicht mehr nur als Quelle. Die deutschen Bausteine liegen aber
+  // in eigenen DE-Konstanten (USP_INTRO_DE_VARIANTS etc.), NICHT unter
+  // USP_INTRO_TRANSLATIONS['de'] (dieser Key existiert dort gar nicht) --
+  // ohne diese Fallunterscheidung wuerde fuer lang==='de' der ungepruefte
+  // Modell-Output stehen bleiben statt des freigegebenen Bausteins.
+  if (lang === 'de') {
+    parsed.usp_intro = USP_INTRO_DE_VARIANTS[_uspIdx];
+  } else if (USP_INTRO_TRANSLATIONS[lang]) {
+    parsed.usp_intro = USP_INTRO_TRANSLATIONS[lang][_uspIdx];
+  }
   // NEU (2026-09-03, gleiches Prinzip fuer faq1_q/faq1_a; ERWEITERT
   // 2026-09-09 auf 6 rotierende Kernblock-Varianten + separaten, weiterhin
-  // fest hinterlegten Schlusssatz FAQ1_A_CLOSING_TRANSLATIONS): compliance-
+  // fest hinterlegten Schlusssatz FAQ1_A_CLOSING_DE/-TRANSLATIONS): compliance-
   // relevanter Normkonformitaets-Textbaustein, wird IMMER verwendet statt
   // einer frischen Modell-Uebersetzung, damit die rechtlich/inhaltlich
   // wichtige Normaussage auf jeder Seite garantiert identisch (zur
   // gewaehlten Variante) ist.
-  if (FAQ1_Q_TRANSLATIONS[lang]) parsed.faq1_q = FAQ1_Q_TRANSLATIONS[lang][_faqIdx];
-  if (FAQ1_A_TRANSLATIONS[lang]) {
-    parsed.faq1_a = FAQ1_A_TRANSLATIONS[lang][_faqIdx] + ' ' + (FAQ1_A_CLOSING_TRANSLATIONS[lang] || FAQ1_A_CLOSING_DE);
+  if (lang === 'de') {
+    parsed.faq1_q = FAQ1_Q_DE_VARIANTS[_faqIdx];
+    parsed.faq1_a = FAQ1_A_DE_VARIANTS[_faqIdx] + ' ' + FAQ1_A_CLOSING_DE;
+  } else {
+    if (FAQ1_Q_TRANSLATIONS[lang]) parsed.faq1_q = FAQ1_Q_TRANSLATIONS[lang][_faqIdx];
+    if (FAQ1_A_TRANSLATIONS[lang]) {
+      parsed.faq1_a = FAQ1_A_TRANSLATIONS[lang][_faqIdx] + ' ' + (FAQ1_A_CLOSING_TRANSLATIONS[lang] || FAQ1_A_CLOSING_DE);
+    }
   }
   const check = runAllItems('mini_check.js', {
-    items: [{ json: { translated: parsed, source: deFields, lang } }], nodeOutputs, staticData, executionId,
+    items: [{ json: { translated: parsed, source: deFields, lang, sourceLang: srcLang } }], nodeOutputs, staticData, executionId,
   })[0].json;
   return { parsed, check };
 }
@@ -308,9 +353,9 @@ async function runMultiLangBranch({ filterItem, primaryFields, primaryLang, rend
   const slugByLang = { [primaryLang]: slugPrimary };
 
   async function translateOnce(lang) {
-    log(`  Uebersetze nach ${lang} (gpt-5.6-luna) …`);
+    log(`  Uebersetze von ${primaryLang} nach ${lang} (gpt-5.6-luna) …`);
     return translateToLanguage({
-      lang, deFields: primaryFields, problem, einsatz, region, render, nodeOutputs, staticData, executionId,
+      lang, deFields: primaryFields, sourceLang: primaryLang, problem, einsatz, region, render, nodeOutputs, staticData, executionId,
     });
   }
 
@@ -578,9 +623,9 @@ async function main() {
   if (filterItem.json._ml) {
     const primaryLang = filterItem.json._primary_lang || 'de';
     const rawOutput = htmlBauenInput.json.output || {};
-    const primaryFields = primaryLang === 'en'
-      ? toGenericFieldsEn(rawOutput, filterItem.json.Problem, filterItem.json.Einsatz, filterItem.json.Region)
-      : toGenericFieldsDe(rawOutput, filterItem.json.Problem, filterItem.json.Einsatz, filterItem.json.Region);
+    const primaryFields = toGenericFieldsForLang(
+      rawOutput, filterItem.json.Problem, filterItem.json.Einsatz, filterItem.json.Region, primaryLang
+    );
     await runMultiLangBranch({
       filterItem, primaryFields, primaryLang, render, nodeOutputs, staticData, executionId, LIVE, REPO_ROOT,
     });
