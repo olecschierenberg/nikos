@@ -34,7 +34,13 @@ const { chatCompletion } = require('./lib/openai');
 const sheets = require('./lib/sheets');
 const qaLektionen = require('./lib/qaLektionen');
 const { UI_L10N, LANG_META } = require('./lib/i18n');
-const { USP_INTRO_TRANSLATIONS, FAQ1_Q_TRANSLATIONS, FAQ1_A_TRANSLATIONS } = require('./lib/textbausteine');
+const {
+  USP_INTRO_DE_VARIANTS, USP_INTRO_TRANSLATIONS,
+  FAQ1_Q_DE_VARIANTS, FAQ1_Q_TRANSLATIONS,
+  FAQ1_A_DE_VARIANTS, FAQ1_A_TRANSLATIONS,
+  FAQ1_A_CLOSING_DE, FAQ1_A_CLOSING_TRANSLATIONS,
+  pickUspIndex, pickFaqIndex,
+} = require('./lib/textbausteine');
 
 const REPO_ROOT = path.join(__dirname, '..', '..'); // .../site
 const TEXTBAUSTEINE_PATH = path.join(REPO_ROOT, 'nikos', 'LANDINGPAGES_Textbausteine.md');
@@ -107,19 +113,20 @@ async function callOpenAiAndParseJson({
 // unten in main()).
 // ══════════════════════════════════════════════════════════════════════════
 
-const FIXED_USP_INTRO_DE = 'NIKOS bündelt Durchsagen, Alarmierung, Besucherinformation und Steuerung in einer einzigen, netzunabhängigen Plattform.';
-// NEU (2026-09-03, Nutzer-Vorgabe "Textbausteine wiederverwenden", nach
-// Terra-vs-Luna-Test): faq1_q/faq1_a (Normkonformitaet, DIN EN 50849) sind
-// ein fester, compliance-relevanter Textbaustein aus
-// site/nikos/LANDINGPAGES_Textbausteine.md (dort ausdruecklich als
-// "WORTGENAU verwenden -- compliance-relevant" markiert, ohne
-// seitenspezifische Platzhalter). Wird HART auf allen Seiten verwendet --
-// unabhaengig davon, was die KI-Generierung fuer dieses Feld frei erzeugen
-// wuerde -- weil beobachtet wurde, dass die freie Generierung die
-// WORTGENAU-Anweisung nicht zuverlaessig einhaelt (Abweichungen bei
-// Wortwahl/Satzbau ggue. der freigegebenen Fassung).
-const FIXED_FAQ1_Q_DE = 'Entsprechen Durchsagen mit NIKOS den geltenden Normen?';
-const FIXED_FAQ1_A_DE = 'Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 (Elektroakustische Notfallwarnsysteme). NIKOS wurde speziell für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen entwickelt und ist technisch für den Einsatz in Alltags- und Notfallsituationen ausgelegt. Für elektroakustische Notfallwarnsysteme (ELA-Anlagen) ist die DIN EN 50849 der maßgebliche Orientierungsrahmen. Die dort genannten Anforderungen werden von NIKOS – im Gegensatz zu mobilfunkbasierten Systemen – voll erfüllt, da keine Abhängigkeit von einem fremden Netz besteht und somit jederzeit eine sofortige Nutzbarkeit gewährleistet werden kann. Andere aus der Sicherheitstechnik bekannte Normen wie die DIN EN 54, DIN VDE 0833-4 sowie DIN 14675 (Sprachalarmierungsanlagen) sind auf das Einsatzgebiet und Funktionsspektrum von NIKOS nicht anwendbar und daher für eine Genehmigung nicht relevant. NIKOS ist das marktführende Durchsagesystem für temporäre und mobile Anwendungen und seit 2017 vielfach erfolgreich für die Umsetzung einsatzkritischer Kommunikationsaufgaben im Einsatz. RADACOM und Ihr regionaler NIKOS-Partner beraten Sie gerne zu den vielfältigen Funktionen von NIKOS und unterstützen Sie bei der kostenschonenden Umsetzung der Anforderungen.';
+// GEAENDERT (2026-09-09, Nutzer-Freigabe FAQ-Textvarianten_Entwurf_2026-09-09.md):
+// aus den frueheren EINZELNEN FIXED_*-Konstanten (ein deutscher String) wurden
+// die Arrays USP_INTRO_DE_VARIANTS/FAQ1_Q_DE_VARIANTS/FAQ1_A_DE_VARIANTS (je 6
+// geprueft-freigegebene Varianten, siehe lib/textbausteine.js) + der separate
+// Schlusssatz-Baustein FAQ1_A_CLOSING_DE (reine Marketing-/Kontakt-Formulierung
+// ohne Normaussage, siehe dortiger Kommentar). Die Variantenwahl je LP erfolgt
+// deterministisch ueber pickUspIndex()/pickFaqIndex() (geseedet aus
+// Problem+Einsatz+Region) -- bleibt bei Regenerierung stabil und ist ueber alle
+// Sprachversionen einer LP hinweg konsistent (siehe callTranslation() unten).
+// faq1_q/faq1_a bleiben weiterhin compliance-relevante feste Textbausteine aus
+// site/nikos/LANDINGPAGES_Textbausteine.md (dort als "WORTGENAU verwenden"
+// markiert) -- HART auf allen Seiten verwendet statt der freien KI-Generierung,
+// weil beobachtet wurde, dass diese die WORTGENAU-Anweisung nicht zuverlaessig
+// einhaelt.
 const GENERIC_KEYS = ['headline','subhead','intro','usp_intro','usp',
   'faq1_q','faq1_a','faq2_q','faq2_a','faq3_q','faq3_a','faq4_q','faq4_a','slug_kw'];
 
@@ -128,9 +135,20 @@ const GENERIC_KEYS = ['headline','subhead','intro','usp_intro','usp',
 // Feldnamen um, die html_bauen_ml.js/uebersetzung_json.js/mini_check.js
 // erwarten. usp_intro ist im Alt-Format kein eigenes KI-Feld (die Zeile ist
 // im Alt-Template fest einprogrammiert, siehe html_bauen.js OPEN_DE) --
-// hier deshalb aus der Konstante oben gesetzt.
-function toGenericFieldsDe(o) {
-  const out = { usp_intro: FIXED_USP_INTRO_DE, slug_kw: '', faq1_q: FIXED_FAQ1_Q_DE, faq1_a: FIXED_FAQ1_A_DE };
+// hier deshalb aus den Varianten-Arrays oben gesetzt. problem/einsatz/region
+// steuern NUR die Varianten-AUSWAHL (siehe pickUspIndex/pickFaqIndex),
+// fliessen aber nicht in den Text selbst ein (weiterhin ein kleiner,
+// geprueften Varianten-Pool ohne Per-Seite-Anpassung, wie am 2026-09-03
+// festgelegt).
+function toGenericFieldsDe(o, problem, einsatz, region) {
+  const uspIdx = pickUspIndex(problem, einsatz, region);
+  const faqIdx = pickFaqIndex(problem, einsatz, region);
+  const out = {
+    usp_intro: USP_INTRO_DE_VARIANTS[uspIdx],
+    slug_kw: '',
+    faq1_q: FAQ1_Q_DE_VARIANTS[faqIdx],
+    faq1_a: FAQ1_A_DE_VARIANTS[faqIdx] + ' ' + FAQ1_A_CLOSING_DE,
+  };
   for (const k of GENERIC_KEYS) {
     if (k === 'usp_intro' || k === 'slug_kw' || k === 'faq1_q' || k === 'faq1_a') continue;
     out[k] = o['' + k + '_de'] || '';
@@ -143,9 +161,17 @@ function toGenericFieldsDe(o) {
 // Liest die _en-Felder derselben AI-Texte-Antwort (die bestehende ai-texte.system.txt
 // befuellt bei einer Auslandsregion bereits headline_en/subhead_en/... vollstaendig,
 // siehe 'Modus ENGLISCH'/'Modus ZWEISPRACHIG') und nutzt die bereits geprueften
-// englischen Textbausteine fuer usp_intro/faq1 (lib/textbausteine.js).
-function toGenericFieldsEn(o) {
-  const out = { usp_intro: USP_INTRO_TRANSLATIONS.en, slug_kw: o.slug_kw || '', faq1_q: FAQ1_Q_TRANSLATIONS.en, faq1_a: FAQ1_A_TRANSLATIONS.en };
+// englischen Textbausteine fuer usp_intro/faq1 (lib/textbausteine.js), mit
+// derselben Varianten-Auswahl wie toGenericFieldsDe() (gleicher Seed).
+function toGenericFieldsEn(o, problem, einsatz, region) {
+  const uspIdx = pickUspIndex(problem, einsatz, region);
+  const faqIdx = pickFaqIndex(problem, einsatz, region);
+  const out = {
+    usp_intro: USP_INTRO_TRANSLATIONS.en[uspIdx],
+    slug_kw: o.slug_kw || '',
+    faq1_q: FAQ1_Q_TRANSLATIONS.en[faqIdx],
+    faq1_a: FAQ1_A_TRANSLATIONS.en[faqIdx] + ' ' + FAQ1_A_CLOSING_TRANSLATIONS.en,
+  };
   for (const k of GENERIC_KEYS) {
     if (k === 'usp_intro' || k === 'slug_kw' || k === 'faq1_q' || k === 'faq1_a') continue;
     out[k] = o['' + k + '_en'] || '';
@@ -185,24 +211,33 @@ async function callTranslation({ lang, deFields, problem, einsatz, region, rende
     maxTokens: 1800, timeoutMs: 180000, maxRetries: 1,
   });
   const parsed = runAllItems('uebersetzung_json.js', { items: [result], nodeOutputs, staticData, executionId })[0].json.output;
-  // NEU (2026-09-03, Nutzer-Idee "Textbausteine wiederverwenden"): usp_intro
-  // ist ein fester, seitenunabhaengiger Markensatz (siehe FIXED_USP_INTRO_DE
-  // oben) -- fuer die Baseline-Sprachen liegt bereits eine einmalig mit
-  // gpt-5.6-terra erzeugte und geprueft-freigegebene Uebersetzung vor
-  // (lib/textbausteine.js). Diese wird IMMER verwendet, unabhaengig davon,
-  // was das gerade produktive Modell fuer dieses eine Feld geliefert haette
-  // -- spart einen Teil der Tokens/Kosten UND garantiert konstante, geprueft
-  // gute Formulierung. Faellt eine Sprache (noch) nicht in die Liste, bleibt
-  // die frische Modell-Uebersetzung fuer usp_intro unveraendert bestehen.
-  if (USP_INTRO_TRANSLATIONS[lang]) parsed.usp_intro = USP_INTRO_TRANSLATIONS[lang];
-  // NEU (2026-09-03, gleiches Prinzip fuer faq1_q/faq1_a, siehe
-  // FIXED_FAQ1_Q_DE/FIXED_FAQ1_A_DE oben): compliance-relevanter
-  // Normkonformitaets-Textbaustein, einmalig mit gpt-5.6-terra uebersetzt
-  // und geprueft/freigegeben -- wird IMMER verwendet statt einer frischen
-  // Modell-Uebersetzung, damit die rechtlich/inhaltlich wichtige
-  // Normaussage auf jeder Seite garantiert identisch ist.
-  if (FAQ1_Q_TRANSLATIONS[lang]) parsed.faq1_q = FAQ1_Q_TRANSLATIONS[lang];
-  if (FAQ1_A_TRANSLATIONS[lang]) parsed.faq1_a = FAQ1_A_TRANSLATIONS[lang];
+  // NEU (2026-09-03, Nutzer-Idee "Textbausteine wiederverwenden"; ERWEITERT
+  // 2026-09-09 auf 6 rotierende Varianten, siehe lib/textbausteine.js):
+  // usp_intro ist ein fester, seitenunabhaengiger Markensatz -- fuer die
+  // Baseline-Sprachen liegt bereits eine einmalig geprueft-freigegebene
+  // Uebersetzung JEDER der 6 Varianten vor. Diese wird IMMER verwendet,
+  // unabhaengig davon, was das gerade produktive Modell fuer dieses eine
+  // Feld geliefert haette. WICHTIG: pickUspIndex/pickFaqIndex sind reine
+  // Funktionen von problem/einsatz/region (kein Zufall) -- derselbe Index
+  // wie in toGenericFieldsDe()/toGenericFieldsEn() fuer dieselbe LP, damit
+  // die Uebersetzung hier zur tatsaechlich als Quelltext verschickten
+  // deutschen Variante (deFields.usp_intro/faq1_q/faq1_a) passt. Faellt eine
+  // Sprache (noch) nicht in die Liste, bleibt die frische Modell-Uebersetzung
+  // fuer das jeweilige Feld unveraendert bestehen.
+  const _uspIdx = pickUspIndex(problem, einsatz, region);
+  const _faqIdx = pickFaqIndex(problem, einsatz, region);
+  if (USP_INTRO_TRANSLATIONS[lang]) parsed.usp_intro = USP_INTRO_TRANSLATIONS[lang][_uspIdx];
+  // NEU (2026-09-03, gleiches Prinzip fuer faq1_q/faq1_a; ERWEITERT
+  // 2026-09-09 auf 6 rotierende Kernblock-Varianten + separaten, weiterhin
+  // fest hinterlegten Schlusssatz FAQ1_A_CLOSING_TRANSLATIONS): compliance-
+  // relevanter Normkonformitaets-Textbaustein, wird IMMER verwendet statt
+  // einer frischen Modell-Uebersetzung, damit die rechtlich/inhaltlich
+  // wichtige Normaussage auf jeder Seite garantiert identisch (zur
+  // gewaehlten Variante) ist.
+  if (FAQ1_Q_TRANSLATIONS[lang]) parsed.faq1_q = FAQ1_Q_TRANSLATIONS[lang][_faqIdx];
+  if (FAQ1_A_TRANSLATIONS[lang]) {
+    parsed.faq1_a = FAQ1_A_TRANSLATIONS[lang][_faqIdx] + ' ' + (FAQ1_A_CLOSING_TRANSLATIONS[lang] || FAQ1_A_CLOSING_DE);
+  }
   const check = runAllItems('mini_check.js', {
     items: [{ json: { translated: parsed, source: deFields, lang } }], nodeOutputs, staticData, executionId,
   })[0].json;
@@ -543,12 +578,35 @@ async function main() {
   if (filterItem.json._ml) {
     const primaryLang = filterItem.json._primary_lang || 'de';
     const rawOutput = htmlBauenInput.json.output || {};
-    const primaryFields = primaryLang === 'en' ? toGenericFieldsEn(rawOutput) : toGenericFieldsDe(rawOutput);
+    const primaryFields = primaryLang === 'en'
+      ? toGenericFieldsEn(rawOutput, filterItem.json.Problem, filterItem.json.Einsatz, filterItem.json.Region)
+      : toGenericFieldsDe(rawOutput, filterItem.json.Problem, filterItem.json.Einsatz, filterItem.json.Region);
     await runMultiLangBranch({
       filterItem, primaryFields, primaryLang, render, nodeOutputs, staticData, executionId, LIVE, REPO_ROOT,
     });
     runEachItem('lock_freigeben.js', { item: { json: { error: false } }, nodeOutputs, staticData, executionId });
     return;
+  }
+
+  // ---- 13c) Fest hinterlegte FAQ1-Textbausteine ueberschreiben (klassischer Pfad) ----
+  // NEU (2026-09-09, Nutzer-Freigabe): bislang war der compliance-relevante
+  // FAQ1 (DIN EN 50849) im klassischen (Nicht-ML-)Pfad -- also fuer die
+  // grosse Mehrheit der Deutschland-Regions-LPs -- ANDERS als im
+  // Multi-Sprach-Pfad NICHT hart ueberschrieben, sondern der freien
+  // KI-Generierung ueberlassen (nur per Prompt-Hinweis auf DIN EN 50849
+  // gelenkt, siehe ai-texte.system.txt). Das schliesst diese Luecke:
+  // dieselbe Auswahl aus den 6 geprueften Kernblock-Varianten (siehe
+  // lib/textbausteine.js) wird jetzt auch hier verwendet, konsistent mit
+  // dem Multi-Sprach-Pfad. usp_intro wird HIER NICHT ueberschrieben, da es
+  // im Alt-Template (html_bauen.js OPEN_DE/OPEN_EN) bereits eigenstaendig
+  // (mit eigener Varianten-Auswahl) verankert ist.
+  {
+    const _o = htmlBauenInput.json.output || {};
+    const _faqIdx = pickFaqIndex(filterItem.json.Problem, filterItem.json.Einsatz, filterItem.json.Region);
+    if (_o.faq1_q_de) _o.faq1_q_de = FAQ1_Q_DE_VARIANTS[_faqIdx];
+    if (_o.faq1_a_de) _o.faq1_a_de = FAQ1_A_DE_VARIANTS[_faqIdx] + ' ' + FAQ1_A_CLOSING_DE;
+    if (_o.faq1_q_en) _o.faq1_q_en = FAQ1_Q_TRANSLATIONS.en[_faqIdx];
+    if (_o.faq1_a_en) _o.faq1_a_en = FAQ1_A_TRANSLATIONS.en[_faqIdx] + ' ' + FAQ1_A_CLOSING_TRANSLATIONS.en;
   }
 
   // ---- 14) HTML bauen ----
