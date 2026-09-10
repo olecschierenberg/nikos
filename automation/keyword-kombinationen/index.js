@@ -98,11 +98,11 @@ async function main() {
   nodeOutputs.set('Relevanz berechnen', relevanzResult);
   log(`  Nach Dedup/Plausibilitätsfilter: ${relevanzResult.length} von ${zeilenItems.length} Vorschlägen übrig.`);
   if (!relevanzResult.length) {
-    log('  Keine neuen Kombinationen nach Filterung. Nichts zu tun.');
-    return;
-  }
-  for (const it of relevanzResult) {
-    log(`    - ${it.json.Problem} | ${it.json.Einsatz} | ${it.json.Region} (Relevanz ${it.json.Relevanz}${it.json.Ende ? ', Ende ' + it.json.Ende : ''})`);
+    log('  Keine neuen Kombinationen nach Filterung (z. B. alles Duplikate). Sheet wird trotzdem sortiert (Schritt 7), damit manuell hinzugefügte Zeilen nicht auf den nächsten Lauf mit neuen Vorschlägen warten müssen.');
+  } else {
+    for (const it of relevanzResult) {
+      log(`    - ${it.json.Problem} | ${it.json.Einsatz} | ${it.json.Region} (Relevanz ${it.json.Relevanz}${it.json.Ende ? ', Ende ' + it.json.Ende : ''})`);
+    }
   }
 
   // ---- 6) Vorschläge ins Sheet (append, Spalten Problem/Einsatz/Region/erstellen/Relevanz/Ende) ----
@@ -115,13 +115,21 @@ async function main() {
     Ende: it.json.Ende,
   }));
   if (LIVE) {
-    await sheets.appendRows(SHEET_TAB, rowsToAppend);
-    log(`  ${rowsToAppend.length} Zeile(n) in Sheet "${SHEET_TAB}" angehängt (Spalte "erstellen" leer, wartet auf Freigabe).`);
+    if (rowsToAppend.length) {
+      await sheets.appendRows(SHEET_TAB, rowsToAppend);
+      log(`  ${rowsToAppend.length} Zeile(n) in Sheet "${SHEET_TAB}" angehängt (automatisch freigegeben, erstellen=x).`);
+    }
   } else {
     log(`  TEST-Modus: Sheet-Append übersprungen (würde ${rowsToAppend.length} Zeile(n) anhängen).`);
   }
 
-  // ---- 7) Blatt sortieren (Relevanz), absteigend — Spalte J = Index 9, A:K = 11 Spalten, 1:1 aus n8n ----
+  // ---- 7) Blatt sortieren (Relevanz), absteigend — Spalte J = Index 9, A:K = 11 Spalten, 1:1 aus n8n.
+  // WICHTIG (Fix 2026-09-10): läuft IMMER, unabhängig davon, ob heute neue
+  // KI-Vorschläge angehängt wurden — vorher lief die Sortierung nur, wenn
+  // relevanzResult nicht leer war, wodurch manuell im Sheet hinzugefügte
+  // Zeilen an Tagen ohne neue KI-Vorschläge (z. B. alles Duplikate) nie
+  // eingeordnet wurden. Jetzt sortiert jeder Live-Lauf das ganze Blatt neu,
+  // egal was der Anlass war. ----
   if (LIVE) {
     await sheets.sortByRelevanceDesc(SHEET_TAB, 9, 11);
     log('  Sheet nach Relevanz absteigend sortiert.');
@@ -129,7 +137,7 @@ async function main() {
     log('  TEST-Modus: Sortierung übersprungen.');
   }
 
-  log(`FERTIG (${LIVE ? 'LIVE' : 'TEST'}): ${rowsToAppend.length} neue Kombination(en) verarbeitet.`);
+  log(`FERTIG (${LIVE ? 'LIVE' : 'TEST'}): ${rowsToAppend.length} neue Kombination(en) verarbeitet, Sheet ${LIVE ? 'neu sortiert' : '(Sortierung im TEST-Modus übersprungen)'}.`);
 }
 
 main().catch((err) => {
