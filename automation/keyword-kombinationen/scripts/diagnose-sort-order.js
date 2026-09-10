@@ -26,6 +26,33 @@ function printRow(j) {
 async function main() {
   const rows = await sheets.readSheetAsItems(SHEET_NAME);
   console.log(`Gesamt: ${rows.length} Zeile(n) im Tab "${SHEET_NAME}".`);
+  if (rows.length) {
+    const headerKeys = Object.keys(rows[0].json).filter((k) => k !== 'row_number');
+    console.log(`Spaltenreihenfolge (0-indexiert): ${headerKeys.map((k, i) => `${i}=${k}`).join(', ')}`);
+  }
+
+  // Zelltyp-Check (2026-09-10): prueft, ob Relevanz-Werte als ZAHL oder als
+  // TEXT gespeichert sind -- Google Sheets sortiert Text und Zahlen
+  // unterschiedlich, gemischte Typen in derselben Spalte koennen die
+  // Sortierung lokal durcheinanderbringen, selbst wenn der Sortier-Aufruf
+  // technisch korrekt ist.
+  const unformatted = await sheets.readRangeUnformatted(SHEET_NAME, 'J2:J' + (rows.length + 1));
+  const typeCounts = {};
+  const textCells = [];
+  unformatted.forEach((cellRow, i) => {
+    const v = cellRow[0];
+    const t = typeof v;
+    typeCounts[t] = (typeCounts[t] || 0) + 1;
+    if (t === 'string' && v !== '') textCells.push({ rowNumber: i + 2, value: v });
+  });
+  console.log(`\nZelltypen in Spalte J (Relevanz), roh (UNFORMATTED_VALUE): ${JSON.stringify(typeCounts)}`);
+  if (textCells.length) {
+    console.log(`Als TEXT (nicht als Zahl) gespeicherte Relevanz-Werte: ${textCells.length}`);
+    for (const c of textCells.slice(0, 40)) console.log(`    Zeile ${c.rowNumber}: "${c.value}" (typeof string)`);
+    if (textCells.length > 40) console.log(`    ... und ${textCells.length - 40} weitere.`);
+  } else {
+    console.log('Keine Relevanz-Werte als Text gefunden -- alle sind echte Zahlen.');
+  }
 
   // Relevanz als Zahl interpretieren, wie Google Sheets es beim Sortieren tut:
   // leere/nicht-numerische Werte gelten als "kleiner" als jede Zahl.
