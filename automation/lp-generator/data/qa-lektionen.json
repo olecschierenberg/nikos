@@ -145,5 +145,12 @@
     "einsatz": "Internationales Straßenfest",
     "problem": "Besucherinformation",
     "mangel": "Weichmacher in der Normen-FAQ entfernt. | Weichmacher und unklare Formulierung zur Nutzung eines digitalen Funknetzes in der Installations-FAQ korrigiert."
+  },
+  {
+    "datum": "10.09.2026",
+    "region": "Sindelfingen",
+    "einsatz": "Internationales Straßenfest",
+    "problem": "Besucherinformation",
+    "mangel": "Weichmacher in der Aussage zur Mobilfunküberlastung im Intro entfernt"
   }
 ]
