@@ -20,7 +20,7 @@
 // Kategorie).
 //
 // Verteilung: zirkulare Zuordnung (jede Seite verlinkt auf die naechsten
-// bis zu 4 Seiten derselben Kategorie, im Kreis) -- dadurch bekommt JEDES
+// bis zu 4 Seiten derselben Kategorie, im Kreis) -- dadurch bekommt JEDER
 // Mitglied einer Kategorie gleich viele ein- UND ausgehende Links, statt
 // dass wenige Seiten alle eingehenden Links absahnen.
 const pages = $json.pages || [];
@@ -40,9 +40,20 @@ const blocks = {};
 for (const p of pages) blocks[p.slug] = null;
 
 function buildBlock(relatedList) {
-  const items = relatedList.map(r =>
-    `      <li><a href="https://nikos.info/loesungen/${r.slug}/" style="color:var(--orange-dk);text-decoration:none;font-weight:600;">${esc(r.title || r.slug)}</a></li>`
-  ).join('\n');
+  // Bugfix (2026-09-10): Linktext war bisher IMMER Deutsch (esc(r.title)),
+  // auch auf englischen Seiten -- title kommt aus dem einsprachigen
+  // <title>-Tag. Jetzt zwei Anker pro Listeneintrag (data-de/data-en, wie
+  // ueberall sonst im Markup), damit der Linktext der jeweils aktiven
+  // Sprache folgt. titleEn kommt aus der zweisprachigen <h1> (siehe
+  // extractTitleEn() in relatedLinksUtil.js); faellt sie leer aus (sollte
+  // nicht vorkommen, siehe dortiger Kommentar), wird auf den DE-Titel bzw.
+  // den Slug zurueckgefallen, statt einen leeren Link zu erzeugen.
+  const items = relatedList.map(r => {
+    const hrefStyle = 'style="color:var(--orange-dk);text-decoration:none;font-weight:600;"';
+    const textDe = esc(r.title || r.slug);
+    const textEn = esc(r.titleEn || r.title || r.slug);
+    return `      <li><a href="https://nikos.info/loesungen/${r.slug}/" ${hrefStyle} data-de>${textDe}</a><a href="https://nikos.info/loesungen/${r.slug}/" ${hrefStyle} data-en>${textEn}</a></li>`;
+  }).join('\n');
   return `<!-- VERWANDTE-ANWENDUNGSBEISPIELE:START -->
 <section class="nk-section" aria-label="Weitere Anwendungsbeispiele">
   <div class="nk-section__inner">
