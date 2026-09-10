@@ -158,6 +158,22 @@ async function sortByRelevanceDesc(sheetName, relevanzColumnIndex, columnCount) 
   });
 }
 
+// Diagnose-Hilfsfunktion (2026-09-10): liest einen Bereich MIT
+// valueRenderOption 'UNFORMATTED_VALUE', damit man in den Rohdaten
+// unterscheiden kann, ob eine Zelle als Zahl (typeof 'number') oder als
+// Text (typeof 'string') gespeichert ist -- die normale readSheetAsItems()
+// liefert immer FORMATTED_VALUE (alles als String), das verschleiert genau
+// diesen Unterschied.
+async function readRangeUnformatted(sheetName, range) {
+  const sheets = sheetsClient();
+  const res = await sheets.spreadsheets.values.get({
+    spreadsheetId: SPREADSHEET_ID,
+    range: `${sheetName}!${range}`,
+    valueRenderOption: 'UNFORMATTED_VALUE',
+  });
+  return res.data.values || [];
+}
+
 function columnLetter(index) {
   let n = index + 1;
   let s = '';
@@ -174,6 +190,7 @@ module.exports = {
   updateRowByRowNumber,
   appendRows,
   sortByRelevanceDesc,
+  readRangeUnformatted,
   columnLetter,
   SPREADSHEET_ID,
   KEYWORDKOMBINATIONEN_SHEET_GID,
