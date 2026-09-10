@@ -370,4 +370,3 @@ main().catch((err) => {
   console.error('[lp-publish] Lauf abgebrochen:', err.message);
   process.exitCode = process.exitCode || 1;
 });
-
