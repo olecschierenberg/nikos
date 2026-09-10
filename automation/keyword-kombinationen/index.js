@@ -123,15 +123,21 @@ async function main() {
     log(`  TEST-Modus: Sheet-Append übersprungen (würde ${rowsToAppend.length} Zeile(n) anhängen).`);
   }
 
-  // ---- 7) Blatt sortieren (Relevanz), absteigend — Spalte J = Index 9, A:K = 11 Spalten, 1:1 aus n8n.
-  // WICHTIG (Fix 2026-09-10): läuft IMMER, unabhängig davon, ob heute neue
-  // KI-Vorschläge angehängt wurden — vorher lief die Sortierung nur, wenn
-  // relevanzResult nicht leer war, wodurch manuell im Sheet hinzugefügte
-  // Zeilen an Tagen ohne neue KI-Vorschläge (z. B. alles Duplikate) nie
-  // eingeordnet wurden. Jetzt sortiert jeder Live-Lauf das ganze Blatt neu,
-  // egal was der Anlass war. ----
+  // ---- 7) Blatt sortieren (Relevanz), absteigend. 1:1 aus n8n, aber die
+  // Spalten-Position wird seit dem Fix 2026-09-10 NICHT mehr hartcodiert
+  // (vorher Spalte J / A:K angenommen, was nach Sheet-Erweiterungen durch
+  // andere Automationen nicht mehr stimmte und monatelang die falsche
+  // Spalte "pfad" statt "Relevanz" sortierte) — sortByRelevanceDesc()
+  // ermittelt Spalte und Spaltenzahl jetzt selbst aus der echten Kopfzeile.
+  //
+  // WICHTIG (Fix 2026-09-10): läuft außerdem IMMER, unabhängig davon, ob
+  // heute neue KI-Vorschläge angehängt wurden — vorher lief die Sortierung
+  // nur, wenn relevanzResult nicht leer war, wodurch manuell im Sheet
+  // hinzugefügte Zeilen an Tagen ohne neue KI-Vorschläge (z. B. alles
+  // Duplikate) nie eingeordnet wurden. Jetzt sortiert jeder Live-Lauf das
+  // ganze Blatt neu, egal was der Anlass war. ----
   if (LIVE) {
-    await sheets.sortByRelevanceDesc(SHEET_TAB, 9, 11);
+    await sheets.sortByRelevanceDesc(SHEET_TAB);
     log('  Sheet nach Relevanz absteigend sortiert.');
   } else {
     log('  TEST-Modus: Sortierung übersprungen.');
