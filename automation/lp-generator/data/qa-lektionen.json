@@ -152,5 +152,12 @@
     "einsatz": "Internationales Straßenfest",
     "problem": "Besucherinformation",
     "mangel": "Weichmacher in der Aussage zur Mobilfunküberlastung im Intro entfernt"
+  },
+  {
+    "datum": "10.09.2026",
+    "region": "Sindelfingen",
+    "einsatz": "Internationales Straßenfest",
+    "problem": "Besucherinformation",
+    "mangel": "Intro enthielt unzulässige Produkt- und Funktionsaussagen statt ausschließlich der Herausforderung. | FAQ2 enthielt einen unzulässigen Weichmacher und eine nicht erforderliche Funktionsbehauptung."
   }
 ]
