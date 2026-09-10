@@ -1,0 +1,52 @@
+name: "Fix: Stadt-Fakten Tuebingen + neue ISF-Sindelfingen-LP-Zeile (2026-09-10)"
+
+# EINMAL-WORKFLOW (nicht zeitgesteuert, nur manuell ueber "Run workflow"):
+# siehe automation/lp-generator/scripts/tuebingen-stadtfakten-und-sindelfingen-lp.js
+# fuer Hintergrund. Vervollstaendigt die Stadt-Fakten-Zeile fuer Tuebingen und
+# haengt eine neue Keywordkombinationen-Zeile fuer die wiederherzustellende
+# ISF-Sindelfingen-Landingpage an.
+#
+# Ablauf Nutzer: 1) einmal OHNE Haken bei "live" laufen lassen (Dry-Run, Log
+# pruefen), 2) danach erneut MIT Haken bei "live" laufen lassen. Nach
+# erfolgreichem Live-Lauf kann dieser Workflow wieder entfernt werden.
+
+on:
+  workflow_dispatch:
+    inputs:
+      live:
+        description: 'Wirklich schreiben (sonst nur Dry-Run/Vorschau im Log)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  fix-sheet:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: automation/lp-generator/package-lock.json
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation/lp-generator
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Sheet aktualisieren
+        working-directory: automation/lp-generator
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          if [ "${{ inputs.live }}" = "true" ]; then
+            node scripts/tuebingen-stadtfakten-und-sindelfingen-lp.js --live
+          else
+            node scripts/tuebingen-stadtfakten-und-sindelfingen-lp.js
+          fi
