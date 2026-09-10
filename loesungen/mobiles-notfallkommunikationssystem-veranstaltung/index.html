@@ -328,12 +328,14 @@ a{color:inherit}
 <script>
 /* Sprachschalter + Mobile-Nav — autark, ohne nikos-footer.js (LP liegt in /lp/) */
 (function(){
+  var LOCAL_FLAG='🇩🇪';var LOCAL_LANG_CODE='de';var DEFAULT_BUCKET='de';var IS_DUAL=false;
   function setLang(lang){
     document.documentElement.setAttribute('data-lang',lang);
-    try{localStorage.setItem('nk-lang',lang);}catch(e){}
-    document.documentElement.lang=lang;
+    var storeVal=(lang==='de')?LOCAL_LANG_CODE:'en';
+    try{localStorage.setItem('nk-lang',storeVal);}catch(e){}
+    document.documentElement.lang=(lang==='de'?LOCAL_LANG_CODE:'en');
     var icon=document.getElementById('langFlagIcon');
-    if(icon) icon.textContent = lang==='en'?'🇬🇧':'🇩🇪';
+    if(icon) icon.textContent = lang==='en'?'🇬🇧':LOCAL_FLAG;
     document.querySelectorAll('[data-lang-opt]').forEach(function(b){
       b.classList.toggle('active', b.getAttribute('data-lang-opt')===lang);
     });
@@ -351,8 +353,22 @@ a{color:inherit}
   var burger=document.getElementById('navBurger');
   var mob=document.getElementById('navMobile');
   if(burger&&mob){burger.addEventListener('click',function(){mob.classList.toggle('open');});}
+  var LANG_ALIASES={'nb':'no','nn':'no'};
+  function normLang(c){c=(c||'').toLowerCase();return LANG_ALIASES[c]||c;}
   var saved;try{saved=localStorage.getItem('nk-lang');}catch(e){}
-  setLang('de');
+  var _pref='';
+  if(saved==='en'){_pref='en';}else if(saved&&normLang(saved)===normLang(LOCAL_LANG_CODE)){_pref='de';}
+  if(!_pref){
+    if(IS_DUAL){
+      var _bl='';try{_bl=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase().slice(0,2);}catch(e){}
+      _pref = (normLang(_bl)===normLang(LOCAL_LANG_CODE)) ? 'de' : 'en';
+    } else {
+      _pref = DEFAULT_BUCKET;
+    }
+  }
+  if(!IS_DUAL && _pref==='en'){_pref=DEFAULT_BUCKET;}
+  setLang(_pref);
+  if(IS_DUAL){document.addEventListener('click',function(e){var a=e.target.closest('a[href*="nikos.info"]');if(a){try{localStorage.setItem('nk-lang','en');}catch(err){}}});}
 })();
 </script>
 </body>
