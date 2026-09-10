@@ -40,7 +40,7 @@ const path = require('path');
 
 const { runAllItems, runEachItem } = require('./lib/runCodeNode');
 const sheets = require('./lib/sheets');
-const { extractCategory, extractTitle } = require('./lib/relatedLinksUtil');
+const { extractCategory, extractTitle, extractTitleEn } = require('./lib/relatedLinksUtil');
 
 const REPO_ROOT = path.join(__dirname, '..', '..'); // .../site
 const LIVE = process.argv.includes('--live');
@@ -179,7 +179,7 @@ async function processBatch(batch, staticData) {
       nodeOutputs, staticData, executionId,
     });
     if (!gueltigResult.length) {
-      log(`  ÜBERSPRUNGEN (${slug}): Vorschau nicht plausibel (leer/kaputt) — entspricht dem n8n-404/Fehler-Fall.`);
+      log(`  ÜBERSPRUNGEN (${slug}): Vorschau nicht plausible (leer/kaputt) — entspricht dem n8n-404/Fehler-Fall.`);
       continue;
     }
 
@@ -291,7 +291,7 @@ async function updateRelatedLinks() {
     if (!fs.existsSync(file)) continue;
     const html = fs.readFileSync(file, 'utf8');
     htmlBySlug.set(slug, html);
-    pages.push({ slug, title: extractTitle(html), category: extractCategory(html) });
+    pages.push({ slug, title: extractTitle(html), titleEn: extractTitleEn(html), category: extractCategory(html) });
   }
 
   const { blocks } = runAllItems('verwandte_verlinken.js', {
@@ -370,3 +370,4 @@ main().catch((err) => {
   console.error('[lp-publish] Lauf abgebrochen:', err.message);
   process.exitCode = process.exitCode || 1;
 });
+
