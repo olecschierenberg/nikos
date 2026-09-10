@@ -1,0 +1,51 @@
+name: "Einmal-Fix: Keywordkombinationen jetzt sortieren (2026-09-10)"
+
+# EINMAL-FIX-WORKFLOW (nicht zeitgesteuert, nur manuell ueber "Run
+# workflow"): sortiert den Tab "Keywordkombinationen" sofort absteigend
+# nach "Relevanz", siehe automation/keyword-kombinationen/scripts/
+# sort-now.js. Noetig, weil der taegliche Live-Lauf die Sortierung bisher
+# oft uebersprungen hat (Fix in index.js). Standardmaessig TEST-Modus
+# (kein Schreibzugriff) -- fuer den echten Fix per "Run workflow" den
+# Input "live" auf "true" setzen.
+# Nach Auswertung kann dieser Workflow wieder entfernt werden.
+
+on:
+  workflow_dispatch:
+    inputs:
+      live:
+        description: "true = wirklich sortieren (schreibt ins Sheet), sonst nur TEST-Modus"
+        required: false
+        default: "false"
+
+permissions:
+  contents: read
+
+jobs:
+  sort-now:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: automation/keyword-kombinationen/package-lock.json
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation/keyword-kombinationen
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Sortierung jetzt ausfuehren
+        working-directory: automation/keyword-kombinationen
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          if [ "${{ github.event.inputs.live }}" = "true" ]; then
+            node scripts/sort-now.js --live
+          else
+            node scripts/sort-now.js
+          fi
