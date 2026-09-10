@@ -1,0 +1,91 @@
+name: "Fix: EN-Inhalte fuer zutrittsueberwachung-baustelle (2026-09-10)"
+
+# EINMAL-WORKFLOW (nicht zeitgesteuert, nur manuell ueber "Run workflow"):
+# siehe automation/lp-generator/scripts/fix-zutrittsueberwachung-baustelle.js
+# fuer Hintergrund. Sonderfall-Nachzuegler aus dem allgemeinen
+# fix-missing-en-content.yml-Lauf: genau EINE Seite
+# (loesungen/zutrittsueberwachung-baustelle/index.html) wurde dort als
+# Anomalie uebersprungen, weil der live aus dem Sheet berechnete
+# USP-Varianten-Index (0) nicht zum tatsaechlichen USP-Text der Seite passt.
+# Verifiziert wurde: mit Region='' (statt dem heutigen Sheet-Wert) passen
+# sowohl der USP-Text (Variante 2) als auch die erste FAQ-Frage/-Antwort
+# (Variante 4) exakt zur Live-Seite -- die Seite wurde damals offenbar mit
+# einem leeren Region-Wert erzeugt. Dieses Skript nutzt die verifizierten
+# Indizes fest verdrahtet statt sie neu zu berechnen, prueft sie vor jeder
+# Aenderung nochmal per exaktem String-Vergleich gegen die Live-Seite, und
+# uebersetzt danach wie gewohnt (gleiche Sicherheits-Checks wie
+# fix-missing-en-content.js).
+#
+# Ablauf Nutzer: 1) ohne "live" laufen lassen (Dry-Run, prueft nur die
+# Uebereinstimmung, keine KI-Aufrufe). 2) mit "live" laufen lassen (genau 1
+# Seite, kein limit noetig).
+
+on:
+  workflow_dispatch:
+    inputs:
+      live:
+        description: 'Wirklich uebersetzen + schreiben (sonst nur Dry-Run/Diagnose im Log, keine KI-Aufrufe)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  fix-zutrittsueberwachung-baustelle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: automation/lp-generator/package-lock.json
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation/lp-generator
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: EN-Inhalte fuer zutrittsueberwachung-baustelle ergaenzen
+        working-directory: automation/lp-generator
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          ARGS=""
+          if [ "${{ inputs.live }}" = "true" ]; then ARGS="$ARGS --live"; fi
+          echo "Aufruf: node scripts/fix-zutrittsueberwachung-baustelle.js $ARGS"
+          node scripts/fix-zutrittsueberwachung-baustelle.js $ARGS
+
+      - name: Geaenderte Seite committen
+        run: |
+          git config user.name "nikos-lp-fix[bot]"
+          git config user.email "actions@github.com"
+          git add -A -- "loesungen/zutrittsueberwachung-baustelle"
+          if git diff --cached --quiet; then
+            echo "Keine Aenderungen -- nichts zu committen."
+            exit 0
+          fi
+          git commit -m "EN-Inhalte fuer zutrittsueberwachung-baustelle ergaenzt (Sonderfall, verifizierte USP/FAQ1-Variante)"
+          attempt=1
+          until git push; do
+            if [ "$attempt" -ge 5 ]; then
+              echo "Push nach $attempt Versuchen weiterhin fehlgeschlagen -- Abbruch."
+              exit 1
+            fi
+            echo "Push fehlgeschlagen (Versuch $attempt) -- rebase gegen origin/main und erneut versuchen ..."
+            git fetch origin main
+            if ! git rebase origin/main; then
+              echo "Rebase fehlgeschlagen -- Abbruch."
+              git rebase --abort || true
+              exit 1
+            fi
+            sleep $(( (RANDOM % 10) + attempt * 3 ))
+            attempt=$((attempt + 1))
+          done
+          echo "Push erfolgreich (Versuch $attempt)."
