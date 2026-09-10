@@ -123,8 +123,34 @@ async function appendRows(sheetName, rows) {
 // Entspricht "Blatt sortieren (Relevanz)": clearBasicFilter + sortRange
 // (absteigend nach Spalte "Relevanz") + setBasicFilter, per direktem
 // batchUpdate-Aufruf — 1:1 dieselbe Request-Struktur wie im n8n-HTTP-Node.
-async function sortByRelevanceDesc(sheetName, relevanzColumnIndex, columnCount) {
+//
+// WICHTIG (Fix 2026-09-10): relevanzColumnIndex/columnCount werden NICHT
+// mehr hartcodiert übergeben, sondern hier IMMER frisch aus der echten
+// Kopfzeile ermittelt. Ursprünglich war Spalte J (Index 9) / A:K (11
+// Spalten) korrekt, aber seither sind im Sheet neue Spalten dazugekommen
+// (deploy, aktiv, erstellt_am, slug, pfad, indiziert, OrigZeile) und die
+// Reihenfolge hat sich verschoben -- echte Kopfzeile heute (Diagnose vom
+// 2026-09-10): 0=erstellen, 1=deploy, 2=aktiv, 3=Relevanz, 4=Problem,
+// 5=Einsatz, 6=Region, 7=erstellt_am, 8=slug, 9=pfad, 10=Ende,
+// 11=indiziert, 12=OrigZeile. Mit dem alten Hardcoding (Index 9, 11
+// Spalten) wurde monatelang nach Spalte "pfad" (einer URL, als Text)
+// sortiert statt nach "Relevanz" -- deshalb blieb das Sheet trotz
+// "erfolgreicher" Sortierung durcheinander. Die alten Parameter
+// relevanzColumnIndex/columnCount werden aus Kompatibilitätsgründen noch
+// angenommen, aber ignoriert (siehe Aufrufer index.js/sort-now.js, die
+// inzwischen ohne diese Parameter aufrufen).
+async function sortByRelevanceDesc(sheetName) {
   const sheets = sheetsClient();
+  const headerRes = await sheets.spreadsheets.values.get({
+    spreadsheetId: SPREADSHEET_ID,
+    range: `${sheetName}!1:1`,
+  });
+  const header = (headerRes.data.values || [[]])[0];
+  const relevanzColumnIndex = header.indexOf('Relevanz');
+  if (relevanzColumnIndex === -1) {
+    throw new Error(`Spalte "Relevanz" nicht in der Kopfzeile von "${sheetName}" gefunden (Kopfzeile: ${header.join(', ')}).`);
+  }
+  const columnCount = header.length;
   await sheets.spreadsheets.batchUpdate({
     spreadsheetId: SPREADSHEET_ID,
     requestBody: {
