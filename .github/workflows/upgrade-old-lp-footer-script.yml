@@ -1,0 +1,97 @@
+name: "Fix: alten Sprachschalter-Footer auf 36 Loesungen-Seiten aktualisieren (2026-09-10)"
+
+# EINMAL-WORKFLOW (nicht zeitgesteuert, nur manuell ueber "Run workflow"):
+# siehe automation/lp-generator/scripts/upgrade-old-lp-footer-script.js fuer
+# Hintergrund. Teil des EN-Inhalte-Bugfixes (siehe auch
+# fix-missing-en-content.yml): 36 aeltere Loesungen-Seiten tragen noch den
+# ALTEN Footer-<script>-Block (kein IS_DUAL-Sprachschalter, Sprachpraeferenz
+# wird beim Laden nicht gemerkt). Dieser Workflow ersetzt NUR diesen einen
+# <script>-Block durch die aktuelle Fassung -- reiner Text-Ersatz, KEINE
+# KI-Aufrufe, KEINE Aenderung an Ueberschrift/Text/FAQ-Inhalten. Erst NACH
+# diesem Fix werden die 36 Seiten fuer den naechsten Lauf von
+# fix-missing-en-content.yml automatisch qualifizierend (danach tragen sie
+# `var IS_DUAL=false;` wie alle anderen klassischen Seiten).
+#
+# Ablauf Nutzer: 1) ohne "live" laufen lassen (Dry-Run, Log pruefen -- Anzahl
+# "qualifizierend" muss 36 sein, 0 Anomalien). 2) mit "live" laufen lassen
+# (kein limit noetig, reiner Text-Ersatz ist ungefaehrlich). 3) danach
+# fix-missing-en-content.yml erneut (live, ohne limit) laufen lassen, um die
+# jetzt qualifizierenden Seiten zu uebersetzen.
+
+on:
+  workflow_dispatch:
+    inputs:
+      live:
+        description: 'Wirklich schreiben (sonst nur Dry-Run/Diagnose im Log)'
+        type: boolean
+        default: false
+      limit:
+        description: 'Nur die ersten N qualifizierenden Seiten bearbeiten (leer lassen = alle)'
+        type: string
+        default: ''
+      slug:
+        description: 'Optional: nur genau diesen einen Seiten-Slug bearbeiten. Leer lassen = alle.'
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  upgrade-footer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: automation/lp-generator/package-lock.json
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation/lp-generator
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Alten Footer-Script-Block aktualisieren
+        working-directory: automation/lp-generator
+        run: |
+          ARGS=""
+          if [ "${{ inputs.live }}" = "true" ]; then ARGS="$ARGS --live"; fi
+          if [ -n "${{ inputs.limit }}" ]; then ARGS="$ARGS --limit=${{ inputs.limit }}"; fi
+          if [ -n "${{ inputs.slug }}" ]; then ARGS="$ARGS --slug=${{ inputs.slug }}"; fi
+          echo "Aufruf: node scripts/upgrade-old-lp-footer-script.js $ARGS"
+          node scripts/upgrade-old-lp-footer-script.js $ARGS
+
+      - name: Geaenderte Seiten committen
+        run: |
+          git config user.name "nikos-lp-fix[bot]"
+          git config user.email "actions@github.com"
+          git add -A -- "loesungen"
+          if git diff --cached --quiet; then
+            echo "Keine Aenderungen -- nichts zu committen."
+            exit 0
+          fi
+          git commit -m "Alten Sprachschalter-Footer auf aeltere Loesungen-Seiten aktualisiert (IS_DUAL-Support, kein Inhalts-Change)"
+          attempt=1
+          until git push; do
+            if [ "$attempt" -ge 5 ]; then
+              echo "Push nach $attempt Versuchen weiterhin fehlgeschlagen -- Abbruch."
+              exit 1
+            fi
+            echo "Push fehlgeschlagen (Versuch $attempt) -- rebase gegen origin/main und erneut versuchen ..."
+            git fetch origin main
+            if ! git rebase origin/main; then
+              echo "Rebase fehlgeschlagen -- Abbruch."
+              git rebase --abort || true
+              exit 1
+            fi
+            sleep $(( (RANDOM % 10) + attempt * 3 ))
+            attempt=$((attempt + 1))
+          done
+          echo "Push erfolgreich (Versuch $attempt)."
