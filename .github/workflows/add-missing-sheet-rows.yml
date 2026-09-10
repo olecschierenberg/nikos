@@ -1,0 +1,56 @@
+name: "Fix: fehlende Sheet-Zeilen fuer 2 bestehende Loesungen-Seiten (2026-09-10)"
+
+# EINMAL-WORKFLOW (nicht zeitgesteuert, nur manuell ueber "Run workflow"):
+# siehe automation/lp-generator/scripts/add-missing-sheet-rows.js fuer
+# Hintergrund. Letzter offener Punkt aus dem EN-Inhalte-Bugfix: 2 bestehende,
+# bereits live Landingpages (besucherinformation-augsburger-plaerrer-augsburg,
+# unwetterwarnung-iga-ruhrgebiet-2027-essen) haben im Sheet
+# "Keywordkombinationen" gar keine Zeile -- reine Buchfuehrungsluecke,
+# verifiziert per audit-lp-inventory.js. Dieses Skript haengt je EINE neue
+# Zeile an, die den bereits existierenden Live-Zustand abbildet
+# (erstellen=deploy=aktiv=x) -- es wird KEINE Neu-Generierung ausgeloest.
+# Aendert NUR das Google Sheet, KEINE Datei im Repo.
+#
+# Ablauf Nutzer: 1) ohne "live" laufen lassen (Dry-Run, Log pruefen). 2) mit
+# "live" laufen lassen. 3) danach fix-missing-en-content.yml erneut (live,
+# ohne limit) laufen lassen, um die jetzt qualifizierenden 2 Seiten zu
+# uebersetzen.
+
+on:
+  workflow_dispatch:
+    inputs:
+      live:
+        description: 'Wirklich in das Sheet schreiben (sonst nur Dry-Run/Diagnose im Log)'
+        type: boolean
+        default: false
+
+jobs:
+  add-missing-sheet-rows:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: automation/lp-generator/package-lock.json
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation/lp-generator
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Fehlende Sheet-Zeilen anhaengen
+        working-directory: automation/lp-generator
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          ARGS=""
+          if [ "${{ inputs.live }}" = "true" ]; then ARGS="$ARGS --live"; fi
+          echo "Aufruf: node scripts/add-missing-sheet-rows.js $ARGS"
+          node scripts/add-missing-sheet-rows.js $ARGS
