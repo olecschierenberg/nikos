@@ -1,0 +1,111 @@
+name: "Fix: fehlende Englisch-Texte auf Loesungen-Seiten ergaenzen (2026-09-10)"
+
+# EINMAL-WORKFLOW (nicht zeitgesteuert, nur manuell ueber "Run workflow"):
+# siehe automation/lp-generator/scripts/fix-missing-en-content.js fuer Hintergrund.
+# Nutzer-Auftrag 2026-09-10: "Die Texte sollen in der englischen Version
+# selbstverstaendlich nicht leer sein. Das ist ein Fehler und war nie so gewollt."
+# Bestehende klassische Landingpages (loesungen/<slug>/index.html, Modus DEUTSCH)
+# haben bislang NUR deutsche Inhalte -- alle englischen data-en-Felder (Subhead,
+# Intro, USP, FAQ1-4) sind leer, und es fehlt sogar das <h1 data-en> komplett.
+# Dieser Workflow uebersetzt die vorhandenen deutschen Inhalte ins Englische
+# (Modell gpt-5.6-luna, gleiche Prompts/Textbausteine wie bei der normalen
+# Generierung) und schreibt sie in die bisher leeren Felder.
+#
+# WICHTIG: das Skript aendert NUR Seiten, bei denen die erwartete leere Struktur
+# EXAKT gefunden wird -- alles andere wird uebersprungen und im Log als ANOMALIE
+# ausgewiesen. Vor dem Live-Lauf unbedingt zuerst den Dry-Run-Log pruefen, dann
+# mit kleinem --limit live testen, erst danach den vollen Lauf starten.
+#
+# Ablauf Nutzer:
+#  1) OHNE Haken bei "live" laufen lassen (Dry-Run, Log vollstaendig pruefen --
+#     Anzahl "qualifizierend" sowie Anomalien-Liste kontrollieren).
+#  2) MIT Haken bei "live" UND kleinem limit (z. B. 5) laufen lassen, die 5
+#     geaenderten Seiten stichprobenartig im Browser pruefen (Uebersetzungs-
+#     qualitaet, Modul-Logos, FAQ1-Normaussage).
+#  3) Bei gutem Ergebnis erneut MIT Haken bei "live" OHNE limit (= alle
+#     qualifizierenden Seiten) laufen lassen. Kann bei Bedarf mehrfach
+#     wiederholt werden (bereits fertige Seiten werden automatisch uebersprungen,
+#     da sie dann schon ein <h1 data-en> haben).
+#
+# Nach erfolgreichem vollstaendigem Live-Lauf kann dieser Workflow entfernt werden.
+
+on:
+  workflow_dispatch:
+    inputs:
+      live:
+        description: 'Wirklich uebersetzen + schreiben (sonst nur Dry-Run/Diagnose im Log, keine KI-Aufrufe)'
+        type: boolean
+        default: false
+      limit:
+        description: 'Nur die ersten N qualifizierenden Seiten bearbeiten (leer lassen = alle). Empfehlung: beim ersten Live-Lauf klein (z. B. 5) waehlen.'
+        type: string
+        default: ''
+      slug:
+        description: 'Optional: nur genau diesen einen Seiten-Slug bearbeiten (fuer gezielte Tests/Nacharbeit). Leer lassen = alle.'
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  fix-en-content:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: automation/lp-generator/package-lock.json
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation/lp-generator
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Fehlende Englisch-Texte ergaenzen
+        working-directory: automation/lp-generator
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          ARGS=""
+          if [ "${{ inputs.live }}" = "true" ]; then ARGS="$ARGS --live"; fi
+          if [ -n "${{ inputs.limit }}" ]; then ARGS="$ARGS --limit=${{ inputs.limit }}"; fi
+          if [ -n "${{ inputs.slug }}" ]; then ARGS="$ARGS --slug=${{ inputs.slug }}"; fi
+          echo "Aufruf: node scripts/fix-missing-en-content.js $ARGS"
+          node scripts/fix-missing-en-content.js $ARGS
+
+      - name: Geaenderte Seiten committen
+        run: |
+          git config user.name "nikos-lp-fix[bot]"
+          git config user.email "actions@github.com"
+          git add -A -- "loesungen"
+          if git diff --cached --quiet; then
+            echo "Keine Aenderungen -- nichts zu committen."
+            exit 0
+          fi
+          git commit -m "Fehlende Englisch-Texte auf bestehenden Loesungen-Seiten ergaenzt (Subhead/Intro/USP/FAQ/H1)"
+          attempt=1
+          until git push; do
+            if [ "$attempt" -ge 5 ]; then
+              echo "Push nach $attempt Versuchen weiterhin fehlgeschlagen -- Abbruch."
+              exit 1
+            fi
+            echo "Push fehlgeschlagen (Versuch $attempt) -- rebase gegen origin/main und erneut versuchen ..."
+            git fetch origin main
+            if ! git rebase origin/main; then
+              echo "Rebase fehlgeschlagen -- Abbruch."
+              git rebase --abort || true
+              exit 1
+            fi
+            sleep $(( (RANDOM % 10) + attempt * 3 ))
+            attempt=$((attempt + 1))
+          done
+          echo "Push erfolgreich (Versuch $attempt)."
