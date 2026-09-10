@@ -89,6 +89,30 @@ async function updateRowByRowNumber(sheetName, rowNumber, columns) {
   });
 }
 
+// Haengt eine NEUE Zeile ans Ende eines Tabs an. `columns` ist ein
+// {Spaltenname: Wert}-Objekt -- die Reihenfolge im Sheet wird dynamisch aus
+// der Kopfzeile gelesen (wie bei updateRowByRowNumber), damit die Werte auch
+// bei spaeter geaenderter Spaltenreihenfolge in den richtigen Zellen landen.
+// Unbekannte Spaltennamen in `columns` werden ignoriert; nicht angegebene
+// Spalten bleiben leer. Nutzt die Sheets-API "append" (INSERT_ROWS), haengt
+// also IMMER eine neue Zeile an, statt eine bestehende zu ueberschreiben.
+async function appendRow(sheetName, columns) {
+  const sheets = sheetsClient();
+  const headerRes = await sheets.spreadsheets.values.get({
+    spreadsheetId: SPREADSHEET_ID,
+    range: `${sheetName}!1:1`,
+  });
+  const header = (headerRes.data.values || [[]])[0];
+  const row = header.map((h) => (h && Object.prototype.hasOwnProperty.call(columns, h)) ? columns[h] : '');
+  await sheets.spreadsheets.values.append({
+    spreadsheetId: SPREADSHEET_ID,
+    range: `${sheetName}!A1`,
+    valueInputOption: 'USER_ENTERED',
+    insertDataOption: 'INSERT_ROWS',
+    requestBody: { values: [row] },
+  });
+}
+
 // Liefert die numerische sheetId (gid) eines Tabs anhand seines Namens --
 // wird für deleteDimension-Requests benötigt (die arbeiten mit sheetId, nicht
 // mit dem Tab-Namen).
@@ -138,4 +162,4 @@ function columnLetter(index) {
   return s;
 }
 
-module.exports = { readSheetAsItems, updateRowByRowNumber, getSheetIdByName, deleteRowsByRowNumbers, SPREADSHEET_ID };
+module.exports = { readSheetAsItems, updateRowByRowNumber, appendRow, getSheetIdByName, deleteRowsByRowNumbers, SPREADSHEET_ID };
