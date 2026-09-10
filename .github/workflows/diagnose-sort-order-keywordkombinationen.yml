@@ -1,0 +1,39 @@
+name: "Diagnose: Sortierreihenfolge Keywordkombinationen (2026-09-10)"
+
+# EINMAL-DIAGNOSE-WORKFLOW (nicht zeitgesteuert, nur manuell ueber "Run
+# workflow"): rein lesend, siehe automation/keyword-kombinationen/scripts/
+# diagnose-sort-order.js. Prueft, ob der Tab "Keywordkombinationen"
+# aktuell absteigend nach "Relevanz" sortiert ist, und zeigt Zeilen ohne
+# Relevanz-Wert (typischerweise manuell hinzugefuegte Zeilen).
+# Nach Auswertung kann dieser Workflow wieder entfernt werden.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: automation/keyword-kombinationen/package-lock.json
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation/keyword-kombinationen
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Sortier-Diagnose ausfuehren
+        working-directory: automation/keyword-kombinationen
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: node scripts/diagnose-sort-order.js
