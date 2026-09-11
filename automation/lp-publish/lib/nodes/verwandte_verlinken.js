@@ -48,11 +48,21 @@ function buildBlock(relatedList) {
   // extractTitleEn() in relatedLinksUtil.js); faellt sie leer aus (sollte
   // nicht vorkommen, siehe dortiger Kommentar), wird auf den DE-Titel bzw.
   // den Slug zurueckgefallen, statt einen leeren Link zu erzeugen.
+  // Bugfix (2026-09-11): der EN-Anker fuehrte trotz korrektem EN-Linktext
+  // auf die DEUTSCHE Ansicht der Zielseite (gemeldet vom Nutzer) -- Ursache
+  // war NICHT hier, sondern im Sprachschalter-Bootstrap-Skript jeder Seite
+  // (siehe fix-lang-persistence-footer-script.js): Ziel-Loesungen-Seiten
+  // sind einzelne URLs mit clientseitigem DE/EN-Toggle, und das Skript hat
+  // eine gemerkte EN-Praeferenz beim Laden bewusst wieder auf Deutsch
+  // zurueckgesetzt. Jetzt haengt jeder Anker explizit ?lang=de bzw.
+  // ?lang=en an -- das gepatchte Bootstrap-Skript liest diesen Parameter
+  // als hoechste Prioritaet und zeigt garantiert die passende Sprache,
+  // unabhaengig vom gespeicherten localStorage-Wert.
   const items = relatedList.map(r => {
     const hrefStyle = 'style="color:var(--orange-dk);text-decoration:none;font-weight:600;"';
     const textDe = esc(r.title || r.slug);
     const textEn = esc(r.titleEn || r.title || r.slug);
-    return `      <li><a href="https://nikos.info/loesungen/${r.slug}/" ${hrefStyle} data-de>${textDe}</a><a href="https://nikos.info/loesungen/${r.slug}/" ${hrefStyle} data-en>${textEn}</a></li>`;
+    return `      <li><a href="https://nikos.info/loesungen/${r.slug}/?lang=de" ${hrefStyle} data-de>${textDe}</a><a href="https://nikos.info/loesungen/${r.slug}/?lang=en" ${hrefStyle} data-en>${textEn}</a></li>`;
   }).join('\n');
   return `<!-- VERWANDTE-ANWENDUNGSBEISPIELE:START -->
 <section class="nk-section" aria-label="Weitere Anwendungsbeispiele">
