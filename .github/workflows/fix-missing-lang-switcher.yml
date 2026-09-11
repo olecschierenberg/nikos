@@ -95,4 +95,3 @@ jobs:
             attempt=$((attempt + 1))
           done
           echo "Push erfolgreich (Versuch $attempt)."
-
