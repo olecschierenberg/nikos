@@ -43,18 +43,10 @@
     },
     {
       "@type": "Question",
-      "name": "Ist NIKOS krisensicher?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS funktioniert unabhängig von öffentlichen Kommunikationsnetzen und deren Verfügbarkeit. Die Funkverbindung zwischen den NIKOS-Modulen benötigt weder Mobilfunk noch Internet. Nach einer Unterbrechung stellt sich die Verbindung automatisch wieder her. NIKOS [audio]² verfügt über einen internen Akku mit einer Laufzeit von bis zu 16 Stunden und versorgt angeschlossene Zubehörmodule. Bei überlastetem Handynetz, einem Ausfall des Internetzugangs oder einer Unterbrechung der Stromversorgung bleibt die Besucherinformation für das Internationale Straßenfest funktionsfähig."
-      }
-    },
-    {
-      "@type": "Question",
       "name": "Ist NIKOS kurzfristig und flexibel einsetzbar?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja. NIKOS ist für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Ein bis zwei Personen montieren die Module innerhalb weniger Minuten an Laternen, Bühnen, Bäumen, Buden oder Dekorationen und konfigurieren sie für den Einsatzort. Ein Schuko-Stromanschluss sichert den Dauerbetrieb. Die NIKOS-Module bauen ihre Funkverbindung direkt untereinander auf; öffentliche Kommunikationsnetze sind nicht erforderlich."
+        "text": "Ja. NIKOS wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Ein oder zwei Personen montieren die Module an Laternen, Bühnen, Bäumen, Buden oder Dekorationen und konfigurieren sie für den jeweiligen Einsatz. Für den Dauerbetrieb genügt ein Schuko-Stromanschluss."
       }
     },
     {
@@ -62,7 +54,15 @@
       "name": "Wie unterstützt NIKOS die Einhaltung der Nachtruhe?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Nachtruhe-Funktion in NIKOS [dispatcher]² schaltet alle angeschlossenen Beschallungsanlagen auf Knopfdruck zentral ab. Damit endet die Beschallung zum festgelegten Zeitpunkt und die Einhaltung der Nachtruhe wird sichergestellt."
+        "text": "Die Nachtruhe-Funktion in NIKOS [dispatcher]² schaltet alle angeschlossenen Beschallungsanlagen auf Knopfdruck zentral ab. Das erleichtert die behördliche Genehmigung und beugt Beschwerden von Anwohnern vor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist NIKOS krisensicher?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, NIKOS arbeitet über ein eigenes, autarkes Funknetz und unabhängig von öffentlichen Kommunikationsnetzen sowie deren Verfügbarkeit. Das System bleibt dadurch gegen äußere Einflüsse widerstandsfähig. NIKOS kommuniziert per Funk und benötigt keine Kabelwege. Nach einer Unterbrechung stellt sich die Verbindung selbstständig wieder her. NIKOS reagiert resilient auf Störungen des Regelbetriebes und gewährleistet die Krisentauglichkeit des Kommunikationssystems. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. Bei Überlastung des Handynetzes, einem Ausfall des Internetproviders oder einer Unterbrechung der Stromversorgung funktioniert NIKOS weiter. So bleibt die Besucherinformation für das Internationale Straßenfest auch bei Ausfall der Stromversorgung oder Störungen in den öffentlichen Kommunikationsnetzen zuverlässig funktionsfähig."
       }
     }
   ]
@@ -257,9 +257,9 @@ a{color:inherit}
 <section class="intro-s2">
   <div class="intro-s2__inner">
     <span class="nk-label" data-de>Herausforderung</span><span class="nk-label" data-en>Challenge</span>
-    <h2 class="heading-l" style="margin-top:12px;" data-de>Wichtige Hinweise erreichen das Publikum trotz Gedränge und Lärm</h2>
+    <h2 class="heading-l" style="margin-top:12px;" data-de>Wichtige Hinweise trotz Lärm und Gedränge</h2>
     <h2 class="heading-l" style="margin-top:12px;" data-en></h2>
-    <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);" data-de>Beim Internationalen Straßenfest in Sindelfingen stellt die Besucherinformation durch Gedränge, laute Umgebung und fremdsprachige Besucher eine besondere Herausforderung dar. Besucher verteilen sich auf unterschiedliche Bereiche und nehmen Hinweise nicht gleichzeitig wahr. Bei hoher Auslastung stehen mobilfunkgestützte Informationswege nicht zuverlässig zur Verfügung.</p>
+    <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);" data-de>Beim Internationalen Straßenfest in Sindelfingen stellt die Besucherinformation durch Gedränge, laute Umgebung und fremdsprachige Besucher eine besondere Herausforderung dar. Wichtige Hinweise zu Programmänderungen, Orientierung oder Sicherheitslagen müssen Besucher in unterschiedlichen Veranstaltungsbereichen schnell verstehen. Die Geräuschkulisse und eine hohe Auslastung des Mobilfunknetzes erschweren die zuverlässige Informationsübermittlung zusätzlich.</p>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);" data-en></p>
   </div>
 </section>
@@ -272,7 +272,7 @@ a{color:inherit}
       <h2 class="heading-l" style="margin-top:10px;" data-de>Alltagstauglich und im Ernstfall sofort zur Stelle</h2>
       <h2 class="heading-l" style="margin-top:10px;" data-en>Suited to everyday use and instantly ready in an emergency</h2>
     </div>
-    <p class="body-l" style="max-width:860px;" data-de>Durchsagen, Systemmonitoring, Crowd Management und Gerätesteuerung laufen bei <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> in einer einzigen, vom öffentlichen Netz unabhängigen Plattform zusammen. <a class="nk-mod" href="https://nikos.info/de/produkte/#dispatcher"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a> steuert die Durchsageeinheiten für einzelne Durchsagestandorte, gezielte Bereiche oder das gesamte Veranstaltungsgelände an. Dadurch lassen sich Besucherhinweise zentral auslösen, ohne Personal für die Weitergabe von Informationen über das Gelände zu verteilen. Das reduziert den Personalaufwand für wiederkehrende Informations- und Koordinationsaufgaben.</p>
+    <p class="body-l" style="max-width:860px;" data-de>Durchsagen, Systemmonitoring, Crowd Management und Gerätesteuerung laufen bei <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> in einer einzigen, vom öffentlichen Netz unabhängigen Plattform zusammen. <a class="nk-mod" href="https://nikos.info/de/produkte/#dispatcher"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a> steuert die Durchsageeinheiten für einzelne Durchsagestandorte, gezielte Bereiche oder das gesamte Veranstaltungsgelände an. Dadurch lassen sich Informationsansagen von einer Stelle aus auslösen; der Aufwand für verteilte Bedienposten sowie für separate Steuertechnik sinkt.</p>
       <p class="body-l" style="max-width:860px;" data-en></p>
   </div>
 </section>
@@ -292,18 +292,18 @@ a{color:inherit}
         <div class="faq-item__body" data-en></div>
       </details>
       <details class="faq-item">
-        <summary><span class="faq-q" data-de>Ist NIKOS krisensicher?</span><span class="faq-q" data-en></span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body" data-de>Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> funktioniert unabhängig von öffentlichen Kommunikationsnetzen und deren Verfügbarkeit. Die Funkverbindung zwischen den NIKOS-Modulen benötigt weder Mobilfunk noch Internet. Nach einer Unterbrechung stellt sich die Verbindung automatisch wieder her. <a class="nk-mod" href="https://nikos.info/de/produkte/#audio"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS audio.svg" alt="NIKOS [audio]²" loading="lazy"></a> verfügt über einen internen Akku mit einer Laufzeit von bis zu 16 Stunden und versorgt angeschlossene Zubehörmodule. Bei überlastetem Handynetz, einem Ausfall des Internetzugangs oder einer Unterbrechung der Stromversorgung bleibt die Besucherinformation für das Internationale Straßenfest funktionsfähig.</div>
-        <div class="faq-item__body" data-en></div>
-      </details>
-      <details class="faq-item">
         <summary><span class="faq-q" data-de>Ist NIKOS kurzfristig und flexibel einsetzbar?</span><span class="faq-q" data-en></span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body" data-de>Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> ist für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Ein bis zwei Personen montieren die Module innerhalb weniger Minuten an Laternen, Bühnen, Bäumen, Buden oder Dekorationen und konfigurieren sie für den Einsatzort. Ein Schuko-Stromanschluss sichert den Dauerbetrieb. Die NIKOS-Module bauen ihre Funkverbindung direkt untereinander auf; öffentliche Kommunikationsnetze sind nicht erforderlich.</div>
+        <div class="faq-item__body" data-de>Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Ein oder zwei Personen montieren die Module an Laternen, Bühnen, Bäumen, Buden oder Dekorationen und konfigurieren sie für den jeweiligen Einsatz. Für den Dauerbetrieb genügt ein Schuko-Stromanschluss.</div>
         <div class="faq-item__body" data-en></div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Wie unterstützt NIKOS die Einhaltung der Nachtruhe?</span><span class="faq-q" data-en></span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body" data-de>Die Nachtruhe-Funktion in <a class="nk-mod" href="https://nikos.info/de/produkte/#dispatcher"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a> schaltet alle angeschlossenen Beschallungsanlagen auf Knopfdruck zentral ab. Damit endet die Beschallung zum festgelegten Zeitpunkt und die Einhaltung der Nachtruhe wird sichergestellt.</div>
+        <div class="faq-item__body" data-de>Die Nachtruhe-Funktion in <a class="nk-mod" href="https://nikos.info/de/produkte/#dispatcher"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a> schaltet alle angeschlossenen Beschallungsanlagen auf Knopfdruck zentral ab. Das erleichtert die behördliche Genehmigung und beugt Beschwerden von Anwohnern vor.</div>
+        <div class="faq-item__body" data-en></div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" data-de>Ist NIKOS krisensicher?</span><span class="faq-q" data-en></span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body" data-de>Ja, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> arbeitet über ein eigenes, autarkes Funknetz und unabhängig von öffentlichen Kommunikationsnetzen sowie deren Verfügbarkeit. Das System bleibt dadurch gegen äußere Einflüsse widerstandsfähig. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> kommuniziert per Funk und benötigt keine Kabelwege. Nach einer Unterbrechung stellt sich die Verbindung selbstständig wieder her. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> reagiert resilient auf Störungen des Regelbetriebes und gewährleistet die Krisentauglichkeit des Kommunikationssystems. <a class="nk-mod" href="https://nikos.info/de/produkte/#audio"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS audio.svg" alt="NIKOS [audio]²" loading="lazy"></a> verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. Bei Überlastung des Handynetzes, einem Ausfall des Internetproviders oder einer Unterbrechung der Stromversorgung funktioniert <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> weiter. So bleibt die Besucherinformation für das Internationale Straßenfest auch bei Ausfall der Stromversorgung oder Störungen in den öffentlichen Kommunikationsnetzen zuverlässig funktionsfähig.</div>
         <div class="faq-item__body" data-en></div>
       </details>
     </div>
