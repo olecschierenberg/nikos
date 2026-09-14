@@ -208,5 +208,12 @@
     "einsatz": "Internationales Straßenfest",
     "problem": "Besucherinformation",
     "mangel": "Weichmacher in der Normen-FAQ entfernt. | Weichmacher und unklare Möglichkeitsaussage in der Installations-FAQ entfernt."
+  },
+  {
+    "datum": "14.09.2026",
+    "region": "Sindelfingen",
+    "einsatz": "Internationales Straßenfest",
+    "problem": "Besucherinformation",
+    "mangel": "Das Intro enthielt eine unzulässige Produkt- und Lösungsaussage; sie wurde auf die Herausforderung beschränkt. | Der Weichmacher „unter Umständen“ wurde entfernt."
   }
 ]
