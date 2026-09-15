@@ -56,8 +56,13 @@ html=html.replace(/https:\/\/nikos\.(?:audio|info)\/assets\/img\/Banner\/NIKOS-H
 html=html.replace('alt="NIKOS" loading="eager"','alt="'+HALT+'" loading="eager"'+OBJPOS);
 if(html.indexOf('.nk-mod{')<0){html=html.replace('a{color:inherit}\n','a{color:inherit}\n'+NKMOD);}
 var pDe='',pEn='';
+var mergedH1Re=/<h1><span data-de>([\s\S]*?)<\/span><span data-en>([\s\S]*?)<\/span><\/h1>/;
+if(mergedH1Re.test(html)){
+html=html.replace(mergedH1Re,function(m,tde,ten){var sde=splitCo(tde),sen=splitCo(ten);pDe=sde[1];pEn=sen[1];return '<h1><span data-de>'+sde[0]+'</span><span data-en>'+sen[0]+'</span></h1>';});
+}else{
 html=html.replace(/<h1 data-de>([\s\S]*?)<\/h1>/,function(m,t){var s=splitCo(t);pDe=s[1];return '<h1 data-de>'+s[0]+'</h1>';});
 html=html.replace(/<h1 data-en>([\s\S]*?)<\/h1>/,function(m,t){var s=splitCo(t);pEn=s[1];return '<h1 data-en>'+s[0]+'</h1>';});
+}
 if(pDe){html=html.replace(/(<h2 class="heading-l" style="margin-top:12px;" data-de>)[\s\S]*?(<\/h2>)/,function(m,a,z){return a+pDe+z;});}
 if(pEn){html=html.replace(/(<h2 class="heading-l" style="margin-top:12px;" data-en>)[\s\S]*?(<\/h2>)/,function(m,a,z){return a+pEn+z;});}
 html=html.replace('data-de>Eine einheitliche Lösung für Alltag und Ernstfall</h2>','data-de>'+USPHEAD[0]+'</h2>');

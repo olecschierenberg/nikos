@@ -16,4 +16,4 @@ backups-audit-*
 _to_delete/
 # H1-Fix Skripte & Backups (Claude-Sitzungen, nicht auf die Website)
 _h1fix_backups/
-_fix_h1*.py
+_fix_*.py
