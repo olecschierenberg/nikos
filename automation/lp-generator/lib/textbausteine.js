@@ -344,6 +344,45 @@ function pickFaqIndex(problem, einsatz, region) {
   return pickVariantIndex(variantSeed(problem, einsatz, region) + '|faq', FAQ1_A_DE_VARIANTS.length);
 }
 
+// NEU (2026-09-15, Nutzer-Klarstellung "Schlusssatz individuell anpassen"):
+// FAQ1_A_CLOSING_DE/-TRANSLATIONS bleiben der SICHERE FALLBACK, aber der
+// tatsaechlich verwendete Schlusssatz wird jetzt -- wo moeglich -- aus der
+// ohnehin von der KI erzeugten faq1_a-Antwort extrahiert (deren letzter
+// Satz), damit er individuell zur jeweiligen Seite (Einsatz/Ort) passt,
+// statt auf jeder Seite wortgleich zu sein. Der compliance-relevante KERN
+// (FAQ1_A_*_VARIANTS, WORTGENAU-Pool) bleibt davon vollstaendig unberuehrt
+// und wird NIE durch KI-Text ersetzt -- nur der rein werbliche/
+// kontaktbezogene Schlusssatz danach. Sicherheitsnetz: Faellt die
+// Satzerkennung unklar aus (kein eindeutiger Mehrsatz-Text, unplausible
+// Laenge) ODER enthaelt der erkannte letzte Satz Hinweise auf eine erneute
+// Normaussage (Normnamen, "zertifiziert", "vorschrift" usw.), wird der feste
+// Fallback-Satz verwendet -- so kann dieses Verhalten nie schlechter als der
+// bisherige Zustand ausfallen, nur besser (individueller).
+const CLOSING_BLOCKLIST = [
+  'din en', 'din vde', 'din 14675', 'iso ', 'iec ', 'vde 0833', '50849',
+  'norm ', 'normen', 'normgerecht', 'normkonform', 'norm-konform', 'normkonformität',
+  'vorschrift', 'gesetz', 'gesetzlich', 'zertifi', 'pflichtangabe',
+  'compliance', 'compliant', 'certified', 'certification', 'regulation', 'statutory',
+];
+
+function extractIndividualClosing(rawAnswerText, fallbackClosing) {
+  if (!rawAnswerText || typeof rawAnswerText !== 'string') return fallbackClosing;
+  const text = rawAnswerText.trim();
+  // Unicode-Eigenschaften (\p{L}=Buchstabe, \p{N}=Ziffer, \p{Lu}=Grossbuchstabe)
+  // statt fester lateinischer Zeichenbereiche -- funktioniert sprachunabhaengig
+  // ueber alle von UI_L10N/LANG_META unterstuetzten Sprachen hinweg. Erfordert
+  // 2 alphanumerische Zeichen vor dem Satzzeichen, damit Abkuerzungen wie
+  // "z. B." (Einzelbuchstabe + Punkt) nicht faelschlich als Satzende gelten;
+  // Zahlen (z.B. Normnummern wie "50849.") werden weiterhin korrekt erkannt.
+  const parts = text.split(/(?<=[\p{L}\p{N}]{2}[.!?])\s+(?=\p{Lu})/u);
+  if (parts.length < 2) return fallbackClosing;
+  const last = parts[parts.length - 1].trim();
+  if (last.length < 15 || last.length > 400) return fallbackClosing;
+  const lastLower = last.toLowerCase();
+  if (CLOSING_BLOCKLIST.some((kw) => lastLower.indexOf(kw) !== -1)) return fallbackClosing;
+  return last;
+}
+
 module.exports = {
   USP_INTRO_DE_VARIANTS,
   USP_INTRO_TRANSLATIONS,
@@ -355,4 +394,5 @@ module.exports = {
   FAQ1_A_CLOSING_TRANSLATIONS,
   pickUspIndex,
   pickFaqIndex,
+  extractIndividualClosing,
 };

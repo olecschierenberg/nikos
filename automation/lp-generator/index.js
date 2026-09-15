@@ -39,7 +39,7 @@ const {
   FAQ1_Q_DE_VARIANTS, FAQ1_Q_TRANSLATIONS,
   FAQ1_A_DE_VARIANTS, FAQ1_A_TRANSLATIONS,
   FAQ1_A_CLOSING_DE, FAQ1_A_CLOSING_TRANSLATIONS,
-  pickUspIndex, pickFaqIndex,
+  pickUspIndex, pickFaqIndex, extractIndividualClosing,
 } = require('./lib/textbausteine');
 
 const REPO_ROOT = path.join(__dirname, '..', '..'); // .../site
@@ -171,7 +171,13 @@ function toGenericFieldsForLang(o, problem, einsatz, region, lang) {
   const isDe = lang === 'de';
   const uspIntro = isDe ? USP_INTRO_DE_VARIANTS[uspIdx] : USP_INTRO_TRANSLATIONS[lang][uspIdx];
   const faq1Q = isDe ? FAQ1_Q_DE_VARIANTS[faqIdx] : FAQ1_Q_TRANSLATIONS[lang][faqIdx];
-  const faq1AClosing = isDe ? FAQ1_A_CLOSING_DE : (FAQ1_A_CLOSING_TRANSLATIONS[lang] || FAQ1_A_CLOSING_DE);
+  const faq1AClosingFallback = isDe ? FAQ1_A_CLOSING_DE : (FAQ1_A_CLOSING_TRANSLATIONS[lang] || FAQ1_A_CLOSING_DE);
+  // GEAENDERT (2026-09-15, Nutzer-Klarstellung): Schlusssatz wird -- wenn
+  // moeglich -- individuell aus der bereits generierten KI-Antwort dieser
+  // Seite extrahiert (siehe extractIndividualClosing() in textbausteine.js),
+  // statt immer denselben festen Satz zu verwenden. Der Pool-Kern bleibt
+  // unveraendert WORTGENAU.
+  const faq1AClosing = extractIndividualClosing(o['faq1_a' + suffix], faq1AClosingFallback);
   const faq1A = (isDe ? FAQ1_A_DE_VARIANTS[faqIdx] : FAQ1_A_TRANSLATIONS[lang][faqIdx]) + ' ' + faq1AClosing;
   const out = {
     usp_intro: uspIntro,
@@ -274,13 +280,22 @@ async function callTranslation({ lang, deFields, sourceLang, problem, einsatz, r
   // einer frischen Modell-Uebersetzung, damit die rechtlich/inhaltlich
   // wichtige Normaussage auf jeder Seite garantiert identisch (zur
   // gewaehlten Variante) ist.
+  // GEAENDERT (2026-09-15, Nutzer-Klarstellung): vor dem Ueberschreiben die
+  // KI-eigene Uebersetzung von faq1_a sichern -- deFields.faq1_a enthaelt
+  // bereits einen individuellen Schlusssatz (siehe toGenericFieldsForLang),
+  // das Modell hat ihn hier mit uebersetzt. Wir isolieren daraus den letzten
+  // Satz als individuellen, sprachlich korrekten Schlusssatz fuer diese
+  // Zielsprache; der compliance-relevante Kern kommt weiterhin ausschliesslich
+  // aus dem geprueften Pool.
+  const _rawTranslatedFaq1A = parsed.faq1_a;
   if (lang === 'de') {
     parsed.faq1_q = FAQ1_Q_DE_VARIANTS[_faqIdx];
-    parsed.faq1_a = FAQ1_A_DE_VARIANTS[_faqIdx] + ' ' + FAQ1_A_CLOSING_DE;
+    parsed.faq1_a = FAQ1_A_DE_VARIANTS[_faqIdx] + ' ' + extractIndividualClosing(_rawTranslatedFaq1A, FAQ1_A_CLOSING_DE);
   } else {
     if (FAQ1_Q_TRANSLATIONS[lang]) parsed.faq1_q = FAQ1_Q_TRANSLATIONS[lang][_faqIdx];
     if (FAQ1_A_TRANSLATIONS[lang]) {
-      parsed.faq1_a = FAQ1_A_TRANSLATIONS[lang][_faqIdx] + ' ' + (FAQ1_A_CLOSING_TRANSLATIONS[lang] || FAQ1_A_CLOSING_DE);
+      const _faq1ClosingFallback = FAQ1_A_CLOSING_TRANSLATIONS[lang] || FAQ1_A_CLOSING_DE;
+      parsed.faq1_a = FAQ1_A_TRANSLATIONS[lang][_faqIdx] + ' ' + extractIndividualClosing(_rawTranslatedFaq1A, _faq1ClosingFallback);
     }
   }
   const check = runAllItems('mini_check.js', {
@@ -648,10 +663,16 @@ async function main() {
   {
     const _o = htmlBauenInput.json.output || {};
     const _faqIdx = pickFaqIndex(filterItem.json.Problem, filterItem.json.Einsatz, filterItem.json.Region);
+    // GEAENDERT (2026-09-15, Nutzer-Klarstellung): Rohtexte VOR dem
+    // Ueberschreiben sichern, um daraus den individuellen Schlusssatz zu
+    // extrahieren (siehe extractIndividualClosing()) -- der WORTGENAU-Kern
+    // kommt weiterhin ausschliesslich aus dem geprueften Pool.
+    const _rawFaq1ADe = _o.faq1_a_de;
+    const _rawFaq1AEn = _o.faq1_a_en;
     if (_o.faq1_q_de) _o.faq1_q_de = FAQ1_Q_DE_VARIANTS[_faqIdx];
-    if (_o.faq1_a_de) _o.faq1_a_de = FAQ1_A_DE_VARIANTS[_faqIdx] + ' ' + FAQ1_A_CLOSING_DE;
+    if (_o.faq1_a_de) _o.faq1_a_de = FAQ1_A_DE_VARIANTS[_faqIdx] + ' ' + extractIndividualClosing(_rawFaq1ADe, FAQ1_A_CLOSING_DE);
     if (_o.faq1_q_en) _o.faq1_q_en = FAQ1_Q_TRANSLATIONS.en[_faqIdx];
-    if (_o.faq1_a_en) _o.faq1_a_en = FAQ1_A_TRANSLATIONS.en[_faqIdx] + ' ' + FAQ1_A_CLOSING_TRANSLATIONS.en;
+    if (_o.faq1_a_en) _o.faq1_a_en = FAQ1_A_TRANSLATIONS.en[_faqIdx] + ' ' + extractIndividualClosing(_rawFaq1AEn, FAQ1_A_CLOSING_TRANSLATIONS.en);
   }
 
   // ---- 14) HTML bauen ----
