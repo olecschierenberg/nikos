@@ -380,8 +380,9 @@ a{color:inherit}
   var LANG_ALIASES={'nb':'no','nn':'no'};
   function normLang(c){c=(c||'').toLowerCase();return LANG_ALIASES[c]||c;}
   var saved;try{saved=localStorage.getItem('nk-lang');}catch(e){}
+  var _qsLang='';try{var _q=new URLSearchParams(location.search).get('lang');if(_q==='de'||_q==='en'){_qsLang=_q;}}catch(e){}
   var _pref='';
-  if(saved==='en'){_pref='en';}else if(saved&&normLang(saved)===normLang(LOCAL_LANG_CODE)){_pref='de';}
+  if(_qsLang){_pref=_qsLang;}else if(saved==='en'){_pref='en';}else if(saved&&normLang(saved)===normLang(LOCAL_LANG_CODE)){_pref='de';}
   if(!_pref){
     if(IS_DUAL){
       var _bl='';try{_bl=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase().slice(0,2);}catch(e){}
@@ -390,7 +391,7 @@ a{color:inherit}
       _pref = DEFAULT_BUCKET;
     }
   }
-  if(!IS_DUAL && _pref==='en'){_pref=DEFAULT_BUCKET;}
+  if(!IS_DUAL && _pref==='en' && !_qsLang){_pref=DEFAULT_BUCKET;}
   setLang(_pref);
   if(IS_DUAL){document.addEventListener('click',function(e){var a=e.target.closest('a[href*="nikos.info"]');if(a){try{localStorage.setItem('nk-lang','en');}catch(err){}}});}
 })();

@@ -377,7 +377,8 @@ a{color:inherit}
   var mob=document.getElementById('navMobile');
   if(burger&&mob){burger.addEventListener('click',function(){mob.classList.toggle('open');});}
   var saved;try{saved=localStorage.getItem('nk-lang');}catch(e){}
-  var _pref=saved;
+  var _qsLang='';try{var _q=new URLSearchParams(location.search).get('lang');if(_q==='de'||_q==='en'){_qsLang=_q;}}catch(e){}
+  var _pref=_qsLang||saved;
   if(_pref!=='de'&&_pref!=='en'){
     if(IS_DUAL){
       var _bl='';try{_bl=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase().slice(0,2);}catch(e){}
@@ -386,7 +387,7 @@ a{color:inherit}
       _pref = DEFAULT_BUCKET;
     }
   }
-  if(!IS_DUAL && _pref==='en'){_pref=DEFAULT_BUCKET;}
+  if(!IS_DUAL && _pref==='en' && !_qsLang){_pref=DEFAULT_BUCKET;}
   setLang(_pref);
   if(IS_DUAL){document.addEventListener('click',function(e){var a=e.target.closest('a[href*="nikos.info"]');if(a){try{localStorage.setItem('nk-lang','en');}catch(err){}}});}
 })();
