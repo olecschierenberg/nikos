@@ -243,6 +243,25 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
 
 .nk-section--sec-dark + .nk-section{border-top:4px solid var(--border)}
 </style>
+<style id="faq-accordion">
+.ec-group{margin-top:40px}
+.ec-group:first-of-type{margin-top:32px}
+.ec-group__title{font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--orange);margin-bottom:8px}
+.ec-list{max-width:820px}
+.ec-item{border-bottom:1px solid var(--border)}
+.ec-item:first-child{border-top:1px solid var(--border)}
+.ec-q{width:100%;text-align:left;background:none;border:none;padding:18px 0;display:flex;align-items:center;gap:14px;cursor:pointer;font-family:var(--font);font-size:16px;font-weight:600;color:var(--dark);transition:color .15s}
+.ec-q:hover{color:var(--orange)}
+.ec-q__num{flex-shrink:0;min-width:26px;color:var(--orange);font-weight:700;font-variant-numeric:tabular-nums}
+.ec-q__txt{flex:1}
+.ec-q__icon{font-size:20px;color:var(--orange);flex-shrink:0;margin-left:auto;transition:transform .2s}
+.ec-item.is-open .ec-q__icon{transform:rotate(45deg)}
+.ec-a{display:none;padding:0 0 20px;font-size:15px;color:var(--mid);line-height:1.7}
+.ec-item.is-open .ec-a{display:block}
+.ec-a p{margin-bottom:4px}
+.ec-a__save{display:block;margin-top:10px;font-size:14px;color:var(--dark);font-weight:600;position:relative;padding-left:18px}
+.ec-a__save::before{content:'';position:absolute;left:0;top:0.5em;width:7px;height:7px;border-radius:50%;background:var(--orange)}
+</style>
 <style id="btn-sec-contrast">.btn-secondary{background:var(--s2);border-color:var(--s2)}.btn-secondary:hover{background:var(--s2);border-color:var(--orange);color:var(--orange)}.nk-section--surface .btn-secondary,.section--alt .btn-secondary{background:var(--white);border-color:var(--white)}.nk-section--surface .btn-secondary:hover,.section--alt .btn-secondary:hover{background:var(--white);border-color:var(--orange);color:var(--orange)}</style><link rel="icon" type="image/x-icon" href="assets/logos/A.ico">
   <script src="https://analytics.ahrefs.com/analytics.js" data-key="QPBi7D5b8OKPmyaZADAAiA" async></script>
   <base href="/">
@@ -289,8 +308,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
   <div class="nk-banner__img">
     <img src="assets/img/Banner/Vermietung.jpg" alt="NIKOS Vermietung" loading="eager">
     <div class="nk-banner__claim">
-      <h1 data-de>Vermietung</h1>
-      <h1 data-en>Rental</h1>
+      <h1><span data-de>Vermietung</span><span data-en>Rental</span></h1>
     </div>
   </div>
   <div class="nk-banner__bar">
@@ -396,6 +414,128 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
   </div>
 </section>
 
+
+<!-- ═══ FAQ ═══ -->
+<section class="nk-section">
+  <div class="nk-section__inner">
+    <div class="nk-section__header">
+      <span class="nk-label" data-de>Häufige Fragen</span>
+      <span class="nk-label" data-en>Frequently Asked Questions</span>
+      <h2 class="heading-l" style="margin-top:12px" data-de>Fragen zu Miete und System</h2>
+      <h2 class="heading-l" style="margin-top:12px" data-en>Questions about rental and the system</h2>
+    </div>
+    <div class="ec-list" style="max-width:920px;margin-top:24px;">
+        <div class="ec-item">
+          <button class="ec-q" aria-expanded="false">
+            <span class="ec-q__num">01</span>
+            <span class="ec-q__txt" data-de>Entsprechen Durchsagen mit NIKOS den geltenden Normen?</span>
+            <span class="ec-q__txt" data-en>Do announcements with NIKOS comply with applicable standards?</span>
+            <span class="ec-q__icon">+</span>
+          </button>
+          <div class="ec-a">
+            <p data-de>Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 (Elektroakustische Notfallwarnsysteme). NIKOS wurde speziell für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen entwickelt und ist technisch für den Einsatz in Alltags- und Notfallsituationen ausgelegt. Für elektroakustische Notfallwarnsysteme (ELA-Anlagen) ist die DIN EN 50849 der maßgebliche Orientierungsrahmen. Die dort genannten Anforderungen werden von NIKOS – im Gegensatz zu mobilfunkbasierten Systemen – voll erfüllt, da keine Abhängigkeit von einem fremden Netz besteht und somit jederzeit eine sofortige Nutzbarkeit gewährleistet werden kann. Andere aus der Sicherheitstechnik bekannte Normen wie die DIN EN 54, DIN VDE 0833-4 sowie DIN 14675 (Sprachalarmierungsanlagen) sind auf das Einsatzgebiet und Funktionsspektrum von NIKOS nicht anwendbar und daher für eine Genehmigung nicht relevant. NIKOS ist das marktführende Durchsagesystem für temporäre und mobile Anwendungen und seit 2017 vielfach erfolgreich für die Umsetzung einsatzkritischer Kommunikationsaufgaben im Einsatz. RADACOM und Ihr regionaler NIKOS-Partner beraten Sie gerne zu den vielfältigen Funktionen von NIKOS und unterstützen Sie bei der kostenschonenden Umsetzung der Anforderungen.</p>
+            <p data-en>Yes. NIKOS meets the requirements of DIN EN 50849 (electroacoustic emergency warning systems). NIKOS was developed specifically for safety-related announcement and alerting applications and is technically designed for use in everyday and emergency situations. For electroacoustic emergency warning systems (PA/VA systems), DIN EN 50849 is the relevant reference framework. The requirements it sets out are fully met by NIKOS – unlike mobile-network-based systems – because there is no dependency on a third-party network, so immediate usability is guaranteed at all times. Other standards known from safety technology, such as DIN EN 54, DIN VDE 0833-4 and DIN 14675 (voice alarm systems), do not apply to the deployment area and functional scope of NIKOS and are therefore not relevant for approval purposes. NIKOS is the market-leading announcement system for temporary and mobile applications and has been used successfully many times since 2017 to deliver mission-critical communication tasks. RADACOM and your regional NIKOS partner are happy to advise you on the many functions of NIKOS and support you in implementing the requirements cost-effectively.</p>
+          </div>
+        </div>
+        <div class="ec-item">
+          <button class="ec-q" aria-expanded="false">
+            <span class="ec-q__num">02</span>
+            <span class="ec-q__txt" data-de>Ist NIKOS krisensicher?</span>
+            <span class="ec-q__txt" data-en>Is NIKOS crisis-proof?</span>
+            <span class="ec-q__icon">+</span>
+          </button>
+          <div class="ec-a">
+            <p data-de>Ja, NIKOS arbeitet über ein eigenes, autarkes Funknetz und völlig unabhängig von öffentlichen Kommunikationsnetzen und deren Verfügbarkeit. Auf diese Weise ist das System sehr widerstandsfähig gegen äußere Einflüsse. Da NIKOS nicht auf Kabelwege angewiesen ist, sondern über Funk kommuniziert, stellt sich die Verbindung nach einer Unterbrechung selbstständig wieder her. NIKOS reagiert damit sehr viel resilienter auf Störungen des Regelbetriebes, als viele andere Systeme und beweist die Krisentauglichkeit dieses Kommunikationssystems. <a class="nk-mod" href="/de/produkte/#audio"><img src="assets/logos/nikos/SVG/NIKOS audio.svg" alt="NIKOS [audio]&#178;" loading="lazy"></a> verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. Auch wenn das Handynetz überlastet ist, der Internetprovider gehackt wurde oder jemand den falschen Stecker gezogen hat, funktioniert NIKOS weiter. So bleiben Sicherheitsdurchsagen und Kommunikation bei Ihrer Veranstaltung auch bei Ausfall der Stromversorgung oder Störungen in den öffentlichen Kommunikationsnetzen zuverlässig funktionsfähig.</p>
+            <p data-en>Yes, NIKOS works over its own, self-sufficient radio network and completely independently of public communication networks and their availability. This makes the system very resistant to external influences. Because NIKOS does not rely on cabling but communicates via radio, the connection re-establishes itself automatically after an interruption. This makes NIKOS far more resilient to disruptions of normal operation than many other systems, demonstrating the crisis-readiness of this communication system. <a class="nk-mod" href="/de/produkte/#audio"><img src="assets/logos/nikos/SVG/NIKOS audio.svg" alt="NIKOS [audio]&#178;" loading="lazy"></a> has an internal battery with up to 16 hours of runtime and also powers connected accessory modules through it. Even if the mobile network is overloaded, the internet provider has been hacked, or someone has pulled the wrong plug, NIKOS keeps working. This means safety announcements and communication at your event remain reliably functional even if the power supply fails or public communication networks are disrupted.</p>
+          </div>
+        </div>
+        <div class="ec-item">
+          <button class="ec-q" aria-expanded="false">
+            <span class="ec-q__num">03</span>
+            <span class="ec-q__txt" data-de>Wie schnell ist das System einsatzbereit?</span>
+            <span class="ec-q__txt" data-en>How quickly is the system ready to use?</span>
+            <span class="ec-q__icon">+</span>
+          </button>
+          <div class="ec-a">
+            <p data-de>NIKOS wird von unseren regionalen Partnern angeboten, installiert und betreut. Das System ist in kurzer Zeit konfiguriert und betriebsbereit. Eine feste Infrastruktur vor Ort ist nicht erforderlich. Die <a class="nk-mod" href="/de/produkte/#audio"><img src="assets/logos/nikos/SVG/NIKOS audio.svg" alt="NIKOS [audio]&#178;" loading="lazy"></a> Durchsageeinheiten sind mit ihrem internen Akku bis zu 16 Stunden unabhängig von einer externen Stromversorgung, sodass NIKOS gerade für temporäre und mobile Einsätze ideal geeignet ist.</p>
+            <p data-en>NIKOS is offered, installed and serviced by our regional partners. The system is configured and operational within a short time. No fixed on-site infrastructure is required. The <a class="nk-mod" href="/de/produkte/#audio"><img src="assets/logos/nikos/SVG/NIKOS audio.svg" alt="NIKOS [audio]&#178;" loading="lazy"></a> announcement units run on their internal battery for up to 16 hours, independent of an external power supply, making NIKOS ideally suited for temporary and mobile deployments.</p>
+          </div>
+        </div>
+        <div class="ec-item">
+          <button class="ec-q" aria-expanded="false">
+            <span class="ec-q__num">04</span>
+            <span class="ec-q__txt" data-de>Wo entstehen beim Einsatz von NIKOS Kostenvorteile?</span>
+            <span class="ec-q__txt" data-en>Where does using NIKOS create cost advantages?</span>
+            <span class="ec-q__icon">+</span>
+          </button>
+          <div class="ec-a">
+            <p data-de>Mit NIKOS lassen sich je nach Anwendungsfall unterschiedliche Funktionen über eine einheitliche Kommunikationsplattform umsetzen. Die Miet- und Installationskosten von NIKOS lassen sich durch diese Einsparungen schnell kompensieren. Einige konkrete Beispiele für Einsparungen finden Sie <a href="/de/anwendungen/#wirtschaftlichkeit">hier</a>.</p><p data-de>Bei konsequenter Nutzung der vielfältigen Funktionen ergeben sich neben einer Erhöhung des Sicherheitsniveaus und einer Arbeitserleichterung für die Mitarbeiter häufig sogar Einsparungen im Gesamtbudget. Für Sicherheitsdurchsagen und andere sicherheitsrelevante Koordinationsaufgaben werden dadurch keine getrennten Lautsprecher-, Steuer- und Kommunikationslösungen mehr benötigt – NIKOS bündelt Mitarbeiteralarmierung, Besucherinformation und Systemsteuerung in einer Plattform. Das reduziert Materialbedarf, Verkabelungsaufwand und die Stolpergefahr durch Kabelbrücken.</p><p data-de>Darüber hinaus lässt sich mit NIKOS gezielt Personal substituieren: Aufgaben, für die sonst mehrere über das Gelände verteilte Ordnungs-, Melde- oder Bedienposten nötig wären, werden durch zentrale Durchsagen, Fernsteuerung und Statusüberwachung von einer Stelle aus erledigt – so kann Personal eingespart oder an sicherheitskritischen Punkten wirkungsvoller eingesetzt werden. Das größte Einsparpotenzial entsteht bei umzäunten Veranstaltungen (z. B. Festivals, Firmenveranstaltungen): Die Bewachung von Notausgangstoren lässt sich durch die technische Überwachung der Tore mit NIKOS abdecken, sodass Wachposten an Notausgängen entfallen bzw. an anderer Stelle wirkungsvoller eingesetzt werden können. Gerade bei temporären, zeitlich begrenzten Veranstaltungen sinken so die Kosten für Planung, Aufbau und Betrieb der Sicherheitstechnik signifikant.</p>
+            <p data-en>Depending on the application, NIKOS combines different functions on a single communication platform. The rental and installation costs of NIKOS are quickly offset by these savings. You can find some concrete examples of savings <a href="/de/anwendungen/#wirtschaftlichkeit">here</a>.</p><p data-en>Consistent use of the wide range of functions often results not only in a higher safety standard and less workload for staff, but also in savings across the overall budget. For safety announcements and other safety-related coordination tasks, separate speaker, control and communication solutions are no longer needed – NIKOS bundles staff alerting, visitor information and system control on one platform. This reduces material requirements, cabling effort and the tripping hazard from cable bridges.</p><p data-en>NIKOS can also be used to substitute staff in a targeted way: tasks that would otherwise require several stewarding, reporting or operating posts spread across the site are handled centrally through announcements, remote control and status monitoring from one location – so staff can be saved or deployed more effectively at safety-critical points. The greatest savings potential arises at fenced events (e.g. festivals, corporate events): monitoring emergency exit gates technically with NIKOS means guard posts at emergency exits can be reduced or deployed more effectively elsewhere. Especially for temporary, time-limited events, this significantly reduces the costs of planning, setup and operation of the safety technology.</p>
+          </div>
+        </div>
+        <div class="ec-item">
+          <button class="ec-q" aria-expanded="false">
+            <span class="ec-q__num">05</span>
+            <span class="ec-q__txt" data-de>Wie finde ich meinen zuständigen NIKOS-Partner?</span>
+            <span class="ec-q__txt" data-en>How do I find my responsible NIKOS partner?</span>
+            <span class="ec-q__icon">+</span>
+          </button>
+          <div class="ec-a">
+            <p data-de>Nutzen Sie die Partnerkarte oben auf dieser Seite, um den NIKOS-Partner in Ihrer Region zu finden. Alle NIKOS-Partner sind von RADACOM zertifizierte Fachbetriebe, die das System vor Ort anbieten, installieren und betreuen – RADACOM unterstützt sie dabei zusätzlich mit technischem Support. Ist in Ihrer Region noch kein Partner gelistet, nehmen Sie über unsere <a href="/de/kontakt/">Kontaktseite</a> Kontakt zu RADACOM auf.</p>
+            <p data-en>Use the partner map above to find the NIKOS partner in your region. All NIKOS partners are RADACOM-certified specialist companies that offer, install and service the system locally – RADACOM additionally supports them with technical support. If no partner is listed in your region yet, please get in touch with RADACOM via our <a href="/en/contact/">contact page</a>.</p>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 (Elektroakustische Notfallwarnsysteme). Andere Normen wie DIN EN 54, DIN VDE 0833-4 oder DIN 14675 (Sprachalarmierungsanlagen) sind auf das Einsatzgebiet von NIKOS nicht anwendbar. RADACOM und Ihr regionaler NIKOS-Partner beraten Sie gerne dazu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist NIKOS krisensicher?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz, unabhängig von öffentlichen Kommunikationsnetzen. Die Durchsageeinheit NIKOS [audio]² läuft bis zu 16 Stunden über internen Akku weiter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie schnell ist das System einsatzbereit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NIKOS wird von unseren regionalen Partnern angeboten, installiert und betreut und ist in kurzer Zeit betriebsbereit – eine feste Infrastruktur vor Ort ist nicht erforderlich."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wo entstehen beim Einsatz von NIKOS Kostenvorteile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NIKOS bündelt mehrere Funktionen (Durchsagen, Alarmierung, Fernsteuerung, Statusüberwachung) auf einer Plattform und reduziert dadurch Material-, Personal- und Verkabelungsaufwand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie finde ich meinen zuständigen NIKOS-Partner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nutzen Sie die Partnerkarte oben auf dieser Seite, um den NIKOS-Partner in Ihrer Region zu finden. Ist noch kein Partner gelistet, kontaktieren Sie RADACOM direkt."
+      }
+    }
+  ]
+}
+</script>
 <!-- FOOTER -->
 <div id="nk-footer-root"></div>
 <div id="nk-cookiemodal-root"></div>
@@ -439,6 +579,17 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
 </style>
 <script src="assets/js/nikos-footer.js"></script>
 <script src="assets/js/nikos-config.js"></script>
+<script>
+(function(){
+  document.querySelectorAll('.ec-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.ec-item'); if(!item) return;
+      var open = item.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+})();
+</script>
 <script>
 (function(){
   var url = (typeof window.NIKOS_CONTACT_URL !== 'undefined') ? window.NIKOS_CONTACT_URL : 'nikos-kontakt.html';
