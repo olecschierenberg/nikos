@@ -501,18 +501,22 @@ function renderPartnerList(pids, entryId) {
 
     // Partner-Logo (aus Sheet-Spalte 'logo'); fehlt -> Adresse ohne Logo
     var _logoWrap = document.getElementById('cardLogoWrap');
-    var _logoImg  = document.getElementById('cardLogo');
-    if (_logoWrap && _logoImg) {
+    var _webUrl = (function(v){ v=(v||'').trim(); if(!v) return ''; return /^https?:\/\//i.test(v) ? v : 'https://' + v.replace(/^\/+/, ''); })(pd.website);
+    if (_logoWrap) {
       if (pd.logo) {
-        _logoImg.src = pd.logo;
-        _logoImg.alt = pd.firma ? pd.firma + ' Logo' : 'Partner-Logo';
+        var _logoAlt = pd.firma ? pd.firma + ' Logo' : 'Partner-Logo';
+        var _imgTag = '<img id="cardLogo" class="partner-logo" src="' + pd.logo + '" alt="' + _logoAlt + '" onerror="this.closest(\'#cardLogoWrap\').style.display=\'none\'">';
+        _logoWrap.innerHTML = _webUrl ? ('<a href="' + _webUrl + '" target="_blank" rel="noopener" title="' + (pd.firma || 'Partner') + ' Website">' + _imgTag + '</a>') : _imgTag;
         _logoWrap.style.display = '';
       } else {
-        _logoImg.removeAttribute('src');
+        _logoWrap.innerHTML = '';
         _logoWrap.style.display = 'none';
       }
     }
-    if (cardFirm)   { cardFirm.textContent = pd.firma; cardFirm.style.fontWeight='600'; cardFirm.style.fontSize='17px'; }
+    if (cardFirm) {
+      cardFirm.style.fontWeight='600'; cardFirm.style.fontSize='17px';
+      cardFirm.innerHTML = _webUrl ? ('<a href="' + _webUrl + '" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px dotted currentColor">' + pd.firma + '</a>') : pd.firma;
+    }
     if (cardPerson) { cardPerson.textContent = pd.ansprechpartner; cardPerson.style.fontSize='13px'; cardPerson.style.marginTop='0'; }
 
     // Kontakt (kein Icon)
@@ -556,9 +560,13 @@ function renderPartnerList(pids, entryId) {
         const addrParts = [pd.strasse, (pd.plz||pd.ort) ? (pd.plz+' '+pd.ort).trim() : '', nkLandLabel(pd.land)].filter(Boolean);
         const addrStr   = addrParts.join(', ');
         const isFirst = pids.indexOf(pid) === 0;
+        const webUrl = (function(v){ v=(v||'').trim(); if(!v) return ''; return /^https?:\/\//i.test(v) ? v : 'https://' + v.replace(/^\/+/, ''); })(pd.website);
+        const logoImgTag = pd.logo ? ('<img src="' + pd.logo + '" alt="' + (pd.firma ? pd.firma + ' Logo' : 'Partner-Logo') + '" style="max-height:36px;max-width:160px;object-fit:contain;display:block;margin-bottom:8px" onerror="this.style.display=\'none\'">') : '';
+        const logoBlock = (pd.logo && webUrl) ? ('<a href="' + webUrl + '" target="_blank" rel="noopener" title="' + (pd.firma || 'Partner') + ' Website">' + logoImgTag + '</a>') : logoImgTag;
+        const nameBlock = webUrl ? ('<a href="' + webUrl + '" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px dotted currentColor">' + pd.firma + '</a>') : pd.firma;
         return '<div style="' + (isFirst ? '' : 'border-top:1px solid var(--border);margin-top:12px;padding-top:12px;') + '">'
-          + (pd.logo ? '<img src="' + pd.logo + '" alt="' + (pd.firma ? pd.firma + ' Logo' : 'Partner-Logo') + '" style="max-height:36px;max-width:160px;object-fit:contain;display:block;margin-bottom:8px" onerror="this.style.display=\'none\'">' : '')
-          + '<strong style="font-size:17px;font-weight:600;color:var(--dark)">' + pd.firma + '</strong><br>'
+          + logoBlock
+          + '<strong style="font-size:17px;font-weight:600;color:var(--dark)">' + nameBlock + '</strong><br>'
           + (pd.ansprechpartner ? '<span style="font-size:13px;color:var(--mid)">' + pd.ansprechpartner + '</span><br>' : '')
           + (pd.telefon ? '<a href="tel:' + pd.telefon.replace(/\s/g,'') + '" style="font-size:13px;color:var(--orange);text-decoration:none;display:block">' + pd.telefon + '</a>' : '')
           + (pd.email   ? '<a href="mailto:' + pd.email + '" style="font-size:13px;color:var(--orange);text-decoration:none;word-break:break-all;display:block">' + pd.email + '</a>' : '')
