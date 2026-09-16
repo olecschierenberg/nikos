@@ -62,7 +62,7 @@ function buildBlock(relatedList) {
     const hrefStyle = 'style="color:var(--orange-dk);text-decoration:none;font-weight:600;"';
     const textDe = esc(r.title || r.slug);
     const textEn = esc(r.titleEn || r.title || r.slug);
-    return `      <li><a href="https://nikos.info/loesungen/${r.slug}/?lang=de" ${hrefStyle} data-de>${textDe}</a><a href="https://nikos.info/loesungen/${r.slug}/?lang=en" ${hrefStyle} data-en>${textEn}</a></li>`;
+    return `      <li><a href="https://nikos.info/loesungen/${r.slug}/?lang=de" ${hrefStyle} rel="nofollow" data-de>${textDe}</a><a href="https://nikos.info/loesungen/${r.slug}/?lang=en" ${hrefStyle} rel="nofollow" data-en>${textEn}</a></li>`;
   }).join('\n');
   return `<!-- VERWANDTE-ANWENDUNGSBEISPIELE:START -->
 <section class="nk-section" aria-label="Weitere Anwendungsbeispiele">
