@@ -110,7 +110,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
 
 .section{padding:56px 0}
 .section--alt{background:var(--s2);padding:56px 0}
-.section__inner{max-width:var(--max-w);margin:0 auto;padding:0 clamp(20px,5vw,80px)}
+.section__inner{max-width:var(--max-w);margin:0 auto;padding:0 clamp(20px,5vw,80px)}.faq-list{max-width:900px;display:flex;flex-direction:column;gap:14px}.faq-item{background:var(--card-soft);border:1.5px solid var(--card-border);border-radius:var(--r-lg);box-shadow:var(--shadow);overflow:hidden}.faq-item summary{list-style:none;cursor:pointer;padding:20px 24px;font-family:var(--claim);font-weight:700;font-size:18px;color:var(--dark);display:flex;justify-content:space-between;align-items:center;gap:16px}.faq-item summary::-webkit-details-marker{display:none}.faq-q{flex:1}.faq-icon{color:var(--orange);font-size:26px;font-weight:400;line-height:1;flex-shrink:0;margin-left:auto;transition:transform .2s}.faq-item[open] .faq-icon{transform:rotate(45deg)}.faq-item__body{padding:0 24px 22px;color:var(--mid);font-size:16px;line-height:1.7;hyphens:auto;-webkit-hyphens:auto;-ms-hyphens:auto;overflow-wrap:break-word}
 
 /* Application tiles */
 .app-group{margin-bottom:56px}
@@ -253,6 +253,46 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
     { "@type": "ListItem", "position": 7, "name": "Gedenkveranstaltungen" },
     { "@type": "ListItem", "position": 8, "name": "Jubiläumsfeiern" },
     { "@type": "ListItem", "position": 9, "name": "Parkfeste und Gartenschauen" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does NIKOS support visitor guidance during high visitor numbers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NIKOS supports visitor guidance by distributing warnings and information simultaneously by audio announcement and visually via existing info or programme displays, signal lights or text messages to the radio – even when public communication networks fail. This means route information, programme changes or emergency information reach visitors and staff quickly and across the whole site, and visitor flows can be steered towards less crowded areas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does severe-weather alerting work with NIKOS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NIKOS shows its strengths especially during severe weather: warnings can be broadcast immediately by announcement as well as visually via signal lights and displays. The components work autonomously and stay operational even during a power outage – for example from a lightning strike or storm damage: announcements continue via NIKOS [audio]² and the active outdoor speaker NIKOS [horn]², while the solar emergency light NIKOS [moon]² and the emergency lighting NIKOS [LED]² provide light. NIKOS [audio]² continuously monitors its operating status and reports a power failure to NIKOS [dispatcher]² immediately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does perimeter protection work with NIKOS without fixed infrastructure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A sensor on each gate or fence section reports opening, closing or movement instantly by radio to a central control room and to neighbouring guards. The control room keeps the status of all monitored points in view; one control station manages many positions at once. This means it is often enough to staff only every second or third point, or to use mobile patrols instead of fixed posts – entirely without wiring the site."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What building blocks does NIKOS provide for the event-security concept?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NIKOS provides alerting, emergency lighting, evacuation announcements and crowd-management functions as robust, quickly available building blocks for your event-security concept – without fixed infrastructure. It can also be combined with camera surveillance, people counting and other security and monitoring systems. This gives a sound basis for approval, reduces planning effort and keeps overall costs stable. Planners and authorities can name the relevant NIKOS functions directly as measures in the concept."
+      }
+    }
   ]
 }
 </script>
@@ -819,6 +859,38 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="section" id="faq">
+  <div class="section__inner">
+    <span class="nk-label" data-de>Häufige Fragen</span>
+    <span class="nk-label" data-en>FAQ</span>
+    <h2 class="heading-l" style="margin:12px 0 20px;" data-de>Fragen zu Eventsicherheit, Besucherlenkung, Unwetterwarnung und Perimeterschutz</h2>
+    <h2 class="heading-l" style="margin:12px 0 20px;" data-en>Questions on event security, visitor guidance, severe-weather alerting and perimeter protection</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary><span class="faq-q" data-de>Wie unterstützt NIKOS die Besucherlenkung bei großem Andrang?</span><span class="faq-q" data-en>How does NIKOS support visitor guidance during high visitor numbers?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body" data-de>NIKOS unterstützt die Besucherlenkung, indem es Warnungen und Informationen gleichzeitig akustisch über Durchsagen und visuell über vorhandene Info- oder Programm-Displays, Signalleuchten oder Textnachrichten aufs Funkgerät verteilt – auch bei Ausfall öffentlicher Kommunikationsnetze. So erreichen Wegehinweise, Programmänderungen oder Notfallinformationen Besucher und Personal schnell und flächendeckend, und Besucherströme lassen sich gezielt in weniger ausgelastete Bereiche lenken.</div>
+        <div class="faq-item__body" data-en>NIKOS supports visitor guidance by distributing warnings and information simultaneously by audio announcement and visually via existing info or programme displays, signal lights or text messages to the radio – even when public communication networks fail. This means route information, programme changes or emergency information reach visitors and staff quickly and across the whole site, and visitor flows can be steered towards less crowded areas.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" data-de>Wie funktioniert die Unwetterwarnung mit NIKOS?</span><span class="faq-q" data-en>How does severe-weather alerting work with NIKOS?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body" data-de>Gerade bei Unwetter zeigt NIKOS seine Stärken: Warnungen lassen sich sofort per Durchsage sowie optisch über Signalleuchten und Displays verbreiten. Die Komponenten arbeiten autark und bleiben auch bei Stromausfall – etwa durch Blitzschlag oder Sturmschäden – handlungsfähig: Durchsagen laufen über <a class="nk-mod" href="/en/products/#audio"><img src="assets/logos/nikos/SVG/NIKOS audio.svg" alt="NIKOS [audio]²" loading="lazy"></a> und den aktiven Außenlautsprecher <a class="nk-mod" href="/en/products/#zubehoer"><img src="assets/logos/nikos/SVG/NIKOS horn.svg" alt="NIKOS [horn]²" loading="lazy"></a> weiter, die Solar-Notleuchte <a class="nk-mod" href="/en/products/#moon"><img src="assets/logos/nikos/SVG/NIKOS moon.svg" alt="NIKOS [moon]²" loading="lazy"></a> und die Notbeleuchtung <a class="nk-mod" href="/en/products/#zubehoer"><img src="assets/logos/nikos/SVG/NIKOS LED.svg" alt="NIKOS [LED]²" loading="lazy"></a> sorgen für Licht. <a class="nk-mod" href="/en/products/#audio"><img src="assets/logos/nikos/SVG/NIKOS audio.svg" alt="NIKOS [audio]²" loading="lazy"></a> überwacht seinen Betriebsstatus durchgehend und meldet einen Stromausfall sofort an <a class="nk-mod nk-mod--tall" href="/en/products/#dispatcher"><img src="assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a>.</div>
+        <div class="faq-item__body" data-en>NIKOS shows its strengths especially during severe weather: warnings can be broadcast immediately by announcement as well as visually via signal lights and displays. The components work autonomously and stay operational even during a power outage – for example from a lightning strike or storm damage: announcements continue via <a class="nk-mod" href="/en/products/#audio"><img src="assets/logos/nikos/SVG/NIKOS audio.svg" alt="NIKOS [audio]²" loading="lazy"></a> and the active outdoor speaker <a class="nk-mod" href="/en/products/#zubehoer"><img src="assets/logos/nikos/SVG/NIKOS horn.svg" alt="NIKOS [horn]²" loading="lazy"></a>, while the solar emergency light <a class="nk-mod" href="/en/products/#moon"><img src="assets/logos/nikos/SVG/NIKOS moon.svg" alt="NIKOS [moon]²" loading="lazy"></a> and the emergency lighting <a class="nk-mod" href="/en/products/#zubehoer"><img src="assets/logos/nikos/SVG/NIKOS LED.svg" alt="NIKOS [LED]²" loading="lazy"></a> provide light. <a class="nk-mod" href="/en/products/#audio"><img src="assets/logos/nikos/SVG/NIKOS audio.svg" alt="NIKOS [audio]²" loading="lazy"></a> continuously monitors its operating status and reports a power failure to <a class="nk-mod nk-mod--tall" href="/en/products/#dispatcher"><img src="assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a> immediately.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" data-de>Wie funktioniert Perimeterschutz mit NIKOS ohne feste Infrastruktur?</span><span class="faq-q" data-en>How does perimeter protection work with NIKOS without fixed infrastructure?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body" data-de>Ein Sensor an jedem Tor oder Zaunabschnitt meldet Öffnen, Schließen oder Bewegung sofort per Funk an eine zentrale Leitstelle und an benachbarte Wachposten. Die Leitstelle behält den Status aller überwachten Punkte im Blick; ein Bedienplatz verwaltet viele Positionen gleichzeitig. So genügt es oft, nur noch jeden zweiten oder dritten Punkt zu besetzen oder statt fester Posten mobile Streifen einzusetzen – ganz ohne feste Verkabelung des Geländes.</div>
+        <div class="faq-item__body" data-en>A sensor on each gate or fence section reports opening, closing or movement instantly by radio to a central control room and to neighbouring guards. The control room keeps the status of all monitored points in view; one control station manages many positions at once. This means it is often enough to staff only every second or third point, or to use mobile patrols instead of fixed posts – entirely without wiring the site.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" data-de>Welche Bausteine liefert NIKOS für das Eventsicherheitskonzept?</span><span class="faq-q" data-en>What building blocks does NIKOS provide for the event-security concept?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body" data-de>NIKOS liefert Alarmierung, Notbeleuchtung, Räumungsdurchsage und Crowd-Management-Funktionen als belastbare, kurzfristig verfügbare Bausteine für Ihr Eventsicherheitskonzept – ohne feste Infrastruktur. Hinzu kommt die Kombinierbarkeit mit Kameraüberwachung, Personenzählung sowie anderen Sicherheits- und Monitoringsystemen. Das gibt eine sichere Genehmigungsgrundlage, senkt den Planungsaufwand und hält die Gesamtkosten stabil. Planer und Behörden können die jeweils sinnvollen NIKOS-Funktionen direkt als Maßnahmen im Konzept benennen.</div>
+        <div class="faq-item__body" data-en>NIKOS provides alerting, emergency lighting, evacuation announcements and crowd-management functions as robust, quickly available building blocks for your event-security concept – without fixed infrastructure. It can also be combined with camera surveillance, people counting and other security and monitoring systems. This gives a sound basis for approval, reduces planning effort and keeps overall costs stable. Planners and authorities can name the relevant NIKOS functions directly as measures in the concept.</div>
+      </details>
+    </div>
   </div>
 </section>
 
