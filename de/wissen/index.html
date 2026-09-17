@@ -233,6 +233,18 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
 .heading-l{font-family:var(--claim);font-size:clamp(24px,3vw,40px);font-weight:700;line-height:1.2;color:var(--dark)}
 .heading-m{font-family:var(--claim);font-size:clamp(20px,2.2vw,28px);font-weight:700;line-height:1.3;color:var(--dark)}
 .heading-s{font-size:20px;font-weight:600;line-height:1.4;color:var(--dark)}
+.ec-item{border-bottom:1px solid var(--border)}
+.ec-item:first-child{border-top:1px solid var(--border)}
+.ec-q{width:100%;text-align:left;background:none;border:none;padding:18px 0;display:flex;align-items:center;gap:14px;cursor:pointer;font-family:var(--font);font-size:16px;font-weight:600;color:var(--dark);transition:color .15s}
+.ec-q:hover{color:var(--orange)}
+.ec-q__num{flex-shrink:0;min-width:26px;color:var(--orange);font-weight:700;font-variant-numeric:tabular-nums}
+.ec-q__icon{font-size:20px;color:var(--orange);flex-shrink:0;margin-left:auto;transition:transform .2s}
+.ec-item.is-open .ec-q__icon{transform:rotate(45deg)}
+.ec-a{display:none;padding:0 0 20px;font-size:15px;color:var(--mid);line-height:1.7}
+.ec-item.is-open .ec-a{display:block}
+.ec-a__save{display:block;margin-top:10px;font-size:14px;color:var(--dark);font-weight:600}
+.ec-a__save{position:relative;padding-left:18px}
+.ec-a__save::before{content:'';position:absolute;left:0;top:0.5em;width:7px;height:7px;border-radius:50%;background:var(--orange)}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="4f48b5b5-93c8-4493-be71-2c1cefc6e440"></script>
 <!-- ═══ KLARO CONSENT MANAGER ═══ -->
@@ -342,8 +354,8 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
 <section class="intro-s2">
   <div class="intro-s2__inner">
     <span class="nk-label" data-de>Informationen</span><span class="nk-label" data-en>Information</span>
-    <h2 class="section__title" style="margin:6px 0 6px;" data-de><span style="color:var(--orange)">Hintergrundwissen</span></h2>
-    <h2 class="section__title" style="margin:6px 0 6px;" data-en><span style="color:var(--orange)">Background knowledge</span></h2>
+    <h2 class="section__title" style="margin:6px 0 6px;" data-de>Hintergrundwissen</h2>
+    <h2 class="section__title" style="margin:6px 0 6px;" data-en>Background knowledge</h2>
     <p class="body-l" style="margin-top:14px;max-width:820px;color:var(--mid);" data-de>Das Portal für technische Ressourcen und Wissen zu NIKOS und einsatzkritischer Kommunikations- und Sicherheitstechnik. Datenblätter können direkt heruntergeladen werden. Für Schulungsunterlagen und Software ist ein Partner-Login erforderlich.</p>
     <p class="body-l" style="margin-top:14px;max-width:820px;color:var(--mid);" data-en>The portal for technical resources and knowledge on NIKOS and mission-critical communication and safety technology. Data sheets can be downloaded directly. A partner login is required for training materials and software.</p>
   </div>
@@ -357,21 +369,91 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
     <h2 class="heading-l section__title" style="margin-top:12px;" data-en>Vertiefende Artikel zu mobiler Sicherheitsbeschallung</h2>
     <p class="section__intro" style="max-width:none" data-de>Sieben Ratgeber-Artikel zu mobiler Sprachalarmierung, Evakuierungsbeschallung und Normkonformität bei Veranstaltungen ohne feste Infrastruktur.</p>
     <p class="section__intro" style="max-width:none" data-en>Sieben Ratgeber-Artikel zu mobiler Sprachalarmierung, Evakuierungsbeschallung und Normkonformität bei Veranstaltungen ohne feste Infrastruktur.</p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;">
-        <a href="/de/wissen/mobile-sprachalarmierung-grossveranstaltungen/" class="btn-secondary" data-de>Mobile Sprachalarmierung bei Großveranstaltungen</a>
-        <a href="/de/wissen/mobile-sprachalarmierung-grossveranstaltungen/" class="btn-secondary" data-en>Mobile Sprachalarmierung bei Großveranstaltungen</a>
-        <a href="/de/wissen/evakuierungsbeschallung-festival/" class="btn-secondary" data-de>Evakuierungsbeschallung auf Festivals</a>
-        <a href="/de/wissen/evakuierungsbeschallung-festival/" class="btn-secondary" data-en>Evakuierungsbeschallung auf Festivals</a>
-        <a href="/de/wissen/sicherheitsbeschallung-oder-evakuierungsanlage/" class="btn-secondary" data-de>Sicherheitsbeschallung oder Evakuierungsanlage?</a>
-        <a href="/de/wissen/sicherheitsbeschallung-oder-evakuierungsanlage/" class="btn-secondary" data-en>Sicherheitsbeschallung oder Evakuierungsanlage?</a>
-        <a href="/de/wissen/sprachalarmierung-ohne-mobilfunk/" class="btn-secondary" data-de>Sprachalarmierung ohne Mobilfunk</a>
-        <a href="/de/wissen/sprachalarmierung-ohne-mobilfunk/" class="btn-secondary" data-en>Sprachalarmierung ohne Mobilfunk</a>
-        <a href="/de/wissen/mobile-ela-stadtfeste/" class="btn-secondary" data-de>Mobile ELA bei Stadtfesten</a>
-        <a href="/de/wissen/mobile-ela-stadtfeste/" class="btn-secondary" data-en>Mobile ELA bei Stadtfesten</a>
-        <a href="/de/wissen/sprachalarmierungsanlage-mieten/" class="btn-secondary" data-de>Sprachalarmierungsanlage mieten</a>
-        <a href="/de/wissen/sprachalarmierungsanlage-mieten/" class="btn-secondary" data-en>Sprachalarmierungsanlage mieten</a>
-        <a href="/de/wissen/din-en-50849-mobile-veranstaltungen/" class="btn-secondary" data-de>DIN EN 50849 bei mobilen Veranstaltungen</a>
-        <a href="/de/wissen/din-en-50849-mobile-veranstaltungen/" class="btn-secondary" data-en>DIN EN 50849 bei mobilen Veranstaltungen</a>
+    <div class="ec-list" style="max-width:860px;margin-top:20px;">
+      <div class="ec-item">
+        <button class="ec-q" type="button" aria-expanded="false">
+          <span class="ec-q__num">1</span>
+          <span data-de>Mobile Sprachalarmierung bei Großveranstaltungen</span>
+          <span data-en>Mobile Sprachalarmierung bei Großveranstaltungen</span>
+          <span class="ec-q__icon">+</span>
+        </button>
+        <div class="ec-a">
+          <span data-de>Wie mobile Sprachalarmierung auf Festivals, Stadtfesten und Großveranstaltungen funktioniert – Anforderungen, technische Varianten, Kosten und Praxisbeispiele. <a href="/de/wissen/mobile-sprachalarmierung-grossveranstaltungen/" class="ec-a__save" data-de>Artikel lesen →</a></span>
+          <span data-en>Wie mobile Sprachalarmierung auf Festivals, Stadtfesten und Großveranstaltungen funktioniert – Anforderungen, technische Varianten, Kosten und Praxisbeispiele. <a href="/de/wissen/mobile-sprachalarmierung-grossveranstaltungen/" class="ec-a__save" data-en>Artikel lesen →</a></span>
+        </div>
+      </div>
+      <div class="ec-item">
+        <button class="ec-q" type="button" aria-expanded="false">
+          <span class="ec-q__num">2</span>
+          <span data-de>Evakuierungsbeschallung auf Festivals</span>
+          <span data-en>Evakuierungsbeschallung auf Festivals</span>
+          <span class="ec-q__icon">+</span>
+        </button>
+        <div class="ec-a">
+          <span data-de>Welche Evakuierungsbeschallung auf Festivalgeländen ohne bauseitige Infrastruktur funktioniert – Anforderungen an Reichweite, Redundanz und Verständlichkeit. <a href="/de/wissen/evakuierungsbeschallung-festival/" class="ec-a__save" data-de>Artikel lesen →</a></span>
+          <span data-en>Welche Evakuierungsbeschallung auf Festivalgeländen ohne bauseitige Infrastruktur funktioniert – Anforderungen an Reichweite, Redundanz und Verständlichkeit. <a href="/de/wissen/evakuierungsbeschallung-festival/" class="ec-a__save" data-en>Artikel lesen →</a></span>
+        </div>
+      </div>
+      <div class="ec-item">
+        <button class="ec-q" type="button" aria-expanded="false">
+          <span class="ec-q__num">3</span>
+          <span data-de>Sicherheitsbeschallung oder Evakuierungsanlage?</span>
+          <span data-en>Sicherheitsbeschallung oder Evakuierungsanlage?</span>
+          <span class="ec-q__icon">+</span>
+        </button>
+        <div class="ec-a">
+          <span data-de>Entscheidungshilfe für Veranstalter: Wann reicht eine gemeinsame Sicherheitsbeschallung, wann braucht es eine separate Evakuierungsanlage? <a href="/de/wissen/sicherheitsbeschallung-oder-evakuierungsanlage/" class="ec-a__save" data-de>Artikel lesen →</a></span>
+          <span data-en>Entscheidungshilfe für Veranstalter: Wann reicht eine gemeinsame Sicherheitsbeschallung, wann braucht es eine separate Evakuierungsanlage? <a href="/de/wissen/sicherheitsbeschallung-oder-evakuierungsanlage/" class="ec-a__save" data-en>Artikel lesen →</a></span>
+        </div>
+      </div>
+      <div class="ec-item">
+        <button class="ec-q" type="button" aria-expanded="false">
+          <span class="ec-q__num">4</span>
+          <span data-de>Sprachalarmierung ohne Mobilfunk</span>
+          <span data-en>Sprachalarmierung ohne Mobilfunk</span>
+          <span class="ec-q__icon">+</span>
+        </button>
+        <div class="ec-a">
+          <span data-de>Wie eine temporäre Sprachalarmierungsanlage auch ohne verfügbares oder überlastetes Mobilfunknetz zuverlässig funktioniert. <a href="/de/wissen/sprachalarmierung-ohne-mobilfunk/" class="ec-a__save" data-de>Artikel lesen →</a></span>
+          <span data-en>Wie eine temporäre Sprachalarmierungsanlage auch ohne verfügbares oder überlastetes Mobilfunknetz zuverlässig funktioniert. <a href="/de/wissen/sprachalarmierung-ohne-mobilfunk/" class="ec-a__save" data-en>Artikel lesen →</a></span>
+        </div>
+      </div>
+      <div class="ec-item">
+        <button class="ec-q" type="button" aria-expanded="false">
+          <span class="ec-q__num">5</span>
+          <span data-de>Mobile ELA bei Stadtfesten</span>
+          <span data-en>Mobile ELA bei Stadtfesten</span>
+          <span class="ec-q__icon">+</span>
+        </button>
+        <div class="ec-a">
+          <span data-de>Wie sich Sicherheitsdurchsagen bei Stadtfesten über bereits vorhandene Bühnen- und Beschallungsanlagen realisieren lassen – ohne komplett neue ELA-Infrastruktur. <a href="/de/wissen/mobile-ela-stadtfeste/" class="ec-a__save" data-de>Artikel lesen →</a></span>
+          <span data-en>Wie sich Sicherheitsdurchsagen bei Stadtfesten über bereits vorhandene Bühnen- und Beschallungsanlagen realisieren lassen – ohne komplett neue ELA-Infrastruktur. <a href="/de/wissen/mobile-ela-stadtfeste/" class="ec-a__save" data-en>Artikel lesen →</a></span>
+        </div>
+      </div>
+      <div class="ec-item">
+        <button class="ec-q" type="button" aria-expanded="false">
+          <span class="ec-q__num">6</span>
+          <span data-de>Sprachalarmierungsanlage mieten</span>
+          <span data-en>Sprachalarmierungsanlage mieten</span>
+          <span class="ec-q__icon">+</span>
+        </button>
+        <div class="ec-a">
+          <span data-de>Checkliste für die Miete einer mobilen Sprachalarmierungsanlage: Normkonformität, Vorlaufzeit, Vor-Ort-Service und Kosten im Überblick. <a href="/de/wissen/sprachalarmierungsanlage-mieten/" class="ec-a__save" data-de>Artikel lesen →</a></span>
+          <span data-en>Checkliste für die Miete einer mobilen Sprachalarmierungsanlage: Normkonformität, Vorlaufzeit, Vor-Ort-Service und Kosten im Überblick. <a href="/de/wissen/sprachalarmierungsanlage-mieten/" class="ec-a__save" data-en>Artikel lesen →</a></span>
+        </div>
+      </div>
+      <div class="ec-item">
+        <button class="ec-q" type="button" aria-expanded="false">
+          <span class="ec-q__num">7</span>
+          <span data-de>DIN EN 50849 bei mobilen Veranstaltungen</span>
+          <span data-en>DIN EN 50849 bei mobilen Veranstaltungen</span>
+          <span class="ec-q__icon">+</span>
+        </button>
+        <div class="ec-a">
+          <span data-de>Was DIN EN 50849 für temporäre, mobile Sprachalarmierungsanlagen auf Veranstaltungen konkret fordert – und wie sich das ohne feste Infrastruktur erfüllen lässt. <a href="/de/wissen/din-en-50849-mobile-veranstaltungen/" class="ec-a__save" data-de>Artikel lesen →</a></span>
+          <span data-en>Was DIN EN 50849 für temporäre, mobile Sprachalarmierungsanlagen auf Veranstaltungen konkret fordert – und wie sich das ohne feste Infrastruktur erfüllen lässt. <a href="/de/wissen/din-en-50849-mobile-veranstaltungen/" class="ec-a__save" data-en>Artikel lesen →</a></span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -660,6 +742,17 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
   var url = (typeof window.NIKOS_CONTACT_URL !== 'undefined') ? window.NIKOS_CONTACT_URL : 'nikos-kontakt.html';
   document.querySelectorAll('.nav__cta,.nav__cta-mobile').forEach(function(el){
     el.href = url;
+  });
+})();
+</script>
+<script>
+(function(){
+  document.querySelectorAll('.ec-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.ec-item'); if(!item) return;
+      var open = item.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
   });
 })();
 </script>
