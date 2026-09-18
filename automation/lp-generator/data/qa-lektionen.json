@@ -257,5 +257,12 @@
     "einsatz": "Internationales Straßenfest",
     "problem": "Besucherinformation",
     "mangel": "Die ursprüngliche Normkonformitätsaussage wurde durch die freigegebene, belastbare Formulierung zur DIN EN 50849 ersetzt."
+  },
+  {
+    "datum": "18.09.2026",
+    "region": "Sindelfingen",
+    "einsatz": "Internationales Straßenfest",
+    "problem": "Besucherinformation",
+    "mangel": "Intro enthielt entgegen der Vorgabe eine NIKOS-Lösungsaussage statt ausschließlich der Herausforderung. | Weichmacher und eine nicht freigegebene Nutzung eines vorhandenen digitalen Funknetzes in FAQ2 korrigiert. | Weichmacher in der Normen-FAQ korrigiert."
   }
 ]
