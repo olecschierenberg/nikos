@@ -90,6 +90,19 @@ img  { display: block; max-width: 100%; }
 .btn-secondary { display: inline-block; background: transparent; color: var(--dark); padding: 11px 28px; border-radius: var(--r); font-size: 17px; font-weight: 600; text-decoration: none; border: 1px solid var(--border); cursor: pointer; font-family: var(--font); transition: border-color .15s, color .15s; }
 .section--alt .btn-secondary, .nk-section--surface .btn-secondary { border-color: var(--dark); }
 .btn-secondary:hover { border-color: var(--orange); color: var(--orange); }
+/* ── Breadcrumb + Weitere Ratgeber-Artikel (2026-09-18) ── */
+.wissen-breadcrumb{background:var(--s2);border-bottom:1px solid var(--border)}
+.wissen-breadcrumb__inner{max-width:var(--max-w);margin:0 auto;padding:12px clamp(20px,5vw,80px);font-size:13px;color:var(--mid);display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.wissen-breadcrumb__inner a{color:var(--mid);text-decoration:none}
+.wissen-breadcrumb__inner a:hover{color:var(--orange)}
+.wissen-breadcrumb__sep{color:var(--border)}
+.wissen-breadcrumb__current{color:var(--dark);font-weight:600}
+.wissen-related{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.wissen-related__item{display:block;padding:20px;background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);text-decoration:none;transition:border-color .15s,box-shadow .15s}
+.wissen-related__item:hover{border-color:var(--orange);box-shadow:var(--shadow)}
+.wissen-related__title{display:block;font-family:var(--font);font-weight:700;font-size:16px;color:var(--dark);margin-bottom:6px}
+.wissen-related__item:hover .wissen-related__title{color:var(--orange)}
+.wissen-related__desc{display:block;font-size:14px;color:var(--mid);line-height:1.5}
 
 /* ── Language ── */
 [data-de], [data-en] { display: none !important; }
@@ -413,6 +426,12 @@ img  { display: block; max-width: 100%; }
   </div>
 </nav>
 
+<div class="wissen-breadcrumb">
+  <div class="wissen-breadcrumb__inner">
+    <a href="/de/wissen/" data-de>Wissen</a><a href="/en/insights/" data-en>Insights</a><span class="wissen-breadcrumb__sep">/</span><span class="wissen-breadcrumb__current" data-de>Evakuierungsbeschallung auf Festivals</span><span class="wissen-breadcrumb__current" data-en>Evacuation Announcement Systems at Festivals</span>
+  </div>
+</div>
+
 <!-- ═══ BANNER ═══ -->
 <div class="nk-banner">
   <div class="nk-banner__img">
@@ -518,6 +537,60 @@ img  { display: block; max-width: 100%; }
           <div itemprop="text" data-en>That depends on the area, the layout and the expected visitor density – an on-site or plan-based survey provides the reliable basis for this.</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="section__inner">
+    <div class="section__label"><span class="nk-label" data-de>Weitere Ratgeber-Artikel</span><span class="nk-label" data-en>More Guides</span></div>
+    <div class="wissen-related" style="margin-top:16px">
+      <a class="wissen-related__item" href="/de/wissen/mobile-sprachalarmierung-grossveranstaltungen/" data-href-en="/en/insights/mobile-voice-alarm-systems-large-events/">
+        <span class="wissen-related__title" data-de>Mobile Sprachalarmierung bei Großveranstaltungen</span>
+        <span class="wissen-related__title" data-en>Mobile Voice Alarm Systems at Large Events</span>
+        <span class="wissen-related__desc" data-de>Wie mobile Sprachalarmierung auf Festivals, Stadtfesten und Großveranstaltungen funktioniert – Anforderungen, technische Varianten, Kosten und Praxisbeispiele.</span>
+        <span class="wissen-related__desc" data-en>How mobile voice alarm technology works at festivals, city festivals and large events – requirements, technical variants, costs and real-world examples.</span>
+      </a>
+      <a class="wissen-related__item" href="/de/wissen/sicherheitsbeschallung-oder-evakuierungsanlage/" data-href-en="/en/insights/safety-announcements-or-evacuation-system/">
+        <span class="wissen-related__title" data-de>Sicherheitsbeschallung oder Evakuierungsanlage?</span>
+        <span class="wissen-related__title" data-en>Safety Announcements or a Separate Evacuation System?</span>
+        <span class="wissen-related__desc" data-de>Entscheidungshilfe für Veranstalter: Wann reicht eine gemeinsame Sicherheitsbeschallung, wann braucht es eine separate Evakuierungsanlage?</span>
+        <span class="wissen-related__desc" data-en>A decision guide for organizers: when is a shared safety announcement system enough, and when do you need a separate evacuation system?</span>
+      </a>
+      <a class="wissen-related__item" href="/de/wissen/sprachalarmierung-ohne-mobilfunk/" data-href-en="/en/insights/voice-alarm-without-mobile-network/">
+        <span class="wissen-related__title" data-de>Sprachalarmierung ohne Mobilfunk</span>
+        <span class="wissen-related__title" data-en>Voice Alarm Systems Without a Mobile Network</span>
+        <span class="wissen-related__desc" data-de>Wie eine temporäre Sprachalarmierungsanlage auch ohne verfügbares oder überlastetes Mobilfunknetz zuverlässig funktioniert.</span>
+        <span class="wissen-related__desc" data-en>How a temporary voice alarm system works reliably even without an available or with an overloaded mobile network.</span>
+      </a>
+      <a class="wissen-related__item" href="/de/wissen/mobile-ela-stadtfeste/" data-href-en="/en/insights/mobile-pa-systems-city-festivals/">
+        <span class="wissen-related__title" data-de>Mobile ELA bei Stadtfesten</span>
+        <span class="wissen-related__title" data-en>Mobile PA Systems at City Festivals</span>
+        <span class="wissen-related__desc" data-de>Wie sich Sicherheitsdurchsagen bei Stadtfesten über bereits vorhandene Bühnen- und Beschallungsanlagen realisieren lassen – ohne komplett neue ELA-Infrastruktur.</span>
+        <span class="wissen-related__desc" data-en>How safety announcements at city festivals can be realized through existing stage and PA systems – without completely new PA infrastructure.</span>
+      </a>
+      <a class="wissen-related__item" href="/de/wissen/sprachalarmierungsanlage-mieten/" data-href-en="/en/insights/renting-a-voice-alarm-system/">
+        <span class="wissen-related__title" data-de>Sprachalarmierungsanlage mieten</span>
+        <span class="wissen-related__title" data-en>Renting a Voice Alarm System</span>
+        <span class="wissen-related__desc" data-de>Checkliste für die Miete einer mobilen Sprachalarmierungsanlage: Normkonformität, Vorlaufzeit, Vor-Ort-Service und Kosten im Überblick.</span>
+        <span class="wissen-related__desc" data-en>A checklist for renting a mobile voice alarm system: standard compliance, lead time, on-site service and costs at a glance.</span>
+      </a>
+      <a class="wissen-related__item" href="/de/wissen/din-en-50849-mobile-veranstaltungen/" data-href-en="/en/insights/din-en-50849-mobile-events/">
+        <span class="wissen-related__title" data-de>DIN EN 50849 bei mobilen Veranstaltungen</span>
+        <span class="wissen-related__title" data-en>DIN EN 50849 at Mobile Events</span>
+        <span class="wissen-related__desc" data-de>Was DIN EN 50849 für temporäre, mobile Sprachalarmierungsanlagen auf Veranstaltungen konkret fordert – und wie sich das ohne feste Infrastruktur erfüllen lässt.</span>
+        <span class="wissen-related__desc" data-en>What DIN EN 50849 specifically requires for temporary, mobile voice alarm systems at events – and how that can be achieved without fixed infrastructure.</span>
+      </a>
+      <a class="wissen-related__item" href="/de/wissen/mobile-ela-anlage-mieten/" data-href-en="/en/insights/renting-a-mobile-pa-system-for-events/">
+        <span class="wissen-related__title" data-de>Mobile ELA-Anlage für Veranstaltungen mieten</span>
+        <span class="wissen-related__title" data-en>Renting a Mobile PA System for Events</span>
+        <span class="wissen-related__desc" data-de>ELA, Sicherheitsbeschallung, Sprachalarmierung: warum klassische 100-V-ELA bei temporären Großveranstaltungen an Grenzen kommt – und was eine mietbare mobile Alternative leisten muss.</span>
+        <span class="wissen-related__desc" data-en>PA, safety announcements, voice alarm: why classic 100&nbsp;V PA technology reaches its limits at temporary large events – and what a rentable mobile alternative needs to deliver.</span>
+      </a>
+    </div>
+    <div style="margin-top:24px">
+      <a href="/de/wissen/" class="btn-secondary" data-de>Zur Wissen-Übersicht</a>
+      <a href="/en/insights/" class="btn-secondary" data-en>Back to overview</a>
     </div>
   </div>
 </section>
