@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://nikos.info/de/</loc>
-<lastmod>2026-09-16</lastmod>
+<lastmod>2026-09-21</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/en/</loc>
-<lastmod>2026-09-16</lastmod>
+<lastmod>2026-09-21</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/loesungen/</loc>
@@ -14,11 +14,15 @@
 </url>
 <url>
 <loc>https://nikos.info/de/anwendungen/</loc>
-<lastmod>2026-09-17</lastmod>
+<lastmod>2026-09-21</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/de/kontakt/</loc>
 <lastmod>2026-09-16</lastmod>
+</url>
+<url>
+<loc>https://nikos.info/de/mobile-durchsagesysteme-vergleich/</loc>
+<lastmod>2026-09-21</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/de/produkte/</loc>
@@ -42,7 +46,7 @@
 </url>
 <url>
 <loc>https://nikos.info/de/wissen/</loc>
-<lastmod>2026-09-17</lastmod>
+<lastmod>2026-09-21</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/en/applications/</loc>
@@ -54,6 +58,10 @@
 </url>
 <url>
 <loc>https://nikos.info/en/insights/</loc>
+<lastmod>2026-09-21</lastmod>
+</url>
+<url>
+<loc>https://nikos.info/en/mobile-announcement-systems-comparison/</loc>
 <lastmod>2026-09-21</lastmod>
 </url>
 <url>
