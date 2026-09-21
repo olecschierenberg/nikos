@@ -17,7 +17,7 @@ window.NIKOS_CONTACT_URL = '/de/kontakt/';
 // window.NIKOS_CONTACT_URL = '/de/vermietung/';
 
 // ═══════════════════════════════════════════════════════════════════
-// FORMULAR-VERSAND (n8n-Webhook)
+// FORMULAR-VERSAND (Netlify Function)
 // ─────────────────────────
 // Alle drei Formulare (Partner-Anfrage, Kontakt-Beratung, Mietanfrage)
 // senden ihre Daten per POST (JSON) an diese eine URL.
@@ -28,4 +28,4 @@ window.NIKOS_CONTACT_URL = '/de/kontakt/';
 // statt zu senden — so geht keine Anfrage verloren.
 // ═══════════════════════════════════════════════════════════════════
 
-window.NIKOS_FORM_ENDPOINT = 'https://olec.app.n8n.cloud/webhook/nikos-formular'; // Production-URL (Workflow muss in n8n auf 'Active' stehen)
+window.NIKOS_FORM_ENDPOINT = 'https://nikos.info/api/form'; // Netlify Function (netlify/functions/form.mjs), ersetzt den n8n-Webhook
