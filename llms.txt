@@ -33,15 +33,22 @@ NIKOS wird nicht verkauft, sondern über ein Netz von der RADACOM GmbH zertifizi
 
 ## Kernseiten
 
-- [Startseite](https://nikos.info/): Überblick und Kurzdefinition.
-- [System](https://nikos.info/nikos-system.html): Funktionsweise und Technik.
-- [Produkte / Module](https://nikos.info/nikos-produkte.html): alle NIKOS-Module im Detail.
-- [Anwendungen](https://nikos.info/nikos-anwendungen.html): Einsatzszenarien nach Veranstaltungstyp.
-- [Vermietung](https://nikos.info/nikos-vermietung.html): Mietmodell und Partner.
-- [Übertragungstechnik im Vergleich](https://nikos.info/nikos-vergleich-uebertragungstechnik.html): NIKOS vs. 100 V, Glasfaser, Mobilfunk, Richtfunk, Satellit.
-- [Referenzen](https://nikos.info/nikos-referenzen.html): reale Einsätze.
-- [Downloads](https://nikos.info/nikos-downloads.html): Datenblätter, Ausschreibungstexte, Checklisten.
-- [Kontakt](https://nikos.info/nikos-kontakt.html): Beratung und Mietanfrage.
+- [Startseite](https://nikos.info/de/): Überblick und Kurzdefinition.
+- [System](https://nikos.info/de/system/): Funktionsweise und Technik.
+- [Produkte / Module](https://nikos.info/de/produkte/): alle NIKOS-Module im Detail.
+- [Anwendungen](https://nikos.info/de/anwendungen/): Einsatzszenarien nach Veranstaltungstyp, u. a. [Stadtfest](https://nikos.info/de/anwendungen/stadtfest/), [Festival](https://nikos.info/de/anwendungen/festival/), [Volksfest](https://nikos.info/de/anwendungen/volksfest/), [Weihnachtsmarkt](https://nikos.info/de/anwendungen/weihnachtsmarkt/).
+- [Vermietung](https://nikos.info/de/vermietung/): Mietmodell und Partner.
+- [Mobile Durchsagesysteme im Vergleich](https://nikos.info/de/mobile-durchsagesysteme-vergleich/): Bauarten (Akku-Funkstationen, Fahrzeug-Warnanlagen, Sicherheitstürme, temporäre ELA) mit Kennzahlen und Auswahl-Checkliste.
+- [Übertragungstechnik im Vergleich](https://nikos.info/de/vergleich-uebertragungstechnik/): NIKOS vs. 100 V, Glasfaser, Mobilfunk, Richtfunk, Satellit.
+- [Wissen / Ratgeber](https://nikos.info/de/wissen/): Ratgeber-Artikel, z. B. [Sprachalarmierungsanlage mieten](https://nikos.info/de/wissen/sprachalarmierungsanlage-mieten/), [Mobile ELA-Anlage mieten](https://nikos.info/de/wissen/mobile-ela-anlage-mieten/), [Sprachalarmierung ohne Mobilfunk](https://nikos.info/de/wissen/sprachalarmierung-ohne-mobilfunk/), [DIN EN 50849 bei mobilen Veranstaltungen](https://nikos.info/de/wissen/din-en-50849-mobile-veranstaltungen/).
+- [Referenzen](https://nikos.info/de/referenzen/): reale Einsätze.
+- [Kontakt](https://nikos.info/de/kontakt/): Beratung und Mietanfrage.
+
+## English
+
+- [Home](https://nikos.info/en/), [Applications](https://nikos.info/en/applications/), [Rental](https://nikos.info/en/rental/), [Insights](https://nikos.info/en/insights/)
+- [Mobile announcement systems compared](https://nikos.info/en/mobile-announcement-systems-comparison/)
+- [Transmission technologies compared](https://nikos.info/en/transmission-technology-comparison/)
 
 ## Anbieter
 
