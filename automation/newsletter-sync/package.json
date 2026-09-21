@@ -1,0 +1,17 @@
+{
+  "name": "nikos-newsletter-sync",
+  "version": "0.1.0",
+  "private": true,
+  "description": "GitHub-Actions-Portierung der n8n-Workflows Abmelde-Sync (Sheet -> Brevo) und Newsletter-Sync (Brevo -> Sheet).",
+  "scripts": {
+    "abmelde": "node abmelde-sync.js",
+    "import": "node brevo-import.js",
+    "test": "node --test test/logic.test.js test/brevo.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "googleapis": "^144.0.0"
+  }
+}

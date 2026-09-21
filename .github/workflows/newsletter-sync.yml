@@ -1,0 +1,84 @@
+name: Newsletter-Abgleich
+
+# Ersetzt die beiden n8n-Workflows
+#   - "NIKOS – Abmelde-Sync (Sheet → Brevo)"  (ID 9GmhtntRPPRmdFCE)
+#   - Newsletter-Sync (Brevo → Sheet)          (ID fY1tXDSbXmzvurvm)
+# und fuehrt sie in FESTER REIHENFOLGE zusammen: erst Abmeldungen aus dem Sheet
+# nach Brevo, dann Abonnenten aus Brevo ins Sheet. So kann der zweite Schritt
+# eine Abmeldung nie wieder rueckgaengig machen.
+#
+# Zeitplan: taeglich 04:00 UTC (= 06:00 Uhr Sommerzeit).
+# Manueller Start ("Run workflow"): standardmaessig nur PROBELAUF (schreibt und
+# sperrt nichts). Haken bei "live" setzen fuer einen echten Lauf.
+# Details: automation/newsletter-sync/README.md
+
+on:
+  workflow_dispatch:
+    inputs:
+      live:
+        description: "LIVE ausfuehren (schreibt ins Sheet, sperrt Kontakte in Brevo). Aus = nur Probelauf."
+        type: boolean
+        default: false
+  schedule:
+    - cron: '0 4 * * *'
+
+concurrency:
+  group: newsletter-sync
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  abgleich:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+      BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+      # Zeitplan-Laeufe sind immer live; manuelle Laeufe nur mit gesetztem Haken.
+      LIVE: ${{ (github.event_name == 'schedule' || inputs.live) && 'true' || 'false' }}
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation/newsletter-sync
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: "Schritt 1: Abmeldungen Sheet -> Brevo"
+        working-directory: automation/newsletter-sync
+        run: node abmelde-sync.js $([ "$LIVE" = "true" ] && echo --live)
+
+      - name: "Schritt 2: Abonnenten Brevo -> Sheet"
+        working-directory: automation/newsletter-sync
+        run: node brevo-import.js $([ "$LIVE" = "true" ] && echo --live)
+
+      - name: Telegram-Erfolgsmeldung senden
+        if: success()
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            --data-urlencode text="✅ NIKOS-Automation erfolgreich: Newsletter-Abgleich (live=${LIVE})
+          Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+      - name: Telegram-Fehlermeldung senden
+        if: failure()
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            --data-urlencode text="❌ NIKOS-Automation FEHLGESCHLAGEN: Newsletter-Abgleich
+          Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
