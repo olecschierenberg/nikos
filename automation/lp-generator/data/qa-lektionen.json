@@ -341,5 +341,12 @@
     "einsatz": "Internationales Straßenfest",
     "problem": "Besucherinformation",
     "mangel": "Weichmacher in der Normen-FAQ korrigiert | Weichmacher in der Installations-FAQ korrigiert"
+  },
+  {
+    "datum": "22.09.2026",
+    "region": "Sindelfingen",
+    "einsatz": "Internationales Straßenfest",
+    "problem": "Besucherinformation",
+    "mangel": "NIKOS-Lösung und Produktbeschreibung aus dem Intro entfernt, da das Intro ausschließlich die Herausforderung beschreiben darf. | Weichmacher „unter Umständen“ in FAQ3 entfernt. | Weichmacher „gewährleistet werden kann“ in FAQ1 in eine klare Aussage umformuliert."
   }
 ]
