@@ -151,6 +151,16 @@ async function sortByRelevanceDesc(sheetName) {
     throw new Error(`Spalte "Relevanz" nicht in der Kopfzeile von "${sheetName}" gefunden (Kopfzeile: ${header.join(', ')}).`);
   }
   const columnCount = header.length;
+  // FIX 2026-09-23: Die Hilfsspalte "OrigZeile" (enthaelt eine ARRAYFORMULA(ROW())) darf NICHT
+  // mitsortiert werden -- sonst wandert die Formelzelle mit ihrer Zeile an eine andere Stelle, die
+  // Spalte ist darueber leer und der LP-Generator hat seit dem 2026-09-10 die falsche Zeile
+  // beschrieben. Deshalb endet der Sortierbereich vor "OrigZeile" (steht als letzte Spalte).
+  // Liegt "OrigZeile" nicht am Ende, wird abgebrochen statt die Formel zu zerstoeren.
+  const origIdx = header.indexOf('OrigZeile');
+  if (origIdx !== -1 && origIdx !== columnCount - 1) {
+    throw new Error(`Spalte "OrigZeile" steht nicht am Ende der Kopfzeile von "${sheetName}" (Index ${origIdx} von ${columnCount}) -- Sortierung abgebrochen, um die Formel nicht zu verschieben.`);
+  }
+  const sortEndColumn = origIdx === -1 ? columnCount : origIdx;
   await sheets.spreadsheets.batchUpdate({
     spreadsheetId: SPREADSHEET_ID,
     requestBody: {
@@ -162,7 +172,7 @@ async function sortByRelevanceDesc(sheetName) {
               sheetId: KEYWORDKOMBINATIONEN_SHEET_GID,
               startRowIndex: 1,
               startColumnIndex: 0,
-              endColumnIndex: columnCount,
+              endColumnIndex: sortEndColumn,
             },
             sortSpecs: [{ dimensionIndex: relevanzColumnIndex, sortOrder: 'DESCENDING' }],
           },
