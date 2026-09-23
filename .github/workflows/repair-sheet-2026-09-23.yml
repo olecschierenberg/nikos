@@ -1,0 +1,46 @@
+name: "Einmal-Reparatur: Keywordkombinationen nach Generator-Schleife (2026-09-23)"
+
+# EINMAL-WORKFLOW (nur manuell): siehe automation/lp-generator/scripts/repair-sheet-2026-09-23.js.
+# 1) ohne Haken "live" starten (Dry-Run, Log pruefen), 2) mit Haken "live" starten.
+# Danach kann dieser Workflow entfernt werden.
+
+on:
+  workflow_dispatch:
+    inputs:
+      live:
+        description: 'Wirklich schreiben (sonst nur Dry-Run/Vorschau im Log)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: automation/lp-generator/package-lock.json
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation/lp-generator
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Sheet reparieren
+        working-directory: automation/lp-generator
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          if [ "${{ inputs.live }}" = "true" ]; then
+            node scripts/repair-sheet-2026-09-23.js --live
+          else
+            node scripts/repair-sheet-2026-09-23.js
+          fi
