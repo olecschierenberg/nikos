@@ -103,7 +103,9 @@ async function appendRow(sheetName, columns) {
     range: `${sheetName}!1:1`,
   });
   const header = (headerRes.data.values || [[]])[0];
-  const row = header.map((h) => (h && Object.prototype.hasOwnProperty.call(columns, h)) ? columns[h] : '');
+  // Spalte "OrigZeile" (Formel-Ausgabe aus der Kopfzelle) nie beschreiben -- ein Wert dort blockiert die ARRAYFORMULA (Fix 2026-09-23).
+  const cols = header.indexOf('OrigZeile') === -1 ? header : header.slice(0, header.indexOf('OrigZeile'));
+  const row = cols.map((h) => (h && Object.prototype.hasOwnProperty.call(columns, h)) ? columns[h] : '');
   await sheets.spreadsheets.values.append({
     spreadsheetId: SPREADSHEET_ID,
     range: `${sheetName}!A1`,

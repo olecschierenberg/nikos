@@ -110,7 +110,9 @@ async function appendRows(sheetName, rows) {
     range: `${sheetName}!1:1`,
   });
   const header = (headerRes.data.values || [[]])[0];
-  const values = rows.map((row) => header.map((h) => (row[h] !== undefined ? row[h] : '')));
+  // Spalte "OrigZeile" (Formel-Ausgabe aus der Kopfzelle) nie beschreiben -- ein Wert dort blockiert die ARRAYFORMULA (Fix 2026-09-23).
+  const cols = header.indexOf('OrigZeile') === -1 ? header : header.slice(0, header.indexOf('OrigZeile'));
+  const values = rows.map((row) => cols.map((h) => (row[h] !== undefined ? row[h] : '')));
   await sheets.spreadsheets.values.append({
     spreadsheetId: SPREADSHEET_ID,
     range: sheetName,
@@ -151,10 +153,12 @@ async function sortByRelevanceDesc(sheetName) {
     throw new Error(`Spalte "Relevanz" nicht in der Kopfzeile von "${sheetName}" gefunden (Kopfzeile: ${header.join(', ')}).`);
   }
   const columnCount = header.length;
-  // FIX 2026-09-23: Die Hilfsspalte "OrigZeile" (enthaelt eine ARRAYFORMULA(ROW())) darf NICHT
-  // mitsortiert werden -- sonst wandert die Formelzelle mit ihrer Zeile an eine andere Stelle, die
-  // Spalte ist darueber leer und der LP-Generator hat seit dem 2026-09-10 die falsche Zeile
-  // beschrieben. Deshalb endet der Sortierbereich vor "OrigZeile" (steht als letzte Spalte).
+  // FIX 2026-09-23: Die Hilfsspalte "OrigZeile" ist KEIN Datenwert einer Zeile, sondern zeigt per
+  // ARRAYFORMULA (in der Kopfzelle M1) die AKTUELLE Zeilennummer an. Sie darf deshalb NICHT
+  // mitsortiert werden -- sonst wandert die Formel mit einer Datenzeile weg (so geschehen am
+  // 2026-09-10: Formel landete in Zeile 210, darueber war die Spalte leer, der LP-Generator hat
+  // danach die falsche Zeile beschrieben). Sortier- UND Filterbereich enden deshalb vor "OrigZeile"
+  // (letzte Spalte); alle Zeilen (ohne Zeilenbegrenzung) werden sortiert.
   // Liegt "OrigZeile" nicht am Ende, wird abgebrochen statt die Formel zu zerstoeren.
   const origIdx = header.indexOf('OrigZeile');
   if (origIdx !== -1 && origIdx !== columnCount - 1) {
@@ -184,7 +188,7 @@ async function sortByRelevanceDesc(sheetName) {
                 sheetId: KEYWORDKOMBINATIONEN_SHEET_GID,
                 startRowIndex: 0,
                 startColumnIndex: 0,
-                endColumnIndex: columnCount,
+                endColumnIndex: sortEndColumn, // Filter ebenfalls ohne OrigZeile -> manuelles Sortieren per Filter-Menue verschiebt die Formel nicht
               },
             },
           },
