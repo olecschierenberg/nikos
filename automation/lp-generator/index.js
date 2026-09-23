@@ -536,8 +536,49 @@ async function main() {
   }
   log(`  ${filterResult.length} relevante Kombination(en) gefunden, verarbeite die erste.`);
 
+  // ---- 4a) Echte Zeile in "Keywordkombinationen" ermitteln (Fix 2026-09-23) ----
+  // Die Warteschlange liefert nur ihre EIGENE Zeilenposition als row_number. Die Korrektur ueber die
+  // Hilfsspalte "OrigZeile" (vorab_begrenzung.js) ist seit der Sortier-Aenderung vom 2026-09-10
+  // kaputt (Spalte leer) -> der Generator hat danach 13 Tage lang immer dieselbe Kombination erzeugt
+  // und dabei jeweils die Warteschlangen-Position (Zeile 2) in "Keywordkombinationen" ueberschrieben.
+  // Deshalb wird die Zielzeile jetzt direkt ueber Problem/Einsatz/Region gesucht (nur offene Zeilen:
+  // erstellen=x, slug leer) -- unabhaengig von OrigZeile. Kandidaten ohne EINDEUTIGEN Treffer werden
+  // uebersprungen (Log-Warnung), damit nie eine falsche Zeile beschrieben wird und der Lauf nicht an
+  // einer einzelnen problematischen Kombination haengen bleibt.
+  const normKey = (v) => String(v ?? '').trim().toLowerCase();
+  const keyOf = (j) => [j.Problem, j.Einsatz, j.Region].map(normKey).join('|');
+  const kkItems = await sheets.readSheetAsItems('Keywordkombinationen');
+  const openRowsByKey = new Map();
+  for (const it of kkItems) {
+    if (normKey(it.json.erstellen) !== 'x' || normKey(it.json.slug) !== '') continue;
+    const k = keyOf(it.json);
+    if (!openRowsByKey.has(k)) openRowsByKey.set(k, []);
+    openRowsByKey.get(k).push(it.json.row_number);
+  }
+  const resolved = [];
+  for (const it of filterResult) {
+    const rows = openRowsByKey.get(keyOf(it.json)) || [];
+    if (rows.length !== 1) {
+      log(`  WARNUNG: "${keyOf(it.json)}" hat ${rows.length} offene Zeile(n) in "Keywordkombinationen" (${rows.join(', ') || '-'}) -- uebersprungen.`);
+      continue;
+    }
+    if (rows[0] !== it.json.row_number) {
+      log(`  Zeilennummer korrigiert: Warteschlange ${it.json.row_number} -> Keywordkombinationen ${rows[0]} ("${keyOf(it.json)}").`);
+    }
+    it.json.row_number = rows[0];
+    resolved.push(it);
+    break; // pro Lauf wird ohnehin nur 1 Kombination gebaut (limit.js)
+  }
+  if (!resolved.length) {
+    log('Keine Kombination mit eindeutiger offener Zeile in "Keywordkombinationen" gefunden. Nichts zu tun.');
+    return;
+  }
+  // Nachgelagerte Nodes lesen $('Filter + Relevanz-Ranking').item (= Index 0) -> auf die
+  // tatsaechlich ausgewaehlte Kombination setzen (sonst Mismatch, falls Kandidaten uebersprungen wurden).
+  nodeOutputs.set('Filter + Relevanz-Ranking', resolved);
+
   // ---- 4) Limit (max 1/Lauf) ----
-  const limited = runAllItems('limit.js', { items: filterResult, nodeOutputs, staticData, executionId });
+  const limited = runAllItems('limit.js', { items: resolved, nodeOutputs, staticData, executionId });
   const filterItem = limited[0]; // inhaltsgleich mit filterResult[0] (siehe lib/nodes/limit.js)
   log(`  Ausgewählt: Problem="${filterItem.json.Problem}" / Einsatz="${filterItem.json.Einsatz}" / Region="${filterItem.json.Region}"`);
 
