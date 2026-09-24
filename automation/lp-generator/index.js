@@ -555,9 +555,23 @@ async function main() {
     if (!openRowsByKey.has(k)) openRowsByKey.set(k, []);
     openRowsByKey.get(k).push(it.json.row_number);
   }
+  const kkByRow = new Map(kkItems.map((it) => [it.json.row_number, it.json]));
   const resolved = [];
   for (const it of filterResult) {
+    // 1. Wahl: exakte Zeile aus "OrigZeile" -- aber nur, wenn diese Zeile in "Keywordkombinationen"
+    //    wirklich dieselbe offene Kombination enthaelt (Schutz gegen verrutschte/leere Formel).
+    //    Damit bleiben auch doppelt vorhandene Kombinationen eindeutig zuordenbar.
+    const orig = it.json._orig_row;
+    const origRow = orig != null ? kkByRow.get(orig) : null;
+    if (origRow && keyOf(origRow) === keyOf(it.json)
+        && normKey(origRow.erstellen) === 'x' && normKey(origRow.slug) === '') {
+      it.json.row_number = orig;
+      resolved.push(it);
+      break;
+    }
+    // 2. Wahl (OrigZeile fehlt/passt nicht): eindeutige offene Zeile per Problem/Einsatz/Region.
     const rows = openRowsByKey.get(keyOf(it.json)) || [];
+    if (orig != null) log(`  WARNUNG: OrigZeile ${orig} passt nicht zu "${keyOf(it.json)}" -- Suche per Kombination.`);
     if (rows.length !== 1) {
       log(`  WARNUNG: "${keyOf(it.json)}" hat ${rows.length} offene Zeile(n) in "Keywordkombinationen" (${rows.join(', ') || '-'}) -- uebersprungen.`);
       continue;

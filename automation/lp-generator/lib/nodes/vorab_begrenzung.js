@@ -27,7 +27,7 @@ return kept.map(it => {
   const j = { ...it.json };
   if (j.OrigZeile !== undefined && j.OrigZeile !== '') {
     const orig = Number(j.OrigZeile);
-    if (Number.isFinite(orig)) j.row_number = orig;
+    if (Number.isFinite(orig)) { j.row_number = orig; j._orig_row = orig; } // _orig_row: Fix 2026-09-23, fuer die Zeilen-Pruefung in index.js
   }
   delete j.OrigZeile;
   return { json: { ...j, _precap_total: total, _precap_capped: capped }, pairedItem: it.pairedItem };
