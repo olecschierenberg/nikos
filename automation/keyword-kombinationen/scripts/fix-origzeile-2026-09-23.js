@@ -62,16 +62,42 @@ async function check(api, col) {
   const before = await check(api, col);
   log(`Vorher: ${before.dataRows} Datenzeilen, davon ${before.ok} mit korrekter OrigZeile. Beispiele falsch: ${before.bad.join(', ') || '-'}`);
 
-  const formula = `=ARRAYFORMULA(IF(ROW(${firstDataCol}1:${firstDataCol})=1,"OrigZeile",IF(${firstDataCol}1:${firstDataCol}="","",ROW(${firstDataCol}1:${firstDataCol}))))`;
-  log(`Plan: ${col}2:${col} leeren, ${col}1 = ${formula}, danach alle Zeilen nach Relevanz sortieren (Filter/Sortierung A..${sheets.columnLetter(idx - 1)}).`);
+  // Trennzeichen haengt von der Laendereinstellung des Sheets ab (DE: Semikolon, EN: Komma) -> beide probieren.
+  const E = firstDataCol;
+  const formulas = [
+    `=ARRAYFORMULA(IF(ROW(${E}1:${E})=1;"OrigZeile";IF(${E}1:${E}="";"";ROW(${E}1:${E}))))`,
+    `=ARRAYFORMULA(IF(ROW(${E}1:${E})=1,"OrigZeile",IF(${E}1:${E}="","",ROW(${E}1:${E}))))`,
+  ];
+  log(`Plan: ${col}2:${col} leeren, ${col}1 = ${formulas[0]} (bzw. Komma-Variante), danach alle Zeilen nach Relevanz sortieren (Filter/Sortierung A..${sheets.columnLetter(idx - 1)}).`);
+  // Zusatz 2026-09-24: noch nicht veroeffentlichte Mehrsprach-LPs zeigten in "pfad" schon auf die spaetere
+  // Live-URL (404). Auf die Vorschau umstellen, sofern der Vorschau-Ordner im Repo existiert.
+  const fs = require('fs');
+  const path = require('path');
+  const all = await sheets.readSheetAsItems(TAB);
+  const pfadFixes = [];
+  for (const { json: r } of all) {
+    const m = String(r.pfad || '').match(/^https:\/\/nikos\.info\/([a-z]{2})\/lp\/([^/]+)\/$/);
+    if (!m || String(r.aktiv || '').trim() !== '' || String(r.slug || '').trim() !== m[2]) continue;
+    const dir = path.join(__dirname, '..', '..', '..', 'lp-preview', m[2], m[1]);
+    if (!fs.existsSync(dir)) { log(`pfad-Fix: Zeile ${r.row_number} (${m[2]}) -- Vorschau ${m[1]} nicht gefunden, uebersprungen.`); continue; }
+    pfadFixes.push({ row: r.row_number, pfad: `https://nikos.info/lp-preview/${m[2]}/${m[1]}/` });
+  }
+  pfadFixes.forEach((f) => log(`pfad-Fix: Zeile ${f.row} -> ${f.pfad}`));
+
   if (!LIVE) { log('DRY-RUN: nichts geschrieben.'); return; }
+  for (const f of pfadFixes) await sheets.updateRowByRowNumber(TAB, f.row, { pfad: f.pfad });
 
   await api.spreadsheets.values.clear({ spreadsheetId: sheets.SPREADSHEET_ID, range: `${TAB}!${col}2:${col}` });
-  await api.spreadsheets.values.update({
-    spreadsheetId: sheets.SPREADSHEET_ID, range: `${TAB}!${col}1`, valueInputOption: 'USER_ENTERED',
-    requestBody: { values: [[formula]] },
-  });
-  let after = await check(api, col);
+  let after;
+  for (const formula of formulas) {
+    await api.spreadsheets.values.update({
+      spreadsheetId: sheets.SPREADSHEET_ID, range: `${TAB}!${col}1`, valueInputOption: 'USER_ENTERED',
+      requestBody: { values: [[formula]] },
+    });
+    after = await check(api, col);
+    log(`Versuch ${formula} -> Ueberschrift "${after.header[idx]}"`);
+    if (after.header[idx] === 'OrigZeile') break;
+  }
   if (after.header[idx] !== 'OrigZeile') {
     // Formel nicht akzeptiert -> Ueberschrift als Text wiederherstellen, damit nichts anderes bricht.
     await api.spreadsheets.values.update({

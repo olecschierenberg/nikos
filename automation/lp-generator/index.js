@@ -490,7 +490,9 @@ async function runMultiLangBranch({ filterItem, primaryFields, primaryLang, rend
     await sheets.updateRowByRowNumber('Keywordkombinationen', filterItem.json.row_number, {
       Relevanz: filterItem.json._relevanz,
       slug: slugPrimary,
-      pfad: `https://nikos.info/${primaryLang}/lp/${slugPrimary}/`,
+      // Bis zur Freigabe (deploy=x) auf die VORSCHAU zeigen -- die Live-URL existiert erst nach lp-publish,
+      // das pfad dann selbst auf die Live-URL setzt (Fix 2026-09-24, vorher 404 beim Klick im Sheet).
+      pfad: `https://nikos.info/lp-preview/${slugPrimary}/${primaryLang}/`,
       erstellt_am: DateTime.now().toFormat('dd.MM.yyyy'),
       Problem: problem, Einsatz: einsatz, Region: region,
     });
