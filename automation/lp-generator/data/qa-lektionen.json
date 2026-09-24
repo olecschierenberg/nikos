@@ -383,5 +383,12 @@
     "einsatz": "ChocolART",
     "problem": "Räumungsdurchsage",
     "mangel": "Weichmacher „kann unter Umständen“ in FAQ3 entfernt und in eine klare Aussage umformuliert."
+  },
+  {
+    "datum": "24.09.2026",
+    "region": "Amsterdam",
+    "einsatz": "Sail Amsterdam 2030",
+    "problem": "Räumungsdurchsage",
+    "mangel": "Weichmacher in Intro-Aussagen entfernt und durch definitive Formulierungen ersetzt. | Unsichere Formulierung zur projektspezifischen Normbewertung korrigiert."
   }
 ]
