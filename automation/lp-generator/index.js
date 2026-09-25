@@ -355,12 +355,49 @@ async function buildAndGateCheck({ lang, isPrimary, fields, region, einsatz, pro
   }
 }
 
+// ══════════════════════════════════════════════════════════════════════════
+// NEU (2026-09-25, Nutzer-Vorgabe "Der Slug muss bei allen Seiten immer in der passenden
+// Sprache sein"): Sprachpruefung aller Slugs einer Mehrsprach-Gruppe. Beobachtet wurde, dass
+// das KI-Feld slug_kw teils in der falschen Sprache kam (z. B. NL-Seite mit englischem Slug
+// "emergency-announcements-sailing-event", EN-Seite mit niederlaendischem Slug). EIN kurzer
+// Aufruf (gpt-5.6-luna) prueft alle Sprachen zugleich anhand der jeweiligen Ueberschrift und
+// liefert fuer falsche Slugs einen korrigierten. Schlaegt der Aufruf fehl, bleiben die Slugs
+// unveraendert (Log-Warnung) -- der Lauf wird dadurch nie blockiert.
+const SLUG_LANG_NAMES = { de: 'Deutsch', en: 'Englisch', fr: 'Franzoesisch', it: 'Italienisch', es: 'Spanisch', nl: 'Niederlaendisch', da: 'Daenisch', pl: 'Polnisch', pt: 'Portugiesisch', cs: 'Tschechisch', sv: 'Schwedisch', no: 'Norwegisch', fi: 'Finnisch', hu: 'Ungarisch', sr: 'Serbisch', hr: 'Kroatisch', sl: 'Slowenisch', sk: 'Slowakisch', ro: 'Rumaenisch', el: 'Griechisch', tr: 'Tuerkisch' };
+async function ensureSlugLanguages({ slugByLang, fieldsByLang, langs, problem, einsatz, region }) {
+  const check = langs.filter((l) => slugByLang[l] && fieldsByLang[l]);
+  if (!check.length) return;
+  const items = check.map((l) => ({ lang: l, sprache: SLUG_LANG_NAMES[l] || l, slug: slugByLang[l], ueberschrift: (fieldsByLang[l].headline || '').slice(0, 200) }));
+  const system = 'Du pruefst URL-Slugs mehrsprachiger Landingpages. Jeder Slug muss vollstaendig in der angegebenen Sprache sein. '
+    + 'Eigennamen (Veranstaltungs-, Orts- und Markennamen wie "Sail Amsterdam", "Gentse Feesten", "NIKOS") und Jahreszahlen bleiben unveraendert und zaehlen nicht als fremdsprachig. '
+    + 'Ist ein Slug (teilweise) in einer anderen Sprache oder fehlerhaft zerteilt (z. B. "besucherin-formation"), liefere einen korrigierten Slug: nur Kleinbuchstaben a-z, Ziffern und Bindestriche, keine Umlaute/Akzente (transliterieren), 2 bis 7 Woerter, inhaltlich passend zur Ueberschrift. '
+    + 'Antworte NUR mit JSON: {"ergebnis":[{"lang":"..","ok":true|false,"slug":"korrigierter-oder-unveraenderter-slug"}]}';
+  const user = `Kombination: Problem="${problem}", Einsatz="${einsatz}", Region="${region}"\n` + JSON.stringify(items, null, 1);
+  let res;
+  try {
+    const r = await chatCompletion({ apiKey: process.env.OPENAI_API_KEY, model: 'gpt-5.6-luna', system, user, maxTokens: 1200, timeoutMs: 90000, maxRetries: 1 });
+    const txt = String((r && r.json && r.json.text) || '');
+    const m = txt.match(/\{[\s\S]*\}/);
+    res = JSON.parse(m ? m[0] : txt);
+  } catch (err) {
+    log(`  Slug-Sprachpruefung: fehlgeschlagen (${err.message}) -- Slugs bleiben unveraendert.`);
+    return;
+  }
+  for (const e of (res && res.ergebnis) || []) {
+    if (!e || !check.includes(e.lang) || e.ok !== false) continue;
+    const neu = trimSlugMl(e.slug);
+    if (!neu || neu === slugByLang[e.lang] || neu.split('-').length < 2) continue;
+    log(`  Slug-Sprachpruefung [${e.lang}]: "${slugByLang[e.lang]}" -> "${neu}"`);
+    slugByLang[e.lang] = neu;
+  }
+}
+
 async function runMultiLangBranch({ filterItem, primaryFields, primaryLang, render, nodeOutputs, staticData, executionId, LIVE, REPO_ROOT }) {
   const problem = filterItem.json.Problem || '';
   const einsatz = filterItem.json.Einsatz || '';
   const region = filterItem.json.Region || ''; // regionslos -> leer; Nicht-Deutschland-Region (Schritt 3) -> gefuellt
   const targetLangs = (filterItem.json._target_langs || [primaryLang]).slice();
-  const slugPrimary = primaryLang === 'de' ? trimSlugMl(problem + ' ' + einsatz) : (trimSlugMl(primaryFields.slug_kw) || trimSlugMl(problem + ' ' + einsatz));
+  let slugPrimary = primaryLang === 'de' ? trimSlugMl(problem + ' ' + einsatz) : (trimSlugMl(primaryFields.slug_kw) || trimSlugMl(problem + ' ' + einsatz));
 
   log(`  Multi-Sprach-Pfad (${region ? 'Region "' + region + '", primaer ' + primaryLang.toUpperCase() : 'regionslos'}): Ziel-Sprachen = ${targetLangs.join(', ')}, Primaer-Slug = "${slugPrimary}"`);
 
@@ -390,6 +427,10 @@ async function runMultiLangBranch({ filterItem, primaryFields, primaryLang, rend
   // ---- Phase 2: Bauen + SEO-Gate (ML), mit 1 sofortigem Wiederholungsversuch (neue Uebersetzung) bei Gate-Ablehnung ----
   // Vorlaeufige Sibling-Liste NUR fuer den Gate-Check -- das Gate prueft ausschliesslich eigene Meta-Werte
   // (z. B. Meta-Beschreibungslaenge), keine hreflang-Konsistenz, daher unschaedlich als Zwischenstand.
+  // ---- Slug-Sprachpruefung (2026-09-25) fuer alle bisher uebersetzten Sprachen inkl. Primaersprache ----
+  await ensureSlugLanguages({ slugByLang, fieldsByLang, langs: Object.keys(fieldsByLang), problem, einsatz, region });
+  slugPrimary = slugByLang[primaryLang];
+
   let provisionalSiblings = Object.keys(fieldsByLang).map((lang) => ({
     lang, slug: slugByLang[lang], url: `https://nikos.info/${lang}/lp/${slugByLang[lang]}/`, meta: LANG_META[lang],
   }));
@@ -430,6 +471,7 @@ async function runMultiLangBranch({ filterItem, primaryFields, primaryLang, rend
       if (!translated) { log(`    [${lang}] Schlussphase: Uebersetzung erneut fehlgeschlagen -- endgueltig uebersprungen.`); continue; }
       fieldsByLang[lang] = translated;
       if (!slugByLang[lang]) slugByLang[lang] = trimSlugMl(translated.slug_kw) || (slugPrimary + '-' + lang);
+      await ensureSlugLanguages({ slugByLang, fieldsByLang, langs: [lang], problem, einsatz, region });
       const result = await buildAndGateCheck({
         lang, isPrimary: false, fields: translated, region, einsatz, problem,
         siblings: provisionalSiblings, defaultLang: primaryLang, nodeOutputs, staticData, executionId,
