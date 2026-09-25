@@ -243,7 +243,7 @@ async function callTranslation({ lang, deFields, sourceLang, problem, einsatz, r
   const result = await chatCompletion({
     apiKey: process.env.OPENAI_API_KEY, model: 'gpt-5.6-luna',
     system: systemPrompt, user: userPrompt,
-    maxTokens: 1800, timeoutMs: 180000, maxRetries: 1,
+    maxTokens: 5000, timeoutMs: 180000, maxRetries: 1,
   });
   const parsed = runAllItems('uebersetzung_json.js', { items: [result], nodeOutputs, staticData, executionId })[0].json.output;
   // NEU (2026-09-03, Nutzer-Idee "Textbausteine wiederverwenden"; ERWEITERT
@@ -375,7 +375,7 @@ async function ensureSlugLanguages({ slugByLang, fieldsByLang, langs, problem, e
   const user = `Kombination: Problem="${problem}", Einsatz="${einsatz}", Region="${region}"\n` + JSON.stringify(items, null, 1);
   let res;
   try {
-    const r = await chatCompletion({ apiKey: process.env.OPENAI_API_KEY, model: 'gpt-5.6-luna', system, user, maxTokens: 1200, timeoutMs: 90000, maxRetries: 1 });
+    const r = await chatCompletion({ apiKey: process.env.OPENAI_API_KEY, model: 'gpt-5.6-luna', system, user, maxTokens: 3000, timeoutMs: 90000, maxRetries: 1 });
     const txt = String((r && r.json && r.json.text) || '');
     const m = txt.match(/\{[\s\S]*\}/);
     res = JSON.parse(m ? m[0] : txt);
@@ -672,7 +672,7 @@ async function main() {
   const aiTexteUser = render(readPrompt('ai-texte.user.txt'), undefined);
   const { result: aiTexteResult, parsed: texteJsonResult } = await callOpenAiAndParseJson({
     nodeFile: 'texte_json.js', model: 'gpt-5.6-terra', system: aiTexteSystem, user: aiTexteUser,
-    maxTokens: 2600, timeoutMs: 180000, maxRetries: 1, nodeOutputs, staticData, executionId,
+    maxTokens: 6000, timeoutMs: 180000, maxRetries: 1, nodeOutputs, staticData, executionId,
     label: 'AI Texte (DE+EN)', maxAttempts: 2,
   });
   nodeOutputs.set('AI Texte (DE+EN)', [aiTexteResult]);
@@ -692,7 +692,7 @@ async function main() {
   const qaAgentUser = render(readPrompt('qa-agent.user.txt'), undefined);
   const { result: qaAgentResult, parsed: qaJsonResult } = await callOpenAiAndParseJson({
     nodeFile: 'qa_json.js', model: 'gpt-5.6-luna', system: qaAgentSystem, user: qaAgentUser,
-    maxTokens: 2600, timeoutMs: 180000, maxRetries: 1, nodeOutputs, staticData, executionId,
+    maxTokens: 6000, timeoutMs: 180000, maxRetries: 1, nodeOutputs, staticData, executionId,
     label: 'QA-Agent', maxAttempts: 2,
   });
   nodeOutputs.set('QA-Agent', [qaAgentResult]);
@@ -718,7 +718,7 @@ async function main() {
     const { result: nachbesserungResult, parsed: nachbesserungJsonResult } = await callOpenAiAndParseJson({
       nodeFile: 'nachbesserung_json.js', model: 'gpt-5.6-terra',
       system: undefined, // Original-Node hat keine eigene System-Message konfiguriert
-      user: nachbesserungUser, maxTokens: 2600, timeoutMs: 180000, maxRetries: 2,
+      user: nachbesserungUser, maxTokens: 6000, timeoutMs: 180000, maxRetries: 2,
       nodeOutputs, staticData, executionId, label: 'Nachbesserung', maxAttempts: 2,
     });
     nodeOutputs.set('Nachbesserung', [nachbesserungResult]);

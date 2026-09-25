@@ -22,7 +22,18 @@ async function chatCompletion({ apiKey, model, system, user, maxTokens, timeoutM
   let lastErr;
   for (let attempt = 1; attempt <= attempts; attempt++) {
     try {
-      return await callOnce({ apiKey, model, messages, maxTokens, timeoutMs });
+      // FIX 2026-09-25: Reasoning-Modelle verbrauchen einen Teil von max_tokens fuer internes Nachdenken.
+      // Ist das Budget aufgebraucht, kommt eine LEERE Antwort (finish_reason "length") -- beobachtet in
+      // LP-Generator #153/#158/#160. Dann bis zu 2x mit doppeltem Budget (max. 16000) wiederholen.
+      let budget = maxTokens || 2600;
+      let res = await callOnce({ apiKey, model, messages, maxTokens: budget, timeoutMs });
+      while (!res.json.text && res.json.finish_reason === 'length' && budget < 16000) {
+        budget = Math.min(budget * 2, 16000);
+        console.log(`[openai] ${model}: leere Antwort (Token-Limit erreicht) -- erneuter Versuch mit max_tokens=${budget}`);
+        res = await callOnce({ apiKey, model, messages, maxTokens: budget, timeoutMs });
+      }
+      if (!res.json.text) throw new Error(`OpenAI (${model}): leere Antwort (finish_reason=${res.json.finish_reason || '?'})`);
+      return res;
     } catch (err) {
       lastErr = err;
       if (attempt < attempts) {
@@ -67,7 +78,8 @@ async function callOnce({ apiKey, model, messages, maxTokens, timeoutMs, tokenPa
     const text = data && data.choices && data.choices[0] && data.choices[0].message
       ? data.choices[0].message.content
       : '';
-    return { json: { text: text || '' } };
+    const finishReason = data && data.choices && data.choices[0] ? data.choices[0].finish_reason : '';
+    return { json: { text: text || '', finish_reason: finishReason } };
   } finally {
     clearTimeout(timer);
   }
