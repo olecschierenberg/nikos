@@ -1492,11 +1492,4 @@
 <loc>https://nikos.info/pl/lp/zarzadzanie-tlumem-sail-amsterdam/</loc>
 <lastmod>2026-09-09</lastmod>
 </url>
-  <url>
-    <loc>https://nikos.info/loesungen/raeumungsdurchsage-chocolart-tuebingen/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://nikos.info/loesungen/raeumungsdurchsage-chocolart-tuebingen/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://nikos.info/loesungen/raeumungsdurchsage-chocolart-tuebingen/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 </urlset>
