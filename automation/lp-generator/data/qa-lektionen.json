@@ -390,5 +390,12 @@
     "einsatz": "Sail Amsterdam 2030",
     "problem": "Räumungsdurchsage",
     "mangel": "Weichmacher in Intro-Aussagen entfernt und durch definitive Formulierungen ersetzt. | Unsichere Formulierung zur projektspezifischen Normbewertung korrigiert."
+  },
+  {
+    "datum": "25.09.2026",
+    "region": "Amsterdam",
+    "einsatz": "Sail Amsterdam 2030",
+    "problem": "Besuchersicherheit",
+    "mangel": "Weichmacher in Intro und FAQ3 entfernt bzw. in eindeutige Aussagen umformuliert."
   }
 ]
