@@ -397,5 +397,12 @@
     "einsatz": "Sail Amsterdam 2030",
     "problem": "Besuchersicherheit",
     "mangel": "Weichmacher in Intro und FAQ3 entfernt bzw. in eindeutige Aussagen umformuliert."
+  },
+  {
+    "datum": "26.09.2026",
+    "region": "Tübingen",
+    "einsatz": "ChocolART",
+    "problem": "Unwetterwarnung",
+    "mangel": "Produkt- und Lösungsbeschreibung im Intro entfernt, da das Intro ausschließlich die Herausforderung enthalten darf. | Weichmacher in der Norm-FAQ durch eine definitive Formulierung ersetzt. | Weichmacher in der Installations-FAQ entfernt. | Modulbezogene Formulierung im USP sprachlich und gemäß Vorgabe präzisiert."
   }
 ]
