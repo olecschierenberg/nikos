@@ -15,8 +15,9 @@
  *    RADACOM vermietet auch ausserhalb Europas, dort immer direkt).
  *  - Regionen mit selectable = FALSE werden nicht genannt.
  *
- * Datenquelle: die oeffentliche CSV-Ausgabe des Sheets (dieselbe URL, die auch
- * die Partnerkarte im Browser nutzt) -- kein Zugangsschluessel noetig.
+ * Datenquelle: per Service Account (GOOGLE_SERVICE_ACCOUNT_JSON, wie beim
+ * Newsletter-Abgleich). Ohne diese Variable Versuch ueber die CSV-Ausgabe des
+ * Sheets (klappt nur, wenn das Sheet oeffentlich lesbar ist).
  * Lokal/offline: node update-partnerliste.js --data daten.json
  *   (JSON: {"partners":[{id,firma,ort,land,website,ist_radacom}],"regions":[{ids,name,sel}]})
  *
@@ -71,11 +72,24 @@ function toObjects(rows) {
 async function loadData() {
   const i = process.argv.indexOf('--data');
   if (i > 0) return JSON.parse(fs.readFileSync(process.argv[i + 1], 'utf8'));
-  const get = async (tab) => {
-    const res = await fetch(SHEET + encodeURIComponent(tab), { redirect: 'follow' });
-    if (!res.ok) throw new Error(`Sheet-Tab ${tab}: HTTP ${res.status}`);
-    return toObjects(parseCSV(await res.text()));
-  };
+  let get;
+  if (process.env.GOOGLE_SERVICE_ACCOUNT_JSON) {
+    // Normalfall in GitHub Actions: Zugriff per Service Account (das Sheet ist
+    // nicht oeffentlich lesbar). Nutzt den Sheets-Zugriff des Newsletter-Abgleichs.
+    const { readTab } = require('../newsletter-sync/lib/sheets');
+    get = async (tab) => {
+      const { rows } = await readTab(tab);
+      return rows.map((r) => Object.fromEntries(Object.entries(r.values).map(([k, v]) => [k.trim().toLowerCase(), String(v).trim()])));
+    };
+  } else {
+    get = async (tab) => {
+      const res = await fetch(SHEET + encodeURIComponent(tab), { redirect: 'follow' });
+      if (!res.ok) throw new Error(`Sheet-Tab ${tab}: HTTP ${res.status}`);
+      const text = await res.text();
+      if (/^\s*</.test(text)) throw new Error(`Sheet-Tab ${tab}: keine CSV (Sheet nicht oeffentlich?) -- GOOGLE_SERVICE_ACCOUNT_JSON setzen.`);
+      return toObjects(parseCSV(text));
+    };
+  }
   const partners = (await get('Partnerliste')).map((p) => ({
     id: p.partner_id, firma: p.firma, ort: p.ort, land: p.land, website: p.website, ist_radacom: p.ist_radacom,
   }));

@@ -31,7 +31,13 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Abhaengigkeiten installieren (Sheets-Zugriff des Newsletter-Abgleichs)
+        working-directory: automation/newsletter-sync
+        run: npm install --omit=dev --no-audit --no-fund
+
       - name: Partnerliste aus dem Sheet erzeugen
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
         run: node automation/partnerliste/update-partnerliste.js
 
       - name: Aenderungen committen und pushen
