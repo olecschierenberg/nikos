@@ -1,0 +1,66 @@
+name: Partnerliste Vermietungsseite
+
+# Schreibt die Partner aus dem Sheet "NIKOS-Listen" (Tabs Partnerliste +
+# Regionszuordnung) als lesbaren Text auf /de/vermietung/ und /en/rental/,
+# damit Suchmaschinen und KI-Suchen die Partner sehen (die Karte laedt ihre
+# Daten nur im Browser). Commit nur, wenn sich etwas geaendert hat.
+# Details: automation/partnerliste/update-partnerliste.js
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 5 * * *'
+
+concurrency:
+  group: partnerliste
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  partnerliste:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Partnerliste aus dem Sheet erzeugen
+        run: node automation/partnerliste/update-partnerliste.js
+
+      - name: Aenderungen committen und pushen
+        run: |
+          git config user.name "nikos-partnerliste[bot]"
+          git config user.email "actions@github.com"
+          git add de/vermietung/index.html en/rental/index.html
+          if git diff --cached --quiet; then
+            echo "Partnerliste unveraendert -- nichts zu committen."
+            exit 0
+          fi
+          git commit -m "Partnerliste aus Sheet aktualisiert"
+          attempt=1
+          until git push; do
+            if [ "$attempt" -ge 5 ]; then echo "Push fehlgeschlagen -- Abbruch."; exit 1; fi
+            git fetch origin main
+            if ! git rebase origin/main; then git rebase --abort || true; exit 1; fi
+            sleep $(( (RANDOM % 10) + attempt * 3 ))
+            attempt=$((attempt + 1))
+          done
+
+      - name: Telegram-Fehlermeldung senden
+        if: failure()
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            --data-urlencode text="❌ NIKOS-Automation FEHLGESCHLAGEN: Partnerliste Vermietungsseite
+          Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"

@@ -1,5 +1,5 @@
-// Klaro Consent Manager — Konfiguration für nikos.audio
-// Dienste: Umami Analytics, Brevo Newsletter
+// Klaro Consent Manager — Konfiguration für nikos.info
+// Dienste: Statistik (Umami + Ahrefs Web Analytics, Widerspruchslösung), Brevo Newsletter
 // Klaro-Version: aktuell via CDN (kiprotect.com)
 
 var klaroConfig = {
@@ -8,7 +8,7 @@ var klaroConfig = {
   storageMethod: 'localStorage',
   cookieName: 'nikos_consent',
   cookieExpiresAfterDays: 365,
-  privacyPolicy: '/nikos-datenschutz.html',
+  privacyPolicy: '/de/datenschutz/',
 
   // Sprache: DE primär, EN als Fallback
   lang: 'de',
@@ -38,7 +38,7 @@ var klaroConfig = {
       close: 'Schließen',
       save: 'Einstellungen speichern',
       purposes: {
-        analytics: 'Analyse',
+        analytics: 'Statistik (anonym, ohne Cookies)',
         marketing: 'Marketing & Newsletter',
       },
       service: {
@@ -72,7 +72,7 @@ var klaroConfig = {
       close: 'Close',
       save: 'Save settings',
       purposes: {
-        analytics: 'Analytics',
+        analytics: 'Statistics (anonymous, no cookies)',
         marketing: 'Marketing & Newsletter',
       },
     },
@@ -80,26 +80,25 @@ var klaroConfig = {
 
   services: [
     {
-      // Umami Analytics — kein Cookie, daher nur als Information
-      // Umami setzt selbst kein Cookie und benötigt kein Consent-Banner
-      // Wir zeigen es trotzdem transparent an
-      name: 'umami',
-      title: 'Umami Analytics',
+      // Statistik (Umami + Ahrefs Web Analytics) — cookiefrei, anonym.
+      // Rechtsgrundlage berechtigtes Interesse: standardmäßig an (optOut), Besucher kann widersprechen.
+      // Geladen wird beides über assets/js/nk-analytics.js; dieser Schalter setzt nur den Widerspruch
+      // (localStorage 'nk-analytics-optout'), der auf allen Seiten inkl. Landingpages gilt.
+      name: 'statistik',
+      title: 'Statistik (Umami, Ahrefs Web Analytics)',
       purposes: ['analytics'],
       required: false,
-      default: true, // datenschutzfreundlich — standardmäßig an
+      default: true,
+      optOut: true,
       description:
-        'Anonyme Besucherstatistiken ohne Cookies und ohne persönliche Daten. ' +
-        'Datenschutzfreundliche Alternative zu Google Analytics.',
-      onAccept: `
-        // Umami wird über data-website-id im Script-Tag gesteuert
-        // Kein zusätzlicher Code nötig — das Script wird beim Laden aktiviert
-      `,
-      onDecline: `
-        // Umami-Script deaktivieren
-        var s = document.querySelector('script[data-umami]');
-        if (s) s.remove();
-      `,
+        'Anonyme, cookiefreie Besucherstatistik. Es werden keine personenbezogenen Daten gespeichert. ' +
+        'Anonymous, cookie-free visitor statistics. No personal data is stored.',
+      callback: function (consent) {
+        try {
+          if (consent) { localStorage.removeItem('nk-analytics-optout'); localStorage.removeItem('umami.disabled'); }
+          else { localStorage.setItem('nk-analytics-optout', '1'); localStorage.setItem('umami.disabled', '1'); }
+        } catch (e) {}
+      },
     },
     {
       // Brevo Newsletter-Einbettung (falls Formular eingebettet wird)
