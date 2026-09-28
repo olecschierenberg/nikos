@@ -11,7 +11,8 @@
  *
  * Regeln (Nutzer-Vorgabe 2026-09-28):
  *  - Nur Partner auflisten, denen mindestens eine Region zugeordnet ist.
- *  - RADACOM wird ebenfalls gelistet (zuletzt, mit allen direkt betreuten Laendern).
+ *  - RADACOM wird ebenfalls gelistet (zuletzt, als "alle uebrigen Laender (direkt)" --
+ *    RADACOM vermietet auch ausserhalb Europas, dort immer direkt).
  *  - Regionen mit selectable = FALSE werden nicht genannt.
  *
  * Datenquelle: die oeffentliche CSV-Ausgabe des Sheets (dieselbe URL, die auch
@@ -82,6 +83,7 @@ async function loadData() {
   return { partners, regions };
 }
 
+const isRadacom = (p) => String(p.ist_radacom).toUpperCase() === 'TRUE';
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const url = (w) => (!w ? '' : /^https?:\/\//i.test(w) ? w : 'https://' + w.replace(/^\/+/, ''));
 
@@ -95,7 +97,7 @@ function buildModel({ partners, regions }) {
     }
   }
   const list = [...byId.values()].filter((p) => p.regions.length);
-  const isRad = (p) => String(p.ist_radacom).toUpperCase() === 'TRUE';
+  const isRad = isRadacom;
   const others = list.filter((p) => !isRad(p)).sort((a, b) => a.regions[0].localeCompare(b.regions[0], 'de') || a.firma.localeCompare(b.firma, 'de'));
   return [...others, ...list.filter(isRad)];
 }
@@ -105,8 +107,10 @@ function buildBlock(model) {
   const li = (p) => {
     const name = p.website ? `<a href="${esc(url(p.website))}" target="_blank" rel="noopener">${esc(p.firma)}</a>` : esc(p.firma);
     const ort = p.ort ? ` <span class="partner-list__ort">(${esc(p.ort)})</span>` : '';
-    const de = p.regions.join(', ');
-    const en = p.regions.map((r) => EN[r] || r).join(', ');
+    // RADACOM vermietet ueberall dort direkt, wo kein Partner zustaendig ist -- auch
+    // ausserhalb Europas. Deshalb keine Laenderliste, sondern ein Sammelbegriff.
+    const de = isRadacom(p) ? 'alle übrigen Länder (direkt)' : p.regions.join(', ');
+    const en = isRadacom(p) ? 'all other countries (direct)' : p.regions.map((r) => EN[r] || r).join(', ');
     return `      <li class="partner-list__item"><div class="partner-list__name">${name}${ort}</div>` +
       `<div class="partner-list__reg" data-de>${esc(de)}</div><div class="partner-list__reg" data-en>${esc(en)}</div></li>`;
   };
@@ -116,7 +120,7 @@ function buildBlock(model) {
       '@type': 'ListItem', position: i + 1,
       item: { '@type': 'Organization', name: p.firma, ...(p.website ? { url: url(p.website) } : {}),
         ...(p.ort ? { address: { '@type': 'PostalAddress', addressLocality: p.ort, ...(p.land ? { addressCountry: p.land } : {}) } } : {}),
-        areaServed: p.regions },
+        areaServed: isRadacom(p) ? 'Alle übrigen Länder weltweit / all other countries worldwide' : p.regions },
     })),
   };
   return [
