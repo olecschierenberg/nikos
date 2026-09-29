@@ -135,8 +135,8 @@ async function main() {
   const htmlMitKurzerDesc = feinschliffResult.json.previewHtml.replace(/(<meta name="description" content=")[^"]*(")/, `$1${zuKurzeDesc}$2`);
   assert.throws(
     () => runEachItem('seo_gate.js', { item: { json: Object.assign({}, feinschliffResult.json, { html: htmlMitKurzerDesc, previewHtml: htmlMitKurzerDesc }) }, nodeOutputs, staticData, executionId }),
-    /SEO_GATE_BLOCKED:.*META_DESCRIPTION_LENGTH_OUTSIDE_140_155/,
-    'SEO-Gate sollte eine zu kurze Meta-Description (<140 Zeichen) hart blockieren'
+    /SEO_GATE_BLOCKED:.*META_DESCRIPTION_LENGTH_OUTSIDE_110_158/,
+    'SEO-Gate sollte eine zu kurze Meta-Description (<110 Zeichen) hart blockieren'
   );
   log('SEO-Gate-Regressionstest: zu kurze Meta-Description wird korrekt blockiert (SEO_GATE_BLOCKED).');
 

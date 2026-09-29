@@ -3,7 +3,35 @@ function cleanForSlug(t){if(!t)return '';var s=t.toString().toLowerCase().trim()
 function splitCo(t){t=(t||'').toString();var i=t.indexOf(': ');return i>=0?t.slice(0,i):t;}
 function clampByBoundary(t,max,minBreak){t=(t||'').toString().replace(/\s+/g,' ').trim();if(t.length<=max)return t;var w=t.slice(0,max);var lastEnd=Math.max(w.lastIndexOf('. '),w.lastIndexOf('! '),w.lastIndexOf('? '));if(lastEnd>minBreak)return w.slice(0,lastEnd+1).trim();if(/[.!?]/.test(w.slice(-1))&&w.length>minBreak)return w.trim();var budget=max-1;var s=t.slice(0,budget);var i=s.lastIndexOf(' ');if(i>minBreak)s=s.slice(0,i);return s.replace(/[\s.,;:–-]+$/,'')+'…';}
 function clampTitle(t,max){return clampByBoundary(t,max,30);}
-function buildTitle(shortHead){var suf=' – NIKOS';var max=60-suf.length;return clampTitle(shortHead,max)+suf;}
+function buildTitleOld(shortHead){var suf=' – NIKOS';var max=60-suf.length;return clampTitle(shortHead,max)+suf;}
+// SEO-Titel/-Beschreibung (2026-09-29): ganze Saetze statt '…'-Abschnitt, siehe html_bauen_ml.js.
+function buildTitle(shortHead){var t=buildTitleNew(shortHead);return (t.length>=45&&t.length<=60)?t:buildTitleOld(shortHead);}
+var TITLE_STOP = /^(für|fuer|die|der|das|den|dem|des|bei|beim|im|in|an|am|auf|zu|zur|zum|und|mit|von|vom|for|the|a|an|at|of|on|and|to|with|during|pour|la|le|les|de|du|des|à|au|aux|et|en|per|il|lo|gli|di|del|della|e|al|con|para|el|los|las|y|voor|het|een|van|bij|op|met|til|og|på|af|dla|na|w|i|z|przy|podczas|–|-|:)$/i;
+function buildTitleNew(shortHead){ var suf=' – NIKOS'; var h=(shortHead||'').toString().replace(/\s+/g,' ').trim().replace(/[.:;,]+$/,'');
+  if(h.length+suf.length<=60) return h+suf;
+  if(h.length<=60) return h;
+  var words=h.split(' '), out=[];
+  for(var i=0;i<words.length;i++){ var cand=out.concat(words[i]).join(' '); if(cand.length>60) break; out.push(words[i]); }
+  while(out.length>2 && TITLE_STOP.test(out[out.length-1].replace(/[.,;:]+$/,''))) out.pop();
+  var t=out.join(' ').replace(/[\s.,;:–-]+$/,'');
+  return t.length>=20 ? t : clampTitle(h,60-suf.length)+suf; }
+function splitSentences(t){ t=(t||'').toString().replace(/\s+/g,' ').trim(); if(!t) return [];
+  var res=[], start=0, re=/[.!?](?=\s+\S)/g, m;
+  while((m=re.exec(t))){ var before=t.slice(start,m.index+1); var lastTok=(before.split(' ').pop()||'');
+    if(/^([A-Za-zÄÖÜäöü]{1,2}\.)+$/.test(lastTok) || /^\d+\.$/.test(lastTok)) continue;
+    res.push(before.trim()); start=m.index+1; }
+  var rest=t.slice(start).trim(); if(rest) res.push(rest); return res; }
+function buildDesc(f, headline){ var MAX=158, MIN=110;
+  var intro=splitSentences(f.intro), usp=splitSentences((f.usp_intro?f.usp_intro+' ':'')+(f.usp||''));
+  var h=(headline||'').toString().replace(/\s+/g,' ').trim(); if(h && !/[.!?]$/.test(h)) h+='.';
+  function greedy(first, pool){ if(!first || escA(first).length>MAX) return ''; var cur=first;
+    for(var i=0;i<pool.length;i++){ var s=pool[i]; if(s===first) continue; if(escA(cur+' '+s).length<=MAX) cur+=' '+s; }
+    return (escA(cur).length>=MIN && /[.!?]$/.test(cur)) ? cur : ''; }
+  var tries=[[intro[0],intro.slice(1)],[h,intro],[h,usp],[intro[1],intro.slice(2)],[usp[0],usp.slice(1)]];
+  for(var k=0;k<tries.length;k++){ var r=greedy(tries[k][0],tries[k][1]); if(r) return r; }
+  return clampDesc(f.intro,155); }
+function escA(s){ return s==null?'':String(s).replace(/&(?![a-zA-Z]+;|#\d+;|#x[0-9a-fA-F]+;)/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
 const src = $('Filter + Relevanz-Ranking').item.json;
 const L = (src._lang==='en') ? 'en' : 'de';  // Zielsprache: nur diese Felder sind befuellt
 const _lmode = src._lang_mode || (src._lang==='en'?'single-en':(src._lang==='de'?'single-de':'dual'));
@@ -106,7 +134,7 @@ if(_uspIdx===null)_uspIdx=_hashSeed(_uspSeed)%OPEN_DE_VARIANTS.length;
 const OPEN_DE=OPEN_DE_VARIANTS[_uspIdx];
 const OPEN_EN=OPEN_EN_VARIANTS[_uspIdx];
 const h1BlockHtml = IS_DUAL ? ('<h1><span data-de>'+esc(d.headline_de)+'</span><span data-en>'+esc(d.headline_en)+'</span></h1>') : ('<h1 data-'+L+'>'+esc(d['headline_'+L])+'</h1>');
-const base = {TITLE_DE:buildTitle(splitCo(d['headline_'+L])),TITLE_EN:buildTitle(splitCo(d['headline_'+L])),H1_BLOCK:h1BlockHtml,HEADLINE_DE:d.headline_de,HEADLINE_EN:d.headline_en,SUBHEAD_DE:d.subhead_de,SUBHEAD_EN:d.subhead_en,INTRO_DE:d.intro_de,INTRO_EN:d.intro_en,USP_DE:(d.usp_de?((IS_DUAL?'':OPEN_DE)+d.usp_de):''),USP_EN:(d.usp_en?(OPEN_EN+d.usp_en):''),REGION:region,JSON_LD:jsonldStr,META_DESC:clampDesc(d['intro_'+L],155),HTML_LANG:HTML_LANG,OG_LOCALE:OG_LOCALE,LOCAL_FLAG:LOCAL_FLAG,LOCAL_LABEL:LOCAL_LABEL,DEFAULT_BUCKET:DEFAULT_BUCKET,IS_DUAL:IS_DUAL,NAV_SYSTEM:LOC.NAV_SYSTEM,NAV_APPS:LOC.NAV_APPS,NAV_PRODUCTS:LOC.NAV_PRODUCTS,NAV_REFS:LOC.NAV_REFS,NAV_RENTAL:LOC.NAV_RENTAL,NAV_INSIGHTS:LOC.NAV_INSIGHTS,NAV_RENTNOW:LOC.NAV_RENTNOW,NAV_CONTACT:LOC.NAV_CONTACT,BANNER_KW:LOC.BANNER_KW,EYEBROW_WHY:LOC.EYEBROW_WHY,EYEBROW_CHALLENGE:LOC.EYEBROW_CHALLENGE,EYEBROW_SOLUTION:LOC.EYEBROW_SOLUTION,USP_HEADING:LOC.USP_HEADING,EYEBROW_FAQ:LOC.EYEBROW_FAQ,FAQ_HEADING:LOC.FAQ_HEADING,CTA_HEADING:LOC.CTA_HEADING,CTA_BODY:LOC.CTA_BODY,CTA_BUTTON:LOC.CTA_BUTTON,FOOTER_COPY:LOC.FOOTER_COPY,FOOTER_HOME:LOC.FOOTER_HOME,FOOTER_TERMS:LOC.FOOTER_TERMS,FOOTER_RENTALTERMS:LOC.FOOTER_RENTALTERMS,FOOTER_PRIVACY:LOC.FOOTER_PRIVACY,FOOTER_LEGAL:LOC.FOOTER_LEGAL,FOOTER_ALLCASES:LOC.FOOTER_ALLCASES};
+const base = {TITLE_DE:escA(buildTitle(splitCo(d['headline_'+L]))),TITLE_EN:escA(buildTitle(splitCo(d['headline_'+L]))),H1_BLOCK:h1BlockHtml,HEADLINE_DE:d.headline_de,HEADLINE_EN:d.headline_en,SUBHEAD_DE:d.subhead_de,SUBHEAD_EN:d.subhead_en,INTRO_DE:d.intro_de,INTRO_EN:d.intro_en,USP_DE:(d.usp_de?((IS_DUAL?'':OPEN_DE)+d.usp_de):''),USP_EN:(d.usp_en?(OPEN_EN+d.usp_en):''),REGION:region,JSON_LD:jsonldStr,META_DESC:escA(buildDesc({intro:d['intro_'+L],usp:d['usp_'+L]},d['headline_'+L])),HTML_LANG:HTML_LANG,OG_LOCALE:OG_LOCALE,LOCAL_FLAG:LOCAL_FLAG,LOCAL_LABEL:LOCAL_LABEL,DEFAULT_BUCKET:DEFAULT_BUCKET,IS_DUAL:IS_DUAL,NAV_SYSTEM:LOC.NAV_SYSTEM,NAV_APPS:LOC.NAV_APPS,NAV_PRODUCTS:LOC.NAV_PRODUCTS,NAV_REFS:LOC.NAV_REFS,NAV_RENTAL:LOC.NAV_RENTAL,NAV_INSIGHTS:LOC.NAV_INSIGHTS,NAV_RENTNOW:LOC.NAV_RENTNOW,NAV_CONTACT:LOC.NAV_CONTACT,BANNER_KW:LOC.BANNER_KW,EYEBROW_WHY:LOC.EYEBROW_WHY,EYEBROW_CHALLENGE:LOC.EYEBROW_CHALLENGE,EYEBROW_SOLUTION:LOC.EYEBROW_SOLUTION,USP_HEADING:LOC.USP_HEADING,EYEBROW_FAQ:LOC.EYEBROW_FAQ,FAQ_HEADING:LOC.FAQ_HEADING,CTA_HEADING:LOC.CTA_HEADING,CTA_BODY:LOC.CTA_BODY,CTA_BUTTON:LOC.CTA_BUTTON,FOOTER_COPY:LOC.FOOTER_COPY,FOOTER_HOME:LOC.FOOTER_HOME,FOOTER_TERMS:LOC.FOOTER_TERMS,FOOTER_RENTALTERMS:LOC.FOOTER_RENTALTERMS,FOOTER_PRIVACY:LOC.FOOTER_PRIVACY,FOOTER_LEGAL:LOC.FOOTER_LEGAL,FOOTER_ALLCASES:LOC.FOOTER_ALLCASES};
 for(const n of [1,2,3,4]){base['FAQ'+n+'_Q_DE']=d['faq'+n+'_q_de'];base['FAQ'+n+'_A_DE']=d['faq'+n+'_a_de'];base['FAQ'+n+'_Q_EN']=d['faq'+n+'_q_en'];base['FAQ'+n+'_A_EN']=d['faq'+n+'_a_en'];}
 function build(canonical, robots){ let html=TEMPLATE; const map=Object.assign({},base,{CANONICAL_URL:canonical,ROBOTS:robots}); for(const k in map){ html=html.split('{{'+k+'}}').join(esc(map[k])); } return html; }
 const previewHtml = build(liveUrl, '<meta name="robots" content="noindex,nofollow">');

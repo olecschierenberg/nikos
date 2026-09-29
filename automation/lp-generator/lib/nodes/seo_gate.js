@@ -20,7 +20,8 @@ if (h1Count < 1) hardErrors.push('H1_MISSING');
 // schreiben"). Der Lauf bricht ab und die Zeile bleibt in der Warteschlange fuer den naechsten
 // stuendlichen Versuch mit neu generiertem KI-Text.
 if (title && (title.length < 45 || title.length > 60)) hardErrors.push('TITLE_LENGTH_OUTSIDE_45_60');
-if (description && (description.length < 140 || description.length > 155)) hardErrors.push('META_DESCRIPTION_LENGTH_OUTSIDE_140_155');
+// 2026-09-29: Untergrenze 140 -> 110, Obergrenze 155 -> 158 (ganze Saetze statt '…'-Abschnitt, siehe html_bauen.js buildDesc)
+if (description && (description.length < 110 || description.length > 158)) hardErrors.push('META_DESCRIPTION_LENGTH_OUTSIDE_110_158');
 if (h1Count > 1) warnings.push('MULTIPLE_LANGUAGE_H1_ELEMENTS_PRESENT');
 if (hardErrors.length) throw new Error('SEO_GATE_BLOCKED: ' + hardErrors.join(','));
 return { json: { ...data, seo_gate: warnings.length ? 'warning' : 'pass', seo_warnings: warnings, canonical_url: canonical } };
