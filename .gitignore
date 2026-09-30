@@ -17,3 +17,6 @@ _to_delete/
 # H1-Fix Skripte & Backups (Claude-Sitzungen, nicht auf die Website)
 _h1fix_backups/
 _fix_*.py
+
+# Claude-Backups nie veröffentlichen
+backups/
