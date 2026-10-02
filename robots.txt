@@ -42,5 +42,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://nikos.info/sitemap.xml
 Sitemap: https://nikos.info/sitemap-index.xml
