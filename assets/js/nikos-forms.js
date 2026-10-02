@@ -136,7 +136,7 @@
       }
 
       btns.forEach(function (b) { b.disabled = true; });
-      var labelDe = form.querySelector('button[type="submit"][data-de]');
+      var labelDe = form.querySelector('button[type="submit"][data-de], button[type="submit"][data-en]');
       var prev = labelDe ? labelDe.textContent : '';
       if (labelDe) labelDe.textContent = t('Wird gesendet …', 'Sending …');
 

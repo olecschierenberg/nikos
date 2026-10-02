@@ -39,6 +39,22 @@ if defined PY_CMD (
 )
 
 echo.
+echo === Vorbereitung: Sitemap-Index erzeugen ===
+if defined PY_CMD (
+  !PY_CMD! "tools\split_sitemap.py"
+)
+
+echo.
+echo === Vorbereitung: Sprachtrennung /de/ und /en/ (Duplicate-Content-Schutz) ===
+REM Entfernt in /de/-Seiten alle data-en-Elemente und in /en/-Seiten alle data-de-Elemente.
+REM Idempotent. Verhindert, dass Google die EN-Seiten als Duplikat der DE-Seiten wertet.
+if defined PY_CMD (
+  !PY_CMD! "tools\prune_language.py"
+) else (
+  echo   [Hinweis] Kein Python gefunden - Sprachtrennung uebersprungen.
+)
+
+echo.
 echo === Schritt 1: Integritaets-Check der Live-HTML-Seiten ===
 REM Jede getrackte *.html (ohne .pre/.fixed) MUSS </html> enthalten.
 set "KAPUTT="
