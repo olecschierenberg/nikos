@@ -116,7 +116,9 @@ function buildModel({ partners, regions }) {
   return [...others, ...list.filter(isRad)];
 }
 
-function buildBlock(model) {
+function buildBlock(model, lang = 'de') {
+  // Nur EINE Sprache je Seite schreiben (DE-Seite nur DE, EN-Seite nur EN).
+  // Beide Sprachen im Quelltext fuehrten zu Duplicate Content (siehe prune_language.py).
   const NL = '\r\n';
   const li = (p) => {
     const name = p.website ? `<a href="${esc(url(p.website))}" target="_blank" rel="noopener">${esc(p.firma)}</a>` : esc(p.firma);
@@ -126,22 +128,22 @@ function buildBlock(model) {
     const de = isRadacom(p) ? 'alle übrigen Länder (direkt)' : p.regions.join(', ');
     const en = isRadacom(p) ? 'all other countries (direct)' : p.regions.map((r) => EN[r] || r).join(', ');
     return `      <li class="partner-list__item"><div class="partner-list__name">${name}${ort}</div>` +
-      `<div class="partner-list__reg" data-de>${esc(de)}</div><div class="partner-list__reg" data-en>${esc(en)}</div></li>`;
+      `<div class="partner-list__reg" data-${lang}>${esc(lang === 'en' ? en : de)}</div></li>`;
   };
   const ld = {
-    '@context': 'https://schema.org', '@type': 'ItemList', name: 'NIKOS-Partner / NIKOS partners',
+    '@context': 'https://schema.org', '@type': 'ItemList', name: lang === 'en' ? 'NIKOS partners' : 'NIKOS-Partner',
     itemListElement: model.map((p, i) => ({
       '@type': 'ListItem', position: i + 1,
       item: { '@type': 'Organization', name: p.firma, ...(p.website ? { url: url(p.website) } : {}),
         ...(p.ort ? { address: { '@type': 'PostalAddress', addressLocality: p.ort, ...(p.land ? { addressCountry: p.land } : {}) } } : {}),
-        areaServed: isRadacom(p) ? 'Alle übrigen Länder weltweit / all other countries worldwide' : p.regions },
+        areaServed: isRadacom(p) ? (lang === 'en' ? 'All other countries worldwide' : 'Alle übrigen Länder weltweit') : (lang === 'en' ? p.regions.map((r) => EN[r] || r) : p.regions) },
     })),
   };
   return [
     START,
     '<section class="nk-section partner-list-section" id="partnerliste">',
     '  <div class="nk-section__inner">',
-    '    <h2 class="heading-m" data-de>NIKOS-Partner nach Region</h2><h2 class="heading-m" data-en>NIKOS partners by region</h2>',
+    lang === 'en' ? '    <h2 class="heading-m" data-en>NIKOS partners by region</h2>' : '    <h2 class="heading-m" data-de>NIKOS-Partner nach Region</h2>',
     '    <ul class="partner-list">',
     ...model.map(li),
     '    </ul>',
@@ -157,11 +159,11 @@ function buildBlock(model) {
 async function main() {
   const model = buildModel(await loadData());
   if (model.length < 2) throw new Error(`Nur ${model.length} Partner mit Region gefunden -- Abbruch (Sheet-Problem?).`);
-  const block = buildBlock(model);
   let changed = 0;
   for (const rel of FILES) {
     const file = path.join(SITE, rel);
     const html = fs.readFileSync(file, 'utf8');
+    const block = buildBlock(model, rel.startsWith('en/') ? 'en' : 'de');
     const a = html.indexOf(START); const b = html.indexOf(END);
     if (a < 0 || b < a) throw new Error(`Marker fehlen in ${rel}`);
     const next = html.slice(0, a) + block + html.slice(b + END.length);
