@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://nikos.info/loesungen/</loc>
-<lastmod>2026-09-28</lastmod>
+<lastmod>2026-10-05</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/loesungen/besucherinformation-altstadtfest-fuerstenfeldbruck/</loc>
@@ -118,7 +118,7 @@
 </url>
 <url>
 <loc>https://nikos.info/loesungen/besucherlenkung-iga-ruhrgebiet-2027-essen/</loc>
-<lastmod>2026-09-29</lastmod>
+<lastmod>2026-10-05</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/loesungen/besucherlenkung-katholikentag-2028-paderborn/</loc>
@@ -182,7 +182,7 @@
 </url>
 <url>
 <loc>https://nikos.info/loesungen/crowd-management-40-deutscher-evangelischer-kirchentag-2027-duesseldorf/</loc>
-<lastmod>2026-09-29</lastmod>
+<lastmod>2026-10-05</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/loesungen/crowd-management-augsburger-plaerrer-augsburg/</loc>
@@ -234,7 +234,7 @@
 </url>
 <url>
 <loc>https://nikos.info/loesungen/crowd-management-iga-ruhrgebiet-2027-dortmund/</loc>
-<lastmod>2026-09-29</lastmod>
+<lastmod>2026-10-05</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/loesungen/crowd-management-karnevalsumzug-koeln/</loc>
@@ -242,7 +242,7 @@
 </url>
 <url>
 <loc>https://nikos.info/loesungen/crowd-management-katholikentag-2028-paderborn/</loc>
-<lastmod>2026-09-29</lastmod>
+<lastmod>2026-10-05</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/loesungen/crowd-management-koelner-karneval-koeln/</loc>
@@ -282,7 +282,7 @@
 </url>
 <url>
 <loc>https://nikos.info/loesungen/crowd-management-westfalenpark-dortmund/</loc>
-<lastmod>2026-09-29</lastmod>
+<lastmod>2026-10-05</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/loesungen/diebstahlschutz-baustelle/</loc>
@@ -298,7 +298,7 @@
 </url>
 <url>
 <loc>https://nikos.info/loesungen/elektroakustisches-notfallwarnsystem-buga-oberes-mittelrheintal-2029-koblen/</loc>
-<lastmod>2026-09-29</lastmod>
+<lastmod>2026-10-05</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/loesungen/elektroakustisches-notfallwarnsystem-open-air-konzert/</loc>
@@ -318,7 +318,7 @@
 </url>
 <url>
 <loc>https://nikos.info/loesungen/evakuierungsansage-40-deutscher-evangelischer-kirchentag-2027-duesseldorf/</loc>
-<lastmod>2026-09-29</lastmod>
+<lastmod>2026-10-05</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/loesungen/evakuierungsansage-chio-aachen-aachen/</loc>
@@ -330,7 +330,7 @@
 </url>
 <url>
 <loc>https://nikos.info/loesungen/evakuierungsansage-katholikentag-2028-paderborn/</loc>
-<lastmod>2026-09-29</lastmod>
+<lastmod>2026-10-05</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/loesungen/evakuierungsansage-wacken-open-air-schleswig-holstein/</loc>
@@ -341,12 +341,24 @@
 <lastmod>2026-09-29</lastmod>
 </url>
 <url>
+<loc>https://nikos.info/loesungen/krisenkommunikation-40-deutscher-evangelischer-kirchentag-2027-duesseldorf/</loc>
+<lastmod>2026-10-05</lastmod>
+</url>
+<url>
 <loc>https://nikos.info/loesungen/krisenkommunikation-chio-aachen-aachen/</loc>
 <lastmod>2026-09-29</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/loesungen/krisenkommunikation-christopher-street-day-hamburg/</loc>
 <lastmod>2026-09-29</lastmod>
+</url>
+<url>
+<loc>https://nikos.info/loesungen/krisenkommunikation-iga-ruhrgebiet-2027-dortmund/</loc>
+<lastmod>2026-10-05</lastmod>
+</url>
+<url>
+<loc>https://nikos.info/loesungen/krisenkommunikation-iga-ruhrgebiet-2027-essen/</loc>
+<lastmod>2026-10-05</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/loesungen/krisenkommunikation-lange-nacht-der-museen-berlin/</loc>
@@ -374,7 +386,7 @@
 </url>
 <url>
 <loc>https://nikos.info/loesungen/mobile-sicherheitstechnik-katholikentag-2028-paderborn/</loc>
-<lastmod>2026-09-29</lastmod>
+<lastmod>2026-10-05</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/loesungen/mobile-sicherheitstechnik-mainzer-weinmarkt-mainz/</loc>
@@ -430,11 +442,15 @@
 </url>
 <url>
 <loc>https://nikos.info/loesungen/mobiles-notfallkommunikationssystem-veranstaltung/</loc>
-<lastmod>2026-09-29</lastmod>
+<lastmod>2026-10-05</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/loesungen/notbeleuchtung-grossveranstaltung-dresden/</loc>
-<lastmod>2026-09-29</lastmod>
+<lastmod>2026-10-05</lastmod>
+</url>
+<url>
+<loc>https://nikos.info/loesungen/notfalldurchsage-40-deutscher-evangelischer-kirchentag-2027-duesseldorf/</loc>
+<lastmod>2026-10-05</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/loesungen/notfalldurchsage-altstadtfest-fuerstenfeldbruck/</loc>
@@ -578,7 +594,7 @@
 </url>
 <url>
 <loc>https://nikos.info/loesungen/raeumungsdurchsage-chocolart-tuebingen/</loc>
-<lastmod>2026-09-29</lastmod>
+<lastmod>2026-10-05</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/loesungen/raeumungsdurchsage-dresdner-stadtfest-dresden/</loc>
@@ -755,6 +771,10 @@
 <url>
 <loc>https://nikos.info/loesungen/unwetterwarnung-chio-aachen-aachen/</loc>
 <lastmod>2026-09-29</lastmod>
+</url>
+<url>
+<loc>https://nikos.info/loesungen/unwetterwarnung-chocolart-tuebingen/</loc>
+<lastmod>2026-10-05</lastmod>
 </url>
 <url>
 <loc>https://nikos.info/loesungen/unwetterwarnung-duesseldorfer-karneval-duesseldorf/</loc>
