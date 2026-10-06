@@ -788,6 +788,21 @@ async function main() {
   });
   nodeOutputs.set('Feinschliff', [feinschliffResult]);
 
+  // ---- 15b) EN-Vollstaendigkeits-Sperre (NEU 2026-10-05) ----
+  // Anlass: 9 LPs (u.a. evakuierungsansage-40-deutscher-evangelischer-kirchentag-2027-duesseldorf)
+  // wurden mit leeren EN-Bloecken erzeugt, weil "AI Texte (DE+EN)" nur auf headline_de geprueft wird.
+  // Fehlen EN-Texte, wird NICHTS geschrieben und das Sheet NICHT markiert -> die Kombination
+  // bleibt offen und wird beim naechsten Lauf neu erzeugt.
+  {
+    const _html = String(feinschliffResult.json.previewHtml || '');
+    const _leer = (_html.match(/<(\w+)\b[^>]*\bdata-en\b[^>]*>\s*<\/\1>/g) || []).length;
+    const _h1 = (_html.match(/<h1\b[\s\S]*?<\/h1>/) || [''])[0];
+    const _h1OhneEn = /data-de/.test(_h1) && !/data-en/.test(_h1) && !/<h1\b[^>]*data-en/.test(_html);
+    if (_leer > 0 || _h1OhneEn) {
+      abort(`EN-Texte unvollstaendig (${_leer} leere EN-Elemente${_h1OhneEn ? ', H1 ohne EN' : ''}) -- Seite wird nicht geschrieben, Kombination bleibt offen.`);
+    }
+  }
+
   // ---- 16) SEO Gate v1 ----
   let seoResult;
   try {

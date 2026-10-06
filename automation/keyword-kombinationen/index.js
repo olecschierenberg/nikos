@@ -136,14 +136,15 @@ async function main() {
   // hinzugefügte Zeilen an Tagen ohne neue KI-Vorschläge (z. B. alles
   // Duplikate) nie eingeordnet wurden. Jetzt sortiert jeder Live-Lauf das
   // ganze Blatt neu, egal was der Anlass war. ----
-  if (LIVE) {
-    await sheets.sortByRelevanceDesc(SHEET_TAB);
-    log('  Sheet nach Relevanz absteigend sortiert.');
-  } else {
-    log('  TEST-Modus: Sortierung übersprungen.');
-  }
+  // GEAENDERT 2026-10-06 (Nutzer-Vorgabe): KEINE Relevanz-Sortierung des Sheets mehr.
+  // Die Pipeline braucht keine Reihenfolge (filter_relevanz.js rankt selbst, die
+  // "Warteschlange" sortiert per QUERY-Formel). Die Reihenfolge im Sheet bestimmt
+  // der Nutzer manuell; danach sortiert das Apps Script "Deploy-Trigger" nach
+  // 5 Minuten Pause automatisch nach "Problem" (A→Z). sortByRelevanceDesc() bleibt
+  // in lib/sheets.js erhalten, wird aber nicht mehr aufgerufen.
+  log('  Sheet-Sortierung übersprungen (übernimmt das Apps Script im Sheet).');
 
-  log(`FERTIG (${LIVE ? 'LIVE' : 'TEST'}): ${rowsToAppend.length} neue Kombination(en) verarbeitet, Sheet ${LIVE ? 'neu sortiert' : '(Sortierung im TEST-Modus übersprungen)'}.`);
+  log(`FERTIG (${LIVE ? 'LIVE' : 'TEST'}): ${rowsToAppend.length} neue Kombination(en) verarbeitet, Sheet unverändert sortiert.`);
 }
 
 main().catch((err) => {

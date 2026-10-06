@@ -87,6 +87,20 @@ async function updateRowByRowNumber(sheetName, rowNumber, columns) {
     spreadsheetId: SPREADSHEET_ID,
     requestBody: { valueInputOption: 'USER_ENTERED', data },
   });
+  // NEU 2026-10-05: "erstellt_am" immer im deutschen Datumsformat anzeigen. Ohne explizites
+  // Zahlenformat zeigte Google Sheets neu angehaengte Zeilen als JJJJ-MM-TT an.
+  const dateIdx = header.indexOf('erstellt_am');
+  if (dateIdx !== -1 && Object.prototype.hasOwnProperty.call(columns, 'erstellt_am')) {
+    const sheetId = await getSheetIdByName(sheetName);
+    await sheets.spreadsheets.batchUpdate({
+      spreadsheetId: SPREADSHEET_ID,
+      requestBody: { requests: [{ repeatCell: {
+        range: { sheetId, startRowIndex: rowNumber - 1, endRowIndex: rowNumber, startColumnIndex: dateIdx, endColumnIndex: dateIdx + 1 },
+        cell: { userEnteredFormat: { numberFormat: { type: 'DATE', pattern: 'dd.MM.yyyy' } } },
+        fields: 'userEnteredFormat.numberFormat',
+      } }] },
+    });
+  }
 }
 
 // Haengt eine NEUE Zeile ans Ende eines Tabs an. `columns` ist ein
