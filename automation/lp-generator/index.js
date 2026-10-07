@@ -532,6 +532,7 @@ async function runMultiLangBranch({ filterItem, primaryFields, primaryLang, rend
     await sheets.updateRowByRowNumber('Keywordkombinationen', filterItem.json.row_number, {
       Relevanz: filterItem.json._relevanz,
       slug: slugPrimary,
+      deploy: 'x', // automatische Freigabe (2026-10-07): wie bisher x in Spalte deploy, nur automatisch
       // Bis zur Freigabe (deploy=x) auf die VORSCHAU zeigen -- die Live-URL existiert erst nach lp-publish,
       // das pfad dann selbst auf die Live-URL setzt (Fix 2026-09-24, vorher 404 beim Klick im Sheet).
       pfad: `https://nikos.info/lp-preview/${slugPrimary}/${primaryLang}/`,
@@ -832,6 +833,7 @@ async function main() {
     await sheets.updateRowByRowNumber('Keywordkombinationen', seoResult.json.row_number, {
       Relevanz: seoResult.json.relevanz,
       slug: seoResult.json.slug,
+      deploy: 'x', // automatische Freigabe (2026-10-07)
       pfad: seoResult.json.pfad,
       erstellt_am: seoResult.json.erstellt_am,
       Problem: seoResult.json.Problem,
