@@ -54,11 +54,19 @@ function log(msg) {
   console.log(`[lp-publish] ${msg}`);
 }
 
-// Entspricht dem n8n-Filter-Node "Nur deploy=x & aktiv leer".
+// GEAENDERT (2026-10-07, Wunsch Olec): KEINE manuelle Freigabe mehr noetig.
+// Jede Zeile mit slug (= Vorschau wurde generiert) und leerem "aktiv" wird
+// automatisch live geschaltet; die Vorschau-Plausibilitaetspruefung
+// (vorschau_gueltig.js) und das SEO-Gate des Generators bleiben aktiv.
+// Notbremse: deploy = "stop" (oder "nein"/"n") im Sheet haelt eine Zeile zurueck.
+// Altes Verhalten (nur deploy=x): Umgebungsvariable LP_REQUIRE_DEPLOY_X=1 setzen.
+const REQUIRE_DEPLOY_X = process.env.LP_REQUIRE_DEPLOY_X === '1';
 function filterDeployReady(items) {
   return items.filter((it) => {
     const j = it.json;
-    return String(j.deploy || '').trim().toLowerCase() === 'x'
+    const d = String(j.deploy || '').trim().toLowerCase();
+    const freigegeben = REQUIRE_DEPLOY_X ? d === 'x' : !['stop', 'nein', 'n'].includes(d);
+    return freigegeben
       && String(j.aktiv || '').trim() === ''
       && String(j.slug || '').trim() !== '';
   });

@@ -2,9 +2,8 @@ name: Landingpage-Veroeffentlichung
 
 # Produktiv-Workflow: ersetzt den Live-Deploy-Zweig des deaktivierten n8n-
 # Workflows "Landingpages veroeffentlichen". Laeuft automatisch stuendlich,
-# promotet LP-Vorschauen mit deploy=x (weiterhin MANUELL im Sheet gesetzt --
-# diese inhaltliche Pruefung bleibt bewusst bestehen, siehe README.md) zu
-# live und markiert nebenbei abgelaufene Kombinationen (ablauf.js).
+# promotet LP-Vorschauen AUTOMATISCH zu live (seit 2026-10-07 ohne manuelle
+# Freigabe deploy=x; Notbremse: deploy=stop im Sheet) und markiert nebenbei abgelaufene Kombinationen (ablauf.js).
 # Die Test-Workflows "lp-publish-test.yml" / "lp-publish-ablauf-test.yml"
 # bleiben unveraendert fuer manuelle Probelaeufe erhalten.
 # Details: automation/lp-publish/README.md
