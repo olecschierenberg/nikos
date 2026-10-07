@@ -1,0 +1,34 @@
+name: Indexierung melden
+
+# Meldet neue/geaenderte Seiten automatisch an IndexNow (Bing u. a.) und reicht
+# die Sitemap in der Google Search Console neu ein. Laeuft ohne PC.
+# Ausloeser: nach "Sitemap aktualisieren", taeglich als Sicherheitsnetz, manuell.
+
+on:
+  workflow_run:
+    workflows: ["Sitemap aktualisieren"]
+    types: [completed]
+  schedule:
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: index-melden
+  cancel-in-progress: false
+
+jobs:
+  melden:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - name: Seiten an IndexNow und Google melden
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: node scripts/index-melden.mjs
