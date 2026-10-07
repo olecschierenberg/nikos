@@ -41,9 +41,14 @@ else {
     const sig = createSign('RSA-SHA256').update(head).sign(k.private_key, 'base64url');
     const t = await (await fetch('https://oauth2.googleapis.com/token', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: `grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer&assertion=${head}.${sig}` })).json();
     if (!t.access_token) throw new Error('Token: ' + JSON.stringify(t));
+    console.log('GSC Dienstkonto:', k.client_email);
+    const ls = await fetch('https://www.googleapis.com/webmasters/v3/sites', { headers: { Authorization: `Bearer ${t.access_token}` } });
+    const lj = await ls.json().catch(() => ({}));
+    console.log('GSC sichtbare Properties:', ls.status, (lj.siteEntry || []).map(e => `${e.siteUrl} (${e.permissionLevel})`).join(', ') || JSON.stringify(lj.error?.message || lj));
     const site = encodeURIComponent('sc-domain:nikos.info'), sm = encodeURIComponent(`https://${HOST}/sitemap-index.xml`);
     const r = await fetch(`https://www.googleapis.com/webmasters/v3/sites/${site}/sitemaps/${sm}`, { method: 'PUT', headers: { Authorization: `Bearer ${t.access_token}`, 'Content-Length': '0' } });
-    console.log(`GSC Sitemap-Submit: HTTP ${r.status} ${r.status >= 400 ? await r.text() : ''}`);
+    const rb = r.status >= 400 ? await r.json().catch(() => ({})) : {};
+    console.log(`GSC Sitemap-Submit: HTTP ${r.status} ${rb.error?.message || ''}`);
     if (r.status >= 400) { console.log(`::error title=Google Sitemap::HTTP ${r.status}`); fehler++; }
   } catch (e) { console.log(`::error title=Google-Fehler::${e.message}`); fehler++; }
 }
