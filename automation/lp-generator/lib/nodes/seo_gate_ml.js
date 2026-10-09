@@ -23,6 +23,6 @@ if (!/hreflang\s*=\s*["']x-default["']/i.test(html)) hardErrors.push('HREFLANG_X
 if (h1Count < 1) hardErrors.push('H1_MISSING');
 if (h1Count > 1) warnings.push('MULTIPLE_H1_ELEMENTS');
 if (title && (title.length < 20 || title.length > 65)) hardErrors.push('TITLE_LENGTH_OUTSIDE_20_65');
-if (description && (description.length < 100 || description.length > 165)) hardErrors.push('META_DESCRIPTION_LENGTH_OUTSIDE_100_165');
+if (description && (description.length < 100 || description.length > 158)) hardErrors.push('META_DESCRIPTION_LENGTH_OUTSIDE_100_158');
 if (hardErrors.length) throw new Error('SEO_GATE_ML_BLOCKED(' + (data.lang || '?') + '): ' + hardErrors.join(','));
 return { json: { ...data, seo_gate: warnings.length ? 'warning' : 'pass', seo_warnings: warnings, canonical_url: canonical } };

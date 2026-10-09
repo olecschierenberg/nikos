@@ -50,7 +50,7 @@ function splitSentences(t){ t=(t||'').toString().replace(/\s+/g,' ').trim(); if(
     if(/^([A-Za-zÄÖÜäöü]{1,2}\.)+$/.test(lastTok) || /^\d+\.$/.test(lastTok)) continue;
     res.push(before.trim()); start=m.index+1; }
   var rest=t.slice(start).trim(); if(rest) res.push(rest); return res; }
-function buildDesc(f, headline){ var MAX=165, MIN=100;
+function buildDesc(f, headline){ var MAX=158, MIN=100;
   var intro=splitSentences(f.intro), usp=splitSentences((f.usp_intro?f.usp_intro+' ':'')+(f.usp||''));
   var h=(headline||'').toString().replace(/\s+/g,' ').trim(); if(h && !/[.!?]$/.test(h)) h+='.';
   function greedy(first, pool){ if(!first || escA(first).length>MAX) return ''; var cur=first;
