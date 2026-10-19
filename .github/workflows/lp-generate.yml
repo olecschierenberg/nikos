@@ -57,7 +57,9 @@ jobs:
         run: |
           git config user.name "nikos-lp-generator[bot]"
           git config user.email "actions@github.com"
-          git add "lp-preview" "automation/lp-generator/data/qa-lektionen.json" "automation/lp-generator/data/lp-fehlversuche.json" 2>/dev/null || true
+          for f in "lp-preview" "automation/lp-generator/data/qa-lektionen.json" "automation/lp-generator/data/lp-fehlversuche.json"; do
+            [ -e "$f" ] && git add "$f" || true
+          done
           git reset -- "lp-preview/_ghtest-*" 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "Keine Aenderungen (z. B. weil die Warteschlange leer war) -- nichts zu committen."
