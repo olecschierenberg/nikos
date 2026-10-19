@@ -432,5 +432,12 @@
     "einsatz": "EXPO 2027 Belgrade",
     "problem": "Besucherlenkung",
     "mangel": "Intro enthielt entgegen der Vorgabe Produkt- und Lösungsaussagen. | Weichmacher in der Normantwort und bei der Nutzung eines digitalen Funknetzes entfernt."
+  },
+  {
+    "datum": "19.10.2026",
+    "region": "Düsseldorf",
+    "einsatz": "40. Deutscher Evangelischer Kirchentag 2027",
+    "problem": "Besucherinformation",
+    "mangel": "Weichmacher in der Normen-FAQ korrigiert. | Weichmacher in der Installations-FAQ korrigiert. | Redundante Formulierung zwischen USP und FAQ zur gezielten Bereichsansprache reduziert."
   }
 ]
