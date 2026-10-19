@@ -43,6 +43,39 @@ const {
 } = require('./lib/textbausteine');
 
 const REPO_ROOT = path.join(__dirname, '..', '..'); // .../site
+// ---- Fehlversuch-Routine (NEU 2026-10-19) ----
+// Scheitert eine Kombination wiederholt (z. B. SEO-Gate, leere KI-Antwort), blockierte sie bisher jeden
+// weiteren Lauf, weil sie immer zuerst an der Reihe war. Jetzt wird jeder Fehlschlag je Kombination
+// gezaehlt (data/lp-fehlversuche.json, wird von der Action auch bei Fehlschlag committet). Ab FEHL_MAX
+// Fehlversuchen wird die Kombination FEHL_PAUSE_H Stunden uebersprungen -- die naechste kommt dran.
+const FEHL_PATH = path.join(__dirname, 'data', 'lp-fehlversuche.json');
+const FEHL_MAX = 2;
+const FEHL_PAUSE_H = 24;
+let currentKey = null;
+const normK = (v) => String(v ?? '').trim().toLowerCase();
+const comboKey = (j) => [j.Problem, j.Einsatz, j.Region].map(normK).join('|');
+function loadFehl() { try { return JSON.parse(fs.readFileSync(FEHL_PATH, 'utf8')) || {}; } catch (e) { return {}; } }
+function saveFehl(o) {
+  try { fs.mkdirSync(path.dirname(FEHL_PATH), { recursive: true }); fs.writeFileSync(FEHL_PATH, JSON.stringify(o, null, 2), 'utf8'); }
+  catch (e) { console.error('[lp-generator] Fehlversuch-Datei nicht schreibbar:', e.message); }
+}
+function isPausiert(rec) {
+  return !!rec && rec.count >= FEHL_MAX && (Date.now() - Date.parse(rec.last)) < FEHL_PAUSE_H * 3600 * 1000;
+}
+function recordFehl(reason) {
+  if (!LIVE || !currentKey) return;
+  const o = loadFehl();
+  const rec = o[currentKey] || { count: 0 };
+  o[currentKey] = { count: rec.count + 1, last: new Date().toISOString(), reason: String(reason || '').slice(0, 300) };
+  saveFehl(o);
+  console.error(`[lp-generator] Fehlversuch ${o[currentKey].count} fuer "${currentKey}" protokolliert${o[currentKey].count >= FEHL_MAX ? ` -- Kombination wird ${FEHL_PAUSE_H} h pausiert` : ''}.`);
+}
+function clearFehl() {
+  if (!LIVE || !currentKey) return;
+  const o = loadFehl();
+  if (o[currentKey]) { delete o[currentKey]; saveFehl(o); }
+}
+
 const TEXTBAUSTEINE_PATH = path.join(REPO_ROOT, 'nikos', 'LANDINGPAGES_Textbausteine.md');
 const PROMPTS_DIR = path.join(__dirname, 'lib', 'prompts');
 
@@ -397,7 +430,7 @@ async function runMultiLangBranch({ filterItem, primaryFields, primaryLang, rend
   const einsatz = filterItem.json.Einsatz || '';
   const region = filterItem.json.Region || ''; // regionslos -> leer; Nicht-Deutschland-Region (Schritt 3) -> gefuellt
   const targetLangs = (filterItem.json._target_langs || [primaryLang]).slice();
-  let slugPrimary = primaryLang === 'de' ? trimSlugMl(problem + ' ' + einsatz) : (trimSlugMl(primaryFields.slug_kw) || trimSlugMl(problem + ' ' + einsatz));
+  let slugPrimary = primaryLang === 'de' ? trimSlugMl(problem + ' ' + einsatz + ((region && !trimSlugMl(einsatz).includes(trimSlugMl(region))) ? ' ' + region : '')) : (trimSlugMl(primaryFields.slug_kw) || trimSlugMl(problem + ' ' + einsatz));
 
   log(`  Multi-Sprach-Pfad (${region ? 'Region "' + region + '", primaer ' + primaryLang.toUpperCase() : 'regionslos'}): Ziel-Sprachen = ${targetLangs.join(', ')}, Primaer-Slug = "${slugPrimary}"`);
 
@@ -575,6 +608,16 @@ async function main() {
     items: vorabResult, nodeOutputs, staticData, executionId,
   });
   nodeOutputs.set('Filter + Relevanz-Ranking', filterResult);
+  {
+    // Pausierte (wiederholt gescheiterte) Kombinationen ueberspringen -- derselbe Array bleibt erhalten.
+    const _fehl = loadFehl();
+    const _aktiv = filterResult.filter((it) => !isPausiert(_fehl[comboKey(it.json)]));
+    const _pausiert = filterResult.length - _aktiv.length;
+    if (_pausiert > 0) {
+      log(`  ${_pausiert} Kombination(en) pausiert (>= ${FEHL_MAX} Fehlversuche in den letzten ${FEHL_PAUSE_H} h) -- uebersprungen.`);
+      filterResult.splice(0, filterResult.length, ..._aktiv);
+    }
+  }
   if (!filterResult.length) {
     log('Keine passende Kombination in der Warteschlange (erstellen=x, slug leer, alle Filter). Nichts zu tun.');
     return;
@@ -638,7 +681,8 @@ async function main() {
 
   // ---- 4) Limit (max 1/Lauf) ----
   const limited = runAllItems('limit.js', { items: resolved, nodeOutputs, staticData, executionId });
-  const filterItem = limited[0]; // inhaltsgleich mit filterResult[0] (siehe lib/nodes/limit.js)
+  const filterItem = limited[0];
+  currentKey = comboKey(filterItem.json); // inhaltsgleich mit filterResult[0] (siehe lib/nodes/limit.js)
   log(`  Ausgewählt: Problem="${filterItem.json.Problem}" / Einsatz="${filterItem.json.Einsatz}" / Region="${filterItem.json.Region}"`);
 
   // ---- 5) Run Lock & Payload Budget ----
@@ -853,7 +897,10 @@ async function main() {
   log(`FERTIG (${LIVE ? 'LIVE' : 'TEST'}): ${slug} → lp-preview/${previewSubdir}/index.html`);
 }
 
-main().catch((err) => {
+main().then(() => {
+  if (!process.exitCode) clearFehl();
+}).catch((err) => {
   console.error('[lp-generator] Lauf abgebrochen:', err.message);
   process.exitCode = process.exitCode || 1;
+  recordFehl(err.message);
 });

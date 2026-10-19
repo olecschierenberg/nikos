@@ -405,10 +405,11 @@ for (const it of items) {
 // Regionslos -> primaer Deutsch, Ziel = Baseline. Nicht-Deutschland-Region -> primaer
 // Englisch, Ziel = Baseline + Landessprache (falls nicht schon in der Baseline).
 const _isForeignRegion = isNonGermanyRegion(region);
-const _mlActive = !region || _isForeignRegion;
+const _mlActive = true; // GEAENDERT 2026-10-19: auch Regionen in Deutschland -> getrennte Sprachdateien (kein zweisprachiger Klassik-Pfad mehr)
 let _targetLangs = null;
 let _primaryLang = null;
-if (!region) {
+if (!region || !_isForeignRegion) {
+  // regionslos ODER Region in Deutschland: primaer Deutsch, Ziel = 8er-Baseline
   _targetLangs = BASELINE_LANGS.slice();
   _primaryLang = 'de';
 } else if (_isForeignRegion) {

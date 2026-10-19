@@ -57,7 +57,7 @@ jobs:
         run: |
           git config user.name "nikos-lp-generator[bot]"
           git config user.email "actions@github.com"
-          git add "lp-preview" "automation/lp-generator/data/qa-lektionen.json" 2>/dev/null || true
+          git add "lp-preview" "automation/lp-generator/data/qa-lektionen.json" "automation/lp-generator/data/lp-fehlversuche.json" 2>/dev/null || true
           git reset -- "lp-preview/_ghtest-*" 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "Keine Aenderungen (z. B. weil die Warteschlange leer war) -- nichts zu committen."
@@ -81,6 +81,27 @@ jobs:
             attempt=$((attempt + 1))
           done
           echo "Push erfolgreich (Versuch $attempt)."
+
+      - name: Fehlversuch-Zaehler committen (nur bei Fehlschlag)
+        if: failure()
+        run: |
+          git config user.name "nikos-lp-generator[bot]"
+          git config user.email "actions@github.com"
+          F=automation/lp-generator/data/lp-fehlversuche.json
+          [ -f "$F" ] || exit 0
+          cp "$F" "$RUNNER_TEMP/fehl.json"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            git clean -fdq
+            cp "$RUNNER_TEMP/fehl.json" "$F"
+            git add "$F"
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -q -m "LP-Generator: Fehlversuch protokolliert"
+            git push && exit 0
+            sleep $(( (RANDOM % 10) + attempt * 3 ))
+          done
+          exit 0
 
       - name: Telegram-Erfolgsmeldung senden
         if: success()
