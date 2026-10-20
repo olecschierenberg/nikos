@@ -1,0 +1,20 @@
+# Netlify-Header-Regeln fuer nikos.info (Caching fuer statische Dateien)
+# HTML bleibt bewusst unveraendert (Standard von Netlify), damit Aenderungen sofort live sind.
+
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/img/*
+  Cache-Control: public, max-age=604800
+
+/assets/logos/*
+  Cache-Control: public, max-age=604800
+
+/assets/grafiken/*
+  Cache-Control: public, max-age=604800
+
+/assets/js/*
+  Cache-Control: public, max-age=3600
+
+/assets/css/*
+  Cache-Control: public, max-age=3600
