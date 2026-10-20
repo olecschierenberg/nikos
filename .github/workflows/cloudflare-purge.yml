@@ -1,0 +1,74 @@
+name: Cloudflare-Cache leeren
+
+# Leert nach jedem Deploy den Cloudflare-Cache von nikos.info, damit Besucher
+# nicht bis zu 24 h alte HTML-Seiten sehen (Cache-Regel "HTML-Seiten
+# zwischenspeichern", Edge-TTL 1 Tag).
+#  - push auf main (dein deploy.bat): immer leeren
+#  - nach den Bot-Workflows (LP-Veroeffentlichung, Sitemap): nur leeren, wenn in
+#    den letzten 70 Minuten ein Commit im Repo gelandet ist
+#  - manuell ueber "Run workflow"
+# Voraussetzung: GitHub-Secret CLOUDFLARE_API_TOKEN (Berechtigung Zone > Cache-Bereinigung).
+
+on:
+  push:
+    branches:
+      - main
+  workflow_run:
+    workflows: ["Landingpage-Veroeffentlichung", "Sitemap aktualisieren"]
+    types: [completed]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloudflare-purge
+  cancel-in-progress: true
+
+env:
+  CLOUDFLARE_ZONE_ID: 018884f4e4cc13f0ec1e01c89c6429f7
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Repo auschecken
+        if: github.event_name == 'workflow_run'
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Pruefen, ob es etwas zu leeren gibt
+        id: check
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_run" ]; then
+            if [ -n "$(git log --since='70 minutes ago' --oneline)" ]; then
+              echo "go=true" >> "$GITHUB_OUTPUT"
+            else
+              echo "Kein neuer Commit - Cache bleibt."
+              echo "go=false" >> "$GITHUB_OUTPUT"
+            fi
+          else
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Auf Netlify-Deploy warten
+        if: steps.check.outputs.go == 'true'
+        run: sleep 120
+
+      - name: Cache leeren
+        if: steps.check.outputs.go == 'true'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::warning::Secret CLOUDFLARE_API_TOKEN fehlt - Cache wurde NICHT geleert."
+            exit 0
+          fi
+          resp=$(curl -sS -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache" \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}')
+          echo "$resp"
+          echo "$resp" | grep -q '"success":true' || { echo "::error::Cache-Purge fehlgeschlagen"; exit 1; }
