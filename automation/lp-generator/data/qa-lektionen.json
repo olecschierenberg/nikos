@@ -481,5 +481,12 @@
     "einsatz": "40. Deutscher Evangelischer Kirchentag 2027",
     "problem": "Evakuierung",
     "mangel": "Weichmacher in der Normen-FAQ entfernt und durch eine definitive Aussage ersetzt. | Weichmacher in der Installations-FAQ entfernt und die Aussage eindeutig formuliert."
+  },
+  {
+    "datum": "21.10.2026",
+    "region": "Bourges",
+    "einsatz": "European Capital of Culture 2028",
+    "problem": "Crowd Management",
+    "mangel": "Le terme exact « Crowd Management » manquait dans la version française."
   }
 ]
