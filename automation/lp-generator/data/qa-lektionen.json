@@ -516,5 +516,12 @@
     "einsatz": "Open-Air-Veranstaltung",
     "problem": "Durchsageanlage",
     "mangel": "Weichmacher „unter Umständen“ in FAQ2 entfernt und die Aussage eindeutig formuliert. | Lösungs- und Mietaussage aus dem Intro entfernt, da das Intro ausschließlich die Herausforderung beschreiben soll."
+  },
+  {
+    "datum": "22.10.2026",
+    "region": "mieten",
+    "einsatz": "Veranstaltung",
+    "problem": "Durchsageanlage",
+    "mangel": "Intro enthielt entgegen der Vorgabe bereits Lösungs- und Produktinformationen. | Weichmacher „unter Umständen“ entfernt und durch eine klare Aussage ersetzt. | Redundante Formulierung „in mieten mieten“ im FAQ-Fragetext korrigiert."
   }
 ]
