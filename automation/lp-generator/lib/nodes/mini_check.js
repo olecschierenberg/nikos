@@ -7,7 +7,7 @@
 // lang:'fr', region, einsatz, problem }. Gibt { ok, issues[], translated }.
 
 const REQUIRED_KEYS = ['headline','subhead','intro','usp_intro','usp',
-  'faq1_q','faq1_a','faq2_q','faq2_a','faq3_q','faq3_a','faq4_q','faq4_a','slug_kw'];
+  'faq1_q','faq1_a','faq2_q','faq2_a','faq3_q','faq3_a','faq4_q','faq4_a','faq5_q','faq5_a','slug_kw'];
 const MODULE_RE = /NIKOS \[(audio|dispatcher|horn|flash|relay|clamp|LED|XLR|moon)\]²/g;
 
 function allText(o){ return REQUIRED_KEYS.map(k => String(o[k] || '')).join(' ␟ '); }

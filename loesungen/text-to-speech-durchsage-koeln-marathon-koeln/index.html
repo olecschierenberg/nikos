@@ -23,42 +23,121 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "about": {
-    "@type": "Place",
-    "name": "Köln"
-  },
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 für elektroakustische Notfallwarnsysteme. Die technische Spezifikation von NIKOS ist auf sicherheitsrelevante Durchsage- und Alarmierungsanwendungen in temporären und mobilen Einsatzlagen ausgelegt. Die behördliche Abnahme bleibt projektspezifisch und wird anhand des konkreten Sicherheits- und Beschallungskonzepts bewertet."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/loesungen/text-to-speech-durchsage-koeln-marathon-koeln/#service",
+      "name": "Text-to-Speech-Durchsage für den Köln-Marathon",
+      "description": "Text-to-Speech-Durchsage für den Köln-Marathon. Beim Köln-Marathon führt die lange, schmale Strecke quer durch die Stadt.",
+      "url": "https://nikos.info/loesungen/text-to-speech-durchsage-koeln-marathon-koeln/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "de",
+      "termsOfService": "https://nikos.info/de/mietbedingungen/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Köln"
       }
     },
     {
-      "@type": "Question",
-      "name": "Wo entstehen beim Einsatz von NIKOS Kostenvorteile?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Mit NIKOS lassen sich je nach Anwendungsfall unterschiedliche Funktionen über eine einheitliche Kommunikationsplattform umsetzen. Die Miet- und Installationskosten von NIKOS lassen sich durch diese Einsparungen schnell kompensieren. Einige konkrete Beispiele für Einsparungen finden Sie hier."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://nikos.info/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle Einsatzbeispiele",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Text-to-Speech-Durchsage für den Köln-Marathon",
+          "item": "https://nikos.info/loesungen/text-to-speech-durchsage-koeln-marathon-koeln/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Ist NIKOS beim Köln-Marathon auch bei Netzausfall nutzbar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz und ist unabhängig von öffentlichen Kommunikationsnetzen. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. So bleiben Text-to-Speech-Durchsagen für den Köln-Marathon auch bei Ausfall der Stromversorgung oder Störungen in den öffentlichen Kommunikationsnetzen zuverlässig funktionsfähig."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie schnell lässt sich NIKOS entlang der Strecke installieren?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "NIKOS wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen montieren und individuell konfigurieren. Für den Dauerbetrieb reicht ein normaler Schuko-Stromanschluss."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/loesungen/text-to-speech-durchsage-koeln-marathon-koeln/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 für elektroakustische Notfallwarnsysteme. Die technische Spezifikation von NIKOS ist auf sicherheitsrelevante Durchsage- und Alarmierungsanwendungen in temporären und mobilen Einsatzlagen ausgelegt. Die behördliche Abnahme bleibt projektspezifisch und wird anhand des konkreten Sicherheits- und Beschallungskonzepts bewertet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wo entstehen beim Einsatz von NIKOS Kostenvorteile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mit NIKOS lassen sich je nach Anwendungsfall unterschiedliche Funktionen über eine einheitliche Kommunikationsplattform umsetzen. Die Miet- und Installationskosten von NIKOS lassen sich durch diese Einsparungen schnell kompensieren. Einige konkrete Beispiele für Einsparungen finden Sie hier."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist NIKOS beim Köln-Marathon auch bei Netzausfall nutzbar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz und ist unabhängig von öffentlichen Kommunikationsnetzen. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. So bleiben Text-to-Speech-Durchsagen für den Köln-Marathon auch bei Ausfall der Stromversorgung oder Störungen in den öffentlichen Kommunikationsnetzen zuverlässig funktionsfähig."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie schnell lässt sich NIKOS entlang der Strecke installieren?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen montieren und individuell konfigurieren. Für den Dauerbetrieb reicht ein normaler Schuko-Stromanschluss."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Text-to-Speech-Durchsage für den Köln-Marathon: Wo kann man NIKOS mieten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Zur Partnerauswahl und Mietanfrage</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Köln"
       }
     }
   ]
@@ -248,6 +327,8 @@ a{color:inherit}
 <!-- ═══ INTRO (S2) ═══ -->
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-de>NIKOS ist kein klassisches PA-System, sondern ein funkbasiertes Durchsage-, Alarmierungs- und Steuerungssystem für Großveranstaltungen, Baustellen und Krisenlagen, das Sie tageweise über zertifizierte Partner mieten und in Ihre PA integrieren oder eigenständig einsetzen können.</p>
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-en>NIKOS is not a conventional PA system, but a radio-based public address, alarm and control system for large events, construction sites and crisis situations, which you can rent by the day through certified partners and either integrate into your PA or use on its own.</p>
     <span class="nk-label" data-de>Herausforderung</span><span class="nk-label" data-en>Challenge</span>
     <h2 class="heading-l" style="margin-top:12px;" data-de>Verständliche Informationen entlang einer langen Stadtstrecke</h2>
     <h2 class="heading-l" style="margin-top:12px;" data-en>Clear information along an extensive urban route</h2>
@@ -295,8 +376,13 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Wie schnell lässt sich NIKOS entlang der Strecke installieren?</span><span class="faq-q" data-en>How quickly can NIKOS be installed along the route?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen montieren und individuell konfigurieren. Für den Dauerbetrieb reicht ein normaler Schuko-Stromanschluss.</div>
-        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed for flexible outdoor use without fixed infrastructure. One or two people can mount the modules on various structures, such as lampposts, stages, trees, stalls or decorations, within just a few minutes and configure them individually. A standard Schuko power connection is sufficient for continuous operation.</div>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen montieren und individuell konfigurieren. Für den Dauerbetrieb reicht ein normaler Schuko-Stromanschluss.</div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed for flexible outdoor use without fixed infrastructure. One or two people can mount the modules on various structures, such as lampposts, stages, stands or trees, within just a few minutes and configure them individually. A standard Schuko power connection is sufficient for continuous operation.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" data-de>Text-to-Speech-Durchsage für den Köln-Marathon: Wo kann man <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mieten?</span><span class="faq-q" data-en>Text-to-Speech Announcements for the Cologne Marathon: Where can <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> be rented?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Zur Partnerauswahl und Mietanfrage</a></div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find a partner and request a rental</a></div>
       </details>
     </div>
   </div>

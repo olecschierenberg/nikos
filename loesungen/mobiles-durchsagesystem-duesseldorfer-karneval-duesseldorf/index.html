@@ -22,42 +22,121 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "about": {
-    "@type": "Place",
-    "name": "Düsseldorf"
-  },
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/loesungen/mobiles-durchsagesystem-duesseldorfer-karneval-duesseldorf/#service",
+      "name": "Mobiles Durchsagesystem für den Düsseldorfer Karneval",
+      "description": "Beim Düsseldorfer Karneval treffen bewegliche Wagenkolonnen, dichtes Gedränge und viele unabhängig betriebene mobile Beschallungsanlagen der Wagen zusammen.",
+      "url": "https://nikos.info/loesungen/mobiles-durchsagesystem-duesseldorfer-karneval-duesseldorf/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "de",
+      "termsOfService": "https://nikos.info/de/mietbedingungen/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Düsseldorf"
       }
     },
     {
-      "@type": "Question",
-      "name": "Wie werden Durchsagen bei lauter Musik im Düsseldorfer Karneval wahrgenommen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Bei lauter Musik löst NIKOS [flash]² eine optische Signalisierung direkt am Platz des Dirigenten bzw. Bandleaders aus. Auf das Lichtsignal hin unterbrechen Kapellen oder Musikgruppen das Spiel, sodass sicherheitsrelevante Durchsagen verständlich ankommen. Das ist besonders wichtig, wenn Musikgruppen, Wagen und Publikum gleichzeitig hohe Geräuschpegel erzeugen."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://nikos.info/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle Einsatzbeispiele",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Mobiles Durchsagesystem für den Düsseldorfer Karneval",
+          "item": "https://nikos.info/loesungen/mobiles-durchsagesystem-duesseldorfer-karneval-duesseldorf/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Wie lassen sich Besucher entlang der Umzugsstrecke informieren und lenken?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Wenn Besucher auf die Umzugsstrecke strömen, wenn es an bestimmten Stellen zu eng wird, wenn Rettungskräfte die Strecke kreuzen müssen oder wenn es zu Verzögerungen und Änderungen im Ablauf kommt, werden mit NIKOS [audio]² Informationen und Anweisungen gezielt über die mobilen Beschallungsanlagen der einzelnen Wagen und über NIKOS [horn]² an der Strecke ausgegeben. So lässt sich der Besucherstrom genau dort beeinflussen, wo es gerade nötig ist."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie wird NIKOS für einen temporären Karnevalsumzug montiert?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "NIKOS eignet sich für flexible Außeneinsätze ohne feste Infrastruktur. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Montagepunkten anbringen und individuell konfigurieren. NIKOS [clamp]² dient dabei der schnellen Befestigung der Module an geeigneten Konstruktionen."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/loesungen/mobiles-durchsagesystem-duesseldorfer-karneval-duesseldorf/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie werden Durchsagen bei lauter Musik im Düsseldorfer Karneval wahrgenommen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bei lauter Musik löst NIKOS [flash]² eine optische Signalisierung direkt am Platz des Dirigenten bzw. Bandleaders aus. Auf das Lichtsignal hin unterbrechen Kapellen oder Musikgruppen das Spiel, sodass sicherheitsrelevante Durchsagen verständlich ankommen. Das ist besonders wichtig, wenn Musikgruppen, Wagen und Publikum gleichzeitig hohe Geräuschpegel erzeugen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie lassen sich Besucher entlang der Umzugsstrecke informieren und lenken?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wenn Besucher auf die Umzugsstrecke strömen, wenn es an bestimmten Stellen zu eng wird, wenn Rettungskräfte die Strecke kreuzen müssen oder wenn es zu Verzögerungen und Änderungen im Ablauf kommt, werden mit NIKOS [audio]² Informationen und Anweisungen gezielt über die mobilen Beschallungsanlagen der einzelnen Wagen und über NIKOS [horn]² an der Strecke ausgegeben. So lässt sich der Besucherstrom genau dort beeinflussen, wo es gerade nötig ist."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie wird NIKOS für einen temporären Karnevalsumzug montiert?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS eignet sich für flexible Außeneinsätze ohne feste Infrastruktur. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Montagepunkten anbringen und individuell konfigurieren. NIKOS [clamp]² dient dabei der schnellen Befestigung der Module an geeigneten Konstruktionen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mobiles Durchsagesystem für den Düsseldorfer Karneval: Wo kann man NIKOS mieten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Zur Partnerauswahl und Mietanfrage</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Düsseldorf"
       }
     }
   ]
@@ -247,6 +326,8 @@ a{color:inherit}
 <!-- ═══ INTRO (S2) ═══ -->
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-de>NIKOS ist kein klassisches PA-System, sondern ein funkbasiertes Durchsage-, Alarmierungs- und Steuerungssystem für Großveranstaltungen, Baustellen und Krisenlagen, das Sie tageweise über zertifizierte Partner mieten und in Ihre PA integrieren oder eigenständig einsetzen können.</p>
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-en>NIKOS is not a conventional PA system, but a radio-based public address, alarm and control system for large events, construction sites and crisis situations, which you can rent by the day through certified partners and either integrate into your PA or use on its own.</p>
     <span class="nk-label" data-de>Herausforderung</span><span class="nk-label" data-en>Challenge</span>
     <h2 class="heading-l" style="margin-top:12px;" data-de>Dichtes Gedränge erfordert schnelle Warnung und Lenkung</h2>
     <h2 class="heading-l" style="margin-top:12px;" data-en>Dense crowds require fast warning and guidance</h2>
@@ -296,6 +377,11 @@ a{color:inherit}
         <summary><span class="faq-q" data-de>Wie wird NIKOS für einen temporären Karnevalsumzug montiert?</span><span class="faq-q" data-en>How is NIKOS installed for a temporary carnival parade?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> eignet sich für flexible Außeneinsätze ohne feste Infrastruktur. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Montagepunkten anbringen und individuell konfigurieren. <a class="nk-mod" href="https://nikos.info/de/produkte/#zubehoer"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS clamp.svg" alt="NIKOS [clamp]²" loading="lazy"></a> dient dabei der schnellen Befestigung der Module an geeigneten Konstruktionen.</div>
         <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is suitable for flexible outdoor deployments without fixed infrastructure. The modules can be mounted and individually configured by one or two people within a few minutes at different mounting points. <a class="nk-mod" href="https://nikos.info/de/produkte/#zubehoer"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS clamp.svg" alt="NIKOS [clamp]²" loading="lazy"></a> is used for fast mounting of the modules on suitable structures.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" data-de>Mobiles Durchsagesystem für den Düsseldorfer Karneval: Wo kann man <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mieten?</span><span class="faq-q" data-en>Mobile announcement system for Düsseldorfer Karneval: Where can <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> be rented?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Zur Partnerauswahl und Mietanfrage</a></div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find a partner and request a rental</a></div>
       </details>
     </div>
   </div>

@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Les annonces diffusées avec NIKOS sont-elles conformes aux normes en vigueur ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui. NIKOS satisfait aux exigences de la norme DIN EN 50849 (systèmes électroacoustiques d’alerte d’urgence). NIKOS a été spécialement développé pour les applications d’annonces et d’alerte liées à la sécurité, et est techniquement conçu pour une utilisation dans des situations courantes comme dans des situations d’urgence. Pour les systèmes électroacoustiques d’alerte d’urgence (installations ELA), la norme DIN EN 50849 constitue le cadre de référence déterminant. Contrairement aux systèmes reposant sur les réseaux mobiles, NIKOS répond intégralement aux exigences qui y sont mentionnées, car il ne dépend d’aucun réseau tiers et peut ainsi garantir une disponibilité immédiate à tout moment. D’autres normes connues dans le domaine de la sécurité, telles que DIN EN 54, DIN VDE 0833-4 et DIN 14675 (systèmes d’alarme vocale), ne sont pas applicables au domaine d’utilisation ni au périmètre fonctionnel de NIKOS et ne sont donc pas pertinentes pour une autorisation. NIKOS est le système d’annonces leader du marché pour les applications temporaires et mobiles, et est utilisé avec succès depuis 2017 pour la mise en œuvre de nombreuses missions de communication critiques. L’approbation définitive par les autorités compétentes est évaluée au cas par cas pour chaque projet."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/fr/lp/communication-crise-sail/#service",
+      "name": "Communication de crise pour Sail Amsterdam 2030",
+      "description": "Communication de crise pour Sail Amsterdam 2030: des consignes claires en cas d’affluence et de perturbations du réseau.",
+      "url": "https://nikos.info/fr/lp/communication-crise-sail/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "fr",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     },
     {
-      "@type": "Question",
-      "name": "NIKOS résiste-t-il aux perturbations des réseaux publics de communication ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui. NIKOS fonctionne via son propre réseau radio autonome et est indépendant des réseaux publics de communication. Après une interruption, la liaison radio se rétablit automatiquement. NIKOS [audio]² dispose d’une batterie interne offrant jusqu’à 16 heures d’autonomie et alimente également les modules accessoires qui lui sont raccordés. Ainsi, la communication de crise pour Sail Amsterdam 2030 reste opérationnelle en cas de panne de courant ou de perturbation des réseaux publics de communication."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://nikos.info/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tous les exemples d'utilisation",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Communication de crise pour Sail Amsterdam 2030",
+          "item": "https://nikos.info/fr/lp/communication-crise-sail/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "NIKOS peut-il être installé de manière flexible sur des sites temporaires ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui. NIKOS a été développé pour des applications extérieures flexibles, sans infrastructure fixe. Une ou deux personnes montent les modules en quelques minutes sur des structures telles que des lampadaires, des scènes, des arbres, des stands ou des éléments de décoration, puis les configurent individuellement. Pour une utilisation continue, une prise électrique Schuko standard suffit."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "NIKOS peut-il commander des équipements externes en situation de crise ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui. Avec NIKOS [relay]², il est possible de commander des appareils externes. La communication de crise peut ainsi être complétée par le pilotage des appareils raccordés via le même système."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/fr/lp/communication-crise-sail/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Les annonces diffusées avec NIKOS sont-elles conformes aux normes en vigueur ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. NIKOS satisfait aux exigences de la norme DIN EN 50849 (systèmes électroacoustiques d’alerte d’urgence). NIKOS a été spécialement développé pour les applications d’annonces et d’alerte liées à la sécurité, et est techniquement conçu pour une utilisation dans des situations courantes comme dans des situations d’urgence. Pour les systèmes électroacoustiques d’alerte d’urgence (installations ELA), la norme DIN EN 50849 constitue le cadre de référence déterminant. Contrairement aux systèmes reposant sur les réseaux mobiles, NIKOS répond intégralement aux exigences qui y sont mentionnées, car il ne dépend d’aucun réseau tiers et peut ainsi garantir une disponibilité immédiate à tout moment. D’autres normes connues dans le domaine de la sécurité, telles que DIN EN 54, DIN VDE 0833-4 et DIN 14675 (systèmes d’alarme vocale), ne sont pas applicables au domaine d’utilisation ni au périmètre fonctionnel de NIKOS et ne sont donc pas pertinentes pour une autorisation. NIKOS est le système d’annonces leader du marché pour les applications temporaires et mobiles, et est utilisé avec succès depuis 2017 pour la mise en œuvre de nombreuses missions de communication critiques. L’approbation définitive par les autorités compétentes est évaluée au cas par cas pour chaque projet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "NIKOS résiste-t-il aux perturbations des réseaux publics de communication ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. NIKOS fonctionne via son propre réseau radio autonome et est indépendant des réseaux publics de communication. Après une interruption, la liaison radio se rétablit automatiquement. NIKOS [audio]² dispose d’une batterie interne offrant jusqu’à 16 heures d’autonomie et alimente également les modules accessoires qui lui sont raccordés. Ainsi, la communication de crise pour Sail Amsterdam 2030 reste opérationnelle en cas de panne de courant ou de perturbation des réseaux publics de communication."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "NIKOS peut-il être installé de manière flexible sur des sites temporaires ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. NIKOS a été développé pour des applications extérieures flexibles, sans infrastructure fixe. Une ou deux personnes montent les modules en quelques minutes sur des structures telles que des lampadaires, des scènes, des stands ou des arbres, puis les configurent individuellement. Pour une utilisation continue, une prise électrique Schuko standard suffit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "NIKOS peut-il commander des équipements externes en situation de crise ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Avec NIKOS [relay]², il est possible de commander des appareils externes. La communication de crise peut ainsi être complétée par le pilotage des appareils raccordés via le même système."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Communication de crise pour Sail Amsterdam 2030: Où peut-on louer NIKOS ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS est loué à la journée via des partenaires certifiés, conseil, formation et assistance technique inclus. Votre partenaire régional coordonne l’intervention avec vous. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Trouver un partenaire et demander la location</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Amsterdam"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS n’est pas une sonorisation classique, mais un système de diffusion, d’alerte et de commande par radio pour les grands événements, les chantiers et les situations de crise, que vous louez à la journée via des partenaires certifiés et pouvez intégrer à votre sonorisation ou utiliser de manière autonome.</p>
     <span class="nk-label">Défi</span>
     <h2 class="heading-l" style="margin-top:12px;">Des consignes qui atteignent tout le monde</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Pendant Sail Amsterdam 2030, les flux importants de visiteurs, l’environnement bruyant et la présence de visiteurs parlant différentes langues représentent un défi particulier pour la communication de crise. Les avertissements et les consignes à suivre doivent parvenir au public de manière claire et compréhensible, même en cas de forte affluence. Les lieux de présence changeants des visiteurs rendent en outre la communication ciblée particulièrement complexe dans une situation de crise.</p>
@@ -270,11 +350,15 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">NIKOS peut-il être installé de manière flexible sur des sites temporaires ?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Oui. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> a été développé pour des applications extérieures flexibles, sans infrastructure fixe. Une ou deux personnes montent les modules en quelques minutes sur des structures telles que des lampadaires, des scènes, des arbres, des stands ou des éléments de décoration, puis les configurent individuellement. Pour une utilisation continue, une prise électrique Schuko standard suffit.</div>
+        <div class="faq-item__body">Oui. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> a été développé pour des applications extérieures flexibles, sans infrastructure fixe. Une ou deux personnes montent les modules en quelques minutes sur des structures telles que des lampadaires, des scènes, des stands ou des arbres, puis les configurent individuellement. Pour une utilisation continue, une prise électrique Schuko standard suffit.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">NIKOS peut-il commander des équipements externes en situation de crise ?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body">Oui. Avec <a class="nk-mod" href="https://nikos.info/en/products/#zubehoer"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS relay.svg" alt="NIKOS [relay]²" loading="lazy"></a>, il est possible de commander des appareils externes. La communication de crise peut ainsi être complétée par le pilotage des appareils raccordés via le même système.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Communication de crise pour Sail Amsterdam 2030: Où peut-on louer <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> ?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> est loué à la journée via des partenaires certifiés, conseil, formation et assistance technique inclus. Votre partenaire régional coordonne l’intervention avec vous. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Trouver un partenaire et demander la location</a></div>
       </details>
     </div>
   </div>

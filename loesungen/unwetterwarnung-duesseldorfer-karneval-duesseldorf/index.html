@@ -26,42 +26,121 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "about": {
-    "@type": "Place",
-    "name": "Düsseldorf"
-  },
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 für elektroakustische Notfallwarnsysteme. NIKOS wurde speziell für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen entwickelt und ist technisch für den Einsatz in Alltags- und Notfallsituationen ausgelegt. Die behördliche Abnahme und die konkrete Auslegung erfolgen projektspezifisch entsprechend dem Sicherheits- und Genehmigungskonzept für den Düsseldorfer Karneval."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/loesungen/unwetterwarnung-duesseldorfer-karneval-duesseldorf/#service",
+      "name": "Unwetterwarnung für den Düsseldorfer Karneval",
+      "description": "Beim Düsseldorfer Karneval müssen Unwetterwarnungen viele Menschen in dicht gedrängten und lauten Veranstaltungsbereichen schnell erreichen.",
+      "url": "https://nikos.info/loesungen/unwetterwarnung-duesseldorfer-karneval-duesseldorf/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "de",
+      "termsOfService": "https://nikos.info/de/mietbedingungen/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Düsseldorf"
       }
     },
     {
-      "@type": "Question",
-      "name": "Bleibt NIKOS bei Strom- oder Netzausfall funktionsfähig?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz und unabhängig von öffentlichen Kommunikationsnetzen. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. Nach einer Funkunterbrechung stellt sich die Verbindung selbstständig wieder her."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://nikos.info/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle Einsatzbeispiele",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Unwetterwarnung für den Düsseldorfer Karneval",
+          "item": "https://nikos.info/loesungen/unwetterwarnung-duesseldorfer-karneval-duesseldorf/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Wie werden Durchsagen bei lauter Musik während des Karnevals verstanden?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "NIKOS [flash]² signalisiert Dirigenten, Bandleadern oder DJs per Blinklicht eine anstehende Unwetterwarnung. Das eindeutige Lichtsignal lenkt die Aufmerksamkeit der Verantwortlichen auf die Durchsage und unterstützt die Weitergabe von Handlungsanweisungen an Mitwirkende und Besucher."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ist NIKOS kurzfristig für den Düsseldorfer Karneval installierbar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen montieren und individuell konfigurieren. Für den Dauerbetrieb reicht ein normaler Schuko-Stromanschluss aus."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/loesungen/unwetterwarnung-duesseldorfer-karneval-duesseldorf/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 für elektroakustische Notfallwarnsysteme. NIKOS wurde speziell für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen entwickelt und ist technisch für den Einsatz in Alltags- und Notfallsituationen ausgelegt. Die behördliche Abnahme und die konkrete Auslegung erfolgen projektspezifisch entsprechend dem Sicherheits- und Genehmigungskonzept für den Düsseldorfer Karneval."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bleibt NIKOS bei Strom- oder Netzausfall funktionsfähig?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz und unabhängig von öffentlichen Kommunikationsnetzen. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. Nach einer Funkunterbrechung stellt sich die Verbindung selbstständig wieder her."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie werden Durchsagen bei lauter Musik während des Karnevals verstanden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS [flash]² signalisiert Dirigenten, Bandleadern oder DJs per Blinklicht eine anstehende Unwetterwarnung. Das eindeutige Lichtsignal lenkt die Aufmerksamkeit der Verantwortlichen auf die Durchsage und unterstützt die Weitergabe von Handlungsanweisungen an Mitwirkende und Besucher."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist NIKOS kurzfristig für den Düsseldorfer Karneval installierbar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen montieren und individuell konfigurieren. Für den Dauerbetrieb reicht ein normaler Schuko-Stromanschluss aus."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Unwetterwarnung für den Düsseldorfer Karneval: Wo kann man NIKOS mieten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Zur Partnerauswahl und Mietanfrage</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Düsseldorf"
       }
     }
   ]
@@ -254,6 +333,8 @@ a{color:inherit}
 <!-- ═══ INTRO (S2) ═══ -->
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-de>NIKOS ist kein klassisches PA-System, sondern ein funkbasiertes Durchsage-, Alarmierungs- und Steuerungssystem für Großveranstaltungen, Baustellen und Krisenlagen, das Sie tageweise über zertifizierte Partner mieten und in Ihre PA integrieren oder eigenständig einsetzen können.</p>
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-en>NIKOS is not a conventional PA system, but a radio-based public address, alarm and control system for large events, construction sites and crisis situations, which you can rent by the day through certified partners and either integrate into your PA or use on its own.</p>
     <span class="nk-label" data-de>Herausforderung</span><span class="nk-label" data-en>Challenge</span>
     <h2 class="heading-l" style="margin-top:12px;" data-de>Klare Handlungsanweisungen trotz Lärm und Gedränge</h2>
     <h2 class="heading-l" style="margin-top:12px;" data-en>Clear instructions despite noise and crowds</h2>
@@ -301,8 +382,13 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Ist NIKOS kurzfristig für den Düsseldorfer Karneval installierbar?</span><span class="faq-q" data-en>Can NIKOS be installed at short notice for Düsseldorf Carnival?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body" data-de>Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen montieren und individuell konfigurieren. Für den Dauerbetrieb reicht ein normaler Schuko-Stromanschluss aus.</div>
-        <div class="faq-item__body" data-en>Yes. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed for flexible outdoor use without fixed infrastructure. The modules can be mounted and individually configured by one or two people within just a few minutes on a variety of structures, such as street lamps, stages, trees, stalls, or decorations. For continuous operation, a standard Schuko power outlet is sufficient.</div>
+        <div class="faq-item__body" data-de>Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen montieren und individuell konfigurieren. Für den Dauerbetrieb reicht ein normaler Schuko-Stromanschluss aus.</div>
+        <div class="faq-item__body" data-en>Yes. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed for flexible outdoor use without fixed infrastructure. The modules can be mounted and individually configured by one or two people within just a few minutes on a variety of structures, such as lampposts, stages, stands or trees. For continuous operation, a standard Schuko power outlet is sufficient.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" data-de>Unwetterwarnung für den Düsseldorfer Karneval: Wo kann man <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mieten?</span><span class="faq-q" data-en>Severe Weather Warnings for Düsseldorf Carnival: Where can <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> be rented?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Zur Partnerauswahl und Mietanfrage</a></div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find a partner and request a rental</a></div>
       </details>
     </div>
   </div>

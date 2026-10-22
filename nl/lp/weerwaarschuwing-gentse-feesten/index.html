@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Zijn omroepberichten via NIKOS normconform?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja — NIKOS voldoet volledig aan DIN EN 50849 (elektro-akoestische noodwaarschuwingssystemen). Het systeem is speciaal ontworpen voor veiligheidsrelevante omroep- en alarmeringstaken, technisch geschikt voor zowel dagelijks gebruik als noodsituaties. Voor ELA-installaties geeft DIN EN 50849 het bepalende kader aan. Omdat NIKOS – in tegenstelling tot op mobiele netwerken gebaseerde oplossingen – niet afhankelijk is van een extern netwerk, is het te allen tijde direct bruikbaar en voldoet het volledig aan de in de norm gestelde eisen. Andere veiligheidstechnische normen zoals DIN EN 54, DIN VDE 0833-4 of DIN 14675 (spraakalarminstallaties) betreffen een ander toepassingsgebied en functiebereik en zijn daarom voor NIKOS niet relevant voor een vergunning. Sinds 2017 wordt NIKOS al vele malen met succes ingezet als marktleidend omroepsysteem voor tijdelijke en mobiele toepassingen, voor inzetkritische communicatietaken. RADACOM en uw regionale NIKOS-partner adviseren u graag over de veelzijdige functies van NIKOS en ondersteunen u bij een kostenefficiënte uitvoering van de eisen."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/nl/lp/weerwaarschuwing-gentse-feesten/#service",
+      "name": "Weerwaarschuwingen voor de Gentse Feesten",
+      "description": "Tijdens de Gentse Feesten zijn weerwaarschuwingen bijzonder uitdagend vanwege de grote mensenmassa’s, het omgevingslawaai en de internationale bezoekers.",
+      "url": "https://nikos.info/nl/lp/weerwaarschuwing-gentse-feesten/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "nl",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Gent"
       }
     },
     {
-      "@type": "Question",
-      "name": "Blijft NIKOS werken bij stroomuitval of overbelasting van het mobiele netwerk?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS maakt gebruik van een eigen autonoom radionetwerk en werkt onafhankelijk van openbare communicatienetwerken. Als een verbinding wordt onderbroken, wordt deze automatisch hersteld. NIKOS [audio]² heeft een interne accu met een gebruiksduur van maximaal 16 uur en voorziet ook aangesloten accessoiremodules van stroom. Weerwaarschuwingen voor de Gentse Feesten blijven daardoor ook bij stroomuitval of storingen in openbare communicatienetwerken betrouwbaar operationeel."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nikos.info/nl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle toepassingen",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Weerwaarschuwingen voor de Gentse Feesten",
+          "item": "https://nikos.info/nl/lp/weerwaarschuwing-gentse-feesten/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Kan NIKOS op korte termijn worden ingezet en flexibel worden gebruikt?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS is ontwikkeld voor flexibele buitentoepassingen zonder vaste infrastructuur. Eén of twee personen kunnen de modules binnen enkele minuten monteren op constructies zoals lantaarnpalen, podia, bomen, kramen of decoraties en ze afzonderlijk configureren. Voor continu gebruik volstaat een standaard Schuko-aansluiting. NIKOS kan gebruikmaken van een bestaand digitaal radionetwerk."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Waar ontstaan kostenvoordelen bij het gebruik van NIKOS?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Afhankelijk van de toepassing kan NIKOS verschillende functies via één communicatieplatform realiseren. De besparingen kunnen de huur- en installatiekosten van NIKOS al snel compenseren. Hier vindt u enkele concrete voorbeelden van besparingen. Voor weerwaarschuwingen en andere veiligheidskritische coördinatietaken zijn geen afzonderlijke luidspreker-, besturings- en communicatieoplossingen nodig. Dankzij centrale omroep, bediening op afstand en statusbewaking kan personeel gericht worden vervangen of efficiënter worden ingezet op veiligheidskritische punten. Hierdoor dalen de plannings-, installatie- en operationele kosten voor tijdelijke veiligheidstechniek."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/nl/lp/weerwaarschuwing-gentse-feesten/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Zijn omroepberichten via NIKOS normconform?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja — NIKOS voldoet volledig aan DIN EN 50849 (elektro-akoestische noodwaarschuwingssystemen). Het systeem is speciaal ontworpen voor veiligheidsrelevante omroep- en alarmeringstaken, technisch geschikt voor zowel dagelijks gebruik als noodsituaties. Voor ELA-installaties geeft DIN EN 50849 het bepalende kader aan. Omdat NIKOS – in tegenstelling tot op mobiele netwerken gebaseerde oplossingen – niet afhankelijk is van een extern netwerk, is het te allen tijde direct bruikbaar en voldoet het volledig aan de in de norm gestelde eisen. Andere veiligheidstechnische normen zoals DIN EN 54, DIN VDE 0833-4 of DIN 14675 (spraakalarminstallaties) betreffen een ander toepassingsgebied en functiebereik en zijn daarom voor NIKOS niet relevant voor een vergunning. Sinds 2017 wordt NIKOS al vele malen met succes ingezet als marktleidend omroepsysteem voor tijdelijke en mobiele toepassingen, voor inzetkritische communicatietaken. RADACOM en uw regionale NIKOS-partner adviseren u graag over de veelzijdige functies van NIKOS en ondersteunen u bij een kostenefficiënte uitvoering van de eisen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Blijft NIKOS werken bij stroomuitval of overbelasting van het mobiele netwerk?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS maakt gebruik van een eigen autonoom radionetwerk en werkt onafhankelijk van openbare communicatienetwerken. Als een verbinding wordt onderbroken, wordt deze automatisch hersteld. NIKOS [audio]² heeft een interne accu met een gebruiksduur van maximaal 16 uur en voorziet ook aangesloten accessoiremodules van stroom. Weerwaarschuwingen voor de Gentse Feesten blijven daardoor ook bij stroomuitval of storingen in openbare communicatienetwerken betrouwbaar operationeel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan NIKOS op korte termijn worden ingezet en flexibel worden gebruikt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS is ontwikkeld voor flexibele buitentoepassingen zonder vaste infrastructuur. Eén of twee personen kunnen de modules binnen enkele minuten monteren op constructies zoals lantaarnpalen, podia, kraampjes of bomen en ze afzonderlijk configureren. Voor continu gebruik volstaat een standaard Schuko-aansluiting. NIKOS kan gebruikmaken van een bestaand digitaal radionetwerk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Waar ontstaan kostenvoordelen bij het gebruik van NIKOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Afhankelijk van de toepassing kan NIKOS verschillende functies via één communicatieplatform realiseren. De besparingen kunnen de huur- en installatiekosten van NIKOS al snel compenseren. Hier vindt u enkele concrete voorbeelden van besparingen. NIKOS verlaagt vooral de inspanning voor afzonderlijke oplossingen voor omroep, aansturing en communicatie. De materiaalbehoefte en de bekabeling nemen af, en informatie- en noodomroepen kunnen vanaf één punt worden gedaan. Dankzij centrale omroep, bediening op afstand en statusbewaking kan personeel gericht worden vervangen of efficiënter worden ingezet op veiligheidskritische punten. Hierdoor dalen de plannings-, installatie- en operationele kosten voor tijdelijke veiligheidstechniek."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Weerwaarschuwingen voor de Gentse Feesten: Waar kan NIKOS worden gehuurd?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wordt per dag verhuurd via gecertificeerde partners, inclusief advies, instructie en technische ondersteuning. Uw regionale partner stemt de inzet met u af. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Partner kiezen en huur aanvragen</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Gent"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Gent"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS is geen klassiek omroepsysteem, maar een radiogebaseerd systeem voor omroepberichten, alarmering en aansturing bij grote evenementen, bouwplaatsen en crisissituaties, dat u per dag huurt via gecertificeerde partners en kunt integreren in uw geluidsinstallatie of zelfstandig kunt inzetten.</p>
     <span class="nk-label">Uitdaging</span>
     <h2 class="heading-l" style="margin-top:12px;">Duidelijke weerwaarschuwingen voor grote mensenmassa’s</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Tijdens de Gentse Feesten zijn weerwaarschuwingen bijzonder uitdagend vanwege de grote mensenmassa’s, het omgevingslawaai en de internationale bezoekers. Waarschuwingen en veiligheidsinstructies moeten ondanks luide muziek en drukke straten alle bezoekers duidelijk en begrijpelijk bereiken. Door het grote aantal bezoekers kunnen mobiele netwerken snel overbelast raken. Systemen die afhankelijk zijn van mobiele netwerken zijn daarom ongeschikt voor crisiscommunicatie.</p>
@@ -270,11 +350,15 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Kan NIKOS op korte termijn worden ingezet en flexibel worden gebruikt?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is ontwikkeld voor flexibele buitentoepassingen zonder vaste infrastructuur. Eén of twee personen kunnen de modules binnen enkele minuten monteren op constructies zoals lantaarnpalen, podia, bomen, kramen of decoraties en ze afzonderlijk configureren. Voor continu gebruik volstaat een standaard Schuko-aansluiting. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> kan gebruikmaken van een bestaand digitaal radionetwerk.</div>
+        <div class="faq-item__body">Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is ontwikkeld voor flexibele buitentoepassingen zonder vaste infrastructuur. Eén of twee personen kunnen de modules binnen enkele minuten monteren op constructies zoals lantaarnpalen, podia, kraampjes of bomen en ze afzonderlijk configureren. Voor continu gebruik volstaat een standaard Schuko-aansluiting. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> kan gebruikmaken van een bestaand digitaal radionetwerk.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Waar ontstaan kostenvoordelen bij het gebruik van NIKOS?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Afhankelijk van de toepassing kan <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> verschillende functies via één communicatieplatform realiseren. De besparingen kunnen de huur- en installatiekosten van <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> al snel compenseren. Hier vindt u enkele concrete voorbeelden van besparingen. Voor weerwaarschuwingen en andere veiligheidskritische coördinatietaken zijn geen afzonderlijke luidspreker-, besturings- en communicatieoplossingen nodig. Dankzij centrale omroep, bediening op afstand en statusbewaking kan personeel gericht worden vervangen of efficiënter worden ingezet op veiligheidskritische punten. Hierdoor dalen de plannings-, installatie- en operationele kosten voor tijdelijke veiligheidstechniek.</div>
+        <div class="faq-item__body">Afhankelijk van de toepassing kan <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> verschillende functies via één communicatieplatform realiseren. De besparingen kunnen de huur- en installatiekosten van <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> al snel compenseren. Hier vindt u enkele concrete voorbeelden van besparingen. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> verlaagt vooral de inspanning voor afzonderlijke oplossingen voor omroep, aansturing en communicatie. De materiaalbehoefte en de bekabeling nemen af, en informatie- en noodomroepen kunnen vanaf één punt worden gedaan. Dankzij centrale omroep, bediening op afstand en statusbewaking kan personeel gericht worden vervangen of efficiënter worden ingezet op veiligheidskritische punten. Hierdoor dalen de plannings-, installatie- en operationele kosten voor tijdelijke veiligheidstechniek.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Weerwaarschuwingen voor de Gentse Feesten: Waar kan <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> worden gehuurd?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wordt per dag verhuurd via gecertificeerde partners, inclusief advies, instructie en technische ondersteuning. Uw regionale partner stemt de inzet met u af. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Partner kiezen en huur aanvragen</a></div>
       </details>
     </div>
   </div>

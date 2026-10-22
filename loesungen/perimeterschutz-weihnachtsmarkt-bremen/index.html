@@ -23,42 +23,121 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "about": {
-    "@type": "Place",
-    "name": "Bremen"
-  },
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 (Elektroakustische Notfallwarnsysteme). Für elektroakustische Notfallwarnsysteme (ELA-Anlagen) ist die DIN EN 50849 der maßgebliche Orientierungsrahmen. Die dort genannten Anforderungen werden von NIKOS voll erfüllt. Andere aus der Sicherheitstechnik bekannte Normen wie die DIN EN 54, DIN VDE 0833-4 sowie DIN 14675 (Sprachalarmierungsanlagen) sind auf das Einsatzgebiet und Funktionsspektrum von NIKOS nicht anwendbar und daher für eine Genehmigung nicht relevant."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/loesungen/perimeterschutz-weihnachtsmarkt-bremen/#service",
+      "name": "Perimeterschutz für den Weihnachtsmarkt in Bremen",
+      "description": "Beim Weihnachtsmarkt in Bremen müssen Zufahrtssperren, Pollerlinien und temporäre Zäune über mehrere Wochen zuverlässig überwacht werden.",
+      "url": "https://nikos.info/loesungen/perimeterschutz-weihnachtsmarkt-bremen/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "de",
+      "termsOfService": "https://nikos.info/de/mietbedingungen/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Bremen"
       }
     },
     {
-      "@type": "Question",
-      "name": "Wo entstehen beim Einsatz von NIKOS Kostenvorteile?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Mit NIKOS lassen sich unterschiedliche Funktionen über eine einheitliche Kommunikationsplattform umsetzen. Dadurch entfallen getrennte Lautsprecher-, Steuer- und Kommunikationslösungen. Bei Perimeterschutz und anderen sicherheitsrelevanten Koordinationsaufgaben reduziert die Bündelung von Mitarbeiteralarmierung, Besucherinformation und Systemsteuerung den Bedarf an zusätzlicher Technik. Das größte Einsparpotenzial entsteht bei umzäunten Veranstaltungen wie dem Weihnachtsmarkt in Bremen: Die technische Überwachung von Zufahrts- und Notausgangstoren kann Wachposten an diesen Punkten ersetzen oder deren Einsatz gezielter machen. So sinken Miet-, Installations-, Personal- und Betriebskosten vor allem bei temporären Veranstaltungen mit begrenzter Laufzeit."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://nikos.info/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle Einsatzbeispiele",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Perimeterschutz für den Weihnachtsmarkt in Bremen",
+          "item": "https://nikos.info/loesungen/perimeterschutz-weihnachtsmarkt-bremen/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Funktioniert NIKOS auch bei Stromausfall oder überlastetem Handynetz?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz und völlig unabhängig von öffentlichen Kommunikationsnetzen und deren Verfügbarkeit. Da NIKOS nicht auf Kabelwege angewiesen ist, sondern über Funk kommuniziert, stellt sich die Verbindung nach einer Unterbrechung selbstständig wieder her. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. Auch bei einem überlasteten Handynetz, einem Ausfall der Stromversorgung oder Störungen in öffentlichen Kommunikationsnetzen funktioniert NIKOS weiter. So bleibt der Perimeterschutz für den Weihnachtsmarkt zuverlässig funktionsfähig."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie wird NIKOS auf einem Weihnachtsmarkt ohne feste Infrastruktur installiert?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "NIKOS wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus. Die interne Akkupufferung hält sicherheitsrelevante Funktionen bei Unterbrechungen aufrecht."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/loesungen/perimeterschutz-weihnachtsmarkt-bremen/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 (Elektroakustische Notfallwarnsysteme). Für elektroakustische Notfallwarnsysteme (ELA-Anlagen) ist die DIN EN 50849 der maßgebliche Orientierungsrahmen. Die dort genannten Anforderungen werden von NIKOS voll erfüllt. Andere aus der Sicherheitstechnik bekannte Normen wie die DIN EN 54, DIN VDE 0833-4 sowie DIN 14675 (Sprachalarmierungsanlagen) sind auf das Einsatzgebiet und Funktionsspektrum von NIKOS nicht anwendbar und daher für eine Genehmigung nicht relevant."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wo entstehen beim Einsatz von NIKOS Kostenvorteile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mit NIKOS lassen sich unterschiedliche Funktionen über eine einheitliche Kommunikationsplattform umsetzen. NIKOS reduziert vor allem den Aufwand für separate Lautsprecher-, Steuer- und Kommunikationslösungen. Materialbedarf und Verkabelungsaufwand werden geringer, Informations- und Notfalldurchsagen lassen sich von einer Stelle aus machen. Bei Perimeterschutz und anderen sicherheitsrelevanten Koordinationsaufgaben reduziert die Bündelung von Mitarbeiteralarmierung, Besucherinformation und Systemsteuerung den Bedarf an zusätzlicher Technik. Das größte Einsparpotenzial entsteht bei umzäunten Veranstaltungen wie dem Weihnachtsmarkt in Bremen: Die technische Überwachung von Zufahrts- und Notausgangstoren kann Wachposten an diesen Punkten ersetzen oder deren Einsatz gezielter machen. So sinken Miet-, Installations-, Personal- und Betriebskosten vor allem bei temporären Veranstaltungen mit begrenzter Laufzeit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Funktioniert NIKOS auch bei Stromausfall oder überlastetem Handynetz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz und völlig unabhängig von öffentlichen Kommunikationsnetzen und deren Verfügbarkeit. Da NIKOS nicht auf Kabelwege angewiesen ist, sondern über Funk kommuniziert, stellt sich die Verbindung nach einer Unterbrechung selbstständig wieder her. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. Auch bei einem überlasteten Handynetz, einem Ausfall der Stromversorgung oder Störungen in öffentlichen Kommunikationsnetzen funktioniert NIKOS weiter. So bleibt der Perimeterschutz für den Weihnachtsmarkt zuverlässig funktionsfähig."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie wird NIKOS auf einem Weihnachtsmarkt ohne feste Infrastruktur installiert?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus. Die interne Akkupufferung hält sicherheitsrelevante Funktionen bei Unterbrechungen aufrecht."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Perimeterschutz für den Weihnachtsmarkt in Bremen: Wo kann man NIKOS mieten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Zur Partnerauswahl und Mietanfrage</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Bremen"
       }
     }
   ]
@@ -248,6 +327,8 @@ a{color:inherit}
 <!-- ═══ INTRO (S2) ═══ -->
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-de>NIKOS ist kein klassisches PA-System, sondern ein funkbasiertes Durchsage-, Alarmierungs- und Steuerungssystem für Großveranstaltungen, Baustellen und Krisenlagen, das Sie tageweise über zertifizierte Partner mieten und in Ihre PA integrieren oder eigenständig einsetzen können.</p>
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-en>NIKOS is not a conventional PA system, but a radio-based public address, alarm and control system for large events, construction sites and crisis situations, which you can rent by the day through certified partners and either integrate into your PA or use on its own.</p>
     <span class="nk-label" data-de>Herausforderung</span><span class="nk-label" data-en>Challenge</span>
     <h2 class="heading-l" style="margin-top:12px;" data-de>Sofortige automatische Alarmauslösung bei Durchbrechen von Zufahrtssperren und Zäunen</h2>
     <h2 class="heading-l" style="margin-top:12px;" data-en>Immediate automatic alarm activation when access barriers and fences are breached</h2>
@@ -285,8 +366,8 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Wo entstehen beim Einsatz von NIKOS Kostenvorteile?</span><span class="faq-q" data-en>Where does NIKOS provide cost benefits?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body" data-de>Mit <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> lassen sich unterschiedliche Funktionen über eine einheitliche Kommunikationsplattform umsetzen. Dadurch entfallen getrennte Lautsprecher-, Steuer- und Kommunikationslösungen. Bei Perimeterschutz und anderen sicherheitsrelevanten Koordinationsaufgaben reduziert die Bündelung von Mitarbeiteralarmierung, Besucherinformation und Systemsteuerung den Bedarf an zusätzlicher Technik. Das größte Einsparpotenzial entsteht bei umzäunten Veranstaltungen wie dem Weihnachtsmarkt in Bremen: Die technische Überwachung von Zufahrts- und Notausgangstoren kann Wachposten an diesen Punkten ersetzen oder deren Einsatz gezielter machen. So sinken Miet-, Installations-, Personal- und Betriebskosten vor allem bei temporären Veranstaltungen mit begrenzter Laufzeit.</div>
-        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> enables different functions to be implemented via a single, standardised communication platform. This eliminates the need for separate loudspeaker, control and communication solutions. For perimeter protection and other safety-critical coordination tasks, combining staff alarm activation, visitor information and system control reduces the need for additional technology. The greatest savings potential arises at fenced events such as the Christmas market in Bremen: Technical monitoring of access and emergency-exit gates can replace security guards at these points or enable their deployment to be more targeted. This reduces rental, installation, personnel and operating costs, particularly at temporary events with a limited duration.</div>
+        <div class="faq-item__body" data-de>Mit <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> lassen sich unterschiedliche Funktionen über eine einheitliche Kommunikationsplattform umsetzen. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> reduziert vor allem den Aufwand für separate Lautsprecher-, Steuer- und Kommunikationslösungen. Materialbedarf und Verkabelungsaufwand werden geringer, Informations- und Notfalldurchsagen lassen sich von einer Stelle aus machen. Bei Perimeterschutz und anderen sicherheitsrelevanten Koordinationsaufgaben reduziert die Bündelung von Mitarbeiteralarmierung, Besucherinformation und Systemsteuerung den Bedarf an zusätzlicher Technik. Das größte Einsparpotenzial entsteht bei umzäunten Veranstaltungen wie dem Weihnachtsmarkt in Bremen: Die technische Überwachung von Zufahrts- und Notausgangstoren kann Wachposten an diesen Punkten ersetzen oder deren Einsatz gezielter machen. So sinken Miet-, Installations-, Personal- und Betriebskosten vor allem bei temporären Veranstaltungen mit begrenzter Laufzeit.</div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> enables different functions to be implemented via a single, standardised communication platform. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mainly reduces the effort required for separate loudspeaker, control and communication solutions. Material requirements and cabling work are reduced, and information and emergency announcements can be made from a single location. For perimeter protection and other safety-critical coordination tasks, combining staff alarm activation, visitor information and system control reduces the need for additional technology. The greatest savings potential arises at fenced events such as the Christmas market in Bremen: Technical monitoring of access and emergency-exit gates can replace security guards at these points or enable their deployment to be more targeted. This reduces rental, installation, personnel and operating costs, particularly at temporary events with a limited duration.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Funktioniert NIKOS auch bei Stromausfall oder überlastetem Handynetz?</span><span class="faq-q" data-en>Does NIKOS also work during a power outage or when the mobile network is overloaded?</span><span class="faq-icon">+</span></summary>
@@ -295,8 +376,13 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Wie wird NIKOS auf einem Weihnachtsmarkt ohne feste Infrastruktur installiert?</span><span class="faq-q" data-en>How is NIKOS installed at a Christmas market without fixed infrastructure?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus. Die interne Akkupufferung hält sicherheitsrelevante Funktionen bei Unterbrechungen aufrecht.</div>
-        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed specifically for flexible outdoor applications without fixed infrastructure. The modules can be mounted by one or two people within just a few minutes on a range of structures, such as street lamps, stages, trees, stalls or decorations, and configured individually. A standard Schuko power connection is sufficient for continuous operation. The internal battery backup keeps safety-critical functions operational during interruptions.</div>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus. Die interne Akkupufferung hält sicherheitsrelevante Funktionen bei Unterbrechungen aufrecht.</div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed specifically for flexible outdoor applications without fixed infrastructure. The modules can be mounted by one or two people within just a few minutes on a range of structures, such as lampposts, stages, stands or trees, and configured individually. A standard Schuko power connection is sufficient for continuous operation. The internal battery backup keeps safety-critical functions operational during interruptions.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" data-de>Perimeterschutz für den Weihnachtsmarkt in Bremen: Wo kann man <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mieten?</span><span class="faq-q" data-en>Perimeter protection for the Christmas market in Bremen: Where can <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> be rented?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Zur Partnerauswahl und Mietanfrage</a></div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find a partner and request a rental</a></div>
       </details>
     </div>
   </div>

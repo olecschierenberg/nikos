@@ -26,42 +26,121 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "about": {
-    "@type": "Place",
-    "name": "Dortmund"
-  },
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Die Planung und Ausführung elektroakustischer Notfallwarnsysteme erfolgt nach DIN EN 50849. Die Einhaltung der Anforderungen wird für den jeweiligen Einsatz anhand der Anlagenplanung, der eingesetzten Komponenten und der Abnahme geprüft. NIKOS ist für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen ausgelegt. DIN EN 54, DIN VDE 0833-4 und DIN 14675 beziehen sich auf Sprachalarmierungsanlagen und andere Anlagentypen. RADACOM und regionale NIKOS-Partner beraten zur Planung und Umsetzung der Anforderungen."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/loesungen/crowd-management-iga-ruhrgebiet-2027-dortmund/#service",
+      "name": "Crowd Management für die IGA Ruhrgebiet 2027 in Dortmund",
+      "description": "Crowd Management für die IGA Ruhrgebiet 2027 in Dortmund. Dadurch werden Besucherströme zentral koordiniert und verteilte Melde- und Bedienposten reduziert.",
+      "url": "https://nikos.info/loesungen/crowd-management-iga-ruhrgebiet-2027-dortmund/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "de",
+      "termsOfService": "https://nikos.info/de/mietbedingungen/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Dortmund"
       }
     },
     {
-      "@type": "Question",
-      "name": "Ist NIKOS kurzfristig und flexibel einsetzbar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen montieren und individuell konfigurieren. Für den Dauerbetrieb genügt ein normaler Schuko-Stromanschluss."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://nikos.info/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle Einsatzbeispiele",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Crowd Management für die IGA Ruhrgebiet 2027 in Dortmund",
+          "item": "https://nikos.info/loesungen/crowd-management-iga-ruhrgebiet-2027-dortmund/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Ist NIKOS krisensicher?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz und ist unabhängig von öffentlichen Kommunikationsnetzen. Bei einer Unterbrechung stellt das System die Funkverbindung selbstständig wieder her. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt auch angeschlossene Zubehörmodule. Bei Ausfällen der Stromversorgung sowie Störungen oder Überlastungen öffentlicher Kommunikationsnetze bleibt NIKOS funktionsfähig. So unterstützt NIKOS das Crowd Management für die IGA Ruhrgebiet 2027 auch in kritischen Lagen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Eignet sich NIKOS für weitläufige Veranstaltungsflächen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS nutzt ein eigenes Funknetz und verbindet die eingesetzten Module ohne fest verlegte Kommunikationskabel. Durchsageeinheiten können an den vorgesehenen Standorten für Besucherinformation und Sicherheitskommunikation eingerichtet und in die Einsatzplanung integriert werden."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/loesungen/crowd-management-iga-ruhrgebiet-2027-dortmund/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die Planung und Ausführung elektroakustischer Notfallwarnsysteme erfolgt nach DIN EN 50849. Die Einhaltung der Anforderungen wird für den jeweiligen Einsatz anhand der Anlagenplanung, der eingesetzten Komponenten und der Abnahme geprüft. NIKOS ist für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen ausgelegt. DIN EN 54, DIN VDE 0833-4 und DIN 14675 beziehen sich auf Sprachalarmierungsanlagen und andere Anlagentypen. RADACOM und regionale NIKOS-Partner beraten zur Planung und Umsetzung der Anforderungen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist NIKOS kurzfristig und flexibel einsetzbar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen montieren und individuell konfigurieren. Für den Dauerbetrieb genügt ein normaler Schuko-Stromanschluss."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist NIKOS krisensicher?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz und ist unabhängig von öffentlichen Kommunikationsnetzen. Bei einer Unterbrechung stellt das System die Funkverbindung selbstständig wieder her. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt auch angeschlossene Zubehörmodule. Bei Ausfällen der Stromversorgung sowie Störungen oder Überlastungen öffentlicher Kommunikationsnetze bleibt NIKOS funktionsfähig. So unterstützt NIKOS das Crowd Management für die IGA Ruhrgebiet 2027 auch in kritischen Lagen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Eignet sich NIKOS für weitläufige Veranstaltungsflächen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS nutzt ein eigenes Funknetz und verbindet die eingesetzten Module ohne fest verlegte Kommunikationskabel. Durchsageeinheiten können an den vorgesehenen Standorten für Besucherinformation und Sicherheitskommunikation eingerichtet und in die Einsatzplanung integriert werden."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Crowd Management für die IGA Ruhrgebiet 2027 in Dortmund: Wo kann man NIKOS mieten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Zur Partnerauswahl und Mietanfrage</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Dortmund"
       }
     }
   ]
@@ -254,6 +333,8 @@ a{color:inherit}
 <!-- ═══ INTRO (S2) ═══ -->
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-de>NIKOS ist kein klassisches PA-System, sondern ein funkbasiertes Durchsage-, Alarmierungs- und Steuerungssystem für Großveranstaltungen, Baustellen und Krisenlagen, das Sie tageweise über zertifizierte Partner mieten und in Ihre PA integrieren oder eigenständig einsetzen können.</p>
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-en>NIKOS is not a conventional PA system, but a radio-based public address, alarm and control system for large events, construction sites and crisis situations, which you can rent by the day through certified partners and either integrate into your PA or use on its own.</p>
     <span class="nk-label" data-de>Herausforderung</span><span class="nk-label" data-en>Challenge</span>
     <h2 class="heading-l" style="margin-top:12px;" data-de>Besucherströme gezielt steuern</h2>
     <h2 class="heading-l" style="margin-top:12px;" data-en>Direct visitor flows with precision</h2>
@@ -291,8 +372,8 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Ist NIKOS kurzfristig und flexibel einsetzbar?</span><span class="faq-q" data-en>Can NIKOS be deployed quickly and flexibly?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body" data-de>Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen montieren und individuell konfigurieren. Für den Dauerbetrieb genügt ein normaler Schuko-Stromanschluss.</div>
-        <div class="faq-item__body" data-en>Yes. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed for flexible outdoor operations without fixed infrastructure. The modules can be mounted by one or two people within just a few minutes on a range of structures, such as lampposts, stages, trees, stalls or decorative elements, and configured individually. For continuous operation, a standard Schuko power outlet is sufficient.</div>
+        <div class="faq-item__body" data-de>Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen montieren und individuell konfigurieren. Für den Dauerbetrieb genügt ein normaler Schuko-Stromanschluss.</div>
+        <div class="faq-item__body" data-en>Yes. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed for flexible outdoor operations without fixed infrastructure. The modules can be mounted by one or two people within just a few minutes on a range of structures, such as lampposts, stages, stands or trees, and configured individually. For continuous operation, a standard Schuko power outlet is sufficient.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Ist NIKOS krisensicher?</span><span class="faq-q" data-en>Is NIKOS resilient in a crisis?</span><span class="faq-icon">+</span></summary>
@@ -303,6 +384,11 @@ a{color:inherit}
         <summary><span class="faq-q" data-de>Eignet sich NIKOS für weitläufige Veranstaltungsflächen?</span><span class="faq-q" data-en>Is NIKOS suitable for large event sites?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body" data-de>Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> nutzt ein eigenes Funknetz und verbindet die eingesetzten Module ohne fest verlegte Kommunikationskabel. Durchsageeinheiten können an den vorgesehenen Standorten für Besucherinformation und Sicherheitskommunikation eingerichtet und in die Einsatzplanung integriert werden.</div>
         <div class="faq-item__body" data-en>Yes. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> uses its own radio network to connect the deployed modules without permanently installed communication cables. Announcement units can be set up at the designated locations for visitor information and safety communication and integrated into operational planning.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" data-de>Crowd Management für die IGA Ruhrgebiet 2027 in Dortmund: Wo kann man <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mieten?</span><span class="faq-q" data-en>Crowd Management for IGA Ruhrgebiet 2027 in Dortmund: Where can <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> be rented?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Zur Partnerauswahl und Mietanfrage</a></div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find a partner and request a rental</a></div>
       </details>
     </div>
   </div>

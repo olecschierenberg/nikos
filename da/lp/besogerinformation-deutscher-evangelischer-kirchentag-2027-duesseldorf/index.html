@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Opfylder NIKOS-meddelelser de relevante standardkrav?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS opfylder fuldt ud DIN EN 50849 „Elektroakustiske nødvarslingssystemer“. Systemet er specifikt designet til sikkerhedskritiske meddelelser og alarmering og er teknisk udviklet til både hverdag og nødsituationer. DIN EN 50849 er den afgørende standard for radiobaserede ELA-anlæg som NIKOS. Fordi NIKOS, i modsætning til mobilnetbaserede systemer, fungerer uafhængigt af et eksternt net, er øjeblikkelig anvendelighed sikret til enhver tid — standardens krav opfyldes dermed fuldt ud. Andre sikkerhedstekniske standarder såsom DIN EN 54, DIN VDE 0833-4 og DIN 14675 (talevarslingsanlæg) er derimod ikke relevante for NIKOS, da de vedrører et andet anvendelsesområde og funktionsomfang og derfor ikke er relevante for brugen af NIKOS. Som det hidtil eneste meddelelsessystem til midlertidige og mobile anvendelser, der konsekvent er udviklet til kravene ved indsatskritisk brug, er NIKOS siden 2017 blevet anvendt med succes til krisesikre kommunikationsopgaver. RADACOM og din regionale NIKOS-partner rådgiver dig gerne om NIKOS’ mange funktioner og hjælper dig med at implementere kravene omkostningsbevidst."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/da/lp/besogerinformation-deutscher-evangelischer-kirchentag-2027-duesseldorf/#service",
+      "name": "Besøgerinformation til 40. Deutscher Evangelischer Kirchentag 2027 i Düsseldorf",
+      "description": "Besøgerinformation til 40. Deutscher Evangelischer Kirchentag 2027 i Düsseldorf: Information når frem til besøgende, også når der er mange mennesker.",
+      "url": "https://nikos.info/da/lp/besogerinformation-deutscher-evangelischer-kirchentag-2027-duesseldorf/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "da",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Düsseldorf"
       }
     },
     {
-      "@type": "Question",
-      "name": "Kan NIKOS tages i brug med kort varsel og anvendes fleksibelt?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS er udviklet specielt til fleksible udendørs anvendelser uden fast infrastruktur. Modulerne kan monteres af én eller to personer på få minutter på forskellige konstruktioner som lygtepæle, scener, træer, boder eller dekorationer og konfigureres individuelt. En almindelig Schuko-stikkontakt er tilstrækkelig til kontinuerlig drift. NIKOS integreres i et eksisterende digitalt radionetværk."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Forside",
+          "item": "https://nikos.info/da/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle anvendelseseksempler",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Besøgerinformation til 40. Deutscher Evangelischer Kirchentag 2027 i Düsseldorf",
+          "item": "https://nikos.info/da/lp/besogerinformation-deutscher-evangelischer-kirchentag-2027-duesseldorf/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Er NIKOS krisesikkert?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS fungerer via sit eget autonome radionetværk og er helt uafhængigt af offentlige kommunikationsnet og deres tilgængelighed. Derfor forbliver systemet driftssikkert, også når der opstår forstyrrelser udefra. Da NIKOS kommunikerer trådløst og ikke er afhængigt af kabelføringer, genetablerer systemet selv forbindelsen efter en afbrydelse. På den måde reagerer NIKOS robust på forstyrrelser i den normale drift og forbliver klar til brug også i krisesituationer. NIKOS [audio]² har et internt batteri med op til 16 timers driftstid, som også forsyner tilsluttede tilbehørsmoduler. Selv ved et overbelastet mobilnet, et udfald hos internetudbyderen eller en afbrydelse af strømforsyningen fungerer NIKOS videre. Besøgerinformationen til 40. Deutscher Evangelischer Kirchentag 2027 forbliver dermed pålideligt tilgængelig, også ved forstyrrelser i offentlige kommunikationsnet og ved strømsvigt."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Kan information formidles målrettet til enkelte områder?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS [dispatcher]² styrer højttalerenhederne på de enkelte meddelelseslokationer, i udvalgte områder eller på hele området. Dermed kan information formidles efter behov til de besøgerområder, der er berørt."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/da/lp/besogerinformation-deutscher-evangelischer-kirchentag-2027-duesseldorf/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Opfylder NIKOS-meddelelser de relevante standardkrav?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS opfylder fuldt ud DIN EN 50849 „Elektroakustiske nødvarslingssystemer“. Systemet er specifikt designet til sikkerhedskritiske meddelelser og alarmering og er teknisk udviklet til både hverdag og nødsituationer. DIN EN 50849 er den afgørende standard for radiobaserede ELA-anlæg som NIKOS. Fordi NIKOS, i modsætning til mobilnetbaserede systemer, fungerer uafhængigt af et eksternt net, er øjeblikkelig anvendelighed sikret til enhver tid — standardens krav opfyldes dermed fuldt ud. Andre sikkerhedstekniske standarder såsom DIN EN 54, DIN VDE 0833-4 og DIN 14675 (talevarslingsanlæg) er derimod ikke relevante for NIKOS, da de vedrører et andet anvendelsesområde og funktionsomfang og derfor ikke er relevante for brugen af NIKOS. Som det hidtil eneste meddelelsessystem til midlertidige og mobile anvendelser, der konsekvent er udviklet til kravene ved indsatskritisk brug, er NIKOS siden 2017 blevet anvendt med succes til krisesikre kommunikationsopgaver. RADACOM og din regionale NIKOS-partner rådgiver dig gerne om NIKOS’ mange funktioner og hjælper dig med at implementere kravene omkostningsbevidst."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan NIKOS tages i brug med kort varsel og anvendes fleksibelt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS er udviklet specielt til fleksible udendørs anvendelser uden fast infrastruktur. Modulerne kan monteres af én eller to personer på få minutter på forskellige konstruktioner som lygtepæle, scener, boder eller træer og konfigureres individuelt. En almindelig Schuko-stikkontakt er tilstrækkelig til kontinuerlig drift. NIKOS integreres i et eksisterende digitalt radionetværk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Er NIKOS krisesikkert?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS fungerer via sit eget autonome radionetværk og er helt uafhængigt af offentlige kommunikationsnet og deres tilgængelighed. Derfor forbliver systemet driftssikkert, også når der opstår forstyrrelser udefra. Da NIKOS kommunikerer trådløst og ikke er afhængigt af kabelføringer, genetablerer systemet selv forbindelsen efter en afbrydelse. På den måde reagerer NIKOS robust på forstyrrelser i den normale drift og forbliver klar til brug også i krisesituationer. NIKOS [audio]² har et internt batteri med op til 16 timers driftstid, som også forsyner tilsluttede tilbehørsmoduler. Selv ved et overbelastet mobilnet, et udfald hos internetudbyderen eller en afbrydelse af strømforsyningen fungerer NIKOS videre. Besøgerinformationen til 40. Deutscher Evangelischer Kirchentag 2027 forbliver dermed pålideligt tilgængelig, også ved forstyrrelser i offentlige kommunikationsnet og ved strømsvigt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan information formidles målrettet til enkelte områder?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS [dispatcher]² styrer højttalerenhederne på de enkelte meddelelseslokationer, i udvalgte områder eller på hele området. Dermed kan information formidles efter behov til de besøgerområder, der er berørt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Besøgerinformation til 40. Deutscher Evangelischer Kirchentag 2027 i Düsseldorf: Hvor kan NIKOS lejes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS udlejes pr. dag via certificerede partnere, inklusive rådgivning, instruktion og teknisk support. Jeres regionale partner afstemmer indsatsen med jer. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Find en partner og forespørg om leje</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Düsseldorf"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Düsseldorf"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS er ikke et klassisk PA-system, men et radiobaseret system til højttalermeddelelser, alarmering og styring ved store arrangementer, byggepladser og krisesituationer, som kan lejes pr. dag via certificerede partnere og enten integreres i jeres PA-anlæg eller bruges selvstændigt.</p>
     <span class="nk-label">Udfordring</span>
     <h2 class="heading-l" style="margin-top:12px;">Kommunikér sikkert med de besøgende</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Ved 40. Deutscher Evangelischer Kirchentag 2027 i Düsseldorf skal information om program, orientering og sikkerhedsrelevante situationer nå frem til mange besøgende i rette tid. Mange besøgende, omgivende støj og skiftende opholdsområder gør det vanskeligere at formidle information tydeligt. Når der er mange mennesker, bliver offentlige kommunikationsnet overbelastede, så mobilbaseret information ikke pålideligt når frem til alle besøgende.</p>
@@ -266,7 +346,7 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Kan NIKOS tages i brug med kort varsel og anvendes fleksibelt?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Ja, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> er udviklet specielt til fleksible udendørs anvendelser uden fast infrastruktur. Modulerne kan monteres af én eller to personer på få minutter på forskellige konstruktioner som lygtepæle, scener, træer, boder eller dekorationer og konfigureres individuelt. En almindelig Schuko-stikkontakt er tilstrækkelig til kontinuerlig drift. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> integreres i et eksisterende digitalt radionetværk.</div>
+        <div class="faq-item__body">Ja, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> er udviklet specielt til fleksible udendørs anvendelser uden fast infrastruktur. Modulerne kan monteres af én eller to personer på få minutter på forskellige konstruktioner som lygtepæle, scener, boder eller træer og konfigureres individuelt. En almindelig Schuko-stikkontakt er tilstrækkelig til kontinuerlig drift. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> integreres i et eksisterende digitalt radionetværk.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Er NIKOS krisesikkert?</span><span class="faq-icon">+</span></summary>
@@ -275,6 +355,10 @@ a{color:inherit}
       <details class="faq-item">
         <summary><span class="faq-q">Kan information formidles målrettet til enkelte områder?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body">Ja. <a class="nk-mod" href="https://nikos.info/en/products/#dispatcher"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a> styrer højttalerenhederne på de enkelte meddelelseslokationer, i udvalgte områder eller på hele området. Dermed kan information formidles efter behov til de besøgerområder, der er berørt.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Besøgerinformation til 40. Deutscher Evangelischer Kirchentag 2027 i Düsseldorf: Hvor kan <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> lejes?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> udlejes pr. dag via certificerede partnere, inklusive rådgivning, instruktion og teknisk support. Jeres regionale partner afstemmer indsatsen med jer. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find en partner og forespørg om leje</a></div>
       </details>
     </div>
   </div>

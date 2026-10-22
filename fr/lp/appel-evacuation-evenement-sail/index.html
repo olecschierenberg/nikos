@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Les annonces NIKOS répondent-elles aux exigences normatives applicables ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui, NIKOS satisfait pleinement à la norme DIN EN 50849 « Systèmes électroacoustiques d’alerte d’urgence ». Le système a été spécialement conçu pour les annonces et alertes liées à la sécurité et est techniquement adapté aussi bien au quotidien qu’aux situations d’urgence. La norme DIN EN 50849 est la norme déterminante pour les installations ELA radioélectriques telles que NIKOS. Parce que NIKOS, contrairement aux systèmes reposant sur les réseaux mobiles, fonctionne indépendamment de tout réseau externe, une disponibilité immédiate est garantie à tout moment — les exigences de la norme sont ainsi pleinement satisfaites. D’autres normes de sécurité telles que DIN EN 54, DIN VDE 0833-4 et DIN 14675 (systèmes d’alarme vocale) ne sont en revanche pas applicables à NIKOS, car elles concernent un autre domaine d’utilisation et un autre périmètre fonctionnel et ne sont donc pas pertinentes pour l’utilisation de NIKOS. Seul système d’annonces pour applications temporaires et mobiles conçu de façon cohérente autour des exigences des usages critiques, NIKOS est utilisé avec succès depuis 2017 pour des missions de communication fiables en situation de crise. L’évaluation et l’autorisation définitives, spécifiques au projet, relèvent de la responsabilité de l’autorité compétente."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/fr/lp/appel-evacuation-evenement-sail/#service",
+      "name": "Appels d’évacuation pour Sail Amsterdam 2030",
+      "description": "Appels d’évacuation pour Sail Amsterdam 2030: des consignes claires malgré la foule et le bruit ambiant.",
+      "url": "https://nikos.info/fr/lp/appel-evacuation-evenement-sail/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "fr",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     },
     {
-      "@type": "Question",
-      "name": "NIKOS continue-t-il de fonctionner lorsque le réseau mobile est saturé ou en cas de coupure de courant ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui. NIKOS fonctionne via son propre réseau radio autonome et indépendamment des réseaux de communication publics. NIKOS [audio]² dispose d’une batterie interne offrant jusqu’à 16 heures d’autonomie et alimente également les accessoires raccordés. Les appels d’évacuation pour Sail Amsterdam 2030 continuent ainsi de fonctionner de manière fiable, même en cas de coupure de courant ou de perturbations des réseaux de communication publics."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://nikos.info/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tous les exemples d'utilisation",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Appels d’évacuation pour Sail Amsterdam 2030",
+          "item": "https://nikos.info/fr/lp/appel-evacuation-evenement-sail/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "NIKOS peut-il être installé rapidement sur différents sites ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui. NIKOS a été conçu pour une utilisation flexible en extérieur, sans infrastructure fixe. Les modules peuvent être montés par une ou deux personnes en quelques minutes sur différentes structures, puis configurés individuellement. Pour un fonctionnement continu, une prise secteur Schuko standard suffit."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Est-il possible de commander de manière ciblée des points de diffusion individuels ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui. Avec NIKOS [dispatcher]², il est possible de commander des points de diffusion individuels, des zones précises ou l’ensemble du site de l’événement. Les consignes d’évacuation peuvent ainsi être diffusées en fonction de la situation actuelle."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/fr/lp/appel-evacuation-evenement-sail/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Les annonces NIKOS répondent-elles aux exigences normatives applicables ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, NIKOS satisfait pleinement à la norme DIN EN 50849 « Systèmes électroacoustiques d’alerte d’urgence ». Le système a été spécialement conçu pour les annonces et alertes liées à la sécurité et est techniquement adapté aussi bien au quotidien qu’aux situations d’urgence. La norme DIN EN 50849 est la norme déterminante pour les installations ELA radioélectriques telles que NIKOS. Parce que NIKOS, contrairement aux systèmes reposant sur les réseaux mobiles, fonctionne indépendamment de tout réseau externe, une disponibilité immédiate est garantie à tout moment — les exigences de la norme sont ainsi pleinement satisfaites. D’autres normes de sécurité telles que DIN EN 54, DIN VDE 0833-4 et DIN 14675 (systèmes d’alarme vocale) ne sont en revanche pas applicables à NIKOS, car elles concernent un autre domaine d’utilisation et un autre périmètre fonctionnel et ne sont donc pas pertinentes pour l’utilisation de NIKOS. Seul système d’annonces pour applications temporaires et mobiles conçu de façon cohérente autour des exigences des usages critiques, NIKOS est utilisé avec succès depuis 2017 pour des missions de communication fiables en situation de crise. L’évaluation et l’autorisation définitives, spécifiques au projet, relèvent de la responsabilité de l’autorité compétente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "NIKOS continue-t-il de fonctionner lorsque le réseau mobile est saturé ou en cas de coupure de courant ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. NIKOS fonctionne via son propre réseau radio autonome et indépendamment des réseaux de communication publics. NIKOS [audio]² dispose d’une batterie interne offrant jusqu’à 16 heures d’autonomie et alimente également les accessoires raccordés. Les appels d’évacuation pour Sail Amsterdam 2030 continuent ainsi de fonctionner de manière fiable, même en cas de coupure de courant ou de perturbations des réseaux de communication publics."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "NIKOS peut-il être installé rapidement sur différents sites ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. NIKOS a été conçu pour une utilisation flexible en extérieur, sans infrastructure fixe. Les modules peuvent être montés par une ou deux personnes en quelques minutes sur différentes structures, puis configurés individuellement. Pour un fonctionnement continu, une prise secteur Schuko standard suffit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Est-il possible de commander de manière ciblée des points de diffusion individuels ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Avec NIKOS [dispatcher]², il est possible de commander des points de diffusion individuels, des zones précises ou l’ensemble du site de l’événement. Les consignes d’évacuation peuvent ainsi être diffusées en fonction de la situation actuelle."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Appels d’évacuation pour Sail Amsterdam 2030: Où peut-on louer NIKOS ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS est loué à la journée via des partenaires certifiés, conseil, formation et assistance technique inclus. Votre partenaire régional coordonne l’intervention avec vous. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Trouver un partenaire et demander la location</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Amsterdam"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS n’est pas une sonorisation classique, mais un système de diffusion, d’alerte et de commande par radio pour les grands événements, les chantiers et les situations de crise, que vous louez à la journée via des partenaires certifiés et pouvez intégrer à votre sonorisation ou utiliser de manière autonome.</p>
     <span class="nk-label">Défi</span>
     <h2 class="heading-l" style="margin-top:12px;">Des consignes d’évacuation claires sans réseau mobile</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Lors de Sail Amsterdam 2030, les appels d’évacuation doivent répondre à des exigences élevées en raison de la foule, du bruit ambiant et de la présence de visiteurs internationaux. Le long des quais et autour des bateaux, les avertissements et les consignes d’action doivent être transmis rapidement et de manière compréhensible. La forte densité de visiteurs surcharge le réseau mobile, rendant les communications mobiles peu fiables en situation de crise.</p>
@@ -275,6 +355,10 @@ a{color:inherit}
       <details class="faq-item">
         <summary><span class="faq-q">Est-il possible de commander de manière ciblée des points de diffusion individuels ?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body">Oui. Avec <a class="nk-mod" href="https://nikos.info/en/products/#dispatcher"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a>, il est possible de commander des points de diffusion individuels, des zones précises ou l’ensemble du site de l’événement. Les consignes d’évacuation peuvent ainsi être diffusées en fonction de la situation actuelle.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Appels d’évacuation pour Sail Amsterdam 2030: Où peut-on louer <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> ?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> est loué à la journée via des partenaires certifiés, conseil, formation et assistance technique inclus. Votre partenaire régional coordonne l’intervention avec vous. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Trouver un partenaire et demander la location</a></div>
       </details>
     </div>
   </div>

@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Do NIKOS announcements meet the relevant standard requirements?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, NIKOS fully meets DIN EN 50849 \"Electroacoustic Emergency Warning Systems\". The system was specifically designed for safety-relevant announcements and alerting and is technically built for both everyday and emergency use. DIN EN 50849 is the relevant standard for radio-based ELA systems such as NIKOS. Because NIKOS, unlike mobile network-based systems, operates independently of an external network, immediate usability is guaranteed at all times — fully meeting the standard's requirements as a result. Other safety-related standards such as DIN EN 54, DIN VDE 0833-4 and DIN 14675 (voice alarm systems), by contrast, do not apply to NIKOS, as they concern a different field of use and functional scope and are therefore not relevant to NIKOS's deployment. As the only public address system for temporary and mobile applications consistently designed around the demands of mission-critical use, NIKOS has been used successfully for crisis-proof communication tasks since 2017. RADACOM and your regional NIKOS partner will be happy to advise you on NIKOS’s wide range of functions and support you in implementing the requirements cost-effectively."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/en/lp/visitor-information-kirchentag/#service",
+      "name": "Visitor information for the 40th German Protestant Kirchentag 2027 in Düsseldorf",
+      "description": "Visitor information for the 40th German Protestant Kirchentag 2027 in Düsseldorf: Messages reach visitors even at high capacity.",
+      "url": "https://nikos.info/en/lp/visitor-information-kirchentag/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "en",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Düsseldorf"
       }
     },
     {
-      "@type": "Question",
-      "name": "Can NIKOS be deployed quickly and flexibly?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, NIKOS was specifically developed for flexible outdoor deployments without permanent infrastructure. The modules can be mounted on various structures such as streetlamps, stages, trees, stalls or decorations by one or two people within just a few minutes and configured individually. A standard Schuko power connection is sufficient for continuous operation. NIKOS is integrated into an existing digital radio network."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nikos.info/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "All use cases",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Visitor information for the 40th German Protestant Kirchentag 2027 in Düsseldorf",
+          "item": "https://nikos.info/en/lp/visitor-information-kirchentag/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Is NIKOS resilient in a crisis?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, NIKOS operates via its own autonomous radio network and is completely independent of public communications networks and their availability. This means that the system remains reliably operational even in the event of external disruptions. Because NIKOS communicates wirelessly and does not depend on cable routes, it automatically restores the connection after an interruption. NIKOS therefore responds robustly to disruptions in normal operations and remains ready for use even in crisis situations. NIKOS [audio]² has an internal battery with a runtime of up to 16 hours, which also supplies power to connected accessory modules. Even if the mobile communications network is overloaded, the internet provider fails or the power supply is interrupted, NIKOS continues to operate. This ensures that visitor information for the 40th German Protestant Kirchentag 2027 remains reliably available even in the event of disruptions to public communications networks or a power failure."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can information be transmitted specifically to individual areas?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. NIKOS [dispatcher]² controls the announcement units for individual announcement locations, designated areas or the entire site. This makes it possible to deliver information as required to the visitor areas affected in each case."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/en/lp/visitor-information-kirchentag/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do NIKOS announcements meet the relevant standard requirements?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, NIKOS fully meets DIN EN 50849 \"Electroacoustic Emergency Warning Systems\". The system was specifically designed for safety-relevant announcements and alerting and is technically built for both everyday and emergency use. DIN EN 50849 is the relevant standard for radio-based ELA systems such as NIKOS. Because NIKOS, unlike mobile network-based systems, operates independently of an external network, immediate usability is guaranteed at all times — fully meeting the standard's requirements as a result. Other safety-related standards such as DIN EN 54, DIN VDE 0833-4 and DIN 14675 (voice alarm systems), by contrast, do not apply to NIKOS, as they concern a different field of use and functional scope and are therefore not relevant to NIKOS's deployment. As the only public address system for temporary and mobile applications consistently designed around the demands of mission-critical use, NIKOS has been used successfully for crisis-proof communication tasks since 2017. RADACOM and your regional NIKOS partner will be happy to advise you on NIKOS’s wide range of functions and support you in implementing the requirements cost-effectively."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can NIKOS be deployed quickly and flexibly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, NIKOS was specifically developed for flexible outdoor deployments without permanent infrastructure. The modules can be mounted on various structures such as lampposts, stages, stands or trees by one or two people within just a few minutes and configured individually. A standard Schuko power connection is sufficient for continuous operation. NIKOS is integrated into an existing digital radio network."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is NIKOS resilient in a crisis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, NIKOS operates via its own autonomous radio network and is completely independent of public communications networks and their availability. This means that the system remains reliably operational even in the event of external disruptions. Because NIKOS communicates wirelessly and does not depend on cable routes, it automatically restores the connection after an interruption. NIKOS therefore responds robustly to disruptions in normal operations and remains ready for use even in crisis situations. NIKOS [audio]² has an internal battery with a runtime of up to 16 hours, which also supplies power to connected accessory modules. Even if the mobile communications network is overloaded, the internet provider fails or the power supply is interrupted, NIKOS continues to operate. This ensures that visitor information for the 40th German Protestant Kirchentag 2027 remains reliably available even in the event of disruptions to public communications networks or a power failure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can information be transmitted specifically to individual areas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. NIKOS [dispatcher]² controls the announcement units for individual announcement locations, designated areas or the entire site. This makes it possible to deliver information as required to the visitor areas affected in each case."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Visitor information for the 40th German Protestant Kirchentag 2027 in Düsseldorf: Where can NIKOS be rented?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Find a partner and request a rental</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Düsseldorf"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Düsseldorf"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS is not a conventional PA system, but a radio-based public address, alarm and control system for large events, construction sites and crisis situations, which you can rent by the day through certified partners and either integrate into your PA or use on its own.</p>
     <span class="nk-label">Challenge</span>
     <h2 class="heading-l" style="margin-top:12px;">Deliver messages reliably to visitors</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">At the 40th German Protestant Kirchentag 2027 in Düsseldorf, information about the programme, orientation and safety-related situations must reach many visitors promptly. Large crowds, ambient noise and constantly changing visitor locations make it difficult to communicate information clearly. When capacity is high, public communications networks become overloaded, meaning that mobile-based information cannot reliably reach everyone.</p>
@@ -266,7 +346,7 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Can NIKOS be deployed quickly and flexibly?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Yes, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was specifically developed for flexible outdoor deployments without permanent infrastructure. The modules can be mounted on various structures such as streetlamps, stages, trees, stalls or decorations by one or two people within just a few minutes and configured individually. A standard Schuko power connection is sufficient for continuous operation. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is integrated into an existing digital radio network.</div>
+        <div class="faq-item__body">Yes, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was specifically developed for flexible outdoor deployments without permanent infrastructure. The modules can be mounted on various structures such as lampposts, stages, stands or trees by one or two people within just a few minutes and configured individually. A standard Schuko power connection is sufficient for continuous operation. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is integrated into an existing digital radio network.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Is NIKOS resilient in a crisis?</span><span class="faq-icon">+</span></summary>
@@ -275,6 +355,10 @@ a{color:inherit}
       <details class="faq-item">
         <summary><span class="faq-q">Can information be transmitted specifically to individual areas?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body">Yes. <a class="nk-mod" href="https://nikos.info/en/products/#dispatcher"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a> controls the announcement units for individual announcement locations, designated areas or the entire site. This makes it possible to deliver information as required to the visitor areas affected in each case.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Visitor information for the 40th German Protestant Kirchentag 2027 in Düsseldorf: Where can <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> be rented?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find a partner and request a rental</a></div>
       </details>
     </div>
   </div>

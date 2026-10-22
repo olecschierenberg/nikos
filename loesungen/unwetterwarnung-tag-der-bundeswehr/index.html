@@ -26,43 +26,114 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "about": {
-    "@type": "Place",
-    "name": ""
-  },
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 (Elektroakustische Notfallwarnsysteme). NIKOS wurde speziell für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen entwickelt und ist technisch für den Einsatz in Alltags- und Notfallsituationen ausgelegt. Für elektroakustische Notfallwarnsysteme (ELA-Anlagen) ist die DIN EN 50849 der maßgebliche Orientierungsrahmen. Die dort genannten Anforderungen werden von NIKOS – im Gegensatz zu mobilfunkbasierten Systemen – voll erfüllt, da keine Abhängigkeit von einem fremden Netz besteht und NIKOS jederzeit sofort nutzbar ist. Andere aus der Sicherheitstechnik bekannte Normen wie die DIN EN 54, DIN VDE 0833-4 sowie DIN 14675 (Sprachalarmierungsanlagen) sind auf das Einsatzgebiet und Funktionsspektrum von NIKOS nicht anwendbar und daher für eine Genehmigung nicht relevant. NIKOS ist ein Durchsagesystem für temporäre und mobile Anwendungen und seit 2017 vielfach erfolgreich für die Umsetzung einsatzkritischer Kommunikationsaufgaben im Einsatz. RADACOM und Ihr regionaler NIKOS-Partner beraten Sie gerne zu den vielfältigen Funktionen von NIKOS und unterstützen Sie bei der kostenschonenden Umsetzung der Anforderungen."
-      }
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Bleibt NIKOS bei Strom- und Netzausfall einsatzfähig?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS arbeitet über ein eigenes, autarkes Funknetz und völlig unabhängig von öffentlichen Kommunikationsnetzen und deren Verfügbarkeit. Da NIKOS über Funk kommuniziert, stellt sich die Verbindung nach einer Unterbrechung selbstständig wieder her. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. So bleiben Unwetterwarnungen für den Tag der Bundeswehr auch bei Ausfall der Stromversorgung oder Störungen in den öffentlichen Kommunikationsnetzen zuverlässig funktionsfähig."
-      }
+      "@type": "Service",
+      "@id": "https://nikos.info/loesungen/unwetterwarnung-tag-der-bundeswehr/#service",
+      "name": "Unwetterwarnung für den Tag der Bundeswehr",
+      "description": "Beim Tag der Bundeswehr verteilen sich Besucher, Vorführflächen und Informationsbereiche über ein weitläufiges Gelände.",
+      "url": "https://nikos.info/loesungen/unwetterwarnung-tag-der-bundeswehr/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "de",
+      "termsOfService": "https://nikos.info/de/mietbedingungen/"
     },
     {
-      "@type": "Question",
-      "name": "Wie erreichen Warnungen auch weit entfernte Veranstaltungsbereiche?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "NIKOS verbindet die eingesetzten Module über ein eigenes Funknetz und steuert Durchsagen zentral. Dadurch können Warnungen zeitgleich in unterschiedlichen Veranstaltungsbereichen ausgelöst werden, ohne dass für jeden Bereich eine eigene Bedienperson erforderlich ist. Die konkrete Planung der Module richtet sich nach Gelände, Besucherführung und den vorgesehenen Schutzbereichen."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://nikos.info/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle Einsatzbeispiele",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Unwetterwarnung für den Tag der Bundeswehr",
+          "item": "https://nikos.info/loesungen/unwetterwarnung-tag-der-bundeswehr/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Ist NIKOS kurzfristig und flexibel einsetzbar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus. NIKOS nutzt ein vorhandenes digitales Funknetz."
-      }
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/loesungen/unwetterwarnung-tag-der-bundeswehr/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 (Elektroakustische Notfallwarnsysteme). NIKOS wurde speziell für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen entwickelt und ist technisch für den Einsatz in Alltags- und Notfallsituationen ausgelegt. Für elektroakustische Notfallwarnsysteme (ELA-Anlagen) ist die DIN EN 50849 der maßgebliche Orientierungsrahmen. Die dort genannten Anforderungen werden von NIKOS – im Gegensatz zu mobilfunkbasierten Systemen – voll erfüllt, da keine Abhängigkeit von einem fremden Netz besteht und NIKOS jederzeit sofort nutzbar ist. Andere aus der Sicherheitstechnik bekannte Normen wie die DIN EN 54, DIN VDE 0833-4 sowie DIN 14675 (Sprachalarmierungsanlagen) sind auf das Einsatzgebiet und Funktionsspektrum von NIKOS nicht anwendbar und daher für eine Genehmigung nicht relevant. NIKOS ist ein Durchsagesystem für temporäre und mobile Anwendungen und seit 2017 vielfach erfolgreich für die Umsetzung einsatzkritischer Kommunikationsaufgaben im Einsatz. RADACOM und Ihr regionaler NIKOS-Partner beraten Sie gerne zu den vielfältigen Funktionen von NIKOS und unterstützen Sie bei der kostenschonenden Umsetzung der Anforderungen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bleibt NIKOS bei Strom- und Netzausfall einsatzfähig?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS arbeitet über ein eigenes, autarkes Funknetz und völlig unabhängig von öffentlichen Kommunikationsnetzen und deren Verfügbarkeit. Da NIKOS über Funk kommuniziert, stellt sich die Verbindung nach einer Unterbrechung selbstständig wieder her. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. So bleiben Unwetterwarnungen für den Tag der Bundeswehr auch bei Ausfall der Stromversorgung oder Störungen in den öffentlichen Kommunikationsnetzen zuverlässig funktionsfähig."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie erreichen Warnungen auch weit entfernte Veranstaltungsbereiche?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS verbindet die eingesetzten Module über ein eigenes Funknetz und steuert Durchsagen zentral. Dadurch können Warnungen zeitgleich in unterschiedlichen Veranstaltungsbereichen ausgelöst werden, ohne dass für jeden Bereich eine eigene Bedienperson erforderlich ist. Die konkrete Planung der Module richtet sich nach Gelände, Besucherführung und den vorgesehenen Schutzbereichen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist NIKOS kurzfristig und flexibel einsetzbar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus. NIKOS nutzt ein vorhandenes digitales Funknetz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Unwetterwarnung für den Tag der Bundeswehr: Wo kann man NIKOS mieten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Zur Partnerauswahl und Mietanfrage</a>"
+          }
+        }
+      ]
     }
   ]
 }
@@ -254,6 +325,8 @@ a{color:inherit}
 <!-- ═══ INTRO (S2) ═══ -->
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-de>NIKOS ist kein klassisches PA-System, sondern ein funkbasiertes Durchsage-, Alarmierungs- und Steuerungssystem für Großveranstaltungen, Baustellen und Krisenlagen, das Sie tageweise über zertifizierte Partner mieten und in Ihre PA integrieren oder eigenständig einsetzen können.</p>
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-en>NIKOS is not a conventional PA system, but a radio-based public address, alarm and control system for large events, construction sites and crisis situations, which you can rent by the day through certified partners and either integrate into your PA or use on its own.</p>
     <span class="nk-label" data-de>Herausforderung</span><span class="nk-label" data-en>Challenge</span>
     <h2 class="heading-l" style="margin-top:12px;" data-de>Besucher auf weitläufigem Gelände schnell informieren</h2>
     <h2 class="heading-l" style="margin-top:12px;" data-en>Quickly inform visitors across expansive grounds</h2>
@@ -301,8 +374,13 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Ist NIKOS kurzfristig und flexibel einsetzbar?</span><span class="faq-q" data-en>Can NIKOS be deployed quickly and flexibly?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body" data-de>Ja, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> nutzt ein vorhandenes digitales Funknetz.</div>
-        <div class="faq-item__body" data-en>Yes, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was specifically developed for flexible outdoor deployments without permanent infrastructure. One or two people can mount the modules within just a few minutes on various structures such as streetlights, stages, trees, stalls or decorations, and configure them individually. A standard Schuko power connection is sufficient for continuous operation. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> uses an existing digital radio network.</div>
+        <div class="faq-item__body" data-de>Ja, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> nutzt ein vorhandenes digitales Funknetz.</div>
+        <div class="faq-item__body" data-en>Yes, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was specifically developed for flexible outdoor deployments without permanent infrastructure. One or two people can mount the modules within just a few minutes on various structures such as lampposts, stages, stands or trees, and configure them individually. A standard Schuko power connection is sufficient for continuous operation. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> uses an existing digital radio network.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" data-de>Unwetterwarnung für den Tag der Bundeswehr: Wo kann man <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mieten?</span><span class="faq-q" data-en>Severe Weather Warning for Bundeswehr Day: Where can <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> be rented?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Zur Partnerauswahl und Mietanfrage</a></div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find a partner and request a rental</a></div>
       </details>
     </div>
   </div>

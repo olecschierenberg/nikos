@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Do announcements made with NIKOS comply with the applicable standards?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. NIKOS meets the requirements of DIN EN 50849 (electroacoustic emergency warning systems). NIKOS was developed specifically for safety-relevant public address and alerting applications and is technically designed for use in both everyday and emergency situations. For electroacoustic emergency warning systems, DIN EN 50849 is the relevant reference framework. Unlike mobile network-based systems, NIKOS fully meets the requirements specified therein, as it does not depend on an external network and can therefore be used immediately at any time. Other standards known from safety technology, such as DIN EN 54, DIN VDE 0833-4 and DIN 14675 (voice alarm systems), do not apply to the field of use and functional scope of NIKOS and are therefore not relevant for approval. NIKOS is a public address system for temporary and mobile applications and has been successfully deployed in numerous mission-critical communication tasks since 2017. RADACOM and your regional NIKOS partner will be happy to advise you on NIKOS’s wide range of functions and support you in implementing the requirements cost-effectively."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/en/lp/evacuation-kirchentag-2027/#service",
+      "name": "Evacuation for the 40th German Protestant Kirchentag 2027 in Düsseldorf",
+      "description": "Instructions must reach all affected visitors clearly and in good time so that escape and rescue routes can be used in an orderly manner.",
+      "url": "https://nikos.info/en/lp/evacuation-kirchentag-2027/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "en",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Düsseldorf"
       }
     },
     {
-      "@type": "Question",
-      "name": "Is NIKOS crisis-proof?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. NIKOS operates via its own autonomous radio network and is completely independent of public communications networks and their availability. This makes the system highly resistant to external influences. As NIKOS does not depend on wired connections but communicates by radio, the connection is automatically re-established after an interruption. NIKOS is therefore far more resilient to disruptions of normal operations than many other systems, demonstrating the crisis resilience of this communication system. NIKOS [audio]² has an internal battery with up to 16 hours of operating time and also powers connected accessory modules. Even if the mobile network is overloaded, the internet provider has been hacked or someone has pulled the wrong plug, NIKOS continues to operate. This means that evacuation announcements for the 40th German Protestant Kirchentag 2027 remain reliably functional even in the event of a power failure or disruptions to public communications networks."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nikos.info/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "All use cases",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Evacuation for the 40th German Protestant Kirchentag 2027 in Düsseldorf",
+          "item": "https://nikos.info/en/lp/evacuation-kirchentag-2027/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Can NIKOS be deployed quickly and flexibly?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. NIKOS was specifically developed for flexible outdoor deployments without permanent infrastructure. One or two people can mount the modules on various structures, such as streetlights, stages, trees, stalls or decorations, within just a few minutes and configure them individually. A standard Schuko power connection is sufficient for continuous operation. NIKOS uses an existing digital radio network."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where does using NIKOS provide cost advantages?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Depending on the application, NIKOS can be used to implement various functions via a single communication platform. These savings quickly offset the rental and installation costs of NIKOS. You can find some specific examples of potential savings here. Consistent use of NIKOS’s wide range of functions not only increases the level of safety and makes employees’ work easier; it often even results in savings in the overall budget. For evacuations and other safety-critical coordination tasks, separate loudspeaker, control and communication solutions are no longer required—NIKOS combines staff alerting, visitor information and system control in a single platform. This reduces material requirements, cabling work and the risk of tripping over cable ramps. In addition, NIKOS can be used to replace personnel in a targeted manner: tasks that would otherwise require several security, reporting or operating posts distributed across the site can be handled from a single location through central announcements, remote control and status monitoring. This allows personnel to be reduced or deployed more effectively at safety-critical points. The greatest savings potential arises at fenced events: monitoring emergency exit gates technically with NIKOS can replace security guards stationed at these exits or enable them to be deployed more effectively elsewhere. This offsets rental and installation costs through savings in personnel and other technology. Particularly at temporary, time-limited events, this significantly reduces the costs of planning, setting up and operating safety technology."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/en/lp/evacuation-kirchentag-2027/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do announcements made with NIKOS comply with the applicable standards?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. NIKOS meets the requirements of DIN EN 50849 (electroacoustic emergency warning systems). NIKOS was developed specifically for safety-relevant public address and alerting applications and is technically designed for use in both everyday and emergency situations. For electroacoustic emergency warning systems, DIN EN 50849 is the relevant reference framework. Unlike mobile network-based systems, NIKOS fully meets the requirements specified therein, as it does not depend on an external network and can therefore be used immediately at any time. Other standards known from safety technology, such as DIN EN 54, DIN VDE 0833-4 and DIN 14675 (voice alarm systems), do not apply to the field of use and functional scope of NIKOS and are therefore not relevant for approval. NIKOS is a public address system for temporary and mobile applications and has been successfully deployed in numerous mission-critical communication tasks since 2017. RADACOM and your regional NIKOS partner will be happy to advise you on NIKOS’s wide range of functions and support you in implementing the requirements cost-effectively."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is NIKOS crisis-proof?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. NIKOS operates via its own autonomous radio network and is completely independent of public communications networks and their availability. This makes the system highly resistant to external influences. As NIKOS does not depend on wired connections but communicates by radio, the connection is automatically re-established after an interruption. NIKOS is therefore far more resilient to disruptions of normal operations than many other systems, demonstrating the crisis resilience of this communication system. NIKOS [audio]² has an internal battery with up to 16 hours of operating time and also powers connected accessory modules. Even if the mobile network is overloaded, the internet provider has been hacked or someone has pulled the wrong plug, NIKOS continues to operate. This means that evacuation announcements for the 40th German Protestant Kirchentag 2027 remain reliably functional even in the event of a power failure or disruptions to public communications networks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can NIKOS be deployed quickly and flexibly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. NIKOS was specifically developed for flexible outdoor deployments without permanent infrastructure. One or two people can mount the modules on various structures, such as lampposts, stages, stands or trees, within just a few minutes and configure them individually. A standard Schuko power connection is sufficient for continuous operation. NIKOS uses an existing digital radio network."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does using NIKOS provide cost advantages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depending on the application, NIKOS can be used to implement various functions via a single communication platform. These savings quickly offset the rental and installation costs of NIKOS. You can find some specific examples of potential savings here. Consistent use of NIKOS’s wide range of functions not only increases the level of safety and makes employees’ work easier; it often even results in savings in the overall budget. NIKOS mainly reduces the effort required for separate loudspeaker, control and communication solutions. Material requirements and cabling work are reduced, and information and emergency announcements can be made from a single location. In addition, NIKOS can be used to replace personnel in a targeted manner: tasks that would otherwise require several security, reporting or operating posts distributed across the site can be handled from a single location through central announcements, remote control and status monitoring. This allows personnel to be reduced or deployed more effectively at safety-critical points. The greatest savings potential arises at fenced events: monitoring emergency exit gates technically with NIKOS can replace security guards stationed at these exits or enable them to be deployed more effectively elsewhere. This offsets rental and installation costs through savings in personnel and other technology. Particularly at temporary, time-limited events, this significantly reduces the costs of planning, setting up and operating safety technology."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Evacuation for the 40th German Protestant Kirchentag 2027 in Düsseldorf: Where can NIKOS be rented?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Find a partner and request a rental</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Düsseldorf"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Düsseldorf"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS is not a conventional PA system, but a radio-based public address, alarm and control system for large events, construction sites and crisis situations, which you can rent by the day through certified partners and either integrate into your PA or use on its own.</p>
     <span class="nk-label">Challenge</span>
     <h2 class="heading-l" style="margin-top:12px;">Evacuation instructions even without a mobile network</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">At the 40th German Protestant Kirchentag 2027 in Düsseldorf, evacuation presents a particular challenge due to crowds, a noisy environment and visitors who speak different languages. Instructions must reach all affected visitors clearly and in good time so that escape and rescue routes can be used in an orderly manner. When visitor density is high, mobile networks quickly become overloaded and cannot be relied upon for crisis communication.</p>
@@ -270,11 +350,15 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Can NIKOS be deployed quickly and flexibly?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Yes. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was specifically developed for flexible outdoor deployments without permanent infrastructure. One or two people can mount the modules on various structures, such as streetlights, stages, trees, stalls or decorations, within just a few minutes and configure them individually. A standard Schuko power connection is sufficient for continuous operation. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> uses an existing digital radio network.</div>
+        <div class="faq-item__body">Yes. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was specifically developed for flexible outdoor deployments without permanent infrastructure. One or two people can mount the modules on various structures, such as lampposts, stages, stands or trees, within just a few minutes and configure them individually. A standard Schuko power connection is sufficient for continuous operation. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> uses an existing digital radio network.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Where does using NIKOS provide cost advantages?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Depending on the application, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> can be used to implement various functions via a single communication platform. These savings quickly offset the rental and installation costs of <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>. You can find some specific examples of potential savings here. Consistent use of <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>’s wide range of functions not only increases the level of safety and makes employees’ work easier; it often even results in savings in the overall budget. For evacuations and other safety-critical coordination tasks, separate loudspeaker, control and communication solutions are no longer required—<a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> combines staff alerting, visitor information and system control in a single platform. This reduces material requirements, cabling work and the risk of tripping over cable ramps. In addition, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> can be used to replace personnel in a targeted manner: tasks that would otherwise require several security, reporting or operating posts distributed across the site can be handled from a single location through central announcements, remote control and status monitoring. This allows personnel to be reduced or deployed more effectively at safety-critical points. The greatest savings potential arises at fenced events: monitoring emergency exit gates technically with <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> can replace security guards stationed at these exits or enable them to be deployed more effectively elsewhere. This offsets rental and installation costs through savings in personnel and other technology. Particularly at temporary, time-limited events, this significantly reduces the costs of planning, setting up and operating safety technology.</div>
+        <div class="faq-item__body">Depending on the application, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> can be used to implement various functions via a single communication platform. These savings quickly offset the rental and installation costs of <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>. You can find some specific examples of potential savings here. Consistent use of <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>’s wide range of functions not only increases the level of safety and makes employees’ work easier; it often even results in savings in the overall budget. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mainly reduces the effort required for separate loudspeaker, control and communication solutions. Material requirements and cabling work are reduced, and information and emergency announcements can be made from a single location. In addition, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> can be used to replace personnel in a targeted manner: tasks that would otherwise require several security, reporting or operating posts distributed across the site can be handled from a single location through central announcements, remote control and status monitoring. This allows personnel to be reduced or deployed more effectively at safety-critical points. The greatest savings potential arises at fenced events: monitoring emergency exit gates technically with <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> can replace security guards stationed at these exits or enable them to be deployed more effectively elsewhere. This offsets rental and installation costs through savings in personnel and other technology. Particularly at temporary, time-limited events, this significantly reduces the costs of planning, setting up and operating safety technology.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Evacuation for the 40th German Protestant Kirchentag 2027 in Düsseldorf: Where can <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> be rented?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find a partner and request a rental</a></div>
       </details>
     </div>
   </div>

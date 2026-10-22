@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Gli annunci tramite NIKOS sono conformi alle norme?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sì — la DIN EN 50849 (sistemi elettroacustici di allarme di emergenza) è pienamente soddisfatta da NIKOS. Il sistema è stato concepito specificamente per compiti di annuncio e allertamento rilevanti per la sicurezza, tecnicamente predisposto sia per l'esercizio quotidiano sia per le emergenze. Per gli impianti ELA, la DIN EN 50849 definisce il quadro di riferimento determinante. Poiché NIKOS — a differenza delle soluzioni basate sulla telefonia mobile — non dipende da alcuna rete esterna, è sempre immediatamente utilizzabile e soddisfa pienamente i requisiti previsti dalla norma. Altre norme di sicurezza come DIN EN 54, DIN VDE 0833-4 o DIN 14675 (impianti di allarme vocale) riguardano un diverso campo d'impiego e un diverso ambito funzionale e non sono pertanto rilevanti per NIKOS ai fini dell'autorizzazione. Dal 2017 NIKOS viene impiegato con successo in numerose occasioni come sistema di diffusione sonora leader di mercato per applicazioni temporanee e mobili, per compiti di comunicazione critici. La valutazione e l'accettazione definitive da parte dell'autorità competente avvengono in funzione del progetto."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/it/lp/messaggi-emergenza-evento-nautico/#service",
+      "name": "Messaggi di emergenza per Sail Amsterdam 2030",
+      "description": "Messaggi di emergenza per Sail Amsterdam 2030: istruzioni chiare nonostante la folla e il rumore ambientale.",
+      "url": "https://nikos.info/it/lp/messaggi-emergenza-evento-nautico/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "it",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     },
     {
-      "@type": "Question",
-      "name": "NIKOS può essere impiegato in modo flessibile con breve preavviso?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sì. NIKOS è stato sviluppato appositamente per l'impiego flessibile all'aperto, senza infrastrutture fisse. Una o due persone possono montare i moduli in pochi minuti su strutture diverse, come lampioni, palchi, alberi, stand o decorazioni, e configurarli individualmente. Per il funzionamento continuo è sufficiente una normale presa di corrente Schuko."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nikos.info/it/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutti gli esempi di utilizzo",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Messaggi di emergenza per Sail Amsterdam 2030",
+          "item": "https://nikos.info/it/lp/messaggi-emergenza-evento-nautico/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Dove si ottengono vantaggi economici utilizzando NIKOS?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Con NIKOS è possibile realizzare diverse funzioni tramite un'unica piattaforma di comunicazione. Grazie a questi risparmi, i costi di noleggio e installazione di NIKOS vengono ammortizzati rapidamente. Qui sono riportati alcuni esempi concreti di risparmio. L'utilizzo sistematico delle sue molteplici funzioni consente di ottenere, oltre a un maggiore livello di sicurezza e a una riduzione del carico di lavoro per il personale, risparmi sul budget complessivo. Per i messaggi di emergenza e altri compiti di coordinamento rilevanti per la sicurezza non sono più necessarie soluzioni separate per altoparlanti, controllo e comunicazione. NIKOS riunisce queste attività in un'unica piattaforma. Questo riduce il fabbisogno di materiali, l'impegno per il cablaggio e il rischio di inciampo causato dai ponti passacavi. Inoltre, NIKOS sostituisce in modo mirato il personale: attività che altrimenti richiederebbero diversi posti di controllo, segnalazione o comando distribuiti nell'area vengono svolte da un unico punto tramite annunci centralizzati, comando a distanza e monitoraggio dello stato. In questo modo NIKOS consente di risparmiare personale, che può essere impiegato in modo più efficace nei punti critici per la sicurezza. Negli eventi temporanei, ciò riduce notevolmente i costi di progettazione, allestimento e gestione della tecnologia per la sicurezza."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "È possibile inviare messaggi di emergenza in modo mirato a singole aree?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sì. NIKOS [dispatcher]² controlla le unità di diffusione per singoli punti di diffusione, aree selezionate o per l'intera area dell'evento. In questo modo è possibile trasmettere istruzioni specifiche per una determinata area delle banchine senza raggiungere contemporaneamente tutti i visitatori di Sail Amsterdam 2030."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/it/lp/messaggi-emergenza-evento-nautico/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Gli annunci tramite NIKOS sono conformi alle norme?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì — la DIN EN 50849 (sistemi elettroacustici di allarme di emergenza) è pienamente soddisfatta da NIKOS. Il sistema è stato concepito specificamente per compiti di annuncio e allertamento rilevanti per la sicurezza, tecnicamente predisposto sia per l'esercizio quotidiano sia per le emergenze. Per gli impianti ELA, la DIN EN 50849 definisce il quadro di riferimento determinante. Poiché NIKOS — a differenza delle soluzioni basate sulla telefonia mobile — non dipende da alcuna rete esterna, è sempre immediatamente utilizzabile e soddisfa pienamente i requisiti previsti dalla norma. Altre norme di sicurezza come DIN EN 54, DIN VDE 0833-4 o DIN 14675 (impianti di allarme vocale) riguardano un diverso campo d'impiego e un diverso ambito funzionale e non sono pertanto rilevanti per NIKOS ai fini dell'autorizzazione. Dal 2017 NIKOS viene impiegato con successo in numerose occasioni come sistema di diffusione sonora leader di mercato per applicazioni temporanee e mobili, per compiti di comunicazione critici. La valutazione e l'accettazione definitive da parte dell'autorità competente avvengono in funzione del progetto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "NIKOS può essere impiegato in modo flessibile con breve preavviso?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì. NIKOS è stato sviluppato appositamente per l'impiego flessibile all'aperto, senza infrastrutture fisse. Una o due persone possono montare i moduli in pochi minuti su strutture diverse, come lampioni, palchi, bancarelle o alberi, e configurarli individualmente. Per il funzionamento continuo è sufficiente una normale presa di corrente Schuko."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dove si ottengono vantaggi economici utilizzando NIKOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Con NIKOS è possibile realizzare diverse funzioni tramite un'unica piattaforma di comunicazione. Grazie a questi risparmi, i costi di noleggio e installazione di NIKOS vengono ammortizzati rapidamente. Qui sono riportati alcuni esempi concreti di risparmio. L'utilizzo sistematico delle sue molteplici funzioni consente di ottenere, oltre a un maggiore livello di sicurezza e a una riduzione del carico di lavoro per il personale, risparmi sul budget complessivo. NIKOS riduce soprattutto l’impegno per soluzioni separate di diffusione sonora, controllo e comunicazione. Si riducono il fabbisogno di materiale e il lavoro di cablaggio, e gli annunci informativi e di emergenza possono essere effettuati da un unico punto. Inoltre, NIKOS sostituisce in modo mirato il personale: attività che altrimenti richiederebbero diversi posti di controllo, segnalazione o comando distribuiti nell'area vengono svolte da un unico punto tramite annunci centralizzati, comando a distanza e monitoraggio dello stato. In questo modo NIKOS consente di risparmiare personale, che può essere impiegato in modo più efficace nei punti critici per la sicurezza. Negli eventi temporanei, ciò riduce notevolmente i costi di progettazione, allestimento e gestione della tecnologia per la sicurezza."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "È possibile inviare messaggi di emergenza in modo mirato a singole aree?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì. NIKOS [dispatcher]² controlla le unità di diffusione per singoli punti di diffusione, aree selezionate o per l'intera area dell'evento. In questo modo è possibile trasmettere istruzioni specifiche per una determinata area delle banchine senza raggiungere contemporaneamente tutti i visitatori di Sail Amsterdam 2030."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Messaggi di emergenza per Sail Amsterdam 2030: Dove si può noleggiare NIKOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS viene noleggiato a giornata tramite partner certificati, con consulenza, istruzione e supporto tecnico inclusi. Il partner regionale concorda l’impiego con voi. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Trova un partner e richiedi il noleggio</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Amsterdam"
-  }
+  ]
 }
 </script>
 
@@ -238,6 +317,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS non è un classico impianto audio, ma un sistema via radio per annunci, allarmi e controllo per grandi eventi, cantieri e situazioni di crisi, che si noleggia a giornata tramite partner certificati e si può integrare nel proprio impianto audio o usare in modo autonomo.</p>
     <span class="nk-label">Sfida</span>
     <h2 class="heading-l" style="margin-top:12px;">Avvisi chiari senza rete pubblica</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Durante Sail Amsterdam 2030, i grandi flussi di visitatori lungo le banchine, il rumore ambientale e la presenza di ospiti internazionali rappresentano una sfida particolare per i messaggi di emergenza. In una situazione di pericolo, gli avvisi e le istruzioni operative devono essere trasmessi rapidamente e risultare comprensibili a tutti i presenti. A causa dell'elevata densità di visitatori, le reti mobili possono sovraccaricarsi, rendendo inadatti alla comunicazione critica i sistemi che dipendono da esse.</p>
@@ -267,15 +347,19 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">NIKOS può essere impiegato in modo flessibile con breve preavviso?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Sì. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> è stato sviluppato appositamente per l'impiego flessibile all'aperto, senza infrastrutture fisse. Una o due persone possono montare i moduli in pochi minuti su strutture diverse, come lampioni, palchi, alberi, stand o decorazioni, e configurarli individualmente. Per il funzionamento continuo è sufficiente una normale presa di corrente Schuko.</div>
+        <div class="faq-item__body">Sì. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> è stato sviluppato appositamente per l'impiego flessibile all'aperto, senza infrastrutture fisse. Una o due persone possono montare i moduli in pochi minuti su strutture diverse, come lampioni, palchi, bancarelle o alberi, e configurarli individualmente. Per il funzionamento continuo è sufficiente una normale presa di corrente Schuko.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Dove si ottengono vantaggi economici utilizzando NIKOS?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Con <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> è possibile realizzare diverse funzioni tramite un'unica piattaforma di comunicazione. Grazie a questi risparmi, i costi di noleggio e installazione di <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> vengono ammortizzati rapidamente. Qui sono riportati alcuni esempi concreti di risparmio. L'utilizzo sistematico delle sue molteplici funzioni consente di ottenere, oltre a un maggiore livello di sicurezza e a una riduzione del carico di lavoro per il personale, risparmi sul budget complessivo. Per i messaggi di emergenza e altri compiti di coordinamento rilevanti per la sicurezza non sono più necessarie soluzioni separate per altoparlanti, controllo e comunicazione. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> riunisce queste attività in un'unica piattaforma. Questo riduce il fabbisogno di materiali, l'impegno per il cablaggio e il rischio di inciampo causato dai ponti passacavi. Inoltre, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> sostituisce in modo mirato il personale: attività che altrimenti richiederebbero diversi posti di controllo, segnalazione o comando distribuiti nell'area vengono svolte da un unico punto tramite annunci centralizzati, comando a distanza e monitoraggio dello stato. In questo modo <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> consente di risparmiare personale, che può essere impiegato in modo più efficace nei punti critici per la sicurezza. Negli eventi temporanei, ciò riduce notevolmente i costi di progettazione, allestimento e gestione della tecnologia per la sicurezza.</div>
+        <div class="faq-item__body">Con <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> è possibile realizzare diverse funzioni tramite un'unica piattaforma di comunicazione. Grazie a questi risparmi, i costi di noleggio e installazione di <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> vengono ammortizzati rapidamente. Qui sono riportati alcuni esempi concreti di risparmio. L'utilizzo sistematico delle sue molteplici funzioni consente di ottenere, oltre a un maggiore livello di sicurezza e a una riduzione del carico di lavoro per il personale, risparmi sul budget complessivo. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> riduce soprattutto l’impegno per soluzioni separate di diffusione sonora, controllo e comunicazione. Si riducono il fabbisogno di materiale e il lavoro di cablaggio, e gli annunci informativi e di emergenza possono essere effettuati da un unico punto. Inoltre, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> sostituisce in modo mirato il personale: attività che altrimenti richiederebbero diversi posti di controllo, segnalazione o comando distribuiti nell'area vengono svolte da un unico punto tramite annunci centralizzati, comando a distanza e monitoraggio dello stato. In questo modo <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> consente di risparmiare personale, che può essere impiegato in modo più efficace nei punti critici per la sicurezza. Negli eventi temporanei, ciò riduce notevolmente i costi di progettazione, allestimento e gestione della tecnologia per la sicurezza.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">È possibile inviare messaggi di emergenza in modo mirato a singole aree?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body">Sì. <a class="nk-mod" href="https://nikos.info/en/products/#dispatcher"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a> controlla le unità di diffusione per singoli punti di diffusione, aree selezionate o per l'intera area dell'evento. In questo modo è possibile trasmettere istruzioni specifiche per una determinata area delle banchine senza raggiungere contemporaneamente tutti i visitatori di Sail Amsterdam 2030.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Messaggi di emergenza per Sail Amsterdam 2030: Dove si può noleggiare <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> viene noleggiato a giornata tramite partner certificati, con consulenza, istruzione e supporto tecnico inclusi. Il partner regionale concorda l’impiego con voi. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Trova un partner e richiedi il noleggio</a></div>
       </details>
     </div>
   </div>

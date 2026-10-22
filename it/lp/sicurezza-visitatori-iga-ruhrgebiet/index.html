@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "NIKOS si attiene alle norme vigenti per gli annunci?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sì. Alla base vi è la DIN EN 50849 per i sistemi elettroacustici di allarme di emergenza, i cui requisiti sono pienamente soddisfatti da NIKOS. Sviluppato appositamente per applicazioni di annuncio e allertamento rilevanti per la sicurezza, NIKOS è tecnicamente predisposto sia per l'uso quotidiano sia per le situazioni di emergenza. Per gli impianti ELA, la DIN EN 50849 costituisce il quadro di riferimento determinante. Poiché NIKOS — a differenza dei sistemi basati sulla telefonia mobile — non dipende da una rete esterna, l'utilizzabilità immediata è garantita in qualsiasi momento, soddisfacendo così pienamente la norma. Altre norme di sicurezza come DIN EN 54, DIN VDE 0833-4 e DIN 14675 (impianti di allarme vocale) riguardano un diverso campo d'impiego e un diverso ambito funzionale e non sono rilevanti ai fini dell'autorizzazione di NIKOS. Dal suo lancio sul mercato nel 2017, NIKOS si è affermato come il sistema di diffusione sonora leader per applicazioni temporanee e mobili, impiegato con successo in alcuni dei più grandi eventi all'aperto d'Europa. RADACOM e il vostro partner NIKOS regionale saranno lieti di illustrarvi le numerose funzioni di NIKOS e di assistervi nell'attuazione economicamente vantaggiosa dei requisiti."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/it/lp/sicurezza-visitatori-iga-ruhrgebiet/#service",
+      "name": "Sicurezza dei visitatori per l'IGA Ruhrgebiet 2027 a Essen: coordinare gli avvisi nell'ampia area",
+      "description": "Durante l'IGA Ruhrgebiet 2027 a Essen, garantire la sicurezza dei visitatori nell'ampia area espositiva rappresenta una sfida particolare.",
+      "url": "https://nikos.info/it/lp/sicurezza-visitatori-iga-ruhrgebiet/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "it",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Essen"
       }
     },
     {
-      "@type": "Question",
-      "name": "NIKOS funziona in caso di interruzione dell'alimentazione elettrica o della rete?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sì, NIKOS opera tramite una propria rete radio autonoma ed è indipendente dalle reti di comunicazione pubbliche e dalla loro disponibilità. Poiché NIKOS comunica via radio, il collegamento viene ristabilito automaticamente dopo un'interruzione. NIKOS [audio]² dispone di una batteria interna con un'autonomia fino a 16 ore e alimenta anche i moduli accessori collegati. In questo modo, la sicurezza dei visitatori dell'IGA Ruhrgebiet 2027 rimane affidabilmente operativa anche in caso di interruzione dell'alimentazione elettrica o di problemi nelle reti di comunicazione pubbliche."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nikos.info/it/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutti gli esempi di utilizzo",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Sicurezza dei visitatori per l'IGA Ruhrgebiet 2027 a Essen: coordinare gli avvisi nell'ampia area",
+          "item": "https://nikos.info/it/lp/sicurezza-visitatori-iga-ruhrgebiet/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "NIKOS può essere utilizzato in modo rapido e flessibile?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sì, NIKOS è stato sviluppato appositamente per impieghi flessibili all'aperto, senza infrastrutture fisse. I moduli possono essere montati da una o due persone in pochi minuti su strutture diverse, come lampioni, palchi, alberi, bancarelle o elementi decorativi, e configurati individualmente. Per il funzionamento continuo è sufficiente una normale presa di corrente Schuko. NIKOS può essere integrato nelle reti radio digitali esistenti."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Come è possibile rivolgersi in modo mirato alle singole aree dell'area espositiva?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Con NIKOS [dispatcher]² è possibile inviare annunci mirati a singole postazioni di annuncio, ad aree selezionate o all'intera area. In questo modo, le aree interessate ricevono esattamente le informazioni e le istruzioni operative necessarie per la situazione specifica."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/it/lp/sicurezza-visitatori-iga-ruhrgebiet/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "NIKOS si attiene alle norme vigenti per gli annunci?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì. Alla base vi è la DIN EN 50849 per i sistemi elettroacustici di allarme di emergenza, i cui requisiti sono pienamente soddisfatti da NIKOS. Sviluppato appositamente per applicazioni di annuncio e allertamento rilevanti per la sicurezza, NIKOS è tecnicamente predisposto sia per l'uso quotidiano sia per le situazioni di emergenza. Per gli impianti ELA, la DIN EN 50849 costituisce il quadro di riferimento determinante. Poiché NIKOS — a differenza dei sistemi basati sulla telefonia mobile — non dipende da una rete esterna, l'utilizzabilità immediata è garantita in qualsiasi momento, soddisfacendo così pienamente la norma. Altre norme di sicurezza come DIN EN 54, DIN VDE 0833-4 e DIN 14675 (impianti di allarme vocale) riguardano un diverso campo d'impiego e un diverso ambito funzionale e non sono rilevanti ai fini dell'autorizzazione di NIKOS. Dal suo lancio sul mercato nel 2017, NIKOS si è affermato come il sistema di diffusione sonora leader per applicazioni temporanee e mobili, impiegato con successo in alcuni dei più grandi eventi all'aperto d'Europa. RADACOM e il vostro partner NIKOS regionale saranno lieti di illustrarvi le numerose funzioni di NIKOS e di assistervi nell'attuazione economicamente vantaggiosa dei requisiti."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "NIKOS funziona in caso di interruzione dell'alimentazione elettrica o della rete?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì, NIKOS opera tramite una propria rete radio autonoma ed è indipendente dalle reti di comunicazione pubbliche e dalla loro disponibilità. Poiché NIKOS comunica via radio, il collegamento viene ristabilito automaticamente dopo un'interruzione. NIKOS [audio]² dispone di una batteria interna con un'autonomia fino a 16 ore e alimenta anche i moduli accessori collegati. In questo modo, la sicurezza dei visitatori dell'IGA Ruhrgebiet 2027 rimane affidabilmente operativa anche in caso di interruzione dell'alimentazione elettrica o di problemi nelle reti di comunicazione pubbliche."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "NIKOS può essere utilizzato in modo rapido e flessibile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì, NIKOS è stato sviluppato appositamente per impieghi flessibili all'aperto, senza infrastrutture fisse. I moduli possono essere montati da una o due persone in pochi minuti su strutture diverse, come lampioni, palchi, bancarelle o alberi, e configurati individualmente. Per il funzionamento continuo è sufficiente una normale presa di corrente Schuko. NIKOS può essere integrato nelle reti radio digitali esistenti."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Come è possibile rivolgersi in modo mirato alle singole aree dell'area espositiva?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Con NIKOS [dispatcher]² è possibile inviare annunci mirati a singole postazioni di annuncio, ad aree selezionate o all'intera area. In questo modo, le aree interessate ricevono esattamente le informazioni e le istruzioni operative necessarie per la situazione specifica."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sicurezza dei visitatori per l'IGA Ruhrgebiet 2027 a Essen: coordinare gli avvisi nell'ampia area: Dove si può noleggiare NIKOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS viene noleggiato a giornata tramite partner certificati, con consulenza, istruzione e supporto tecnico inclusi. Il partner regionale concorda l’impiego con voi. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Trova un partner e richiedi il noleggio</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Essen"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Essen"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS non è un classico impianto audio, ma un sistema via radio per annunci, allarmi e controllo per grandi eventi, cantieri e situazioni di crisi, che si noleggia a giornata tramite partner certificati e si può integrare nel proprio impianto audio o usare in modo autonomo.</p>
     <span class="nk-label">Sfida</span>
     <h2 class="heading-l" style="margin-top:12px;">Informare i visitatori in modo affidabile in tutte le aree</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Durante l'IGA Ruhrgebiet 2027 a Essen, garantire la sicurezza dei visitatori nell'ampia area espositiva rappresenta una sfida particolare. I visitatori si trovano contemporaneamente in aree diverse e, in caso di pericolo, devono essere raggiunti rapidamente con istruzioni operative chiare. Un numero elevato di visitatori sovraccarica le reti pubbliche di telefonia mobile, rendendo inaffidabili i canali di comunicazione basati sulla rete mobile in caso di crisi.</p>
@@ -270,11 +350,15 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">NIKOS può essere utilizzato in modo rapido e flessibile?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Sì, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> è stato sviluppato appositamente per impieghi flessibili all'aperto, senza infrastrutture fisse. I moduli possono essere montati da una o due persone in pochi minuti su strutture diverse, come lampioni, palchi, alberi, bancarelle o elementi decorativi, e configurati individualmente. Per il funzionamento continuo è sufficiente una normale presa di corrente Schuko. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> può essere integrato nelle reti radio digitali esistenti.</div>
+        <div class="faq-item__body">Sì, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> è stato sviluppato appositamente per impieghi flessibili all'aperto, senza infrastrutture fisse. I moduli possono essere montati da una o due persone in pochi minuti su strutture diverse, come lampioni, palchi, bancarelle o alberi, e configurati individualmente. Per il funzionamento continuo è sufficiente una normale presa di corrente Schuko. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> può essere integrato nelle reti radio digitali esistenti.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Come è possibile rivolgersi in modo mirato alle singole aree dell'area espositiva?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body">Con <a class="nk-mod" href="https://nikos.info/en/products/#dispatcher"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a> è possibile inviare annunci mirati a singole postazioni di annuncio, ad aree selezionate o all'intera area. In questo modo, le aree interessate ricevono esattamente le informazioni e le istruzioni operative necessarie per la situazione specifica.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Sicurezza dei visitatori per l'IGA Ruhrgebiet 2027 a Essen: coordinare gli avvisi nell'ampia area: Dove si può noleggiare <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> viene noleggiato a giornata tramite partner certificati, con consulenza, istruzione e supporto tecnico inclusi. Il partner regionale concorda l’impiego con voi. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Trova un partner e richiedi il noleggio</a></div>
       </details>
     </div>
   </div>

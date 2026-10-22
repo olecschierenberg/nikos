@@ -23,43 +23,114 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "about": {
-    "@type": "Place",
-    "name": ""
-  },
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 (Elektroakustische Notfallwarnsysteme)."
-      }
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Wie bleibt das Notfallwarnsystem unabhängig von öffentlichen Netzen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "NIKOS arbeitet über ein eigenes, autarkes Funknetz und ist nicht auf Mobilfunk, WLAN oder Internet angewiesen. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. So bleiben elektroakustische Notfallwarnsysteme für Open-Air-Konzerte auch bei Ausfall der Stromversorgung oder Störungen in öffentlichen Kommunikationsnetzen zuverlässig funktionsfähig."
-      }
+      "@type": "Service",
+      "@id": "https://nikos.info/loesungen/elektroakustisches-notfallwarnsystem-open-air-konzert/#service",
+      "name": "Elektroakustisches Notfallwarnsystem für das Open-Air-Konzert",
+      "description": "Bei einem Open-Air-Konzert überlagern Bühnenbetrieb, Publikumsgeräusche und wechselnde Windrichtungen sicherheitsrelevante Durchsagen.",
+      "url": "https://nikos.info/loesungen/elektroakustisches-notfallwarnsystem-open-air-konzert/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "de",
+      "termsOfService": "https://nikos.info/de/mietbedingungen/"
     },
     {
-      "@type": "Question",
-      "name": "Ist NIKOS kurzfristig auf einem Konzertgelände installierbar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://nikos.info/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle Einsatzbeispiele",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Elektroakustisches Notfallwarnsystem für das Open-Air-Konzert",
+          "item": "https://nikos.info/loesungen/elektroakustisches-notfallwarnsystem-open-air-konzert/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Wie werden Bereiche ohne vorhandene PA-Anlage erreicht?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "An Positionen ohne vorhandene Beschallungsanlage ergänzt NIKOS [horn]² die akustische Ausgabe. Dadurch lassen sich auch Zugänge, Nebenflächen, Wartezonen oder Wege mit sicherheitsrelevanten Durchsagen versorgen, ohne dort eine separate PA-Anlage aufzubauen. Die Ansteuerung erfolgt über NIKOS [dispatcher]² für einzelne Durchsagestandorte, gezielte Bereiche oder das gesamte Gelände."
-      }
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/loesungen/elektroakustisches-notfallwarnsystem-open-air-konzert/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 (Elektroakustische Notfallwarnsysteme)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie bleibt das Notfallwarnsystem unabhängig von öffentlichen Netzen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS arbeitet über ein eigenes, autarkes Funknetz und ist nicht auf Mobilfunk, WLAN oder Internet angewiesen. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. So bleiben elektroakustische Notfallwarnsysteme für Open-Air-Konzerte auch bei Ausfall der Stromversorgung oder Störungen in öffentlichen Kommunikationsnetzen zuverlässig funktionsfähig."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist NIKOS kurzfristig auf einem Konzertgelände installierbar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie werden Bereiche ohne vorhandene PA-Anlage erreicht?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An Positionen ohne vorhandene Beschallungsanlage ergänzt NIKOS [horn]² die akustische Ausgabe. Dadurch lassen sich auch Zugänge, Nebenflächen, Wartezonen oder Wege mit sicherheitsrelevanten Durchsagen versorgen, ohne dort eine separate PA-Anlage aufzubauen. Die Ansteuerung erfolgt über NIKOS [dispatcher]² für einzelne Durchsagestandorte, gezielte Bereiche oder das gesamte Gelände."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Elektroakustisches Notfallwarnsystem für das Open-Air-Konzert: Wo kann man NIKOS mieten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Zur Partnerauswahl und Mietanfrage</a>"
+          }
+        }
+      ]
     }
   ]
 }
@@ -248,6 +319,8 @@ a{color:inherit}
 <!-- ═══ INTRO (S2) ═══ -->
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-de>NIKOS ist kein klassisches PA-System, sondern ein funkbasiertes Durchsage-, Alarmierungs- und Steuerungssystem für Großveranstaltungen, Baustellen und Krisenlagen, das Sie tageweise über zertifizierte Partner mieten und in Ihre PA integrieren oder eigenständig einsetzen können.</p>
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-en>NIKOS is not a conventional PA system, but a radio-based public address, alarm and control system for large events, construction sites and crisis situations, which you can rent by the day through certified partners and either integrate into your PA or use on its own.</p>
     <span class="nk-label" data-de>Herausforderung</span><span class="nk-label" data-en>Challenge</span>
     <h2 class="heading-l" style="margin-top:12px;" data-de>Notfalldurchsagen trotz Bühnenlärm verständlich ausgeben</h2>
     <h2 class="heading-l" style="margin-top:12px;" data-en>Delivering intelligible emergency announcements despite stage noise</h2>
@@ -290,13 +363,18 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Ist NIKOS kurzfristig auf einem Konzertgelände installierbar?</span><span class="faq-q" data-en>Can NIKOS be installed on a concert site at short notice?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body" data-de>Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus.</div>
-        <div class="faq-item__body" data-en>Yes. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was specifically developed for flexible outdoor use without permanent infrastructure. The modules can be mounted by one or two people within a few minutes on various structures such as street lamps, stages, trees, stalls or decorations, and configured individually. A standard Schuko power connection is sufficient for continuous operation.</div>
+        <div class="faq-item__body" data-de>Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus.</div>
+        <div class="faq-item__body" data-en>Yes. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was specifically developed for flexible outdoor use without permanent infrastructure. The modules can be mounted by one or two people within a few minutes on various structures such as lampposts, stages, stands or trees, and configured individually. A standard Schuko power connection is sufficient for continuous operation.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Wie werden Bereiche ohne vorhandene PA-Anlage erreicht?</span><span class="faq-q" data-en>How can areas without an existing PA system be reached?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body" data-de>An Positionen ohne vorhandene Beschallungsanlage ergänzt <a class="nk-mod" href="https://nikos.info/de/produkte/#zubehoer"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS horn.svg" alt="NIKOS [horn]²" loading="lazy"></a> die akustische Ausgabe. Dadurch lassen sich auch Zugänge, Nebenflächen, Wartezonen oder Wege mit sicherheitsrelevanten Durchsagen versorgen, ohne dort eine separate PA-Anlage aufzubauen. Die Ansteuerung erfolgt über <a class="nk-mod" href="https://nikos.info/de/produkte/#dispatcher"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a> für einzelne Durchsagestandorte, gezielte Bereiche oder das gesamte Gelände.</div>
         <div class="faq-item__body" data-en>At locations without an existing sound reinforcement system, <a class="nk-mod" href="https://nikos.info/de/produkte/#zubehoer"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS horn.svg" alt="NIKOS [horn]²" loading="lazy"></a> supplements the acoustic output. This makes it possible to provide entrances, ancillary areas, waiting zones or paths with safety-critical announcements without installing a separate PA system there. Control is provided via <a class="nk-mod" href="https://nikos.info/de/produkte/#dispatcher"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a> for individual announcement locations, designated areas or the entire site.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" data-de>Elektroakustisches Notfallwarnsystem für das Open-Air-Konzert: Wo kann man <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mieten?</span><span class="faq-q" data-en>Electroacoustic emergency warning system for the open-air concert: Where can <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> be rented?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Zur Partnerauswahl und Mietanfrage</a></div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find a partner and request a rental</a></div>
       </details>
     </div>
   </div>

@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Gli annunci NIKOS soddisfano i requisiti normativi pertinenti?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sì, NIKOS soddisfa pienamente la DIN EN 50849 «Sistemi elettroacustici di allarme di emergenza». Il sistema è stato concepito appositamente per annunci e allertamenti rilevanti per la sicurezza ed è tecnicamente predisposto sia per l'uso quotidiano sia per l'emergenza. La DIN EN 50849 è la norma determinante per gli impianti ELA via radio come NIKOS. Poiché NIKOS, a differenza dei sistemi basati sulla telefonia mobile, funziona in modo indipendente da una rete esterna, l'utilizzabilità immediata è garantita in qualsiasi momento — i requisiti della norma risultano così pienamente soddisfatti. Altre norme di sicurezza come DIN EN 54, DIN VDE 0833-4 e DIN 14675 (impianti di allarme vocale) non sono invece pertinenti per NIKOS, poiché riguardano un diverso campo d'impiego e un diverso ambito funzionale e non sono pertanto rilevanti per l'impiego di NIKOS. In quanto unico sistema di diffusione sonora per applicazioni temporanee e mobili concepito in modo coerente attorno alle esigenze degli impieghi critici, NIKOS viene utilizzato con successo dal 2017 per compiti di comunicazione affidabili in situazioni di crisi. La valutazione e l'approvazione definitive, specifiche per il progetto, sono di competenza dell'ente responsabile."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/it/lp/messaggi-evacuazione-sail-evento/#service",
+      "name": "Messaggi di evacuazione per Sail Amsterdam 2030",
+      "description": "Messaggi di evacuazione per Sail Amsterdam 2030: istruzioni chiare nonostante la folla e il rumore ambientale.",
+      "url": "https://nikos.info/it/lp/messaggi-evacuazione-sail-evento/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "it",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     },
     {
-      "@type": "Question",
-      "name": "NIKOS continua a funzionare in caso di sovraccarico della rete mobile o di interruzione dell'alimentazione elettrica?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sì. NIKOS opera tramite una rete radio proprietaria e autonoma ed è indipendente dalle reti di comunicazione pubbliche. NIKOS [audio]² dispone di una batteria interna con un'autonomia fino a 16 ore e alimenta anche gli accessori collegati. In questo modo, i messaggi di evacuazione per Sail Amsterdam 2030 continuano a funzionare in modo affidabile anche in caso di interruzione dell'alimentazione elettrica o di guasti alle reti di comunicazione pubbliche."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nikos.info/it/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutti gli esempi di utilizzo",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Messaggi di evacuazione per Sail Amsterdam 2030",
+          "item": "https://nikos.info/it/lp/messaggi-evacuazione-sail-evento/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "NIKOS può essere installato rapidamente in luoghi diversi?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sì. NIKOS è stato sviluppato per un impiego flessibile all'esterno, senza infrastrutture fisse. I moduli possono essere montati da una o due persone in pochi minuti su strutture diverse e configurati individualmente. Per il funzionamento continuativo è sufficiente una normale presa elettrica Schuko."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "È possibile controllare in modo mirato singoli punti di diffusione sonora?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sì. Con NIKOS [dispatcher]² è possibile controllare singoli punti di diffusione sonora, aree specifiche oppure l'intera area dell'evento. In questo modo vengono impartite istruzioni di evacuazione adeguate alla situazione del momento."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/it/lp/messaggi-evacuazione-sail-evento/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Gli annunci NIKOS soddisfano i requisiti normativi pertinenti?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì, NIKOS soddisfa pienamente la DIN EN 50849 «Sistemi elettroacustici di allarme di emergenza». Il sistema è stato concepito appositamente per annunci e allertamenti rilevanti per la sicurezza ed è tecnicamente predisposto sia per l'uso quotidiano sia per l'emergenza. La DIN EN 50849 è la norma determinante per gli impianti ELA via radio come NIKOS. Poiché NIKOS, a differenza dei sistemi basati sulla telefonia mobile, funziona in modo indipendente da una rete esterna, l'utilizzabilità immediata è garantita in qualsiasi momento — i requisiti della norma risultano così pienamente soddisfatti. Altre norme di sicurezza come DIN EN 54, DIN VDE 0833-4 e DIN 14675 (impianti di allarme vocale) non sono invece pertinenti per NIKOS, poiché riguardano un diverso campo d'impiego e un diverso ambito funzionale e non sono pertanto rilevanti per l'impiego di NIKOS. In quanto unico sistema di diffusione sonora per applicazioni temporanee e mobili concepito in modo coerente attorno alle esigenze degli impieghi critici, NIKOS viene utilizzato con successo dal 2017 per compiti di comunicazione affidabili in situazioni di crisi. La valutazione e l'approvazione definitive, specifiche per il progetto, sono di competenza dell'ente responsabile."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "NIKOS continua a funzionare in caso di sovraccarico della rete mobile o di interruzione dell'alimentazione elettrica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì. NIKOS opera tramite una rete radio proprietaria e autonoma ed è indipendente dalle reti di comunicazione pubbliche. NIKOS [audio]² dispone di una batteria interna con un'autonomia fino a 16 ore e alimenta anche gli accessori collegati. In questo modo, i messaggi di evacuazione per Sail Amsterdam 2030 continuano a funzionare in modo affidabile anche in caso di interruzione dell'alimentazione elettrica o di guasti alle reti di comunicazione pubbliche."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "NIKOS può essere installato rapidamente in luoghi diversi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì. NIKOS è stato sviluppato per un impiego flessibile all'esterno, senza infrastrutture fisse. I moduli possono essere montati da una o due persone in pochi minuti su strutture diverse e configurati individualmente. Per il funzionamento continuativo è sufficiente una normale presa elettrica Schuko."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "È possibile controllare in modo mirato singoli punti di diffusione sonora?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì. Con NIKOS [dispatcher]² è possibile controllare singoli punti di diffusione sonora, aree specifiche oppure l'intera area dell'evento. In questo modo vengono impartite istruzioni di evacuazione adeguate alla situazione del momento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Messaggi di evacuazione per Sail Amsterdam 2030: Dove si può noleggiare NIKOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS viene noleggiato a giornata tramite partner certificati, con consulenza, istruzione e supporto tecnico inclusi. Il partner regionale concorda l’impiego con voi. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Trova un partner e richiedi il noleggio</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Amsterdam"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS non è un classico impianto audio, ma un sistema via radio per annunci, allarmi e controllo per grandi eventi, cantieri e situazioni di crisi, che si noleggia a giornata tramite partner certificati e si può integrare nel proprio impianto audio o usare in modo autonomo.</p>
     <span class="nk-label">Sfida</span>
     <h2 class="heading-l" style="margin-top:12px;">Istruzioni di evacuazione chiare senza rete mobile</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">In occasione di Sail Amsterdam 2030, i messaggi di evacuazione devono far fronte a condizioni particolarmente impegnative, dovute alla folla, al rumore ambientale e alla presenza di visitatori internazionali. Lungo le banchine e nelle aree circostanti le imbarcazioni, gli avvisi e le istruzioni operative devono essere trasmessi rapidamente e in modo comprensibile. L'elevata densità di visitatori sovraccarica la rete mobile, rendendo inaffidabili le comunicazioni mobili in una situazione di crisi.</p>
@@ -275,6 +355,10 @@ a{color:inherit}
       <details class="faq-item">
         <summary><span class="faq-q">È possibile controllare in modo mirato singoli punti di diffusione sonora?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body">Sì. Con <a class="nk-mod" href="https://nikos.info/en/products/#dispatcher"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a> è possibile controllare singoli punti di diffusione sonora, aree specifiche oppure l'intera area dell'evento. In questo modo vengono impartite istruzioni di evacuazione adeguate alla situazione del momento.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Messaggi di evacuazione per Sail Amsterdam 2030: Dove si può noleggiare <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> viene noleggiato a giornata tramite partner certificati, con consulenza, istruzione e supporto tecnico inclusi. Il partner regionale concorda l’impiego con voi. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Trova un partner e richiedi il noleggio</a></div>
       </details>
     </div>
   </div>

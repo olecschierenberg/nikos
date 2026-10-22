@@ -23,42 +23,121 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "about": {
-    "@type": "Place",
-    "name": "Frankfurt"
-  },
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 (Elektroakustische Notfallwarnsysteme). NIKOS wurde speziell für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen entwickelt und ist technisch für den Einsatz in Alltags- und Notfallsituationen ausgelegt. Für elektroakustische Notfallwarnsysteme (ELA-Anlagen) ist die DIN EN 50849 der maßgebliche Orientierungsrahmen. Die dort genannten Anforderungen werden von NIKOS – im Gegensatz zu mobilfunkbasierten Systemen – voll erfüllt, da keine Abhängigkeit von einem fremden Netz besteht und somit jederzeit eine sofortige Nutzbarkeit gewährleistet ist. Andere aus der Sicherheitstechnik bekannte Normen wie die DIN EN 54, DIN VDE 0833-4 sowie DIN 14675 (Sprachalarmierungsanlagen) sind auf das Einsatzgebiet und Funktionsspektrum von NIKOS nicht anwendbar und daher für eine Genehmigung nicht relevant. Die behördliche Abnahme erfolgt projektspezifisch. NIKOS ist ein Durchsagesystem für temporäre und mobile Anwendungen und seit 2017 vielfach erfolgreich für die Umsetzung einsatzkritischer Kommunikationsaufgaben im Einsatz. RADACOM und Ihr regionaler NIKOS-Partner beraten Sie gerne zu den vielfältigen Funktionen von NIKOS und unterstützen Sie bei der kostenschonenden Umsetzung der Anforderungen."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/loesungen/terrorwarnung-fressgassfest-frankfurt/#service",
+      "name": "Terrorwarnung für das Freßgassfest in Frankfurt",
+      "description": "Beim Freßgassfest in Frankfurt bewegen sich viele Besucher in einem offenen Straßenraum mit Ständen, Laufwegen und angrenzendem Alltagsverkehr.",
+      "url": "https://nikos.info/loesungen/terrorwarnung-fressgassfest-frankfurt/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "de",
+      "termsOfService": "https://nikos.info/de/mietbedingungen/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Frankfurt"
       }
     },
     {
-      "@type": "Question",
-      "name": "Bleibt die Alarmierung beim Freßgassfest unabhängig vom Mobilfunknetz?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz und unabhängig von öffentlichen Kommunikationsnetzen. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. Auch bei überlasteten Funkzellen oder Ausfall der Stromversorgung bleiben Terrorwarnungen für das Freßgassfest zuverlässig funktionsfähig."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://nikos.info/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle Einsatzbeispiele",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Terrorwarnung für das Freßgassfest in Frankfurt",
+          "item": "https://nikos.info/loesungen/terrorwarnung-fressgassfest-frankfurt/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Wie lässt sich NIKOS im offenen Straßenraum montieren?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Die Module sind für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Sie werden von ein bis zwei Personen innerhalb weniger Minuten an Laternen, Bühnen, Bäumen, Buden oder Dekorationen montiert und individuell konfiguriert. Für den Dauerbetrieb reicht ein normaler Schuko-Stromanschluss."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie werden Durchsagen bei Musik und dichter Besucherzahl verständlich?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "NIKOS [audio]² empfängt die Sprachübertragung per Funk vor Ort und gibt sie als analoges Audiosignal über angebundene Beschallungsanlagen aus. Laufende Musikanlagen werden für die Dauer einer Durchsage unterbrochen; NIKOS [flash]² signalisiert Bandleadern oder DJs zusätzlich per Blinklicht, die Musik sofort zu stoppen. NIKOS [horn]² ergänzt die akustische Ausgabe an Positionen ohne vorhandene Beschallungsanlage."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/loesungen/terrorwarnung-fressgassfest-frankfurt/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 (Elektroakustische Notfallwarnsysteme). NIKOS wurde speziell für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen entwickelt und ist technisch für den Einsatz in Alltags- und Notfallsituationen ausgelegt. Für elektroakustische Notfallwarnsysteme (ELA-Anlagen) ist die DIN EN 50849 der maßgebliche Orientierungsrahmen. Die dort genannten Anforderungen werden von NIKOS – im Gegensatz zu mobilfunkbasierten Systemen – voll erfüllt, da keine Abhängigkeit von einem fremden Netz besteht und somit jederzeit eine sofortige Nutzbarkeit gewährleistet ist. Andere aus der Sicherheitstechnik bekannte Normen wie die DIN EN 54, DIN VDE 0833-4 sowie DIN 14675 (Sprachalarmierungsanlagen) sind auf das Einsatzgebiet und Funktionsspektrum von NIKOS nicht anwendbar und daher für eine Genehmigung nicht relevant. Die behördliche Abnahme erfolgt projektspezifisch. NIKOS ist ein Durchsagesystem für temporäre und mobile Anwendungen und seit 2017 vielfach erfolgreich für die Umsetzung einsatzkritischer Kommunikationsaufgaben im Einsatz. RADACOM und Ihr regionaler NIKOS-Partner beraten Sie gerne zu den vielfältigen Funktionen von NIKOS und unterstützen Sie bei der kostenschonenden Umsetzung der Anforderungen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bleibt die Alarmierung beim Freßgassfest unabhängig vom Mobilfunknetz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz und unabhängig von öffentlichen Kommunikationsnetzen. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. Auch bei überlasteten Funkzellen oder Ausfall der Stromversorgung bleiben Terrorwarnungen für das Freßgassfest zuverlässig funktionsfähig."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie lässt sich NIKOS im offenen Straßenraum montieren?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die Module sind für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Sie werden von ein bis zwei Personen innerhalb weniger Minuten an Laternen, Bühnen, Buden oder Bäumen montiert und individuell konfiguriert. Für den Dauerbetrieb reicht ein normaler Schuko-Stromanschluss."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie werden Durchsagen bei Musik und dichter Besucherzahl verständlich?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS [audio]² empfängt die Sprachübertragung per Funk vor Ort und gibt sie als analoges Audiosignal über angebundene Beschallungsanlagen aus. Laufende Musikanlagen werden für die Dauer einer Durchsage unterbrochen; NIKOS [flash]² signalisiert Bandleadern oder DJs zusätzlich per Blinklicht, die Musik sofort zu stoppen. NIKOS [horn]² ergänzt die akustische Ausgabe an Positionen ohne vorhandene Beschallungsanlage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Terrorwarnung für das Freßgassfest in Frankfurt: Wo kann man NIKOS mieten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Zur Partnerauswahl und Mietanfrage</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Frankfurt"
       }
     }
   ]
@@ -248,6 +327,8 @@ a{color:inherit}
 <!-- ═══ INTRO (S2) ═══ -->
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-de>NIKOS ist kein klassisches PA-System, sondern ein funkbasiertes Durchsage-, Alarmierungs- und Steuerungssystem für Großveranstaltungen, Baustellen und Krisenlagen, das Sie tageweise über zertifizierte Partner mieten und in Ihre PA integrieren oder eigenständig einsetzen können.</p>
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-en>NIKOS is not a conventional PA system, but a radio-based public address, alarm and control system for large events, construction sites and crisis situations, which you can rent by the day through certified partners and either integrate into your PA or use on its own.</p>
     <span class="nk-label" data-de>Herausforderung</span><span class="nk-label" data-en>Challenge</span>
     <h2 class="heading-l" style="margin-top:12px;" data-de>Schnelle Besucherlenkung im offenen Straßenraum</h2>
     <h2 class="heading-l" style="margin-top:12px;" data-en>Rapid visitor guidance in open street spaces</h2>
@@ -290,13 +371,18 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Wie lässt sich NIKOS im offenen Straßenraum montieren?</span><span class="faq-q" data-en>How can NIKOS be installed in an open street space?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body" data-de>Die Module sind für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Sie werden von ein bis zwei Personen innerhalb weniger Minuten an Laternen, Bühnen, Bäumen, Buden oder Dekorationen montiert und individuell konfiguriert. Für den Dauerbetrieb reicht ein normaler Schuko-Stromanschluss.</div>
-        <div class="faq-item__body" data-en>The modules are designed for flexible outdoor use without permanent infrastructure. They can be installed and individually configured by one or two people within just a few minutes on streetlights, stages, trees, stalls or decorations. For continuous operation, a standard Schuko power outlet is sufficient.</div>
+        <div class="faq-item__body" data-de>Die Module sind für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Sie werden von ein bis zwei Personen innerhalb weniger Minuten an Laternen, Bühnen, Buden oder Bäumen montiert und individuell konfiguriert. Für den Dauerbetrieb reicht ein normaler Schuko-Stromanschluss.</div>
+        <div class="faq-item__body" data-en>The modules are designed for flexible outdoor use without permanent infrastructure. They can be installed and individually configured by one or two people within just a few minutes on lampposts, stages, stands or trees. For continuous operation, a standard Schuko power outlet is sufficient.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Wie werden Durchsagen bei Musik und dichter Besucherzahl verständlich?</span><span class="faq-q" data-en>How can announcements remain intelligible with music and large crowds?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/de/produkte/#audio"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS audio.svg" alt="NIKOS [audio]²" loading="lazy"></a> empfängt die Sprachübertragung per Funk vor Ort und gibt sie als analoges Audiosignal über angebundene Beschallungsanlagen aus. Laufende Musikanlagen werden für die Dauer einer Durchsage unterbrochen; <a class="nk-mod" href="https://nikos.info/de/produkte/#zubehoer"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS flash.svg" alt="NIKOS [flash]²" loading="lazy"></a> signalisiert Bandleadern oder DJs zusätzlich per Blinklicht, die Musik sofort zu stoppen. <a class="nk-mod" href="https://nikos.info/de/produkte/#zubehoer"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS horn.svg" alt="NIKOS [horn]²" loading="lazy"></a> ergänzt die akustische Ausgabe an Positionen ohne vorhandene Beschallungsanlage.</div>
         <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/de/produkte/#audio"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS audio.svg" alt="NIKOS [audio]²" loading="lazy"></a> receives the voice transmission on site via radio and outputs it as an analogue audio signal through connected public address systems. Any music system in operation is interrupted for the duration of an announcement; <a class="nk-mod" href="https://nikos.info/de/produkte/#zubehoer"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS flash.svg" alt="NIKOS [flash]²" loading="lazy"></a> also signals bandleaders or DJs with a flashing light to stop the music immediately. <a class="nk-mod" href="https://nikos.info/de/produkte/#zubehoer"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS horn.svg" alt="NIKOS [horn]²" loading="lazy"></a> supplements the audio output at locations without an existing public address system.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" data-de>Terrorwarnung für das Freßgassfest in Frankfurt: Wo kann man <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mieten?</span><span class="faq-q" data-en>Terror Warning at Freßgassfest in Frankfurt: Where can <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> be rented?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Zur Partnerauswahl und Mietanfrage</a></div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find a partner and request a rental</a></div>
       </details>
     </div>
   </div>

@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Are announcements made via NIKOS standard-compliant?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes — NIKOS fully meets DIN EN 50849 (electroacoustic emergency warning systems). The system was designed specifically for safety-relevant announcement and alerting tasks, technically built for everyday operation as well as for emergencies. For ELA systems, DIN EN 50849 sets out the relevant framework. Because NIKOS — unlike mobile network-based solutions — does not depend on any external network, it is always immediately usable and fully meets the requirements set out in the standard. Other safety-related standards such as DIN EN 54, DIN VDE 0833-4 or DIN 14675 (voice alarm systems) concern a different field of use and functional scope and are therefore not relevant for NIKOS in terms of approval. Since 2017, NIKOS has been used successfully many times as a public address system for temporary and mobile applications in mission-critical communication tasks. Acceptance by the relevant authorities is assessed for each project."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/en/lp/visitor-information-culture/#service",
+      "name": "Visitor Information for the European Capital of Culture 2028 in Bourges",
+      "description": "At the European Capital of Culture 2028 in Bourges, visitor information must reach a large and international audience quickly.",
+      "url": "https://nikos.info/en/lp/visitor-information-culture/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "en",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Bourges"
       }
     },
     {
-      "@type": "Question",
-      "name": "Can NIKOS be installed quickly for the European Capital of Culture 2028?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. NIKOS was developed for flexible outdoor deployments without fixed infrastructure. One or two people can install and configure the modules within minutes on various structures, such as lampposts, stages, trees, stalls or decorative elements. A standard Schuko power socket ensures continuous operation. NIKOS uses the digital radio network provided for the event."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nikos.info/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "All use cases",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Visitor Information for the European Capital of Culture 2028 in Bourges",
+          "item": "https://nikos.info/en/lp/visitor-information-culture/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Does NIKOS remain operational in the event of a network or power failure?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. NIKOS uses its own autonomous radio network and operates independently of public communication networks and their availability. Because the system communicates by radio and does not rely on wired connections, the connection is restored automatically after an interruption. NIKOS [audio]² has an internal battery providing up to 16 hours of operating time and also powers connected accessory modules. Even in the event of mobile network congestion, a disruption at the service provider or a power cut, visitor information for the European Capital of Culture 2028 remains reliable and operational."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where does NIKOS generate cost benefits?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "NIKOS combines various functions on a single communications platform. The resulting savings offset the rental and installation costs of NIKOS. You can find specific examples of savings here. Systematically using the many available functions reduces the overall budget, enhances the level of safety and makes the teams’ work easier. No separate loudspeaker, control and communications solutions are required for visitor information and other safety-related coordination tasks. This reduces equipment requirements, cabling work and the risk of tripping over cable runs. Centralised announcements, remote control and status monitoring replace some staff positions distributed throughout the site. For temporary events, the costs of planning, installing and operating safety technology are significantly reduced."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/en/lp/visitor-information-culture/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are announcements made via NIKOS standard-compliant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — NIKOS fully meets DIN EN 50849 (electroacoustic emergency warning systems). The system was designed specifically for safety-relevant announcement and alerting tasks, technically built for everyday operation as well as for emergencies. For ELA systems, DIN EN 50849 sets out the relevant framework. Because NIKOS — unlike mobile network-based solutions — does not depend on any external network, it is always immediately usable and fully meets the requirements set out in the standard. Other safety-related standards such as DIN EN 54, DIN VDE 0833-4 or DIN 14675 (voice alarm systems) concern a different field of use and functional scope and are therefore not relevant for NIKOS in terms of approval. Since 2017, NIKOS has been used successfully many times as a public address system for temporary and mobile applications in mission-critical communication tasks. Acceptance by the relevant authorities is assessed for each project."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can NIKOS be installed quickly for the European Capital of Culture 2028?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. NIKOS was developed for flexible outdoor deployments without fixed infrastructure. One or two people can install and configure the modules within minutes on various structures, such as lampposts, stages, stands or trees. A standard Schuko power socket ensures continuous operation. NIKOS uses the digital radio network provided for the event."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does NIKOS remain operational in the event of a network or power failure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. NIKOS uses its own autonomous radio network and operates independently of public communication networks and their availability. Because the system communicates by radio and does not rely on wired connections, the connection is restored automatically after an interruption. NIKOS [audio]² has an internal battery providing up to 16 hours of operating time and also powers connected accessory modules. Even in the event of mobile network congestion, a disruption at the service provider or a power cut, visitor information for the European Capital of Culture 2028 remains reliable and operational."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does NIKOS generate cost benefits?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS combines various functions on a single communications platform. The resulting savings offset the rental and installation costs of NIKOS. You can find specific examples of savings here. Systematically using the many available functions reduces the overall budget, enhances the level of safety and makes the teams’ work easier. NIKOS mainly reduces the effort required for separate loudspeaker, control and communication solutions. Material requirements and cabling work are reduced, and information and emergency announcements can be made from a single location. This reduces equipment requirements, cabling work and the risk of tripping over cable runs. Centralised announcements, remote control and status monitoring replace some staff positions distributed throughout the site. For temporary events, the costs of planning, installing and operating safety technology are significantly reduced."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Visitor Information for the European Capital of Culture 2028 in Bourges: Where can NIKOS be rented?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Find a partner and request a rental</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Bourges"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Bourges"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS is not a conventional PA system, but a radio-based public address, alarm and control system for large events, construction sites and crisis situations, which you can rent by the day through certified partners and either integrate into your PA or use on its own.</p>
     <span class="nk-label">Challenge</span>
     <h2 class="heading-l" style="margin-top:12px;">Reliably inform every visitor</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">At the European Capital of Culture 2028 in Bourges, visitor information must reach a large and international audience quickly. Programme changes, safety instructions and wayfinding information must remain clear in a busy environment. Large crowds can overload mobile networks, while a power failure or disruption to public networks can compromise conventional communication channels.</p>
@@ -266,7 +346,7 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Can NIKOS be installed quickly for the European Capital of Culture 2028?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Yes. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed for flexible outdoor deployments without fixed infrastructure. One or two people can install and configure the modules within minutes on various structures, such as lampposts, stages, trees, stalls or decorative elements. A standard Schuko power socket ensures continuous operation. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> uses the digital radio network provided for the event.</div>
+        <div class="faq-item__body">Yes. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed for flexible outdoor deployments without fixed infrastructure. One or two people can install and configure the modules within minutes on various structures, such as lampposts, stages, stands or trees. A standard Schuko power socket ensures continuous operation. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> uses the digital radio network provided for the event.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Does NIKOS remain operational in the event of a network or power failure?</span><span class="faq-icon">+</span></summary>
@@ -274,7 +354,11 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Where does NIKOS generate cost benefits?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> combines various functions on a single communications platform. The resulting savings offset the rental and installation costs of <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>. You can find specific examples of savings here. Systematically using the many available functions reduces the overall budget, enhances the level of safety and makes the teams’ work easier. No separate loudspeaker, control and communications solutions are required for visitor information and other safety-related coordination tasks. This reduces equipment requirements, cabling work and the risk of tripping over cable runs. Centralised announcements, remote control and status monitoring replace some staff positions distributed throughout the site. For temporary events, the costs of planning, installing and operating safety technology are significantly reduced.</div>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> combines various functions on a single communications platform. The resulting savings offset the rental and installation costs of <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>. You can find specific examples of savings here. Systematically using the many available functions reduces the overall budget, enhances the level of safety and makes the teams’ work easier. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mainly reduces the effort required for separate loudspeaker, control and communication solutions. Material requirements and cabling work are reduced, and information and emergency announcements can be made from a single location. This reduces equipment requirements, cabling work and the risk of tripping over cable runs. Centralised announcements, remote control and status monitoring replace some staff positions distributed throughout the site. For temporary events, the costs of planning, installing and operating safety technology are significantly reduced.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Visitor Information for the European Capital of Culture 2028 in Bourges: Where can <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> be rented?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find a partner and request a rental</a></div>
       </details>
     </div>
   </div>

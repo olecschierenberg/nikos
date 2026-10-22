@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Entsprechen mit NIKOS durchgeführte Durchsagen den geltenden Normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 (elektroakustische Notfallwarnsysteme). NIKOS wurde speziell für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen im öffentlichen Raum entwickelt und ist technisch sowohl für den alltäglichen als auch für den Notfallbetrieb ausgelegt. Für elektroakustische Notfallwarnsysteme ist die DIN EN 50849 der maßgebliche Referenzrahmen. Anders als mobilfunkbasierte Systeme erfüllt NIKOS die dort festgelegten Anforderungen vollständig, da das System nicht von einem externen Netzwerk abhängig ist und daher jederzeit sofort eingesetzt werden kann. Andere aus der Sicherheitstechnik bekannte Normen wie DIN EN 54, DIN VDE 0833-4 und DIN 14675 (Sprachalarmanlagen) gelten für den Einsatzbereich und den Funktionsumfang von NIKOS nicht und sind daher für die Zulassung nicht relevant. NIKOS ist eine Durchsageanlage für temporäre und mobile Anwendungen und wird seit 2017 erfolgreich bei zahlreichen einsatzkritischen Kommunikationsaufgaben eingesetzt. RADACOM und Ihr regionaler NIKOS-Partner beraten Sie gerne zu den vielfältigen Funktionen von NIKOS und unterstützen Sie dabei, die Anforderungen kosteneffizient umzusetzen."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/de/lp/besucherlenkung-gentse-feesten/#service",
+      "name": "Crowd Management bei den Gentse Feesten",
+      "description": "In stark frequentierten Bereichen müssen Warnungen und Anweisungen schnell und verständlich alle Menschen erreichen.",
+      "url": "https://nikos.info/de/lp/besucherlenkung-gentse-feesten/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "de",
+      "termsOfService": "https://nikos.info/de/mietbedingungen/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Gent"
       }
     },
     {
-      "@type": "Question",
-      "name": "Bleibt NIKOS auch bei Ausfällen des Mobilfunknetzes oder der Stromversorgung funktionsfähig?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS arbeitet über ein eigenes, autonomes Funknetz und ist vollständig unabhängig von öffentlichen Kommunikationsnetzen. Da das System per Funk kommuniziert, stellt es die Verbindung nach einer Unterbrechung automatisch wieder her. NIKOS [audio]² verfügt über einen integrierten Akku mit einer Laufzeit von bis zu 16 Stunden und versorgt außerdem angeschlossene Zusatzmodule mit Strom. Dadurch bleibt das Crowd Management bei den Gentse Feesten auch bei einem Stromausfall oder Störungen der öffentlichen Kommunikationsnetze zuverlässig funktionsfähig."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://nikos.info/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle Einsatzbeispiele",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Crowd Management bei den Gentse Feesten",
+          "item": "https://nikos.info/de/lp/besucherlenkung-gentse-feesten/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Kann NIKOS flexibel an temporären Einsatzorten installiert werden?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS wurde für den flexiblen Außeneinsatz ohne feste Infrastruktur entwickelt. Eine oder zwei Personen können die Module innerhalb weniger Minuten an Strukturen wie Laternenmasten, Bühnen, Bäumen, Verkaufsständen oder Dekorationen montieren und individuell konfigurieren. Für den Dauerbetrieb genügt ein herkömmlicher Schuko-Stromanschluss. Wenn ein digitales Funknetz vorhanden ist, nutzt NIKOS dieses bestehende Netz."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie unterstützt NIKOS die Einhaltung von nächtlichen Lärmschutzauflagen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Die Nachtruhefunktion in NIKOS [dispatcher]² schaltet alle angeschlossenen Beschallungsanlagen zentral per Knopfdruck aus. Das unterstützt das Genehmigungsverfahren und hilft, Beschwerden von Anwohnern zu vermeiden."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/de/lp/besucherlenkung-gentse-feesten/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Entsprechen mit NIKOS durchgeführte Durchsagen den geltenden Normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 (elektroakustische Notfallwarnsysteme). NIKOS wurde speziell für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen im öffentlichen Raum entwickelt und ist technisch sowohl für den alltäglichen als auch für den Notfallbetrieb ausgelegt. Für elektroakustische Notfallwarnsysteme ist die DIN EN 50849 der maßgebliche Referenzrahmen. Anders als mobilfunkbasierte Systeme erfüllt NIKOS die dort festgelegten Anforderungen vollständig, da das System nicht von einem externen Netzwerk abhängig ist und daher jederzeit sofort eingesetzt werden kann. Andere aus der Sicherheitstechnik bekannte Normen wie DIN EN 54, DIN VDE 0833-4 und DIN 14675 (Sprachalarmanlagen) gelten für den Einsatzbereich und den Funktionsumfang von NIKOS nicht und sind daher für die Zulassung nicht relevant. NIKOS ist eine Durchsageanlage für temporäre und mobile Anwendungen und wird seit 2017 erfolgreich bei zahlreichen einsatzkritischen Kommunikationsaufgaben eingesetzt. RADACOM und Ihr regionaler NIKOS-Partner beraten Sie gerne zu den vielfältigen Funktionen von NIKOS und unterstützen Sie dabei, die Anforderungen kosteneffizient umzusetzen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bleibt NIKOS auch bei Ausfällen des Mobilfunknetzes oder der Stromversorgung funktionsfähig?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS arbeitet über ein eigenes, autonomes Funknetz und ist vollständig unabhängig von öffentlichen Kommunikationsnetzen. Da das System per Funk kommuniziert, stellt es die Verbindung nach einer Unterbrechung automatisch wieder her. NIKOS [audio]² verfügt über einen integrierten Akku mit einer Laufzeit von bis zu 16 Stunden und versorgt außerdem angeschlossene Zusatzmodule mit Strom. Dadurch bleibt das Crowd Management bei den Gentse Feesten auch bei einem Stromausfall oder Störungen der öffentlichen Kommunikationsnetze zuverlässig funktionsfähig."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann NIKOS flexibel an temporären Einsatzorten installiert werden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS wurde für den flexiblen Außeneinsatz ohne feste Infrastruktur entwickelt. Eine oder zwei Personen können die Module innerhalb weniger Minuten an Strukturen wie Laternen, Bühnen, Buden oder Bäumen montieren und individuell konfigurieren. Für den Dauerbetrieb genügt ein herkömmlicher Schuko-Stromanschluss. Wenn ein digitales Funknetz vorhanden ist, nutzt NIKOS dieses bestehende Netz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie unterstützt NIKOS die Einhaltung von nächtlichen Lärmschutzauflagen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die Nachtruhefunktion in NIKOS [dispatcher]² schaltet alle angeschlossenen Beschallungsanlagen zentral per Knopfdruck aus. Das unterstützt das Genehmigungsverfahren und hilft, Beschwerden von Anwohnern zu vermeiden."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Crowd Management bei den Gentse Feesten: Wo kann man NIKOS mieten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Zur Partnerauswahl und Mietanfrage</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Gent"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Gent"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS ist kein klassisches PA-System, sondern ein funkbasiertes Durchsage-, Alarmierungs- und Steuerungssystem für Großveranstaltungen, Baustellen und Krisenlagen, das Sie tageweise über zertifizierte Partner mieten und in Ihre PA integrieren oder eigenständig einsetzen können.</p>
     <span class="nk-label">Herausforderung</span>
     <h2 class="heading-l" style="margin-top:12px;">Besucher sicher von A nach B führen</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Das Crowd Management ist bei den Gentse Feesten besonders anspruchsvoll: Dichte Menschenmengen, eine laute Umgebung und internationale Besucher erschweren die Kommunikation. In stark frequentierten Bereichen müssen Warnungen und Anweisungen schnell und verständlich alle Menschen erreichen. Bei einer solchen Besucherzahl können Mobilfunknetze überlastet sein, sodass mobilfunkabhängige Systeme im Krisenfall ungeeignet sind.</p>
@@ -270,11 +350,15 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Kann NIKOS flexibel an temporären Einsatzorten installiert werden?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde für den flexiblen Außeneinsatz ohne feste Infrastruktur entwickelt. Eine oder zwei Personen können die Module innerhalb weniger Minuten an Strukturen wie Laternenmasten, Bühnen, Bäumen, Verkaufsständen oder Dekorationen montieren und individuell konfigurieren. Für den Dauerbetrieb genügt ein herkömmlicher Schuko-Stromanschluss. Wenn ein digitales Funknetz vorhanden ist, nutzt <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> dieses bestehende Netz.</div>
+        <div class="faq-item__body">Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde für den flexiblen Außeneinsatz ohne feste Infrastruktur entwickelt. Eine oder zwei Personen können die Module innerhalb weniger Minuten an Strukturen wie Laternen, Bühnen, Buden oder Bäumen montieren und individuell konfigurieren. Für den Dauerbetrieb genügt ein herkömmlicher Schuko-Stromanschluss. Wenn ein digitales Funknetz vorhanden ist, nutzt <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> dieses bestehende Netz.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Wie unterstützt NIKOS die Einhaltung von nächtlichen Lärmschutzauflagen?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body">Die Nachtruhefunktion in <a class="nk-mod" href="https://nikos.info/de/produkte/#dispatcher"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a> schaltet alle angeschlossenen Beschallungsanlagen zentral per Knopfdruck aus. Das unterstützt das Genehmigungsverfahren und hilft, Beschwerden von Anwohnern zu vermeiden.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Crowd Management bei den Gentse Feesten: Wo kann man <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mieten?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Zur Partnerauswahl und Mietanfrage</a></div>
       </details>
     </div>
   </div>

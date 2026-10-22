@@ -26,42 +26,121 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "about": {
-    "@type": "Place",
-    "name": "Aschersleben"
-  },
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 für elektroakustische Notfallwarnsysteme. NIKOS wurde für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen entwickelt und stellt Notfalldurchsagen ohne Abhängigkeit von öffentlichen Mobilfunknetzen bereit. Die DIN EN 54, DIN VDE 0833-4 und DIN 14675 betreffen Sprachalarmierungsanlagen und sind auf das Einsatzgebiet sowie das Funktionsspektrum von NIKOS nicht anwendbar. NIKOS ist seit 2017 für einsatzkritische Kommunikationsaufgaben im Einsatz. RADACOM und regionale NIKOS-Partner unterstützen bei der Planung und Umsetzung."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/loesungen/notfalldurchsage-sachsen-anhalt-tag-2028-aschersleben/#service",
+      "name": "Notfalldurchsagen für den Sachsen-Anhalt-Tag 2028 in Aschersleben",
+      "description": "Beim Sachsen-Anhalt-Tag 2028 in Aschersleben erschweren Gedränge, eine laute Umgebung und fremdsprachige Besucher die Notfalldurchsage.",
+      "url": "https://nikos.info/loesungen/notfalldurchsage-sachsen-anhalt-tag-2028-aschersleben/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "de",
+      "termsOfService": "https://nikos.info/de/mietbedingungen/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Aschersleben"
       }
     },
     {
-      "@type": "Question",
-      "name": "Ist NIKOS bei Störungen von Stromversorgung und öffentlichen Netzen einsatzfähig?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS arbeitet über ein eigenes, autarkes Funknetz und völlig unabhängig von öffentlichen Kommunikationsnetzen und deren Verfügbarkeit. Da NIKOS über Funk kommuniziert, stellt sich die Verbindung nach einer Unterbrechung selbstständig wieder her. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. So bleiben Notfalldurchsagen für den Sachsen-Anhalt-Tag 2028 auch bei Ausfall der Stromversorgung oder Störungen in den öffentlichen Kommunikationsnetzen zuverlässig funktionsfähig."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://nikos.info/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle Einsatzbeispiele",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Notfalldurchsagen für den Sachsen-Anhalt-Tag 2028 in Aschersleben",
+          "item": "https://nikos.info/loesungen/notfalldurchsage-sachsen-anhalt-tag-2028-aschersleben/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Ist NIKOS kurzfristig für den Sachsen-Anhalt-Tag 2028 installierbar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Ein bis zwei Personen montieren die Module innerhalb weniger Minuten an Laternen, Bühnen, Bäumen, Buden oder Dekorationen und konfigurieren sie für den jeweiligen Veranstaltungsbereich. Für den Dauerbetrieb genügt ein Schuko-Stromanschluss."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie unterstützt NIKOS die Besucherlenkung in mehreren Veranstaltungsbereichen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Über NIKOS [dispatcher]² lassen sich Durchsagen und Informationsansagen zentral auslösen. Damit können Besucher in unterschiedlichen Bereichen gleichzeitig mit klaren Handlungsanweisungen versorgt und gezielt zu sicheren Wegen oder Sammelpunkten geleitet werden."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/loesungen/notfalldurchsage-sachsen-anhalt-tag-2028-aschersleben/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 für elektroakustische Notfallwarnsysteme. NIKOS wurde für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen entwickelt und stellt Notfalldurchsagen ohne Abhängigkeit von öffentlichen Mobilfunknetzen bereit. Die DIN EN 54, DIN VDE 0833-4 und DIN 14675 betreffen Sprachalarmierungsanlagen und sind auf das Einsatzgebiet sowie das Funktionsspektrum von NIKOS nicht anwendbar. NIKOS ist seit 2017 für einsatzkritische Kommunikationsaufgaben im Einsatz. RADACOM und regionale NIKOS-Partner unterstützen bei der Planung und Umsetzung."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist NIKOS bei Störungen von Stromversorgung und öffentlichen Netzen einsatzfähig?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS arbeitet über ein eigenes, autarkes Funknetz und völlig unabhängig von öffentlichen Kommunikationsnetzen und deren Verfügbarkeit. Da NIKOS über Funk kommuniziert, stellt sich die Verbindung nach einer Unterbrechung selbstständig wieder her. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. So bleiben Notfalldurchsagen für den Sachsen-Anhalt-Tag 2028 auch bei Ausfall der Stromversorgung oder Störungen in den öffentlichen Kommunikationsnetzen zuverlässig funktionsfähig."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist NIKOS kurzfristig für den Sachsen-Anhalt-Tag 2028 installierbar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Ein bis zwei Personen montieren die Module innerhalb weniger Minuten an Laternen, Bühnen, Buden oder Bäumen und konfigurieren sie für den jeweiligen Veranstaltungsbereich. Für den Dauerbetrieb genügt ein Schuko-Stromanschluss."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie unterstützt NIKOS die Besucherlenkung in mehreren Veranstaltungsbereichen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Über NIKOS [dispatcher]² lassen sich Durchsagen und Informationsansagen zentral auslösen. Damit können Besucher in unterschiedlichen Bereichen gleichzeitig mit klaren Handlungsanweisungen versorgt und gezielt zu sicheren Wegen oder Sammelpunkten geleitet werden."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Notfalldurchsagen für den Sachsen-Anhalt-Tag 2028 in Aschersleben: Wo kann man NIKOS mieten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Zur Partnerauswahl und Mietanfrage</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Aschersleben"
       }
     }
   ]
@@ -254,6 +333,8 @@ a{color:inherit}
 <!-- ═══ INTRO (S2) ═══ -->
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-de>NIKOS ist kein klassisches PA-System, sondern ein funkbasiertes Durchsage-, Alarmierungs- und Steuerungssystem für Großveranstaltungen, Baustellen und Krisenlagen, das Sie tageweise über zertifizierte Partner mieten und in Ihre PA integrieren oder eigenständig einsetzen können.</p>
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-en>NIKOS is not a conventional PA system, but a radio-based public address, alarm and control system for large events, construction sites and crisis situations, which you can rent by the day through certified partners and either integrate into your PA or use on its own.</p>
     <span class="nk-label" data-de>Herausforderung</span><span class="nk-label" data-en>Challenge</span>
     <h2 class="heading-l" style="margin-top:12px;" data-de>Klare Warnungen trotz Lärm und Gedränge</h2>
     <h2 class="heading-l" style="margin-top:12px;" data-en>Clear Warnings Despite Noise and Crowds</h2>
@@ -296,13 +377,18 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Ist NIKOS kurzfristig für den Sachsen-Anhalt-Tag 2028 installierbar?</span><span class="faq-q" data-en>Can NIKOS be installed at short notice for the Sachsen-Anhalt-Tag 2028?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body" data-de>Ja, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Ein bis zwei Personen montieren die Module innerhalb weniger Minuten an Laternen, Bühnen, Bäumen, Buden oder Dekorationen und konfigurieren sie für den jeweiligen Veranstaltungsbereich. Für den Dauerbetrieb genügt ein Schuko-Stromanschluss.</div>
-        <div class="faq-item__body" data-en>Yes, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed for flexible outdoor use without fixed infrastructure. One or two people can mount the modules on streetlights, stages, trees, stalls or decorations within a few minutes and configure them for the relevant event area. A standard Schuko power connection is sufficient for continuous operation.</div>
+        <div class="faq-item__body" data-de>Ja, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Ein bis zwei Personen montieren die Module innerhalb weniger Minuten an Laternen, Bühnen, Buden oder Bäumen und konfigurieren sie für den jeweiligen Veranstaltungsbereich. Für den Dauerbetrieb genügt ein Schuko-Stromanschluss.</div>
+        <div class="faq-item__body" data-en>Yes, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed for flexible outdoor use without fixed infrastructure. One or two people can mount the modules on lampposts, stages, stands or trees within a few minutes and configure them for the relevant event area. A standard Schuko power connection is sufficient for continuous operation.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Wie unterstützt NIKOS die Besucherlenkung in mehreren Veranstaltungsbereichen?</span><span class="faq-q" data-en>How does NIKOS support visitor guidance across multiple event areas?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body" data-de>Über <a class="nk-mod" href="https://nikos.info/de/produkte/#dispatcher"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a> lassen sich Durchsagen und Informationsansagen zentral auslösen. Damit können Besucher in unterschiedlichen Bereichen gleichzeitig mit klaren Handlungsanweisungen versorgt und gezielt zu sicheren Wegen oder Sammelpunkten geleitet werden.</div>
         <div class="faq-item__body" data-en>Announcements and information messages can be triggered centrally via <a class="nk-mod" href="https://nikos.info/de/produkte/#dispatcher"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a>. This allows visitors in different areas to receive clear instructions simultaneously and be directed specifically towards safe routes or assembly points.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" data-de>Notfalldurchsagen für den Sachsen-Anhalt-Tag 2028 in Aschersleben: Wo kann man <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mieten?</span><span class="faq-q" data-en>Emergency Announcements for the Sachsen-Anhalt-Tag 2028 in Aschersleben: Where can <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> be rented?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Zur Partnerauswahl und Mietanfrage</a></div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find a partner and request a rental</a></div>
       </details>
     </div>
   </div>

@@ -26,42 +26,121 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "about": {
-    "@type": "Place",
-    "name": "München"
-  },
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 für elektroakustische Notfallwarnsysteme. NIKOS ist für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen konzipiert und für den Einsatz in Alltags- und Notfallsituationen ausgelegt. Die Anforderungen der DIN EN 50849 erfüllt NIKOS vollständig, da das System unabhängig von fremden Kommunikationsnetzen arbeitet und sofort nutzbar ist. Die DIN EN 54, DIN VDE 0833-4 und DIN 14675 gelten für Sprachalarmierungsanlagen mit einem anderen Einsatzgebiet und Funktionsspektrum und sind für NIKOS nicht anwendbar."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/loesungen/sprachalarmierung-iaa-mobility-muenchen/#service",
+      "name": "Sprachalarmierung für die IAA Mobility in München",
+      "description": "Warnungen und Handlungsanweisungen müssen in den Ausstellungsbereichen und im öffentlichen Stadtraum klar verständlich ankommen.",
+      "url": "https://nikos.info/loesungen/sprachalarmierung-iaa-mobility-muenchen/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "de",
+      "termsOfService": "https://nikos.info/de/mietbedingungen/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "München"
       }
     },
     {
-      "@type": "Question",
-      "name": "Wie unterstützt NIKOS die Besucherlenkung bei der IAA Mobility?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "NIKOS bündelt Informationsansagen und Alarmierungen in einer zentral bedienbaren Plattform. Verantwortliche können Besucher mit gezielten Ansagen über Bereiche, Verhaltenshinweise und sicherheitsrelevante Maßnahmen informieren, ohne dafür getrennte Kommunikationslösungen zu betreiben."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://nikos.info/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle Einsatzbeispiele",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Sprachalarmierung für die IAA Mobility in München",
+          "item": "https://nikos.info/loesungen/sprachalarmierung-iaa-mobility-muenchen/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Ist NIKOS kurzfristig und flexibel einsetzbar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS ist für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module montieren ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen und konfigurieren sie individuell. Ein normaler Schuko-Stromanschluss versorgt NIKOS im Dauerbetrieb. NIKOS kommuniziert über sein eigenes digitales Funknetz."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ist NIKOS für Sprachalarmierung bei Ausfall öffentlicher Netze ausgelegt?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS arbeitet über ein eigenes, autarkes Funknetz und völlig unabhängig von öffentlichen Kommunikationsnetzen und deren Verfügbarkeit. Auf diese Weise ist das System widerstandsfähig gegen äußere Einflüsse. Da NIKOS nicht auf Kabelwege angewiesen ist, sondern über Funk kommuniziert, stellt sich die Verbindung nach einer Unterbrechung selbstständig wieder her. NIKOS reagiert dadurch besonders resilient auf Störungen des Regelbetriebs und unterstützt eine krisensichere Kommunikation. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. Auch bei einem überlasteten Handynetz, einem Angriff auf den Internetprovider oder einer unterbrochenen Stromversorgung funktioniert NIKOS weiter. So bleiben Sprachalarmierungen für die IAA Mobility auch bei Ausfall der Stromversorgung oder Störungen in den öffentlichen Kommunikationsnetzen zuverlässig funktionsfähig."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/loesungen/sprachalarmierung-iaa-mobility-muenchen/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 für elektroakustische Notfallwarnsysteme. NIKOS ist für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen konzipiert und für den Einsatz in Alltags- und Notfallsituationen ausgelegt. Die Anforderungen der DIN EN 50849 erfüllt NIKOS vollständig, da das System unabhängig von fremden Kommunikationsnetzen arbeitet und sofort nutzbar ist. Die DIN EN 54, DIN VDE 0833-4 und DIN 14675 gelten für Sprachalarmierungsanlagen mit einem anderen Einsatzgebiet und Funktionsspektrum und sind für NIKOS nicht anwendbar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie unterstützt NIKOS die Besucherlenkung bei der IAA Mobility?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS bündelt Informationsansagen und Alarmierungen in einer zentral bedienbaren Plattform. Verantwortliche können Besucher mit gezielten Ansagen über Bereiche, Verhaltenshinweise und sicherheitsrelevante Maßnahmen informieren, ohne dafür getrennte Kommunikationslösungen zu betreiben."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist NIKOS kurzfristig und flexibel einsetzbar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS ist für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module montieren ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen und konfigurieren sie individuell. Ein normaler Schuko-Stromanschluss versorgt NIKOS im Dauerbetrieb. NIKOS kommuniziert über sein eigenes digitales Funknetz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist NIKOS für Sprachalarmierung bei Ausfall öffentlicher Netze ausgelegt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS arbeitet über ein eigenes, autarkes Funknetz und völlig unabhängig von öffentlichen Kommunikationsnetzen und deren Verfügbarkeit. Auf diese Weise ist das System widerstandsfähig gegen äußere Einflüsse. Da NIKOS nicht auf Kabelwege angewiesen ist, sondern über Funk kommuniziert, stellt sich die Verbindung nach einer Unterbrechung selbstständig wieder her. NIKOS reagiert dadurch besonders resilient auf Störungen des Regelbetriebs und unterstützt eine krisensichere Kommunikation. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. Auch bei einem überlasteten Handynetz, einem Angriff auf den Internetprovider oder einer unterbrochenen Stromversorgung funktioniert NIKOS weiter. So bleiben Sprachalarmierungen für die IAA Mobility auch bei Ausfall der Stromversorgung oder Störungen in den öffentlichen Kommunikationsnetzen zuverlässig funktionsfähig."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sprachalarmierung für die IAA Mobility in München: Wo kann man NIKOS mieten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Zur Partnerauswahl und Mietanfrage</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "München"
       }
     }
   ]
@@ -254,6 +333,8 @@ a{color:inherit}
 <!-- ═══ INTRO (S2) ═══ -->
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-de>NIKOS ist kein klassisches PA-System, sondern ein funkbasiertes Durchsage-, Alarmierungs- und Steuerungssystem für Großveranstaltungen, Baustellen und Krisenlagen, das Sie tageweise über zertifizierte Partner mieten und in Ihre PA integrieren oder eigenständig einsetzen können.</p>
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-en>NIKOS is not a conventional PA system, but a radio-based public address, alarm and control system for large events, construction sites and crisis situations, which you can rent by the day through certified partners and either integrate into your PA or use on its own.</p>
     <span class="nk-label" data-de>Herausforderung</span><span class="nk-label" data-en>Challenge</span>
     <h2 class="heading-l" style="margin-top:12px;" data-de>Warnungen trotz Verkehrslärm verständlich übermitteln</h2>
     <h2 class="heading-l" style="margin-top:12px;" data-en>Deliver warnings clearly despite traffic noise</h2>
@@ -296,13 +377,18 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Ist NIKOS kurzfristig und flexibel einsetzbar?</span><span class="faq-q" data-en>Can NIKOS be deployed quickly and flexibly?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body" data-de>Ja, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> ist für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module montieren ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen und konfigurieren sie individuell. Ein normaler Schuko-Stromanschluss versorgt <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> im Dauerbetrieb. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> kommuniziert über sein eigenes digitales Funknetz.</div>
-        <div class="faq-item__body" data-en>Yes, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed for flexible outdoor applications without fixed infrastructure. One or two people can mount the modules within a few minutes on various structures such as lampposts, stages, trees, stalls or decorations and configure them individually. A standard Schuko power outlet supplies <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> during continuous operation. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> communicates via its own digital radio network.</div>
+        <div class="faq-item__body" data-de>Ja, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> ist für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module montieren ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen und konfigurieren sie individuell. Ein normaler Schuko-Stromanschluss versorgt <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> im Dauerbetrieb. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> kommuniziert über sein eigenes digitales Funknetz.</div>
+        <div class="faq-item__body" data-en>Yes, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed for flexible outdoor applications without fixed infrastructure. One or two people can mount the modules within a few minutes on various structures such as lampposts, stages, stands or trees and configure them individually. A standard Schuko power outlet supplies <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> during continuous operation. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> communicates via its own digital radio network.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Ist NIKOS für Sprachalarmierung bei Ausfall öffentlicher Netze ausgelegt?</span><span class="faq-q" data-en>Is NIKOS designed for voice alarm when public networks fail?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body" data-de>Ja, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> arbeitet über ein eigenes, autarkes Funknetz und völlig unabhängig von öffentlichen Kommunikationsnetzen und deren Verfügbarkeit. Auf diese Weise ist das System widerstandsfähig gegen äußere Einflüsse. Da <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> nicht auf Kabelwege angewiesen ist, sondern über Funk kommuniziert, stellt sich die Verbindung nach einer Unterbrechung selbstständig wieder her. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> reagiert dadurch besonders resilient auf Störungen des Regelbetriebs und unterstützt eine krisensichere Kommunikation. <a class="nk-mod" href="https://nikos.info/de/produkte/#audio"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS audio.svg" alt="NIKOS [audio]²" loading="lazy"></a> verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. Auch bei einem überlasteten Handynetz, einem Angriff auf den Internetprovider oder einer unterbrochenen Stromversorgung funktioniert <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> weiter. So bleiben Sprachalarmierungen für die IAA Mobility auch bei Ausfall der Stromversorgung oder Störungen in den öffentlichen Kommunikationsnetzen zuverlässig funktionsfähig.</div>
         <div class="faq-item__body" data-en>Yes, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> operates via its own autonomous radio network and is completely independent of public communications networks and their availability. This makes the system resilient to external influences. Since <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> does not rely on wired connections but communicates via radio, the connection is automatically restored after an interruption. As a result, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is particularly resilient to disruptions in normal operations and supports crisis-proof communication. <a class="nk-mod" href="https://nikos.info/de/produkte/#audio"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS audio.svg" alt="NIKOS [audio]²" loading="lazy"></a> has an internal battery with a runtime of up to 16 hours and also powers connected accessory modules. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> continues to function even if the mobile phone network is overloaded, the internet service provider is attacked or the power supply is interrupted. This ensures that voice alarms for IAA Mobility remain reliably functional even in the event of a power failure or disruptions to public communications networks.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" data-de>Sprachalarmierung für die IAA Mobility in München: Wo kann man <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mieten?</span><span class="faq-q" data-en>Voice Alarm for IAA Mobility in Munich: Where can <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> be rented?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Zur Partnerauswahl und Mietanfrage</a></div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find a partner and request a rental</a></div>
       </details>
     </div>
   </div>

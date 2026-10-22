@@ -161,7 +161,7 @@ async function callOpenAiAndParseJson({
 // weil beobachtet wurde, dass diese die WORTGENAU-Anweisung nicht zuverlaessig
 // einhaelt.
 const GENERIC_KEYS = ['headline','subhead','intro','usp_intro','usp',
-  'faq1_q','faq1_a','faq2_q','faq2_a','faq3_q','faq3_a','faq4_q','faq4_a','slug_kw'];
+  'faq1_q','faq1_a','faq2_q','faq2_a','faq3_q','faq3_a','faq4_q','faq4_a','faq5_q','faq5_a','slug_kw'];
 
 // Wandelt das bestehende _de-suffigierte AI-Texte-Ausgabeformat (siehe
 // lib/prompts/ai-texte.system.txt, Modus DEUTSCH) in die generischen
@@ -276,7 +276,7 @@ async function callTranslation({ lang, deFields, sourceLang, problem, einsatz, r
   const result = await chatCompletion({
     apiKey: process.env.OPENAI_API_KEY, model: 'gpt-5.6-luna',
     system: systemPrompt, user: userPrompt,
-    maxTokens: 5000, timeoutMs: 180000, maxRetries: 1,
+    maxTokens: 6000, timeoutMs: 180000, maxRetries: 1,
   });
   const parsed = runAllItems('uebersetzung_json.js', { items: [result], nodeOutputs, staticData, executionId })[0].json.output;
   // NEU (2026-09-03, Nutzer-Idee "Textbausteine wiederverwenden"; ERWEITERT

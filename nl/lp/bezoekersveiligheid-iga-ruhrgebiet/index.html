@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Houdt NIKOS zich bij omroepberichten aan de geldende normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. De basis is DIN EN 50849 voor elektro-akoestische noodwaarschuwingssystemen, waarvan NIKOS de eisen volledig vervult. Speciaal ontwikkeld voor veiligheidsrelevante omroep- en alarmeringstoepassingen, is NIKOS technisch geschikt voor zowel dagelijks gebruik als noodsituaties. Bij ELA-installaties vormt DIN EN 50849 het bepalende kader. Omdat NIKOS – in tegenstelling tot systemen op basis van mobiele netwerken – niet afhankelijk is van een extern netwerk, is directe bruikbaarheid te allen tijde gegarandeerd, waardoor volledig aan de norm wordt voldaan. Andere veiligheidstechnische normen zoals DIN EN 54, DIN VDE 0833-4 en DIN 14675 (spraakalarminstallaties) betreffen een ander toepassingsgebied en functiebereik en zijn niet relevant voor een vergunning van NIKOS. Sinds de marktintroductie in 2017 wordt NIKOS als toonaangevend omroepsysteem voor tijdelijke en mobiele toepassingen met succes ingezet bij enkele van de grootste openluchtevenementen van Europa. RADACOM en uw regionale NIKOS-partner adviseren u graag over de veelzijdige functies van NIKOS en ondersteunen u bij een kostenefficiënte uitvoering van de vereisten."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/nl/lp/bezoekersveiligheid-iga-ruhrgebiet/#service",
+      "name": "Bezoekersveiligheid voor de IGA Ruhrgebiet 2027 in Essen: waarschuwingen over het uitgestrekte terrein coördineren",
+      "description": "Tijdens de IGA Ruhrgebiet 2027 in Essen vormt de veiligheid van bezoekers op het uitgestrekte tentoonstellingsterrein een bijzondere uitdaging.",
+      "url": "https://nikos.info/nl/lp/bezoekersveiligheid-iga-ruhrgebiet/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "nl",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Essen"
       }
     },
     {
-      "@type": "Question",
-      "name": "Blijft NIKOS functioneren bij stroom- of netwerkuitval?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS werkt via een eigen, autonoom draadloos netwerk en is onafhankelijk van openbare communicatienetwerken en hun beschikbaarheid. Omdat NIKOS draadloos communiceert, wordt de verbinding na een onderbreking automatisch hersteld. NIKOS [audio]² beschikt over een interne accu met een gebruiksduur tot 16 uur en voorziet daarmee ook aangesloten accessoiremodules van stroom. Zo blijft de bezoekersveiligheid voor de IGA Ruhrgebiet 2027 ook bij een stroomstoring of verstoringen in openbare communicatienetwerken betrouwbaar gewaarborgd."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nikos.info/nl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle toepassingen",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Bezoekersveiligheid voor de IGA Ruhrgebiet 2027 in Essen: waarschuwingen over het uitgestrekte terrein coördineren",
+          "item": "https://nikos.info/nl/lp/bezoekersveiligheid-iga-ruhrgebiet/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Kan NIKOS op korte termijn en flexibel worden ingezet?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS is speciaal ontwikkeld voor flexibele buitentoepassingen zonder vaste infrastructuur. De modules kunnen door één of twee personen binnen enkele minuten aan uiteenlopende constructies zoals lantaarnpalen, podia, bomen, kraampjes of decoraties worden gemonteerd en individueel worden geconfigureerd. Voor continu gebruik volstaat een normale Schuko-stroomaansluiting. NIKOS kan worden geïntegreerd in bestaande digitale draadloze netwerken."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Hoe kunnen afzonderlijke gebieden van het tentoonstellingsterrein gericht worden bereikt?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Met NIKOS [dispatcher]² kunnen omroepberichten gericht naar afzonderlijke omroeplocaties, geselecteerde gebieden of het volledige terrein worden verzonden. Zo ontvangen de betrokken bezoekersgebieden precies de informatie en instructies die voor de betreffende situatie nodig zijn."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/nl/lp/bezoekersveiligheid-iga-ruhrgebiet/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Houdt NIKOS zich bij omroepberichten aan de geldende normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. De basis is DIN EN 50849 voor elektro-akoestische noodwaarschuwingssystemen, waarvan NIKOS de eisen volledig vervult. Speciaal ontwikkeld voor veiligheidsrelevante omroep- en alarmeringstoepassingen, is NIKOS technisch geschikt voor zowel dagelijks gebruik als noodsituaties. Bij ELA-installaties vormt DIN EN 50849 het bepalende kader. Omdat NIKOS – in tegenstelling tot systemen op basis van mobiele netwerken – niet afhankelijk is van een extern netwerk, is directe bruikbaarheid te allen tijde gegarandeerd, waardoor volledig aan de norm wordt voldaan. Andere veiligheidstechnische normen zoals DIN EN 54, DIN VDE 0833-4 en DIN 14675 (spraakalarminstallaties) betreffen een ander toepassingsgebied en functiebereik en zijn niet relevant voor een vergunning van NIKOS. Sinds de marktintroductie in 2017 wordt NIKOS als toonaangevend omroepsysteem voor tijdelijke en mobiele toepassingen met succes ingezet bij enkele van de grootste openluchtevenementen van Europa. RADACOM en uw regionale NIKOS-partner adviseren u graag over de veelzijdige functies van NIKOS en ondersteunen u bij een kostenefficiënte uitvoering van de vereisten."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Blijft NIKOS functioneren bij stroom- of netwerkuitval?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS werkt via een eigen, autonoom draadloos netwerk en is onafhankelijk van openbare communicatienetwerken en hun beschikbaarheid. Omdat NIKOS draadloos communiceert, wordt de verbinding na een onderbreking automatisch hersteld. NIKOS [audio]² beschikt over een interne accu met een gebruiksduur tot 16 uur en voorziet daarmee ook aangesloten accessoiremodules van stroom. Zo blijft de bezoekersveiligheid voor de IGA Ruhrgebiet 2027 ook bij een stroomstoring of verstoringen in openbare communicatienetwerken betrouwbaar gewaarborgd."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan NIKOS op korte termijn en flexibel worden ingezet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS is speciaal ontwikkeld voor flexibele buitentoepassingen zonder vaste infrastructuur. De modules kunnen door één of twee personen binnen enkele minuten aan uiteenlopende constructies zoals lantaarnpalen, podia, kraampjes of bomen worden gemonteerd en individueel worden geconfigureerd. Voor continu gebruik volstaat een normale Schuko-stroomaansluiting. NIKOS kan worden geïntegreerd in bestaande digitale draadloze netwerken."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoe kunnen afzonderlijke gebieden van het tentoonstellingsterrein gericht worden bereikt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Met NIKOS [dispatcher]² kunnen omroepberichten gericht naar afzonderlijke omroeplocaties, geselecteerde gebieden of het volledige terrein worden verzonden. Zo ontvangen de betrokken bezoekersgebieden precies de informatie en instructies die voor de betreffende situatie nodig zijn."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bezoekersveiligheid voor de IGA Ruhrgebiet 2027 in Essen: waarschuwingen over het uitgestrekte terrein coördineren: Waar kan NIKOS worden gehuurd?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wordt per dag verhuurd via gecertificeerde partners, inclusief advies, instructie en technische ondersteuning. Uw regionale partner stemt de inzet met u af. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Partner kiezen en huur aanvragen</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Essen"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Essen"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS is geen klassiek omroepsysteem, maar een radiogebaseerd systeem voor omroepberichten, alarmering en aansturing bij grote evenementen, bouwplaatsen en crisissituaties, dat u per dag huurt via gecertificeerde partners en kunt integreren in uw geluidsinstallatie of zelfstandig kunt inzetten.</p>
     <span class="nk-label">Uitdaging</span>
     <h2 class="heading-l" style="margin-top:12px;">Bezoekers betrouwbaar gebiedsoverstijgend informeren</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Tijdens de IGA Ruhrgebiet 2027 in Essen vormt de veiligheid van bezoekers op het uitgestrekte tentoonstellingsterrein een bijzondere uitdaging. Bezoekers bevinden zich gelijktijdig in verschillende gebieden en moeten bij een gevaarlijke situatie snel en met duidelijke instructies worden bereikt. Grote bezoekersaantallen kunnen openbare mobiele netwerken overbelasten, waardoor communicatie via mobiele netwerken in een crisissituatie niet betrouwbaar beschikbaar is.</p>
@@ -270,11 +350,15 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Kan NIKOS op korte termijn en flexibel worden ingezet?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Ja, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is speciaal ontwikkeld voor flexibele buitentoepassingen zonder vaste infrastructuur. De modules kunnen door één of twee personen binnen enkele minuten aan uiteenlopende constructies zoals lantaarnpalen, podia, bomen, kraampjes of decoraties worden gemonteerd en individueel worden geconfigureerd. Voor continu gebruik volstaat een normale Schuko-stroomaansluiting. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> kan worden geïntegreerd in bestaande digitale draadloze netwerken.</div>
+        <div class="faq-item__body">Ja, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is speciaal ontwikkeld voor flexibele buitentoepassingen zonder vaste infrastructuur. De modules kunnen door één of twee personen binnen enkele minuten aan uiteenlopende constructies zoals lantaarnpalen, podia, kraampjes of bomen worden gemonteerd en individueel worden geconfigureerd. Voor continu gebruik volstaat een normale Schuko-stroomaansluiting. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> kan worden geïntegreerd in bestaande digitale draadloze netwerken.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Hoe kunnen afzonderlijke gebieden van het tentoonstellingsterrein gericht worden bereikt?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body">Met <a class="nk-mod" href="https://nikos.info/en/products/#dispatcher"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a> kunnen omroepberichten gericht naar afzonderlijke omroeplocaties, geselecteerde gebieden of het volledige terrein worden verzonden. Zo ontvangen de betrokken bezoekersgebieden precies de informatie en instructies die voor de betreffende situatie nodig zijn.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Bezoekersveiligheid voor de IGA Ruhrgebiet 2027 in Essen: waarschuwingen over het uitgestrekte terrein coördineren: Waar kan <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> worden gehuurd?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wordt per dag verhuurd via gecertificeerde partners, inclusief advies, instructie en technische ondersteuning. Uw regionale partner stemt de inzet met u af. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Partner kiezen en huur aanvragen</a></div>
       </details>
     </div>
   </div>

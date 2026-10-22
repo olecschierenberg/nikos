@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Czy komunikaty za pomocą NIKOS są zgodne z normami?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Tak — NIKOS w pełni spełnia wymagania normy DIN EN 50849 (elektroakustyczne systemy ostrzegania w sytuacjach awaryjnych). System został zaprojektowany specjalnie do zadań związanych z komunikatami i alarmowaniem istotnymi dla bezpieczeństwa, technicznie przystosowany zarówno do codziennej eksploatacji, jak i sytuacji awaryjnych. W przypadku instalacji ELA norma DIN EN 50849 określa decydujące ramy. Ponieważ NIKOS – w przeciwieństwie do rozwiązań opartych na sieciach komórkowych – nie jest zależny od żadnej sieci zewnętrznej, jest zawsze natychmiast gotowy do użycia i w pełni spełnia wymagania określone w normie. Inne normy techniki bezpieczeństwa, takie jak DIN EN 54, DIN VDE 0833-4 lub DIN 14675 (systemy alarmowania głosowego), dotyczą innego obszaru zastosowań i innego zakresu funkcji, dlatego nie są istotne dla NIKOS w kontekście uzyskania zezwolenia. Od 2017 roku NIKOS jest z powodzeniem wielokrotnie wykorzystywany jako wiodący na rynku system komunikatów do zastosowań tymczasowych i mobilnych, do zadań komunikacyjnych o krytycznym znaczeniu. Ostateczna ocena i akceptacja przez właściwy organ odbywa się indywidualnie dla danego projektu."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/pl/lp/komunikaty-alarmowe-sail-amsterdam/#service",
+      "name": "Komunikaty alarmowe podczas Sail Amsterdam 2030",
+      "description": "W sytuacji zagrożenia ostrzeżenia i instrukcje dotyczące dalszego postępowania muszą szybko i zrozumiale dotrzeć do wszystkich obecnych.",
+      "url": "https://nikos.info/pl/lp/komunikaty-alarmowe-sail-amsterdam/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "pl",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     },
     {
-      "@type": "Question",
-      "name": "Czy NIKOS można elastycznie wdrożyć w krótkim czasie?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Tak. NIKOS został specjalnie opracowany do elastycznego zastosowania na zewnątrz, bez stałej infrastruktury. Jedna lub dwie osoby mogą w ciągu kilku minut zamontować moduły na różnego rodzaju konstrukcjach, takich jak latarnie, sceny, drzewa, stoiska czy dekoracje, a następnie indywidualnie je skonfigurować. Do pracy ciągłej wystarczy standardowe gniazdo zasilające Schuko."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://nikos.info/pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Wszystkie przykłady zastosowań",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Komunikaty alarmowe podczas Sail Amsterdam 2030",
+          "item": "https://nikos.info/pl/lp/komunikaty-alarmowe-sail-amsterdam/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "W jaki sposób zastosowanie NIKOS pozwala obniżyć koszty?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Dzięki NIKOS różne funkcje są realizowane za pośrednictwem jednej platformy komunikacyjnej. Oszczędności te szybko równoważą koszty wynajmu i instalacji NIKOS. Tutaj znajdą Państwo kilka konkretnych przykładów oszczędności. Konsekwentne wykorzystanie wszechstronnych funkcji pozwala, obok podniesienia poziomu bezpieczeństwa i odciążenia pracowników, zmniejszyć całkowity budżet. Do obsługi komunikatów alarmowych i innych zadań koordynacyjnych związanych z bezpieczeństwem nie są już potrzebne oddzielne rozwiązania głośnikowe, sterujące i komunikacyjne. NIKOS łączy te zadania w jednej platformie. Zmniejsza to zapotrzebowanie na materiały, nakład pracy związany z okablowaniem oraz ryzyko potknięcia się o mostki kablowe. Ponadto NIKOS pozwala celowo ograniczyć zapotrzebowanie na personel: zadania, do których w przeciwnym razie potrzebnych byłoby kilka rozmieszczonych na całym terenie punktów porządkowych, meldunkowych lub obsługi, są realizowane z jednego miejsca za pomocą centralnych komunikatów głosowych, zdalnego sterowania i monitorowania stanu. W ten sposób NIKOS pozwala oszczędzić personel, który może zostać skuteczniej wykorzystany w punktach o krytycznym znaczeniu dla bezpieczeństwa. W przypadku wydarzeń tymczasowych koszty planowania, montażu i eksploatacji techniki bezpieczeństwa ulegają dzięki temu znacznemu obniżeniu."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Czy komunikaty alarmowe można kierować do poszczególnych obszarów?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Tak. NIKOS [dispatcher]² steruje jednostkami nagłośnieniowymi dla poszczególnych lokalizacji komunikatów, wybranych obszarów lub całego terenu wydarzenia. Dzięki temu instrukcje dotyczące konkretnego obszaru nabrzeża mogą zostać przekazane bez jednoczesnego docierania do wszystkich odwiedzających Sail Amsterdam 2030."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/pl/lp/komunikaty-alarmowe-sail-amsterdam/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Czy komunikaty za pomocą NIKOS są zgodne z normami?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak — NIKOS w pełni spełnia wymagania normy DIN EN 50849 (elektroakustyczne systemy ostrzegania w sytuacjach awaryjnych). System został zaprojektowany specjalnie do zadań związanych z komunikatami i alarmowaniem istotnymi dla bezpieczeństwa, technicznie przystosowany zarówno do codziennej eksploatacji, jak i sytuacji awaryjnych. W przypadku instalacji ELA norma DIN EN 50849 określa decydujące ramy. Ponieważ NIKOS – w przeciwieństwie do rozwiązań opartych na sieciach komórkowych – nie jest zależny od żadnej sieci zewnętrznej, jest zawsze natychmiast gotowy do użycia i w pełni spełnia wymagania określone w normie. Inne normy techniki bezpieczeństwa, takie jak DIN EN 54, DIN VDE 0833-4 lub DIN 14675 (systemy alarmowania głosowego), dotyczą innego obszaru zastosowań i innego zakresu funkcji, dlatego nie są istotne dla NIKOS w kontekście uzyskania zezwolenia. Od 2017 roku NIKOS jest z powodzeniem wielokrotnie wykorzystywany jako wiodący na rynku system komunikatów do zastosowań tymczasowych i mobilnych, do zadań komunikacyjnych o krytycznym znaczeniu. Ostateczna ocena i akceptacja przez właściwy organ odbywa się indywidualnie dla danego projektu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy NIKOS można elastycznie wdrożyć w krótkim czasie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. NIKOS został specjalnie opracowany do elastycznego zastosowania na zewnątrz, bez stałej infrastruktury. Jedna lub dwie osoby mogą w ciągu kilku minut zamontować moduły na różnego rodzaju konstrukcjach, takich jak latarnie, sceny, stoiska lub drzewa, a następnie indywidualnie je skonfigurować. Do pracy ciągłej wystarczy standardowe gniazdo zasilające Schuko."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "W jaki sposób zastosowanie NIKOS pozwala obniżyć koszty?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dzięki NIKOS różne funkcje są realizowane za pośrednictwem jednej platformy komunikacyjnej. Oszczędności te szybko równoważą koszty wynajmu i instalacji NIKOS. Tutaj znajdą Państwo kilka konkretnych przykładów oszczędności. Konsekwentne wykorzystanie wszechstronnych funkcji pozwala, obok podniesienia poziomu bezpieczeństwa i odciążenia pracowników, zmniejszyć całkowity budżet. Do obsługi komunikatów alarmowych i innych zadań koordynacyjnych związanych z bezpieczeństwem nie są już potrzebne oddzielne rozwiązania głośnikowe, sterujące i komunikacyjne. NIKOS łączy te zadania w jednej platformie. Zmniejsza to zapotrzebowanie na materiały, nakład pracy związany z okablowaniem oraz ryzyko potknięcia się o mostki kablowe. Ponadto NIKOS pozwala celowo ograniczyć zapotrzebowanie na personel: zadania, do których w przeciwnym razie potrzebnych byłoby kilka rozmieszczonych na całym terenie punktów porządkowych, meldunkowych lub obsługi, są realizowane z jednego miejsca za pomocą centralnych komunikatów głosowych, zdalnego sterowania i monitorowania stanu. W ten sposób NIKOS pozwala oszczędzić personel, który może zostać skuteczniej wykorzystany w punktach o krytycznym znaczeniu dla bezpieczeństwa. W przypadku wydarzeń tymczasowych koszty planowania, montażu i eksploatacji techniki bezpieczeństwa ulegają dzięki temu znacznemu obniżeniu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy komunikaty alarmowe można kierować do poszczególnych obszarów?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. NIKOS [dispatcher]² steruje jednostkami nagłośnieniowymi dla poszczególnych lokalizacji komunikatów, wybranych obszarów lub całego terenu wydarzenia. Dzięki temu instrukcje dotyczące konkretnego obszaru nabrzeża mogą zostać przekazane bez jednoczesnego docierania do wszystkich odwiedzających Sail Amsterdam 2030."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Komunikaty alarmowe podczas Sail Amsterdam 2030: Gdzie można wynająć NIKOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS jest wynajmowany na doby przez certyfikowanych partnerów, wraz z doradztwem, instruktażem i wsparciem technicznym. Regionalny partner uzgadnia zakres użycia z Państwem. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Wybierz partnera i zapytaj o wynajem</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Amsterdam"
-  }
+  ]
 }
 </script>
 
@@ -238,6 +317,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS to nie klasyczny system nagłośnienia, lecz oparty na łączności radiowej system komunikatów, alarmowania i sterowania na duże wydarzenia, place budowy i sytuacje kryzysowe, który można wynająć na doby przez certyfikowanych partnerów i zintegrować z własnym nagłośnieniem lub używać samodzielnie.</p>
     <span class="nk-label">Wyzwanie</span>
     <h2 class="heading-l" style="margin-top:12px;">Wyraźne ostrzeżenia bez publicznej sieci</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Podczas Sail Amsterdam 2030 duże strumienie odwiedzających wzdłuż nabrzeży, hałas otoczenia oraz międzynarodowa publiczność stanowią szczególne wyzwanie dla komunikatów alarmowych. W sytuacji zagrożenia ostrzeżenia i instrukcje dotyczące dalszego postępowania muszą szybko i zrozumiale dotrzeć do wszystkich obecnych. Przy dużej liczbie odwiedzających sieci komórkowe ulegają przeciążeniu, dlatego systemy zależne od takich sieci nie nadają się do komunikacji o znaczeniu krytycznym.</p>
@@ -267,7 +347,7 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Czy NIKOS można elastycznie wdrożyć w krótkim czasie?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Tak. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> został specjalnie opracowany do elastycznego zastosowania na zewnątrz, bez stałej infrastruktury. Jedna lub dwie osoby mogą w ciągu kilku minut zamontować moduły na różnego rodzaju konstrukcjach, takich jak latarnie, sceny, drzewa, stoiska czy dekoracje, a następnie indywidualnie je skonfigurować. Do pracy ciągłej wystarczy standardowe gniazdo zasilające Schuko.</div>
+        <div class="faq-item__body">Tak. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> został specjalnie opracowany do elastycznego zastosowania na zewnątrz, bez stałej infrastruktury. Jedna lub dwie osoby mogą w ciągu kilku minut zamontować moduły na różnego rodzaju konstrukcjach, takich jak latarnie, sceny, stoiska lub drzewa, a następnie indywidualnie je skonfigurować. Do pracy ciągłej wystarczy standardowe gniazdo zasilające Schuko.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">W jaki sposób zastosowanie NIKOS pozwala obniżyć koszty?</span><span class="faq-icon">+</span></summary>
@@ -276,6 +356,10 @@ a{color:inherit}
       <details class="faq-item">
         <summary><span class="faq-q">Czy komunikaty alarmowe można kierować do poszczególnych obszarów?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body">Tak. <a class="nk-mod" href="https://nikos.info/en/products/#dispatcher"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a> steruje jednostkami nagłośnieniowymi dla poszczególnych lokalizacji komunikatów, wybranych obszarów lub całego terenu wydarzenia. Dzięki temu instrukcje dotyczące konkretnego obszaru nabrzeża mogą zostać przekazane bez jednoczesnego docierania do wszystkich odwiedzających Sail Amsterdam 2030.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Komunikaty alarmowe podczas Sail Amsterdam 2030: Gdzie można wynająć <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> jest wynajmowany na doby przez certyfikowanych partnerów, wraz z doradztwem, instruktażem i wsparciem technicznym. Regionalny partner uzgadnia zakres użycia z Państwem. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Wybierz partnera i zapytaj o wynajem</a></div>
       </details>
     </div>
   </div>

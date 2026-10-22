@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Do announcements made with NIKOS comply with the applicable standards?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. NIKOS meets the requirements of DIN EN 50849 (electroacoustic emergency warning systems). NIKOS was developed specifically for safety-relevant public address and alerting applications and is technically designed for use in both everyday and emergency situations. For electroacoustic emergency warning systems, DIN EN 50849 is the relevant reference framework. Unlike mobile network-based systems, NIKOS fully meets the requirements specified therein, as it does not depend on an external network and can therefore be used immediately at any time. Other standards known from safety technology, such as DIN EN 54, DIN VDE 0833-4 and DIN 14675 (voice alarm systems), do not apply to the field of use and functional scope of NIKOS and are therefore not relevant for approval. NIKOS is a public address system for temporary and mobile applications and has been successfully deployed in numerous mission-critical communication tasks since 2017. RADACOM and your regional NIKOS partner will be happy to advise you on the wide range of NIKOS functions and support you in implementing the requirements cost-effectively."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/en/lp/visitor-safety-gentse-feesten/#service",
+      "name": "Visitor safety for the Gentse Feesten",
+      "description": "At the Gentse Feesten, visitor safety is particularly challenging because of crowding, a noisy environment and international visitors.",
+      "url": "https://nikos.info/en/lp/visitor-safety-gentse-feesten/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "en",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Gent"
       }
     },
     {
-      "@type": "Question",
-      "name": "Does NIKOS remain operational if power supplies or public networks fail?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. NIKOS operates through its own autonomous radio network and independently of public communication networks. As NIKOS communicates by radio rather than relying on cable connections, the connection restores itself after an interruption. NIKOS [audio]² has an internal battery with a runtime of up to 16 hours and also supplies connected accessory modules. This keeps communication functions supporting visitor safety at the Gentse Feesten operational during power failures or disruptions to public communication networks."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nikos.info/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "All use cases",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Visitor safety for the Gentse Feesten",
+          "item": "https://nikos.info/en/lp/visitor-safety-gentse-feesten/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Can NIKOS be installed flexibly at temporary event locations?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. NIKOS was developed for flexible outdoor deployment without fixed infrastructure. One or two people can mount the modules on structures such as lamp posts, stages, trees, stalls or decorations within minutes and configure them individually. A standard Schuko power connection is sufficient for continuous operation. NIKOS also uses an existing digital radio network."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How can announcements remain intelligible when music is loud?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "NIKOS [audio]² can interrupt connected music systems for the duration of an announcement. This reduces disruptive sound levels and substantially improves speech intelligibility. NIKOS [audio]² also uses existing music systems for announcements, avoiding the need to install a separate public-address system."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/en/lp/visitor-safety-gentse-feesten/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do announcements made with NIKOS comply with the applicable standards?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. NIKOS meets the requirements of DIN EN 50849 (electroacoustic emergency warning systems). NIKOS was developed specifically for safety-relevant public address and alerting applications and is technically designed for use in both everyday and emergency situations. For electroacoustic emergency warning systems, DIN EN 50849 is the relevant reference framework. Unlike mobile network-based systems, NIKOS fully meets the requirements specified therein, as it does not depend on an external network and can therefore be used immediately at any time. Other standards known from safety technology, such as DIN EN 54, DIN VDE 0833-4 and DIN 14675 (voice alarm systems), do not apply to the field of use and functional scope of NIKOS and are therefore not relevant for approval. NIKOS is a public address system for temporary and mobile applications and has been successfully deployed in numerous mission-critical communication tasks since 2017. RADACOM and your regional NIKOS partner will be happy to advise you on the wide range of NIKOS functions and support you in implementing the requirements cost-effectively."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does NIKOS remain operational if power supplies or public networks fail?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. NIKOS operates through its own autonomous radio network and independently of public communication networks. As NIKOS communicates by radio rather than relying on cable connections, the connection restores itself after an interruption. NIKOS [audio]² has an internal battery with a runtime of up to 16 hours and also supplies connected accessory modules. This keeps communication functions supporting visitor safety at the Gentse Feesten operational during power failures or disruptions to public communication networks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can NIKOS be installed flexibly at temporary event locations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. NIKOS was developed for flexible outdoor deployment without fixed infrastructure. One or two people can mount the modules on structures such as lampposts, stages, stands or trees within minutes and configure them individually. A standard Schuko power connection is sufficient for continuous operation. NIKOS also uses an existing digital radio network."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can announcements remain intelligible when music is loud?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS [audio]² can interrupt connected music systems for the duration of an announcement. This reduces disruptive sound levels and substantially improves speech intelligibility. NIKOS [audio]² also uses existing music systems for announcements, avoiding the need to install a separate public-address system."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Visitor safety for the Gentse Feesten: Where can NIKOS be rented?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Find a partner and request a rental</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Gent"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Gent"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS is not a conventional PA system, but a radio-based public address, alarm and control system for large events, construction sites and crisis situations, which you can rent by the day through certified partners and either integrate into your PA or use on its own.</p>
     <span class="nk-label">Challenge</span>
     <h2 class="heading-l" style="margin-top:12px;">Guide visitors to safe areas</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">At the Gentse Feesten, visitor safety is particularly challenging because of crowding, a noisy environment and international visitors. In an incident, warnings and instructions must reach all visitors clearly and intelligibly, even as people move between different parts of the event. High visitor density overloads mobile networks, making mobile-dependent systems unsuitable for emergency communication.</p>
@@ -270,11 +350,15 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Can NIKOS be installed flexibly at temporary event locations?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Yes. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed for flexible outdoor deployment without fixed infrastructure. One or two people can mount the modules on structures such as lamp posts, stages, trees, stalls or decorations within minutes and configure them individually. A standard Schuko power connection is sufficient for continuous operation. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> also uses an existing digital radio network.</div>
+        <div class="faq-item__body">Yes. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed for flexible outdoor deployment without fixed infrastructure. One or two people can mount the modules on structures such as lampposts, stages, stands or trees within minutes and configure them individually. A standard Schuko power connection is sufficient for continuous operation. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> also uses an existing digital radio network.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">How can announcements remain intelligible when music is loud?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/en/products/#audio"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS audio.svg" alt="NIKOS [audio]²" loading="lazy"></a> can interrupt connected music systems for the duration of an announcement. This reduces disruptive sound levels and substantially improves speech intelligibility. <a class="nk-mod" href="https://nikos.info/en/products/#audio"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS audio.svg" alt="NIKOS [audio]²" loading="lazy"></a> also uses existing music systems for announcements, avoiding the need to install a separate public-address system.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Visitor safety for the Gentse Feesten: Where can <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> be rented?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find a partner and request a rental</a></div>
       </details>
     </div>
   </div>

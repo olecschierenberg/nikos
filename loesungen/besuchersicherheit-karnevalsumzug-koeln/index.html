@@ -23,42 +23,121 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "about": {
-    "@type": "Place",
-    "name": "Köln"
-  },
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 (Elektroakustische Notfallwarnsysteme). NIKOS wurde speziell für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen entwickelt und ist technisch für den Einsatz in Alltags- und Notfallsituationen ausgelegt. Für elektroakustische Notfallwarnsysteme ist die DIN EN 50849 der maßgebliche Orientierungsrahmen. Die dort genannten Anforderungen werden von NIKOS erfüllt, da keine Abhängigkeit von einem fremden Netz besteht und eine sofortige Nutzbarkeit gewährleistet ist. Andere aus der Sicherheitstechnik bekannte Normen wie DIN EN 54, DIN VDE 0833-4 sowie DIN 14675 betreffen Sprachalarmierungsanlagen mit anderem Einsatzgebiet und Funktionsspektrum. Die behördliche Abnahme bleibt projektspezifisch."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/loesungen/besuchersicherheit-karnevalsumzug-koeln/#service",
+      "name": "Besuchersicherheit beim Karnevalsumzug in Köln",
+      "description": "Beim Karnevalsumzug in Köln bewegt sich der Zug über eine lange Strecke mit vielen Wagen, Fußgruppen und wechselnden Besucheransammlungen.",
+      "url": "https://nikos.info/loesungen/besuchersicherheit-karnevalsumzug-koeln/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "de",
+      "termsOfService": "https://nikos.info/de/mietbedingungen/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Köln"
       }
     },
     {
-      "@type": "Question",
-      "name": "Wo entstehen beim Einsatz von NIKOS Kostenvorteile?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Mit NIKOS lassen sich wiederkehrende Koordinationsaufgaben zentral steuern und durch NIKOS überwachen bzw. ausführen. Dadurch reduzieren sich Personalwege, Bedien- und Wachposten, weil Durchsagen, Statusüberwachung und Fernsteuerung nicht über getrennte Teilsysteme abgewickelt werden. Die Miet- und Installationskosten von NIKOS lassen sich durch diese Einsparungen schnell kompensieren. Einige konkrete Beispiele für Einsparungen finden Sie hier."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://nikos.info/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle Einsatzbeispiele",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Besuchersicherheit beim Karnevalsumzug in Köln",
+          "item": "https://nikos.info/loesungen/besuchersicherheit-karnevalsumzug-koeln/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Ist NIKOS beim Karnevalsumzug in Köln krisensicher?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz und unabhängig von öffentlichen Kommunikationsnetzen. Da NIKOS nicht auf Kabelwege angewiesen ist, stellt sich die Verbindung nach einer Unterbrechung selbstständig wieder her. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. So bleibt die Besuchersicherheit beim Karnevalsumzug in Köln auch bei Ausfall der Stromversorgung oder Störungen in den öffentlichen Kommunikationsnetzen zuverlässig funktionsfähig."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie werden Durchsagen bei lauter Musik im Karnevalsumzug gehört?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Bei lauter Musik signalisiert NIKOS [flash]² dem Dirigenten, Bandleader beziehungsweise DJ per Blinklicht, die Musik unverzüglich zu unterbrechen. Auf das Lichtsignal hin wird das Spiel oder die Wiedergabe unterbrochen, sodass Durchsagen sicher verstanden werden. So erreichen wichtige Sicherheitsinformationen das Publikum auch bei dichtem Gedränge entlang der Umzugsstrecke zuverlässig."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/loesungen/besuchersicherheit-karnevalsumzug-koeln/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 (Elektroakustische Notfallwarnsysteme). NIKOS wurde speziell für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen entwickelt und ist technisch für den Einsatz in Alltags- und Notfallsituationen ausgelegt. Für elektroakustische Notfallwarnsysteme ist die DIN EN 50849 der maßgebliche Orientierungsrahmen. Die dort genannten Anforderungen werden von NIKOS im Gegensatz zu mobilfunkbasierten Systemen voll erfüllt, da keine Abhängigkeit von einem fremden Netz besteht und somit jederzeit eine sofortige Nutzbarkeit gewährleistet ist. Andere aus der Sicherheitstechnik bekannte Normen wie DIN EN 54, DIN VDE 0833-4 sowie DIN 14675 betreffen Sprachalarmierungsanlagen mit anderem Einsatzgebiet und Funktionsspektrum. Die behördliche Abnahme bleibt projektspezifisch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wo entstehen beim Einsatz von NIKOS Kostenvorteile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mit NIKOS lassen sich wiederkehrende Koordinationsaufgaben zentral steuern und durch NIKOS überwachen bzw. ausführen. Dadurch reduzieren sich Personalwege, Bedien- und Wachposten, weil Durchsagen, Statusüberwachung und Fernsteuerung nicht über getrennte Teilsysteme abgewickelt werden. Die Miet- und Installationskosten von NIKOS lassen sich durch diese Einsparungen schnell kompensieren. Einige konkrete Beispiele für Einsparungen finden Sie hier."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist NIKOS beim Karnevalsumzug in Köln krisensicher?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz und unabhängig von öffentlichen Kommunikationsnetzen. Da NIKOS nicht auf Kabelwege angewiesen ist, stellt sich die Verbindung nach einer Unterbrechung selbstständig wieder her. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. So bleibt die Besuchersicherheit beim Karnevalsumzug in Köln auch bei Ausfall der Stromversorgung oder Störungen in den öffentlichen Kommunikationsnetzen zuverlässig funktionsfähig."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie werden Durchsagen bei lauter Musik im Karnevalsumzug gehört?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bei lauter Musik signalisiert NIKOS [flash]² dem Dirigenten, Bandleader beziehungsweise DJ per Blinklicht, die Musik unverzüglich zu unterbrechen. Auf das Lichtsignal hin wird das Spiel oder die Wiedergabe unterbrochen, sodass Durchsagen sicher verstanden werden. So erreichen wichtige Sicherheitsinformationen das Publikum auch bei dichtem Gedränge entlang der Umzugsstrecke zuverlässig."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Besuchersicherheit beim Karnevalsumzug in Köln: Wo kann man NIKOS mieten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Zur Partnerauswahl und Mietanfrage</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Köln"
       }
     }
   ]
@@ -248,6 +327,8 @@ a{color:inherit}
 <!-- ═══ INTRO (S2) ═══ -->
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-de>NIKOS ist kein klassisches PA-System, sondern ein funkbasiertes Durchsage-, Alarmierungs- und Steuerungssystem für Großveranstaltungen, Baustellen und Krisenlagen, das Sie tageweise über zertifizierte Partner mieten und in Ihre PA integrieren oder eigenständig einsetzen können.</p>
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-en>NIKOS is not a conventional PA system, but a radio-based public address, alarm and control system for large events, construction sites and crisis situations, which you can rent by the day through certified partners and either integrate into your PA or use on its own.</p>
     <span class="nk-label" data-de>Herausforderung</span><span class="nk-label" data-en>Challenge</span>
     <h2 class="heading-l" style="margin-top:12px;" data-de>Warnungen müssen dem Zug über die gesamte Strecke folgen</h2>
     <h2 class="heading-l" style="margin-top:12px;" data-en>Warnings must follow the parade along its entire route</h2>
@@ -297,6 +378,11 @@ a{color:inherit}
         <summary><span class="faq-q" data-de>Wie werden Durchsagen bei lauter Musik im Karnevalsumzug gehört?</span><span class="faq-q" data-en>How can announcements be heard when loud music is playing during the Carnival Parade?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body" data-de>Bei lauter Musik signalisiert <a class="nk-mod" href="https://nikos.info/de/produkte/#zubehoer"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS flash.svg" alt="NIKOS [flash]²" loading="lazy"></a> dem Dirigenten, Bandleader beziehungsweise DJ per Blinklicht, die Musik unverzüglich zu unterbrechen. Auf das Lichtsignal hin wird das Spiel oder die Wiedergabe unterbrochen, sodass Durchsagen sicher verstanden werden. So erreichen wichtige Sicherheitsinformationen das Publikum auch bei dichtem Gedränge entlang der Umzugsstrecke zuverlässig.</div>
         <div class="faq-item__body" data-en>When loud music is playing, <a class="nk-mod" href="https://nikos.info/de/produkte/#zubehoer"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS flash.svg" alt="NIKOS [flash]²" loading="lazy"></a> uses a flashing light to signal to the conductor, bandleader or DJ that the music must be interrupted immediately. In response to the light signal, the performance or playback is stopped so that announcements can be understood reliably. This ensures that important safety information reaches the audience even in dense crowds along the parade route.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" data-de>Besuchersicherheit beim Karnevalsumzug in Köln: Wo kann man <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mieten?</span><span class="faq-q" data-en>Visitor safety at the Cologne Carnival Parade: Where can <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> be rented?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Zur Partnerauswahl und Mietanfrage</a></div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find a partner and request a rental</a></div>
       </details>
     </div>
   </div>

@@ -23,42 +23,121 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "about": {
-    "@type": "Place",
-    "name": "Darmstadt"
-  },
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 für elektroakustische Notfallwarnsysteme. Damit ist NIKOS für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen normkonform einsetzbar. Die Anforderungen der DIN EN 50849 werden erfüllt. Andere aus der Sicherheitstechnik bekannte Normen wie DIN EN 54, DIN VDE 0833-4 sowie DIN 14675 sind für dieses Einsatzgebiet nicht maßgeblich."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/loesungen/raeumungsdurchsage-hessentag-darmstadt/#service",
+      "name": "Räumungsdurchsage für den Hessentag in Darmstadt",
+      "description": "Beim Hessentag in Darmstadt verteilen sich Bühnen, Aktionsflächen und Besucherströme über mehrere Bereiche der Stadt.",
+      "url": "https://nikos.info/loesungen/raeumungsdurchsage-hessentag-darmstadt/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "de",
+      "termsOfService": "https://nikos.info/de/mietbedingungen/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Darmstadt"
       }
     },
     {
-      "@type": "Question",
-      "name": "Wo entstehen beim Einsatz von NIKOS Kostenvorteile?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "NIKOS reduziert den Bedarf an separater Lautsprecher-, Steuer- und Kommunikationshardware. Das senkt Materialaufwand, Verkabelungsaufwand und Installationsaufwand. Bei temporären Veranstaltungen verringern sich dadurch auch der Planungs-, Aufbau- und Betriebsaufwand. Zusätzlich lassen sich Personalressourcen effizienter einsetzen, weil Durchsagen, Steuerung und Statusüberwachung zentral von einer Stelle aus erfolgen."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://nikos.info/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle Einsatzbeispiele",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Räumungsdurchsage für den Hessentag in Darmstadt",
+          "item": "https://nikos.info/loesungen/raeumungsdurchsage-hessentag-darmstadt/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Ist NIKOS krisensicher?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz und unabhängig von öffentlichen Kommunikationsnetzen. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. Auch bei einem überlasteten Handynetz, einem Ausfall des Internetproviders oder einer unterbrochenen Stromversorgung bleibt das System funktionsfähig. So bleiben Räumungsdurchsagen für den Hessentag auch bei Ausfall der Stromversorgung oder Störungen in den öffentlichen Kommunikationsnetzen zuverlässig möglich."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ist NIKOS kurzfristig und flexibel einsetzbar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/loesungen/raeumungsdurchsage-hessentag-darmstadt/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 für elektroakustische Notfallwarnsysteme. Damit ist NIKOS für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen normkonform einsetzbar. Die Anforderungen der DIN EN 50849 werden erfüllt. Andere aus der Sicherheitstechnik bekannte Normen wie DIN EN 54, DIN VDE 0833-4 sowie DIN 14675 sind für dieses Einsatzgebiet nicht maßgeblich."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wo entstehen beim Einsatz von NIKOS Kostenvorteile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS reduziert vor allem den Aufwand für separate Lautsprecher-, Steuer- und Kommunikationslösungen. Materialbedarf und Verkabelungsaufwand werden geringer, Informations- und Notfalldurchsagen lassen sich von einer Stelle aus machen. Bei temporären Veranstaltungen verringern sich dadurch auch der Planungs-, Aufbau- und Betriebsaufwand. Zusätzlich lassen sich Personalressourcen effizienter einsetzen, weil Durchsagen, Steuerung und Statusüberwachung zentral von einer Stelle aus erfolgen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist NIKOS krisensicher?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz und unabhängig von öffentlichen Kommunikationsnetzen. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. Auch bei einem überlasteten Handynetz, einem Ausfall des Internetproviders oder einer unterbrochenen Stromversorgung bleibt das System funktionsfähig. So bleiben Räumungsdurchsagen für den Hessentag auch bei Ausfall der Stromversorgung oder Störungen in den öffentlichen Kommunikationsnetzen zuverlässig möglich."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist NIKOS kurzfristig und flexibel einsetzbar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Räumungsdurchsage für den Hessentag in Darmstadt: Wo kann man NIKOS mieten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Zur Partnerauswahl und Mietanfrage</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Darmstadt"
       }
     }
   ]
@@ -248,6 +327,8 @@ a{color:inherit}
 <!-- ═══ INTRO (S2) ═══ -->
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-de>NIKOS ist kein klassisches PA-System, sondern ein funkbasiertes Durchsage-, Alarmierungs- und Steuerungssystem für Großveranstaltungen, Baustellen und Krisenlagen, das Sie tageweise über zertifizierte Partner mieten und in Ihre PA integrieren oder eigenständig einsetzen können.</p>
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-en>NIKOS is not a conventional PA system, but a radio-based public address, alarm and control system for large events, construction sites and crisis situations, which you can rent by the day through certified partners and either integrate into your PA or use on its own.</p>
     <span class="nk-label" data-de>Herausforderung</span><span class="nk-label" data-en>Challenge</span>
     <h2 class="heading-l" style="margin-top:12px;" data-de>Koordinierte Warnung über verteilte Bühnen und Bereiche</h2>
     <h2 class="heading-l" style="margin-top:12px;" data-en>Coordinated alerts across distributed stages and areas</h2>
@@ -285,8 +366,8 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Wo entstehen beim Einsatz von NIKOS Kostenvorteile?</span><span class="faq-q" data-en>Where does NIKOS provide cost benefits?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> reduziert den Bedarf an separater Lautsprecher-, Steuer- und Kommunikationshardware. Das senkt Materialaufwand, Verkabelungsaufwand und Installationsaufwand. Bei temporären Veranstaltungen verringern sich dadurch auch der Planungs-, Aufbau- und Betriebsaufwand. Zusätzlich lassen sich Personalressourcen effizienter einsetzen, weil Durchsagen, Steuerung und Statusüberwachung zentral von einer Stelle aus erfolgen.</div>
-        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> reduces the need for separate loudspeaker, control and communication hardware. This lowers material, cabling and installation costs. At temporary events, it also reduces the planning, setup and operating effort. In addition, personnel resources can be used more efficiently because announcements, control and status monitoring are handled centrally from a single location.</div>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> reduziert vor allem den Aufwand für separate Lautsprecher-, Steuer- und Kommunikationslösungen. Materialbedarf und Verkabelungsaufwand werden geringer, Informations- und Notfalldurchsagen lassen sich von einer Stelle aus machen. Bei temporären Veranstaltungen verringern sich dadurch auch der Planungs-, Aufbau- und Betriebsaufwand. Zusätzlich lassen sich Personalressourcen effizienter einsetzen, weil Durchsagen, Steuerung und Statusüberwachung zentral von einer Stelle aus erfolgen.</div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mainly reduces the effort required for separate loudspeaker, control and communication solutions. Material requirements and cabling work are reduced, and information and emergency announcements can be made from a single location. At temporary events, it also reduces the planning, setup and operating effort. In addition, personnel resources can be used more efficiently because announcements, control and status monitoring are handled centrally from a single location.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Ist NIKOS krisensicher?</span><span class="faq-q" data-en>Is NIKOS resilient in a crisis?</span><span class="faq-icon">+</span></summary>
@@ -295,8 +376,13 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Ist NIKOS kurzfristig und flexibel einsetzbar?</span><span class="faq-q" data-en>Can NIKOS be deployed at short notice and used flexibly?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body" data-de>Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus.</div>
-        <div class="faq-item__body" data-en>Yes. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was specifically developed for flexible outdoor applications without fixed infrastructure. One or two people can mount the modules on different structures, such as lamp posts, stages, trees, stalls or decorations, within just a few minutes and configure them individually. A standard Schuko power connection is sufficient for continuous operation.</div>
+        <div class="faq-item__body" data-de>Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus.</div>
+        <div class="faq-item__body" data-en>Yes. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was specifically developed for flexible outdoor applications without fixed infrastructure. One or two people can mount the modules on different structures, such as lampposts, stages, stands or trees, within just a few minutes and configure them individually. A standard Schuko power connection is sufficient for continuous operation.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" data-de>Räumungsdurchsage für den Hessentag in Darmstadt: Wo kann man <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mieten?</span><span class="faq-q" data-en>Evacuation announcements for Hessentag in Darmstadt: Where can <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> be rented?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Zur Partnerauswahl und Mietanfrage</a></div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find a partner and request a rental</a></div>
       </details>
     </div>
   </div>

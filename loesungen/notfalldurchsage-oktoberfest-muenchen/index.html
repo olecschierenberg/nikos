@@ -26,42 +26,121 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "about": {
-    "@type": "Place",
-    "name": "München"
-  },
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 für elektroakustische Notfallwarnsysteme. NIKOS wurde für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen entwickelt und ist für Alltags- und Notfallsituationen ausgelegt. Die DIN EN 50849 definiert die Anforderungen an ELA-Anlagen. NIKOS erfüllt diese Anforderungen vollständig, weil das System nicht von einem fremden Netz abhängig ist und sofort nutzbar bleibt. Die Normen DIN EN 54, DIN VDE 0833-4 und DIN 14675 gelten für Sprachalarmierungsanlagen und sind auf Einsatzgebiet und Funktionsspektrum von NIKOS nicht anwendbar. Sie sind daher für die Genehmigung nicht relevant. NIKOS ist ein Durchsagesystem für temporäre und mobile Anwendungen und seit 2017 für einsatzkritische Kommunikationsaufgaben im Einsatz. RADACOM und regionale NIKOS-Partner unterstützen bei der Umsetzung der Anforderungen."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/loesungen/notfalldurchsage-oktoberfest-muenchen/#service",
+      "name": "Notfalldurchsagen für das Oktoberfest in München",
+      "description": "Beim Oktoberfest in München treffen sehr hohe Besucherzahlen auf enge Wege zwischen Fahrgeschäften, Festzelten und Schaustellerbetrieben.",
+      "url": "https://nikos.info/loesungen/notfalldurchsage-oktoberfest-muenchen/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "de",
+      "termsOfService": "https://nikos.info/de/mietbedingungen/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "München"
       }
     },
     {
-      "@type": "Question",
-      "name": "Bleiben Notfalldurchsagen bei überlastetem Mobilfunknetz funktionsfähig?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz und unabhängig von öffentlichen Kommunikationsnetzen. Das System bleibt bei deren Überlastung oder Ausfall funktionsfähig. NIKOS kommuniziert per Funk und benötigt keine Kabelwege. Nach einer Unterbrechung stellt das System die Verbindung selbstständig wieder her. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt auch angeschlossene Zubehörmodule. Notfalldurchsagen für das Oktoberfest bleiben bei Ausfall der Stromversorgung oder Störungen öffentlicher Kommunikationsnetze funktionsfähig."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://nikos.info/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle Einsatzbeispiele",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Notfalldurchsagen für das Oktoberfest in München",
+          "item": "https://nikos.info/loesungen/notfalldurchsage-oktoberfest-muenchen/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Wo entstehen beim Einsatz von NIKOS Kostenvorteile?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "NIKOS bündelt mehrere Funktionen auf einer einheitlichen Kommunikationsplattform. Dadurch entfallen getrennte Lautsprecher-, Steuer- und Kommunikationslösungen für Notfalldurchsagen und sicherheitsrelevante Koordinationsaufgaben. NIKOS vereint Mitarbeiteralarmierung, Besucherinformation und Systemsteuerung. Das reduziert Materialbedarf, Verkabelungsaufwand und die Stolpergefahr durch Kabelbrücken. Zentrale Durchsagen, Fernsteuerung und Statusüberwachung ersetzen über das Gelände verteilte Ordnungs-, Melde- und Bedienposten. Personal arbeitet dadurch an sicherheitskritischen Punkten. Bei temporären Veranstaltungen sinken Kosten für Planung, Aufbau und Betrieb der Sicherheitstechnik."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ist NIKOS kurzfristig und flexibel einsetzbar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Ein bis zwei Personen montieren die Module innerhalb weniger Minuten an Laternen, Bühnen, Bäumen, Buden oder Dekorationen und konfigurieren sie für den jeweiligen Einsatz. Ein Schuko-Stromanschluss sichert den Dauerbetrieb. NIKOS nutzt vorhandene digitale Funknetze."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/loesungen/notfalldurchsage-oktoberfest-muenchen/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 für elektroakustische Notfallwarnsysteme. NIKOS wurde für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen entwickelt und ist für Alltags- und Notfallsituationen ausgelegt. Die DIN EN 50849 definiert die Anforderungen an ELA-Anlagen. NIKOS erfüllt diese Anforderungen vollständig, weil das System nicht von einem fremden Netz abhängig ist und sofort nutzbar bleibt. Die Normen DIN EN 54, DIN VDE 0833-4 und DIN 14675 gelten für Sprachalarmierungsanlagen und sind auf Einsatzgebiet und Funktionsspektrum von NIKOS nicht anwendbar. Sie sind daher für die Genehmigung nicht relevant. NIKOS ist ein Durchsagesystem für temporäre und mobile Anwendungen und seit 2017 für einsatzkritische Kommunikationsaufgaben im Einsatz. RADACOM und regionale NIKOS-Partner unterstützen bei der Umsetzung der Anforderungen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bleiben Notfalldurchsagen bei überlastetem Mobilfunknetz funktionsfähig?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz und unabhängig von öffentlichen Kommunikationsnetzen. Das System bleibt bei deren Überlastung oder Ausfall funktionsfähig. NIKOS kommuniziert per Funk und benötigt keine Kabelwege. Nach einer Unterbrechung stellt das System die Verbindung selbstständig wieder her. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt auch angeschlossene Zubehörmodule. Notfalldurchsagen für das Oktoberfest bleiben bei Ausfall der Stromversorgung oder Störungen öffentlicher Kommunikationsnetze funktionsfähig."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wo entstehen beim Einsatz von NIKOS Kostenvorteile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS bündelt mehrere Funktionen auf einer einheitlichen Kommunikationsplattform. NIKOS reduziert vor allem den Aufwand für separate Lautsprecher-, Steuer- und Kommunikationslösungen. Materialbedarf und Verkabelungsaufwand werden geringer, Informations- und Notfalldurchsagen lassen sich von einer Stelle aus machen. Zentrale Durchsagen, Fernsteuerung und Statusüberwachung ersetzen über das Gelände verteilte Ordnungs-, Melde- und Bedienposten. Personal arbeitet dadurch an sicherheitskritischen Punkten. Bei temporären Veranstaltungen sinken Kosten für Planung, Aufbau und Betrieb der Sicherheitstechnik."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist NIKOS kurzfristig und flexibel einsetzbar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Ein bis zwei Personen montieren die Module innerhalb weniger Minuten an Laternen, Bühnen, Buden oder Bäumen und konfigurieren sie für den jeweiligen Einsatz. Ein Schuko-Stromanschluss sichert den Dauerbetrieb. NIKOS nutzt vorhandene digitale Funknetze."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Notfalldurchsagen für das Oktoberfest in München: Wo kann man NIKOS mieten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Zur Partnerauswahl und Mietanfrage</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "München"
       }
     }
   ]
@@ -254,6 +333,8 @@ a{color:inherit}
 <!-- ═══ INTRO (S2) ═══ -->
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-de>NIKOS ist kein klassisches PA-System, sondern ein funkbasiertes Durchsage-, Alarmierungs- und Steuerungssystem für Großveranstaltungen, Baustellen und Krisenlagen, das Sie tageweise über zertifizierte Partner mieten und in Ihre PA integrieren oder eigenständig einsetzen können.</p>
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-en>NIKOS is not a conventional PA system, but a radio-based public address, alarm and control system for large events, construction sites and crisis situations, which you can rent by the day through certified partners and either integrate into your PA or use on its own.</p>
     <span class="nk-label" data-de>Herausforderung</span><span class="nk-label" data-en>Challenge</span>
     <h2 class="heading-l" style="margin-top:12px;" data-de>Verständliche Warnungen trotz Schaustellerlärm und Gedränge</h2>
     <h2 class="heading-l" style="margin-top:12px;" data-en>Clear warnings despite fairground noise and crowds</h2>
@@ -296,13 +377,18 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Wo entstehen beim Einsatz von NIKOS Kostenvorteile?</span><span class="faq-q" data-en>Where does NIKOS offer cost advantages?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> bündelt mehrere Funktionen auf einer einheitlichen Kommunikationsplattform. Dadurch entfallen getrennte Lautsprecher-, Steuer- und Kommunikationslösungen für Notfalldurchsagen und sicherheitsrelevante Koordinationsaufgaben. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> vereint Mitarbeiteralarmierung, Besucherinformation und Systemsteuerung. Das reduziert Materialbedarf, Verkabelungsaufwand und die Stolpergefahr durch Kabelbrücken. Zentrale Durchsagen, Fernsteuerung und Statusüberwachung ersetzen über das Gelände verteilte Ordnungs-, Melde- und Bedienposten. Personal arbeitet dadurch an sicherheitskritischen Punkten. Bei temporären Veranstaltungen sinken Kosten für Planung, Aufbau und Betrieb der Sicherheitstechnik.</div>
-        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> combines several functions on a unified communications platform. This eliminates the need for separate loudspeaker, control and communications solutions for emergency announcements and safety-related coordination tasks. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> combines employee alerting, visitor information and system control. This reduces material requirements, cabling effort and the risk of tripping over cable ramps. Central announcements, remote control and status monitoring replace control, reporting and operating posts distributed throughout the site. This allows personnel to work at safety-critical locations. At temporary events, costs for planning, installation and operation of the safety technology are reduced.</div>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> bündelt mehrere Funktionen auf einer einheitlichen Kommunikationsplattform. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> reduziert vor allem den Aufwand für separate Lautsprecher-, Steuer- und Kommunikationslösungen. Materialbedarf und Verkabelungsaufwand werden geringer, Informations- und Notfalldurchsagen lassen sich von einer Stelle aus machen. Zentrale Durchsagen, Fernsteuerung und Statusüberwachung ersetzen über das Gelände verteilte Ordnungs-, Melde- und Bedienposten. Personal arbeitet dadurch an sicherheitskritischen Punkten. Bei temporären Veranstaltungen sinken Kosten für Planung, Aufbau und Betrieb der Sicherheitstechnik.</div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> combines several functions on a unified communications platform. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mainly reduces the effort required for separate loudspeaker, control and communication solutions. Material requirements and cabling work are reduced, and information and emergency announcements can be made from a single location. Central announcements, remote control and status monitoring replace control, reporting and operating posts distributed throughout the site. This allows personnel to work at safety-critical locations. At temporary events, costs for planning, installation and operation of the safety technology are reduced.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Ist NIKOS kurzfristig und flexibel einsetzbar?</span><span class="faq-q" data-en>Can NIKOS be deployed at short notice and flexibly?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body" data-de>Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Ein bis zwei Personen montieren die Module innerhalb weniger Minuten an Laternen, Bühnen, Bäumen, Buden oder Dekorationen und konfigurieren sie für den jeweiligen Einsatz. Ein Schuko-Stromanschluss sichert den Dauerbetrieb. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> nutzt vorhandene digitale Funknetze.</div>
-        <div class="faq-item__body" data-en>Yes. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed for flexible outdoor deployments without fixed infrastructure. One or two people can mount the modules within just a few minutes on streetlights, stages, trees, stalls or decorations and configure them for the specific deployment. A Schuko power connection ensures continuous operation. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> uses existing digital radio networks.</div>
+        <div class="faq-item__body" data-de>Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Ein bis zwei Personen montieren die Module innerhalb weniger Minuten an Laternen, Bühnen, Buden oder Bäumen und konfigurieren sie für den jeweiligen Einsatz. Ein Schuko-Stromanschluss sichert den Dauerbetrieb. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> nutzt vorhandene digitale Funknetze.</div>
+        <div class="faq-item__body" data-en>Yes. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed for flexible outdoor deployments without fixed infrastructure. One or two people can mount the modules within just a few minutes on lampposts, stages, stands or trees and configure them for the specific deployment. A Schuko power connection ensures continuous operation. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> uses existing digital radio networks.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" data-de>Notfalldurchsagen für das Oktoberfest in München: Wo kann man <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mieten?</span><span class="faq-q" data-en>Emergency announcements for Munich’s Oktoberfest: Where can <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> be rented?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Zur Partnerauswahl und Mietanfrage</a></div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find a partner and request a rental</a></div>
       </details>
     </div>
   </div>

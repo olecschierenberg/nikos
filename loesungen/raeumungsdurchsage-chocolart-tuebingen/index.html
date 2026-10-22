@@ -26,42 +26,121 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "about": {
-    "@type": "Place",
-    "name": "Tübingen"
-  },
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Erfüllt NIKOS bei Durchsagen die geltenden Normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS ist normkonform: Das System erfüllt die DIN EN 50849 für elektroakustische Notfallwarnsysteme. Entwickelt wurde NIKOS gezielt für sicherheitsrelevante Durchsagen und Alarmierungen — einsetzbar sowohl im Alltagsbetrieb als auch im Notfall. Bei ELA-Anlagen bildet die DIN EN 50849 den entscheidenden Bezugsrahmen. Anders als mobilfunkbasierte Systeme erfüllt NIKOS diese Anforderungen vollständig, weil es unabhängig von einem externen Netz arbeitet und dadurch jederzeit sofort einsatzbereit ist. Für NIKOS nicht einschlägig sind dagegen andere sicherheitstechnische Normen wie DIN EN 54, DIN VDE 0833-4 und DIN 14675 (Sprachalarmierungsanlagen), da sie ein anderes Einsatzgebiet und einen anderen Funktionsumfang betreffen. Als Durchsagesystem für temporäre und mobile Einsätze ist NIKOS seit 2017 bereits vielfach erfolgreich für einsatzkritische Kommunikationsaufgaben im Einsatz gewesen. RADACOM und Ihr regionaler NIKOS-Partner beraten Sie gerne zu den vielfältigen Funktionen von NIKOS und unterstützen Sie bei der kostenschonenden Umsetzung der Anforderungen."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/loesungen/raeumungsdurchsage-chocolart-tuebingen/#service",
+      "name": "Räumungsdurchsage für die ChocolART in Tübingen",
+      "description": "Bei der ChocolART in Tübingen stellt eine Räumungsdurchsage durch Gedränge, laute Umgebung und fremdsprachige Besucher eine besondere Herausforderung dar.",
+      "url": "https://nikos.info/loesungen/raeumungsdurchsage-chocolart-tuebingen/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "de",
+      "termsOfService": "https://nikos.info/de/mietbedingungen/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Tübingen"
       }
     },
     {
-      "@type": "Question",
-      "name": "Wie bleiben Räumungsdurchsagen bei Störungen von Strom- oder Mobilfunknetzen funktionsfähig?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "NIKOS arbeitet über ein eigenes, autarkes Funknetz und unabhängig von öffentlichen Kommunikationsnetzen. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. Damit bleiben Räumungsdurchsagen für die ChocolART auch bei Stromausfall oder Störungen öffentlicher Kommunikationsnetze zuverlässig funktionsfähig."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://nikos.info/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle Einsatzbeispiele",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Räumungsdurchsage für die ChocolART in Tübingen",
+          "item": "https://nikos.info/loesungen/raeumungsdurchsage-chocolart-tuebingen/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Kann NIKOS kurzfristig für die ChocolART installiert werden?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus. NIKOS arbeitet über ein eigenes, autarkes Funknetz."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie werden Durchsagen bei hoher Umgebungslautstärke verständlich?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "NIKOS [audio]² unterbricht eingebundene Musikanlagen für die Dauer einer Durchsage. Das senkt den Störschallpegel und verbessert die Verständlichkeit der Durchsagen wesentlich. Vorhandene Musikanlagen lassen sich für Durchsagen mitnutzen, sodass keine gesonderte Durchsagebeschallung aufgebaut werden muss."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/loesungen/raeumungsdurchsage-chocolart-tuebingen/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Erfüllt NIKOS bei Durchsagen die geltenden Normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS ist normkonform: Das System erfüllt die DIN EN 50849 für elektroakustische Notfallwarnsysteme. Entwickelt wurde NIKOS gezielt für sicherheitsrelevante Durchsagen und Alarmierungen — einsetzbar sowohl im Alltagsbetrieb als auch im Notfall. Bei ELA-Anlagen bildet die DIN EN 50849 den entscheidenden Bezugsrahmen. Anders als mobilfunkbasierte Systeme erfüllt NIKOS diese Anforderungen vollständig, weil es unabhängig von einem externen Netz arbeitet und dadurch jederzeit sofort einsatzbereit ist. Für NIKOS nicht einschlägig sind dagegen andere sicherheitstechnische Normen wie DIN EN 54, DIN VDE 0833-4 und DIN 14675 (Sprachalarmierungsanlagen), da sie ein anderes Einsatzgebiet und einen anderen Funktionsumfang betreffen. Als Durchsagesystem für temporäre und mobile Einsätze ist NIKOS seit 2017 bereits vielfach erfolgreich für einsatzkritische Kommunikationsaufgaben im Einsatz gewesen. RADACOM und Ihr regionaler NIKOS-Partner beraten Sie gerne zu den vielfältigen Funktionen von NIKOS und unterstützen Sie bei der kostenschonenden Umsetzung der Anforderungen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie bleiben Räumungsdurchsagen bei Störungen von Strom- oder Mobilfunknetzen funktionsfähig?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS arbeitet über ein eigenes, autarkes Funknetz und unabhängig von öffentlichen Kommunikationsnetzen. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. Damit bleiben Räumungsdurchsagen für die ChocolART auch bei Stromausfall oder Störungen öffentlicher Kommunikationsnetze zuverlässig funktionsfähig."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann NIKOS kurzfristig für die ChocolART installiert werden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus. NIKOS arbeitet über ein eigenes, autarkes Funknetz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie werden Durchsagen bei hoher Umgebungslautstärke verständlich?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS [audio]² unterbricht eingebundene Musikanlagen für die Dauer einer Durchsage. Das senkt den Störschallpegel und verbessert die Verständlichkeit der Durchsagen wesentlich. Vorhandene Musikanlagen lassen sich für Durchsagen mitnutzen, sodass keine gesonderte Durchsagebeschallung aufgebaut werden muss."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Räumungsdurchsage für die ChocolART in Tübingen: Wo kann man NIKOS mieten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Zur Partnerauswahl und Mietanfrage</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Tübingen"
       }
     }
   ]
@@ -254,6 +333,8 @@ a{color:inherit}
 <!-- ═══ INTRO (S2) ═══ -->
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-de>NIKOS ist kein klassisches PA-System, sondern ein funkbasiertes Durchsage-, Alarmierungs- und Steuerungssystem für Großveranstaltungen, Baustellen und Krisenlagen, das Sie tageweise über zertifizierte Partner mieten und in Ihre PA integrieren oder eigenständig einsetzen können.</p>
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-en>NIKOS is not a conventional PA system, but a radio-based public address, alarm and control system for large events, construction sites and crisis situations, which you can rent by the day through certified partners and either integrate into your PA or use on its own.</p>
     <span class="nk-label" data-de>Herausforderung</span><span class="nk-label" data-en>Challenge</span>
     <h2 class="heading-l" style="margin-top:12px;" data-de>Verständliche Anweisungen trotz Gedränge</h2>
     <h2 class="heading-l" style="margin-top:12px;" data-en>Clear instructions despite crowds</h2>
@@ -296,13 +377,18 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Kann NIKOS kurzfristig für die ChocolART installiert werden?</span><span class="faq-q" data-en>Can NIKOS be installed at short notice for ChocolART?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body" data-de>Ja, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> arbeitet über ein eigenes, autarkes Funknetz.</div>
-        <div class="faq-item__body" data-en>Yes, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed specifically for flexible outdoor deployments without permanent infrastructure. One or two people can mount the modules on a variety of structures such as lampposts, stages, trees, stalls or decorations within a few minutes and configure them individually. A standard Schuko power connection is sufficient for continuous operation. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> operates via its own autonomous radio network.</div>
+        <div class="faq-item__body" data-de>Ja, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> arbeitet über ein eigenes, autarkes Funknetz.</div>
+        <div class="faq-item__body" data-en>Yes, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed specifically for flexible outdoor deployments without permanent infrastructure. One or two people can mount the modules on a variety of structures such as lampposts, stages, stands or trees within a few minutes and configure them individually. A standard Schuko power connection is sufficient for continuous operation. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> operates via its own autonomous radio network.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Wie werden Durchsagen bei hoher Umgebungslautstärke verständlich?</span><span class="faq-q" data-en>How are announcements made intelligible in high ambient noise?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/de/produkte/#audio"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS audio.svg" alt="NIKOS [audio]²" loading="lazy"></a> unterbricht eingebundene Musikanlagen für die Dauer einer Durchsage. Das senkt den Störschallpegel und verbessert die Verständlichkeit der Durchsagen wesentlich. Vorhandene Musikanlagen lassen sich für Durchsagen mitnutzen, sodass keine gesonderte Durchsagebeschallung aufgebaut werden muss.</div>
         <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/de/produkte/#audio"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS audio.svg" alt="NIKOS [audio]²" loading="lazy"></a> interrupts integrated music systems for the duration of an announcement. This lowers the background noise level and significantly improves the intelligibility of announcements. Existing music systems can also be used for announcements, so no separate announcement sound system needs to be set up.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" data-de>Räumungsdurchsage für die ChocolART in Tübingen: Wo kann man <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mieten?</span><span class="faq-q" data-en>Evacuation announcements for ChocolART in Tübingen: Where can <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> be rented?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Zur Partnerauswahl und Mietanfrage</a></div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find a partner and request a rental</a></div>
       </details>
     </div>
   </div>

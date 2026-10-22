@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Gli annunci tramite NIKOS sono conformi alle norme?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sì — la DIN EN 50849 (sistemi elettroacustici di allarme di emergenza) è pienamente soddisfatta da NIKOS. Il sistema è stato concepito specificamente per compiti di annuncio e allertamento rilevanti per la sicurezza, tecnicamente predisposto sia per l'esercizio quotidiano sia per le emergenze. Per gli impianti ELA, la DIN EN 50849 definisce il quadro di riferimento determinante. Poiché NIKOS — a differenza delle soluzioni basate sulla telefonia mobile — non dipende da alcuna rete esterna, è sempre immediatamente utilizzabile e soddisfa pienamente i requisiti previsti dalla norma. Altre norme di sicurezza come DIN EN 54, DIN VDE 0833-4 o DIN 14675 (impianti di allarme vocale) riguardano un diverso campo d'impiego e un diverso ambito funzionale e non sono pertanto rilevanti per NIKOS ai fini dell'autorizzazione. Dal 2017 NIKOS viene impiegato con successo in numerose occasioni come sistema di diffusione sonora leader di mercato per applicazioni temporanee e mobili, per compiti di comunicazione critici. RADACOM e il vostro partner NIKOS regionale saranno lieti di consigliarvi sulle molteplici funzioni di NIKOS e di supportarvi nella realizzazione dei requisiti contenendo i costi."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/it/lp/allerta-meteo-gentse-feesten/#service",
+      "name": "Allerte meteo per le Gentse Feesten",
+      "description": "Durante le Gentse Feesten, le allerte meteo sono particolarmente difficili da comunicare a causa dell’elevata densità di visitatori, del rumore…",
+      "url": "https://nikos.info/it/lp/allerta-meteo-gentse-feesten/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "it",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Gent"
       }
     },
     {
-      "@type": "Question",
-      "name": "NIKOS continua a funzionare in caso di interruzione di corrente o sovraccarico della rete mobile?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sì. NIKOS utilizza una propria rete radio autonoma e funziona indipendentemente dalle reti di comunicazione pubbliche. Se una connessione viene interrotta, viene ripristinata automaticamente. NIKOS [audio]² dispone di una batteria interna con un’autonomia fino a 16 ore e alimenta anche i moduli accessori collegati. Le allerte meteo per le Gentse Feesten rimangono quindi operative in modo affidabile anche in caso di interruzioni di corrente o di guasti alle reti di comunicazione pubbliche."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nikos.info/it/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutti gli esempi di utilizzo",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Allerte meteo per le Gentse Feesten",
+          "item": "https://nikos.info/it/lp/allerta-meteo-gentse-feesten/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "NIKOS può essere implementato con breve preavviso e utilizzato in modo flessibile?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sì. NIKOS è stato sviluppato per impieghi flessibili all’aperto senza infrastrutture fisse. Una o due persone possono montare i moduli in pochi minuti su strutture come pali dell’illuminazione, palchi, alberi, bancarelle o decorazioni e configurarli singolarmente. Per il funzionamento continuo è sufficiente una presa di corrente Schuko standard. NIKOS può utilizzare una rete radio digitale esistente."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "In che modo l’utilizzo di NIKOS consente di ridurre i costi?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A seconda dell’applicazione, NIKOS può svolgere diverse funzioni attraverso un’unica piattaforma di comunicazione. I risparmi possono compensare rapidamente i costi di noleggio e installazione di NIKOS. Qui sono riportati alcuni esempi specifici di risparmio. Per le allerte meteo e per altre attività di coordinamento rilevanti per la sicurezza non sono necessarie soluzioni separate per altoparlanti, controllo e comunicazione. Gli annunci centralizzati, il controllo a distanza e il monitoraggio dello stato consentono di sostituire selettivamente il personale o di impiegarlo in modo più efficace nei punti rilevanti per la sicurezza. In questo modo si riducono i costi di progettazione, installazione e gestione delle tecnologie di sicurezza temporanee."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/it/lp/allerta-meteo-gentse-feesten/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Gli annunci tramite NIKOS sono conformi alle norme?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì — la DIN EN 50849 (sistemi elettroacustici di allarme di emergenza) è pienamente soddisfatta da NIKOS. Il sistema è stato concepito specificamente per compiti di annuncio e allertamento rilevanti per la sicurezza, tecnicamente predisposto sia per l'esercizio quotidiano sia per le emergenze. Per gli impianti ELA, la DIN EN 50849 definisce il quadro di riferimento determinante. Poiché NIKOS — a differenza delle soluzioni basate sulla telefonia mobile — non dipende da alcuna rete esterna, è sempre immediatamente utilizzabile e soddisfa pienamente i requisiti previsti dalla norma. Altre norme di sicurezza come DIN EN 54, DIN VDE 0833-4 o DIN 14675 (impianti di allarme vocale) riguardano un diverso campo d'impiego e un diverso ambito funzionale e non sono pertanto rilevanti per NIKOS ai fini dell'autorizzazione. Dal 2017 NIKOS viene impiegato con successo in numerose occasioni come sistema di diffusione sonora leader di mercato per applicazioni temporanee e mobili, per compiti di comunicazione critici. RADACOM e il vostro partner NIKOS regionale saranno lieti di consigliarvi sulle molteplici funzioni di NIKOS e di supportarvi nella realizzazione dei requisiti contenendo i costi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "NIKOS continua a funzionare in caso di interruzione di corrente o sovraccarico della rete mobile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì. NIKOS utilizza una propria rete radio autonoma e funziona indipendentemente dalle reti di comunicazione pubbliche. Se una connessione viene interrotta, viene ripristinata automaticamente. NIKOS [audio]² dispone di una batteria interna con un’autonomia fino a 16 ore e alimenta anche i moduli accessori collegati. Le allerte meteo per le Gentse Feesten rimangono quindi operative in modo affidabile anche in caso di interruzioni di corrente o di guasti alle reti di comunicazione pubbliche."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "NIKOS può essere implementato con breve preavviso e utilizzato in modo flessibile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì. NIKOS è stato sviluppato per impieghi flessibili all’aperto senza infrastrutture fisse. Una o due persone possono montare i moduli in pochi minuti su strutture come lampioni, palchi, bancarelle o alberi e configurarli singolarmente. Per il funzionamento continuo è sufficiente una presa di corrente Schuko standard. NIKOS può utilizzare una rete radio digitale esistente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "In che modo l’utilizzo di NIKOS consente di ridurre i costi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A seconda dell’applicazione, NIKOS può svolgere diverse funzioni attraverso un’unica piattaforma di comunicazione. I risparmi possono compensare rapidamente i costi di noleggio e installazione di NIKOS. Qui sono riportati alcuni esempi specifici di risparmio. NIKOS riduce soprattutto l’impegno per soluzioni separate di diffusione sonora, controllo e comunicazione. Si riducono il fabbisogno di materiale e il lavoro di cablaggio, e gli annunci informativi e di emergenza possono essere effettuati da un unico punto. Gli annunci centralizzati, il controllo a distanza e il monitoraggio dello stato consentono di sostituire selettivamente il personale o di impiegarlo in modo più efficace nei punti rilevanti per la sicurezza. In questo modo si riducono i costi di progettazione, installazione e gestione delle tecnologie di sicurezza temporanee."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Allerte meteo per le Gentse Feesten: Dove si può noleggiare NIKOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS viene noleggiato a giornata tramite partner certificati, con consulenza, istruzione e supporto tecnico inclusi. Il partner regionale concorda l’impiego con voi. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Trova un partner e richiedi il noleggio</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Gent"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Gent"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS non è un classico impianto audio, ma un sistema via radio per annunci, allarmi e controllo per grandi eventi, cantieri e situazioni di crisi, che si noleggia a giornata tramite partner certificati e si può integrare nel proprio impianto audio o usare in modo autonomo.</p>
     <span class="nk-label">Sfida</span>
     <h2 class="heading-l" style="margin-top:12px;">Allerte meteo chiare per la folla</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Durante le Gentse Feesten, le allerte meteo sono particolarmente difficili da comunicare a causa dell’elevata densità di visitatori, del rumore ambientale e della presenza di un pubblico internazionale. Nonostante la musica ad alto volume e le strade affollate, le allerte e le istruzioni di sicurezza devono raggiungere tutti i visitatori in modo chiaro e comprensibile. Un numero elevato di visitatori può sovraccaricare rapidamente le reti mobili. I sistemi che dipendono dalle reti mobili non sono quindi adatti alle comunicazioni di crisi.</p>
@@ -270,11 +350,15 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">NIKOS può essere implementato con breve preavviso e utilizzato in modo flessibile?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Sì. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> è stato sviluppato per impieghi flessibili all’aperto senza infrastrutture fisse. Una o due persone possono montare i moduli in pochi minuti su strutture come pali dell’illuminazione, palchi, alberi, bancarelle o decorazioni e configurarli singolarmente. Per il funzionamento continuo è sufficiente una presa di corrente Schuko standard. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> può utilizzare una rete radio digitale esistente.</div>
+        <div class="faq-item__body">Sì. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> è stato sviluppato per impieghi flessibili all’aperto senza infrastrutture fisse. Una o due persone possono montare i moduli in pochi minuti su strutture come lampioni, palchi, bancarelle o alberi e configurarli singolarmente. Per il funzionamento continuo è sufficiente una presa di corrente Schuko standard. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> può utilizzare una rete radio digitale esistente.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">In che modo l’utilizzo di NIKOS consente di ridurre i costi?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">A seconda dell’applicazione, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> può svolgere diverse funzioni attraverso un’unica piattaforma di comunicazione. I risparmi possono compensare rapidamente i costi di noleggio e installazione di <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>. Qui sono riportati alcuni esempi specifici di risparmio. Per le allerte meteo e per altre attività di coordinamento rilevanti per la sicurezza non sono necessarie soluzioni separate per altoparlanti, controllo e comunicazione. Gli annunci centralizzati, il controllo a distanza e il monitoraggio dello stato consentono di sostituire selettivamente il personale o di impiegarlo in modo più efficace nei punti rilevanti per la sicurezza. In questo modo si riducono i costi di progettazione, installazione e gestione delle tecnologie di sicurezza temporanee.</div>
+        <div class="faq-item__body">A seconda dell’applicazione, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> può svolgere diverse funzioni attraverso un’unica piattaforma di comunicazione. I risparmi possono compensare rapidamente i costi di noleggio e installazione di <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>. Qui sono riportati alcuni esempi specifici di risparmio. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> riduce soprattutto l’impegno per soluzioni separate di diffusione sonora, controllo e comunicazione. Si riducono il fabbisogno di materiale e il lavoro di cablaggio, e gli annunci informativi e di emergenza possono essere effettuati da un unico punto. Gli annunci centralizzati, il controllo a distanza e il monitoraggio dello stato consentono di sostituire selettivamente il personale o di impiegarlo in modo più efficace nei punti rilevanti per la sicurezza. In questo modo si riducono i costi di progettazione, installazione e gestione delle tecnologie di sicurezza temporanee.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Allerte meteo per le Gentse Feesten: Dove si può noleggiare <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> viene noleggiato a giornata tramite partner certificati, con consulenza, istruzione e supporto tecnico inclusi. Il partner regionale concorda l’impiego con voi. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Trova un partner e richiedi il noleggio</a></div>
       </details>
     </div>
   </div>

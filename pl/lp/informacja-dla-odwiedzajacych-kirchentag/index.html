@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Czy komunikaty NIKOS spełniają odpowiednie wymagania normatywne?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Tak, NIKOS w pełni spełnia wymagania normy DIN EN 50849 „Elektroakustyczne systemy ostrzegania w sytuacjach awaryjnych“. System został zaprojektowany specjalnie do komunikatów i alarmowania istotnych dla bezpieczeństwa i jest technicznie przystosowany zarówno do codziennego użytku, jak i sytuacji awaryjnych. DIN EN 50849 jest decydującą normą dla radiowych instalacji ELA, takich jak NIKOS. Ponieważ NIKOS, w przeciwieństwie do systemów opartych na sieciach komórkowych, działa niezależnie od sieci zewnętrznej, natychmiastowa gotowość do użycia jest zagwarantowana w każdej chwili — dzięki temu wymagania normy są w pełni spełnione. Inne normy techniki bezpieczeństwa, takie jak DIN EN 54, DIN VDE 0833-4 i DIN 14675 (systemy alarmowania głosowego), nie mają natomiast zastosowania do NIKOS, ponieważ dotyczą innego obszaru zastosowań i innego zakresu funkcji, a tym samym nie są istotne dla zastosowania NIKOS. Jako dotychczas jedyny system komunikatów do zastosowań tymczasowych i mobilnych konsekwentnie zorientowany na wymagania zastosowań o krytycznym znaczeniu, NIKOS jest z powodzeniem wykorzystywany od 2017 roku do zadań komunikacyjnych odpornych na sytuacje kryzysowe. RADACOM oraz regionalny partner NIKOS chętnie doradzą Państwu w zakresie licznych funkcji NIKOS i wesprą Państwa w ekonomicznej realizacji wymagań."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/pl/lp/informacja-dla-odwiedzajacych-kirchentag/#service",
+      "name": "Informacja dla odwiedzających 40. Niemieckiego Ewangelickiego Kirchentagu 2027 w Düsseldorfie",
+      "description": "Duża liczba uczestników, hałas otoczenia i zmieniające się miejsca pobytu utrudniają zrozumiałe przekazywanie informacji.",
+      "url": "https://nikos.info/pl/lp/informacja-dla-odwiedzajacych-kirchentag/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "pl",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Düsseldorf"
       }
     },
     {
-      "@type": "Question",
-      "name": "Czy NIKOS można szybko i elastycznie wdrożyć?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Tak, NIKOS został opracowany specjalnie z myślą o elastycznych zastosowaniach zewnętrznych bez stałej infrastruktury. Moduły mogą zostać zamontowane i indywidualnie skonfigurowane przez jedną lub dwie osoby w ciągu kilku minut na różnych konstrukcjach, takich jak latarnie, sceny, drzewa, stoiska czy elementy dekoracyjne. Do pracy ciągłej wystarczy standardowe gniazdo zasilające Schuko. NIKOS zostaje włączony do istniejącej cyfrowej sieci radiowej."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://nikos.info/pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Wszystkie przykłady zastosowań",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Informacja dla odwiedzających 40. Niemieckiego Ewangelickiego Kirchentagu 2027 w Düsseldorfie",
+          "item": "https://nikos.info/pl/lp/informacja-dla-odwiedzajacych-kirchentag/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Czy NIKOS jest odporny na sytuacje kryzysowe?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Tak, NIKOS działa za pośrednictwem własnej, autonomicznej sieci radiowej i jest całkowicie niezależny od publicznych sieci komunikacyjnych oraz ich dostępności. Dzięki temu system pozostaje niezawodnie sprawny także w przypadku zakłóceń zewnętrznych. Ponieważ NIKOS komunikuje się bezprzewodowo i nie jest uzależniony od tras kablowych, po przerwaniu połączenia samodzielnie je przywraca. Dzięki temu NIKOS skutecznie reaguje na zakłócenia normalnego trybu pracy i pozostaje gotowy do działania także w sytuacjach kryzysowych. NIKOS [audio]² ma wewnętrzny akumulator zapewniający do 16 godzin pracy, który zasila również podłączone moduły dodatkowe. Nawet w przypadku przeciążenia sieci komórkowej, awarii dostawcy Internetu lub przerwy w dostawie energii elektrycznej NIKOS nadal działa. Dzięki temu informacja dla odwiedzających 40. Niemieckiego Ewangelickiego Kirchentagu 2027 pozostaje niezawodnie dostępna także w przypadku zakłóceń w publicznych sieciach komunikacyjnych i awarii zasilania."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Czy informacje można przekazywać konkretnym obszarom?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Tak. NIKOS [dispatcher]² steruje jednostkami komunikatowymi w poszczególnych lokalizacjach, wybranych obszarach lub na całym terenie. Dzięki temu informacje można przekazywać zgodnie z potrzebami do tych obszarów, w których aktualnie przebywają zainteresowani odwiedzający."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/pl/lp/informacja-dla-odwiedzajacych-kirchentag/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Czy komunikaty NIKOS spełniają odpowiednie wymagania normatywne?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak, NIKOS w pełni spełnia wymagania normy DIN EN 50849 „Elektroakustyczne systemy ostrzegania w sytuacjach awaryjnych“. System został zaprojektowany specjalnie do komunikatów i alarmowania istotnych dla bezpieczeństwa i jest technicznie przystosowany zarówno do codziennego użytku, jak i sytuacji awaryjnych. DIN EN 50849 jest decydującą normą dla radiowych instalacji ELA, takich jak NIKOS. Ponieważ NIKOS, w przeciwieństwie do systemów opartych na sieciach komórkowych, działa niezależnie od sieci zewnętrznej, natychmiastowa gotowość do użycia jest zagwarantowana w każdej chwili — dzięki temu wymagania normy są w pełni spełnione. Inne normy techniki bezpieczeństwa, takie jak DIN EN 54, DIN VDE 0833-4 i DIN 14675 (systemy alarmowania głosowego), nie mają natomiast zastosowania do NIKOS, ponieważ dotyczą innego obszaru zastosowań i innego zakresu funkcji, a tym samym nie są istotne dla zastosowania NIKOS. Jako dotychczas jedyny system komunikatów do zastosowań tymczasowych i mobilnych konsekwentnie zorientowany na wymagania zastosowań o krytycznym znaczeniu, NIKOS jest z powodzeniem wykorzystywany od 2017 roku do zadań komunikacyjnych odpornych na sytuacje kryzysowe. RADACOM oraz regionalny partner NIKOS chętnie doradzą Państwu w zakresie licznych funkcji NIKOS i wesprą Państwa w ekonomicznej realizacji wymagań."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy NIKOS można szybko i elastycznie wdrożyć?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak, NIKOS został opracowany specjalnie z myślą o elastycznych zastosowaniach zewnętrznych bez stałej infrastruktury. Moduły mogą zostać zamontowane i indywidualnie skonfigurowane przez jedną lub dwie osoby w ciągu kilku minut na różnych konstrukcjach, takich jak latarnie, sceny, stoiska lub drzewa. Do pracy ciągłej wystarczy standardowe gniazdo zasilające Schuko. NIKOS zostaje włączony do istniejącej cyfrowej sieci radiowej."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy NIKOS jest odporny na sytuacje kryzysowe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak, NIKOS działa za pośrednictwem własnej, autonomicznej sieci radiowej i jest całkowicie niezależny od publicznych sieci komunikacyjnych oraz ich dostępności. Dzięki temu system pozostaje niezawodnie sprawny także w przypadku zakłóceń zewnętrznych. Ponieważ NIKOS komunikuje się bezprzewodowo i nie jest uzależniony od tras kablowych, po przerwaniu połączenia samodzielnie je przywraca. Dzięki temu NIKOS skutecznie reaguje na zakłócenia normalnego trybu pracy i pozostaje gotowy do działania także w sytuacjach kryzysowych. NIKOS [audio]² ma wewnętrzny akumulator zapewniający do 16 godzin pracy, który zasila również podłączone moduły dodatkowe. Nawet w przypadku przeciążenia sieci komórkowej, awarii dostawcy Internetu lub przerwy w dostawie energii elektrycznej NIKOS nadal działa. Dzięki temu informacja dla odwiedzających 40. Niemieckiego Ewangelickiego Kirchentagu 2027 pozostaje niezawodnie dostępna także w przypadku zakłóceń w publicznych sieciach komunikacyjnych i awarii zasilania."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy informacje można przekazywać konkretnym obszarom?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. NIKOS [dispatcher]² steruje jednostkami komunikatowymi w poszczególnych lokalizacjach, wybranych obszarach lub na całym terenie. Dzięki temu informacje można przekazywać zgodnie z potrzebami do tych obszarów, w których aktualnie przebywają zainteresowani odwiedzający."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Informacja dla odwiedzających 40. Niemieckiego Ewangelickiego Kirchentagu 2027 w Düsseldorfie: Gdzie można wynająć NIKOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS jest wynajmowany na doby przez certyfikowanych partnerów, wraz z doradztwem, instruktażem i wsparciem technicznym. Regionalny partner uzgadnia zakres użycia z Państwem. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Wybierz partnera i zapytaj o wynajem</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Düsseldorf"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Düsseldorf"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS to nie klasyczny system nagłośnienia, lecz oparty na łączności radiowej system komunikatów, alarmowania i sterowania na duże wydarzenia, place budowy i sytuacje kryzysowe, który można wynająć na doby przez certyfikowanych partnerów i zintegrować z własnym nagłośnieniem lub używać samodzielnie.</p>
     <span class="nk-label">Wyzwanie</span>
     <h2 class="heading-l" style="margin-top:12px;">Bezpieczne przekazywanie informacji odwiedzającym</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Podczas 40. Niemieckiego Ewangelickiego Kirchentagu 2027 w Düsseldorfie informacje dotyczące programu, orientacji w terenie i sytuacji istotnych dla bezpieczeństwa muszą szybko docierać do wielu odwiedzających. Duża liczba uczestników, hałas otoczenia i zmieniające się miejsca pobytu utrudniają zrozumiałe przekazywanie informacji. Przy dużym obciążeniu publiczne sieci komunikacyjne są przeciążone, dlatego informacje przekazywane za pośrednictwem sieci komórkowej nie docierają niezawodnie do wszystkich odwiedzających.</p>
@@ -266,7 +346,7 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Czy NIKOS można szybko i elastycznie wdrożyć?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Tak, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> został opracowany specjalnie z myślą o elastycznych zastosowaniach zewnętrznych bez stałej infrastruktury. Moduły mogą zostać zamontowane i indywidualnie skonfigurowane przez jedną lub dwie osoby w ciągu kilku minut na różnych konstrukcjach, takich jak latarnie, sceny, drzewa, stoiska czy elementy dekoracyjne. Do pracy ciągłej wystarczy standardowe gniazdo zasilające Schuko. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> zostaje włączony do istniejącej cyfrowej sieci radiowej.</div>
+        <div class="faq-item__body">Tak, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> został opracowany specjalnie z myślą o elastycznych zastosowaniach zewnętrznych bez stałej infrastruktury. Moduły mogą zostać zamontowane i indywidualnie skonfigurowane przez jedną lub dwie osoby w ciągu kilku minut na różnych konstrukcjach, takich jak latarnie, sceny, stoiska lub drzewa. Do pracy ciągłej wystarczy standardowe gniazdo zasilające Schuko. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> zostaje włączony do istniejącej cyfrowej sieci radiowej.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Czy NIKOS jest odporny na sytuacje kryzysowe?</span><span class="faq-icon">+</span></summary>
@@ -275,6 +355,10 @@ a{color:inherit}
       <details class="faq-item">
         <summary><span class="faq-q">Czy informacje można przekazywać konkretnym obszarom?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body">Tak. <a class="nk-mod" href="https://nikos.info/en/products/#dispatcher"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a> steruje jednostkami komunikatowymi w poszczególnych lokalizacjach, wybranych obszarach lub na całym terenie. Dzięki temu informacje można przekazywać zgodnie z potrzebami do tych obszarów, w których aktualnie przebywają zainteresowani odwiedzający.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Informacja dla odwiedzających 40. Niemieckiego Ewangelickiego Kirchentagu 2027 w Düsseldorfie: Gdzie można wynająć <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> jest wynajmowany na doby przez certyfikowanych partnerów, wraz z doradztwem, instruktażem i wsparciem technicznym. Regionalny partner uzgadnia zakres użycia z Państwem. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Wybierz partnera i zapytaj o wynajem</a></div>
       </details>
     </div>
   </div>

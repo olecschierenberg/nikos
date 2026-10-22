@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Voldoen omroepberichten met NIKOS aan de geldende normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS voldoet aan de eisen van DIN EN 50849 (elektro-akoestische noodwaarschuwingssystemen). NIKOS is speciaal ontwikkeld voor veiligheidsrelevante omroep- en alarmeringstoepassingen en technisch ontworpen voor gebruik in alledaagse en noodsituaties. Voor elektro-akoestische noodwaarschuwingssystemen (ELA-installaties) is DIN EN 50849 het bepalende referentiekader. De daarin genoemde eisen worden door NIKOS – in tegenstelling tot systemen op basis van mobiele netwerken – volledig vervuld, omdat er geen afhankelijkheid van een extern netwerk bestaat en daardoor te allen tijde onmiddellijk gebruik kan worden gegarandeerd. Andere uit de veiligheidstechniek bekende normen, zoals DIN EN 54, DIN VDE 0833-4 en DIN 14675 (spraakalarminstallaties), zijn niet van toepassing op het toepassingsgebied en het functiespectrum van NIKOS en daarom niet relevant voor een vergunning. NIKOS is het marktleidende omroepsysteem voor tijdelijke en mobiele toepassingen en wordt sinds 2017 vele malen met succes ingezet voor de uitvoering van inzetkritische communicatietaken. RADACOM en uw regionale NIKOS-partner adviseren u graag over de veelzijdige functies van NIKOS en ondersteunen u bij een kostenefficiënte uitvoering van de eisen."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/nl/lp/bezoekerssturing-basel-tattoo/#service",
+      "name": "Bezoekerssturing voor het Basel Tattoo",
+      "description": "Tijdens het Basel Tattoo worden gerichte bezoekersstromen bemoeilijkt door grote drukte, luide muziek en steeds wisselende bezoekersstromen.",
+      "url": "https://nikos.info/nl/lp/bezoekerssturing-basel-tattoo/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "nl",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Basel"
       }
     },
     {
-      "@type": "Question",
-      "name": "Is NIKOS bestand tegen crisissituaties?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS werkt via een eigen, autonoom radionetwerk en is volledig onafhankelijk van openbare communicatienetwerken en hun beschikbaarheid. Daardoor is het systeem zeer goed bestand tegen invloeden van buitenaf. Omdat NIKOS niet afhankelijk is van kabelverbindingen maar via radio communiceert, wordt de verbinding na een onderbreking automatisch hersteld. NIKOS reageert daardoor veel veerkrachtiger op storingen in de normale bedrijfsvoering dan veel andere systemen en bewijst daarmee zijn geschiktheid voor crisissituaties. NIKOS [audio]² beschikt over een interne accu met een gebruiksduur tot 16 uur en voorziet daarmee ook aangesloten toebehorenmodules van stroom. Ook wanneer het mobiele netwerk overbelast is, de internetprovider is gehackt of iemand de verkeerde stekker heeft uitgetrokken, blijft NIKOS functioneren. Zo blijft de bezoekerssturing voor het Basel Tattoo ook bij een stroomstoring of verstoringen in openbare communicatienetwerken betrouwbaar operationeel."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nikos.info/nl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle toepassingen",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Bezoekerssturing voor het Basel Tattoo",
+          "item": "https://nikos.info/nl/lp/bezoekerssturing-basel-tattoo/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Kan NIKOS op korte termijn en flexibel worden ingezet?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS is speciaal ontwikkeld voor flexibele buiteninzet zonder vaste infrastructuur. De modules kunnen door één of twee personen binnen enkele minuten aan verschillende constructies, zoals lantaarnpalen, podia, bomen, kramen of decoraties, worden gemonteerd en individueel worden geconfigureerd. Een normale Schuko-stroomaansluiting volstaat voor continu gebruik."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Hoe zijn omroepberichten hoorbaar bij luide blaasmuziek?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Bij luide (blaas)muziek geeft NIKOS [LED]² de dirigent, bandleider of dj met een knipperlicht het signaal om de muziek onmiddellijk te onderbreken. Naar aanleiding van het lichtsignaal wordt het spelen onderbroken, zodat omroepberichten goed kunnen worden verstaan. Zo bereiken belangrijke mededelingen het publiek ook in volle feesttenten en tijdens optochten betrouwbaar."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/nl/lp/bezoekerssturing-basel-tattoo/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Voldoen omroepberichten met NIKOS aan de geldende normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS voldoet aan de eisen van DIN EN 50849 (elektro-akoestische noodwaarschuwingssystemen). NIKOS is speciaal ontwikkeld voor veiligheidsrelevante omroep- en alarmeringstoepassingen en technisch ontworpen voor gebruik in alledaagse en noodsituaties. Voor elektro-akoestische noodwaarschuwingssystemen (ELA-installaties) is DIN EN 50849 het bepalende referentiekader. De daarin genoemde eisen worden door NIKOS – in tegenstelling tot systemen op basis van mobiele netwerken – volledig vervuld, omdat er geen afhankelijkheid van een extern netwerk bestaat en daardoor te allen tijde onmiddellijk gebruik kan worden gegarandeerd. Andere uit de veiligheidstechniek bekende normen, zoals DIN EN 54, DIN VDE 0833-4 en DIN 14675 (spraakalarminstallaties), zijn niet van toepassing op het toepassingsgebied en het functiespectrum van NIKOS en daarom niet relevant voor een vergunning. NIKOS is het marktleidende omroepsysteem voor tijdelijke en mobiele toepassingen en wordt sinds 2017 vele malen met succes ingezet voor de uitvoering van inzetkritische communicatietaken. RADACOM en uw regionale NIKOS-partner adviseren u graag over de veelzijdige functies van NIKOS en ondersteunen u bij een kostenefficiënte uitvoering van de eisen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is NIKOS bestand tegen crisissituaties?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS werkt via een eigen, autonoom radionetwerk en is volledig onafhankelijk van openbare communicatienetwerken en hun beschikbaarheid. Daardoor is het systeem zeer goed bestand tegen invloeden van buitenaf. Omdat NIKOS niet afhankelijk is van kabelverbindingen maar via radio communiceert, wordt de verbinding na een onderbreking automatisch hersteld. NIKOS reageert daardoor veel veerkrachtiger op storingen in de normale bedrijfsvoering dan veel andere systemen en bewijst daarmee zijn geschiktheid voor crisissituaties. NIKOS [audio]² beschikt over een interne accu met een gebruiksduur tot 16 uur en voorziet daarmee ook aangesloten toebehorenmodules van stroom. Ook wanneer het mobiele netwerk overbelast is, de internetprovider is gehackt of iemand de verkeerde stekker heeft uitgetrokken, blijft NIKOS functioneren. Zo blijft de bezoekerssturing voor het Basel Tattoo ook bij een stroomstoring of verstoringen in openbare communicatienetwerken betrouwbaar operationeel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan NIKOS op korte termijn en flexibel worden ingezet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS is speciaal ontwikkeld voor flexibele buiteninzet zonder vaste infrastructuur. De modules kunnen door één of twee personen binnen enkele minuten aan verschillende constructies, zoals lantaarnpalen, podia, kraampjes of bomen, worden gemonteerd en individueel worden geconfigureerd. Een normale Schuko-stroomaansluiting volstaat voor continu gebruik."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoe zijn omroepberichten hoorbaar bij luide blaasmuziek?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bij luide (blaas)muziek geeft NIKOS [LED]² de dirigent, bandleider of dj met een knipperlicht het signaal om de muziek onmiddellijk te onderbreken. Naar aanleiding van het lichtsignaal wordt het spelen onderbroken, zodat omroepberichten goed kunnen worden verstaan. Zo bereiken belangrijke mededelingen het publiek ook in volle feesttenten en tijdens optochten betrouwbaar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bezoekerssturing voor het Basel Tattoo: Waar kan NIKOS worden gehuurd?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wordt per dag verhuurd via gecertificeerde partners, inclusief advies, instructie en technische ondersteuning. Uw regionale partner stemt de inzet met u af. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Partner kiezen en huur aanvragen</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Basel"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Basel"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS is geen klassiek omroepsysteem, maar een radiogebaseerd systeem voor omroepberichten, alarmering en aansturing bij grote evenementen, bouwplaatsen en crisissituaties, dat u per dag huurt via gecertificeerde partners en kunt integreren in uw geluidsinstallatie of zelfstandig kunt inzetten.</p>
     <span class="nk-label">Uitdaging</span>
     <h2 class="heading-l" style="margin-top:12px;">Bezoekersstromen gericht en centraal sturen</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Tijdens het Basel Tattoo worden gerichte bezoekersstromen bemoeilijkt door grote drukte, luide muziek en steeds wisselende bezoekersstromen. In onoverzichtelijke situaties moeten instructies snel en begrijpelijk bij de betreffende bezoekersgroepen aankomen. Bij een hoge bezoekersdichtheid kan het mobiele netwerk overbelast raken en uitvallen voor veiligheidsrelevante communicatie.</p>
@@ -270,11 +350,15 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Kan NIKOS op korte termijn en flexibel worden ingezet?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Ja, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is speciaal ontwikkeld voor flexibele buiteninzet zonder vaste infrastructuur. De modules kunnen door één of twee personen binnen enkele minuten aan verschillende constructies, zoals lantaarnpalen, podia, bomen, kramen of decoraties, worden gemonteerd en individueel worden geconfigureerd. Een normale Schuko-stroomaansluiting volstaat voor continu gebruik.</div>
+        <div class="faq-item__body">Ja, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is speciaal ontwikkeld voor flexibele buiteninzet zonder vaste infrastructuur. De modules kunnen door één of twee personen binnen enkele minuten aan verschillende constructies, zoals lantaarnpalen, podia, kraampjes of bomen, worden gemonteerd en individueel worden geconfigureerd. Een normale Schuko-stroomaansluiting volstaat voor continu gebruik.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Hoe zijn omroepberichten hoorbaar bij luide blaasmuziek?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body">Bij luide (blaas)muziek geeft <a class="nk-mod" href="https://nikos.info/en/products/#zubehoer"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS LED.svg" alt="NIKOS [LED]²" loading="lazy"></a> de dirigent, bandleider of dj met een knipperlicht het signaal om de muziek onmiddellijk te onderbreken. Naar aanleiding van het lichtsignaal wordt het spelen onderbroken, zodat omroepberichten goed kunnen worden verstaan. Zo bereiken belangrijke mededelingen het publiek ook in volle feesttenten en tijdens optochten betrouwbaar.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Bezoekerssturing voor het Basel Tattoo: Waar kan <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> worden gehuurd?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wordt per dag verhuurd via gecertificeerde partners, inclusief advies, instructie en technische ondersteuning. Uw regionale partner stemt de inzet met u af. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Partner kiezen en huur aanvragen</a></div>
       </details>
     </div>
   </div>

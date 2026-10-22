@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Opfylder meddelelser med NIKOS de gældende standarder?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS opfylder kravene i DIN EN 50849 (elektroakustiske nødvarslingssystemer). NIKOS er udviklet specifikt til sikkerhedskritiske meddelelses- og alarmeringsanvendelser og er teknisk designet til brug i både hverdags- og nødsituationer. For elektroakustiske nødvarslingssystemer (ELA-anlæg) er DIN EN 50849 den afgørende referenceramme. Kravene heri opfyldes fuldt ud af NIKOS – i modsætning til mobilnetbaserede systemer – da der ikke er afhængighed af et eksternt net, og øjeblikkelig anvendelighed dermed kan sikres til enhver tid. Andre standarder, der kendes fra sikkerhedsteknikken, såsom DIN EN 54, DIN VDE 0833-4 og DIN 14675 (talevarslingsanlæg), er ikke anvendelige på NIKOS' anvendelsesområde og funktionsomfang og er derfor ikke relevante for en godkendelse. NIKOS er det markedsførende meddelelsessystem til midlertidige og mobile anvendelser og har siden 2017 været anvendt med succes til udførelse af indsatskritiske kommunikationsopgaver. RADACOM og din regionale NIKOS-partner rådgiver gerne om NIKOS' mange funktioner og hjælper dig med en omkostningseffektiv implementering af kravene."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/da/lp/besogsstyring-sail-amsterdam/#service",
+      "name": "Besøgsstyring under Sail Amsterdam 2030",
+      "description": "Under Sail Amsterdam 2030 er besøgsstyring en udfordring, fordi store menneskemængder samles langs kajer, adgangsveje og udsigtsområder.",
+      "url": "https://nikos.info/da/lp/besogsstyring-sail-amsterdam/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "da",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     },
     {
-      "@type": "Question",
-      "name": "Forbliver NIKOS funktionsdygtig ved strømsvigt eller overbelastede mobilnet?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS fungerer via sit eget autonome radionetværk og uafhængigt af offentlige kommunikationsnet. Forbindelsen genoprettes automatisk efter en afbrydelse. NIKOS [audio]² har et internt batteri med en driftstid på op til 16 timer og forsyner også tilsluttet tilbehør. Dermed forbliver besøgsstyringen under Sail Amsterdam 2030 funktionsdygtig ved strømsvigt eller forstyrrelser i de offentlige kommunikationsnet."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Forside",
+          "item": "https://nikos.info/da/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle anvendelseseksempler",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Besøgsstyring under Sail Amsterdam 2030",
+          "item": "https://nikos.info/da/lp/besogsstyring-sail-amsterdam/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Kan NIKOS installeres fleksibelt til Sail Amsterdam 2030?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS er udviklet til fleksibel udendørs anvendelse uden fast infrastruktur. En eller to personer kan montere og konfigurere modulerne individuelt på mange forskellige konstruktioner inden for få minutter. En almindelig Schuko-strømtilslutning er tilstrækkelig til kontinuerlig drift. NIKOS understøtter brugen af et eksisterende digitalt radionetværk."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Hvor opstår der omkostningsfordele ved brug af NIKOS til besøgsstyring?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Afhængigt af anvendelsen realiserer NIKOS forskellige funktioner via én kommunikationsplatform. Besparelserne opvejer hurtigt leje- og installationsomkostningerne for NIKOS. Her finder du flere konkrete eksempler på besparelser. Besøgsstyring og andre sikkerhedsrelevante koordineringsopgaver kræver ikke separate højttaler-, styrings- og kommunikationsløsninger. Det reducerer behovet for materialer, kabelføringsarbejdet og risikoen for at snuble over kabelramper. Opgaver, der ellers ville kræve flere decentrale vejlednings-, melde- eller betjeningsposter, kan håndteres fra ét sted via meddelelser, fjernstyring og statusovervågning. Personalet kan derfor reduceres eller indsættes mere effektivt på sikkerhedskritiske steder. Ved midlertidige arrangementer reducerer dette også omkostningerne til planlægning, installation og drift af sikkerhedsteknologien."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/da/lp/besogsstyring-sail-amsterdam/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Opfylder meddelelser med NIKOS de gældende standarder?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS opfylder kravene i DIN EN 50849 (elektroakustiske nødvarslingssystemer). NIKOS er udviklet specifikt til sikkerhedskritiske meddelelses- og alarmeringsanvendelser og er teknisk designet til brug i både hverdags- og nødsituationer. For elektroakustiske nødvarslingssystemer (ELA-anlæg) er DIN EN 50849 den afgørende referenceramme. Kravene heri opfyldes fuldt ud af NIKOS – i modsætning til mobilnetbaserede systemer – da der ikke er afhængighed af et eksternt net, og øjeblikkelig anvendelighed dermed kan sikres til enhver tid. Andre standarder, der kendes fra sikkerhedsteknikken, såsom DIN EN 54, DIN VDE 0833-4 og DIN 14675 (talevarslingsanlæg), er ikke anvendelige på NIKOS' anvendelsesområde og funktionsomfang og er derfor ikke relevante for en godkendelse. NIKOS er det markedsførende meddelelsessystem til midlertidige og mobile anvendelser og har siden 2017 været anvendt med succes til udførelse af indsatskritiske kommunikationsopgaver. RADACOM og din regionale NIKOS-partner rådgiver gerne om NIKOS' mange funktioner og hjælper dig med en omkostningseffektiv implementering af kravene."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Forbliver NIKOS funktionsdygtig ved strømsvigt eller overbelastede mobilnet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS fungerer via sit eget autonome radionetværk og uafhængigt af offentlige kommunikationsnet. Forbindelsen genoprettes automatisk efter en afbrydelse. NIKOS [audio]² har et internt batteri med en driftstid på op til 16 timer og forsyner også tilsluttet tilbehør. Dermed forbliver besøgsstyringen under Sail Amsterdam 2030 funktionsdygtig ved strømsvigt eller forstyrrelser i de offentlige kommunikationsnet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan NIKOS installeres fleksibelt til Sail Amsterdam 2030?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS er udviklet til fleksibel udendørs anvendelse uden fast infrastruktur. En eller to personer kan montere og konfigurere modulerne individuelt på mange forskellige konstruktioner inden for få minutter. En almindelig Schuko-strømtilslutning er tilstrækkelig til kontinuerlig drift. NIKOS understøtter brugen af et eksisterende digitalt radionetværk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hvor opstår der omkostningsfordele ved brug af NIKOS til besøgsstyring?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Afhængigt af anvendelsen realiserer NIKOS forskellige funktioner via én kommunikationsplatform. Besparelserne opvejer hurtigt leje- og installationsomkostningerne for NIKOS. Her finder du flere konkrete eksempler på besparelser. NIKOS reducerer først og fremmest indsatsen til separate løsninger til højttalere, styring og kommunikation. Materialebehovet og kabelarbejdet bliver mindre, og informations- og nødudsagn kan foretages fra ét sted. Opgaver, der ellers ville kræve flere decentrale vejlednings-, melde- eller betjeningsposter, kan håndteres fra ét sted via meddelelser, fjernstyring og statusovervågning. Personalet kan derfor reduceres eller indsættes mere effektivt på sikkerhedskritiske steder. Ved midlertidige arrangementer reducerer dette også omkostningerne til planlægning, installation og drift af sikkerhedsteknologien."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Besøgsstyring under Sail Amsterdam 2030: Hvor kan NIKOS lejes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS udlejes pr. dag via certificerede partnere, inklusive rådgivning, instruktion og teknisk support. Jeres regionale partner afstemmer indsatsen med jer. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Find en partner og forespørg om leje</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Amsterdam"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS er ikke et klassisk PA-system, men et radiobaseret system til højttalermeddelelser, alarmering og styring ved store arrangementer, byggepladser og krisesituationer, som kan lejes pr. dag via certificerede partnere og enten integreres i jeres PA-anlæg eller bruges selvstændigt.</p>
     <span class="nk-label">Udfordring</span>
     <h2 class="heading-l" style="margin-top:12px;">Led besøgende sikkert gennem menneskemængder</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Under Sail Amsterdam 2030 er besøgsstyring en udfordring, fordi store menneskemængder samles langs kajer, adgangsveje og udsigtsområder. Når der uventet opstår trængsel, har de besøgende brug for klare anvisninger, så presset på ruterne mindskes, og områderne kan forlades på en ordnet måde. En høj besøgsdensitet kan overbelaste mobilnettene, samtidig med at mange internationale gæster er afhængige af direkte og letforståelig information.</p>
@@ -274,7 +354,11 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Hvor opstår der omkostningsfordele ved brug af NIKOS til besøgsstyring?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Afhængigt af anvendelsen realiserer <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> forskellige funktioner via én kommunikationsplatform. Besparelserne opvejer hurtigt leje- og installationsomkostningerne for <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>. Her finder du flere konkrete eksempler på besparelser. Besøgsstyring og andre sikkerhedsrelevante koordineringsopgaver kræver ikke separate højttaler-, styrings- og kommunikationsløsninger. Det reducerer behovet for materialer, kabelføringsarbejdet og risikoen for at snuble over kabelramper. Opgaver, der ellers ville kræve flere decentrale vejlednings-, melde- eller betjeningsposter, kan håndteres fra ét sted via meddelelser, fjernstyring og statusovervågning. Personalet kan derfor reduceres eller indsættes mere effektivt på sikkerhedskritiske steder. Ved midlertidige arrangementer reducerer dette også omkostningerne til planlægning, installation og drift af sikkerhedsteknologien.</div>
+        <div class="faq-item__body">Afhængigt af anvendelsen realiserer <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> forskellige funktioner via én kommunikationsplatform. Besparelserne opvejer hurtigt leje- og installationsomkostningerne for <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>. Her finder du flere konkrete eksempler på besparelser. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> reducerer først og fremmest indsatsen til separate løsninger til højttalere, styring og kommunikation. Materialebehovet og kabelarbejdet bliver mindre, og informations- og nødudsagn kan foretages fra ét sted. Opgaver, der ellers ville kræve flere decentrale vejlednings-, melde- eller betjeningsposter, kan håndteres fra ét sted via meddelelser, fjernstyring og statusovervågning. Personalet kan derfor reduceres eller indsættes mere effektivt på sikkerhedskritiske steder. Ved midlertidige arrangementer reducerer dette også omkostningerne til planlægning, installation og drift af sikkerhedsteknologien.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Besøgsstyring under Sail Amsterdam 2030: Hvor kan <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> lejes?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> udlejes pr. dag via certificerede partnere, inklusive rådgivning, instruktion og teknisk support. Jeres regionale partner afstemmer indsatsen med jer. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find en partner og forespørg om leje</a></div>
       </details>
     </div>
   </div>

@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "¿Los avisos emitidos con NIKOS cumplen las normas vigentes?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. NIKOS cumple los requisitos de la DIN EN 50849 (sistemas electroacústicos de alerta de emergencia). NIKOS se ha desarrollado específicamente para aplicaciones de avisos y alertas relevantes para la seguridad y está diseñado técnicamente para su uso en situaciones cotidianas y de emergencia. Para los sistemas electroacústicos de alerta de emergencia (instalaciones ELA), la DIN EN 50849 constituye el marco de referencia determinante. A diferencia de los sistemas basados en redes móviles, NIKOS cumple íntegramente los requisitos indicados en esta norma, ya que no depende de una red externa y, por tanto, puede garantizarse su disponibilidad inmediata en todo momento. Otras normas conocidas en el ámbito de la tecnología de seguridad, como DIN EN 54, DIN VDE 0833-4 y DIN 14675 (sistemas de alarma por voz), no son aplicables al ámbito de uso ni al espectro funcional de NIKOS y, por lo tanto, no son relevantes a efectos de autorización. NIKOS es el sistema de megafonía líder del mercado para aplicaciones temporales y móviles, y desde 2017 se utiliza con éxito en numerosas ocasiones para llevar a cabo tareas de comunicación críticas para la operación. RADACOM y su socio regional de NIKOS estarán encantados de asesorarle sobre las numerosas funciones de NIKOS y de ayudarle a implementar los requisitos de forma rentable."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/es/lp/gestion-visitantes-hessentag/#service",
+      "name": "Gestión de visitantes para el Hessentag 2027 en Idstein",
+      "description": "Las indicaciones sobre recorridos, accesos o normas de comportamiento deben ser claramente comprensibles incluso con un elevado nivel de ruido.",
+      "url": "https://nikos.info/es/lp/gestion-visitantes-hessentag/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "es",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Idstein"
       }
     },
     {
-      "@type": "Question",
-      "name": "¿Es NIKOS un sistema resistente a las crisis?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, NIKOS funciona mediante una red de radio propia y autónoma, totalmente independiente de las redes públicas de comunicación y de su disponibilidad. De este modo, el sistema es muy resistente a las influencias externas. Como NIKOS no depende de tendidos de cables, sino que se comunica por radio, la conexión se restablece automáticamente tras una interrupción. Por ello, NIKOS reacciona de forma mucho más resiliente a las perturbaciones del funcionamiento normal que muchos otros sistemas y demuestra la capacidad de este sistema de comunicación para funcionar en situaciones de crisis. NIKOS [audio]² dispone de una batería interna con una autonomía de hasta 16 horas, que también suministra energía a los módulos accesorios conectados. Aunque la red móvil esté saturada, el proveedor de Internet haya sido pirateado o alguien haya desconectado el enchufe equivocado, NIKOS sigue funcionando. Así, la gestión de visitantes del Hessentag 2027 mantiene su fiabilidad incluso en caso de fallo del suministro eléctrico o de perturbaciones en las redes públicas de comunicación."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://nikos.info/es/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Todos los casos de uso",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Gestión de visitantes para el Hessentag 2027 en Idstein",
+          "item": "https://nikos.info/es/lp/gestion-visitantes-hessentag/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "¿Dónde se obtienen ventajas económicas al utilizar NIKOS?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Con NIKOS, dependiendo del caso de uso, pueden implementarse distintas funciones a través de una plataforma de comunicación unificada. Gracias a estos ahorros, los costes de alquiler e instalación de NIKOS pueden compensarse rápidamente. Aquí encontrará algunos ejemplos concretos de ahorro. Cuando se aprovechan de forma sistemática las numerosas funciones, además de aumentar el nivel de seguridad y facilitar el trabajo del personal, a menudo incluso se obtiene un ahorro en el presupuesto total. Para la gestión de visitantes y otras tareas de coordinación relevantes para la seguridad ya no se necesitan soluciones independientes de megafonía, control y comunicación: NIKOS integra la alarma del personal, la información a los visitantes y el control del sistema en una sola plataforma. Esto reduce la necesidad de materiales, el trabajo de cableado y el riesgo de tropiezos provocado por los pasos de cables. Además, NIKOS permite sustituir personal de forma selectiva: las tareas que, de otro modo, requerirían varios puestos de control, comunicación o manejo distribuidos por el recinto se realizan desde un único punto mediante avisos centralizados, control remoto y supervisión del estado. De este modo, se puede ahorrar personal o emplearlo de manera más eficaz en puntos críticos para la seguridad. Así, los costes de alquiler e instalación se compensan mediante el ahorro de personal y de otros medios técnicos. Especialmente en eventos temporales y de duración limitada, esto reduce de forma significativa los costes de planificación, montaje y operación de la tecnología de seguridad."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puede utilizarse NIKOS de forma rápida y flexible?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, NIKOS se ha desarrollado específicamente para usos exteriores flexibles sin infraestructura fija. Una o dos personas pueden montar los módulos en pocos minutos sobre distintas estructuras, como farolas, escenarios, árboles, puestos o elementos decorativos, y configurarlos de forma individual. Para el funcionamiento continuo basta con una toma de corriente Schuko convencional. NIKOS utiliza una red de radio digital existente."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/es/lp/gestion-visitantes-hessentag/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Los avisos emitidos con NIKOS cumplen las normas vigentes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. NIKOS cumple los requisitos de la DIN EN 50849 (sistemas electroacústicos de alerta de emergencia). NIKOS se ha desarrollado específicamente para aplicaciones de avisos y alertas relevantes para la seguridad y está diseñado técnicamente para su uso en situaciones cotidianas y de emergencia. Para los sistemas electroacústicos de alerta de emergencia (instalaciones ELA), la DIN EN 50849 constituye el marco de referencia determinante. A diferencia de los sistemas basados en redes móviles, NIKOS cumple íntegramente los requisitos indicados en esta norma, ya que no depende de una red externa y, por tanto, puede garantizarse su disponibilidad inmediata en todo momento. Otras normas conocidas en el ámbito de la tecnología de seguridad, como DIN EN 54, DIN VDE 0833-4 y DIN 14675 (sistemas de alarma por voz), no son aplicables al ámbito de uso ni al espectro funcional de NIKOS y, por lo tanto, no son relevantes a efectos de autorización. NIKOS es el sistema de megafonía líder del mercado para aplicaciones temporales y móviles, y desde 2017 se utiliza con éxito en numerosas ocasiones para llevar a cabo tareas de comunicación críticas para la operación. RADACOM y su socio regional de NIKOS estarán encantados de asesorarle sobre las numerosas funciones de NIKOS y de ayudarle a implementar los requisitos de forma rentable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Es NIKOS un sistema resistente a las crisis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, NIKOS funciona mediante una red de radio propia y autónoma, totalmente independiente de las redes públicas de comunicación y de su disponibilidad. De este modo, el sistema es muy resistente a las influencias externas. Como NIKOS no depende de tendidos de cables, sino que se comunica por radio, la conexión se restablece automáticamente tras una interrupción. Por ello, NIKOS reacciona de forma mucho más resiliente a las perturbaciones del funcionamiento normal que muchos otros sistemas y demuestra la capacidad de este sistema de comunicación para funcionar en situaciones de crisis. NIKOS [audio]² dispone de una batería interna con una autonomía de hasta 16 horas, que también suministra energía a los módulos accesorios conectados. Aunque la red móvil esté saturada, el proveedor de Internet haya sido pirateado o alguien haya desconectado el enchufe equivocado, NIKOS sigue funcionando. Así, la gestión de visitantes del Hessentag 2027 mantiene su fiabilidad incluso en caso de fallo del suministro eléctrico o de perturbaciones en las redes públicas de comunicación."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde se obtienen ventajas económicas al utilizar NIKOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Con NIKOS, dependiendo del caso de uso, pueden implementarse distintas funciones a través de una plataforma de comunicación unificada. Gracias a estos ahorros, los costes de alquiler e instalación de NIKOS pueden compensarse rápidamente. Aquí encontrará algunos ejemplos concretos de ahorro. Cuando se aprovechan de forma sistemática las numerosas funciones, además de aumentar el nivel de seguridad y facilitar el trabajo del personal, a menudo incluso se obtiene un ahorro en el presupuesto total. NIKOS reduce sobre todo el esfuerzo necesario para soluciones separadas de megafonía, control y comunicación. Disminuyen las necesidades de material y el trabajo de cableado, y los avisos informativos y de emergencia pueden realizarse desde un único punto. Además, NIKOS permite sustituir personal de forma selectiva: las tareas que, de otro modo, requerirían varios puestos de control, comunicación o manejo distribuidos por el recinto se realizan desde un único punto mediante avisos centralizados, control remoto y supervisión del estado. De este modo, se puede ahorrar personal o emplearlo de manera más eficaz en puntos críticos para la seguridad. Así, los costes de alquiler e instalación se compensan mediante el ahorro de personal y de otros medios técnicos. Especialmente en eventos temporales y de duración limitada, esto reduce de forma significativa los costes de planificación, montaje y operación de la tecnología de seguridad."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puede utilizarse NIKOS de forma rápida y flexible?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, NIKOS se ha desarrollado específicamente para usos exteriores flexibles sin infraestructura fija. Una o dos personas pueden montar los módulos en pocos minutos sobre distintas estructuras, como farolas, escenarios, puestos o árboles, y configurarlos de forma individual. Para el funcionamiento continuo basta con una toma de corriente Schuko convencional. NIKOS utiliza una red de radio digital existente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gestión de visitantes para el Hessentag 2027 en Idstein: ¿Dónde se puede alquilar NIKOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS se alquila por días a través de socios certificados, con asesoramiento, instrucción y soporte técnico incluidos. Su socio regional coordina la intervención con usted. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Encontrar un socio y solicitar el alquiler</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Idstein"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Idstein"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS no es un sistema de megafonía convencional, sino un sistema por radio de avisos, alarma y control para grandes eventos, obras y situaciones de crisis, que se alquila por días a través de socios certificados y se puede integrar en su sistema de megafonía o utilizar de forma independiente.</p>
     <span class="nk-label">Reto</span>
     <h2 class="heading-l" style="margin-top:12px;">Dirigir a los visitantes de forma segura y eficaz</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Durante el Hessentag 2027 en Idstein, la gestión de visitantes supone un reto especial debido a las aglomeraciones, al entorno ruidoso y a los flujos de visitantes cambiantes. Las indicaciones sobre recorridos, accesos o normas de comportamiento deben ser claramente comprensibles incluso con un elevado nivel de ruido. Cuando la afluencia es alta, la comunicación entre los responsables y las distintas áreas del evento también puede verse dificultada.</p>
@@ -270,11 +350,15 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">¿Dónde se obtienen ventajas económicas al utilizar NIKOS?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Con <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>, dependiendo del caso de uso, pueden implementarse distintas funciones a través de una plataforma de comunicación unificada. Gracias a estos ahorros, los costes de alquiler e instalación de <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> pueden compensarse rápidamente. Aquí encontrará algunos ejemplos concretos de ahorro. Cuando se aprovechan de forma sistemática las numerosas funciones, además de aumentar el nivel de seguridad y facilitar el trabajo del personal, a menudo incluso se obtiene un ahorro en el presupuesto total. Para la gestión de visitantes y otras tareas de coordinación relevantes para la seguridad ya no se necesitan soluciones independientes de megafonía, control y comunicación: <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> integra la alarma del personal, la información a los visitantes y el control del sistema en una sola plataforma. Esto reduce la necesidad de materiales, el trabajo de cableado y el riesgo de tropiezos provocado por los pasos de cables. Además, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> permite sustituir personal de forma selectiva: las tareas que, de otro modo, requerirían varios puestos de control, comunicación o manejo distribuidos por el recinto se realizan desde un único punto mediante avisos centralizados, control remoto y supervisión del estado. De este modo, se puede ahorrar personal o emplearlo de manera más eficaz en puntos críticos para la seguridad. Así, los costes de alquiler e instalación se compensan mediante el ahorro de personal y de otros medios técnicos. Especialmente en eventos temporales y de duración limitada, esto reduce de forma significativa los costes de planificación, montaje y operación de la tecnología de seguridad.</div>
+        <div class="faq-item__body">Con <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>, dependiendo del caso de uso, pueden implementarse distintas funciones a través de una plataforma de comunicación unificada. Gracias a estos ahorros, los costes de alquiler e instalación de <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> pueden compensarse rápidamente. Aquí encontrará algunos ejemplos concretos de ahorro. Cuando se aprovechan de forma sistemática las numerosas funciones, además de aumentar el nivel de seguridad y facilitar el trabajo del personal, a menudo incluso se obtiene un ahorro en el presupuesto total. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> reduce sobre todo el esfuerzo necesario para soluciones separadas de megafonía, control y comunicación. Disminuyen las necesidades de material y el trabajo de cableado, y los avisos informativos y de emergencia pueden realizarse desde un único punto. Además, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> permite sustituir personal de forma selectiva: las tareas que, de otro modo, requerirían varios puestos de control, comunicación o manejo distribuidos por el recinto se realizan desde un único punto mediante avisos centralizados, control remoto y supervisión del estado. De este modo, se puede ahorrar personal o emplearlo de manera más eficaz en puntos críticos para la seguridad. Así, los costes de alquiler e instalación se compensan mediante el ahorro de personal y de otros medios técnicos. Especialmente en eventos temporales y de duración limitada, esto reduce de forma significativa los costes de planificación, montaje y operación de la tecnología de seguridad.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">¿Puede utilizarse NIKOS de forma rápida y flexible?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Sí, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> se ha desarrollado específicamente para usos exteriores flexibles sin infraestructura fija. Una o dos personas pueden montar los módulos en pocos minutos sobre distintas estructuras, como farolas, escenarios, árboles, puestos o elementos decorativos, y configurarlos de forma individual. Para el funcionamiento continuo basta con una toma de corriente Schuko convencional. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> utiliza una red de radio digital existente.</div>
+        <div class="faq-item__body">Sí, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> se ha desarrollado específicamente para usos exteriores flexibles sin infraestructura fija. Una o dos personas pueden montar los módulos en pocos minutos sobre distintas estructuras, como farolas, escenarios, puestos o árboles, y configurarlos de forma individual. Para el funcionamiento continuo basta con una toma de corriente Schuko convencional. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> utiliza una red de radio digital existente.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Gestión de visitantes para el Hessentag 2027 en Idstein: ¿Dónde se puede alquilar <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> se alquila por días a través de socios certificados, con asesoramiento, instrucción y soporte técnico incluidos. Su socio regional coordina la intervención con usted. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Encontrar un socio y solicitar el alquiler</a></div>
       </details>
     </div>
   </div>

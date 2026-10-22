@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "¿Los avisos emitidos con NIKOS cumplen las normas vigentes?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. NIKOS cumple los requisitos de la DIN EN 50849 (sistemas electroacústicos de alerta de emergencia). NIKOS se ha desarrollado específicamente para aplicaciones de avisos y alertas relevantes para la seguridad y está diseñado técnicamente para su uso en situaciones cotidianas y de emergencia. Para los sistemas electroacústicos de alerta de emergencia (instalaciones ELA), la DIN EN 50849 constituye el marco de referencia determinante. A diferencia de los sistemas basados en redes móviles, NIKOS cumple íntegramente los requisitos indicados en esta norma, ya que no depende de una red externa y, por tanto, puede garantizarse su disponibilidad inmediata en todo momento. Otras normas conocidas en el ámbito de la tecnología de seguridad, como DIN EN 54, DIN VDE 0833-4 y DIN 14675 (sistemas de alarma por voz), no son aplicables al ámbito de uso ni al espectro funcional de NIKOS y, por lo tanto, no son relevantes a efectos de autorización. NIKOS es el sistema de megafonía líder del mercado para aplicaciones temporales y móviles, y desde 2017 se utiliza con éxito en numerosas ocasiones para llevar a cabo tareas de comunicación críticas para la operación. RADACOM y su socio regional de NIKOS estarán encantados de asesorarle sobre las múltiples funciones de NIKOS y de ayudarle a implementar los requisitos de forma rentable."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/es/lp/control-visitantes-basel-tattoo/#service",
+      "name": "Gestión de visitantes para el Basel Tattoo",
+      "description": "En el Basel Tattoo, las grandes aglomeraciones, la música a alto volumen y los flujos cambiantes de visitantes dificultan una gestión selectiva del público.",
+      "url": "https://nikos.info/es/lp/control-visitantes-basel-tattoo/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "es",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Basel"
       }
     },
     {
-      "@type": "Question",
-      "name": "¿Es NIKOS resistente en situaciones de crisis?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, NIKOS funciona mediante una red de radio propia y autónoma, completamente independiente de las redes públicas de comunicación y de su disponibilidad. De este modo, el sistema ofrece una gran resistencia frente a las influencias externas. Como NIKOS no depende de tendidos de cables, sino que se comunica por radio, la conexión se restablece automáticamente tras una interrupción. Por ello, NIKOS responde a las perturbaciones del funcionamiento normal con mucha más resiliencia que muchos otros sistemas y demuestra la aptitud de este sistema de comunicación para situaciones de crisis. NIKOS [audio]² dispone de una batería interna con una autonomía de hasta 16 horas, que también suministra energía a los módulos accesorios conectados. Aunque la red móvil esté saturada, el proveedor de Internet haya sido hackeado o alguien haya desenchufado el conector equivocado, NIKOS sigue funcionando. Así, la gestión de visitantes del Basel Tattoo continúa siendo fiable incluso en caso de fallo del suministro eléctrico o de perturbaciones en las redes públicas de comunicación."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://nikos.info/es/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Todos los casos de uso",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Gestión de visitantes para el Basel Tattoo",
+          "item": "https://nikos.info/es/lp/control-visitantes-basel-tattoo/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "¿Puede utilizarse NIKOS de forma rápida y flexible?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, NIKOS ha sido desarrollado específicamente para usos flexibles en exteriores sin infraestructura fija. Una o dos personas pueden montar los módulos en pocos minutos sobre diferentes estructuras, como farolas, escenarios, árboles, puestos o elementos decorativos, y configurarlos de forma individual. Para el funcionamiento continuo basta con una conexión eléctrica Schuko convencional."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo se pueden oír los avisos cuando suena música de viento a alto volumen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cuando la música de viento suena a alto volumen, NIKOS [LED]² indica mediante una luz intermitente al director, al líder de la banda o al DJ que debe interrumpir la música de inmediato. Al recibir la señal luminosa, se detiene la interpretación, de modo que los avisos se entienden con seguridad. Así, las instrucciones importantes llegan al público de forma fiable incluso en carpas de fiesta llenas y durante desfiles."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/es/lp/control-visitantes-basel-tattoo/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Los avisos emitidos con NIKOS cumplen las normas vigentes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. NIKOS cumple los requisitos de la DIN EN 50849 (sistemas electroacústicos de alerta de emergencia). NIKOS se ha desarrollado específicamente para aplicaciones de avisos y alertas relevantes para la seguridad y está diseñado técnicamente para su uso en situaciones cotidianas y de emergencia. Para los sistemas electroacústicos de alerta de emergencia (instalaciones ELA), la DIN EN 50849 constituye el marco de referencia determinante. A diferencia de los sistemas basados en redes móviles, NIKOS cumple íntegramente los requisitos indicados en esta norma, ya que no depende de una red externa y, por tanto, puede garantizarse su disponibilidad inmediata en todo momento. Otras normas conocidas en el ámbito de la tecnología de seguridad, como DIN EN 54, DIN VDE 0833-4 y DIN 14675 (sistemas de alarma por voz), no son aplicables al ámbito de uso ni al espectro funcional de NIKOS y, por lo tanto, no son relevantes a efectos de autorización. NIKOS es el sistema de megafonía líder del mercado para aplicaciones temporales y móviles, y desde 2017 se utiliza con éxito en numerosas ocasiones para llevar a cabo tareas de comunicación críticas para la operación. RADACOM y su socio regional de NIKOS estarán encantados de asesorarle sobre las múltiples funciones de NIKOS y de ayudarle a implementar los requisitos de forma rentable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Es NIKOS resistente en situaciones de crisis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, NIKOS funciona mediante una red de radio propia y autónoma, completamente independiente de las redes públicas de comunicación y de su disponibilidad. De este modo, el sistema ofrece una gran resistencia frente a las influencias externas. Como NIKOS no depende de tendidos de cables, sino que se comunica por radio, la conexión se restablece automáticamente tras una interrupción. Por ello, NIKOS responde a las perturbaciones del funcionamiento normal con mucha más resiliencia que muchos otros sistemas y demuestra la aptitud de este sistema de comunicación para situaciones de crisis. NIKOS [audio]² dispone de una batería interna con una autonomía de hasta 16 horas, que también suministra energía a los módulos accesorios conectados. Aunque la red móvil esté saturada, el proveedor de Internet haya sido hackeado o alguien haya desenchufado el conector equivocado, NIKOS sigue funcionando. Así, la gestión de visitantes del Basel Tattoo continúa siendo fiable incluso en caso de fallo del suministro eléctrico o de perturbaciones en las redes públicas de comunicación."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puede utilizarse NIKOS de forma rápida y flexible?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, NIKOS ha sido desarrollado específicamente para usos flexibles en exteriores sin infraestructura fija. Una o dos personas pueden montar los módulos en pocos minutos sobre diferentes estructuras, como farolas, escenarios, puestos o árboles, y configurarlos de forma individual. Para el funcionamiento continuo basta con una conexión eléctrica Schuko convencional."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se pueden oír los avisos cuando suena música de viento a alto volumen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cuando la música de viento suena a alto volumen, NIKOS [LED]² indica mediante una luz intermitente al director, al líder de la banda o al DJ que debe interrumpir la música de inmediato. Al recibir la señal luminosa, se detiene la interpretación, de modo que los avisos se entienden con seguridad. Así, las instrucciones importantes llegan al público de forma fiable incluso en carpas de fiesta llenas y durante desfiles."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gestión de visitantes para el Basel Tattoo: ¿Dónde se puede alquilar NIKOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS se alquila por días a través de socios certificados, con asesoramiento, instrucción y soporte técnico incluidos. Su socio regional coordina la intervención con usted. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Encontrar un socio y solicitar el alquiler</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Basel"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Basel"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS no es un sistema de megafonía convencional, sino un sistema por radio de avisos, alarma y control para grandes eventos, obras y situaciones de crisis, que se alquila por días a través de socios certificados y se puede integrar en su sistema de megafonía o utilizar de forma independiente.</p>
     <span class="nk-label">Reto</span>
     <h2 class="heading-l" style="margin-top:12px;">Controlar los flujos de visitantes de forma centralizada y selectiva</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">En el Basel Tattoo, las grandes aglomeraciones, la música a alto volumen y los flujos cambiantes de visitantes dificultan una gestión selectiva del público. En situaciones poco claras, las instrucciones deben llegar rápidamente y de forma comprensible a los grupos de visitantes afectados. Cuando la densidad de público es elevada, la red móvil puede saturarse y dejar de estar disponible para las comunicaciones relevantes para la seguridad.</p>
@@ -270,11 +350,15 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">¿Puede utilizarse NIKOS de forma rápida y flexible?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Sí, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> ha sido desarrollado específicamente para usos flexibles en exteriores sin infraestructura fija. Una o dos personas pueden montar los módulos en pocos minutos sobre diferentes estructuras, como farolas, escenarios, árboles, puestos o elementos decorativos, y configurarlos de forma individual. Para el funcionamiento continuo basta con una conexión eléctrica Schuko convencional.</div>
+        <div class="faq-item__body">Sí, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> ha sido desarrollado específicamente para usos flexibles en exteriores sin infraestructura fija. Una o dos personas pueden montar los módulos en pocos minutos sobre diferentes estructuras, como farolas, escenarios, puestos o árboles, y configurarlos de forma individual. Para el funcionamiento continuo basta con una conexión eléctrica Schuko convencional.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">¿Cómo se pueden oír los avisos cuando suena música de viento a alto volumen?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body">Cuando la música de viento suena a alto volumen, <a class="nk-mod" href="https://nikos.info/en/products/#zubehoer"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS LED.svg" alt="NIKOS [LED]²" loading="lazy"></a> indica mediante una luz intermitente al director, al líder de la banda o al DJ que debe interrumpir la música de inmediato. Al recibir la señal luminosa, se detiene la interpretación, de modo que los avisos se entienden con seguridad. Así, las instrucciones importantes llegan al público de forma fiable incluso en carpas de fiesta llenas y durante desfiles.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Gestión de visitantes para el Basel Tattoo: ¿Dónde se puede alquilar <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> se alquila por días a través de socios certificados, con asesoramiento, instrucción y soporte técnico incluidos. Su socio regional coordina la intervención con usted. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Encontrar un socio y solicitar el alquiler</a></div>
       </details>
     </div>
   </div>

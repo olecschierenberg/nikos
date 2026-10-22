@@ -26,42 +26,121 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "about": {
-    "@type": "Place",
-    "name": "Manching"
-  },
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 für elektroakustische Notfallwarnsysteme. NIKOS ist für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen entwickelt und steht für den Einsatz in Alltags- und Notfallsituationen bereit. Die DIN EN 50849 definiert die Anforderungen an elektroakustische Notfallwarnsysteme. NIKOS erfüllt diese Anforderungen, arbeitet unabhängig von fremden Netzen und ist sofort nutzbar. Die DIN EN 54, DIN VDE 0833-4 und DIN 14675 beziehen sich auf Sprachalarmierungsanlagen und sind für das Einsatzgebiet sowie das Funktionsspektrum von NIKOS nicht anwendbar. NIKOS ist seit 2017 für einsatzkritische Kommunikationsaufgaben im Einsatz. RADACOM und regionale NIKOS-Partner unterstützen bei der Planung und Umsetzung."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/loesungen/besucherinformation-barthelmarkt-manching/#service",
+      "name": "Besucherinformation für den Barthelmarkt in Manching",
+      "description": "Beim Barthelmarkt in Manching stellt die Besucherinformation durch Gedränge, laute Umgebung und fremdsprachige Besucher eine besondere Herausforderung dar.",
+      "url": "https://nikos.info/loesungen/besucherinformation-barthelmarkt-manching/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "de",
+      "termsOfService": "https://nikos.info/de/mietbedingungen/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Manching"
       }
     },
     {
-      "@type": "Question",
-      "name": "Ist NIKOS krisensicher?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz und unabhängig von öffentlichen Kommunikationsnetzen. Nach einer Unterbrechung stellt das Funksystem die Verbindung selbstständig wieder her. NIKOS [audio]² verfügt über einen internen Akku mit einer Laufzeit von bis zu 16 Stunden und versorgt darüber auch angeschlossene Zubehörmodule. Bei einer Überlastung des Handynetzes, einem Ausfall des Internetproviders oder einer Unterbrechung der Stromversorgung bleibt NIKOS funktionsfähig. So bleibt die Besucherinformation für den Barthelmarkt verfügbar."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://nikos.info/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle Einsatzbeispiele",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Besucherinformation für den Barthelmarkt in Manching",
+          "item": "https://nikos.info/loesungen/besucherinformation-barthelmarkt-manching/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Wo entstehen beim Einsatz von NIKOS Kostenvorteile?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "NIKOS reduziert den Personalaufwand für wiederkehrende Koordinations- und Überwachungsaufgaben. Zentrale Durchsagen, Fernsteuerung und Statusüberwachung ersetzen verteilte Ordnungs-, Melde- und Bedienposten. Personal steht dadurch für sicherheitskritische Aufgaben zur Verfügung. Bei umzäunten Veranstaltungen überwacht NIKOS Notausgangstore technisch. Wachposten an Notausgängen werden dadurch für andere sicherheitskritische Punkte eingesetzt. Die Einsparungen bei Personal und zusätzlicher Technik kompensieren Miet- und Installationskosten von NIKOS."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ist NIKOS kurzfristig und flexibel einsetzbar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS ist für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Ein bis zwei Personen montieren die Module innerhalb weniger Minuten an Laternen, Bühnen, Bäumen, Buden oder Dekorationen und konfigurieren sie für den Einsatz. Ein Schuko-Stromanschluss sichert den Dauerbetrieb. NIKOS benötigt weder eine feste Verkabelung noch ein vorhandenes digitales Funknetz."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/loesungen/besucherinformation-barthelmarkt-manching/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 für elektroakustische Notfallwarnsysteme. NIKOS ist für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen entwickelt und steht für den Einsatz in Alltags- und Notfallsituationen bereit. Die DIN EN 50849 definiert die Anforderungen an elektroakustische Notfallwarnsysteme. NIKOS erfüllt diese Anforderungen, arbeitet unabhängig von fremden Netzen und ist sofort nutzbar. Die DIN EN 54, DIN VDE 0833-4 und DIN 14675 beziehen sich auf Sprachalarmierungsanlagen und sind für das Einsatzgebiet sowie das Funktionsspektrum von NIKOS nicht anwendbar. NIKOS ist seit 2017 für einsatzkritische Kommunikationsaufgaben im Einsatz. RADACOM und regionale NIKOS-Partner unterstützen bei der Planung und Umsetzung."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist NIKOS krisensicher?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz und unabhängig von öffentlichen Kommunikationsnetzen. Nach einer Unterbrechung stellt das Funksystem die Verbindung selbstständig wieder her. NIKOS [audio]² verfügt über einen internen Akku mit einer Laufzeit von bis zu 16 Stunden und versorgt darüber auch angeschlossene Zubehörmodule. Bei einer Überlastung des Handynetzes, einem Ausfall des Internetproviders oder einer Unterbrechung der Stromversorgung bleibt NIKOS funktionsfähig. So bleibt die Besucherinformation für den Barthelmarkt verfügbar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wo entstehen beim Einsatz von NIKOS Kostenvorteile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS reduziert den Personalaufwand für wiederkehrende Koordinations- und Überwachungsaufgaben. Zentrale Durchsagen, Fernsteuerung und Statusüberwachung ersetzen verteilte Ordnungs-, Melde- und Bedienposten. Personal steht dadurch für sicherheitskritische Aufgaben zur Verfügung. Bei umzäunten Veranstaltungen überwacht NIKOS Notausgangstore technisch. Wachposten an Notausgängen werden dadurch für andere sicherheitskritische Punkte eingesetzt. Die Einsparungen bei Personal und zusätzlicher Technik kompensieren Miet- und Installationskosten von NIKOS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist NIKOS kurzfristig und flexibel einsetzbar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS ist für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Ein bis zwei Personen montieren die Module innerhalb weniger Minuten an Laternen, Bühnen, Buden oder Bäumen und konfigurieren sie für den Einsatz. Ein Schuko-Stromanschluss sichert den Dauerbetrieb. NIKOS benötigt weder eine feste Verkabelung noch ein vorhandenes digitales Funknetz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Besucherinformation für den Barthelmarkt in Manching: Wo kann man NIKOS mieten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Zur Partnerauswahl und Mietanfrage</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Manching"
       }
     }
   ]
@@ -254,6 +333,8 @@ a{color:inherit}
 <!-- ═══ INTRO (S2) ═══ -->
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-de>NIKOS ist kein klassisches PA-System, sondern ein funkbasiertes Durchsage-, Alarmierungs- und Steuerungssystem für Großveranstaltungen, Baustellen und Krisenlagen, das Sie tageweise über zertifizierte Partner mieten und in Ihre PA integrieren oder eigenständig einsetzen können.</p>
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-en>NIKOS is not a conventional PA system, but a radio-based public address, alarm and control system for large events, construction sites and crisis situations, which you can rent by the day through certified partners and either integrate into your PA or use on its own.</p>
     <span class="nk-label" data-de>Herausforderung</span><span class="nk-label" data-en>Challenge</span>
     <h2 class="heading-l" style="margin-top:12px;" data-de>Verständliche Hinweise trotz Geräuschkulisse</h2>
     <h2 class="heading-l" style="margin-top:12px;" data-en>Clear instructions despite background noise</h2>
@@ -301,8 +382,13 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Ist NIKOS kurzfristig und flexibel einsetzbar?</span><span class="faq-q" data-en>Can NIKOS be deployed at short notice and flexibly?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body" data-de>Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> ist für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Ein bis zwei Personen montieren die Module innerhalb weniger Minuten an Laternen, Bühnen, Bäumen, Buden oder Dekorationen und konfigurieren sie für den Einsatz. Ein Schuko-Stromanschluss sichert den Dauerbetrieb. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> benötigt weder eine feste Verkabelung noch ein vorhandenes digitales Funknetz.</div>
-        <div class="faq-item__body" data-en>Yes. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed for flexible outdoor operations without fixed infrastructure. One or two people can attach the modules to street lamps, stages, trees, stalls or decorations within just a few minutes and configure them for use. A Schuko power connection ensures continuous operation. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> requires neither permanent cabling nor an existing digital radio network.</div>
+        <div class="faq-item__body" data-de>Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> ist für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Ein bis zwei Personen montieren die Module innerhalb weniger Minuten an Laternen, Bühnen, Buden oder Bäumen und konfigurieren sie für den Einsatz. Ein Schuko-Stromanschluss sichert den Dauerbetrieb. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> benötigt weder eine feste Verkabelung noch ein vorhandenes digitales Funknetz.</div>
+        <div class="faq-item__body" data-en>Yes. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed for flexible outdoor operations without fixed infrastructure. One or two people can attach the modules to lampposts, stages, stands or trees within just a few minutes and configure them for use. A Schuko power connection ensures continuous operation. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> requires neither permanent cabling nor an existing digital radio network.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" data-de>Besucherinformation für den Barthelmarkt in Manching: Wo kann man <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mieten?</span><span class="faq-q" data-en>Visitor information for the Barthelmarkt in Manching: Where can <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> be rented?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Zur Partnerauswahl und Mietanfrage</a></div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find a partner and request a rental</a></div>
       </details>
     </div>
   </div>

@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Opfylder meddelelser med NIKOS de gældende standarder?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS opfylder kravene i DIN EN 50849 (elektroakustiske nødvarslingssystemer). NIKOS er udviklet specifikt til sikkerhedskritiske meddelelses- og alarmeringsanvendelser og er teknisk designet til brug i både hverdags- og nødsituationer. For elektroakustiske nødvarslingssystemer (ELA-anlæg) er DIN EN 50849 den afgørende referenceramme. Kravene heri opfyldes fuldt ud af NIKOS – i modsætning til mobilnetbaserede systemer – da der ikke er afhængighed af et eksternt net, og øjeblikkelig anvendelighed dermed kan sikres til enhver tid. Andre standarder, der kendes fra sikkerhedsteknikken, såsom DIN EN 54, DIN VDE 0833-4 og DIN 14675 (talevarslingsanlæg), er ikke anvendelige på NIKOS' anvendelsesområde og funktionsomfang og er derfor ikke relevante for en godkendelse. NIKOS er det markedsførende meddelelsessystem til midlertidige og mobile anvendelser og har siden 2017 været anvendt med succes til udførelse af indsatskritiske kommunikationsopgaver. De ansvarlige myndigheders godkendelse vurderes projektspecifikt."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/da/lp/talevarsling-sejlsportsarrangement/#service",
+      "name": "Talevarsling til Sail Amsterdam 2030",
+      "description": "Under Sail Amsterdam 2030 skal talevarsling nå ud til store menneskemængder på en forståelig måde i et tæt befolket og støjende miljø.",
+      "url": "https://nikos.info/da/lp/talevarsling-sejlsportsarrangement/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "da",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     },
     {
-      "@type": "Question",
-      "name": "Fungerer NIKOS fortsat ved strømsvigt eller overbelastning af mobilnettet?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS fungerer via sit eget autonome radionetværk og er uafhængigt af offentlige kommunikationsnet. Efter en afbrydelse genetableres radioforbindelsen automatisk. NIKOS [audio]² har et internt batteri med op til 16 timers driftstid og forsyner også tilsluttede tilbehørsmoduler med strøm. Dermed forbliver talevarslingen til Sail Amsterdam 2030 funktionsdygtig, også ved strømsvigt eller forstyrrelser i offentlige kommunikationsnet."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Forside",
+          "item": "https://nikos.info/da/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle anvendelseseksempler",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Talevarsling til Sail Amsterdam 2030",
+          "item": "https://nikos.info/da/lp/talevarsling-sejlsportsarrangement/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Kan NIKOS installeres med kort varsel på forskellige steder?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS er udviklet til fleksibel udendørs brug uden fast infrastruktur. Én eller to personer kan montere modulerne på få minutter på forskellige konstruktioner som lygtepæle, scener, træer, boder eller dekorationer og konfigurere dem individuelt. Til kontinuerlig drift er en almindelig Schuko-stikkontakt tilstrækkelig. NIKOS understøtter også brugen af et eksisterende digitalt radionetværk."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Hvor opstår der omkostningsfordele ved brug af NIKOS?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Med NIKOS kan forskellige funktioner afhængigt af anvendelsen realiseres via én samlet kommunikationsplatform. Leje- og installationsomkostningerne for NIKOS kan hurtigt opvejes af disse besparelser. Her finder du nogle konkrete eksempler på besparelser. Til talevarsling og andre sikkerhedsrelevante koordineringsopgaver er der ikke behov for separate højttaler-, styrings- og kommunikationsløsninger. Opgaver, som ellers ville kræve flere ordens-, melde- eller betjeningsposter fordelt over området, løses via centrale meddelelser og fjernstyring fra ét sted. Dermed kan der spares personale, eller personalet kan indsættes mere effektivt på sikkerhedskritiske steder."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/da/lp/talevarsling-sejlsportsarrangement/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Opfylder meddelelser med NIKOS de gældende standarder?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS opfylder kravene i DIN EN 50849 (elektroakustiske nødvarslingssystemer). NIKOS er udviklet specifikt til sikkerhedskritiske meddelelses- og alarmeringsanvendelser og er teknisk designet til brug i både hverdags- og nødsituationer. For elektroakustiske nødvarslingssystemer (ELA-anlæg) er DIN EN 50849 den afgørende referenceramme. Kravene heri opfyldes fuldt ud af NIKOS – i modsætning til mobilnetbaserede systemer – da der ikke er afhængighed af et eksternt net, og øjeblikkelig anvendelighed dermed kan sikres til enhver tid. Andre standarder, der kendes fra sikkerhedsteknikken, såsom DIN EN 54, DIN VDE 0833-4 og DIN 14675 (talevarslingsanlæg), er ikke anvendelige på NIKOS' anvendelsesområde og funktionsomfang og er derfor ikke relevante for en godkendelse. NIKOS er det markedsførende meddelelsessystem til midlertidige og mobile anvendelser og har siden 2017 været anvendt med succes til udførelse af indsatskritiske kommunikationsopgaver. De ansvarlige myndigheders godkendelse vurderes projektspecifikt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Fungerer NIKOS fortsat ved strømsvigt eller overbelastning af mobilnettet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS fungerer via sit eget autonome radionetværk og er uafhængigt af offentlige kommunikationsnet. Efter en afbrydelse genetableres radioforbindelsen automatisk. NIKOS [audio]² har et internt batteri med op til 16 timers driftstid og forsyner også tilsluttede tilbehørsmoduler med strøm. Dermed forbliver talevarslingen til Sail Amsterdam 2030 funktionsdygtig, også ved strømsvigt eller forstyrrelser i offentlige kommunikationsnet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan NIKOS installeres med kort varsel på forskellige steder?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS er udviklet til fleksibel udendørs brug uden fast infrastruktur. Én eller to personer kan montere modulerne på få minutter på forskellige konstruktioner som lygtepæle, scener, boder eller træer og konfigurere dem individuelt. Til kontinuerlig drift er en almindelig Schuko-stikkontakt tilstrækkelig. NIKOS understøtter også brugen af et eksisterende digitalt radionetværk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hvor opstår der omkostningsfordele ved brug af NIKOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Med NIKOS kan forskellige funktioner afhængigt af anvendelsen realiseres via én samlet kommunikationsplatform. Leje- og installationsomkostningerne for NIKOS kan hurtigt opvejes af disse besparelser. Her finder du nogle konkrete eksempler på besparelser. NIKOS reducerer først og fremmest indsatsen til separate løsninger til højttalere, styring og kommunikation. Materialebehovet og kabelarbejdet bliver mindre, og informations- og nødudsagn kan foretages fra ét sted. Opgaver, som ellers ville kræve flere ordens-, melde- eller betjeningsposter fordelt over området, løses via centrale meddelelser og fjernstyring fra ét sted. Dermed kan der spares personale, eller personalet kan indsættes mere effektivt på sikkerhedskritiske steder."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Talevarsling til Sail Amsterdam 2030: Hvor kan NIKOS lejes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS udlejes pr. dag via certificerede partnere, inklusive rådgivning, instruktion og teknisk support. Jeres regionale partner afstemmer indsatsen med jer. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Find en partner og forespørg om leje</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Amsterdam"
-  }
+  ]
 }
 </script>
 
@@ -238,6 +317,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS er ikke et klassisk PA-system, men et radiobaseret system til højttalermeddelelser, alarmering og styring ved store arrangementer, byggepladser og krisesituationer, som kan lejes pr. dag via certificerede partnere og enten integreres i jeres PA-anlæg eller bruges selvstændigt.</p>
     <span class="nk-label">Udfordring</span>
     <h2 class="heading-l" style="margin-top:12px;">Tydelig alarmering uden offentligt netværk</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Under Sail Amsterdam 2030 skal talevarsling nå ud til store menneskemængder på en forståelig måde i et tæt befolket og støjende miljø. Omgivende støj og tætstående besøgende gør det vanskeligt at forstå advarsler og handlingsanvisninger. Den internationale besøgerskare kræver desuden, at sikkerhedsmeddelelser formidles hurtigt og entydigt. Ved et stort antal besøgende bliver mobilnettet overbelastet, så mobile kommunikationssystemer er uegnede til krisesituationer.</p>
@@ -271,11 +351,15 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Kan NIKOS installeres med kort varsel på forskellige steder?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> er udviklet til fleksibel udendørs brug uden fast infrastruktur. Én eller to personer kan montere modulerne på få minutter på forskellige konstruktioner som lygtepæle, scener, træer, boder eller dekorationer og konfigurere dem individuelt. Til kontinuerlig drift er en almindelig Schuko-stikkontakt tilstrækkelig. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> understøtter også brugen af et eksisterende digitalt radionetværk.</div>
+        <div class="faq-item__body">Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> er udviklet til fleksibel udendørs brug uden fast infrastruktur. Én eller to personer kan montere modulerne på få minutter på forskellige konstruktioner som lygtepæle, scener, boder eller træer og konfigurere dem individuelt. Til kontinuerlig drift er en almindelig Schuko-stikkontakt tilstrækkelig. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> understøtter også brugen af et eksisterende digitalt radionetværk.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Hvor opstår der omkostningsfordele ved brug af NIKOS?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Med <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> kan forskellige funktioner afhængigt af anvendelsen realiseres via én samlet kommunikationsplatform. Leje- og installationsomkostningerne for <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> kan hurtigt opvejes af disse besparelser. Her finder du nogle konkrete eksempler på besparelser. Til talevarsling og andre sikkerhedsrelevante koordineringsopgaver er der ikke behov for separate højttaler-, styrings- og kommunikationsløsninger. Opgaver, som ellers ville kræve flere ordens-, melde- eller betjeningsposter fordelt over området, løses via centrale meddelelser og fjernstyring fra ét sted. Dermed kan der spares personale, eller personalet kan indsættes mere effektivt på sikkerhedskritiske steder.</div>
+        <div class="faq-item__body">Med <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> kan forskellige funktioner afhængigt af anvendelsen realiseres via én samlet kommunikationsplatform. Leje- og installationsomkostningerne for <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> kan hurtigt opvejes af disse besparelser. Her finder du nogle konkrete eksempler på besparelser. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> reducerer først og fremmest indsatsen til separate løsninger til højttalere, styring og kommunikation. Materialebehovet og kabelarbejdet bliver mindre, og informations- og nødudsagn kan foretages fra ét sted. Opgaver, som ellers ville kræve flere ordens-, melde- eller betjeningsposter fordelt over området, løses via centrale meddelelser og fjernstyring fra ét sted. Dermed kan der spares personale, eller personalet kan indsættes mere effektivt på sikkerhedskritiske steder.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Talevarsling til Sail Amsterdam 2030: Hvor kan <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> lejes?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> udlejes pr. dag via certificerede partnere, inklusive rådgivning, instruktion og teknisk support. Jeres regionale partner afstemmer indsatsen med jer. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find en partner og forespørg om leje</a></div>
       </details>
     </div>
   </div>

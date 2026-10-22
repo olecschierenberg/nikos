@@ -23,42 +23,121 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "about": {
-    "@type": "Place",
-    "name": "Berlin"
-  },
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 (Elektroakustische Notfallwarnsysteme). Für elektroakustische Notfallwarnsysteme (ELA-Anlagen) ist die DIN EN 50849 der maßgebliche Orientierungsrahmen. Die dort genannten Anforderungen werden von NIKOS voll erfüllt, da keine Abhängigkeit von einem fremden Netz besteht und jederzeit eine sofortige Nutzbarkeit gewährleistet ist. Andere aus der Sicherheitstechnik bekannte Normen wie die DIN EN 54, DIN VDE 0833-4 sowie DIN 14675 (Sprachalarmierungsanlagen) sind auf das Einsatzgebiet und Funktionsspektrum von NIKOS nicht anwendbar und daher für eine Genehmigung nicht relevant. RADACOM und Ihr regionaler NIKOS-Partner beraten Sie gerne zu den vielfältigen Funktionen von NIKOS und unterstützen Sie bei der Umsetzung der Anforderungen."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/loesungen/besucherlenkung-fussball-em-fanmeile-berlin/#service",
+      "name": "Besucherlenkung für die Fußball-EM Fanmeile in Berlin",
+      "description": "Bei der Fußball-EM Fanmeile in Berlin treffen sehr viele Besucher auf mehrere Veranstaltungsbereiche und eine hohe Geräuschkulisse.",
+      "url": "https://nikos.info/loesungen/besucherlenkung-fussball-em-fanmeile-berlin/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "de",
+      "termsOfService": "https://nikos.info/de/mietbedingungen/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Berlin"
       }
     },
     {
-      "@type": "Question",
-      "name": "Wo entstehen bei der Fußball-EM Fanmeile Kostenvorteile durch NIKOS?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "NIKOS reduziert bei der Fußball-EM Fanmeile vor allem die Aufwände für separate Lautsprecher-, Steuer- und Kommunikationslösungen. Materialbedarf, Verkabelungsaufwand und Kabelbrücken werden geringer, weil die Funktionen zentral gebündelt werden. Außerdem sinken die Personalkosten, da wiederkehrende Durchsagen, Fernsteuerung und Statusüberwachung von einer Stelle aus erledigt werden. So kompensieren die Einsparungen bei Personal und Technik die Miet- und Installationskosten."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://nikos.info/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle Einsatzbeispiele",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Besucherlenkung für die Fußball-EM Fanmeile in Berlin",
+          "item": "https://nikos.info/loesungen/besucherlenkung-fussball-em-fanmeile-berlin/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Bleibt die Besucherlenkung der Fußball-EM Fanmeile bei Netzstörungen funktionsfähig?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz und ist unabhängig von öffentlichen Kommunikationsnetzen und deren Verfügbarkeit. Da NIKOS nicht auf Kabelwege angewiesen ist, sondern über Funk kommuniziert, stellt sich die Verbindung nach einer Unterbrechung selbstständig wieder her. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. So bleibt die Besucherlenkung für die Fußball-EM Fanmeile auch bei Ausfall der Stromversorgung oder Störungen in den öffentlichen Kommunikationsnetzen zuverlässig funktionsfähig."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie schnell lässt sich NIKOS für die Fußball-EM Fanmeile installieren?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "NIKOS wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus. Bei passender technischer Spezifikation nutzt NIKOS ein vorhandenes digitales Funknetz."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/loesungen/besucherlenkung-fussball-em-fanmeile-berlin/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 (Elektroakustische Notfallwarnsysteme). Für elektroakustische Notfallwarnsysteme (ELA-Anlagen) ist die DIN EN 50849 der maßgebliche Orientierungsrahmen. Die dort genannten Anforderungen werden von NIKOS im Gegensatz zu mobilfunkbasierten Systemen voll erfüllt, da keine Abhängigkeit von einem fremden Netz besteht und somit jederzeit eine sofortige Nutzbarkeit gewährleistet ist. Andere aus der Sicherheitstechnik bekannte Normen wie die DIN EN 54, DIN VDE 0833-4 sowie DIN 14675 (Sprachalarmierungsanlagen) sind auf das Einsatzgebiet und Funktionsspektrum von NIKOS nicht anwendbar und daher für eine Genehmigung nicht relevant. RADACOM und Ihr regionaler NIKOS-Partner beraten Sie gerne zu den vielfältigen Funktionen von NIKOS und unterstützen Sie bei der Umsetzung der Anforderungen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wo entstehen bei der Fußball-EM Fanmeile Kostenvorteile durch NIKOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS reduziert vor allem den Aufwand für separate Lautsprecher-, Steuer- und Kommunikationslösungen. Materialbedarf und Verkabelungsaufwand werden geringer, Informations- und Notfalldurchsagen lassen sich von einer Stelle aus machen. Außerdem sinken die Personalkosten, da wiederkehrende Durchsagen, Fernsteuerung und Statusüberwachung von einer Stelle aus erledigt werden. So kompensieren die Einsparungen bei Personal und Technik die Miet- und Installationskosten."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bleibt die Besucherlenkung der Fußball-EM Fanmeile bei Netzstörungen funktionsfähig?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS arbeitet über ein eigenes, autarkes Funknetz und ist unabhängig von öffentlichen Kommunikationsnetzen und deren Verfügbarkeit. Da NIKOS nicht auf Kabelwege angewiesen ist, sondern über Funk kommuniziert, stellt sich die Verbindung nach einer Unterbrechung selbstständig wieder her. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. So bleibt die Besucherlenkung für die Fußball-EM Fanmeile auch bei Ausfall der Stromversorgung oder Störungen in den öffentlichen Kommunikationsnetzen zuverlässig funktionsfähig."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie schnell lässt sich NIKOS für die Fußball-EM Fanmeile installieren?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus. Bei passender technischer Spezifikation nutzt NIKOS ein vorhandenes digitales Funknetz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Besucherlenkung für die Fußball-EM Fanmeile in Berlin: Wo kann man NIKOS mieten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Zur Partnerauswahl und Mietanfrage</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Berlin"
       }
     }
   ]
@@ -248,6 +327,8 @@ a{color:inherit}
 <!-- ═══ INTRO (S2) ═══ -->
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-de>NIKOS ist kein klassisches PA-System, sondern ein funkbasiertes Durchsage-, Alarmierungs- und Steuerungssystem für Großveranstaltungen, Baustellen und Krisenlagen, das Sie tageweise über zertifizierte Partner mieten und in Ihre PA integrieren oder eigenständig einsetzen können.</p>
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-en>NIKOS is not a conventional PA system, but a radio-based public address, alarm and control system for large events, construction sites and crisis situations, which you can rent by the day through certified partners and either integrate into your PA or use on its own.</p>
     <span class="nk-label" data-de>Herausforderung</span><span class="nk-label" data-en>Challenge</span>
     <h2 class="heading-l" style="margin-top:12px;" data-de>Ortsgenaue Durchsagen bei sehr hoher Besucherdichte</h2>
     <h2 class="heading-l" style="margin-top:12px;" data-en>Location-specific announcements in very high visitor densities</h2>
@@ -285,7 +366,7 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Wo entstehen bei der Fußball-EM Fanmeile Kostenvorteile durch NIKOS?</span><span class="faq-q" data-en>Where does NIKOS create cost advantages for the European Championship fan zone?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> reduziert bei der Fußball-EM Fanmeile vor allem die Aufwände für separate Lautsprecher-, Steuer- und Kommunikationslösungen. Materialbedarf, Verkabelungsaufwand und Kabelbrücken werden geringer, weil die Funktionen zentral gebündelt werden. Außerdem sinken die Personalkosten, da wiederkehrende Durchsagen, Fernsteuerung und Statusüberwachung von einer Stelle aus erledigt werden. So kompensieren die Einsparungen bei Personal und Technik die Miet- und Installationskosten.</div>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> reduziert vor allem den Aufwand für separate Lautsprecher-, Steuer- und Kommunikationslösungen. Materialbedarf und Verkabelungsaufwand werden geringer, Informations- und Notfalldurchsagen lassen sich von einer Stelle aus machen. Außerdem sinken die Personalkosten, da wiederkehrende Durchsagen, Fernsteuerung und Statusüberwachung von einer Stelle aus erledigt werden. So kompensieren die Einsparungen bei Personal und Technik die Miet- und Installationskosten.</div>
         <div class="faq-item__body" data-en>At the European Championship fan zone, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> primarily reduces the effort required for separate speaker, control and communication solutions. Equipment requirements, cabling effort and cable ramps are reduced because the functions are combined centrally. Personnel costs also decrease, as recurring announcements, remote control and status monitoring can all be managed from a single location. This means that the savings in personnel and technology offset the rental and installation costs.</div>
       </details>
       <details class="faq-item">
@@ -295,8 +376,13 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Wie schnell lässt sich NIKOS für die Fußball-EM Fanmeile installieren?</span><span class="faq-q" data-en>How quickly can NIKOS be installed for the European Championship fan zone?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus. Bei passender technischer Spezifikation nutzt <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> ein vorhandenes digitales Funknetz.</div>
-        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was specifically developed for flexible outdoor use without fixed infrastructure. The modules can be mounted and individually configured by one or two people within just a few minutes on various structures such as streetlamps, stages, trees, stalls or decorations. A standard Schuko power socket is sufficient for continuous operation. Where the technical specifications are suitable, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> uses an existing digital radio network.</div>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde speziell für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module lassen sich von ein bis zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen montieren und individuell konfigurieren. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus. Bei passender technischer Spezifikation nutzt <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> ein vorhandenes digitales Funknetz.</div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was specifically developed for flexible outdoor use without fixed infrastructure. The modules can be mounted and individually configured by one or two people within just a few minutes on various structures such as lampposts, stages, stands or trees. A standard Schuko power socket is sufficient for continuous operation. Where the technical specifications are suitable, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> uses an existing digital radio network.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" data-de>Besucherlenkung für die Fußball-EM Fanmeile in Berlin: Wo kann man <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mieten?</span><span class="faq-q" data-en>Visitor guidance for Berlin’s European Championship fan zone: Where can <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> be rented?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Zur Partnerauswahl und Mietanfrage</a></div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find a partner and request a rental</a></div>
       </details>
     </div>
   </div>

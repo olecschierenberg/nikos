@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "NIKOS rispetta le norme vigenti per gli annunci?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sì, NIKOS è conforme alle norme: il sistema soddisfa la DIN EN 50849 per i sistemi elettroacustici di allarme di emergenza. NIKOS è stato sviluppato appositamente per annunci e allertamenti rilevanti per la sicurezza — utilizzabile sia nell'esercizio quotidiano sia in caso di emergenza. Per gli impianti ELA, la DIN EN 50849 costituisce il quadro di riferimento determinante. A differenza dei sistemi basati sulla telefonia mobile, NIKOS soddisfa pienamente questi requisiti perché opera in modo indipendente da una rete esterna ed è quindi immediatamente operativo in qualsiasi momento. Altre norme di sicurezza come DIN EN 54, DIN VDE 0833-4 e DIN 14675 (impianti di allarme vocale) non sono invece pertinenti per NIKOS, poiché riguardano un diverso campo d'impiego e un diverso ambito funzionale. In qualità di sistema di diffusione sonora leader di mercato per impieghi temporanei e mobili, NIKOS è già stato impiegato con successo in numerose occasioni per compiti di comunicazione critici dal 2017. La valutazione e l’accettazione da parte dell’organismo competente avvengono in funzione del singolo progetto."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/it/lp/sicurezza-visitatori-evento-sail/#service",
+      "name": "Sicurezza dei visitatori per Sail Amsterdam 2030",
+      "description": "Sicurezza dei visitatori per Sail Amsterdam 2030: avvisi mirati in caso di affollamento sulle banchine.",
+      "url": "https://nikos.info/it/lp/sicurezza-visitatori-evento-sail/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "it",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     },
     {
-      "@type": "Question",
-      "name": "NIKOS continua a funzionare in caso di interruzione di corrente o sovraccarico delle reti mobili?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sì. NIKOS funziona tramite una propria rete radio autonoma ed è completamente indipendente dalle reti di comunicazione pubbliche e dalla loro disponibilità. Poiché NIKOS comunica senza fili, dopo un’interruzione il collegamento si ripristina automaticamente. NIKOS [audio]² dispone di una batteria interna con un’autonomia massima di 16 ore e alimenta anche i moduli accessori collegati. In questo modo, la sicurezza dei visitatori per Sail Amsterdam 2030 rimane affidabile anche in caso di interruzioni di corrente o guasti alle reti di comunicazione pubbliche."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nikos.info/it/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutti gli esempi di utilizzo",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Sicurezza dei visitatori per Sail Amsterdam 2030",
+          "item": "https://nikos.info/it/lp/sicurezza-visitatori-evento-sail/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "NIKOS può essere installato lungo le banchine con breve preavviso?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sì. NIKOS è stato sviluppato per impieghi flessibili all’aperto senza infrastrutture fisse. Una o due persone possono montare i moduli in pochi minuti su diverse strutture, come lampioni, palchi, alberi, bancarelle o decorazioni, e configurarli singolarmente. Per il funzionamento continuo è sufficiente una normale presa di corrente Schuko. NIKOS funziona tramite una rete radio digitale esistente."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Dove si ottengono vantaggi economici utilizzando NIKOS?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Con NIKOS è possibile realizzare, a seconda dell’applicazione, diverse funzioni tramite un’unica piattaforma di comunicazione. Grazie a questi risparmi, i costi di noleggio e installazione di NIKOS possono essere rapidamente compensati. Qui sono riportati alcuni esempi concreti di risparmio. Per la sicurezza dei visitatori e per altri compiti di coordinamento rilevanti per la sicurezza non sono più necessarie soluzioni separate per diffusione sonora, controllo e comunicazione. Questo riduce il fabbisogno di materiali, il lavoro di cablaggio e il rischio di inciampo causato dai passacavi. Negli eventi temporanei diminuiscono così sensibilmente i costi di pianificazione, allestimento e utilizzo della tecnologia di sicurezza."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/it/lp/sicurezza-visitatori-evento-sail/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "NIKOS rispetta le norme vigenti per gli annunci?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì, NIKOS è conforme alle norme: il sistema soddisfa la DIN EN 50849 per i sistemi elettroacustici di allarme di emergenza. NIKOS è stato sviluppato appositamente per annunci e allertamenti rilevanti per la sicurezza — utilizzabile sia nell'esercizio quotidiano sia in caso di emergenza. Per gli impianti ELA, la DIN EN 50849 costituisce il quadro di riferimento determinante. A differenza dei sistemi basati sulla telefonia mobile, NIKOS soddisfa pienamente questi requisiti perché opera in modo indipendente da una rete esterna ed è quindi immediatamente operativo in qualsiasi momento. Altre norme di sicurezza come DIN EN 54, DIN VDE 0833-4 e DIN 14675 (impianti di allarme vocale) non sono invece pertinenti per NIKOS, poiché riguardano un diverso campo d'impiego e un diverso ambito funzionale. In qualità di sistema di diffusione sonora leader di mercato per impieghi temporanei e mobili, NIKOS è già stato impiegato con successo in numerose occasioni per compiti di comunicazione critici dal 2017. La valutazione e l’accettazione da parte dell’organismo competente avvengono in funzione del singolo progetto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "NIKOS continua a funzionare in caso di interruzione di corrente o sovraccarico delle reti mobili?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì. NIKOS funziona tramite una propria rete radio autonoma ed è completamente indipendente dalle reti di comunicazione pubbliche e dalla loro disponibilità. Poiché NIKOS comunica senza fili, dopo un’interruzione il collegamento si ripristina automaticamente. NIKOS [audio]² dispone di una batteria interna con un’autonomia massima di 16 ore e alimenta anche i moduli accessori collegati. In questo modo, la sicurezza dei visitatori per Sail Amsterdam 2030 rimane affidabile anche in caso di interruzioni di corrente o guasti alle reti di comunicazione pubbliche."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "NIKOS può essere installato lungo le banchine con breve preavviso?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì. NIKOS è stato sviluppato per impieghi flessibili all’aperto senza infrastrutture fisse. Una o due persone possono montare i moduli in pochi minuti su diverse strutture, come lampioni, palchi, bancarelle o alberi, e configurarli singolarmente. Per il funzionamento continuo è sufficiente una normale presa di corrente Schuko. NIKOS funziona tramite una rete radio digitale esistente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dove si ottengono vantaggi economici utilizzando NIKOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Con NIKOS è possibile realizzare, a seconda dell’applicazione, diverse funzioni tramite un’unica piattaforma di comunicazione. Grazie a questi risparmi, i costi di noleggio e installazione di NIKOS possono essere rapidamente compensati. Qui sono riportati alcuni esempi concreti di risparmio. NIKOS riduce soprattutto l’impegno per soluzioni separate di diffusione sonora, controllo e comunicazione. Si riducono il fabbisogno di materiale e il lavoro di cablaggio, e gli annunci informativi e di emergenza possono essere effettuati da un unico punto. Negli eventi temporanei diminuiscono così sensibilmente i costi di pianificazione, allestimento e utilizzo della tecnologia di sicurezza."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sicurezza dei visitatori per Sail Amsterdam 2030: Dove si può noleggiare NIKOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS viene noleggiato a giornata tramite partner certificati, con consulenza, istruzione e supporto tecnico inclusi. Il partner regionale concorda l’impiego con voi. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Trova un partner e richiedi il noleggio</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Amsterdam"
-  }
+  ]
 }
 </script>
 
@@ -238,6 +317,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS non è un classico impianto audio, ma un sistema via radio per annunci, allarmi e controllo per grandi eventi, cantieri e situazioni di crisi, che si noleggia a giornata tramite partner certificati e si può integrare nel proprio impianto audio o usare in modo autonomo.</p>
     <span class="nk-label">Sfida</span>
     <h2 class="heading-l" style="margin-top:12px;">Informare i visitatori in modo mirato e rapido</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Durante Sail Amsterdam 2030, i grandi flussi di visitatori sulle banchine, il rumore ambientale e la presenza di un pubblico internazionale impongono requisiti elevati per la sicurezza dei visitatori. In caso di affollamento, avvisi e istruzioni operative devono raggiungere tutte le persone coinvolte in modo chiaro e tempestivo. L’elevata densità di visitatori sovraccarica rapidamente le reti mobili, rendendo inaffidabili le comunicazioni mobili in una situazione di crisi.</p>
@@ -271,11 +351,15 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">NIKOS può essere installato lungo le banchine con breve preavviso?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Sì. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> è stato sviluppato per impieghi flessibili all’aperto senza infrastrutture fisse. Una o due persone possono montare i moduli in pochi minuti su diverse strutture, come lampioni, palchi, alberi, bancarelle o decorazioni, e configurarli singolarmente. Per il funzionamento continuo è sufficiente una normale presa di corrente Schuko. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> funziona tramite una rete radio digitale esistente.</div>
+        <div class="faq-item__body">Sì. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> è stato sviluppato per impieghi flessibili all’aperto senza infrastrutture fisse. Una o due persone possono montare i moduli in pochi minuti su diverse strutture, come lampioni, palchi, bancarelle o alberi, e configurarli singolarmente. Per il funzionamento continuo è sufficiente una normale presa di corrente Schuko. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> funziona tramite una rete radio digitale esistente.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Dove si ottengono vantaggi economici utilizzando NIKOS?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Con <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> è possibile realizzare, a seconda dell’applicazione, diverse funzioni tramite un’unica piattaforma di comunicazione. Grazie a questi risparmi, i costi di noleggio e installazione di <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> possono essere rapidamente compensati. Qui sono riportati alcuni esempi concreti di risparmio. Per la sicurezza dei visitatori e per altri compiti di coordinamento rilevanti per la sicurezza non sono più necessarie soluzioni separate per diffusione sonora, controllo e comunicazione. Questo riduce il fabbisogno di materiali, il lavoro di cablaggio e il rischio di inciampo causato dai passacavi. Negli eventi temporanei diminuiscono così sensibilmente i costi di pianificazione, allestimento e utilizzo della tecnologia di sicurezza.</div>
+        <div class="faq-item__body">Con <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> è possibile realizzare, a seconda dell’applicazione, diverse funzioni tramite un’unica piattaforma di comunicazione. Grazie a questi risparmi, i costi di noleggio e installazione di <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> possono essere rapidamente compensati. Qui sono riportati alcuni esempi concreti di risparmio. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> riduce soprattutto l’impegno per soluzioni separate di diffusione sonora, controllo e comunicazione. Si riducono il fabbisogno di materiale e il lavoro di cablaggio, e gli annunci informativi e di emergenza possono essere effettuati da un unico punto. Negli eventi temporanei diminuiscono così sensibilmente i costi di pianificazione, allestimento e utilizzo della tecnologia di sicurezza.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Sicurezza dei visitatori per Sail Amsterdam 2030: Dove si può noleggiare <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> viene noleggiato a giornata tramite partner certificati, con consulenza, istruzione e supporto tecnico inclusi. Il partner regionale concorda l’impiego con voi. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Trova un partner e richiedi il noleggio</a></div>
       </details>
     </div>
   </div>

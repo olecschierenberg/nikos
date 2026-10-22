@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Houdt NIKOS zich bij omroepberichten aan de geldende normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. De basis is DIN EN 50849 voor elektro-akoestische noodwaarschuwingssystemen, waarvan NIKOS de eisen volledig vervult. Speciaal ontwikkeld voor veiligheidsrelevante omroep- en alarmeringstoepassingen, is NIKOS technisch geschikt voor zowel dagelijks gebruik als noodsituaties. Bij ELA-installaties vormt DIN EN 50849 het bepalende kader. Omdat NIKOS – in tegenstelling tot systemen op basis van mobiele netwerken – niet afhankelijk is van een extern netwerk, is directe bruikbaarheid te allen tijde gegarandeerd, waardoor volledig aan de norm wordt voldaan. Andere veiligheidstechnische normen zoals DIN EN 54, DIN VDE 0833-4 en DIN 14675 (spraakalarminstallaties) betreffen een ander toepassingsgebied en functiebereik en zijn niet relevant voor een vergunning van NIKOS. Sinds de marktintroductie in 2017 wordt NIKOS als toonaangevend omroepsysteem voor tijdelijke en mobiele toepassingen met succes ingezet bij enkele van de grootste openluchtevenementen van Europa. RADACOM en uw regionale NIKOS-partner adviseren u graag over de veelzijdige functies van NIKOS en ondersteunen u bij een kostenefficiënte implementatie van de vereisten."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/nl/lp/bezoekersveiligheid-basel-tattoo/#service",
+      "name": "Bezoekersveiligheid voor het Basel Tattoo",
+      "description": "Bezoekersveiligheid voor het Basel Tattoo. Waarschuwingen en handelingsinstructies moeten ook bij veel omgevingslawaai duidelijk verstaanbaar aankomen.",
+      "url": "https://nikos.info/nl/lp/bezoekersveiligheid-basel-tattoo/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "nl",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Basel"
       }
     },
     {
-      "@type": "Question",
-      "name": "Kan NIKOS op korte termijn en flexibel worden ingezet?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS is speciaal ontwikkeld voor flexibele buitentoepassingen zonder vaste infrastructuur. De modules kunnen door één of twee personen binnen enkele minuten aan verschillende constructies, zoals lantaarnpalen, podia, bomen, kraampjes of decoraties, worden gemonteerd en individueel geconfigureerd. Een normaal Schuko-stopcontact volstaat voor continu gebruik. NIKOS maakt gebruik van een bestaand digitaal radionetwerk."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nikos.info/nl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle toepassingen",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Bezoekersveiligheid voor het Basel Tattoo",
+          "item": "https://nikos.info/nl/lp/bezoekersveiligheid-basel-tattoo/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Is NIKOS bestand tegen crisissituaties?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS werkt via een eigen, autonoom radionetwerk en is volledig onafhankelijk van openbare communicatienetwerken en hun beschikbaarheid. Daardoor is het systeem zeer goed bestand tegen invloeden van buitenaf. Omdat NIKOS niet afhankelijk is van kabelverbindingen, maar via radio communiceert, wordt de verbinding na een onderbreking automatisch hersteld. NIKOS reageert daardoor veel veerkrachtiger op storingen in de normale bedrijfsvoering dan veel andere systemen en bewijst daarmee de geschiktheid van dit communicatiesysteem voor crisissituaties. NIKOS [audio]² beschikt over een interne accu met een gebruiksduur tot 16 uur en voorziet daarmee ook aangesloten accessoiremodules van stroom. Ook wanneer het mobiele netwerk overbelast is, de internetprovider is gehackt of iemand de verkeerde stekker uit het stopcontact heeft getrokken, blijft NIKOS werken. Zo blijft de bezoekersveiligheid tijdens het Basel Tattoo ook bij een stroomstoring of storingen in openbare communicatienetwerken gewaarborgd."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Waar levert de inzet van NIKOS kostenvoordelen op?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Met NIKOS kunnen, afhankelijk van de toepassing, verschillende functies via één uniform communicatieplatform worden gerealiseerd. Dankzij deze besparingen kunnen de huur- en installatiekosten van NIKOS snel worden gecompenseerd. Hier vindt u enkele concrete voorbeelden van besparingen. Bij consequent gebruik van de veelzijdige functies leidt dit naast een hoger veiligheidsniveau en een verlichting van de werkzaamheden voor medewerkers vaak zelfs tot besparingen op het totale budget. Voor de bezoekersveiligheid en andere veiligheidsrelevante coördinatietaken zijn daardoor geen afzonderlijke luidspreker-, besturings- en communicatieoplossingen meer nodig – NIKOS bundelt medewerkersalarmering, bezoekersinformatie en systeembesturing in één platform. Dat vermindert de materiaalbehoefte, de bekabelingswerkzaamheden en het risico op struikelen door kabelbruggen. Bovendien kan de personeelsinzet gericht worden verminderd: taken waarvoor anders meerdere, over het terrein verspreide toezichts-, meld- of bedieningsposten nodig zouden zijn, worden centraal aangestuurd en door NIKOS bewaakt of uitgevoerd. Zo kan personeel worden bespaard of effectiever op veiligheidskritieke punten worden ingezet. Het grootste besparingspotentieel ontstaat bij omheinde evenementen: de bewaking van nooduitgangspoorten kan worden vervangen door technische bewaking van de poorten met NIKOS, zodat bewakingsposten bij nooduitgangen kunnen vervallen of elders effectiever kunnen worden ingezet. Zo worden huur- en installatiekosten gecompenseerd door besparingen op personeel en andere techniek. Vooral bij tijdelijke evenementen met een beperkte duur dalen hierdoor de kosten voor planning, opbouw en exploitatie van de veiligheidstechniek aanzienlijk."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/nl/lp/bezoekersveiligheid-basel-tattoo/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Houdt NIKOS zich bij omroepberichten aan de geldende normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. De basis is DIN EN 50849 voor elektro-akoestische noodwaarschuwingssystemen, waarvan NIKOS de eisen volledig vervult. Speciaal ontwikkeld voor veiligheidsrelevante omroep- en alarmeringstoepassingen, is NIKOS technisch geschikt voor zowel dagelijks gebruik als noodsituaties. Bij ELA-installaties vormt DIN EN 50849 het bepalende kader. Omdat NIKOS – in tegenstelling tot systemen op basis van mobiele netwerken – niet afhankelijk is van een extern netwerk, is directe bruikbaarheid te allen tijde gegarandeerd, waardoor volledig aan de norm wordt voldaan. Andere veiligheidstechnische normen zoals DIN EN 54, DIN VDE 0833-4 en DIN 14675 (spraakalarminstallaties) betreffen een ander toepassingsgebied en functiebereik en zijn niet relevant voor een vergunning van NIKOS. Sinds de marktintroductie in 2017 wordt NIKOS als toonaangevend omroepsysteem voor tijdelijke en mobiele toepassingen met succes ingezet bij enkele van de grootste openluchtevenementen van Europa. RADACOM en uw regionale NIKOS-partner adviseren u graag over de veelzijdige functies van NIKOS en ondersteunen u bij een kostenefficiënte implementatie van de vereisten."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan NIKOS op korte termijn en flexibel worden ingezet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS is speciaal ontwikkeld voor flexibele buitentoepassingen zonder vaste infrastructuur. De modules kunnen door één of twee personen binnen enkele minuten aan verschillende constructies, zoals lantaarnpalen, podia, kraampjes of bomen, worden gemonteerd en individueel geconfigureerd. Een normaal Schuko-stopcontact volstaat voor continu gebruik. NIKOS maakt gebruik van een bestaand digitaal radionetwerk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is NIKOS bestand tegen crisissituaties?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS werkt via een eigen, autonoom radionetwerk en is volledig onafhankelijk van openbare communicatienetwerken en hun beschikbaarheid. Daardoor is het systeem zeer goed bestand tegen invloeden van buitenaf. Omdat NIKOS niet afhankelijk is van kabelverbindingen, maar via radio communiceert, wordt de verbinding na een onderbreking automatisch hersteld. NIKOS reageert daardoor veel veerkrachtiger op storingen in de normale bedrijfsvoering dan veel andere systemen en bewijst daarmee de geschiktheid van dit communicatiesysteem voor crisissituaties. NIKOS [audio]² beschikt over een interne accu met een gebruiksduur tot 16 uur en voorziet daarmee ook aangesloten accessoiremodules van stroom. Ook wanneer het mobiele netwerk overbelast is, de internetprovider is gehackt of iemand de verkeerde stekker uit het stopcontact heeft getrokken, blijft NIKOS werken. Zo blijft de bezoekersveiligheid tijdens het Basel Tattoo ook bij een stroomstoring of storingen in openbare communicatienetwerken gewaarborgd."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Waar levert de inzet van NIKOS kostenvoordelen op?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Met NIKOS kunnen, afhankelijk van de toepassing, verschillende functies via één uniform communicatieplatform worden gerealiseerd. Dankzij deze besparingen kunnen de huur- en installatiekosten van NIKOS snel worden gecompenseerd. Hier vindt u enkele concrete voorbeelden van besparingen. Bij consequent gebruik van de veelzijdige functies leidt dit naast een hoger veiligheidsniveau en een verlichting van de werkzaamheden voor medewerkers vaak zelfs tot besparingen op het totale budget. NIKOS verlaagt vooral de inspanning voor afzonderlijke oplossingen voor omroep, aansturing en communicatie. De materiaalbehoefte en de bekabeling nemen af, en informatie- en noodomroepen kunnen vanaf één punt worden gedaan. Bovendien kan de personeelsinzet gericht worden verminderd: taken waarvoor anders meerdere, over het terrein verspreide toezichts-, meld- of bedieningsposten nodig zouden zijn, worden centraal aangestuurd en door NIKOS bewaakt of uitgevoerd. Zo kan personeel worden bespaard of effectiever op veiligheidskritieke punten worden ingezet. Het grootste besparingspotentieel ontstaat bij omheinde evenementen: de bewaking van nooduitgangspoorten kan worden vervangen door technische bewaking van de poorten met NIKOS, zodat bewakingsposten bij nooduitgangen kunnen vervallen of elders effectiever kunnen worden ingezet. Zo worden huur- en installatiekosten gecompenseerd door besparingen op personeel en andere techniek. Vooral bij tijdelijke evenementen met een beperkte duur dalen hierdoor de kosten voor planning, opbouw en exploitatie van de veiligheidstechniek aanzienlijk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bezoekersveiligheid voor het Basel Tattoo: Waar kan NIKOS worden gehuurd?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wordt per dag verhuurd via gecertificeerde partners, inclusief advies, instructie en technische ondersteuning. Uw regionale partner stemt de inzet met u af. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Partner kiezen en huur aanvragen</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Basel"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Basel"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS is geen klassiek omroepsysteem, maar een radiogebaseerd systeem voor omroepberichten, alarmering en aansturing bij grote evenementen, bouwplaatsen en crisissituaties, dat u per dag huurt via gecertificeerde partners en kunt integreren in uw geluidsinstallatie of zelfstandig kunt inzetten.</p>
     <span class="nk-label">Uitdaging</span>
     <h2 class="heading-l" style="margin-top:12px;">Waarschuwingen ondanks muziek veilig overbrengen</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Tijdens het Basel Tattoo bemoeilijken luide muziek, dichte mensenmassa’s en internationale bezoekers de snelle verspreiding van veiligheidsrelevante informatie. Waarschuwingen en handelingsinstructies moeten ook bij veel omgevingslawaai duidelijk verstaanbaar aankomen. Bij een hoge bezoekersdichtheid raakt het mobiele netwerk bovendien snel overbelast, waardoor de communicatie in een gevaarlijke situatie nog verder wordt bemoeilijkt.</p>
@@ -266,7 +346,7 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Kan NIKOS op korte termijn en flexibel worden ingezet?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Ja, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is speciaal ontwikkeld voor flexibele buitentoepassingen zonder vaste infrastructuur. De modules kunnen door één of twee personen binnen enkele minuten aan verschillende constructies, zoals lantaarnpalen, podia, bomen, kraampjes of decoraties, worden gemonteerd en individueel geconfigureerd. Een normaal Schuko-stopcontact volstaat voor continu gebruik. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> maakt gebruik van een bestaand digitaal radionetwerk.</div>
+        <div class="faq-item__body">Ja, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is speciaal ontwikkeld voor flexibele buitentoepassingen zonder vaste infrastructuur. De modules kunnen door één of twee personen binnen enkele minuten aan verschillende constructies, zoals lantaarnpalen, podia, kraampjes of bomen, worden gemonteerd en individueel geconfigureerd. Een normaal Schuko-stopcontact volstaat voor continu gebruik. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> maakt gebruik van een bestaand digitaal radionetwerk.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Is NIKOS bestand tegen crisissituaties?</span><span class="faq-icon">+</span></summary>
@@ -274,7 +354,11 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Waar levert de inzet van NIKOS kostenvoordelen op?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Met <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> kunnen, afhankelijk van de toepassing, verschillende functies via één uniform communicatieplatform worden gerealiseerd. Dankzij deze besparingen kunnen de huur- en installatiekosten van <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> snel worden gecompenseerd. Hier vindt u enkele concrete voorbeelden van besparingen. Bij consequent gebruik van de veelzijdige functies leidt dit naast een hoger veiligheidsniveau en een verlichting van de werkzaamheden voor medewerkers vaak zelfs tot besparingen op het totale budget. Voor de bezoekersveiligheid en andere veiligheidsrelevante coördinatietaken zijn daardoor geen afzonderlijke luidspreker-, besturings- en communicatieoplossingen meer nodig – <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> bundelt medewerkersalarmering, bezoekersinformatie en systeembesturing in één platform. Dat vermindert de materiaalbehoefte, de bekabelingswerkzaamheden en het risico op struikelen door kabelbruggen. Bovendien kan de personeelsinzet gericht worden verminderd: taken waarvoor anders meerdere, over het terrein verspreide toezichts-, meld- of bedieningsposten nodig zouden zijn, worden centraal aangestuurd en door <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> bewaakt of uitgevoerd. Zo kan personeel worden bespaard of effectiever op veiligheidskritieke punten worden ingezet. Het grootste besparingspotentieel ontstaat bij omheinde evenementen: de bewaking van nooduitgangspoorten kan worden vervangen door technische bewaking van de poorten met <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>, zodat bewakingsposten bij nooduitgangen kunnen vervallen of elders effectiever kunnen worden ingezet. Zo worden huur- en installatiekosten gecompenseerd door besparingen op personeel en andere techniek. Vooral bij tijdelijke evenementen met een beperkte duur dalen hierdoor de kosten voor planning, opbouw en exploitatie van de veiligheidstechniek aanzienlijk.</div>
+        <div class="faq-item__body">Met <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> kunnen, afhankelijk van de toepassing, verschillende functies via één uniform communicatieplatform worden gerealiseerd. Dankzij deze besparingen kunnen de huur- en installatiekosten van <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> snel worden gecompenseerd. Hier vindt u enkele concrete voorbeelden van besparingen. Bij consequent gebruik van de veelzijdige functies leidt dit naast een hoger veiligheidsniveau en een verlichting van de werkzaamheden voor medewerkers vaak zelfs tot besparingen op het totale budget. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> verlaagt vooral de inspanning voor afzonderlijke oplossingen voor omroep, aansturing en communicatie. De materiaalbehoefte en de bekabeling nemen af, en informatie- en noodomroepen kunnen vanaf één punt worden gedaan. Bovendien kan de personeelsinzet gericht worden verminderd: taken waarvoor anders meerdere, over het terrein verspreide toezichts-, meld- of bedieningsposten nodig zouden zijn, worden centraal aangestuurd en door <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> bewaakt of uitgevoerd. Zo kan personeel worden bespaard of effectiever op veiligheidskritieke punten worden ingezet. Het grootste besparingspotentieel ontstaat bij omheinde evenementen: de bewaking van nooduitgangspoorten kan worden vervangen door technische bewaking van de poorten met <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>, zodat bewakingsposten bij nooduitgangen kunnen vervallen of elders effectiever kunnen worden ingezet. Zo worden huur- en installatiekosten gecompenseerd door besparingen op personeel en andere techniek. Vooral bij tijdelijke evenementen met een beperkte duur dalen hierdoor de kosten voor planning, opbouw en exploitatie van de veiligheidstechniek aanzienlijk.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Bezoekersveiligheid voor het Basel Tattoo: Waar kan <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> worden gehuurd?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wordt per dag verhuurd via gecertificeerde partners, inclusief advies, instructie en technische ondersteuning. Uw regionale partner stemt de inzet met u af. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Partner kiezen en huur aanvragen</a></div>
       </details>
     </div>
   </div>

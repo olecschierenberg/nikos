@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Voldoet NIKOS bij omroepberichten aan de geldende normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS voldoet aan de normen: het systeem voldoet aan DIN EN 50849 voor elektro-akoestische noodwaarschuwingssystemen. NIKOS is speciaal ontwikkeld voor veiligheidsrelevante omroepberichten en alarmering — inzetbaar zowel in het dagelijkse gebruik als in noodsituaties. Bij ELA-installaties vormt DIN EN 50849 het bepalende referentiekader. In tegenstelling tot systemen op basis van mobiele netwerken voldoet NIKOS volledig aan deze eisen, omdat het onafhankelijk van een extern netwerk werkt en daardoor te allen tijde direct inzetbaar is. Andere veiligheidstechnische normen zoals DIN EN 54, DIN VDE 0833-4 en DIN 14675 (spraakalarminstallaties) zijn daarentegen niet van toepassing op NIKOS, omdat ze een ander toepassingsgebied en functiebereik betreffen. Als marktleidend omroepsysteem voor tijdelijke en mobiele inzet wordt NIKOS sinds 2017 al vele malen met succes gebruikt voor inzetkritische communicatietaken. De beoordeling en acceptatie door de bevoegde instantie gebeurt projectspecifiek."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/nl/lp/bezoekersveiligheid-sail-evenement/#service",
+      "name": "Bezoekersveiligheid voor Sail Amsterdam 2030",
+      "description": "Tijdens Sail Amsterdam 2030 zorgen grote bezoekersstromen op de kades, omgevingsgeluid en internationale bezoekers voor hoge eisen aan de bezoekersveiligheid.",
+      "url": "https://nikos.info/nl/lp/bezoekersveiligheid-sail-evenement/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "nl",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     },
     {
-      "@type": "Question",
-      "name": "Blijft NIKOS functioneren bij stroomuitval of overbelasting van mobiele netwerken?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS werkt via een eigen, autonoom radionetwerk en volledig onafhankelijk van openbare communicatienetwerken en hun beschikbaarheid. Omdat NIKOS draadloos communiceert, herstelt de verbinding zich na een onderbreking zelfstandig. NIKOS [audio]² beschikt over een interne accu met een looptijd van maximaal 16 uur en voedt daarmee ook aangesloten accessoiremodules. Zo blijft de bezoekersveiligheid voor Sail Amsterdam 2030 ook bij stroomuitval of storingen in openbare communicatienetwerken betrouwbaar functioneren."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nikos.info/nl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle toepassingen",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Bezoekersveiligheid voor Sail Amsterdam 2030",
+          "item": "https://nikos.info/nl/lp/bezoekersveiligheid-sail-evenement/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Kan NIKOS op korte termijn langs de kades worden ingezet?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS is ontwikkeld voor flexibele buiteninzet zonder vaste infrastructuur. Eén of twee personen monteren de modules binnen enkele minuten aan verschillende constructies, zoals lantaarnpalen, podia, bomen, kramen of decoraties, en configureren ze individueel. Voor continu gebruik volstaat een normale Schuko-stroomaansluiting. NIKOS werkt via een bestaand digitaal radionetwerk."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Waar ontstaan kostenvoordelen bij het gebruik van NIKOS?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Met NIKOS kunnen, afhankelijk van de toepassing, verschillende functies via één communicatieplatform worden gerealiseerd. De huur- en installatiekosten van NIKOS kunnen door deze besparingen snel worden gecompenseerd. Enkele concrete voorbeelden van besparingen vindt u hier. Voor bezoekersveiligheid en andere veiligheidsrelevante coördinatietaken zijn geen afzonderlijke luidspreker-, besturings- en communicatieoplossingen meer nodig. Dit vermindert de materiaalbehoefte, de bekabelingsinspanning en het struikelgevaar door kabelbruggen. Bij tijdelijke evenementen dalen daardoor de kosten voor planning, opbouw en gebruik van de veiligheidstechniek aanzienlijk."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/nl/lp/bezoekersveiligheid-sail-evenement/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Voldoet NIKOS bij omroepberichten aan de geldende normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS voldoet aan de normen: het systeem voldoet aan DIN EN 50849 voor elektro-akoestische noodwaarschuwingssystemen. NIKOS is speciaal ontwikkeld voor veiligheidsrelevante omroepberichten en alarmering — inzetbaar zowel in het dagelijkse gebruik als in noodsituaties. Bij ELA-installaties vormt DIN EN 50849 het bepalende referentiekader. In tegenstelling tot systemen op basis van mobiele netwerken voldoet NIKOS volledig aan deze eisen, omdat het onafhankelijk van een extern netwerk werkt en daardoor te allen tijde direct inzetbaar is. Andere veiligheidstechnische normen zoals DIN EN 54, DIN VDE 0833-4 en DIN 14675 (spraakalarminstallaties) zijn daarentegen niet van toepassing op NIKOS, omdat ze een ander toepassingsgebied en functiebereik betreffen. Als marktleidend omroepsysteem voor tijdelijke en mobiele inzet wordt NIKOS sinds 2017 al vele malen met succes gebruikt voor inzetkritische communicatietaken. De beoordeling en acceptatie door de bevoegde instantie gebeurt projectspecifiek."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Blijft NIKOS functioneren bij stroomuitval of overbelasting van mobiele netwerken?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS werkt via een eigen, autonoom radionetwerk en volledig onafhankelijk van openbare communicatienetwerken en hun beschikbaarheid. Omdat NIKOS draadloos communiceert, herstelt de verbinding zich na een onderbreking zelfstandig. NIKOS [audio]² beschikt over een interne accu met een looptijd van maximaal 16 uur en voedt daarmee ook aangesloten accessoiremodules. Zo blijft de bezoekersveiligheid voor Sail Amsterdam 2030 ook bij stroomuitval of storingen in openbare communicatienetwerken betrouwbaar functioneren."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan NIKOS op korte termijn langs de kades worden ingezet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS is ontwikkeld voor flexibele buiteninzet zonder vaste infrastructuur. Eén of twee personen monteren de modules binnen enkele minuten aan verschillende constructies, zoals lantaarnpalen, podia, kraampjes of bomen, en configureren ze individueel. Voor continu gebruik volstaat een normale Schuko-stroomaansluiting. NIKOS werkt via een bestaand digitaal radionetwerk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Waar ontstaan kostenvoordelen bij het gebruik van NIKOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Met NIKOS kunnen, afhankelijk van de toepassing, verschillende functies via één communicatieplatform worden gerealiseerd. De huur- en installatiekosten van NIKOS kunnen door deze besparingen snel worden gecompenseerd. Enkele concrete voorbeelden van besparingen vindt u hier. NIKOS verlaagt vooral de inspanning voor afzonderlijke oplossingen voor omroep, aansturing en communicatie. De materiaalbehoefte en de bekabeling nemen af, en informatie- en noodomroepen kunnen vanaf één punt worden gedaan. Bij tijdelijke evenementen dalen daardoor de kosten voor planning, opbouw en gebruik van de veiligheidstechniek aanzienlijk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bezoekersveiligheid voor Sail Amsterdam 2030: Waar kan NIKOS worden gehuurd?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wordt per dag verhuurd via gecertificeerde partners, inclusief advies, instructie en technische ondersteuning. Uw regionale partner stemt de inzet met u af. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Partner kiezen en huur aanvragen</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Amsterdam"
-  }
+  ]
 }
 </script>
 
@@ -238,6 +317,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS is geen klassiek omroepsysteem, maar een radiogebaseerd systeem voor omroepberichten, alarmering en aansturing bij grote evenementen, bouwplaatsen en crisissituaties, dat u per dag huurt via gecertificeerde partners en kunt integreren in uw geluidsinstallatie of zelfstandig kunt inzetten.</p>
     <span class="nk-label">Uitdaging</span>
     <h2 class="heading-l" style="margin-top:12px;">Bezoekers gericht en snel informeren</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Tijdens Sail Amsterdam 2030 zorgen grote bezoekersstromen op de kades, omgevingsgeluid en internationale bezoekers voor hoge eisen aan de bezoekersveiligheid. Waarschuwingen en handelingsinstructies moeten bij drukte duidelijk en tijdig alle betrokkenen bereiken. De hoge bezoekersdichtheid overbelast mobiele netwerken snel, waardoor mobiele communicatie in een crisissituatie niet betrouwbaar beschikbaar is.</p>
@@ -271,11 +351,15 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Kan NIKOS op korte termijn langs de kades worden ingezet?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is ontwikkeld voor flexibele buiteninzet zonder vaste infrastructuur. Eén of twee personen monteren de modules binnen enkele minuten aan verschillende constructies, zoals lantaarnpalen, podia, bomen, kramen of decoraties, en configureren ze individueel. Voor continu gebruik volstaat een normale Schuko-stroomaansluiting. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> werkt via een bestaand digitaal radionetwerk.</div>
+        <div class="faq-item__body">Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is ontwikkeld voor flexibele buiteninzet zonder vaste infrastructuur. Eén of twee personen monteren de modules binnen enkele minuten aan verschillende constructies, zoals lantaarnpalen, podia, kraampjes of bomen, en configureren ze individueel. Voor continu gebruik volstaat een normale Schuko-stroomaansluiting. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> werkt via een bestaand digitaal radionetwerk.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Waar ontstaan kostenvoordelen bij het gebruik van NIKOS?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Met <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> kunnen, afhankelijk van de toepassing, verschillende functies via één communicatieplatform worden gerealiseerd. De huur- en installatiekosten van <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> kunnen door deze besparingen snel worden gecompenseerd. Enkele concrete voorbeelden van besparingen vindt u hier. Voor bezoekersveiligheid en andere veiligheidsrelevante coördinatietaken zijn geen afzonderlijke luidspreker-, besturings- en communicatieoplossingen meer nodig. Dit vermindert de materiaalbehoefte, de bekabelingsinspanning en het struikelgevaar door kabelbruggen. Bij tijdelijke evenementen dalen daardoor de kosten voor planning, opbouw en gebruik van de veiligheidstechniek aanzienlijk.</div>
+        <div class="faq-item__body">Met <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> kunnen, afhankelijk van de toepassing, verschillende functies via één communicatieplatform worden gerealiseerd. De huur- en installatiekosten van <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> kunnen door deze besparingen snel worden gecompenseerd. Enkele concrete voorbeelden van besparingen vindt u hier. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> verlaagt vooral de inspanning voor afzonderlijke oplossingen voor omroep, aansturing en communicatie. De materiaalbehoefte en de bekabeling nemen af, en informatie- en noodomroepen kunnen vanaf één punt worden gedaan. Bij tijdelijke evenementen dalen daardoor de kosten voor planning, opbouw en gebruik van de veiligheidstechniek aanzienlijk.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Bezoekersveiligheid voor Sail Amsterdam 2030: Waar kan <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> worden gehuurd?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wordt per dag verhuurd via gecertificeerde partners, inclusief advies, instructie en technische ondersteuning. Uw regionale partner stemt de inzet met u af. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Partner kiezen en huur aanvragen</a></div>
       </details>
     </div>
   </div>

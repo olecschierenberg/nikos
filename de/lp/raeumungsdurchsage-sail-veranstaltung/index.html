@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Erfüllen NIKOS-Durchsagen die einschlägigen Normanforderungen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS erfüllt die DIN EN 50849 „Elektroakustische Notfallwarnsysteme“ vollständig. Das System wurde gezielt für sicherheitsrelevante Durchsagen und Alarmierungen konzipiert und ist technisch sowohl für den Alltag als auch für den Notfall ausgelegt. Die DIN EN 50849 ist die für funkgestützte ELA-Anlagen wie NIKOS maßgebliche Norm. Weil NIKOS im Gegensatz zu mobilfunkbasierten Systemen unabhängig von einem externen Netz funktioniert, ist eine sofortige Nutzbarkeit jederzeit gegeben — die Normanforderungen werden dadurch vollständig erfüllt. Nicht einschlägig für NIKOS sind demgegenüber andere sicherheitstechnische Normen wie DIN EN 54, DIN VDE 0833-4 und DIN 14675 (Sprachalarmierungsanlagen), da sie ein anderes Einsatzgebiet und einen anderen Funktionsumfang betreffen und für den Einsatz von NIKOS daher nicht relevant sind. Als bisher einziges konsequent an den Anforderungen einsatzkritischer Anwendungen orientiertes Durchsagesystem für temporäre und mobile Anwendungen ist NIKOS seit 2017 vielfach erfolgreich für krisensichere Kommunikationsaufgaben im Einsatz. Die abschließende projektspezifische Beurteilung und Freigabe obliegen der zuständigen Stelle."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/de/lp/raeumungsdurchsage-sail-veranstaltung/#service",
+      "name": "Räumungsdurchsagen für Sail Amsterdam 2030",
+      "description": "Bei Sail Amsterdam 2030 stellen Menschenmengen, Umgebungsgeräusche und internationale Besucher hohe Anforderungen an Räumungsdurchsagen.",
+      "url": "https://nikos.info/de/lp/raeumungsdurchsage-sail-veranstaltung/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "de",
+      "termsOfService": "https://nikos.info/de/mietbedingungen/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     },
     {
-      "@type": "Question",
-      "name": "Funktioniert NIKOS auch bei einem überlasteten Mobilfunknetz oder bei Stromausfall?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS arbeitet über ein eigenes, autonomes Funknetz und ist unabhängig von öffentlichen Kommunikationsnetzen. NIKOS [audio]² verfügt über einen internen Akku mit einer Betriebsdauer von bis zu 16 Stunden und versorgt damit auch angeschlossenes Zubehör. Dadurch funktionieren Räumungsdurchsagen für Sail Amsterdam 2030 auch bei Stromausfällen oder Störungen in öffentlichen Kommunikationsnetzen zuverlässig."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://nikos.info/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle Einsatzbeispiele",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Räumungsdurchsagen für Sail Amsterdam 2030",
+          "item": "https://nikos.info/de/lp/raeumungsdurchsage-sail-veranstaltung/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Kann NIKOS schnell an verschiedenen Standorten installiert werden?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS wurde für den flexiblen Einsatz im Außenbereich ohne feste Infrastruktur entwickelt. Die Module können von einer oder zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen montiert und individuell konfiguriert werden. Für den Dauerbetrieb genügt ein herkömmlicher Schuko-Stromanschluss."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Können einzelne Durchsagestandorte gezielt angesteuert werden?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. Mit NIKOS [dispatcher]² können einzelne Durchsagestandorte, bestimmte Bereiche oder das gesamte Veranstaltungsgelände angesteuert werden. So lassen sich Räumungsanweisungen passend zur aktuellen Situation ausgeben."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/de/lp/raeumungsdurchsage-sail-veranstaltung/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Erfüllen NIKOS-Durchsagen die einschlägigen Normanforderungen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS erfüllt die DIN EN 50849 „Elektroakustische Notfallwarnsysteme“ vollständig. Das System wurde gezielt für sicherheitsrelevante Durchsagen und Alarmierungen konzipiert und ist technisch sowohl für den Alltag als auch für den Notfall ausgelegt. Die DIN EN 50849 ist die für funkgestützte ELA-Anlagen wie NIKOS maßgebliche Norm. Weil NIKOS im Gegensatz zu mobilfunkbasierten Systemen unabhängig von einem externen Netz funktioniert, ist eine sofortige Nutzbarkeit jederzeit gegeben — die Normanforderungen werden dadurch vollständig erfüllt. Nicht einschlägig für NIKOS sind demgegenüber andere sicherheitstechnische Normen wie DIN EN 54, DIN VDE 0833-4 und DIN 14675 (Sprachalarmierungsanlagen), da sie ein anderes Einsatzgebiet und einen anderen Funktionsumfang betreffen und für den Einsatz von NIKOS daher nicht relevant sind. Als bisher einziges konsequent an den Anforderungen einsatzkritischer Anwendungen orientiertes Durchsagesystem für temporäre und mobile Anwendungen ist NIKOS seit 2017 vielfach erfolgreich für krisensichere Kommunikationsaufgaben im Einsatz. Die abschließende projektspezifische Beurteilung und Freigabe obliegen der zuständigen Stelle."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Funktioniert NIKOS auch bei einem überlasteten Mobilfunknetz oder bei Stromausfall?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS arbeitet über ein eigenes, autonomes Funknetz und ist unabhängig von öffentlichen Kommunikationsnetzen. NIKOS [audio]² verfügt über einen internen Akku mit einer Betriebsdauer von bis zu 16 Stunden und versorgt damit auch angeschlossenes Zubehör. Dadurch funktionieren Räumungsdurchsagen für Sail Amsterdam 2030 auch bei Stromausfällen oder Störungen in öffentlichen Kommunikationsnetzen zuverlässig."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann NIKOS schnell an verschiedenen Standorten installiert werden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS wurde für den flexiblen Einsatz im Außenbereich ohne feste Infrastruktur entwickelt. Die Module können von einer oder zwei Personen innerhalb weniger Minuten an unterschiedlichen Konstruktionen montiert und individuell konfiguriert werden. Für den Dauerbetrieb genügt ein herkömmlicher Schuko-Stromanschluss."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Können einzelne Durchsagestandorte gezielt angesteuert werden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Mit NIKOS [dispatcher]² können einzelne Durchsagestandorte, bestimmte Bereiche oder das gesamte Veranstaltungsgelände angesteuert werden. So lassen sich Räumungsanweisungen passend zur aktuellen Situation ausgeben."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Räumungsdurchsagen für Sail Amsterdam 2030: Wo kann man NIKOS mieten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Zur Partnerauswahl und Mietanfrage</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Amsterdam"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS ist kein klassisches PA-System, sondern ein funkbasiertes Durchsage-, Alarmierungs- und Steuerungssystem für Großveranstaltungen, Baustellen und Krisenlagen, das Sie tageweise über zertifizierte Partner mieten und in Ihre PA integrieren oder eigenständig einsetzen können.</p>
     <span class="nk-label">Herausforderung</span>
     <h2 class="heading-l" style="margin-top:12px;">Klare Räumungsanweisungen ohne Mobilfunknetz</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Bei Sail Amsterdam 2030 stellen Menschenmengen, Umgebungsgeräusche und internationale Besucher hohe Anforderungen an Räumungsdurchsagen. Entlang der Kais und rund um die Schiffe müssen Warnungen und Handlungsanweisungen schnell und verständlich übermittelt werden. Die hohe Besucherdichte überlastet das Mobilfunknetz, wodurch die mobile Kommunikation in einer Krisensituation unzuverlässig ist.</p>
@@ -275,6 +355,10 @@ a{color:inherit}
       <details class="faq-item">
         <summary><span class="faq-q">Können einzelne Durchsagestandorte gezielt angesteuert werden?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body">Ja. Mit <a class="nk-mod" href="https://nikos.info/de/produkte/#dispatcher"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a> können einzelne Durchsagestandorte, bestimmte Bereiche oder das gesamte Veranstaltungsgelände angesteuert werden. So lassen sich Räumungsanweisungen passend zur aktuellen Situation ausgeben.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Räumungsdurchsagen für Sail Amsterdam 2030: Wo kann man <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mieten?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Zur Partnerauswahl und Mietanfrage</a></div>
       </details>
     </div>
   </div>

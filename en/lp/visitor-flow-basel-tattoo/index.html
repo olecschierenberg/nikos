@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Do announcements made with NIKOS comply with the applicable standards?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. NIKOS meets the requirements of DIN EN 50849 (electroacoustic emergency warning systems). NIKOS was developed specifically for safety-relevant public address and alerting applications and is technically designed for use in both everyday and emergency situations. For electroacoustic emergency warning systems, DIN EN 50849 is the relevant reference framework. Unlike mobile network-based systems, NIKOS fully meets the requirements specified therein, as it does not depend on an external network and can therefore be used immediately at any time. Other standards known from safety technology, such as DIN EN 54, DIN VDE 0833-4 and DIN 14675 (voice alarm systems), do not apply to the field of use and functional scope of NIKOS and are therefore not relevant for approval. NIKOS is a public address system for temporary and mobile applications and has been successfully deployed in numerous mission-critical communication tasks since 2017. RADACOM and your regional NIKOS partner will be happy to advise you on the wide range of NIKOS functions and support you in implementing the requirements cost-effectively."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/en/lp/visitor-flow-basel-tattoo/#service",
+      "name": "Visitor Guidance for the Basel Tattoo",
+      "description": "At the Basel Tattoo, dense crowds, loud music and changing visitor flows make targeted visitor guidance more difficult.",
+      "url": "https://nikos.info/en/lp/visitor-flow-basel-tattoo/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "en",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Basel"
       }
     },
     {
-      "@type": "Question",
-      "name": "Is NIKOS resilient in a crisis?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, NIKOS operates via its own autonomous radio network and is completely independent of public communication networks and their availability. This makes the system highly resistant to external influences. As NIKOS does not rely on cable connections but communicates via radio, the connection is automatically re-established after an interruption. NIKOS therefore responds far more resiliently to disruptions in normal operations than many other systems, demonstrating the crisis resilience of this communication system. NIKOS [audio]² has an internal battery with a runtime of up to 16 hours and also powers connected accessory modules. Even if the cellular network is overloaded, the internet provider has been hacked or someone has pulled the wrong plug, NIKOS continues to operate. This ensures that visitor guidance for the Basel Tattoo remains reliably functional even in the event of a power failure or disruptions to public communication networks."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nikos.info/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "All use cases",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Visitor Guidance for the Basel Tattoo",
+          "item": "https://nikos.info/en/lp/visitor-flow-basel-tattoo/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Can NIKOS be deployed at short notice and used flexibly?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, NIKOS was developed specifically for flexible outdoor deployments without fixed infrastructure. One or two people can mount the modules within just a few minutes on a range of structures, such as lamp posts, stages, trees, stalls or decorations, and configure them individually. A standard Schuko power connection is sufficient for continuous operation."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How can announcements be heard over loud brass music?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "When loud (brass) music is playing, NIKOS [LED]² signals to the conductor, bandleader or DJ via a flashing light that the music must be stopped immediately. In response to the light signal, the performance is interrupted so that announcements can be understood clearly. This ensures that important announcements reliably reach the audience, even in crowded festival tents and during parades."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/en/lp/visitor-flow-basel-tattoo/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do announcements made with NIKOS comply with the applicable standards?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. NIKOS meets the requirements of DIN EN 50849 (electroacoustic emergency warning systems). NIKOS was developed specifically for safety-relevant public address and alerting applications and is technically designed for use in both everyday and emergency situations. For electroacoustic emergency warning systems, DIN EN 50849 is the relevant reference framework. Unlike mobile network-based systems, NIKOS fully meets the requirements specified therein, as it does not depend on an external network and can therefore be used immediately at any time. Other standards known from safety technology, such as DIN EN 54, DIN VDE 0833-4 and DIN 14675 (voice alarm systems), do not apply to the field of use and functional scope of NIKOS and are therefore not relevant for approval. NIKOS is a public address system for temporary and mobile applications and has been successfully deployed in numerous mission-critical communication tasks since 2017. RADACOM and your regional NIKOS partner will be happy to advise you on the wide range of NIKOS functions and support you in implementing the requirements cost-effectively."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is NIKOS resilient in a crisis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, NIKOS operates via its own autonomous radio network and is completely independent of public communication networks and their availability. This makes the system highly resistant to external influences. As NIKOS does not rely on cable connections but communicates via radio, the connection is automatically re-established after an interruption. NIKOS therefore responds far more resiliently to disruptions in normal operations than many other systems, demonstrating the crisis resilience of this communication system. NIKOS [audio]² has an internal battery with a runtime of up to 16 hours and also powers connected accessory modules. Even if the cellular network is overloaded, the internet provider has been hacked or someone has pulled the wrong plug, NIKOS continues to operate. This ensures that visitor guidance for the Basel Tattoo remains reliably functional even in the event of a power failure or disruptions to public communication networks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can NIKOS be deployed at short notice and used flexibly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, NIKOS was developed specifically for flexible outdoor deployments without fixed infrastructure. One or two people can mount the modules within just a few minutes on a range of structures, such as lampposts, stages, stands or trees, and configure them individually. A standard Schuko power connection is sufficient for continuous operation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can announcements be heard over loud brass music?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When loud (brass) music is playing, NIKOS [LED]² signals to the conductor, bandleader or DJ via a flashing light that the music must be stopped immediately. In response to the light signal, the performance is interrupted so that announcements can be understood clearly. This ensures that important announcements reliably reach the audience, even in crowded festival tents and during parades."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Visitor Guidance for the Basel Tattoo: Where can NIKOS be rented?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Find a partner and request a rental</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Basel"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Basel"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS is not a conventional PA system, but a radio-based public address, alarm and control system for large events, construction sites and crisis situations, which you can rent by the day through certified partners and either integrate into your PA or use on its own.</p>
     <span class="nk-label">Challenge</span>
     <h2 class="heading-l" style="margin-top:12px;">Control visitor flows centrally and precisely</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">At the Basel Tattoo, dense crowds, loud music and changing visitor flows make targeted visitor guidance more difficult. In confusing situations, instructions must reach the affected visitor groups quickly and clearly. When visitor density is high, the cellular network may become overloaded and fail for safety-critical communication.</p>
@@ -270,11 +350,15 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Can NIKOS be deployed at short notice and used flexibly?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Yes, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed specifically for flexible outdoor deployments without fixed infrastructure. One or two people can mount the modules within just a few minutes on a range of structures, such as lamp posts, stages, trees, stalls or decorations, and configure them individually. A standard Schuko power connection is sufficient for continuous operation.</div>
+        <div class="faq-item__body">Yes, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed specifically for flexible outdoor deployments without fixed infrastructure. One or two people can mount the modules within just a few minutes on a range of structures, such as lampposts, stages, stands or trees, and configure them individually. A standard Schuko power connection is sufficient for continuous operation.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">How can announcements be heard over loud brass music?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body">When loud (brass) music is playing, <a class="nk-mod" href="https://nikos.info/en/products/#zubehoer"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS LED.svg" alt="NIKOS [LED]²" loading="lazy"></a> signals to the conductor, bandleader or DJ via a flashing light that the music must be stopped immediately. In response to the light signal, the performance is interrupted so that announcements can be understood clearly. This ensures that important announcements reliably reach the audience, even in crowded festival tents and during parades.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Visitor Guidance for the Basel Tattoo: Where can <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> be rented?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find a partner and request a rental</a></div>
       </details>
     </div>
   </div>

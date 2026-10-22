@@ -23,42 +23,121 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "about": {
-    "@type": "Place",
-    "name": "Berlin"
-  },
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 für elektroakustische Notfallwarnsysteme. Das System wurde für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen entwickelt und ist technisch für Alltags- und Notfallsituationen ausgelegt. Die behördliche Bewertung und Abnahme erfolgen projektspezifisch anhand des jeweiligen Sicherheitskonzepts."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/loesungen/besucherinformation-lollapalooza-berlin-berlin/#service",
+      "name": "Besucherinformation für das Lollapalooza Berlin",
+      "description": "Beim Lollapalooza Berlin treffen hohe Besucherdichte, Bühnenbeschallung und dauerhaft bewegte Besucherströme aufeinander.",
+      "url": "https://nikos.info/loesungen/besucherinformation-lollapalooza-berlin-berlin/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "de",
+      "termsOfService": "https://nikos.info/de/mietbedingungen/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Berlin"
       }
     },
     {
-      "@type": "Question",
-      "name": "Ist Besucherinformation mit NIKOS auch bei Ausfall öffentlicher Mobilfunknetze möglich?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS arbeitet mit einem eigenen, autarken Kommunikationsnetz und bleibt von öffentlichen Netzen unabhängig. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. So bleibt die Besucherinformation für das Lollapalooza Berlin auch bei Stromausfall oder Störungen öffentlicher Kommunikationsnetze zuverlässig funktionsfähig."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://nikos.info/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle Einsatzbeispiele",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Besucherinformation für das Lollapalooza Berlin",
+          "item": "https://nikos.info/loesungen/besucherinformation-lollapalooza-berlin-berlin/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Ist NIKOS kurzfristig auf einem Festivalgelände einsetzbar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module werden von ein bis zwei Personen innerhalb weniger Minuten an Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen montiert und individuell konfiguriert. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was passiert an Positionen ohne vorhandene PA-Anlage?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "NIKOS [horn]² ergänzt die akustische Ausgabe an Positionen ohne vorhandene Beschallungsanlage. Dadurch werden auch Wege, Zugänge, Wartebereiche oder technische Nebenflächen in die Durchsageinfrastruktur eingebunden. Bereiche, in denen Besucher informiert oder gelenkt werden sollen, lassen sich so gezielt abdecken."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/loesungen/besucherinformation-lollapalooza-berlin-berlin/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Entsprechen Durchsagen mit NIKOS den geltenden Normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS erfüllt die Anforderungen der DIN EN 50849 für elektroakustische Notfallwarnsysteme. Das System wurde für sicherheitsrelevante Durchsage- und Alarmierungsanwendungen entwickelt und ist technisch für Alltags- und Notfallsituationen ausgelegt. Die behördliche Bewertung und Abnahme erfolgen projektspezifisch anhand des jeweiligen Sicherheitskonzepts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist Besucherinformation mit NIKOS auch bei Ausfall öffentlicher Mobilfunknetze möglich?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS arbeitet mit einem eigenen, autarken Kommunikationsnetz und bleibt von öffentlichen Netzen unabhängig. NIKOS [audio]² verfügt über einen internen Akku mit bis zu 16 Stunden Laufzeit und versorgt darüber auch angeschlossene Zubehörmodule. So bleibt die Besucherinformation für das Lollapalooza Berlin auch bei Stromausfall oder Störungen öffentlicher Kommunikationsnetze zuverlässig funktionsfähig."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist NIKOS kurzfristig auf einem Festivalgelände einsetzbar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module werden von ein bis zwei Personen innerhalb weniger Minuten an Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen montiert und individuell konfiguriert. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was passiert an Positionen ohne vorhandene PA-Anlage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS [horn]² ergänzt die akustische Ausgabe an Positionen ohne vorhandene Beschallungsanlage. Dadurch werden auch Wege, Zugänge, Wartebereiche oder technische Nebenflächen in die Durchsageinfrastruktur eingebunden. Bereiche, in denen Besucher informiert oder gelenkt werden sollen, lassen sich so gezielt abdecken."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Besucherinformation für das Lollapalooza Berlin: Wo kann man NIKOS mieten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Zur Partnerauswahl und Mietanfrage</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Berlin"
       }
     }
   ]
@@ -248,6 +327,8 @@ a{color:inherit}
 <!-- ═══ INTRO (S2) ═══ -->
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-de>NIKOS ist kein klassisches PA-System, sondern ein funkbasiertes Durchsage-, Alarmierungs- und Steuerungssystem für Großveranstaltungen, Baustellen und Krisenlagen, das Sie tageweise über zertifizierte Partner mieten und in Ihre PA integrieren oder eigenständig einsetzen können.</p>
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);" data-en>NIKOS is not a conventional PA system, but a radio-based public address, alarm and control system for large events, construction sites and crisis situations, which you can rent by the day through certified partners and either integrate into your PA or use on its own.</p>
     <span class="nk-label" data-de>Herausforderung</span><span class="nk-label" data-en>Challenge</span>
     <h2 class="heading-l" style="margin-top:12px;" data-de>Durchsagen trotz Bühnen- und Menschenlärm verständlich ausgeben</h2>
     <h2 class="heading-l" style="margin-top:12px;" data-en>Clear announcements despite stage and crowd noise</h2>
@@ -290,13 +371,18 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Ist NIKOS kurzfristig auf einem Festivalgelände einsetzbar?</span><span class="faq-q" data-en>Can NIKOS be deployed at a festival site at short notice?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body" data-de>Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module werden von ein bis zwei Personen innerhalb weniger Minuten an Konstruktionen wie Laternen, Bühnen, Bäumen, Buden oder Dekorationen montiert und individuell konfiguriert. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus.</div>
-        <div class="faq-item__body" data-en>Yes. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed for flexible outdoor deployments without permanent infrastructure. One or two people can mount the modules on structures such as streetlights, stages, trees, stalls or decorations within just a few minutes and configure them individually. A standard Schuko power connection is sufficient for continuous operation.</div>
+        <div class="faq-item__body" data-de>Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde für flexible Außeneinsätze ohne feste Infrastruktur entwickelt. Die Module werden von ein bis zwei Personen innerhalb weniger Minuten an Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen montiert und individuell konfiguriert. Ein normaler Schuko-Stromanschluss reicht für den Dauerbetrieb aus.</div>
+        <div class="faq-item__body" data-en>Yes. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> was developed for flexible outdoor deployments without permanent infrastructure. One or two people can mount the modules on structures such as lampposts, stages, stands or trees within just a few minutes and configure them individually. A standard Schuko power connection is sufficient for continuous operation.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" data-de>Was passiert an Positionen ohne vorhandene PA-Anlage?</span><span class="faq-q" data-en>What happens at locations without an existing PA system?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/de/produkte/#zubehoer"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS horn.svg" alt="NIKOS [horn]²" loading="lazy"></a> ergänzt die akustische Ausgabe an Positionen ohne vorhandene Beschallungsanlage. Dadurch werden auch Wege, Zugänge, Wartebereiche oder technische Nebenflächen in die Durchsageinfrastruktur eingebunden. Bereiche, in denen Besucher informiert oder gelenkt werden sollen, lassen sich so gezielt abdecken.</div>
         <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/de/produkte/#zubehoer"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS horn.svg" alt="NIKOS [horn]²" loading="lazy"></a> extends audio output to locations without an existing public address system. This also integrates paths, entrances, waiting areas and technical ancillary areas into the announcement infrastructure. Areas where visitors need to be informed or guided can therefore be covered selectively.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" data-de>Besucherinformation für das Lollapalooza Berlin: Wo kann man <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mieten?</span><span class="faq-q" data-en>Visitor information for Lollapalooza Berlin: Where can <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> be rented?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body" data-de><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Zur Partnerauswahl und Mietanfrage</a></div>
+        <div class="faq-item__body" data-en><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is rented by the day through certified partners, including advice, instruction and technical support. Your regional partner coordinates the deployment with you. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find a partner and request a rental</a></div>
       </details>
     </div>
   </div>

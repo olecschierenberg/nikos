@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Les annonces diffusées avec NIKOS sont-elles conformes aux normes en vigueur ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui. NIKOS satisfait aux exigences de la norme DIN EN 50849 (systèmes électroacoustiques d’alerte d’urgence). NIKOS a été spécialement développé pour les applications d’annonces et d’alerte liées à la sécurité, et est techniquement conçu pour une utilisation dans des situations courantes comme dans des situations d’urgence. Pour les systèmes électroacoustiques d’alerte d’urgence (installations ELA), la norme DIN EN 50849 constitue le cadre de référence déterminant. Contrairement aux systèmes reposant sur les réseaux mobiles, NIKOS répond intégralement aux exigences qui y sont mentionnées, car il ne dépend d’aucun réseau tiers et peut ainsi garantir une disponibilité immédiate à tout moment. D’autres normes connues dans le domaine de la sécurité, telles que DIN EN 54, DIN VDE 0833-4 et DIN 14675 (systèmes d’alarme vocale), ne sont pas applicables au domaine d’utilisation ni au périmètre fonctionnel de NIKOS et ne sont donc pas pertinentes pour une autorisation. NIKOS est le système d’annonces leader du marché pour les applications temporaires et mobiles, et est utilisé avec succès depuis 2017 pour la mise en œuvre de nombreuses missions de communication critiques. RADACOM et votre partenaire NIKOS régional se tiennent volontiers à votre disposition pour vous conseiller sur les nombreuses fonctions de NIKOS et vous accompagner dans la mise en œuvre économique de vos exigences."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/fr/lp/securite-visiteurs-gentse-feesten/#service",
+      "name": "Sécurité des visiteurs aux Gentse Feesten",
+      "description": "NIKOS regroupe les annonces, l’alerte, l’orientation des visiteurs et le pilotage des équipements au sein d’une plateforme unique et indépendante du réseau.",
+      "url": "https://nikos.info/fr/lp/securite-visiteurs-gentse-feesten/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "fr",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Gent"
       }
     },
     {
-      "@type": "Question",
-      "name": "NIKOS reste-t-il opérationnel en cas de défaillance de l’alimentation électrique ou des réseaux publics ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui. NIKOS fonctionne via son propre réseau radio autonome, indépendamment des réseaux de communication publics. Comme NIKOS communique par radio et ne dépend pas de connexions câblées, la liaison se rétablit automatiquement après une interruption. NIKOS [audio]² dispose d’une batterie interne offrant une autonomie allant jusqu’à 16 heures et alimente également les modules accessoires connectés. Les fonctions de communication contribuant à la sécurité des visiteurs lors des Gentse Feesten restent ainsi opérationnelles en cas de panne de courant ou de perturbation des réseaux de communication publics."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://nikos.info/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tous les exemples d'utilisation",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Sécurité des visiteurs aux Gentse Feesten",
+          "item": "https://nikos.info/fr/lp/securite-visiteurs-gentse-feesten/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "NIKOS peut-il être installé de manière flexible sur des sites événementiels temporaires ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui. NIKOS a été développé pour une utilisation extérieure flexible, sans infrastructure fixe. Une ou deux personnes peuvent monter les modules en quelques minutes sur des structures telles que des lampadaires, des scènes, des arbres, des stands ou des éléments de décoration, puis les configurer individuellement. Une prise secteur Schuko standard suffit pour un fonctionnement continu. NIKOS utilise également un réseau radio numérique existant."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment garantir l’intelligibilité des annonces lorsque la musique est forte ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "NIKOS [audio]² peut interrompre les systèmes de diffusion musicale connectés pendant la durée d’une annonce. Cela réduit les niveaux sonores perturbateurs et améliore considérablement l’intelligibilité de la parole. NIKOS [audio]² utilise également les systèmes de diffusion musicale existants pour transmettre les annonces, ce qui évite d’installer un système de sonorisation distinct."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/fr/lp/securite-visiteurs-gentse-feesten/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Les annonces diffusées avec NIKOS sont-elles conformes aux normes en vigueur ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. NIKOS satisfait aux exigences de la norme DIN EN 50849 (systèmes électroacoustiques d’alerte d’urgence). NIKOS a été spécialement développé pour les applications d’annonces et d’alerte liées à la sécurité, et est techniquement conçu pour une utilisation dans des situations courantes comme dans des situations d’urgence. Pour les systèmes électroacoustiques d’alerte d’urgence (installations ELA), la norme DIN EN 50849 constitue le cadre de référence déterminant. Contrairement aux systèmes reposant sur les réseaux mobiles, NIKOS répond intégralement aux exigences qui y sont mentionnées, car il ne dépend d’aucun réseau tiers et peut ainsi garantir une disponibilité immédiate à tout moment. D’autres normes connues dans le domaine de la sécurité, telles que DIN EN 54, DIN VDE 0833-4 et DIN 14675 (systèmes d’alarme vocale), ne sont pas applicables au domaine d’utilisation ni au périmètre fonctionnel de NIKOS et ne sont donc pas pertinentes pour une autorisation. NIKOS est le système d’annonces leader du marché pour les applications temporaires et mobiles, et est utilisé avec succès depuis 2017 pour la mise en œuvre de nombreuses missions de communication critiques. RADACOM et votre partenaire NIKOS régional se tiennent volontiers à votre disposition pour vous conseiller sur les nombreuses fonctions de NIKOS et vous accompagner dans la mise en œuvre économique de vos exigences."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "NIKOS reste-t-il opérationnel en cas de défaillance de l’alimentation électrique ou des réseaux publics ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. NIKOS fonctionne via son propre réseau radio autonome, indépendamment des réseaux de communication publics. Comme NIKOS communique par radio et ne dépend pas de connexions câblées, la liaison se rétablit automatiquement après une interruption. NIKOS [audio]² dispose d’une batterie interne offrant une autonomie allant jusqu’à 16 heures et alimente également les modules accessoires connectés. Les fonctions de communication contribuant à la sécurité des visiteurs lors des Gentse Feesten restent ainsi opérationnelles en cas de panne de courant ou de perturbation des réseaux de communication publics."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "NIKOS peut-il être installé de manière flexible sur des sites événementiels temporaires ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. NIKOS a été développé pour une utilisation extérieure flexible, sans infrastructure fixe. Une ou deux personnes peuvent monter les modules en quelques minutes sur des structures telles que des lampadaires, des scènes, des stands ou des arbres, puis les configurer individuellement. Une prise secteur Schuko standard suffit pour un fonctionnement continu. NIKOS utilise également un réseau radio numérique existant."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment garantir l’intelligibilité des annonces lorsque la musique est forte ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS [audio]² peut interrompre les systèmes de diffusion musicale connectés pendant la durée d’une annonce. Cela réduit les niveaux sonores perturbateurs et améliore considérablement l’intelligibilité de la parole. NIKOS [audio]² utilise également les systèmes de diffusion musicale existants pour transmettre les annonces, ce qui évite d’installer un système de sonorisation distinct."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sécurité des visiteurs aux Gentse Feesten: Où peut-on louer NIKOS ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS est loué à la journée via des partenaires certifiés, conseil, formation et assistance technique inclus. Votre partenaire régional coordonne l’intervention avec vous. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Trouver un partenaire et demander la location</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Gent"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Gent"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS n’est pas une sonorisation classique, mais un système de diffusion, d’alerte et de commande par radio pour les grands événements, les chantiers et les situations de crise, que vous louez à la journée via des partenaires certifiés et pouvez intégrer à votre sonorisation ou utiliser de manière autonome.</p>
     <span class="nk-label">Défi</span>
     <h2 class="heading-l" style="margin-top:12px;">Guider les visiteurs vers les zones sûres</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Aux Gentse Feesten, la sécurité des visiteurs est particulièrement difficile à garantir en raison de la forte affluence, de l’environnement bruyant et de la présence de visiteurs internationaux. En cas d’incident, les avertissements et les consignes doivent parvenir à tous les visiteurs de manière claire et intelligible, même lorsqu’ils se déplacent entre les différentes zones de l’événement. La forte densité de visiteurs surcharge les réseaux mobiles, ce qui rend les systèmes dépendant des communications mobiles inadaptés aux communications d’urgence.</p>
@@ -270,11 +350,15 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">NIKOS peut-il être installé de manière flexible sur des sites événementiels temporaires ?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Oui. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> a été développé pour une utilisation extérieure flexible, sans infrastructure fixe. Une ou deux personnes peuvent monter les modules en quelques minutes sur des structures telles que des lampadaires, des scènes, des arbres, des stands ou des éléments de décoration, puis les configurer individuellement. Une prise secteur Schuko standard suffit pour un fonctionnement continu. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> utilise également un réseau radio numérique existant.</div>
+        <div class="faq-item__body">Oui. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> a été développé pour une utilisation extérieure flexible, sans infrastructure fixe. Une ou deux personnes peuvent monter les modules en quelques minutes sur des structures telles que des lampadaires, des scènes, des stands ou des arbres, puis les configurer individuellement. Une prise secteur Schuko standard suffit pour un fonctionnement continu. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> utilise également un réseau radio numérique existant.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Comment garantir l’intelligibilité des annonces lorsque la musique est forte ?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/en/products/#audio"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS audio.svg" alt="NIKOS [audio]²" loading="lazy"></a> peut interrompre les systèmes de diffusion musicale connectés pendant la durée d’une annonce. Cela réduit les niveaux sonores perturbateurs et améliore considérablement l’intelligibilité de la parole. <a class="nk-mod" href="https://nikos.info/en/products/#audio"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS audio.svg" alt="NIKOS [audio]²" loading="lazy"></a> utilise également les systèmes de diffusion musicale existants pour transmettre les annonces, ce qui évite d’installer un système de sonorisation distinct.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Sécurité des visiteurs aux Gentse Feesten: Où peut-on louer <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> ?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> est loué à la journée via des partenaires certifiés, conseil, formation et assistance technique inclus. Votre partenaire régional coordonne l’intervention avec vous. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Trouver un partenaire et demander la location</a></div>
       </details>
     </div>
   </div>

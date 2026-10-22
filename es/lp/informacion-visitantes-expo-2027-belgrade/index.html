@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "¿Está NIKOS diseñado conforme a las normas para los avisos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, así es: NIKOS cumple los requisitos de la DIN EN 50849 para sistemas electroacústicos de alerta de emergencia. El sistema se ha desarrollado específicamente para avisos y alertas relevantes para la seguridad y está diseñado técnicamente tanto para el funcionamiento cotidiano como para situaciones de emergencia. La DIN EN 50849 constituye a este respecto el marco de referencia determinante para las instalaciones ELA. A diferencia de los sistemas basados en redes móviles, NIKOS no depende de ninguna red externa y, por ello, está siempre listo para su uso inmediato — con lo que la norma se cumple íntegramente. Otras normas conocidas en el ámbito de la tecnología de seguridad, como DIN EN 54, DIN VDE 0833-4 y DIN 14675 (sistemas de alarma por voz), no son en cambio aplicables a NIKOS, ya que no se aplican a sistemas de megafonía basados en radio como NIKOS. NIKOS está considerado el sistema de megafonía líder del mercado para aplicaciones temporales y móviles y se utiliza con éxito en numerosas ocasiones para tareas de comunicación críticas desde 2017. RADACOM y su socio regional de NIKOS estarán encantados de asesorarle sobre las múltiples funciones de NIKOS y de ayudarle a implementar los requisitos de forma rentable."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/es/lp/informacion-visitantes-expo-2027-belgrade/#service",
+      "name": "Información para visitantes en la EXPO 2027 Belgrade",
+      "description": "Las indicaciones importantes deben llegar a los visitantes de forma comprensible y puntual en las diferentes zonas.",
+      "url": "https://nikos.info/es/lp/informacion-visitantes-expo-2027-belgrade/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "es",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Belgrad"
       }
     },
     {
-      "@type": "Question",
-      "name": "¿Es NIKOS resistente en situaciones de crisis?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, NIKOS funciona mediante una red de radio propia y autónoma, completamente independiente de las redes públicas de comunicación y de su disponibilidad. De este modo, el sistema es muy resistente frente a influencias externas. Como NIKOS no depende de conexiones por cable, sino que se comunica por radio, la conexión se restablece automáticamente tras una interrupción. Por tanto, NIKOS responde de forma mucho más resiliente a las perturbaciones del funcionamiento normal que muchos otros sistemas y demuestra la capacidad de este sistema de comunicación para funcionar en situaciones de crisis. NIKOS [audio]² dispone de una batería interna con una autonomía de hasta 16 horas, que también suministra energía a los módulos accesorios conectados. Aunque la red móvil esté sobrecargada, el proveedor de Internet haya sido pirateado o alguien haya desconectado el enchufe equivocado, NIKOS continúa funcionando. Así, la información a los visitantes de la EXPO 2027 Belgrade sigue siendo fiable y operativa incluso en caso de fallo del suministro eléctrico o de interrupciones en las redes públicas de comunicación."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://nikos.info/es/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Todos los casos de uso",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Información para visitantes en la EXPO 2027 Belgrade",
+          "item": "https://nikos.info/es/lp/informacion-visitantes-expo-2027-belgrade/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "¿Puede utilizarse NIKOS con poca antelación y de forma flexible?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, NIKOS se desarrolló específicamente para usos flexibles en exteriores sin infraestructura fija. Una o dos personas pueden montar los módulos en pocos minutos sobre diferentes estructuras, como farolas, escenarios, árboles, puestos o elementos decorativos, y configurarlos individualmente. Para el funcionamiento continuo basta con una toma de corriente Schuko convencional. Si es necesario, NIKOS también utiliza una red de radio digital existente."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo pueden difundirse informaciones en las distintas zonas de la EXPO 2027 Belgrade?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Con NIKOS [dispatcher]², los avisos pueden transmitirse de forma selectiva a determinados puntos de emisión, zonas concretas o a todo el recinto. De este modo, los visitantes reciben únicamente la información relevante para la zona en la que se encuentran."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/es/lp/informacion-visitantes-expo-2027-belgrade/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Está NIKOS diseñado conforme a las normas para los avisos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, así es: NIKOS cumple los requisitos de la DIN EN 50849 para sistemas electroacústicos de alerta de emergencia. El sistema se ha desarrollado específicamente para avisos y alertas relevantes para la seguridad y está diseñado técnicamente tanto para el funcionamiento cotidiano como para situaciones de emergencia. La DIN EN 50849 constituye a este respecto el marco de referencia determinante para las instalaciones ELA. A diferencia de los sistemas basados en redes móviles, NIKOS no depende de ninguna red externa y, por ello, está siempre listo para su uso inmediato — con lo que la norma se cumple íntegramente. Otras normas conocidas en el ámbito de la tecnología de seguridad, como DIN EN 54, DIN VDE 0833-4 y DIN 14675 (sistemas de alarma por voz), no son en cambio aplicables a NIKOS, ya que no se aplican a sistemas de megafonía basados en radio como NIKOS. NIKOS está considerado el sistema de megafonía líder del mercado para aplicaciones temporales y móviles y se utiliza con éxito en numerosas ocasiones para tareas de comunicación críticas desde 2017. RADACOM y su socio regional de NIKOS estarán encantados de asesorarle sobre las múltiples funciones de NIKOS y de ayudarle a implementar los requisitos de forma rentable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Es NIKOS resistente en situaciones de crisis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, NIKOS funciona mediante una red de radio propia y autónoma, completamente independiente de las redes públicas de comunicación y de su disponibilidad. De este modo, el sistema es muy resistente frente a influencias externas. Como NIKOS no depende de conexiones por cable, sino que se comunica por radio, la conexión se restablece automáticamente tras una interrupción. Por tanto, NIKOS responde de forma mucho más resiliente a las perturbaciones del funcionamiento normal que muchos otros sistemas y demuestra la capacidad de este sistema de comunicación para funcionar en situaciones de crisis. NIKOS [audio]² dispone de una batería interna con una autonomía de hasta 16 horas, que también suministra energía a los módulos accesorios conectados. Aunque la red móvil esté sobrecargada, el proveedor de Internet haya sido pirateado o alguien haya desconectado el enchufe equivocado, NIKOS continúa funcionando. Así, la información a los visitantes de la EXPO 2027 Belgrade sigue siendo fiable y operativa incluso en caso de fallo del suministro eléctrico o de interrupciones en las redes públicas de comunicación."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puede utilizarse NIKOS con poca antelación y de forma flexible?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, NIKOS se desarrolló específicamente para usos flexibles en exteriores sin infraestructura fija. Una o dos personas pueden montar los módulos en pocos minutos sobre diferentes estructuras, como farolas, escenarios, puestos o árboles, y configurarlos individualmente. Para el funcionamiento continuo basta con una toma de corriente Schuko convencional. Si es necesario, NIKOS también utiliza una red de radio digital existente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo pueden difundirse informaciones en las distintas zonas de la EXPO 2027 Belgrade?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Con NIKOS [dispatcher]², los avisos pueden transmitirse de forma selectiva a determinados puntos de emisión, zonas concretas o a todo el recinto. De este modo, los visitantes reciben únicamente la información relevante para la zona en la que se encuentran."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Información para visitantes en la EXPO 2027 Belgrade: ¿Dónde se puede alquilar NIKOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS se alquila por días a través de socios certificados, con asesoramiento, instrucción y soporte técnico incluidos. Su socio regional coordina la intervención con usted. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Encontrar un socio y solicitar el alquiler</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Belgrad"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Belgrad"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS no es un sistema de megafonía convencional, sino un sistema por radio de avisos, alarma y control para grandes eventos, obras y situaciones de crisis, que se alquila por días a través de socios certificados y se puede integrar en su sistema de megafonía o utilizar de forma independiente.</p>
     <span class="nk-label">Reto</span>
     <h2 class="heading-l" style="margin-top:12px;">Información dirigida al público</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">En la EXPO 2027 Belgrade, la información a los visitantes supone un reto especial debido a las aglomeraciones, el entorno ruidoso y la presencia de visitantes de distintos idiomas. Las indicaciones importantes deben llegar a los visitantes de forma comprensible y puntual en las diferentes zonas. Cuando la afluencia es elevada, la red móvil se sobrecarga rápidamente, por lo que las vías de información basadas en la telefonía móvil no están disponibles de forma fiable en caso de crisis.</p>
@@ -270,11 +350,15 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">¿Puede utilizarse NIKOS con poca antelación y de forma flexible?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Sí, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> se desarrolló específicamente para usos flexibles en exteriores sin infraestructura fija. Una o dos personas pueden montar los módulos en pocos minutos sobre diferentes estructuras, como farolas, escenarios, árboles, puestos o elementos decorativos, y configurarlos individualmente. Para el funcionamiento continuo basta con una toma de corriente Schuko convencional. Si es necesario, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> también utiliza una red de radio digital existente.</div>
+        <div class="faq-item__body">Sí, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> se desarrolló específicamente para usos flexibles en exteriores sin infraestructura fija. Una o dos personas pueden montar los módulos en pocos minutos sobre diferentes estructuras, como farolas, escenarios, puestos o árboles, y configurarlos individualmente. Para el funcionamiento continuo basta con una toma de corriente Schuko convencional. Si es necesario, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> también utiliza una red de radio digital existente.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">¿Cómo pueden difundirse informaciones en las distintas zonas de la EXPO 2027 Belgrade?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body">Con <a class="nk-mod" href="https://nikos.info/en/products/#dispatcher"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a>, los avisos pueden transmitirse de forma selectiva a determinados puntos de emisión, zonas concretas o a todo el recinto. De este modo, los visitantes reciben únicamente la información relevante para la zona en la que se encuentran.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Información para visitantes en la EXPO 2027 Belgrade: ¿Dónde se puede alquilar <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> se alquila por días a través de socios certificados, con asesoramiento, instrucción y soporte técnico incluidos. Su socio regional coordina la intervención con usted. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Encontrar un socio y solicitar el alquiler</a></div>
       </details>
     </div>
   </div>

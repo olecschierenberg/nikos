@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Zijn omroepberichten via NIKOS normconform?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja — NIKOS voldoet volledig aan DIN EN 50849 (elektro-akoestische noodwaarschuwingssystemen). Het systeem is speciaal ontworpen voor veiligheidsrelevante omroep- en alarmeringstaken, technisch geschikt voor zowel dagelijks gebruik als noodsituaties. Voor ELA-installaties geeft DIN EN 50849 het bepalende kader aan. Omdat NIKOS – in tegenstelling tot op mobiele netwerken gebaseerde oplossingen – niet afhankelijk is van een extern netwerk, is het te allen tijde direct bruikbaar en voldoet het volledig aan de in de norm gestelde eisen. Andere veiligheidstechnische normen zoals DIN EN 54, DIN VDE 0833-4 of DIN 14675 (spraakalarminstallaties) betreffen een ander toepassingsgebied en functiebereik en zijn daarom voor NIKOS niet relevant voor een vergunning. Sinds 2017 wordt NIKOS al vele malen met succes ingezet als marktleidend omroepsysteem voor tijdelijke en mobiele toepassingen, voor inzetkritische communicatietaken. De goedkeuring door de bevoegde autoriteiten wordt per project beoordeeld."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/nl/lp/bezoekersinformatie-cultuur/#service",
+      "name": "Bezoekersinformatie voor de European Capital of Culture 2028 in Bourges",
+      "description": "Tijdens de European Capital of Culture 2028 in Bourges moet bezoekersinformatie snel een groot, internationaal publiek bereiken.",
+      "url": "https://nikos.info/nl/lp/bezoekersinformatie-cultuur/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "nl",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Bourges"
       }
     },
     {
-      "@type": "Question",
-      "name": "Kan NIKOS snel worden geïnstalleerd voor de European Capital of Culture 2028?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS is ontwikkeld voor flexibele buitentoepassingen zonder vaste infrastructuur. Eén of twee personen installeren en configureren de modules binnen enkele minuten op verschillende constructies, zoals lantaarnpalen, podia, bomen, stands of decoratieve elementen. Een standaard Schuko-stopcontact zorgt voor een continue werking. NIKOS maakt gebruik van het digitale radionetwerk dat voor het evenement beschikbaar wordt gesteld."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nikos.info/nl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle toepassingen",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Bezoekersinformatie voor de European Capital of Culture 2028 in Bourges",
+          "item": "https://nikos.info/nl/lp/bezoekersinformatie-cultuur/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Blijft NIKOS operationeel bij een netwerk- of stroomstoring?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS gebruikt een eigen autonoom radionetwerk en werkt onafhankelijk van openbare communicatienetwerken en hun beschikbaarheid. Omdat het systeem via radio communiceert en niet afhankelijk is van kabelverbindingen, wordt de verbinding na een onderbreking automatisch hersteld. NIKOS [audio]² beschikt over een interne batterij met een gebruiksduur van maximaal 16 uur en voorziet ook de aangesloten accessoiremodules van stroom. Zelfs bij overbelasting van het mobiele netwerk, een storing bij de internetprovider of een stroomuitval blijft de bezoekersinformatie voor de European Capital of Culture 2028 betrouwbaar en operationeel."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Waar levert NIKOS kostenvoordelen op?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "NIKOS bundelt verschillende functies op één communicatieplatform. De besparingen die daardoor ontstaan, compenseren de huur- en installatiekosten van NIKOS. Hier vindt u concrete voorbeelden van besparingen. Het systematische gebruik van de vele beschikbare functies verlaagt het totale budget, verhoogt het veiligheidsniveau en vergemakkelijkt het werk van de teams. Voor bezoekersinformatie en andere veiligheidsgerelateerde coördinatietaken zijn geen afzonderlijke oplossingen voor luidsprekers, bediening en communicatie nodig. Hierdoor zijn minder apparatuur en kabelwerk nodig en neemt het risico op struikelen over kabels af. Centrale omroep, bediening op afstand en statusbewaking vervangen bepaalde personeelsfuncties die anders over het terrein zouden worden verdeeld. Bij tijdelijke evenementen dalen de kosten voor planning, montage en exploitatie van de beveiligingstechniek aanzienlijk."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/nl/lp/bezoekersinformatie-cultuur/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Zijn omroepberichten via NIKOS normconform?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja — NIKOS voldoet volledig aan DIN EN 50849 (elektro-akoestische noodwaarschuwingssystemen). Het systeem is speciaal ontworpen voor veiligheidsrelevante omroep- en alarmeringstaken, technisch geschikt voor zowel dagelijks gebruik als noodsituaties. Voor ELA-installaties geeft DIN EN 50849 het bepalende kader aan. Omdat NIKOS – in tegenstelling tot op mobiele netwerken gebaseerde oplossingen – niet afhankelijk is van een extern netwerk, is het te allen tijde direct bruikbaar en voldoet het volledig aan de in de norm gestelde eisen. Andere veiligheidstechnische normen zoals DIN EN 54, DIN VDE 0833-4 of DIN 14675 (spraakalarminstallaties) betreffen een ander toepassingsgebied en functiebereik en zijn daarom voor NIKOS niet relevant voor een vergunning. Sinds 2017 wordt NIKOS al vele malen met succes ingezet als marktleidend omroepsysteem voor tijdelijke en mobiele toepassingen, voor inzetkritische communicatietaken. De goedkeuring door de bevoegde autoriteiten wordt per project beoordeeld."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan NIKOS snel worden geïnstalleerd voor de European Capital of Culture 2028?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS is ontwikkeld voor flexibele buitentoepassingen zonder vaste infrastructuur. Eén of twee personen installeren en configureren de modules binnen enkele minuten op verschillende constructies, zoals lantaarnpalen, podia, kraampjes of bomen. Een standaard Schuko-stopcontact zorgt voor een continue werking. NIKOS maakt gebruik van het digitale radionetwerk dat voor het evenement beschikbaar wordt gesteld."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Blijft NIKOS operationeel bij een netwerk- of stroomstoring?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS gebruikt een eigen autonoom radionetwerk en werkt onafhankelijk van openbare communicatienetwerken en hun beschikbaarheid. Omdat het systeem via radio communiceert en niet afhankelijk is van kabelverbindingen, wordt de verbinding na een onderbreking automatisch hersteld. NIKOS [audio]² beschikt over een interne batterij met een gebruiksduur van maximaal 16 uur en voorziet ook de aangesloten accessoiremodules van stroom. Zelfs bij overbelasting van het mobiele netwerk, een storing bij de internetprovider of een stroomuitval blijft de bezoekersinformatie voor de European Capital of Culture 2028 betrouwbaar en operationeel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Waar levert NIKOS kostenvoordelen op?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS bundelt verschillende functies op één communicatieplatform. De besparingen die daardoor ontstaan, compenseren de huur- en installatiekosten van NIKOS. Hier vindt u concrete voorbeelden van besparingen. Het systematische gebruik van de vele beschikbare functies verlaagt het totale budget, verhoogt het veiligheidsniveau en vergemakkelijkt het werk van de teams. NIKOS verlaagt vooral de inspanning voor afzonderlijke oplossingen voor omroep, aansturing en communicatie. De materiaalbehoefte en de bekabeling nemen af, en informatie- en noodomroepen kunnen vanaf één punt worden gedaan. Hierdoor zijn minder apparatuur en kabelwerk nodig en neemt het risico op struikelen over kabels af. Centrale omroep, bediening op afstand en statusbewaking vervangen bepaalde personeelsfuncties die anders over het terrein zouden worden verdeeld. Bij tijdelijke evenementen dalen de kosten voor planning, montage en exploitatie van de beveiligingstechniek aanzienlijk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bezoekersinformatie voor de European Capital of Culture 2028 in Bourges: Waar kan NIKOS worden gehuurd?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wordt per dag verhuurd via gecertificeerde partners, inclusief advies, instructie en technische ondersteuning. Uw regionale partner stemt de inzet met u af. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Partner kiezen en huur aanvragen</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Bourges"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Bourges"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS is geen klassiek omroepsysteem, maar een radiogebaseerd systeem voor omroepberichten, alarmering en aansturing bij grote evenementen, bouwplaatsen en crisissituaties, dat u per dag huurt via gecertificeerde partners en kunt integreren in uw geluidsinstallatie of zelfstandig kunt inzetten.</p>
     <span class="nk-label">Uitdaging</span>
     <h2 class="heading-l" style="margin-top:12px;">Alle bezoekers betrouwbaar informeren</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Tijdens de European Capital of Culture 2028 in Bourges moet bezoekersinformatie snel een groot, internationaal publiek bereiken. Programmawijzigingen, veiligheidsinstructies en bewegwijzeringsinformatie moeten ook in een drukke omgeving begrijpelijk blijven. Grote bezoekersaantallen belasten mobiele netwerken, terwijl een stroomstoring of een verstoring van openbare netwerken de gebruikelijke communicatiemiddelen in gevaar brengt.</p>
@@ -266,7 +346,7 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Kan NIKOS snel worden geïnstalleerd voor de European Capital of Culture 2028?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is ontwikkeld voor flexibele buitentoepassingen zonder vaste infrastructuur. Eén of twee personen installeren en configureren de modules binnen enkele minuten op verschillende constructies, zoals lantaarnpalen, podia, bomen, stands of decoratieve elementen. Een standaard Schuko-stopcontact zorgt voor een continue werking. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> maakt gebruik van het digitale radionetwerk dat voor het evenement beschikbaar wordt gesteld.</div>
+        <div class="faq-item__body">Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> is ontwikkeld voor flexibele buitentoepassingen zonder vaste infrastructuur. Eén of twee personen installeren en configureren de modules binnen enkele minuten op verschillende constructies, zoals lantaarnpalen, podia, kraampjes of bomen. Een standaard Schuko-stopcontact zorgt voor een continue werking. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> maakt gebruik van het digitale radionetwerk dat voor het evenement beschikbaar wordt gesteld.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Blijft NIKOS operationeel bij een netwerk- of stroomstoring?</span><span class="faq-icon">+</span></summary>
@@ -274,7 +354,11 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Waar levert NIKOS kostenvoordelen op?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> bundelt verschillende functies op één communicatieplatform. De besparingen die daardoor ontstaan, compenseren de huur- en installatiekosten van <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>. Hier vindt u concrete voorbeelden van besparingen. Het systematische gebruik van de vele beschikbare functies verlaagt het totale budget, verhoogt het veiligheidsniveau en vergemakkelijkt het werk van de teams. Voor bezoekersinformatie en andere veiligheidsgerelateerde coördinatietaken zijn geen afzonderlijke oplossingen voor luidsprekers, bediening en communicatie nodig. Hierdoor zijn minder apparatuur en kabelwerk nodig en neemt het risico op struikelen over kabels af. Centrale omroep, bediening op afstand en statusbewaking vervangen bepaalde personeelsfuncties die anders over het terrein zouden worden verdeeld. Bij tijdelijke evenementen dalen de kosten voor planning, montage en exploitatie van de beveiligingstechniek aanzienlijk.</div>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> bundelt verschillende functies op één communicatieplatform. De besparingen die daardoor ontstaan, compenseren de huur- en installatiekosten van <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>. Hier vindt u concrete voorbeelden van besparingen. Het systematische gebruik van de vele beschikbare functies verlaagt het totale budget, verhoogt het veiligheidsniveau en vergemakkelijkt het werk van de teams. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> verlaagt vooral de inspanning voor afzonderlijke oplossingen voor omroep, aansturing en communicatie. De materiaalbehoefte en de bekabeling nemen af, en informatie- en noodomroepen kunnen vanaf één punt worden gedaan. Hierdoor zijn minder apparatuur en kabelwerk nodig en neemt het risico op struikelen over kabels af. Centrale omroep, bediening op afstand en statusbewaking vervangen bepaalde personeelsfuncties die anders over het terrein zouden worden verdeeld. Bij tijdelijke evenementen dalen de kosten voor planning, montage en exploitatie van de beveiligingstechniek aanzienlijk.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Bezoekersinformatie voor de European Capital of Culture 2028 in Bourges: Waar kan <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> worden gehuurd?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wordt per dag verhuurd via gecertificeerde partners, inclusief advies, instructie en technische ondersteuning. Uw regionale partner stemt de inzet met u af. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Partner kiezen en huur aanvragen</a></div>
       </details>
     </div>
   </div>

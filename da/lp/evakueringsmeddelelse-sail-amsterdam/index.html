@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Er meddelelser via NIKOS standardkonforme?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja — DIN EN 50849 (elektroakustiske nødvarslingssystemer) opfyldes fuldt ud af NIKOS. Systemet er udviklet specifikt til sikkerhedskritiske meddelelses- og alarmeringsopgaver, teknisk designet til både daglig drift og nødsituationer. For ELA-anlæg angiver DIN EN 50849 den afgørende ramme. Fordi NIKOS – i modsætning til mobilnetbaserede løsninger – ikke er afhængig af noget eksternt net, er det til enhver tid øjeblikkeligt anvendeligt og opfylder fuldt ud de krav, der stilles i standarden. Andre sikkerhedstekniske standarder såsom DIN EN 54, DIN VDE 0833-4 eller DIN 14675 (talevarslingsanlæg) vedrører et andet anvendelsesområde og funktionsomfang og er derfor ikke relevante for en godkendelse af NIKOS. Siden 2017 er NIKOS blevet anvendt med succes mange gange som det markedsførende meddelelsessystem til midlertidige og mobile anvendelser, til indsatskritiske kommunikationsopgaver. De kompetente myndigheders accept vurderes fra projekt til projekt."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/da/lp/evakueringsmeddelelse-sail-amsterdam/#service",
+      "name": "Evakueringsmeddelelser til arrangementet Sail Amsterdam 2030",
+      "description": "Under Sail Amsterdam 2030 er evakueringsmeddelelser en særlig udfordring på grund af menneskemængder, et støjende miljø og internationale besøgende.",
+      "url": "https://nikos.info/da/lp/evakueringsmeddelelse-sail-amsterdam/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "da",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     },
     {
-      "@type": "Question",
-      "name": "Fungerer NIKOS også ved et overbelastet mobilnetværk eller strømsvigt?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS fungerer via sit eget autonome radionetværk og er fuldstændig uafhængigt af offentlige kommunikationsnetværk og deres tilgængelighed. Da NIKOS kommunikerer via radio og ikke er afhængigt af kabelforbindelser, genetableres forbindelsen automatisk efter en afbrydelse. NIKOS [audio]² har et internt batteri med en driftstid på op til 16 timer og forsyner også tilsluttede tilbehørsmoduler med strøm. Derfor fungerer evakueringsmeddelelserne til Sail Amsterdam 2030 fortsat pålideligt ved strømsvigt eller forstyrrelser i offentlige kommunikationsnetværk."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Forside",
+          "item": "https://nikos.info/da/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle anvendelseseksempler",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Evakueringsmeddelelser til arrangementet Sail Amsterdam 2030",
+          "item": "https://nikos.info/da/lp/evakueringsmeddelelse-sail-amsterdam/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Kan NIKOS installeres med kort varsel uden fast infrastruktur?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS er udviklet til fleksible udendørsanvendelser uden fast infrastruktur. En eller to personer monterer modulerne på få minutter på forskellige konstruktioner som lygtepæle, scener, træer, boder eller dekorationer og konfigurerer dem efter den aktuelle situation. Til permanent drift er en almindelig Schuko-strømtilslutning tilstrækkelig. NIKOS benytter et eksisterende digitalt radionetværk, hvis et sådant er tilgængeligt."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Kan evakueringsmeddelelser sendes målrettet til enkelte områder?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS [dispatcher]² styrer højttalerenhederne for enkelte højttalerplaceringer, målrettede områder eller hele arrangementsområdet. På den måde kan instruktionerne tilpasses den aktuelle situation, uden at alle dele af området modtager den samme meddelelse."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/da/lp/evakueringsmeddelelse-sail-amsterdam/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Er meddelelser via NIKOS standardkonforme?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja — DIN EN 50849 (elektroakustiske nødvarslingssystemer) opfyldes fuldt ud af NIKOS. Systemet er udviklet specifikt til sikkerhedskritiske meddelelses- og alarmeringsopgaver, teknisk designet til både daglig drift og nødsituationer. For ELA-anlæg angiver DIN EN 50849 den afgørende ramme. Fordi NIKOS – i modsætning til mobilnetbaserede løsninger – ikke er afhængig af noget eksternt net, er det til enhver tid øjeblikkeligt anvendeligt og opfylder fuldt ud de krav, der stilles i standarden. Andre sikkerhedstekniske standarder såsom DIN EN 54, DIN VDE 0833-4 eller DIN 14675 (talevarslingsanlæg) vedrører et andet anvendelsesområde og funktionsomfang og er derfor ikke relevante for en godkendelse af NIKOS. Siden 2017 er NIKOS blevet anvendt med succes mange gange som det markedsførende meddelelsessystem til midlertidige og mobile anvendelser, til indsatskritiske kommunikationsopgaver. De kompetente myndigheders accept vurderes fra projekt til projekt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Fungerer NIKOS også ved et overbelastet mobilnetværk eller strømsvigt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS fungerer via sit eget autonome radionetværk og er fuldstændig uafhængigt af offentlige kommunikationsnetværk og deres tilgængelighed. Da NIKOS kommunikerer via radio og ikke er afhængigt af kabelforbindelser, genetableres forbindelsen automatisk efter en afbrydelse. NIKOS [audio]² har et internt batteri med en driftstid på op til 16 timer og forsyner også tilsluttede tilbehørsmoduler med strøm. Derfor fungerer evakueringsmeddelelserne til Sail Amsterdam 2030 fortsat pålideligt ved strømsvigt eller forstyrrelser i offentlige kommunikationsnetværk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan NIKOS installeres med kort varsel uden fast infrastruktur?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS er udviklet til fleksible udendørsanvendelser uden fast infrastruktur. En eller to personer monterer modulerne på få minutter på forskellige konstruktioner som lygtepæle, scener, boder eller træer og konfigurerer dem efter den aktuelle situation. Til permanent drift er en almindelig Schuko-strømtilslutning tilstrækkelig. NIKOS benytter et eksisterende digitalt radionetværk, hvis et sådant er tilgængeligt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan evakueringsmeddelelser sendes målrettet til enkelte områder?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS [dispatcher]² styrer højttalerenhederne for enkelte højttalerplaceringer, målrettede områder eller hele arrangementsområdet. På den måde kan instruktionerne tilpasses den aktuelle situation, uden at alle dele af området modtager den samme meddelelse."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Evakueringsmeddelelser til arrangementet Sail Amsterdam 2030: Hvor kan NIKOS lejes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS udlejes pr. dag via certificerede partnere, inklusive rådgivning, instruktion og teknisk support. Jeres regionale partner afstemmer indsatsen med jer. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Find en partner og forespørg om leje</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Amsterdam"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS er ikke et klassisk PA-system, men et radiobaseret system til højttalermeddelelser, alarmering og styring ved store arrangementer, byggepladser og krisesituationer, som kan lejes pr. dag via certificerede partnere og enten integreres i jeres PA-anlæg eller bruges selvstændigt.</p>
     <span class="nk-label">Udfordring</span>
     <h2 class="heading-l" style="margin-top:12px;">Tydelige evakueringsinstruktioner uden mobilnetværk</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Under Sail Amsterdam 2030 er evakueringsmeddelelser en særlig udfordring på grund af menneskemængder, et støjende miljø og internationale besøgende. Advarsler og handlingsanvisninger skal være tydeligt forståelige også under disse forhold. På grund af den høje besøgstæthed kan mobilnetværket hurtigt blive overbelastet, hvilket gør mobile kommunikationssystemer uegnede til krisesituationer.</p>
@@ -270,11 +350,15 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Kan NIKOS installeres med kort varsel uden fast infrastruktur?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> er udviklet til fleksible udendørsanvendelser uden fast infrastruktur. En eller to personer monterer modulerne på få minutter på forskellige konstruktioner som lygtepæle, scener, træer, boder eller dekorationer og konfigurerer dem efter den aktuelle situation. Til permanent drift er en almindelig Schuko-strømtilslutning tilstrækkelig. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> benytter et eksisterende digitalt radionetværk, hvis et sådant er tilgængeligt.</div>
+        <div class="faq-item__body">Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> er udviklet til fleksible udendørsanvendelser uden fast infrastruktur. En eller to personer monterer modulerne på få minutter på forskellige konstruktioner som lygtepæle, scener, boder eller træer og konfigurerer dem efter den aktuelle situation. Til permanent drift er en almindelig Schuko-strømtilslutning tilstrækkelig. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> benytter et eksisterende digitalt radionetværk, hvis et sådant er tilgængeligt.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Kan evakueringsmeddelelser sendes målrettet til enkelte områder?</span><span class="faq-icon">+</span></summary>
         <div class="faq-item__body">Ja. <a class="nk-mod" href="https://nikos.info/en/products/#dispatcher"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS dispatcher.svg" alt="NIKOS [dispatcher]²" loading="lazy"></a> styrer højttalerenhederne for enkelte højttalerplaceringer, målrettede områder eller hele arrangementsområdet. På den måde kan instruktionerne tilpasses den aktuelle situation, uden at alle dele af området modtager den samme meddelelse.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Evakueringsmeddelelser til arrangementet Sail Amsterdam 2030: Hvor kan <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> lejes?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> udlejes pr. dag via certificerede partnere, inklusive rådgivning, instruktion og teknisk support. Jeres regionale partner afstemmer indsatsen med jer. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find en partner og forespørg om leje</a></div>
       </details>
     </div>
   </div>

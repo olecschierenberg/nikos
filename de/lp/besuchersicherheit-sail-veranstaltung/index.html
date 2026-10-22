@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Erfüllt NIKOS bei Durchsagen die geltenden Normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS ist normkonform: Das System erfüllt die DIN EN 50849 für elektroakustische Notfallwarnsysteme. Entwickelt wurde NIKOS gezielt für sicherheitsrelevante Durchsagen und Alarmierungen — einsetzbar sowohl im Alltagsbetrieb als auch im Notfall. Bei ELA-Anlagen bildet die DIN EN 50849 den entscheidenden Bezugsrahmen. Anders als mobilfunkbasierte Systeme erfüllt NIKOS diese Anforderungen vollständig, weil es unabhängig von einem externen Netz arbeitet und dadurch jederzeit sofort einsatzbereit ist. Für NIKOS nicht einschlägig sind dagegen andere sicherheitstechnische Normen wie DIN EN 54, DIN VDE 0833-4 und DIN 14675 (Sprachalarmierungsanlagen), da sie ein anderes Einsatzgebiet und einen anderen Funktionsumfang betreffen. Als Durchsagesystem für temporäre und mobile Einsätze ist NIKOS seit 2017 bereits vielfach erfolgreich für einsatzkritische Kommunikationsaufgaben im Einsatz gewesen. Die Bewertung und Abnahme durch die zuständige Stelle erfolgt projektspezifisch."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/de/lp/besuchersicherheit-sail-veranstaltung/#service",
+      "name": "Besuchersicherheit für Sail Amsterdam 2030",
+      "description": "Während Sail Amsterdam 2030 stellen große Besucherströme an den Kais, Umgebungslärm und internationale Besucher hohe Anforderungen an die Besuchersicherheit.",
+      "url": "https://nikos.info/de/lp/besuchersicherheit-sail-veranstaltung/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "de",
+      "termsOfService": "https://nikos.info/de/mietbedingungen/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     },
     {
-      "@type": "Question",
-      "name": "Bleibt NIKOS bei einem Stromausfall oder einer Überlastung der Mobilfunknetze funktionsfähig?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS arbeitet über ein eigenes, autonomes Funknetz und vollständig unabhängig von öffentlichen Kommunikationsnetzen und deren Verfügbarkeit. Da NIKOS drahtlos kommuniziert, stellt sich die Verbindung nach einer Unterbrechung selbstständig wieder her. NIKOS [audio]² verfügt über einen internen Akku mit einer Laufzeit von bis zu 16 Stunden und versorgt damit auch angeschlossene Zubehörmodule. So bleibt die Besuchersicherheit für Sail Amsterdam 2030 auch bei Stromausfällen oder Störungen in öffentlichen Kommunikationsnetzen zuverlässig gewährleistet."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://nikos.info/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle Einsatzbeispiele",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Besuchersicherheit für Sail Amsterdam 2030",
+          "item": "https://nikos.info/de/lp/besuchersicherheit-sail-veranstaltung/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Kann NIKOS kurzfristig entlang der Kais eingesetzt werden?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. NIKOS wurde für den flexiblen Einsatz im Außenbereich ohne feste Infrastruktur entwickelt. Eine oder zwei Personen montieren die Module innerhalb weniger Minuten an verschiedenen Konstruktionen wie Laternenmasten, Bühnen, Bäumen, Ständen oder Dekorationen und konfigurieren sie individuell. Für den Dauerbetrieb genügt ein normaler Schuko-Stromanschluss. NIKOS arbeitet über ein vorhandenes digitales Funknetz."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wo entstehen Kostenvorteile beim Einsatz von NIKOS?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Mit NIKOS können je nach Anwendung verschiedene Funktionen über eine einzige Kommunikationsplattform realisiert werden. Durch diese Einsparungen können sich die Miet- und Installationskosten von NIKOS schnell amortisieren. Einige konkrete Beispiele für Einsparungen finden Sie hier. Für die Besuchersicherheit und andere sicherheitsrelevante Koordinationsaufgaben sind keine separaten Lautsprecher-, Steuerungs- und Kommunikationslösungen mehr erforderlich. Dadurch verringern sich der Materialbedarf, der Verkabelungsaufwand und die Stolpergefahr durch Kabelbrücken. Bei temporären Veranstaltungen sinken dadurch die Kosten für Planung, Aufbau und Betrieb der Sicherheitstechnik erheblich."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/de/lp/besuchersicherheit-sail-veranstaltung/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Erfüllt NIKOS bei Durchsagen die geltenden Normen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS ist normkonform: Das System erfüllt die DIN EN 50849 für elektroakustische Notfallwarnsysteme. Entwickelt wurde NIKOS gezielt für sicherheitsrelevante Durchsagen und Alarmierungen — einsetzbar sowohl im Alltagsbetrieb als auch im Notfall. Bei ELA-Anlagen bildet die DIN EN 50849 den entscheidenden Bezugsrahmen. Anders als mobilfunkbasierte Systeme erfüllt NIKOS diese Anforderungen vollständig, weil es unabhängig von einem externen Netz arbeitet und dadurch jederzeit sofort einsatzbereit ist. Für NIKOS nicht einschlägig sind dagegen andere sicherheitstechnische Normen wie DIN EN 54, DIN VDE 0833-4 und DIN 14675 (Sprachalarmierungsanlagen), da sie ein anderes Einsatzgebiet und einen anderen Funktionsumfang betreffen. Als Durchsagesystem für temporäre und mobile Einsätze ist NIKOS seit 2017 bereits vielfach erfolgreich für einsatzkritische Kommunikationsaufgaben im Einsatz gewesen. Die Bewertung und Abnahme durch die zuständige Stelle erfolgt projektspezifisch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bleibt NIKOS bei einem Stromausfall oder einer Überlastung der Mobilfunknetze funktionsfähig?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS arbeitet über ein eigenes, autonomes Funknetz und vollständig unabhängig von öffentlichen Kommunikationsnetzen und deren Verfügbarkeit. Da NIKOS drahtlos kommuniziert, stellt sich die Verbindung nach einer Unterbrechung selbstständig wieder her. NIKOS [audio]² verfügt über einen internen Akku mit einer Laufzeit von bis zu 16 Stunden und versorgt damit auch angeschlossene Zubehörmodule. So bleibt die Besuchersicherheit für Sail Amsterdam 2030 auch bei Stromausfällen oder Störungen in öffentlichen Kommunikationsnetzen zuverlässig gewährleistet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann NIKOS kurzfristig entlang der Kais eingesetzt werden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. NIKOS wurde für den flexiblen Einsatz im Außenbereich ohne feste Infrastruktur entwickelt. Eine oder zwei Personen montieren die Module innerhalb weniger Minuten an verschiedenen Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen und konfigurieren sie individuell. Für den Dauerbetrieb genügt ein normaler Schuko-Stromanschluss. NIKOS arbeitet über ein vorhandenes digitales Funknetz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wo entstehen Kostenvorteile beim Einsatz von NIKOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mit NIKOS können je nach Anwendung verschiedene Funktionen über eine einzige Kommunikationsplattform realisiert werden. Durch diese Einsparungen können sich die Miet- und Installationskosten von NIKOS schnell amortisieren. Einige konkrete Beispiele für Einsparungen finden Sie hier. NIKOS reduziert vor allem den Aufwand für separate Lautsprecher-, Steuer- und Kommunikationslösungen. Materialbedarf und Verkabelungsaufwand werden geringer, Informations- und Notfalldurchsagen lassen sich von einer Stelle aus machen. Bei temporären Veranstaltungen sinken dadurch die Kosten für Planung, Aufbau und Betrieb der Sicherheitstechnik erheblich."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Besuchersicherheit für Sail Amsterdam 2030: Wo kann man NIKOS mieten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Zur Partnerauswahl und Mietanfrage</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Amsterdam"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Amsterdam"
-  }
+  ]
 }
 </script>
 
@@ -238,6 +317,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS ist kein klassisches PA-System, sondern ein funkbasiertes Durchsage-, Alarmierungs- und Steuerungssystem für Großveranstaltungen, Baustellen und Krisenlagen, das Sie tageweise über zertifizierte Partner mieten und in Ihre PA integrieren oder eigenständig einsetzen können.</p>
     <span class="nk-label">Herausforderung</span>
     <h2 class="heading-l" style="margin-top:12px;">Besucher gezielt und schnell informieren</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Während Sail Amsterdam 2030 stellen große Besucherströme an den Kais, Umgebungslärm und internationale Besucher hohe Anforderungen an die Besuchersicherheit. Warnungen und Verhaltensanweisungen müssen bei dichtem Gedränge alle Beteiligten klar und rechtzeitig erreichen. Die hohe Besucherdichte überlastet Mobilfunknetze schnell, sodass die mobile Kommunikation in einer Krisensituation nicht zuverlässig verfügbar ist.</p>
@@ -271,11 +351,15 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Kann NIKOS kurzfristig entlang der Kais eingesetzt werden?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde für den flexiblen Einsatz im Außenbereich ohne feste Infrastruktur entwickelt. Eine oder zwei Personen montieren die Module innerhalb weniger Minuten an verschiedenen Konstruktionen wie Laternenmasten, Bühnen, Bäumen, Ständen oder Dekorationen und konfigurieren sie individuell. Für den Dauerbetrieb genügt ein normaler Schuko-Stromanschluss. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> arbeitet über ein vorhandenes digitales Funknetz.</div>
+        <div class="faq-item__body">Ja. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wurde für den flexiblen Einsatz im Außenbereich ohne feste Infrastruktur entwickelt. Eine oder zwei Personen montieren die Module innerhalb weniger Minuten an verschiedenen Konstruktionen wie Laternen, Bühnen, Buden oder Bäumen und konfigurieren sie individuell. Für den Dauerbetrieb genügt ein normaler Schuko-Stromanschluss. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> arbeitet über ein vorhandenes digitales Funknetz.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Wo entstehen Kostenvorteile beim Einsatz von NIKOS?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Mit <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> können je nach Anwendung verschiedene Funktionen über eine einzige Kommunikationsplattform realisiert werden. Durch diese Einsparungen können sich die Miet- und Installationskosten von <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> schnell amortisieren. Einige konkrete Beispiele für Einsparungen finden Sie hier. Für die Besuchersicherheit und andere sicherheitsrelevante Koordinationsaufgaben sind keine separaten Lautsprecher-, Steuerungs- und Kommunikationslösungen mehr erforderlich. Dadurch verringern sich der Materialbedarf, der Verkabelungsaufwand und die Stolpergefahr durch Kabelbrücken. Bei temporären Veranstaltungen sinken dadurch die Kosten für Planung, Aufbau und Betrieb der Sicherheitstechnik erheblich.</div>
+        <div class="faq-item__body">Mit <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> können je nach Anwendung verschiedene Funktionen über eine einzige Kommunikationsplattform realisiert werden. Durch diese Einsparungen können sich die Miet- und Installationskosten von <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> schnell amortisieren. Einige konkrete Beispiele für Einsparungen finden Sie hier. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> reduziert vor allem den Aufwand für separate Lautsprecher-, Steuer- und Kommunikationslösungen. Materialbedarf und Verkabelungsaufwand werden geringer, Informations- und Notfalldurchsagen lassen sich von einer Stelle aus machen. Bei temporären Veranstaltungen sinken dadurch die Kosten für Planung, Aufbau und Betrieb der Sicherheitstechnik erheblich.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Besuchersicherheit für Sail Amsterdam 2030: Wo kann man <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> mieten?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> wird tageweise über zertifizierte Partner vermietet, inklusive Beratung, Einweisung und technischem Support. Ihr regionaler Partner stimmt den Einsatz mit Ihnen ab. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Zur Partnerauswahl und Mietanfrage</a></div>
       </details>
     </div>
   </div>
