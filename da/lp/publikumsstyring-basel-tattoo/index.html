@@ -33,45 +33,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Overholder NIKOS de gældende standarder for meddelelser?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS er standardkonform: systemet opfylder DIN EN 50849 for elektroakustiske nødvarslingssystemer. NIKOS er udviklet specifikt til sikkerhedskritiske meddelelser og alarmering — anvendelig både i daglig drift og i en nødsituation. Ved ELA-anlæg udgør DIN EN 50849 den afgørende referenceramme. I modsætning til mobilnetbaserede systemer opfylder NIKOS disse krav fuldt ud, fordi det fungerer uafhængigt af et eksternt net og derfor til enhver tid er øjeblikkeligt klar til brug. Andre sikkerhedstekniske standarder såsom DIN EN 54, DIN VDE 0833-4 og DIN 14675 (talevarslingsanlæg) er derimod ikke relevante for NIKOS, da de vedrører et andet anvendelsesområde og funktionsomfang. Som det markedsførende meddelelsessystem til midlertidige og mobile anvendelser er NIKOS allerede blevet anvendt med succes mange gange til indsatskritiske kommunikationsopgaver siden 2017. RADACOM og din regionale NIKOS-partner rådgiver dig gerne om NIKOS' mange funktioner og hjælper dig med at realisere kravene omkostningseffektivt."
+      "@type": "Organization",
+      "@id": "https://nikos.info/#organization",
+      "name": "RADACOM GmbH",
+      "url": "https://nikos.info",
+      "logo": "https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-2941-750330",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "German",
+          "English"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rigaer Str. 3",
+        "addressLocality": "Lippstadt",
+        "postalCode": "59557",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://radacom.de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nikos.info/da/lp/publikumsstyring-basel-tattoo/#service",
+      "name": "Crowd management ved Basel Tattoo",
+      "description": "Ved Basel Tattoo er crowd management en særlig udfordring på grund af trængsel, støjende omgivelser og internationale besøgende.",
+      "url": "https://nikos.info/da/lp/publikumsstyring-basel-tattoo/",
+      "serviceType": "Rental of radio-based public address, alarm and control systems",
+      "provider": {
+        "@id": "https://nikos.info/#organization"
+      },
+      "inLanguage": "da",
+      "termsOfService": "https://nikos.info/en/rental-terms/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Basel"
       }
     },
     {
-      "@type": "Question",
-      "name": "Er NIKOS krisesikkert?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS fungerer via sit eget, autonome radionet og er fuldstændig uafhængigt af offentlige kommunikationsnet og deres tilgængelighed. På den måde er systemet meget modstandsdygtigt over for ydre påvirkninger. Da NIKOS ikke er afhængigt af kabelforbindelser, men kommunikerer via radio, genetableres forbindelsen automatisk efter en afbrydelse. NIKOS reagerer dermed langt mere robust på driftsforstyrrelser end mange andre systemer og dokumenterer dette kommunikationssystems kriseegnethed. NIKOS [audio]² har et internt batteri med op til 16 timers driftstid og forsyner også tilsluttede tilbehørsmoduler. Selv hvis mobilnettet er overbelastet, internetudbyderen er blevet hacket, eller nogen har trukket det forkerte stik ud, fortsætter NIKOS med at fungere. På den måde forbliver crowd management ved Basel Tattoo pålideligt funktionsdygtigt, også hvis strømforsyningen svigter, eller der opstår forstyrrelser i de offentlige kommunikationsnet."
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Forside",
+          "item": "https://nikos.info/da/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alle anvendelseseksempler",
+          "item": "https://nikos.info/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Crowd management ved Basel Tattoo",
+          "item": "https://nikos.info/da/lp/publikumsstyring-basel-tattoo/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Kan NIKOS anvendes hurtigt og fleksibelt?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, NIKOS er specifikt udviklet til fleksible udendørsanvendelser uden fast infrastruktur. Modulerne kan monteres af én til to personer på forskellige konstruktioner som lygtepæle, scener, træer, boder eller dekorationer på få minutter og konfigureres individuelt. En almindelig Schuko-strømtilslutning er tilstrækkelig til kontinuerlig drift. NIKOS benytter et eksisterende digitalt radionetværk."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Hvor opstår der økonomiske fordele ved brug af NIKOS?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Med NIKOS kan forskellige funktioner implementeres via én samlet kommunikationsplatform, afhængigt af anvendelsen. Leje- og installationsomkostningerne for NIKOS kan hurtigt opvejes af disse besparelser. Her finder du nogle konkrete eksempler på besparelser. Ved konsekvent udnyttelse af de mange funktioner opnås der ud over et højere sikkerhedsniveau og en lettelse af medarbejdernes arbejde ofte endda besparelser på det samlede budget. Til crowd management og andre sikkerhedsrelevante koordineringsopgaver er der derfor IKKE længere behov for separate løsninger til højttalere, styring og kommunikation – NIKOS samler medarbejderalarmering, besøgsinformation og systemstyring på én platform. Det reducerer behovet for materialer, kabelføringsarbejdet og risikoen for at snuble over kabelbroer. Derudover kan NIKOS målrettet erstatte personale: Opgaver, som ellers ville kræve flere ordens-, melde- eller betjeningsposter fordelt på området, udføres via centrale meddelelser, fjernstyring og statusovervågning fra ét sted – dermed kan der spares personale, eller personalet kan indsættes mere effektivt på sikkerhedskritiske steder. På den måde opvejes leje- og installationsomkostningerne af besparelser på personale og anden teknik. Især ved midlertidige, tidsbegrænsede arrangementer reduceres omkostningerne til planlægning, opbygning og drift af sikkerhedsteknikken dermed betydeligt."
+      "@type": "FAQPage",
+      "@id": "https://nikos.info/da/lp/publikumsstyring-basel-tattoo/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Overholder NIKOS de gældende standarder for meddelelser?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS er standardkonform: systemet opfylder DIN EN 50849 for elektroakustiske nødvarslingssystemer. NIKOS er udviklet specifikt til sikkerhedskritiske meddelelser og alarmering — anvendelig både i daglig drift og i en nødsituation. Ved ELA-anlæg udgør DIN EN 50849 den afgørende referenceramme. I modsætning til mobilnetbaserede systemer opfylder NIKOS disse krav fuldt ud, fordi det fungerer uafhængigt af et eksternt net og derfor til enhver tid er øjeblikkeligt klar til brug. Andre sikkerhedstekniske standarder såsom DIN EN 54, DIN VDE 0833-4 og DIN 14675 (talevarslingsanlæg) er derimod ikke relevante for NIKOS, da de vedrører et andet anvendelsesområde og funktionsomfang. Som det markedsførende meddelelsessystem til midlertidige og mobile anvendelser er NIKOS allerede blevet anvendt med succes mange gange til indsatskritiske kommunikationsopgaver siden 2017. RADACOM og din regionale NIKOS-partner rådgiver dig gerne om NIKOS' mange funktioner og hjælper dig med at realisere kravene omkostningseffektivt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Er NIKOS krisesikkert?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS fungerer via sit eget, autonome radionet og er fuldstændig uafhængigt af offentlige kommunikationsnet og deres tilgængelighed. På den måde er systemet meget modstandsdygtigt over for ydre påvirkninger. Da NIKOS ikke er afhængigt af kabelforbindelser, men kommunikerer via radio, genetableres forbindelsen automatisk efter en afbrydelse. NIKOS reagerer dermed langt mere robust på driftsforstyrrelser end mange andre systemer og dokumenterer dette kommunikationssystems kriseegnethed. NIKOS [audio]² har et internt batteri med op til 16 timers driftstid og forsyner også tilsluttede tilbehørsmoduler. Selv hvis mobilnettet er overbelastet, internetudbyderen er blevet hacket, eller nogen har trukket det forkerte stik ud, fortsætter NIKOS med at fungere. På den måde forbliver crowd management ved Basel Tattoo pålideligt funktionsdygtigt, også hvis strømforsyningen svigter, eller der opstår forstyrrelser i de offentlige kommunikationsnet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan NIKOS anvendes hurtigt og fleksibelt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, NIKOS er specifikt udviklet til fleksible udendørsanvendelser uden fast infrastruktur. Modulerne kan monteres af én til to personer på forskellige konstruktioner som lygtepæle, scener, boder eller træer på få minutter og konfigureres individuelt. En almindelig Schuko-strømtilslutning er tilstrækkelig til kontinuerlig drift. NIKOS benytter et eksisterende digitalt radionetværk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hvor opstår der økonomiske fordele ved brug af NIKOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Med NIKOS kan forskellige funktioner implementeres via én samlet kommunikationsplatform, afhængigt af anvendelsen. Leje- og installationsomkostningerne for NIKOS kan hurtigt opvejes af disse besparelser. Her finder du nogle konkrete eksempler på besparelser. Ved konsekvent udnyttelse af de mange funktioner opnås der ud over et højere sikkerhedsniveau og en lettelse af medarbejdernes arbejde ofte endda besparelser på det samlede budget. NIKOS reducerer først og fremmest indsatsen til separate løsninger til højttalere, styring og kommunikation. Materialebehovet og kabelarbejdet bliver mindre, og informations- og nødudsagn kan foretages fra ét sted. Derudover kan NIKOS målrettet erstatte personale: Opgaver, som ellers ville kræve flere ordens-, melde- eller betjeningsposter fordelt på området, udføres via centrale meddelelser, fjernstyring og statusovervågning fra ét sted – dermed kan der spares personale, eller personalet kan indsættes mere effektivt på sikkerhedskritiske steder. På den måde opvejes leje- og installationsomkostningerne af besparelser på personale og anden teknik. Især ved midlertidige, tidsbegrænsede arrangementer reduceres omkostningerne til planlægning, opbygning og drift af sikkerhedsteknikken dermed betydeligt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Crowd management ved Basel Tattoo: Hvor kan NIKOS lejes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIKOS udlejes pr. dag via certificerede partnere, inklusive rådgivning, instruktion og teknisk support. Jeres regionale partner afstemmer indsatsen med jer. <a href=\"https://nikos.info/de/vermietung/#partnerauswahl\">Find en partner og forespørg om leje</a>"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Place",
+        "name": "Basel"
       }
     }
-  ],
-  "about": {
-    "@type": "Place",
-    "name": "Basel"
-  }
+  ]
 }
 </script>
 
@@ -237,6 +316,7 @@ a{color:inherit}
 
 <section class="intro-s2">
   <div class="intro-s2__inner">
+    <p class="body-l lp-lead" style="max-width:860px;margin:0 0 32px;padding-left:18px;border-left:4px solid var(--orange);font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.5;color:var(--dark);">NIKOS er ikke et klassisk PA-system, men et radiobaseret system til højttalermeddelelser, alarmering og styring ved store arrangementer, byggepladser og krisesituationer, som kan lejes pr. dag via certificerede partnere og enten integreres i jeres PA-anlæg eller bruges selvstændigt.</p>
     <span class="nk-label">Udfordring</span>
     <h2 class="heading-l" style="margin-top:12px;">Styr besøgende sikkert med et tryk på en knap</h2>
     <p class="body-l" style="margin-top:14px;max-width:860px;color:var(--mid);">Ved Basel Tattoo er crowd management en særlig udfordring på grund af trængsel, støjende omgivelser og internationale besøgende. I en faresituation skal advarsler og handlingsanvisninger nå tydeligt frem til enkelte områder eller hele arrangementsområdet. Den høje besøgstæthed belaster desuden mobilnettet og gør pålidelig kommunikation vanskeligere.</p>
@@ -270,11 +350,15 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Kan NIKOS anvendes hurtigt og fleksibelt?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Ja, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> er specifikt udviklet til fleksible udendørsanvendelser uden fast infrastruktur. Modulerne kan monteres af én til to personer på forskellige konstruktioner som lygtepæle, scener, træer, boder eller dekorationer på få minutter og konfigureres individuelt. En almindelig Schuko-strømtilslutning er tilstrækkelig til kontinuerlig drift. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> benytter et eksisterende digitalt radionetværk.</div>
+        <div class="faq-item__body">Ja, <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> er specifikt udviklet til fleksible udendørsanvendelser uden fast infrastruktur. Modulerne kan monteres af én til to personer på forskellige konstruktioner som lygtepæle, scener, boder eller træer på få minutter og konfigureres individuelt. En almindelig Schuko-strømtilslutning er tilstrækkelig til kontinuerlig drift. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> benytter et eksisterende digitalt radionetværk.</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Hvor opstår der økonomiske fordele ved brug af NIKOS?</span><span class="faq-icon">+</span></summary>
-        <div class="faq-item__body">Med <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> kan forskellige funktioner implementeres via én samlet kommunikationsplatform, afhængigt af anvendelsen. Leje- og installationsomkostningerne for <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> kan hurtigt opvejes af disse besparelser. Her finder du nogle konkrete eksempler på besparelser. Ved konsekvent udnyttelse af de mange funktioner opnås der ud over et højere sikkerhedsniveau og en lettelse af medarbejdernes arbejde ofte endda besparelser på det samlede budget. Til crowd management og andre sikkerhedsrelevante koordineringsopgaver er der derfor IKKE længere behov for separate løsninger til højttalere, styring og kommunikation – <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> samler medarbejderalarmering, besøgsinformation og systemstyring på én platform. Det reducerer behovet for materialer, kabelføringsarbejdet og risikoen for at snuble over kabelbroer. Derudover kan <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> målrettet erstatte personale: Opgaver, som ellers ville kræve flere ordens-, melde- eller betjeningsposter fordelt på området, udføres via centrale meddelelser, fjernstyring og statusovervågning fra ét sted – dermed kan der spares personale, eller personalet kan indsættes mere effektivt på sikkerhedskritiske steder. På den måde opvejes leje- og installationsomkostningerne af besparelser på personale og anden teknik. Især ved midlertidige, tidsbegrænsede arrangementer reduceres omkostningerne til planlægning, opbygning og drift af sikkerhedsteknikken dermed betydeligt.</div>
+        <div class="faq-item__body">Med <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> kan forskellige funktioner implementeres via én samlet kommunikationsplatform, afhængigt af anvendelsen. Leje- og installationsomkostningerne for <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> kan hurtigt opvejes af disse besparelser. Her finder du nogle konkrete eksempler på besparelser. Ved konsekvent udnyttelse af de mange funktioner opnås der ud over et højere sikkerhedsniveau og en lettelse af medarbejdernes arbejde ofte endda besparelser på det samlede budget. <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> reducerer først og fremmest indsatsen til separate løsninger til højttalere, styring og kommunikation. Materialebehovet og kabelarbejdet bliver mindre, og informations- og nødudsagn kan foretages fra ét sted. Derudover kan <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> målrettet erstatte personale: Opgaver, som ellers ville kræve flere ordens-, melde- eller betjeningsposter fordelt på området, udføres via centrale meddelelser, fjernstyring og statusovervågning fra ét sted – dermed kan der spares personale, eller personalet kan indsættes mere effektivt på sikkerhedskritiske steder. På den måde opvejes leje- og installationsomkostningerne af besparelser på personale og anden teknik. Især ved midlertidige, tidsbegrænsede arrangementer reduceres omkostningerne til planlægning, opbygning og drift af sikkerhedsteknikken dermed betydeligt.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Crowd management ved Basel Tattoo: Hvor kan <a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> lejes?</span><span class="faq-icon">+</span></summary>
+        <div class="faq-item__body"><a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a> udlejes pr. dag via certificerede partnere, inklusive rådgivning, instruktion og teknisk support. Jeres regionale partner afstemmer indsatsen med jer. <a href="https://nikos.info/de/vermietung/#partnerauswahl">Find en partner og forespørg om leje</a></div>
       </details>
     </div>
   </div>
