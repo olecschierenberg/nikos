@@ -174,6 +174,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
 .datenblatt-item__desc{font-size:12px;color:var(--light);margin-top:2px}
 .datenblatt-item__dl{color:var(--orange);font-size:18px;text-decoration:none;flex-shrink:0;transition:transform .15s}
 .datenblatt-item__dl:hover{transform:translateY(2px)}
+.datenblatt-item--static{cursor:default}.datenblatt-item--static:hover{transform:none;box-shadow:none;border-color:var(--border)}.datenblatt-item--static:hover::after{transform:scaleX(0)}
 
 /* Partner login section */
 .login-teaser{background:var(--card-dark);border:1px solid var(--card-dark);border-radius:var(--r);padding:56px 48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
@@ -581,15 +582,15 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           
         </div>
       </a>
-      <a class="datenblatt-item" href="assets/datenblaetter/NIKOS-alarm.pdf" download aria-label="Datenblatt herunterladen">
+      <div class="datenblatt-item datenblatt-item--static">
         <div class="datenblatt-item__info">
-          <div class="datenblatt-item__label" data-de>Datenblatt</div>
+          <div class="datenblatt-item__label" data-de>Prototyp</div>
           
           <div class="datenblatt-item__modul">NIKOS [alarm]²</div>
           <div class="datenblatt-item__desc" data-de>Notfall-/Alarm-Schalter für Notrufsäulen und Hilferuf</div>
           
         </div>
-      </a>
+      </div>
       <a class="datenblatt-item" href="assets/datenblaetter/NIKOS-LED.pdf" download aria-label="Datenblatt herunterladen">
         <div class="datenblatt-item__info">
           <div class="datenblatt-item__label" data-de>Datenblatt</div>
@@ -599,15 +600,15 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
           
         </div>
       </a>
-      <a class="datenblatt-item" href="assets/datenblaetter/NIKOS-order.pdf" download aria-label="Datenblatt herunterladen">
+      <div class="datenblatt-item datenblatt-item--static">
         <div class="datenblatt-item__info">
-          <div class="datenblatt-item__label" data-de>Datenblatt</div>
+          <div class="datenblatt-item__label" data-de>Prototyp</div>
           
           <div class="datenblatt-item__modul">NIKOS [order]²</div>
           <div class="datenblatt-item__desc" data-de>Optische Befehlsanzeige mit Rückmeldeschalter und Statusanzeige</div>
           
         </div>
-      </a>
+      </div>
     </div>
   </div>
   <div class="section__inner" style="margin-top:8px;">
