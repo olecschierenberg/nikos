@@ -502,5 +502,12 @@
     "einsatz": "Basel Tattoo",
     "problem": "Evakuierungsansage",
     "mangel": "Ortsdoppelung bei „Basel Tattoo in Basel“ entfernt | Weichmacher in USP und FAQ3 durch klare Aussagen ersetzt"
+  },
+  {
+    "datum": "22.10.2026",
+    "region": "mieten",
+    "einsatz": "Open-Air-Festival",
+    "problem": "Durchsageanlage",
+    "mangel": "Unzulässige Produkt- und Lösungsaussage im Intro entfernt | Ungültiges Modul NIKOS [flash]² durch NIKOS [LED]² ersetzt | Weichmacher „unter Umständen“ entfernt | Redundanz zwischen USP und FAQ reduziert"
   }
 ]
