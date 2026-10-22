@@ -509,5 +509,12 @@
     "einsatz": "Open-Air-Festival",
     "problem": "Durchsageanlage",
     "mangel": "Unzulässige Produkt- und Lösungsaussage im Intro entfernt | Ungültiges Modul NIKOS [flash]² durch NIKOS [LED]² ersetzt | Weichmacher „unter Umständen“ entfernt | Redundanz zwischen USP und FAQ reduziert"
+  },
+  {
+    "datum": "22.10.2026",
+    "region": "Schleswig-Holstein",
+    "einsatz": "Open-Air-Veranstaltung",
+    "problem": "Durchsageanlage",
+    "mangel": "Weichmacher „unter Umständen“ in FAQ2 entfernt und die Aussage eindeutig formuliert. | Lösungs- und Mietaussage aus dem Intro entfernt, da das Intro ausschließlich die Herausforderung beschreiben soll."
   }
 ]
