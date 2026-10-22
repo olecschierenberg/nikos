@@ -1,0 +1,1 @@
+- 2026-10-22: Deutsche Reste auf EN-Seiten uebersetzt (alt, aria-label "Open menu", title "NIKOS – Home", Platzhalter, JSON-LD in products/applications/references/system/city-festival/transmission-comparison/index). 49 Dateien in site/en/, Backup site/backups/en-german-fix_20261022/. Eigennamen (Turmwächter Deutschland, Festivalnamen) bewusst unveraendert.
