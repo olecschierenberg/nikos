@@ -523,5 +523,12 @@
     "einsatz": "Veranstaltung",
     "problem": "Durchsageanlage",
     "mangel": "Intro enthielt entgegen der Vorgabe bereits Lösungs- und Produktinformationen. | Weichmacher „unter Umständen“ entfernt und durch eine klare Aussage ersetzt. | Redundante Formulierung „in mieten mieten“ im FAQ-Fragetext korrigiert."
+  },
+  {
+    "datum": "23.10.2026",
+    "region": "mieten",
+    "einsatz": "Event",
+    "problem": "Notfalldurchsage",
+    "mangel": "Intro enthielt entgegen den Vorgaben bereits eine NIKOS-Lösung und Funktionsaussagen. | Weichmacher „unter Umständen“ entfernt. | Headline an den erforderlichen Plural bei unbekanntem Ortsbezug angepasst. | Doppelte Formulierung „mieten mieten“ in der FAQ-Frage sprachlich korrigiert."
   }
 ]
