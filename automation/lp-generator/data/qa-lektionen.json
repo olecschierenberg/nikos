@@ -530,5 +530,12 @@
     "einsatz": "Event",
     "problem": "Notfalldurchsage",
     "mangel": "Intro enthielt entgegen den Vorgaben bereits eine NIKOS-Lösung und Funktionsaussagen. | Weichmacher „unter Umständen“ entfernt. | Headline an den erforderlichen Plural bei unbekanntem Ortsbezug angepasst. | Doppelte Formulierung „mieten mieten“ in der FAQ-Frage sprachlich korrigiert."
+  },
+  {
+    "datum": "23.10.2026",
+    "region": "mieten",
+    "einsatz": "Baustelle",
+    "problem": "Notfallwarnsystem",
+    "mangel": "Intro enthielt unzulässige Produkt- und Lösungsbeschreibung statt ausschließlich der Herausforderung. | Weichmacher „unter Umständen“ entfernt. | Baustellenfremde Montageszenarien in der Installations-FAQ durch geeignete Konstruktionen auf der Baustelle ersetzt. | Numerus bei „Baustelle“ an unbekannte Region angepasst: Plural ohne Artikel."
   }
 ]
