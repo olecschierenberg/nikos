@@ -537,5 +537,12 @@
     "einsatz": "Baustelle",
     "problem": "Notfallwarnsystem",
     "mangel": "Intro enthielt unzulässige Produkt- und Lösungsbeschreibung statt ausschließlich der Herausforderung. | Weichmacher „unter Umständen“ entfernt. | Baustellenfremde Montageszenarien in der Installations-FAQ durch geeignete Konstruktionen auf der Baustelle ersetzt. | Numerus bei „Baustelle“ an unbekannte Region angepasst: Plural ohne Artikel."
+  },
+  {
+    "datum": "24.10.2026",
+    "region": "Düsseldorf",
+    "einsatz": "40. Deutscher Evangelischer Kirchentag 2027",
+    "problem": "Räumungsdurchsage",
+    "mangel": "Intro enthielt entgegen der Vorgabe eine Lösungs- und Mietaussage statt ausschließlich der Herausforderung. | Weichmacher in der Aussage zur Nutzung eines digitalen Funknetzes entfernt und in eine klare Formulierung umgeschrieben."
   }
 ]
