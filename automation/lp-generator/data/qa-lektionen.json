@@ -586,5 +586,12 @@
     "einsatz": "Basel Tattoo",
     "problem": "Notfallwarnsystem",
     "mangel": "Ungültige Modulbezeichnung NIKOS [flash]² entfernt. | Lösungs- und Mietaussage aus dem Intro entfernt, da das Intro ausschließlich die Herausforderung beschreiben soll."
+  },
+  {
+    "datum": "26.10.2026",
+    "region": "Glastonbury",
+    "einsatz": "Glastonbury Festival",
+    "problem": "Notfallwarnsystem",
+    "mangel": "Weichmacher wie \"can\" in Intro und FAQs in klare Aussagen umformuliert"
   }
 ]
