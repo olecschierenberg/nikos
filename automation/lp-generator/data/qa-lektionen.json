@@ -579,5 +579,12 @@
     "einsatz": "Hessentag 2027",
     "problem": "Besuchersicherheit",
     "mangel": "Unzulässige Modulbezeichnung NIKOS [flash]² durch NIKOS [LED]² ersetzt. | Weichmacher „unter Umständen“ entfernt und die Aussage zum Funknetz eindeutig formuliert. | Lösungsaussage aus dem Intro entfernt, da das Intro ausschließlich die Herausforderung beschreiben darf. | Nicht belegte Aussage zur Nutzung eines vorhandenen digitalen Funknetzes entfernt."
+  },
+  {
+    "datum": "26.10.2026",
+    "region": "Basel",
+    "einsatz": "Basel Tattoo",
+    "problem": "Notfallwarnsystem",
+    "mangel": "Ungültige Modulbezeichnung NIKOS [flash]² entfernt. | Lösungs- und Mietaussage aus dem Intro entfernt, da das Intro ausschließlich die Herausforderung beschreiben soll."
   }
 ]
