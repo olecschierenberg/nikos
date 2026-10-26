@@ -572,5 +572,12 @@
     "einsatz": "EXPO 2027 Belgrade",
     "problem": "Notfalldurchsage",
     "mangel": "Intro enthielt entgegen der Vorgabe Lösungs- und Funktionsaussagen statt ausschließlich der Herausforderung. | FAQ3 enthielt mit „unter Umständen“ einen verbotenen Weichmacher."
+  },
+  {
+    "datum": "26.10.2026",
+    "region": "Idstein",
+    "einsatz": "Hessentag 2027",
+    "problem": "Besuchersicherheit",
+    "mangel": "Unzulässige Modulbezeichnung NIKOS [flash]² durch NIKOS [LED]² ersetzt. | Weichmacher „unter Umständen“ entfernt und die Aussage zum Funknetz eindeutig formuliert. | Lösungsaussage aus dem Intro entfernt, da das Intro ausschließlich die Herausforderung beschreiben darf. | Nicht belegte Aussage zur Nutzung eines vorhandenen digitalen Funknetzes entfernt."
   }
 ]
