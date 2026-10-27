@@ -600,5 +600,12 @@
     "einsatz": "Sachsen-Anhalt-Tag 2028",
     "problem": "Räumungsdurchsage",
     "mangel": "Lösungs- und Produktinformationen aus dem Intro entfernt, da das Intro ausschließlich die Herausforderung beschreiben darf. | Weichmacher „möglichen“ und „unter Umständen“ entfernt beziehungsweise durch klare Aussagen ersetzt."
+  },
+  {
+    "datum": "27.10.2026",
+    "region": "Idstein",
+    "einsatz": "Hessentag 2027",
+    "problem": "Räumungsdurchsage",
+    "mangel": "Lösungsaussagen aus dem Intro entfernt, da das Intro ausschließlich die Herausforderung beschreiben darf. | Weichmacher „unter Umständen“ in der Installations-FAQ entfernt."
   }
 ]
