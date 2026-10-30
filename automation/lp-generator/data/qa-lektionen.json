@@ -642,5 +642,12 @@
     "einsatz": "World Triathlon Championship Finals 2027",
     "problem": "Unwetterwarnung",
     "mangel": "Lösungsaussage und Mietinformation aus dem Intro entfernt, da das Intro ausschließlich die Herausforderung beschreiben darf. | Weichmacher „unter Umständen“ in FAQ 3 entfernt."
+  },
+  {
+    "datum": "30.10.2026",
+    "region": "Bourges",
+    "einsatz": "European Capital of Culture 2028",
+    "problem": "Besucherlenkung",
+    "mangel": "Intro enthielt entgegen den Vorgaben bereits Lösungs- und Systemaussagen statt ausschließlich der Herausforderung."
   }
 ]
