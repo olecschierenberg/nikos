@@ -663,5 +663,12 @@
     "einsatz": "Openair Frauenfeld",
     "problem": "Unwetterwarnung",
     "mangel": "Intro enthielt entgegen den Vorgaben bereits eine NIKOS-Lösung und Funktionsbeschreibung."
+  },
+  {
+    "datum": "31.10.2026",
+    "region": "Bourges",
+    "einsatz": "European Capital of Culture 2028",
+    "problem": "Veranstaltungssicherheit",
+    "mangel": "Die Intros enthielten jeweils eine Lösungs- und Mietaussage statt ausschließlich der Herausforderung. | Die Aussagen zur möglichen Netzüberlastung wurden als definitive Aussagen formuliert. | Die Formulierung zur behördlichen Abnahme wurde präzisiert."
   }
 ]
