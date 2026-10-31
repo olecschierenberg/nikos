@@ -656,5 +656,12 @@
     "einsatz": "EXPO 2027 Belgrade",
     "problem": "Unwetterwarnung",
     "mangel": "Intro enthielt entgegen den Vorgaben Lösungs- und Produktaussagen statt ausschließlich der Herausforderung. | Weichmacher „unter Umständen“ in FAQ 3 entfernt."
+  },
+  {
+    "datum": "31.10.2026",
+    "region": "Frauenfeld",
+    "einsatz": "Openair Frauenfeld",
+    "problem": "Unwetterwarnung",
+    "mangel": "Intro enthielt entgegen den Vorgaben bereits eine NIKOS-Lösung und Funktionsbeschreibung."
   }
 ]
