@@ -670,5 +670,12 @@
     "einsatz": "European Capital of Culture 2028",
     "problem": "Veranstaltungssicherheit",
     "mangel": "Die Intros enthielten jeweils eine Lösungs- und Mietaussage statt ausschließlich der Herausforderung. | Die Aussagen zur möglichen Netzüberlastung wurden als definitive Aussagen formuliert. | Die Formulierung zur behördlichen Abnahme wurde präzisiert."
+  },
+  {
+    "datum": "31.10.2026",
+    "region": "Budapest",
+    "einsatz": "Sziget Festival",
+    "problem": "Besucherinformation",
+    "mangel": "Az intro mindkét nyelven megoldást és NIKOS-funkciót tartalmazott a kizárólagos kihívásleírás helyett; ezt kihívásközpontú szövegre javítottam. | Az installációs FAQ weichmacheres megfogalmazását mindkét nyelven egyértelmű állításra módosítottam."
   }
 ]
