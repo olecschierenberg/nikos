@@ -677,5 +677,12 @@
     "einsatz": "Sziget Festival",
     "problem": "Besucherinformation",
     "mangel": "Az intro mindkét nyelven megoldást és NIKOS-funkciót tartalmazott a kizárólagos kihívásleírás helyett; ezt kihívásközpontú szövegre javítottam. | Az installációs FAQ weichmacheres megfogalmazását mindkét nyelven egyértelmű állításra módosítottam."
+  },
+  {
+    "datum": "01.11.2026",
+    "region": "Aalst",
+    "einsatz": "Aalst Carnaval",
+    "problem": "Crowd Management",
+    "mangel": "Ongeldige moduleschrijfwijze NIKOS [flash]² korrigiert und durch ein neutrales Lichtsignal ersetzt. | Weichmacher in Intro und FAQ zur Netzwerknutzung entfernt bzw. in klare Aussagen umformuliert. | Lösungsbezug aus dem Intro entfernt, da das Intro ausschließlich die Herausforderung beschreiben soll."
   }
 ]
