@@ -691,5 +691,12 @@
     "einsatz": "Freiburg-Marathon",
     "problem": "Crowd Management",
     "mangel": "Lösungsaussage im Intro entfernt, da das Intro ausschließlich die Herausforderung beschreiben darf. | Weichmacher „unter Umständen“ in der Installations-FAQ durch eine klare Aussage ersetzt. | Redundante Aussagen in der Kosten-FAQ gekürzt."
+  },
+  {
+    "datum": "01.11.2026",
+    "region": "Glastonbury",
+    "einsatz": "Glastonbury Festival",
+    "problem": "Crowd Management",
+    "mangel": "Das Intro enthielt unzulässige Lösungs- und Produktbehauptungen statt ausschließlich der Herausforderung."
   }
 ]
