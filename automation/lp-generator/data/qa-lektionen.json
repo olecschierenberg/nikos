@@ -684,5 +684,12 @@
     "einsatz": "Aalst Carnaval",
     "problem": "Crowd Management",
     "mangel": "Ongeldige moduleschrijfwijze NIKOS [flash]² korrigiert und durch ein neutrales Lichtsignal ersetzt. | Weichmacher in Intro und FAQ zur Netzwerknutzung entfernt bzw. in klare Aussagen umformuliert. | Lösungsbezug aus dem Intro entfernt, da das Intro ausschließlich die Herausforderung beschreiben soll."
+  },
+  {
+    "datum": "01.11.2026",
+    "region": "Freiburg",
+    "einsatz": "Freiburg-Marathon",
+    "problem": "Crowd Management",
+    "mangel": "Lösungsaussage im Intro entfernt, da das Intro ausschließlich die Herausforderung beschreiben darf. | Weichmacher „unter Umständen“ in der Installations-FAQ durch eine klare Aussage ersetzt. | Redundante Aussagen in der Kosten-FAQ gekürzt."
   }
 ]
