@@ -142,14 +142,13 @@ async function main() {
   // der Nutzer manuell; danach sortiert das Apps Script "Deploy-Trigger" nach
   // 5 Minuten Pause automatisch nach "Problem" (A→Z). sortByRelevanceDesc() bleibt
   // in lib/sheets.js erhalten, wird aber nicht mehr aufgerufen.
-  // GEAENDERT 2026-11-02: Neu angehaengte Zeilen werden HIER sortiert (Problem A->Z, Relevanz
-  // absteigend, Einsatz, Region). Das Apps Script wird durch API-Appends nicht ausgeloest.
+  // GEAENDERT 2026-11-02: Neu angehaengte Zeilen werden HIER sortiert (erstellt_am aufsteigend, undatierte unten). Das Apps Script wird durch API-Appends nicht ausgeloest.
   // Ohne neue Zeilen bleibt eine manuelle Sortierung des Nutzers unangetastet.
   // Manueller Start (workflow_dispatch) sortiert IMMER, damit sich das Blatt jederzeit per "Run workflow" in Ordnung bringen laesst.
   const SORT_FORCED = process.env.GITHUB_EVENT_NAME === 'workflow_dispatch';
   if (LIVE && (rowsToAppend.length || SORT_FORCED)) {
-    await sheets.sortByProblemRelevanz(SHEET_TAB);
-    log('  Sheet nach neuen Zeilen sortiert (Problem A→Z, Relevanz absteigend, Einsatz, Region).');
+    await sheets.sortByErstelltAm(SHEET_TAB);
+    log('  Sheet sortiert (erstellt_am aufsteigend, Zeilen ohne Datum unten nach Relevanz absteigend).');
   } else {
     log('  Sheet-Sortierung übersprungen (keine neuen Zeilen, kein manueller Start bzw. Test-Modus).');
   }

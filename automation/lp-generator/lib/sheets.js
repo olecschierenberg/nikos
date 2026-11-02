@@ -140,6 +140,50 @@ async function getSheetIdByName(sheetName) {
   return sheet.properties.sheetId;
 }
 
+// NEU 2026-11-02: System-Sortierung des Blatts nach einem Schreibvorgang des Generators.
+// Der Generator traegt erstellt_am per API ein -- das loest im Apps Script keine Sortierung aus,
+// die Zeile bliebe zwischen den undatierten stehen. Reihenfolge (Nutzer-Vorgabe): erstellt_am
+// aufsteigend (Zeilen ohne Datum automatisch unten), dann Relevanz absteigend, Problem, Einsatz,
+// Region. "OrigZeile" (ARRAYFORMULA in der Kopfzelle) wird nie mitsortiert. Muss am ENDE eines
+// Laufs aufgerufen werden: danach stimmen row_number-Werte nicht mehr.
+async function sortKeywordSheet(sheetName) {
+  const sheets = sheetsClient();
+  const headerRes = await sheets.spreadsheets.values.get({ spreadsheetId: SPREADSHEET_ID, range: `${sheetName}!1:1` });
+  const header = (headerRes.data.values || [[]])[0];
+  const idx = (name) => {
+    const i = header.indexOf(name);
+    if (i === -1) throw new Error(`Spalte "${name}" nicht in der Kopfzeile von "${sheetName}" gefunden.`);
+    return i;
+  };
+  const origIdx = header.indexOf('OrigZeile');
+  if (origIdx !== -1 && origIdx !== header.length - 1) {
+    throw new Error('Spalte "OrigZeile" steht nicht am Ende -- Sortierung abgebrochen, um die Formel nicht zu verschieben.');
+  }
+  const endCol = origIdx === -1 ? header.length : origIdx;
+  const sheetId = await getSheetIdByName(sheetName);
+  await sheets.spreadsheets.batchUpdate({
+    spreadsheetId: SPREADSHEET_ID,
+    requestBody: {
+      requests: [
+        { clearBasicFilter: { sheetId } },
+        {
+          sortRange: {
+            range: { sheetId, startRowIndex: 1, startColumnIndex: 0, endColumnIndex: endCol },
+            sortSpecs: [
+              { dimensionIndex: idx('erstellt_am'), sortOrder: 'ASCENDING' },
+              { dimensionIndex: idx('Relevanz'), sortOrder: 'DESCENDING' },
+              { dimensionIndex: idx('Problem'), sortOrder: 'ASCENDING' },
+              { dimensionIndex: idx('Einsatz'), sortOrder: 'ASCENDING' },
+              { dimensionIndex: idx('Region'), sortOrder: 'ASCENDING' },
+            ],
+          },
+        },
+        { setBasicFilter: { filter: { range: { sheetId, startRowIndex: 0, startColumnIndex: 0, endColumnIndex: endCol } } } },
+      ],
+    },
+  });
+}
+
 // Löscht die angegebenen Zeilen (1-basierte row_number, Header = Zeile 1)
 // physisch aus dem Sheet. WICHTIG: sortiert intern absteigend und baut die
 // deleteDimension-Requests in dieser Reihenfolge, damit das Löschen einer
@@ -178,4 +222,4 @@ function columnLetter(index) {
   return s;
 }
 
-module.exports = { readSheetAsItems, updateRowByRowNumber, appendRow, getSheetIdByName, deleteRowsByRowNumbers, SPREADSHEET_ID };
+module.exports = { readSheetAsItems, updateRowByRowNumber, appendRow, getSheetIdByName, deleteRowsByRowNumbers, sortKeywordSheet, SPREADSHEET_ID };

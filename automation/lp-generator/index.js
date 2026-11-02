@@ -573,6 +573,9 @@ async function runMultiLangBranch({ filterItem, primaryFields, primaryLang, rend
       Problem: problem, Einsatz: einsatz, Region: region,
     });
     log(`  Sheet "Keywordkombinationen" aktualisiert (Zeile ${filterItem.json.row_number}), slug="${slugPrimary}".`);
+    // NEU 2026-11-02: Blatt danach einsortieren (erstellt_am aufsteigend). Fehler hier brechen den Lauf NICHT ab.
+    try { await sheets.sortKeywordSheet('Keywordkombinationen'); log('  Sheet sortiert (erstellt_am aufsteigend).'); }
+    catch (e) { log(`  WARNUNG: Sheet-Sortierung fehlgeschlagen: ${e.message}`); }
   } else {
     log(`  TEST-Modus: Sheet-Update uebersprungen (würde Zeile ${filterItem.json.row_number} mit slug="${slugPrimary}" als erledigt markieren).`);
   }
@@ -885,6 +888,9 @@ async function main() {
       Region: seoResult.json.Region,
     });
     log('  Sheet "Keywordkombinationen" aktualisiert (Zeile ' + seoResult.json.row_number + ').');
+    // NEU 2026-11-02: Blatt danach einsortieren (erstellt_am aufsteigend). Fehler hier brechen den Lauf NICHT ab.
+    try { await sheets.sortKeywordSheet('Keywordkombinationen'); log('  Sheet sortiert (erstellt_am aufsteigend).'); }
+    catch (e) { log(`  WARNUNG: Sheet-Sortierung fehlgeschlagen: ${e.message}`); }
   } else {
     log(`  TEST-Modus: Sheet-Update übersprungen (würde Zeile ${seoResult.json.row_number} als erledigt markieren).`);
   }

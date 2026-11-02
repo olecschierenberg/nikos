@@ -199,14 +199,15 @@ async function sortByRelevanceDesc(sheetName) {
 }
 
 // NEU 2026-11-02: Feste System-Sortierung des Blatts, ausgefuehrt direkt im GitHub-Job
-// NACH dem Anhaengen neuer Zeilen. Grund: Per API angehaengte Zeilen loesen im Apps Script
-// weder onEdit noch eine verwertbare onChange-Sortierung aus; der 15-Min-Zeittrigger
-// (periodicSort) existiert nicht mehr -> neue Zeilen blieben unsortiert. Hier gibt es keine
-// Trigger-Abhaengigkeit mehr.
-// Reihenfolge: Problem A->Z, dann Relevanz absteigend, dann Einsatz und Region A->Z
-// (vollstaendig deterministisch, jede Zeile hat genau einen Platz, egal wann sie entstand).
+// NACH dem Anhaengen neuer Zeilen (Nutzer-Vorgabe 02.11.): erstellt_am AUFSTEIGEND (aelteste
+// zuerst), Zeilen OHNE Datum (noch nicht erstellt) stehen automatisch unten, dort nach
+// Relevanz absteigend, dann Problem, Einsatz, Region (deterministisch).
+// Grund fuer die Sortierung im Job: Per API angehaengte Zeilen loesen im Apps Script weder
+// onEdit noch eine Sortierung aus; der 15-Min-Zeittrigger existiert nicht mehr.
+// WICHTIG: Das Apps Script "Deploy-Trigger" muss dieselbe Spalte nutzen (SORT_HEADER = 'erstellt_am'),
+// sonst sortiert es bei jeder Bearbeitung wieder anders.
 // "OrigZeile" (ARRAYFORMULA in der Kopfzelle) wird wie in sortByRelevanceDesc NIE mitsortiert.
-async function sortByProblemRelevanz(sheetName) {
+async function sortByErstelltAm(sheetName) {
   const sheets = sheetsClient();
   const headerRes = await sheets.spreadsheets.values.get({
     spreadsheetId: SPREADSHEET_ID,
@@ -218,6 +219,7 @@ async function sortByProblemRelevanz(sheetName) {
     if (i === -1) throw new Error(`Spalte "${name}" nicht in der Kopfzeile von "${sheetName}" gefunden (Kopfzeile: ${header.join(', ')}).`);
     return i;
   };
+  const datumIdx = idx('erstellt_am');
   const problemIdx = idx('Problem');
   const relevanzIdx = idx('Relevanz');
   const einsatzIdx = idx('Einsatz');
@@ -242,8 +244,9 @@ async function sortByProblemRelevanz(sheetName) {
               endColumnIndex: sortEndColumn,
             },
             sortSpecs: [
-              { dimensionIndex: problemIdx, sortOrder: 'ASCENDING' },
+              { dimensionIndex: datumIdx, sortOrder: 'ASCENDING' },
               { dimensionIndex: relevanzIdx, sortOrder: 'DESCENDING' },
+              { dimensionIndex: problemIdx, sortOrder: 'ASCENDING' },
               { dimensionIndex: einsatzIdx, sortOrder: 'ASCENDING' },
               { dimensionIndex: regionIdx, sortOrder: 'ASCENDING' },
             ],
@@ -298,7 +301,7 @@ module.exports = {
   updateRowByRowNumber,
   appendRows,
   sortByRelevanceDesc,
-  sortByProblemRelevanz,
+  sortByErstelltAm,
   readRangeUnformatted,
   columnLetter,
   SPREADSHEET_ID,
