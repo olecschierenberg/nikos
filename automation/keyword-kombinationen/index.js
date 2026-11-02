@@ -145,11 +145,13 @@ async function main() {
   // GEAENDERT 2026-11-02: Neu angehaengte Zeilen werden HIER sortiert (Problem A->Z, Relevanz
   // absteigend, Einsatz, Region). Das Apps Script wird durch API-Appends nicht ausgeloest.
   // Ohne neue Zeilen bleibt eine manuelle Sortierung des Nutzers unangetastet.
-  if (LIVE && rowsToAppend.length) {
+  // Manueller Start (workflow_dispatch) sortiert IMMER, damit sich das Blatt jederzeit per "Run workflow" in Ordnung bringen laesst.
+  const SORT_FORCED = process.env.GITHUB_EVENT_NAME === 'workflow_dispatch';
+  if (LIVE && (rowsToAppend.length || SORT_FORCED)) {
     await sheets.sortByProblemRelevanz(SHEET_TAB);
     log('  Sheet nach neuen Zeilen sortiert (Problem A→Z, Relevanz absteigend, Einsatz, Region).');
   } else {
-    log('  Sheet-Sortierung übersprungen (keine neuen Zeilen bzw. Test-Modus).');
+    log('  Sheet-Sortierung übersprungen (keine neuen Zeilen, kein manueller Start bzw. Test-Modus).');
   }
 
   log(`FERTIG (${LIVE ? 'LIVE' : 'TEST'}): ${rowsToAppend.length} neue Kombination(en) verarbeitet, Sheet bei neuen Zeilen sortiert.`);
