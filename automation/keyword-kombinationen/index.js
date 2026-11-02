@@ -142,9 +142,17 @@ async function main() {
   // der Nutzer manuell; danach sortiert das Apps Script "Deploy-Trigger" nach
   // 5 Minuten Pause automatisch nach "Problem" (A→Z). sortByRelevanceDesc() bleibt
   // in lib/sheets.js erhalten, wird aber nicht mehr aufgerufen.
-  log('  Sheet-Sortierung übersprungen (übernimmt das Apps Script im Sheet).');
+  // GEAENDERT 2026-11-02: Neu angehaengte Zeilen werden HIER sortiert (Problem A->Z, Relevanz
+  // absteigend, Einsatz, Region). Das Apps Script wird durch API-Appends nicht ausgeloest.
+  // Ohne neue Zeilen bleibt eine manuelle Sortierung des Nutzers unangetastet.
+  if (LIVE && rowsToAppend.length) {
+    await sheets.sortByProblemRelevanz(SHEET_TAB);
+    log('  Sheet nach neuen Zeilen sortiert (Problem A→Z, Relevanz absteigend, Einsatz, Region).');
+  } else {
+    log('  Sheet-Sortierung übersprungen (keine neuen Zeilen bzw. Test-Modus).');
+  }
 
-  log(`FERTIG (${LIVE ? 'LIVE' : 'TEST'}): ${rowsToAppend.length} neue Kombination(en) verarbeitet, Sheet unverändert sortiert.`);
+  log(`FERTIG (${LIVE ? 'LIVE' : 'TEST'}): ${rowsToAppend.length} neue Kombination(en) verarbeitet, Sheet bei neuen Zeilen sortiert.`);
 }
 
 main().catch((err) => {

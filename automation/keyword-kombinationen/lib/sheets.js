@@ -198,6 +198,74 @@ async function sortByRelevanceDesc(sheetName) {
   });
 }
 
+// NEU 2026-11-02: Feste System-Sortierung des Blatts, ausgefuehrt direkt im GitHub-Job
+// NACH dem Anhaengen neuer Zeilen. Grund: Per API angehaengte Zeilen loesen im Apps Script
+// weder onEdit noch eine verwertbare onChange-Sortierung aus; der 15-Min-Zeittrigger
+// (periodicSort) existiert nicht mehr -> neue Zeilen blieben unsortiert. Hier gibt es keine
+// Trigger-Abhaengigkeit mehr.
+// Reihenfolge: Problem A->Z, dann Relevanz absteigend, dann Einsatz und Region A->Z
+// (vollstaendig deterministisch, jede Zeile hat genau einen Platz, egal wann sie entstand).
+// "OrigZeile" (ARRAYFORMULA in der Kopfzelle) wird wie in sortByRelevanceDesc NIE mitsortiert.
+async function sortByProblemRelevanz(sheetName) {
+  const sheets = sheetsClient();
+  const headerRes = await sheets.spreadsheets.values.get({
+    spreadsheetId: SPREADSHEET_ID,
+    range: `${sheetName}!1:1`,
+  });
+  const header = (headerRes.data.values || [[]])[0];
+  const idx = (name) => {
+    const i = header.indexOf(name);
+    if (i === -1) throw new Error(`Spalte "${name}" nicht in der Kopfzeile von "${sheetName}" gefunden (Kopfzeile: ${header.join(', ')}).`);
+    return i;
+  };
+  const problemIdx = idx('Problem');
+  const relevanzIdx = idx('Relevanz');
+  const einsatzIdx = idx('Einsatz');
+  const regionIdx = idx('Region');
+  const columnCount = header.length;
+  const origIdx = header.indexOf('OrigZeile');
+  if (origIdx !== -1 && origIdx !== columnCount - 1) {
+    throw new Error(`Spalte "OrigZeile" steht nicht am Ende der Kopfzeile von "${sheetName}" (Index ${origIdx} von ${columnCount}) -- Sortierung abgebrochen, um die Formel nicht zu verschieben.`);
+  }
+  const sortEndColumn = origIdx === -1 ? columnCount : origIdx;
+  await sheets.spreadsheets.batchUpdate({
+    spreadsheetId: SPREADSHEET_ID,
+    requestBody: {
+      requests: [
+        { clearBasicFilter: { sheetId: KEYWORDKOMBINATIONEN_SHEET_GID } },
+        {
+          sortRange: {
+            range: {
+              sheetId: KEYWORDKOMBINATIONEN_SHEET_GID,
+              startRowIndex: 1,
+              startColumnIndex: 0,
+              endColumnIndex: sortEndColumn,
+            },
+            sortSpecs: [
+              { dimensionIndex: problemIdx, sortOrder: 'ASCENDING' },
+              { dimensionIndex: relevanzIdx, sortOrder: 'DESCENDING' },
+              { dimensionIndex: einsatzIdx, sortOrder: 'ASCENDING' },
+              { dimensionIndex: regionIdx, sortOrder: 'ASCENDING' },
+            ],
+          },
+        },
+        {
+          setBasicFilter: {
+            filter: {
+              range: {
+                sheetId: KEYWORDKOMBINATIONEN_SHEET_GID,
+                startRowIndex: 0,
+                startColumnIndex: 0,
+                endColumnIndex: sortEndColumn,
+              },
+            },
+          },
+        },
+      ],
+    },
+  });
+}
+
 // Diagnose-Hilfsfunktion (2026-09-10): liest einen Bereich MIT
 // valueRenderOption 'UNFORMATTED_VALUE', damit man in den Rohdaten
 // unterscheiden kann, ob eine Zelle als Zahl (typeof 'number') oder als
@@ -230,6 +298,7 @@ module.exports = {
   updateRowByRowNumber,
   appendRows,
   sortByRelevanceDesc,
+  sortByProblemRelevanz,
   readRangeUnformatted,
   columnLetter,
   SPREADSHEET_ID,
