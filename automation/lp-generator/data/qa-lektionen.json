@@ -705,5 +705,12 @@
     "einsatz": "Fastnachtsumzug",
     "problem": "Besucherlenkung",
     "mangel": "Intro enthielt entgegen den Vorgaben eine Produkt- und Vermietungsaussage statt ausschließlich der Herausforderung. | FAQ2 nannte die optische Signalisierung ohne die korrekte Modul-Schreibweise NIKOS [flash]². | FAQ4 enthielt den verbotenen Weichmacher „unter Umständen“. | FAQ1 enthielt eine zusätzliche, nicht im freigegebenen Normtext enthaltene Aussage zur behördlichen Abnahme."
+  },
+  {
+    "datum": "03.11.2026",
+    "region": "Rheinland-Pfalz",
+    "einsatz": "Rheinland-Pfalz-Tag",
+    "problem": "Besucherlenkung",
+    "mangel": "Lösungs- und Produktbehauptungen aus dem Intro entfernt, da das Intro ausschließlich die Herausforderung beschreiben darf. | Weichmacher „unter Umständen“ in FAQ 3 entfernt. | Veraltete Formulierung zur Ansteuerung einzelner Bereiche im USP gemäß Sprachregel präzisiert."
   }
 ]
