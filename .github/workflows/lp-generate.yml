@@ -105,8 +105,8 @@ jobs:
           done
           exit 0
 
-      - name: Telegram-Erfolgsmeldung senden
-        if: success()
+      - name: Telegram-Fehlermeldung senden
+        if: failure()
         continue-on-error: true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -114,5 +114,5 @@ jobs:
         run: |
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d chat_id="${TELEGRAM_CHAT_ID}" \
-            --data-urlencode text="✅ NIKOS-Automation erfolgreich: LP-Generator
+            --data-urlencode text="❌ NIKOS-Automation FEHLGESCHLAGEN: LP-Generator
           Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
