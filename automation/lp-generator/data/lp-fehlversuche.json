@@ -1,7 +1,7 @@
 {
   "besuchersicherheit|rheinland-pfalz-tag|rheinland-pfalz": {
-    "count": 3,
-    "last": "2026-11-04T22:08:11.081Z",
+    "count": 4,
+    "last": "2026-11-05T23:43:28.502Z",
     "reason": "AI Texte (DE+EN): OpenAI-Aufruf nach 2 Versuch(en) fehlgeschlagen: OpenAI-Fehler (gpt-5.6-terra): You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
   },
   "besuchersicherheit|weinfest|rheinland-pfalz": {
