@@ -10,8 +10,8 @@
     "reason": "AI Texte (DE+EN): OpenAI-Aufruf nach 2 Versuch(en) fehlgeschlagen: OpenAI-Fehler (gpt-5.6-terra): You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
   },
   "crowd management|rheinland-pfalz-tag|rheinland-pfalz": {
-    "count": 2,
-    "last": "2026-11-05T02:35:20.671Z",
+    "count": 3,
+    "last": "2026-11-06T07:00:03.710Z",
     "reason": "AI Texte (DE+EN): OpenAI-Aufruf nach 2 Versuch(en) fehlgeschlagen: OpenAI-Fehler (gpt-5.6-terra): You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
   },
   "notfallwarnsystem|großveranstaltung|rheinland-pfalz": {
