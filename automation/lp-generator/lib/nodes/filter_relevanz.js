@@ -243,7 +243,7 @@ const ANLASS_REQUIRES = {
   'karneval der kulturen':'Karnevalshochburg',
 };
 // Anlässe, die überall plausibel sind (kein Region-Filter):
-const ANLASS_UNIVERSAL = ['krisenlage','katastrophenschutz-übung','katastrophenschutz-uebung','veranstaltung',
+const ANLASS_UNIVERSAL = ['bombenentschärfung','bombenentschaerfung','blackout','stromausfall','hochwasser','krisenlage','katastrophenschutz-übung','katastrophenschutz-uebung','veranstaltung',
   'großveranstaltung','grossveranstaltung','mobiler einsatz','mobil','temporär','temporaer','zeitweise',
   'kurzzeitig','vstättvo','vstaettvo','stadtfest','volksfest','weihnachtsmarkt','kirmes','jahrmarkt',
   'altstadtfest','familientag','festumzug','gedenkfeier','marathon','stadtlauf','triathlon','sportveranstaltung',
@@ -358,6 +358,35 @@ function relevanzBerechnen(problem, einsatz, reg, pe) {
 // ════════════════════════════════════════════════════════════════════════
 const items = $input.all();
 const out = [];
+
+// ---- Duplikat-Waechter (2026-11-06, Kannibalisierungs-Schutz): je Veranstaltung+Region nur 1 LP je Suchintention,
+// max. 4 LPs je Veranstaltung+Region. Bereits erzeugte Zeilen (slug gesetzt) zaehlen als vergeben.
+const INTENT_CLASS = {};
+[['notfalldurchsage',['notfalldurchsage','notfalldurchsagen','raeumungsdurchsage','räumungsdurchsage','evakuierung','evakuierungsansage','evakuierungsdurchsage','evakuierungsdurchsagen','evakuierungsbeschallung','entfluchtung']],
+ ['sprachalarmierung',['sprachalarmierung','sprachalarmierungsanlage','sprachalarmanlage']],
+ ['durchsageanlage',['durchsageanlage','durchsagesystem','mobiles durchsagesystem','elektroakustisches notfallwarnsystem','elektroakustische notfallwarnsysteme','temporäre sicherheitsbeschallung','temporaere sicherheitsbeschallung','text-to-speech-durchsage','mobile sicherheitstechnik','lautsprecherdurchsage','ansagetechnik','durchsagetechnik']],
+ ['lenkung',['besucherlenkung','crowd management','menschenmengenmanagement','publikumsmanagement','besuchermanagement','publikumssteuerung','menschenmengensteuerung']],
+ ['zaehlung',['besucherzählung','besucherzaehlung','besucherzählsystem']],
+ ['information',['besucherinformation','zuschauerinformation']],
+ ['sicherheit',['besuchersicherheit','veranstaltungssicherheit','festivalsicherheit','eventsicherheit']],
+ ['wetter',['unwetterwarnung','wetterwarnung','sturmwarnung']],
+ ['krisenkomm',['krisenkommunikation','sicherheitskommunikation','notfallkommunikationssystem','notfallwarnsystem','eventkommunikationssystem','elektronische sicherheitskommunikation']],
+ ['monitoring',['statusmonitoring','stromausfallüberwachung','zutrittsüberwachung baustelle']],
+ ['perimeter',['perimeterschutz','perimeterschutz baustelle']],
+ ['terror',['terrorwarnung']],
+ ['licht',['notbeleuchtung','notbeleuchtung mieten','notlicht','lichtmast fernsteuern']]
+].forEach(([c,ps])=>ps.forEach(p=>{INTENT_CLASS[p]=c;}));
+const intentOf = p => INTENT_CLASS[low(p)] || null;
+const eventKey = (e, r) => low(e) + '|' + low(r);
+const MAX_PRO_EVENT = 4;
+const takenIntent = new Set(); const eventCount = {};
+try {
+  for (const it of $input.all()) {
+    const j = it.json; if (norm(j.slug) === '') continue;
+    const k = eventKey(j.Einsatz, j.Region); eventCount[k] = (eventCount[k] || 0) + 1;
+    const c = intentOf(j.Problem); if (c) takenIntent.add(k + '|' + c);
+  }
+} catch (e) { /* Waechter faellt bei Fehler offen */ }
 for (const it of items) {
   const j = it.json;
   const erstellen = low(j.erstellen);
@@ -380,6 +409,11 @@ for (const it of items) {
   const pe = problemEinsatzScore(problem, einsatz);
   if (pe === 'unplausibel') continue;
   const grenzfall = (pe === 'schwach');
+
+  // Duplikat-Waechter (Suchintention je Veranstaltung+Region)
+  { const _c = intentOf(problem), _k = eventKey(einsatz, region);
+    if ((_c && takenIntent.has(_k + '|' + _c)) || (eventCount[_k] || 0) >= MAX_PRO_EVENT) continue;
+    if (_c) takenIntent.add(_k + '|' + _c); eventCount[_k] = (eventCount[_k] || 0) + 1; }
 
   // Relevanz: Sheet-Spalte bevorzugen, sonst berechnen
   let rel = parseInt(norm(j.Relevanz), 10);

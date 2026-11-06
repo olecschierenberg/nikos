@@ -15,8 +15,9 @@ name: LP-Generator
 
 on:
   workflow_dispatch: {}
-  schedule:
-    - cron: '23,37 * * * *'
+  # PAUSIERT 2026-11-06 (Kannibalisierungs-Pruefung der Landingpages): Zeitplan deaktiviert, nur manueller Start moeglich.
+  # schedule:
+  #   - cron: '23,37 * * * *'
 
 concurrency:
   group: lp-generate-live

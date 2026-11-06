@@ -15,8 +15,9 @@ name: Keyword-Kombinationen
 
 on:
   workflow_dispatch: {}
-  schedule:
-    - cron: '0 3 * * *'
+  # PAUSIERT 2026-11-06 (Kannibalisierungs-Pruefung der Landingpages): Zeitplan deaktiviert, nur manueller Start moeglich.
+  # schedule:
+  #   - cron: '0 3 * * *'
 
 concurrency:
   group: keyword-kombinationen-live

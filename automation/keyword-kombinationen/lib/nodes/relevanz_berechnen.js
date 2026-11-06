@@ -178,6 +178,34 @@ function numerusHinweis(einsatz, region){
   return '';                                          // große Stadt: offen lassen
 }
 
+// ---- Duplikat-Waechter (2026-11-06, Kannibalisierungs-Schutz): je Einsatz+Region nur 1 Kombination je Suchintention,
+// max. 4 je Einsatz+Region. Bestehende Zeilen im Sheet (auch gesperrte) zaehlen als vergeben.
+const INTENT_CLASS = {};
+[['notfalldurchsage',['notfalldurchsage','notfalldurchsagen','raeumungsdurchsage','räumungsdurchsage','evakuierung','evakuierungsansage','evakuierungsdurchsage','evakuierungsdurchsagen','evakuierungsbeschallung','entfluchtung']],
+ ['sprachalarmierung',['sprachalarmierung','sprachalarmierungsanlage','sprachalarmanlage']],
+ ['durchsageanlage',['durchsageanlage','durchsagesystem','mobiles durchsagesystem','elektroakustisches notfallwarnsystem','elektroakustische notfallwarnsysteme','temporäre sicherheitsbeschallung','temporaere sicherheitsbeschallung','text-to-speech-durchsage','mobile sicherheitstechnik','lautsprecherdurchsage','ansagetechnik','durchsagetechnik']],
+ ['lenkung',['besucherlenkung','crowd management','menschenmengenmanagement','publikumsmanagement','besuchermanagement','publikumssteuerung','menschenmengensteuerung']],
+ ['zaehlung',['besucherzählung','besucherzaehlung','besucherzählsystem']],
+ ['information',['besucherinformation','zuschauerinformation']],
+ ['sicherheit',['besuchersicherheit','veranstaltungssicherheit','festivalsicherheit','eventsicherheit']],
+ ['wetter',['unwetterwarnung','wetterwarnung','sturmwarnung']],
+ ['krisenkomm',['krisenkommunikation','sicherheitskommunikation','notfallkommunikationssystem','notfallwarnsystem','eventkommunikationssystem','elektronische sicherheitskommunikation']],
+ ['monitoring',['statusmonitoring','stromausfallüberwachung','zutrittsüberwachung baustelle']],
+ ['perimeter',['perimeterschutz','perimeterschutz baustelle']],
+ ['terror',['terrorwarnung']],
+ ['licht',['notbeleuchtung','notbeleuchtung mieten','notlicht','lichtmast fernsteuern']]
+].forEach(([c,ps])=>ps.forEach(p=>{INTENT_CLASS[p]=c;}));
+const intentOf = p => INTENT_CLASS[low(p)] || null;
+const evKey = (e, r) => low(e) + '|' + low(r);
+const MAX_PRO_EVENT = 4;
+const takenIntent = new Set(); const evCount = {};
+try {
+  for (const x of existing) {
+    const k2 = evKey(x.Einsatz, x.Region); evCount[k2] = (evCount[k2] || 0) + 1;
+    const c = intentOf(x.Problem); if (c) takenIntent.add(k2 + '|' + c);
+  }
+} catch (err) { /* Waechter faellt bei Fehler offen */ }
+
 const out = [];
 for (const it of $input.all()){
   const j = it.json;
@@ -186,6 +214,8 @@ for (const it of $input.all()){
   const k = keyOf(p,e,r);
   if (seen.has(k)) continue;        // DEDUP: schon vorhanden oder doppelt im Lauf
   seen.add(k);
+  { const _c = intentOf(p), _k2 = evKey(e, r);   // Duplikat-Waechter
+    if ((_c && takenIntent.has(_k2 + '|' + _c)) || (evCount[_k2] || 0) >= MAX_PRO_EVENT) continue; }
   // FIXED INFRA: Messe/Stadion/Konzert(saal/haus/halle) NIE erzeugen (nicht mehr im Pool)
   const eLow = low(e);
   const FORBIDDEN_EINSATZ = ['messe','stadionevent','stadion','konzert','konzertsaal','konzerthaus','konzerthalle'];
@@ -205,6 +235,7 @@ for (const it of $input.all()){
       else if(/tag der sachsen/.test(eLow)) ende=mm(6);
       else if(/tag der deutschen einheit/.test(eLow)) ende=mm(10);
     } }
+  { const _c = intentOf(p), _k2 = evKey(e, r); if (_c) takenIntent.add(_k2 + '|' + _c); evCount[_k2] = (evCount[_k2] || 0) + 1; }
   out.push({ json: { ...j, Relevanz: rel, Ende: ende, EinsatzNumerus: numerusHinweis(e, r) } });
 }
 return out;

@@ -92,7 +92,7 @@ function heroFor(ev){ ev=(ev||'').toLowerCase();
   if(/\bwacken\b|rock am ring|rock im park|berlin festival|lollapalooza|tomorrowland|glastonbury/.test(ev)) return ['Festival.jpg','Festival'];
   if(/festival|musikfestival|open[\s-]?air|rave|bergenfest/.test(ev)){ var fp=['Festival.jpg','Stage.jpg'][pickIdx(ev+'|fest-pick',2)]; return [fp, fp==='Stage.jpg'?'Stage':'Festival']; }
   if(/baustelle/.test(ev)) return ['Baustelle.jpg','Baustelle'];
-  if(/krisenlage|katastrophenschutz|katastrophe/.test(ev)) return ['Krisenlage.jpg','Krisenlage'];
+  if(/krisenlage|katastrophenschutz|katastrophe|bombenentsch|blackout|stromausfall|hochwasser/.test(ev)) return ['Krisenlage.jpg','Krisenlage'];
   if(/firmenveranstaltung|betriebsfeier|firmenfeier|firmenevent/.test(ev)) return ['Firmenveranstaltung.jpg','Firmenveranstaltung'];
   if(/jubiläum|jubilaeum/.test(ev)) return ['Jubiläumsfeier.jpg','Jubiläumsfeier'];
   if(/parkfest/.test(ev)) return ['Parkfest.jpg','Parkfest'];
@@ -100,10 +100,10 @@ function heroFor(ev){ ev=(ev||'').toLowerCase();
   if(/tag der deutschen einheit/.test(ev)) return ['Jubiläumsfeier.jpg','Tag der deutschen Einheit'];
   if(/\b\w+-tag\b|hessentag|bayerntag|landesfest/.test(ev)) return ['Stadtfest.jpg','Landesfest'];
   return ['Gedenkveranstaltung.jpg','Gedenkveranstaltung']; }
-var NKMOD_CSS = '.nk-mod{display:inline-block;vertical-align:baseline}\n.nk-mod img{height:0.95em;width:auto;max-width:none;display:inline-block;vertical-align:-0.23em;transition:opacity .15s}\n.nk-mod:hover img{opacity:.6}\n';
+var NKMOD_CSS = '.nk-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}\n.nk-mod{display:inline-block;vertical-align:baseline}\n.nk-mod img{height:0.95em;width:auto;max-width:none;display:inline-block;vertical-align:-0.23em;transition:opacity .15s}\n.nk-mod:hover img{opacity:.6}\n';
 function modLogos(x){ return x.replace(/NIKOS \[([A-Za-z0-9]+)\](?:²|&sup2;)/g,function(m,name){ var a=(name==='audio'||name==='dispatcher'||name==='moon')?name:'zubehoer';
-  return '<a class="nk-mod" href="'+NAV_URLS.products+'#'+a+'"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS '+name+'.svg" alt="NIKOS ['+name+']²" loading="lazy"></a>'; }); }
-var NIKOSLOGO = '<a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="NIKOS" loading="lazy"></a>';
+  return '<a class="nk-mod" href="'+NAV_URLS.products+'#'+a+'"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS '+name+'.svg" alt="" loading="lazy"><span class="nk-sr">NIKOS ['+name+']²</span></a>'; }); }
+var NIKOSLOGO = '<a class="nk-mod" href="https://nikos.info/index.html"><img src="https://nikos.info/assets/logos/nikos/SVG/NIKOS.svg" alt="" loading="lazy"><span class="nk-sr">NIKOS</span></a>';
 function nkWordInner(inner){ var st=[]; inner=inner.replace(/<a class="nk-mod[^>]*>[\s\S]*?<\/a>/g,function(mm){ st.push(mm); return '%%NKM'+(st.length-1)+'%%'; });
   inner=inner.replace(/NIKOS(?!-|[A-Za-z0-9²]| \[)/g,NIKOSLOGO); inner=inner.replace(/%%NKM(\d+)%%/g,function(mm,i){ return st[+i]; }); return inner; }
 function nikosWord(x){ x=x.replace(/<div class="faq-item__body"([^>]*)>([\s\S]*?)<\/div>/g,function(m,a,inner){ return '<div class="faq-item__body"'+a+'>'+nkWordInner(inner)+'</div>'; });
