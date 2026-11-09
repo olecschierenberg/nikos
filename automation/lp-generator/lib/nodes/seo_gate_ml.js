@@ -23,6 +23,14 @@ if (!/hreflang\s*=\s*["']x-default["']/i.test(html)) hardErrors.push('HREFLANG_X
 if (h1Count < 1) hardErrors.push('H1_MISSING');
 if (h1Count > 1) warnings.push('MULTIPLE_H1_ELEMENTS');
 if (title && (title.length < 20 || title.length > 65)) hardErrors.push('TITLE_LENGTH_OUTSIDE_20_65');
-if (description && (description.length < 100 || description.length > 158)) hardErrors.push('META_DESCRIPTION_LENGTH_OUTSIDE_100_158');
+if (description && (description.length < 80 || description.length > 158)) hardErrors.push('META_DESCRIPTION_LENGTH_OUTSIDE_80_158');
+// 2026-11-09 Konsistenz-Gates (alle Sprachen): Beschreibung enthaelt die H1 (Keyword + Ereignis), Titel schneidet den Ereignisnamen nicht ab.
+const dec = s => String(s || '').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/\s+/g, ' ').trim().toLowerCase();
+const h1Plain = dec(((html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i) || [])[1] || '').replace(/<[^>]+>/g, ' '));
+if (h1Plain && description && !dec(description).includes(h1Plain.slice(0, 30))) hardErrors.push('DESC_WITHOUT_H1_KEYWORD');
+if (h1Plain && h1Plain.length <= 64 && title) {
+  const lastWord = h1Plain.split(' ').pop().replace(/[.,;:]+$/, '');
+  if (lastWord && !dec(title).includes(lastWord)) hardErrors.push('TITLE_CUT_BEFORE_EVENT');
+}
 if (hardErrors.length) throw new Error('SEO_GATE_ML_BLOCKED(' + (data.lang || '?') + '): ' + hardErrors.join(','));
 return { json: { ...data, seo_gate: warnings.length ? 'warning' : 'pass', seo_warnings: warnings, canonical_url: canonical } };

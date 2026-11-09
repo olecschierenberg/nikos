@@ -36,29 +36,35 @@ function clampDesc(t,max){ return clampByBoundary(t,max,60); }
 // Beschreibung: aus ganzen Saetzen (Intro, Ueberschrift, USP) mit 100-165
 // Zeichen zusammengesetzt; nur wenn das nicht geht, alter Fallback.
 var TITLE_STOP = /^(für|fuer|die|der|das|den|dem|des|bei|beim|im|in|an|am|auf|zu|zur|zum|und|mit|von|vom|for|the|a|an|at|of|on|and|to|with|during|pour|la|le|les|de|du|des|à|au|aux|et|en|per|il|lo|gli|di|del|della|e|al|con|para|el|los|las|y|voor|het|een|van|bij|op|met|til|og|på|af|dla|na|w|i|z|przy|podczas|–|-|:)$/i;
-function buildTitle(shortHead){ var suf=' – NIKOS'; var h=(shortHead||'').toString().replace(/\s+/g,' ').trim().replace(/[.:;,]+$/,'');
-  if(h.length+suf.length<=60) return h+suf;
-  if(h.length<=60) return h;
+function buildTitle(shortHead){ var suf=' – NIKOS'; var MAXT=64; var h=(shortHead||'').toString().replace(/\s+/g,' ').trim().replace(/[.:;,]+$/,'');
+  if(h.length+suf.length<=MAXT) return h+suf;
+  if(h.length<=MAXT) return h;
   var words=h.split(' '), out=[];
-  for(var i=0;i<words.length;i++){ var cand=out.concat(words[i]).join(' '); if(cand.length>60) break; out.push(words[i]); }
+  for(var i=0;i<words.length;i++){ var cand=out.concat(words[i]).join(' '); if(cand.length>MAXT) break; out.push(words[i]); }
   while(out.length>2 && TITLE_STOP.test(out[out.length-1].replace(/[.,;:]+$/,''))) out.pop();
   var t=out.join(' ').replace(/[\s.,;:–-]+$/,'');
   return t.length>=20 ? t : clampTitle(h,60-suf.length)+suf; }
+// 2026-11-09: Titel bis 64 Zeichen ohne Suffix, damit Ereignisnamen nie abgeschnitten werden (SEO-Gate: max 65).
 function splitSentences(t){ t=(t||'').toString().replace(/\s+/g,' ').trim(); if(!t) return [];
   var res=[], start=0, re=/[.!?](?=\s+\S)/g, m;
   while((m=re.exec(t))){ var before=t.slice(start,m.index+1); var lastTok=(before.split(' ').pop()||'');
     if(/^([A-Za-zÄÖÜäöü]{1,2}\.)+$/.test(lastTok) || /^\d+\.$/.test(lastTok)) continue;
     res.push(before.trim()); start=m.index+1; }
   var rest=t.slice(start).trim(); if(rest) res.push(rest); return res; }
-function buildDesc(f, headline){ var MAX=158, MIN=100;
+function buildDesc(f, headline){ var MAX=158, MIN=80; // MIN 100->80 (2026-11-09): lieber Ueberschrift + ganzer Satz als abgeschnittener Satz
   var intro=splitSentences(f.intro), usp=splitSentences((f.usp_intro?f.usp_intro+' ':'')+(f.usp||''));
   var h=(headline||'').toString().replace(/\s+/g,' ').trim(); if(h && !/[.!?]$/.test(h)) h+='.';
   function greedy(first, pool){ if(!first || escA(first).length>MAX) return ''; var cur=first;
     for(var i=0;i<pool.length;i++){ var s=pool[i]; if(s===first) continue; if(escA(cur+' '+s).length<=MAX) cur+=' '+s; }
     return (escA(cur).length>=MIN && /[.!?]$/.test(cur)) ? cur : ''; }
-  var tries=[[intro[0],intro.slice(1)],[h,intro],[h,usp],[intro[1],intro.slice(2)],[usp[0],usp.slice(1)]];
+  // 2026-11-09: Beschreibung beginnt in JEDER Sprache mit der Ueberschrift (Keyword + Ereignis),
+  // danach ganze Saetze (Intro, Subhead, USP). Kein Satz aus der Textmitte mehr ohne Subjekt.
+  var sub=(f.subhead||'').toString().replace(/\s+/g,' ').trim(); if(sub && !/[.!?]$/.test(sub)) sub+='.';
+  var tries=[[h,intro],[h,intro.concat(sub?[sub]:[],usp)],[h,(sub?[sub]:[]).concat(usp)],[h,usp]];
   for(var k=0;k<tries.length;k++){ var r=greedy(tries[k][0],tries[k][1]); if(r) return r; }
-  return clampDesc(f.intro,155); }
+  var room=MAX-escA(h).length-1;
+  if(h && room>=40){ var c=clampByBoundary(f.intro,room,20); var o=h+' '+c; if(escA(o).length>=MIN && escA(o).length<=MAX) return o; }
+  return h && escA(h).length>=MIN ? h : clampDesc(h+' '+(f.intro||''),155); }
 function escA(s){ return s==null?'':String(s).replace(/&(?![a-zA-Z]+;|#\d+;|#x[0-9a-fA-F]+;)/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 function esc(s){ return s==null?'':String(s); }
 
