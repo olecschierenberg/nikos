@@ -719,5 +719,12 @@
     "einsatz": "Großveranstaltung",
     "problem": "Statusmonitoring",
     "mangel": "Weichmacher „unter Umständen“ in FAQ3 entfernt | Intro auf die Herausforderung beschränkt; Lösungs- und Vermietungsaussagen entfernt"
+  },
+  {
+    "datum": "09.11.2026",
+    "region": "Rheinland-Pfalz",
+    "einsatz": "Rheinland-Pfalz-Tag",
+    "problem": "Besuchersicherheit",
+    "mangel": "Das Intro enthielt entgegen der Vorgabe bereits eine Lösungs- und Produktbeschreibung statt ausschließlich der Herausforderung. | Die Formulierung „unter Umständen“ im Installations-FAQ wurde als Weichmacher entfernt."
   }
 ]
