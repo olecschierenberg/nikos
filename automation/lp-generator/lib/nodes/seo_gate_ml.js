@@ -32,5 +32,18 @@ if (h1Plain && h1Plain.length <= 64 && title) {
   const lastWord = h1Plain.split(' ').pop().replace(/[.,;:]+$/, '');
   if (lastWord && !dec(title).includes(lastWord)) hardErrors.push('TITLE_CUT_BEFORE_EVENT');
 }
+// 2026-11-09: Headline max. 64 Zeichen und Region enthalten (Region = Teil der Keywordkombination).
+const rn = x => String(x || '').replace(/ß/g,'ss').replace(/æ/g,'ae').replace(/ø/g,'o').replace(/ł/g,'l').replace(/đ/g,'d').replace(/ı/g,'i').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'');
+const ABBR = { 'nordrheinwestfalen':['nrw'], 'badenwurttemberg':['bw','bawu'], 'rheinlandpfalz':['rlp'], 'mecklenburgvorpommern':['mv'], 'schleswigholstein':['sh'], 'niedersachsen':['nds'], 'sachsenanhalt':['lsa'], 'vereinigtesonigreich':['uk'], 'vereinigtekonigreich':['uk'], 'vereinigtestaaten':['usa','us'], 'deutschland':['de'] };
+const hasRegion = (headline, reg) => {
+  const h = rn(headline), r = rn(reg); if (!r) return true;
+  if (h.includes(r)) return true;
+  const low = String(headline || '').replace(/ß/g,'ss').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+  return (ABBR[r] || []).some(a => new RegExp('(^|[^a-z0-9])' + a + '([^a-z0-9]|$)').test(low));
+};
+if (h1Plain.length > 64) hardErrors.push('HEADLINE_TOO_LONG');
+const regG = String(data.region || ''), einG = String(data.einsatz || '');
+const needleG = String(data.regionLocal || '') || (data.lang === 'de' ? regG : '');
+if (regG && needleG && !rn(einG).includes(rn(regG)) && !hasRegion(h1Plain, needleG)) hardErrors.push('REGION_NOT_IN_HEADLINE');
 if (hardErrors.length) throw new Error('SEO_GATE_ML_BLOCKED(' + (data.lang || '?') + '): ' + hardErrors.join(','));
 return { json: { ...data, seo_gate: warnings.length ? 'warning' : 'pass', seo_warnings: warnings, canonical_url: canonical } };

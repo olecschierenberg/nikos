@@ -207,4 +207,4 @@ let html = '<!DOCTYPE html>\n<html lang="' + lang + '">\n<head>\n<meta charset="
 
 const linkTitle = f.subhead ? (splitCo(f.headline) + ': ' + f.subhead) : f.headline;
 
-return { json: { lang, slug, url, html, title, metaDesc, linkTitle } };
+return { json: { lang, slug, url, html, title, metaDesc, linkTitle, region: region || '', einsatz: einsatz || '', regionLocal: (f && f.region_local) || '' } };

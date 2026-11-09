@@ -77,4 +77,23 @@ if (slugKw) {
   if (wc < 1 || wc > 6) issues.push('SLUG_KW_WORTZAHL');
 }
 
+// 8) (2026-11-09) Headline: hoechstens 64 Zeichen (wird zum Seitentitel) und Region enthalten,
+//    wenn die Ausgangs-headline sie enthaelt (Region = Teil der Keywordkombination).
+const rn = x => String(x || '').replace(/ß/g,'ss').replace(/æ/g,'ae').replace(/ø/g,'o').replace(/ł/g,'l').replace(/đ/g,'d').replace(/ı/g,'i').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'');
+const ABBR = { 'nordrheinwestfalen':['nrw'], 'badenwurttemberg':['bw','bawu'], 'rheinlandpfalz':['rlp'], 'mecklenburgvorpommern':['mv'], 'schleswigholstein':['sh'], 'niedersachsen':['nds'], 'sachsenanhalt':['lsa'], 'vereinigtesonigreich':['uk'], 'vereinigtekonigreich':['uk'], 'vereinigtestaaten':['usa','us'], 'deutschland':['de'] };
+const hasRegion = (headline, reg) => {
+  const h = rn(headline), r = rn(reg); if (!r) return true;
+  if (h.includes(r)) return true;
+  const low = String(headline || '').replace(/ß/g,'ss').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+  return (ABBR[r] || []).some(a => new RegExp('(^|[^a-z0-9])' + a + '([^a-z0-9]|$)').test(low));
+};
+const hl = String(t.headline || '');
+if (hl.length > 64) issues.push('HEADLINE_ZU_LANG:' + hl.length + '_Zeichen_max_62_kuerzen_Region_behalten');
+const regionSrc = String(j.region || ''), einsatzSrc = String(j.einsatz || '');
+if (regionSrc && !rn(einsatzSrc).includes(rn(regionSrc)) && hasRegion(s.headline, regionSrc)) {
+  const rl = String(t.region_local || '');
+  if (!rl.trim()) issues.push('REGION_LOCAL_FEHLT');
+  else if (!hasRegion(hl, rl)) issues.push('REGION_NICHT_IN_HEADLINE:' + rl);
+}
+
 return { json: { ok: issues.length === 0, issues, translated: t, lang } };

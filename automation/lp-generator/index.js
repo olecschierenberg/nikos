@@ -332,7 +332,7 @@ async function callTranslation({ lang, deFields, sourceLang, problem, einsatz, r
     }
   }
   const check = runAllItems('mini_check.js', {
-    items: [{ json: { translated: parsed, source: deFields, lang, sourceLang: srcLang } }], nodeOutputs, staticData, executionId,
+    items: [{ json: { translated: parsed, source: deFields, lang, sourceLang: srcLang, region, einsatz } }], nodeOutputs, staticData, executionId,
   })[0].json;
   return { parsed, check };
 }
