@@ -23,7 +23,7 @@
       if (bl.indexOf('en') === 0) { target = "https://nikos.info/en/login/"; }
     }
   } catch (e) {}
-  window.location.replace(target);
+  window.location.replace(target + (window.location.hash || ''));
 })();
 </script>
 </head>

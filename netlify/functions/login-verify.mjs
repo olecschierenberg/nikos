@@ -15,10 +15,10 @@ export default async (req) => {
     console.error('login-verify: Konfigurationsfehler', e.message);
     return html(500, 'Konfigurationsfehler');
   }
-  if (v.valid) return redirect(`${siteUrl()}/nikos-login.html#nk=${encodeURIComponent(token)}`);
+  if (v.valid) return redirect(`${siteUrl()}/de/login/#nk=${encodeURIComponent(token)}`);
   return html(400, card({
     icon: WARN, title: 'Anmeldelink ungültig', heading: 'Anmeldelink ungültig oder abgelaufen',
     bodyHtml: 'Anmeldelinks sind 24 Stunden gültig.<br>Bitte fordern Sie einfach einen neuen Link an.',
-    button: { label: 'Neuen Anmeldelink anfordern', href: `${siteUrl()}/nikos-login.html` },
+    button: { label: 'Neuen Anmeldelink anfordern', href: `${siteUrl()}/de/login/` },
   }));
 };

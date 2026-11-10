@@ -63,10 +63,10 @@ export function classifyMail(r) {
 
 /** Freischaltungs-Mail an den Antragsteller */
 export function freigabeMail({ name, email, kat }) {
-  const loginUrl = `${siteUrl()}/nikos-login.html`;
+  const loginUrl = `${siteUrl()}/de/login/`;
   return {
     subject: 'Ihr NIKOS-Zugang ist freigeschaltet',
-    html: `<p>Guten Tag ${esc(name)},</p><p>Ihr Zugang zum geschützten NIKOS-Bereich (Kategorie: ${esc(kat)}) wurde freigeschaltet.</p><p><b>So melden Sie sich an – ganz ohne Passwort:</b></p><ol><li>Öffnen Sie die Anmeldeseite: <a href="${esc(loginUrl)}">nikos.info/nikos-login.html</a></li><li>Geben Sie dort Ihre E-Mail-Adresse ein (${esc(email)}).</li><li>Sie erhalten sofort eine E-Mail mit Ihrem persönlichen Anmeldelink – ein Klick darauf meldet Sie an.</li></ol><p>Jeder Anmeldelink ist 24 Stunden gültig. Ein Passwort müssen Sie sich nicht merken – fordern Sie einfach bei jedem Besuch einen neuen Link an.</p><p style="margin:24px 0;"><a href="${esc(loginUrl)}" style="background:#FF6600;color:#ffffff;padding:12px 28px;border-radius:4px;font-weight:600;text-decoration:none;">Zur Anmeldung</a></p><p>Mit freundlichen Grüßen<br>Ihr RADACOM-Team</p>`,
+    html: `<p>Guten Tag ${esc(name)},</p><p>Ihr Zugang zum geschützten NIKOS-Bereich (Kategorie: ${esc(kat)}) wurde freigeschaltet.</p><p><b>So melden Sie sich an – ganz ohne Passwort:</b></p><ol><li>Öffnen Sie die Anmeldeseite: <a href="${esc(loginUrl)}">nikos.info/de/login/</a></li><li>Geben Sie dort Ihre E-Mail-Adresse ein (${esc(email)}).</li><li>Sie erhalten sofort eine E-Mail mit Ihrem persönlichen Anmeldelink – ein Klick darauf meldet Sie an.</li></ol><p>Jeder Anmeldelink ist 24 Stunden gültig. Ein Passwort müssen Sie sich nicht merken – fordern Sie einfach bei jedem Besuch einen neuen Link an.</p><p style="margin:24px 0;"><a href="${esc(loginUrl)}" style="background:#FF6600;color:#ffffff;padding:12px 28px;border-radius:4px;font-weight:600;text-decoration:none;">Zur Anmeldung</a></p><p>Mit freundlichen Grüßen<br>Ihr RADACOM-Team</p>`,
   };
 }
 

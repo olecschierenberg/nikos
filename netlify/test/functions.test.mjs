@@ -255,7 +255,7 @@ test('Login: bekannte Adresse bekommt Link, der komplette Weg funktioniert', asy
   const v = await get(loginVerify, link);
   assert.equal(v.status, 302);
   const loc = v.headers.get('location');
-  assert.ok(loc.startsWith(`${U}/nikos-login.html#nk=`));
+  assert.ok(loc.startsWith(`${U}/de/login/#nk=`));
   const token = decodeURIComponent(loc.split('#nk=')[1]);
 
   const c = await get(loginCheck, `${U}/api/login-check?token=${encodeURIComponent(token)}`, { origin: 'https://nikos.info' });
