@@ -146,6 +146,17 @@ body{font-family:var(--font);color:var(--dark);background:var(--s2);line-height:
 .portal-section__list li{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13px;color:var(--mid)}
 .portal-section__list li em{font-style:normal;font-size:10px;font-weight:700;color:var(--light);background:var(--white);border:1px solid var(--border);border-radius:20px;padding:2px 9px;white-space:nowrap;flex-shrink:0}
 .portal-section__text{font-size:13px;color:var(--mid);line-height:1.6}
+.portal-files{margin-top:14px;padding-top:14px;border-top:1px solid var(--s3)}
+.portal-files__title{font-size:13px;font-weight:700;color:var(--dark);margin-bottom:8px}
+.portal-files__group{font-size:11px;font-weight:700;color:var(--light);text-transform:uppercase;letter-spacing:.05em;margin:12px 0 6px}
+.portal-files__msg{font-size:13px;color:var(--mid)}
+.portal-file{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;background:var(--white);border:1px solid var(--border);border-radius:4px;margin-bottom:6px}
+.portal-file__name{font-size:13px;font-weight:600;color:var(--dark);word-break:break-word}
+.portal-file__meta{font-size:11px;color:var(--light);margin-top:2px}
+.portal-file__desc{font-size:12px;color:var(--mid);margin-top:4px;line-height:1.5}
+.portal-file__btn{flex-shrink:0;background:var(--orange);color:#fff;border:none;border-radius:4px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit}
+.portal-file__btn:disabled{opacity:.6;cursor:wait}
+@media(max-width:520px){.portal-file{flex-direction:column;align-items:stretch}}
 
 /* Footer mini */
 .login-footer{background:var(--surface-footer);padding:16px 24px;text-align:center}
@@ -237,13 +248,14 @@ body{font-family:var(--font);color:var(--dark);background:var(--s2);line-height:
           <ul class="portal-section__list">
             <li data-de><span>Schulungsunterlagen für Betrieb und Techniker</span><em>folgt in Kürze</em></li>
             
-            <li data-de><span>Software- und Firmware-Updates</span><em>folgt in Kürze</em></li>
+            
             
             <li data-de><span>Techniker-Wiki</span><em>folgt in Kürze</em></li>
             
             <li data-de><span>Technische Spezifikationen (erweitert)</span><em>folgt in Kürze</em></li>
             
           </ul>
+          <div class="portal-files" data-bereich="technik"><div class="portal-files__title" data-de>Software- und Firmware-Updates</div><div class="portal-files__list" aria-live="polite"></div></div>
         </div>
         <div class="portal-section" data-portal-cat="marketing">
           <div class="portal-section__title" data-de>Marketing-Bereich</div>
@@ -488,6 +500,65 @@ document.getElementById('cookieModal').addEventListener('click',function(e){if(e
       show(t('Anfrage fehlgeschlagen. Bitte versuchen Sie es später erneut oder schreiben Sie an info@radacom.de.',
              'Request failed. Please try again later or email info@radacom.de.'),false);
     });
+  });
+})();
+</script>
+
+<script>
+/* Geschützte Portal-Dateien (Google Drive über /api/portal-files + /api/portal-download) */
+(function(){
+  var API='https://nikos.info/api/';
+  var EN=document.documentElement.getAttribute('data-lang')==='en'||location.pathname.indexOf('/en/')===0;
+  function t(de,en){return EN?en:de;}
+  var tok=null;try{tok=localStorage.getItem('nk-portal');}catch(e){}
+  if(!tok)return;
+  function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e;}
+  function size(b){if(b==null)return '';if(b<1024)return b+' B';if(b<1048576)return (b/1024).toFixed(0)+' KB';return (b/1048576).toFixed(1).replace('.',EN?'.':',')+' MB';}
+  function date(s){try{return new Date(s).toLocaleDateString(EN?'en-GB':'de-DE',{day:'2-digit',month:'2-digit',year:'numeric'});}catch(e){return '';}}
+  function expired(){try{localStorage.removeItem('nk-portal');}catch(e){}location.reload();}
+  function msg(list,text){list.innerHTML='';list.appendChild(el('p','portal-files__msg',text));}
+  function download(bereich,f,btn){
+    var label=btn.textContent;btn.disabled=true;btn.textContent=t('Wird geladen …','Loading …');
+    fetch(API+'portal-download?bereich='+encodeURIComponent(bereich)+'&id='+encodeURIComponent(f.id),{headers:{Authorization:'Bearer '+tok}})
+      .then(function(r){if(r.status===401){expired();throw 0;}if(!r.ok)throw 0;return r.blob();})
+      .then(function(blob){
+        var url=URL.createObjectURL(blob),a=document.createElement('a');
+        a.href=url;a.download=f.name;document.body.appendChild(a);a.click();a.remove();
+        setTimeout(function(){URL.revokeObjectURL(url);},60000);
+        btn.disabled=false;btn.textContent=label;
+      })
+      .catch(function(){btn.disabled=false;btn.textContent=t('Fehler – erneut versuchen','Error – try again');});
+  }
+  document.querySelectorAll('.portal-files[data-bereich]').forEach(function(box){
+    var sec=box.closest('[data-portal-cat]');
+    if(sec&&sec.style.display==='none')return;
+    var bereich=box.getAttribute('data-bereich');
+    var list=box.querySelector('.portal-files__list');
+    msg(list,t('Dateien werden geladen …','Loading files …'));
+    fetch(API+'portal-files?bereich='+encodeURIComponent(bereich),{headers:{Authorization:'Bearer '+tok}})
+      .then(function(r){
+        if(r.status===401){expired();throw 0;}
+        if(r.status===403){if(sec)sec.style.display='none';throw 0;}
+        if(r.status===503){msg(list,t('Folgt in Kürze.','Coming soon.'));throw 0;}
+        if(!r.ok)throw 1;return r.json();
+      })
+      .then(function(d){
+        list.innerHTML='';
+        if(!d.groups||!d.groups.length){msg(list,t('Derzeit sind keine Dateien verfügbar.','No files available at the moment.'));return;}
+        d.groups.forEach(function(g){
+          if(g.name)list.appendChild(el('div','portal-files__group',g.name));
+          g.files.forEach(function(f){
+            var row=el('div','portal-file'),info=el('div');
+            info.appendChild(el('div','portal-file__name',f.name));
+            info.appendChild(el('div','portal-file__meta',[date(f.modified),size(f.size)].filter(Boolean).join(' · ')));
+            if(f.description)info.appendChild(el('div','portal-file__desc',f.description));
+            var btn=el('button','portal-file__btn',t('Herunterladen','Download'));btn.type='button';
+            btn.addEventListener('click',function(){download(bereich,f,btn);});
+            row.appendChild(info);row.appendChild(btn);list.appendChild(row);
+          });
+        });
+      })
+      .catch(function(e){if(e===1)msg(list,t('Dateiliste derzeit nicht verfügbar. Bitte später erneut versuchen.','File list currently unavailable. Please try again later.'));});
   });
 })();
 </script>

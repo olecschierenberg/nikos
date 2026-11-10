@@ -276,7 +276,13 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
 .rent-table{width:100%;max-width:920px;border-collapse:collapse;font-size:15px;line-height:1.6}
 .rent-table th,.rent-table td{text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid var(--border)}
 .rent-table thead th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--orange);border-bottom:2px solid var(--orange)}
-.rent-table tbody th{white-space:nowrap;line-height:2;font-weight:600;color:var(--dark);width:1%}
+.rent-table tbody th{white-space:nowrap;line-height:24px;font-weight:600;color:var(--dark);width:252px;min-width:252px}
+.rent-table thead th:first-child{width:252px;min-width:252px}
+.rent-table .nk-mod{display:inline-block;line-height:0;vertical-align:top}
+.rent-table .nk-mod img{height:18px;width:auto;max-width:none;display:block;margin:3px 0;transition:opacity .15s}
+.nk-mod{display:inline-block;vertical-align:baseline}
+.nk-mod img{height:0.95em;width:auto;max-width:none;display:inline-block;vertical-align:-0.23em;transition:opacity .15s}
+.nk-mod:hover img{opacity:.6}
 .rent-table td{color:var(--mid)}
 .rent-steps{grid-template-columns:repeat(4,1fr)}
 .rent-steps::before{left:12.5%;right:12.5%}
@@ -294,7 +300,7 @@ body{font-family:var(--font);color:var(--dark);background:var(--white);line-heig
 .partner-list__ort{font-weight:400;color:var(--mid)}
 .partner-list__reg{font-size:14px;color:var(--mid);line-height:1.5;margin-top:2px}
 .rent-partner-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
-@media(max-width:900px){.rent-steps{grid-template-columns:1fr}.rent-apps{grid-template-columns:1fr}.partner-list{grid-template-columns:1fr}.rent-table tbody th{white-space:normal}}
+@media(max-width:900px){.rent-steps{grid-template-columns:1fr}.rent-apps{grid-template-columns:1fr}.partner-list{grid-template-columns:1fr}.rent-table tbody th{white-space:normal;width:200px;min-width:200px}.rent-table thead th:first-child{width:200px;min-width:200px}.rent-table .nk-mod img{height:14px}}
 </style>
 </head>
 <body>

@@ -29,3 +29,10 @@ export const ALLOWED_ORIGINS = [
 ];
 
 export const KATEGORIEN = ['Partner', 'Techniker', 'Mitarbeiter'];
+
+// Geschützte Portal-Bereiche: welcher Google-Drive-Ordner (Umgebungsvariable mit Ordner-ID oder -Link)
+// und welche Zugangskategorien ihn sehen dürfen. Muss zur Anzeige-Logik auf /de/login/ passen.
+export const PORTAL_BEREICHE = {
+  technik: { env: 'PORTAL_DRIVE_TECHNIK', kategorien: ['Techniker', 'Partner', 'Mitarbeiter'] },
+  marketing: { env: 'PORTAL_DRIVE_MARKETING', kategorien: ['Partner', 'Mitarbeiter'] },
+};
