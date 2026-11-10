@@ -59,7 +59,7 @@ export async function getMeta(fileId) {
 }
 
 /** Liegt die Datei (direkt oder in Unterordnern, max. maxDepth Ebenen) im Ordner rootId? */
-export async function isInside(meta, rootId, maxDepth = 3) {
+export async function isInside(meta, rootId, maxDepth = 6) {
   let parents = meta.parents || [];
   for (let d = 0; d < maxDepth && parents.length; d++) {
     if (parents.includes(rootId)) return true;

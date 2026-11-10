@@ -17,6 +17,8 @@ const items = {
   SUBfolder0000: { id: 'SUBfolder0000', name: 'NIKOS dispatcher', mimeType: FOLDER, parents: [ROOT] },
   datei2xxxxxxx: { id: 'datei2xxxxxxx', name: 'Dispatcher-Setup.zip', mimeType: 'application/zip', size: '99', modifiedTime: '2026-10-01T10:00:00Z', parents: ['SUBfolder0000'] },
   gdocxxxxxxxxx: { id: 'gdocxxxxxxxxx', name: 'Changelog', mimeType: 'application/vnd.google-apps.document', parents: ['SUBfolder0000'] },
+  DEEPfolder000: { id: 'DEEPfolder000', name: 'USB-Treiber', mimeType: FOLDER, parents: ['SUBfolder0000'] },
+  tiefxxxxxxxxx: { id: 'tiefxxxxxxxxx', name: 'driver.zip', mimeType: 'application/zip', size: '5', parents: ['DEEPfolder000'] },
   shortcutxxxxx: { id: 'shortcutxxxxx', name: 'Verknüpfung', mimeType: 'application/vnd.google-apps.shortcut', parents: [ROOT] },
   OTHERfolder00: { id: 'OTHERfolder00', name: 'Intern', mimeType: FOLDER, parents: ['MYDRIVE00000'] },
   geheimxxxxxxx: { id: 'geheimxxxxxxx', name: 'geheim.pdf', mimeType: 'application/pdf', parents: ['OTHERfolder00'] },
@@ -68,7 +70,8 @@ test('Dateiliste: Gruppen aus Unterordnern, Google-Doc als PDF, Verknüpfungen a
   assert.equal(r.status, 200);
   assert.equal(r.headers.get('cache-control'), 'no-store');
   const d = await r.json();
-  assert.deepEqual(d.groups.map((g) => g.name), ['', 'NIKOS dispatcher']);
+  assert.deepEqual(d.groups.map((g) => g.name), ['', 'NIKOS dispatcher', 'NIKOS dispatcher › USB-Treiber']);
+  assert.deepEqual(d.groups[2].files.map((f) => f.name), ['driver.zip']);
   assert.deepEqual(d.groups[0].files.map((f) => f.name), ['NIKOS-audio_FW_2.1.bin']);
   assert.equal(d.groups[0].files[0].size, 1234);
   assert.deepEqual(d.groups[1].files.map((f) => f.name).sort(), ['Changelog.pdf', 'Dispatcher-Setup.zip']);
@@ -88,6 +91,8 @@ test('Download: Datei im Ordner und Unterordner, Google-Doc als PDF', async () =
   assert.match(r.headers.get('content-disposition'), /attachment; filename="NIKOS-audio_FW_2.1.bin"/);
   r = await get(dl, `${U}/api/portal-download?bereich=technik&id=datei2xxxxxxx`, auth());
   assert.equal(await r.text(), 'DATA:Dispatcher-Setup.zip');
+  r = await get(dl, `${U}/api/portal-download?bereich=technik&id=tiefxxxxxxxxx`, auth());
+  assert.equal(await r.text(), 'DATA:driver.zip');
   r = await get(dl, `${U}/api/portal-download?bereich=technik&id=gdocxxxxxxxxx`, auth());
   assert.equal(r.headers.get('content-type'), 'application/pdf');
   assert.match(r.headers.get('content-disposition'), /Changelog\.pdf/);
