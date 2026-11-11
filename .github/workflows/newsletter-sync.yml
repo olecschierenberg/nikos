@@ -59,18 +59,6 @@ jobs:
         working-directory: automation/newsletter-sync
         run: node brevo-import.js $([ "$LIVE" = "true" ] && echo --live)
 
-      - name: Telegram-Erfolgsmeldung senden
-        if: success()
-        continue-on-error: true
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: |
-          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-            -d chat_id="${TELEGRAM_CHAT_ID}" \
-            --data-urlencode text="✅ NIKOS-Automation erfolgreich: Newsletter-Abgleich (live=${LIVE})
-          Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-
       - name: Telegram-Fehlermeldung senden
         if: failure()
         continue-on-error: true
