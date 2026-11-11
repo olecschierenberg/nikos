@@ -14,8 +14,43 @@
     if (document.getElementById('nk-footer-mobile-css')) return;
     var css = ""
       + "body{overflow-x:hidden;}"
-      + ".nk-nav,.nav__inner{max-width:100vw;}"
-      + "@media (max-width:900px){.nav__inner{padding:0 16px;gap:8px;}.nav__logo{margin-right:auto;height:40px;}.nav__logo svg{height:20px !important;width:auto !important;}.nav__logo img{height:20px !important;width:auto !important;}.nav__right{margin-left:0;}.nav__burger{display:flex !important;}.nav__links{display:none !important;}}"
+      // ── NAV: an das Menue der Landingpages (/lp/) angeglichen ──────────
+      // Referenz: automation/lp-generator/lib/nodes/html_bauen.js (Abschnitt NAV).
+      // Selektoren sind bewusst spezifischer (.nk-nav ...), damit sie die
+      // Inline-CSS der einzelnen Seiten sicher ueberschreiben.
+      + ".nk-nav{max-width:100vw;}"
+      // Container: max. 1280px, zentriert (statt volle Breite)
+      + ".nk-nav .nav__inner{max-width:var(--max-w,1280px);margin:0 auto;padding:0 24px;height:60px;gap:16px;}"
+      // Logo: 26px hoch
+      + ".nk-nav .nav__logo{height:60px;margin-right:32px;}"
+      + ".nk-nav .nav__logo svg,.nk-nav .nav__logo img{height:26px !important;width:auto !important;}"
+      // Menuepunkte: Abstand 16px, Hover/aktiv orange
+      + ".nk-nav .nav__links{gap:16px;flex:1 1 0%;overflow:hidden;}"
+      + ".nk-nav .nav__links a:hover,.nk-nav .nav__links a.active{color:var(--orange);}"
+      + ".nk-nav .nav__right{margin-left:auto;}"
+      // Sprachwahl-Dropdown
+      + ".nk-nav .lang-flag__btn .flag{font-size:inherit;}"
+      + ".nk-nav .lang-flag__btn .chevron{font-size:inherit;color:inherit;margin-left:0;}"
+      + ".nk-nav .lang-flag__dropdown{min-width:160px;border-radius:var(--r,4px);box-shadow:var(--shadow);}"
+      + ".nk-nav .lang-flag__option{gap:8px;padding:9px 14px;font-size:14px;}"
+      + ".nk-nav .lang-flag__option .flag{font-size:inherit;}"
+      + ".nk-nav .lang-flag__option.active{background:none;font-weight:700;}"
+      // Burger: kompakter, eckig (X-Animation bleibt)
+      + ".nk-nav .nav__burger{width:auto;height:auto;gap:4px;padding:8px;}"
+      + ".nk-nav .nav__burger span{width:22px;border-radius:0;}"
+      + ".nk-nav .nav__burger.is-open span:nth-child(1){transform:translateY(6px) rotate(45deg);}"
+      + ".nk-nav .nav__burger.is-open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}"
+      // Mobiles Menue: Liste im Fluss unter der Leiste, kein Overlay
+      + ".nk-nav .nav__mobile{position:static;padding:0;border-top:0;border-bottom:1px solid var(--border);box-shadow:none;}"
+      + ".nk-nav .nav__mobile ul{padding:12px 24px;}"
+      + ".nk-nav .nav__mobile ul li{padding:8px 0;}"
+      + ".nk-nav .nav__mobile ul li a{padding:0;font-size:16px;font-weight:600;color:var(--mid);border-left:0;}"
+      + ".nk-nav .nav__mobile ul li a:hover{color:var(--orange);}"
+      // Mobil (<=900px): Links -> Burger. Logo bleibt 26px wie auf den LPs, die Abstaende
+      // bleiben kompakt (16px/8px), damit der Burger auch auf 360-375px-Handys im Bild bleibt.
+      + "@media (max-width:900px){.nk-nav .nav__inner{padding:0 16px;gap:8px;}.nk-nav .nav__logo{height:60px;margin-right:auto;}.nk-nav .nav__right{margin-left:0;}.nav__burger{display:flex !important;}.nav__links{display:none !important;}}"
+      // Sehr schmale Handys: Logo etwas kleiner
+      + "@media (max-width:400px){.nk-nav .nav__logo svg,.nk-nav .nav__logo img{height:22px !important;}}"
       + ".nk-footer__grid{grid-template-columns:1.2fr 1fr 1fr 1fr;}"
       + ".nk-footer,.nk-footer *{box-sizing:border-box;}"
       + ".nk-footer__inner{max-width:100%;}"
@@ -39,6 +74,28 @@
     st.id = 'nk-footer-mobile-css';
     st.textContent = css;
     (document.head || document.documentElement).appendChild(st);
+  })();
+
+  // Mobiles Menue: "Kontakt" als letzten Eintrag ergaenzen (wie auf den Landingpages).
+  // Uebernimmt Link und Sprach-Attribut (data-de / data-en) vom Kontakt-Button der Leiste.
+  (function addMobileContactLink() {
+    var list = document.querySelector('#navMobile ul');
+    var cta = document.querySelector('.nk-nav .nav__cta');
+    if (!list || !cta || !cta.getAttribute('href')) return;
+    var href = cta.getAttribute('href');
+    var links = list.querySelectorAll('a');
+    for (var i = 0; i < links.length; i++) {
+      if (links[i].getAttribute('href') === href && !links[i].classList.contains('nav__cta-mobile')) return;
+    }
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.setAttribute('href', href);
+    a.textContent = cta.textContent.trim();
+    ['data-de', 'data-en'].forEach(function (attr) {
+      if (cta.hasAttribute(attr)) a.setAttribute(attr, cta.getAttribute(attr));
+    });
+    li.appendChild(a);
+    list.appendChild(li);
   })();
 
   // Footer einsetzen
